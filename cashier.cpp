@@ -76,8 +76,8 @@ void FormatReport (const bookType &books)
 	cout << setw (12) << left << "Price" << setw (9) << left << "Total" << "-\n";
 	cout << "--------------------------------------------------------------------------------\n"; 
 
-	cout << "-" << setw(3) << right << books.quantity << "  " << setw (16) << left << books.isbn << setw (35) << left << books.title;
-	cout << setw (4) << right << "$" << setw (7) << right << books.price << setw (5) << right << "$" << setw(8) << right << books.total << "-\n";
+	cout << "-" << setw(3) << right << books.quantity << "  " << setw (16) << left << books.isbn << setw (33) << left << books.title;
+	cout << setw (2) << right << "$" << setw (5) << right << books.price << setw (3) << right << "$" << setw(6) << right << books.total << "-\n";
 	cout << setw (58) << left << "-" << "Subtotal    $" << setw (7) << right << subtotal << setw (2) << right << "-\n";
 	cout << setw (58) << left << "-" << "Tax         $" << setw (7) << right << tax_amt << setw (2) << right << "-\n";
 	cout << setw (58) << left << "-" << "Total       $" << setw (7) << right << totalAfterTax  << setw (2) << right << "-\n";
