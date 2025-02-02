@@ -71,7 +71,7 @@ void FormatReport (const bookType &books)
 	cout << "-                                                                              -\n";
 	cout << "- Serendipity Book Sellers                                                     -\n";
 	cout << "-                                                                              -\n";	
-	cout << "- Date: " << setw (72) << left << books.date << "-\n";
+	cout << "-Date: " << setw (72) << left << books.date << "-\n";
 	cout << "-" << setw(5) << left << "Qty" << setw(14) << left << "ISBN" << setw(38) << left << "Title";
 	cout << setw (12) << left << "Price" << setw (9) << left << "Total" << "-\n";
 	cout << "--------------------------------------------------------------------------------\n"; 
