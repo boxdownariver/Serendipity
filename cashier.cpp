@@ -62,11 +62,12 @@ void FormatReport (const bookType &books)
 	float tax_amt;
 	const float taxPct = 0.06;
 	float totalAfterTax;
-
+	
 	subtotal = books.total;
 	tax_amt = taxPct * subtotal;
 	totalAfterTax = tax_amt + subtotal;
-	
+	cout << fixed << setprecision(2);
+
 	cout << "--------------------------------------------------------------------------------\n";
 	cout << "-                                                                              -\n";
 	cout << "-Serendipity Book Sellers                                                      -\n";
