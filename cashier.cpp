@@ -8,7 +8,7 @@ using namespace std;
 
 int main (){
 
-
+	cout << "Cashier module\n";
 
 
 	return 0;
