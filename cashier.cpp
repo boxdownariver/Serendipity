@@ -16,12 +16,34 @@ struct bookType {
 	float total;
 };
 
+void askData (bookType books);
 
 int main (){
 	bookType bookOne;
-	cout << "Cashier module\n";
 	// Pass to a function to get the data.
-	cout << "hello\n";
+	askData (bookOne);
 
 	return 0;
+}
+
+
+void askData (bookType books)
+{
+	cout << "\nDate (MM/DD/YYYY) : ";
+	cin >> books.date;
+
+	cout << "\nQuantity : ";
+	cin >> books.quantity;
+
+	cout << "\nISBN : ";
+	cin >> books.isbn;
+
+	cout << "\nTitle : ";
+	getline (cin, books.title);
+
+	cout << "\nPrice  : ";
+	cin >> books.price;
+
+	// Calculate the total.
+	books.total = books.price * books.quantity;
 }
