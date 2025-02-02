@@ -62,10 +62,13 @@ void FormatReport (const bookType &books)
 	float tax_amt;
 	const float taxPct = 0.06;
 	float totalAfterTax;
-	
+
+	// Do the calculations
 	subtotal = books.total;
 	tax_amt = taxPct * subtotal;
 	totalAfterTax = tax_amt + subtotal;
+
+	// For fixed precision ( show 2 decimal point )
 	cout << fixed << setprecision(2);
 
 	cout << "--------------------------------------------------------------------------------\n";
