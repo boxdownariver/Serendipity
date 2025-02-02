@@ -16,18 +16,18 @@ struct bookType {
 	float total;
 };
 
-void askData (bookType books);
+void askData (bookType &books);
 
 int main (){
 	bookType bookOne;
 	// Pass to a function to get the data.
-	askData (bookOne);
+	askData (&bookOne);
 
 	return 0;
 }
 
 
-void askData (bookType books)
+void askData (bookType &books)
 {
 	cout << "\nDate (MM/DD/YYYY) : ";
 	getline (cin, books.date);
