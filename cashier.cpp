@@ -86,6 +86,7 @@ void FormatReport (const bookType &books)
 	cout << setw (58) << left << "-" << "Total       $" << setw (7) << right << totalAfterTax  << setw (2) << right << " -\n";
 	cout << "-                                                                              -\n";
 	cout << "- " << setw (77) << left << "Thank you for shopping at Serendipity" << "-\n";
+	cout << "--------------------------------------------------------------------------------\n";
 
 	
 }
