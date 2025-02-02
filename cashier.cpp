@@ -26,7 +26,6 @@ int main (){
 	return 0;
 }
 
-
 void askData (bookType &books)
 {
 	cout << "\nDate (MM/DD/YYYY) : ";
