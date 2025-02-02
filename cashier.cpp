@@ -30,13 +30,13 @@ int main (){
 void askData (bookType books)
 {
 	cout << "\nDate (MM/DD/YYYY) : ";
-	cin >> books.date;
+	getline (cin, books.date);
 
 	cout << "\nQuantity : ";
 	cin >> books.quantity;
 
 	cout << "\nISBN : ";
-	cin >> books.isbn;
+	getline (cin, books.isbn);
 
 	cout << "\nTitle : ";
 	getline (cin, books.title);
