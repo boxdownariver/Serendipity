@@ -7,7 +7,7 @@
 #include <iomanip>     // To format in decimal places;
 #include <cstring>     // To get the length
 #include <cstdlib>     // To clear the screen
-##include <windows.h>  // For colours
+#include <windows.h>  // For colours
 using namespace std;
 
 struct bookType {
