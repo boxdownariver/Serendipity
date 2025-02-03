@@ -92,7 +92,7 @@ void FormatReport (const bookType &books)
 	}
 	else
 	{
-		shortTitle.copy(books.title, 0 , 33 );
+		shortTitle.copy(books.title.substr(0, 33));
 		cout << setw (36) << left << shortTitle << "...";
 	}
 	
