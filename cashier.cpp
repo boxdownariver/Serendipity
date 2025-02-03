@@ -64,7 +64,8 @@ void FormatReport (const bookType &books)
 	float tax_amt;
 	const float taxPct = 0.06;
 	float totalAfterTax;
-
+	string shortTitle;
+	
 	// Do the calculations
 	subtotal = books.total;
 	tax_amt = taxPct * subtotal;
@@ -91,7 +92,8 @@ void FormatReport (const bookType &books)
 	}
 	else
 	{
-		cout << setw (33) << left << books.title << "...";
+		shortTitle.copy(books.title, 0 , 33 );
+		cout << setw (36) << left << shortTitle << "...";
 	}
 	
 	cout << setw (3) << right << "$" << setw (7) << right << books.price << setw (5) << right << "$" << setw(7) << right << books.total << " -\n";
