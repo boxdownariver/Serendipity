@@ -80,7 +80,19 @@ void FormatReport (const bookType &books)
 	cout << setw (12) << left << "Price" << setw (9) << left << "Total" << "-\n";
 	cout << "--------------------------------------------------------------------------------\n"; 
 
-	cout << "-" << setw(3) << right << books.quantity << "  " << setw (14) << left << books.isbn << setw (36) << left << books.title;
+	cout << "-" << setw(3) << right << books.quantity << "  " << setw (14) << left << books.isbn;
+	
+	// placement of the book title
+	if (strlen(book.title <= 34 )
+	{
+		cout << setw (36) << left << books.title;
+	}
+
+	else
+	{
+		cout << setw (33) << left << books.title << "...";
+	}
+	
 	cout << setw (3) << right << "$" << setw (7) << right << books.price << setw (5) << right << "$" << setw(7) << right << books.total << " -\n";
 	cout << "-                                                                              -\n";
 	cout << "-                                                                              -\n";
