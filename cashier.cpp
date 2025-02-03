@@ -45,7 +45,7 @@ int main (){
 
 	// Pass to a function to show the formatted report
 	FormatReport (bookOne); 
-	
+
 	return 0;
 }
 
