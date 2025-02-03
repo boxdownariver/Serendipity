@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <cstring>
 
 using namespace std;
 
@@ -87,7 +88,6 @@ void FormatReport (const bookType &books)
 	{
 		cout << setw (36) << left << books.title;
 	}
-
 	else
 	{
 		cout << setw (33) << left << books.title << "...";
