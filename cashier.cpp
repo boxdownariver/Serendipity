@@ -93,7 +93,7 @@ void FormatReport (const bookType &books)
 	else
 	{
 		shortTitle = books.title.substr(0, 33);
-		cout << setw (36) << left << shortTitle << "...";
+		cout << setw (32) << left << shortTitle << "...";
 	}
 	
 	cout << setw (3) << right << "$" << setw (7) << right << books.price << setw (5) << right << "$" << setw(7) << right << books.total << " -\n";
