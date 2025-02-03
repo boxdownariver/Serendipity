@@ -1,7 +1,22 @@
-// This cashier.cpp accepts book data //
-// and it displays a formated report  //
-// Saliha Babar working branch        //
-
+// Saliha Babar                    CS1A                            Serendipity
+//
+/******************************************************************************
+ * DISPLAY A CASHIER REPORT
+ * ____________________________________________________________________________
+ * This cpp asks for book information ( date, quantity, isbn, title, and price ),
+ * then it calculates the total price for each book type.
+ * Finally it will create a nicely formatted cashier report.
+ * ____________________________________________________________________________
+ * INPUT 
+ *    date                      : date the book is added
+ *    quantity                  : quantity of books purchased
+ *    isbn                      : book isbn
+ *    title                     : title of the book
+ *    price                     : price of a book
+ * 
+ * OUTPUT
+ *  formatted cashier report
+ * ***************************************************************************/
 
 #include <iostream>
 #include <string>
@@ -30,7 +45,6 @@ int main (){
 
 	// Pass to a function to show the formatted report
 	FormatReport (bookOne); 
-
 	
 	return 0;
 }
@@ -111,6 +125,4 @@ void FormatReport (const bookType &books)
 	cout << "-                                                                              -\n";
 	cout << "- " << setw (77) << left << "Thank you for shopping at Serendipity!" << "-\n";
 	cout << "--------------------------------------------------------------------------------\n";
-
-	
 }
