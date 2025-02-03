@@ -4,10 +4,10 @@
 
 #include <iostream>
 #include <string>
-#include <iomanip>
-#include <cstring>
-#include <cstdlib>
-
+#include <iomanip>     // To format in decimal places;
+#include <cstring>     // To get the length
+#include <cstdlib>     // To clear the screen
+##include <windows.h>  // For colours
 using namespace std;
 
 struct bookType {
@@ -63,6 +63,11 @@ void FormatReport (const bookType &books)
 {
 	// Clear the screen
 	system("clear");
+
+	// To get colours of output
+	HANDLE console_color; 
+	console_color = GetStdHandle( STD_OUTPUT_HANDLE); 
+	SetConsoleTextAttribute( console_color, 5);              // 5 is the keyword for purple!
 	
 	float subtotal;
 	float tax_amt;
