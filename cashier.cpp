@@ -62,7 +62,7 @@ void askData (bookType &books)
 void FormatReport (const bookType &books)
 {
 	// Clear the screen
-	system("cls");
+	system("clear");
 	
 	float subtotal;
 	float tax_amt;
