@@ -6,6 +6,7 @@
 #include <string>
 #include <iomanip>
 #include <cstring>
+#include <cstdlib>
 
 using namespace std;
 
@@ -60,6 +61,9 @@ void askData (bookType &books)
 
 void FormatReport (const bookType &books)
 {
+	// Clear the screen
+	system("cls");
+	
 	float subtotal;
 	float tax_amt;
 	const float taxPct = 0.06;
