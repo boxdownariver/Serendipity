@@ -1,6 +1,7 @@
-// This is Saliha's working branch
-// Checking how pull and push works...
-// Checking ..
+// This cashier.cpp accepts book data //
+// and it displays a formated report  //
+// Saliha Babar working branch        //
+
 
 #include <iostream>
 #include <string>
