@@ -7,7 +7,7 @@
 #include <iomanip>     // To format in decimal places;
 #include <cstring>     // To get the length
 #include <cstdlib>     // To clear the screen
-#include <windows.h>  // For colours
+
 using namespace std;
 
 struct bookType {
@@ -64,20 +64,15 @@ void FormatReport (const bookType &books)
 	// Clear the screen
 	system("clear");
 
-	// To get colours of output
-	HANDLE console_color; 
-	console_color = GetStdHandle( STD_OUTPUT_HANDLE); 
-	SetConsoleTextAttribute( console_color, 5);              // 5 is the keyword for purple!
-	
 	float subtotal;
 	float tax_amt;
-	const float taxPct = 0.06;
+	const float TAX_PCT = 0.06;
 	float totalAfterTax;
 	string shortTitle;
 	
 	// Do the calculations
 	subtotal = books.total;
-	tax_amt = taxPct * subtotal;
+	tax_amt = TAX_PCT * subtotal;
 	totalAfterTax = tax_amt + subtotal;
 
 	// For fixed precision ( show 2 decimal point )
@@ -113,7 +108,7 @@ void FormatReport (const bookType &books)
 	cout << setw (58) << left << "-" << "Tax         $" << setw (7) << right << tax_amt << setw (2) << right << " -\n";
 	cout << setw (58) << left << "-" << "Total       $" << setw (7) << right << totalAfterTax  << setw (2) << right << " -\n";
 	cout << "-                                                                              -\n";
-	cout << "- " << setw (77) << left << "Thank you for shopping at Serendipity" << "-\n";
+	cout << "- " << setw (77) << left << "Thank you for shopping at Serendipity!" << "-\n";
 	cout << "--------------------------------------------------------------------------------\n";
 
 	
