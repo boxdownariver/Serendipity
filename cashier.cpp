@@ -50,7 +50,8 @@ void askData (bookType &books)
 
 	cout << "\nPrice ($) : ";
 	cin >> books.price;
-	
+	cin.ignore();
+		
 	// Calculate the total.
 	books.total = books.price * books.quantity;
 }
