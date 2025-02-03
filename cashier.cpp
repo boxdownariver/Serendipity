@@ -84,7 +84,7 @@ void FormatReport (const bookType &books)
 	cout << "-" << setw(3) << right << books.quantity << "  " << setw (14) << left << books.isbn;
 	
 	// placement of the book title
-	if (strlen(books.title <= 34 ))
+	if (strlen(books.title) <= 34 )
 	{
 		cout << setw (36) << left << books.title;
 	}
