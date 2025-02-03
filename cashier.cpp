@@ -8,7 +8,7 @@
  * Finally it will create a nicely formatted cashier report.
  * ____________________________________________________________________________
  * INPUT 
- *    date                      : date the book is added
+ *    date                      : date the books are purchased
  *    quantity                  : quantity of books purchased
  *    isbn                      : book isbn
  *    title                     : title of the book
