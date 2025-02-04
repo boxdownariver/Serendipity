@@ -23,7 +23,6 @@
 #include <iomanip>     // To format in decimal places;
 #include <cstring>     // To get the length
 #include <cstdlib>     // To clear the screen
-#include <stdlib.h>
 
 using namespace std;
 
@@ -38,11 +37,13 @@ struct bookType {
 
 void askData (bookType &books);
 void FormatReport (const bookType &books);
+void setColour ( int colourCode );
+
 
 int main (){
-	system("Color 4E"); 
 
 	bookType bookOne;
+	setColour (95);
 	// Pass to a function to get the data.
 	askData ( bookOne);
 
@@ -54,20 +55,20 @@ int main (){
 
 void askData (bookType &books)
 {
-	cout << "\nDate (MM/DD/YYYY) : ";
+	cout << setw (20) << left << "\nDate (MM/DD/YYYY)" << " : ";
 	getline (cin, books.date);
 
-	cout << "\nQuantity : ";
+	cout << setw (20) << left << "\nQuantity" << " : ";
 	cin >> books.quantity;
 	cin.ignore();
 	
-	cout << "\nISBN : ";
+	cout << setw (20) << left << "\nISBN " << " : ";
 	getline (cin, books.isbn);
 
-	cout << "\nTitle : ";
+	cout << setw (20) << left << "\nTitle" << " : ";
 	getline (cin, books.title);
 
-	cout << "\nPrice ($) : ";
+	cout << setw(20) << left << "\nPrice ($)" << " : ";
 	cin >> books.price;
 	cin.ignore();
 		
@@ -76,8 +77,6 @@ void askData (bookType &books)
 	
 	return;
 }
-
-
 
 void FormatReport (const bookType &books)
 {
@@ -96,12 +95,18 @@ void FormatReport (const bookType &books)
 	totalAfterTax = tax_amt + subtotal;
 
 	// For fixed precision ( show 2 decimal point )
+	setColour (95);   // Receipt generally using magenta colour
 	cout << fixed << setprecision(2);
-
+	
 	cout << "--------------------------------------------------------------------------------\n";
 	cout << "-                                                                              -\n";
-	cout << "-Serendipity Book Sellers                                                      -\n";
-	cout << "-                                                                              -\n";	
+	cout << "-"; 
+	// Set cyan colour for shop name
+	setColour(36);
+	cout << setw (78) << left << "Serendipity Book Sellers"; 
+	setColour (95);    // Back magenta colour
+	cout << "-\n";
+	cout << "-                                                                              -\n";
 	cout << "-Date: " << setw (72) << left << books.date << "-\n";
 	cout << "-                                                                              -\n";
 	cout << "-" << setw(5) << left << "Qty" << setw(14) << left << "ISBN" << setw(38) << left << "Title";
@@ -126,10 +131,26 @@ void FormatReport (const bookType &books)
 	cout << "-                                                                              -\n";
 	cout << setw (58) << left << "-" << "Subtotal    $" << setw (7) << right << subtotal << setw (2) << right << " -\n";
 	cout << setw (58) << left << "-" << "Tax         $" << setw (7) << right << tax_amt << setw (2) << right << " -\n";
-	cout << setw (58) << left << "-" << "Total       $" << setw (7) << right << totalAfterTax  << setw (2) << right << " -\n";
+	cout << setw (58) << left << "-";
+	// Set total colour to Yellow
+	setColour (93);
+	cout << "Total       $" << setw (7) << right << totalAfterTax;
+	setColour (95);     // Back to Magenta
+	cout << setw (2) << right << " -\n";
 	cout << "-                                                                              -\n";
-	cout << "- " << setw (77) << left << "Thank you for shopping at Serendipity!" << "-\n";
+	cout << "- ";
+	// Print thank you text in white
+	setColour (97);
+	cout<< setw (77) << left << "Thank you for shopping at Serendipity!";
+	setColour (95);    // Back to Magenta colour
+	cout << "-\n";
 	cout << "--------------------------------------------------------------------------------\n";
 
+	return;
+}
+
+void setColour (int colourCode )
+{
+	cout << "\033[1;" << colourCode << "m";
 	return;
 }
