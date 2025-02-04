@@ -40,7 +40,7 @@ void askData (bookType &books);
 void FormatReport (const bookType &books);
 
 int main (){
-	system("color E4"); 
+	system("Color 4E"); 
 
 	bookType bookOne;
 	// Pass to a function to get the data.
