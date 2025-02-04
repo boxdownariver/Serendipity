@@ -70,6 +70,8 @@ void askData (bookType &books)
 		
 	// Calculate the total.
 	books.total = books.price * books.quantity;
+	
+	return;
 }
 
 
@@ -125,4 +127,6 @@ void FormatReport (const bookType &books)
 	cout << "-                                                                              -\n";
 	cout << "- " << setw (77) << left << "Thank you for shopping at Serendipity!" << "-\n";
 	cout << "--------------------------------------------------------------------------------\n";
+
+	return;
 }
