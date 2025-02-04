@@ -23,7 +23,7 @@
 #include <iomanip>     // To format in decimal places;
 #include <cstring>     // To get the length
 #include <cstdlib>     // To clear the screen
-#include <windows.h>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -40,9 +40,8 @@ void askData (bookType &books);
 void FormatReport (const bookType &books);
 
 int main (){
-	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    	SetConsoleTextAttribute(hConsole, 12);
-	
+	system("Color E4"); 
+
 	bookType bookOne;
 	// Pass to a function to get the data.
 	askData ( bookOne);
