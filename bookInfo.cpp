@@ -1,9 +1,31 @@
+//TJ Dignan                           CS1B                              Serendipity
+/**********************************************************************************
+ * BOOKINFO
+ ********************************************************************************** 
+ * This program is a placeholder for the information page on the different books
+ * in the serendipity bookstore.
+ **********************************************************************************
+ * OUTPUTS
+ **********************************************************************************
+ * bookInfoWindow - Displays the window with the book information formatted
+ *********************************************************************************/
+
 #include <iostream>
-#include <iomanip>
+#include <iomanip>  //To keep it clean
 
 using namespace std;
+// Funk prototype
+void bookInfoWindow();
 
 int main()
+{
+// Outputs printed book info function
+	bookInfoWindow();
+	return 0;
+}
+
+// Function for printing book info
+void bookInfoWindow()
 {
 	cout << left << "-----------------------------------------------------------\n";
 	cout <<         "-               Serendipity Booksellers                   -\n";
@@ -19,7 +41,5 @@ int main()
 	cout <<         "-    Retail Price:                                        -\n";
 	cout <<         "-                                                         -\n";
 	cout <<         "-----------------------------------------------------------\n";
-
-	return 0;
 }
 
