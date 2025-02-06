@@ -111,7 +111,7 @@ void FormatReport (const bookType &books)
 	cout << "-                                                                              -\n";
 	cout << "-" << setw(5) << left << "Qty" << setw(14) << left << "ISBN" << setw(38) << left << "Title";
 	cout << setw (12) << left << "Price" << setw (9) << left << "Total" << "-\n";
-	cout << "--------------------------------------------------------------------------------\n"; 
+	cout << "—————————————————————————————————————————————————————————————————————————————————\n"; 
 
 	cout << "-" << setw(3) << right << books.quantity << "  " << setw (14) << left << books.isbn;
 	
