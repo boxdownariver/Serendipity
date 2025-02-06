@@ -98,9 +98,9 @@ void FormatReport (const bookType &books)
 	setColour (95);   // Receipt generally using magenta colour
 	cout << fixed << setprecision(2);
 	
-	cout << "--------------------------------------------------------------------------------\n";
-	cout << "-                                                                              -\n";
-	cout << "-"; 
+	cout << "----------------------------------------------------------------------------———\n";
+	cout << "|                                                                              |\n";
+	cout << "|"; 
 	// Set cyan colour for shop name
 	setColour(36);
 	cout << setw (78) << left << "Serendipity Book Sellers"; 
