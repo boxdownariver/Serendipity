@@ -23,6 +23,7 @@
 #include <iomanip>     // To format in decimal places;
 #include <cstring>     // To get the length
 #include <cstdlib>     // To clear the screen
+#include <cctype>      // To check for user choice effectively
 
 using namespace std;
 
@@ -43,12 +44,22 @@ void setColour ( int colourCode );
 int main (){
 
 	bookType bookOne;
+	char choice;
+
+	do {
 	setColour (96);
 	// Pass to a function to get the data.
 	askData ( bookOne);
 
 	// Pass to a function to show the formatted report
 	FormatReport (bookOne); 
+	}
+
+	cout << "Do you want to proceed another transaction(Y/N)?\n";
+	cin.get (choice);
+	cin.ignore (100, '\n');
+	
+	while (toupper (choice) != 'N');
 
 	return 0;
 }
@@ -87,7 +98,7 @@ void FormatReport (const bookType &books)
 	float tax_amt;
 	const float TAX_PCT = 0.06;
 	float totalAfterTax;
-	string shortTitle;
+	string tempTitle;
 	
 	// Do the calculations
 	subtotal = books.total;
@@ -111,7 +122,7 @@ void FormatReport (const bookType &books)
 	cout << "|                                                                              |\n";
 	cout << "|" << setw(5) << left << "Qty" << setw(14) << left << "ISBN" << setw(38) << left << "Title";
 	cout << setw (12) << left << "Price" << setw (9) << left << "Total" << "|\n";
-	cout << "-------------------------------------------------------------------------------\n";
+	cout << "--------------------------------------------------------------------------------\n";
 	cout << "|" << setw(3) << right << books.quantity << "  " << setw (14) << left << books.isbn;
 	
 	// placement of the book title
@@ -121,8 +132,8 @@ void FormatReport (const bookType &books)
 	}
 	else
 	{
-		shortTitle = books.title.substr(0, 33);
-		cout << setw (32) << left << shortTitle << "...";
+		tempTitle = books.title.substr(0, 33);
+		cout << setw (32) << left << tempTitle << "...";
 	}
 	
 	cout << setw (3) << right << "$" << setw (7) << right << books.price << setw (5) << right << "$" << setw(7) << right << books.total << " |\n";
