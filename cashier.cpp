@@ -95,16 +95,16 @@ void FormatReport (const bookType &books)
 	totalAfterTax = tax_amt + subtotal;
 
 	// For fixed precision ( show 2 decimal point )
-	setColour (96);   // Receipt generally using magenta colour
+	setColour (96);   // Receipt generally using cyan colour
 	cout << fixed << setprecision(2);
 	
 	cout << "+------------------------------------------------------------------------------+\n";
 	cout << "|                                                                              |\n";
 	cout << "|"; 
 	// Set cyan colour for shop name
-	setColour(11);
+	setColour(97);
 	cout << setw (78) << left << "Serendipity Book Sellers"; 
-	setColour (96);    // Back magenta colour
+	setColour (96);    // Back cyan colour
 	cout << "|\n";
 	cout << "|                                                                              |\n";
 	cout << "| Date: " << setw (71) << left << books.date << "|\n";
@@ -117,7 +117,11 @@ void FormatReport (const bookType &books)
 	// placement of the book title
 	if (books.title.length() <= 34 )
 	{
-		cout << setw (36) << left << books.title;
+		cout << setw (36) << left << books.title;05/12/12
+2
+0-333-90123-8
+History of Scotland
+39.90
 	}
 	else
 	{
@@ -134,14 +138,14 @@ void FormatReport (const bookType &books)
 	// Set total colour to Yellow
 	setColour (93);
 	cout << "Total       $" << setw (7) << right << totalAfterTax;
-	setColour (96);     // Back to Magenta
+	setColour (96);     // Back to cyan
 	cout << setw (2) << right << " |\n";
 	cout << "|                                                                              |\n";
 	cout << "| ";
 	// Print thank you text in white
 	setColour (97);
 	cout<< setw (77) << left << "Thank you for shopping at Serendipity!";
-	setColour (96);    // Back to Magenta colour
+	setColour (96);    // Back to cyan colour
 	cout << "|\n";
 	cout << "+------------------------------------------------------------------------------+\n";
 
