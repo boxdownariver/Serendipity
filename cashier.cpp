@@ -98,7 +98,8 @@ void FormatReport (const bookType &books)
 	setColour (95);   // Receipt generally using magenta colour
 	cout << fixed << setprecision(2);
 	
-	cout << "+-----------------------------------------------------------------------------+\n";
+	cout << "+------------------------------------------------------------------------------+\n";
+	cout << "|                                                                              |\n";
 	cout << char (196) << setw (70) << right << char (196) << endl;
 	cout << "|"; 
 	// Set cyan colour for shop name
@@ -107,12 +108,12 @@ void FormatReport (const bookType &books)
 	setColour (95);    // Back magenta colour
 	cout << "|\n";
 	cout << "|                                                                              |\n";
-	cout << "-Date: " << setw (72) << left << books.date << "-\n";
+	cout << "| Date: " << setw (72) << left << books.date << "|\n";
 	cout << "|                                                                              |\n";
 	cout << "|" << setw(5) << left << "Qty" << setw(14) << left << "ISBN" << setw(38) << left << "Title";
 	cout << setw (12) << left << "Price" << setw (9) << left << "Total" << "|\n";
 	cout << "-------------------------------------------------------------------------------\n";
-	cout << "-" << setw(3) << right << books.quantity << "  " << setw (14) << left << books.isbn;
+	cout << "|" << setw(3) << right << books.quantity << "  " << setw (14) << left << books.isbn;
 	
 	// placement of the book title
 	if (books.title.length() <= 34 )
@@ -125,11 +126,11 @@ void FormatReport (const bookType &books)
 		cout << setw (32) << left << shortTitle << "...";
 	}
 	
-	cout << setw (3) << right << "$" << setw (7) << right << books.price << setw (5) << right << "$" << setw(7) << right << books.total << " -\n";
+	cout << setw (3) << right << "$" << setw (7) << right << books.price << setw (5) << right << "$" << setw(7) << right << books.total << "|-\n";
 	cout << "|                                                                              |\n";
 	cout << "|                                                                              |\n";
-	cout << setw (58) << left << "|" << "Subtotal    $" << setw (7) << right << subtotal << setw (2) << right << " -\n";
-	cout << setw (58) << left << "|" << "Tax         $" << setw (7) << right << tax_amt << setw (2) << right << " -\n";
+	cout << setw (58) << left << "|" << "Subtotal    $" << setw (7) << right << subtotal << setw (2) << right << " |\n";
+	cout << setw (58) << left << "|" << "Tax         $" << setw (7) << right << tax_amt << setw (2) << right << " |\n";
 	cout << setw (58) << left << "|";
 	// Set total colour to Yellow
 	setColour (93);
