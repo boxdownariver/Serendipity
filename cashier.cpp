@@ -102,7 +102,7 @@ void FormatReport (const bookType &books)
 	cout << "|                                                                              |\n";
 	cout << "|"; 
 	// Set cyan colour for shop name
-	setColour(36);
+	setColour(11);
 	cout << setw (78) << left << "Serendipity Book Sellers"; 
 	setColour (96);    // Back magenta colour
 	cout << "|\n";
