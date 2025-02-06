@@ -118,10 +118,6 @@ void FormatReport (const bookType &books)
 	if (books.title.length() <= 34 )
 	{
 		cout << setw (36) << left << books.title;
-2
-0-333-90123-8
-History of Scotland
-39.90
 	}
 	else
 	{
