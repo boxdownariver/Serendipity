@@ -117,7 +117,7 @@ void FormatReport (const bookType &books)
 	// placement of the book title
 	if (books.title.length() <= 34 )
 	{
-		cout << setw (36) << left << books.title;05/12/12
+		cout << setw (36) << left << books.title;
 2
 0-333-90123-8
 History of Scotland
