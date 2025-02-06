@@ -99,7 +99,7 @@ void FormatReport (const bookType &books)
 	cout << fixed << setprecision(2);
 	
 	cout << "----------------------------------------------------------------------------———\n";
-	cout << "|                                                                              |\n";
+	cout << char (196) << setw (70) right << char (196) << endl;
 	cout << "|"; 
 	// Set cyan colour for shop name
 	setColour(36);
