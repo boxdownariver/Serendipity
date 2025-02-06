@@ -43,7 +43,7 @@ void setColour ( int colourCode );
 int main (){
 
 	bookType bookOne;
-	setColour (95);
+	setColour (96);
 	// Pass to a function to get the data.
 	askData ( bookOne);
 
@@ -95,7 +95,7 @@ void FormatReport (const bookType &books)
 	totalAfterTax = tax_amt + subtotal;
 
 	// For fixed precision ( show 2 decimal point )
-	setColour (95);   // Receipt generally using magenta colour
+	setColour (96);   // Receipt generally using magenta colour
 	cout << fixed << setprecision(2);
 	
 	cout << "+------------------------------------------------------------------------------+\n";
@@ -104,7 +104,7 @@ void FormatReport (const bookType &books)
 	// Set cyan colour for shop name
 	setColour(36);
 	cout << setw (78) << left << "Serendipity Book Sellers"; 
-	setColour (95);    // Back magenta colour
+	setColour (96);    // Back magenta colour
 	cout << "|\n";
 	cout << "|                                                                              |\n";
 	cout << "| Date: " << setw (71) << left << books.date << "|\n";
@@ -125,7 +125,7 @@ void FormatReport (const bookType &books)
 		cout << setw (32) << left << shortTitle << "...";
 	}
 	
-	cout << setw (3) << right << "$" << setw (7) << right << books.price << setw (5) << right << "$" << setw(7) << right << books.total << "|\n";
+	cout << setw (3) << right << "$" << setw (7) << right << books.price << setw (5) << right << "$" << setw(7) << right << books.total << " |\n";
 	cout << "|                                                                              |\n";
 	cout << "|                                                                              |\n";
 	cout << setw (58) << left << "|" << "Subtotal    $" << setw (7) << right << subtotal << setw (2) << right << " |\n";
@@ -134,14 +134,14 @@ void FormatReport (const bookType &books)
 	// Set total colour to Yellow
 	setColour (93);
 	cout << "Total       $" << setw (7) << right << totalAfterTax;
-	setColour (95);     // Back to Magenta
+	setColour (96);     // Back to Magenta
 	cout << setw (2) << right << " |\n";
 	cout << "|                                                                              |\n";
 	cout << "| ";
 	// Print thank you text in white
 	setColour (97);
 	cout<< setw (77) << left << "Thank you for shopping at Serendipity!";
-	setColour (95);    // Back to Magenta colour
+	setColour (96);    // Back to Magenta colour
 	cout << "|\n";
 	cout << "+------------------------------------------------------------------------------+\n";
 
