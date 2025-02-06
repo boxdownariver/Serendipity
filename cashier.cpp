@@ -53,12 +53,12 @@ int main (){
 
 	// Pass to a function to show the formatted report
 	FormatReport (bookOne); 
-	}
-
+		
 	cout << "Do you want to proceed another transaction(Y/N)?\n";
 	cin.get (choice);
 	cin.ignore (100, '\n');
-	
+		
+	}
 	while (toupper (choice) != 'N');
 
 	return 0;
