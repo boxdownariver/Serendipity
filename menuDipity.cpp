@@ -19,6 +19,7 @@
 #include <chrono>
 #include <thread>
 #include <cstdlib>
+#include <string.h>
 //#include <iostream>
 #include "menuDipity.h"
 
@@ -108,14 +109,17 @@ int makeMenu(MenuLines &mainMenuInfo) {
 		}
 	} while (dontExit);
 
+	clear();
+	if (strcmp(item_name(current_item(mainMenu)), "Exit") == 0) {
+		mvwprintw(mainWindow, getmaxy(mainWindow) / 2,
+			getmaxx(mainWindow) / 2 - 5, "Goodbye!");
+		wrefresh(mainWindow);
+		std::this_thread::sleep_for(std::chrono::seconds(1));
+	}
+
 	//End program
 	deleteMenu(mainMenu, items,
 			mainMenuInfo.menuLines.size());
-	clear();
-	//mvwprintw(mainWindow, getmaxy(mainWindow) / 2,
-	//		getmaxx(mainWindow) / 2 - 5, "Goodbye!");
-	wrefresh(mainWindow);
-	//std::this_thread::sleep_for(std::chrono::seconds(1));
 	endWindow(mainWindow);
 
 	return breakOut;
