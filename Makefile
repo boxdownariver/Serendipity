@@ -1,7 +1,7 @@
 everything: mainmenu bookInfo
 
-mainmenu: mainmenu.cpp cashier.o menuDriver.o invmenu.o reports.o
-	g++ -o "mainmenu" mainmenu.cpp menuDriver.o invmenu.o reports.o cashier.o -lncurses -lmenu
+serendipity: mainmenu.cpp cashier.o menuDriver.o invmenu.o reports.o
+	g++ -o "serendipity" mainmenu.cpp menuDriver.o invmenu.o reports.o cashier.o -lncurses -lmenu
 cashier.o: cashier.cpp 
 	g++ -c -o "cashier.o" cashier.cpp
 invmenu.o: invmenu.cpp
