@@ -1,9 +1,9 @@
-everything: mainmenu cashier invmenu reports bookInfo
+everything: mainmenu bookInfo
 
-mainmenu: mainmenu.cpp menuDriver invmenu reports
-	g++ -o "mainmenu" mainmenu.cpp menuDriver.o invmenu.o reports.o -lncurses -lmenu
+mainmenu: mainmenu.cpp cashier menuDriver invmenu reports
+	g++ -o "mainmenu" mainmenu.cpp menuDriver.o invmenu.o reports.o cashier.o -lncurses -lmenu
 cashier: cashier.cpp 
-	g++ -o "cashier" cashier.cpp
+	g++ -c -o "cashier.o" cashier.cpp
 invmenu: invmenu.cpp
 	g++ -c -o "invmenu.o" invmenu.cpp
 reports: reports.cpp

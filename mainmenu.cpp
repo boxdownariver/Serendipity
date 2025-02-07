@@ -1,9 +1,9 @@
 #include "menuDipity.h"
 #include "reports.h"
 #include "invmenu.h"
+#include "cashier.h"
 
 int main() {
-	//MenuLines mainMenuInfo = 	 //INPUT- Information struct for main menu
 	std::string menuName = "Main Menu";
 	std::vector<std::string> menuListing = { "Cashier Module",
 			"Inventory Database Module", "Report Module", "Exit" };
@@ -19,7 +19,10 @@ int main() {
 		continueMenu = 1;
 		menuResult = makeMenu(mainMenuInfo);
 
-		switch (menuResult) {
+		switch (menuResult) {\
+		case 0:
+			mainCashier();
+			break;
 		case 1:
 			main_invmenu();
 			break;
