@@ -1,3 +1,6 @@
+#ifndef menu_driver_h
+#define menu_driver_h
+
 #include <string>
 #include <vector>
 
@@ -6,6 +9,7 @@
 struct MenuLines {
 	std::string menuName;
 	std::vector<std::string> menuLines;
+	int longestMenuLength;
 	std::string storeName = "Serendipity Booksellers";
 };
 #endif
@@ -13,4 +17,6 @@ struct MenuLines {
 #ifndef make_menu
 #define make_menu
 int makeMenu(MenuLines &);
+#endif
+
 #endif

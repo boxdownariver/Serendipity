@@ -6,12 +6,12 @@ cashier: cashier.cpp
 	g++ -o "cashier" cashier.cpp
 invmenu: invmenu.cpp
 	g++ -o "invmenu" invmenu.cpp -lncurses -lmenu
-reports: reports.cpp
-	g++ -o "reports" reports.cpp -lncurses -lmenu
+reports: reports.cpp menuDriver
+	g++ -o "reports" reports.cpp menuDriver.o -lncurses -lmenu
 bookInfo: bookInfo.cpp
 	g++ -o "bookinfo" bookInfo.cpp
 menuDriver: menuDipity.cpp
-	g++ -o "menuDriver" menuDipity.cpp -lncurses -lmenu
+	g++ -c -o "menuDriver.o" menuDipity.cpp 
 
 clean:
 	rm cashier mainmenu

@@ -19,7 +19,7 @@
 #include <chrono>
 #include <thread>
 #include <cstdlib>
-#include <iostream>
+//#include <iostream>
 #include "menuDipity.h"
 
 void createMenu(MENU *&mainMenu, WINDOW *mainWindow,
@@ -33,20 +33,6 @@ void refreshWindow(MENU *&mainMenu, WINDOW *&mainWindow,
 
 volatile sig_atomic_t stateProvider = 0;
 
-int main() {
-	//MenuLines mainMenuInfo = 	 //INPUT- Information struct for main menu
-	std::string menuName = "Reports";
-	std::vector<std::string> menuListing = { "Inventory Listing", "Inventory Wholesale Value",
-					"Inventory Retail Value", "Listing by Quantity", 
-					"Listing by Cost", "Listing by Age", 
-					"Return to Main Menu"};
-	MenuLines mainMenuInfo;
-	mainMenuInfo.menuName = menuName;
-	mainMenuInfo.menuLines = menuListing;
-	std::cout << makeMenu(mainMenuInfo) << std::endl;
-	
-	return 0;
-}
 int makeMenu(MenuLines &mainMenuInfo) {
 	struct sigaction sa;	 //OUTPUT- Signal action handler
 	ITEM **items;			 //OUTPUT- Menu items
@@ -107,7 +93,6 @@ int makeMenu(MenuLines &mainMenuInfo) {
 				dontExit = 0;
 			}
 			//for testing purposes. Remove this later
-			dontExit = 0;
 			break;
 		case KEY_UP:
 			menu_driver(mainMenu, REQ_PREV_ITEM);
@@ -159,8 +144,8 @@ void createMenu(MENU *&mainMenu, WINDOW *mainWindow,
 	set_menu_win(mainMenu, mainWindow);
 	set_menu_sub(mainMenu,
 			derwin(mainWindow, menuLineSize,
-				sizeof(mainMenuInfo.menuLines[0]), 4,
-				(cols - sizeof(mainMenuInfo.menuLines[0])) / 2));
+				mainMenuInfo.longestMenuLength, 4,
+				(cols - mainMenuInfo.longestMenuLength) / 2));
 	set_menu_mark(mainMenu, ">");
 	post_menu(mainMenu);
 }
