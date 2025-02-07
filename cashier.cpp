@@ -68,8 +68,10 @@ int mainCashier (){
 		
 	}
 	while (toupper (choice) != 'N');
-
+	
 	cout << "\033[0m"; // Back to default colour
+	cout << "Closing cashier...\n";
+	
 	return 0;
 }
 
@@ -167,10 +169,6 @@ void FormatReport (const bookType &books)
 	setColour (96);    // Back to cyan colour
 	cout << "|\n";
 	cout << "+------------------------------------------------------------------------------+\n";
-
-	// Back to the default colour
-	setColour (96);
-	cout << "Closing cashier...\n";
 	
 	return;
 }
