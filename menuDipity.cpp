@@ -44,10 +44,12 @@ int makeMenu(MenuLines &mainMenuInfo) {
 	int userInput;
 	char userInputChar;
 	int breakOut;
+	char * currentItemName;
+	WINDOW * notification;
 
 	userInputChar = '1';
-		
-	menuLineSize = mainMenuInfo.menuLines.size();//!!!
+
+	menuLineSize = mainMenuInfo.menuLines.size();			 //!!!
 
 	//Handle system signals
 	sa.sa_flags = 0;
@@ -61,18 +63,15 @@ int makeMenu(MenuLines &mainMenuInfo) {
 	//Print menu dialog
 	box(mainWindow, 0, 0);
 	mvwprintw(mainWindow, 1,
-			(getmaxx(mainWindow)
-				- mainMenuInfo.storeName.length()) / 2,
+			(getmaxx(mainWindow) - mainMenuInfo.storeName.length()) / 2,
 			mainMenuInfo.storeName.c_str());
 	mvwprintw(mainWindow, 2,
-			(getmaxx(mainWindow)
-				- mainMenuInfo.menuName.length()) / 2,
+			(getmaxx(mainWindow) - mainMenuInfo.menuName.length()) / 2,
 			mainMenuInfo.menuName.c_str());
 	post_menu(mainMenu);
 	mvwprintw(mainWindow, getmaxy(mainWindow) - 2,
 			(getmaxx(mainWindow) - 38) / 2,
-			"Select [1-%d] or navigate to module...", 
-			menuLineSize);
+			"Select [1-%d] or navigate to module...", menuLineSize);
 	wrefresh(mainWindow);
 
 	//Main program loop
@@ -83,16 +82,25 @@ int makeMenu(MenuLines &mainMenuInfo) {
 			refreshWindow(mainMenu, mainWindow, mainMenuInfo);
 			stateProvider = 0;
 		}
- 		userInput = wgetch(mainWindow);
+		userInput = wgetch(mainWindow);
 		userInputChar = userInput - 1;
 		//Navigate the menu with input
 		switch (userInput) {
 		case 10:
 			//Activate current user selection
 			breakOut = item_index(current_item(mainMenu));
-			if (breakOut < menuLineSize && breakOut != -1 && (mainMenuInfo.menuName == "Main Menu" || breakOut == menuLineSize - 1)) {
+			if (breakOut < menuLineSize && breakOut != -1
+					&& (mainMenuInfo.menuName == "Main Menu"
+							|| breakOut == menuLineSize - 1)) {
 				dontExit = 0;
 			}
+			currentItemName = (char *)item_name(current_item(mainMenu));
+			notification = derwin(mainWindow, 1, strlen(currentItemName) + 9, getmaxy(mainWindow) / 2, (getmaxx(mainWindow) - 9 - strlen(currentItemName)) / 2);
+			wprintw(notification, "Selected %s", currentItemName);
+			wrefresh(notification);
+			std::this_thread::sleep_for(std::chrono::milliseconds(250));
+			wclear(notification);
+			delwin(notification);
 			break;
 		case KEY_UP:
 			menu_driver(mainMenu, REQ_PREV_ITEM);
@@ -111,14 +119,13 @@ int makeMenu(MenuLines &mainMenuInfo) {
 	clear();
 	if (strcmp(item_name(current_item(mainMenu)), "Exit") == 0) {
 		mvwprintw(mainWindow, getmaxy(mainWindow) / 2,
-			getmaxx(mainWindow) / 2 - 5, "Goodbye!");
+				getmaxx(mainWindow) / 2 - 5, "Goodbye!");
 		wrefresh(mainWindow);
 		std::this_thread::sleep_for(std::chrono::seconds(1));
 	}
 
 	//End program
-	deleteMenu(mainMenu, items,
-			mainMenuInfo.menuLines.size());
+	deleteMenu(mainMenu, items, mainMenuInfo.menuLines.size());
 	endWindow(mainWindow);
 
 	return breakOut;
@@ -147,8 +154,8 @@ void createMenu(MENU *&mainMenu, WINDOW *mainWindow,
 	set_menu_win(mainMenu, mainWindow);
 	set_menu_sub(mainMenu,
 			derwin(mainWindow, menuLineSize,
-				mainMenuInfo.longestMenuLength, 4,
-				(cols - mainMenuInfo.longestMenuLength) / 2));
+					mainMenuInfo.longestMenuLength, 4,
+					(cols - mainMenuInfo.longestMenuLength) / 2));
 	set_menu_mark(mainMenu, ">");
 	post_menu(mainMenu);
 }
@@ -211,16 +218,14 @@ void refreshWindow(MENU *&mainMenu, WINDOW *&mainWindow,
 	set_menu_win(mainMenu, mainWindow);
 	set_menu_sub(mainMenu,
 			derwin(mainWindow, menuLineSize,
-				mainMenuInfo.menuLines[0].length(), 4,
-				(cols - mainMenuInfo.menuLines[0].length()) / 2));
+					mainMenuInfo.menuLines[0].length(), 4,
+					(cols - mainMenuInfo.menuLines[0].length()) / 2));
 	box(mainWindow, 0, 0);
 	mvwprintw(mainWindow, 1,
-			(getmaxx(mainWindow)
-				- mainMenuInfo.storeName.length() / 2),
+			(getmaxx(mainWindow) - mainMenuInfo.storeName.length() / 2),
 			mainMenuInfo.storeName.c_str());
 	mvwprintw(mainWindow, 2,
-			(getmaxx(mainWindow)
-				- mainMenuInfo.menuName.length() / 2),
+			(getmaxx(mainWindow) - mainMenuInfo.menuName.length() / 2),
 			mainMenuInfo.menuName.c_str());
 	post_menu(mainMenu);
 	mvwprintw(mainWindow, getmaxy(mainWindow) - 2,

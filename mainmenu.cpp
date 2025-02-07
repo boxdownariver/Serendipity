@@ -4,12 +4,13 @@
 #include "cashier.h"
 
 int main() {
-	std::string menuName = "Main Menu";
+	MenuLines mainMenuInfo;
 	std::vector<std::string> menuListing = { "Cashier Module",
 			"Inventory Database Module", "Report Module", "Exit" };
-	MenuLines mainMenuInfo;
+	std::string menuName = "Main Menu";
 	int menuResult;
 	bool continueMenu;
+
 	mainMenuInfo.menuName = menuName;
 	mainMenuInfo.menuLines = menuListing;
 	mainMenuInfo.longestMenuLength = sizeof("Inventory Database Module")
