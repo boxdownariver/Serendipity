@@ -1,6 +1,6 @@
 #include <iostream>
 #include "menuDipity.h"
-int main() {
+int main_reports() {
 	//MenuLines mainMenuInfo = 	 //INPUT- Information struct for main menu
 	std::string menuName = "Reports";
 	std::vector<std::string> menuListing = { "Inventory Listing", "Inventory Wholesale Value",
