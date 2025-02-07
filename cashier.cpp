@@ -47,13 +47,23 @@ int mainCashier (){
 	char choice;
 
 	do {
+
+	// Clear the screen and set the colour
+	system("clear");
 	setColour (96);
+		
 	// Pass to a function to get the data.
 	askData ( bookOne);
-
+		
+	// Clear the screen
+	system("clear");
+		
 	// Pass to a function to show the formatted report
 	FormatReport (bookOne); 
-		
+
+	// Back to the deafult colour
+	setColour (96);
+
 	cout << "Do you want to proceed another transaction(Y/N)?\n";
 	cin.get (choice);
 	cin.ignore (100, '\n');
@@ -91,9 +101,6 @@ void askData (bookType &books)
 
 void FormatReport (const bookType &books)
 {
-	// Clear the screen
-	system("clear");
-
 	float subtotal;
 	float tax_amt;
 	const float TAX_PCT = 0.06;
