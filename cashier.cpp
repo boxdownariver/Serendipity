@@ -90,7 +90,7 @@ void askData (bookType &books)
 	cin >> books.quantity;
 	cin.ignore();
 	
-	cout << setw (20) << left << "\nISBN " << " : ";
+	cout << setw (20) << left << "\nISBN (10 - 13 digits)" << " : ";
 	getline (cin, books.isbn);
 
 	cout << setw (20) << left << "\nTitle" << " : ";
