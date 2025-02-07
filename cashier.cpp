@@ -60,9 +60,6 @@ int mainCashier (){
 		
 	// Pass to a function to show the formatted report
 	FormatReport (bookOne); 
-
-	// Back to the default colour
-	setColour (96);
 		
 	cout << "Do you want to proceed another transaction(Y/N)?\n";
 	cin.get (choice);
@@ -173,6 +170,10 @@ void FormatReport (const bookType &books)
 	cout << "|\n";
 	cout << "+------------------------------------------------------------------------------+\n";
 
+	// Back to the default colour
+	setColour (96);
+	cout << "Closing cashier...\n";
+	
 	return;
 }
 
