@@ -10,6 +10,8 @@ reports: reports.cpp
 	g++ -o "reports" reports.cpp -lncurses -lmenu
 bookInfo: bookInfo.cpp
 	g++ -o "bookinfo" bookInfo.cpp
+menuDriver: menuDipity.cpp
+	g++ -o "menuDriver" menuDipity.cpp -lncurses -lmenu
 
 clean:
 	rm cashier mainmenu
