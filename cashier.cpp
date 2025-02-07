@@ -97,7 +97,10 @@ void askData (bookType &books)
 	// Calculate the total.
 	books.total = books.price * books.quantity;
 
-	cout << "Information added, press enter to proceed with cashier receipt\n";
+	// Show the below txt in Yellow
+	setColour (93);
+	
+	cout << "Information added, press enter to view the cashier receipt\n";
 	cin.ignore();	
 	
 	return;
