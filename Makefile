@@ -1,4 +1,4 @@
-everything: mainmenu bookInfo
+everything: serendipity bookInfo
 
 serendipity: mainmenu.cpp cashier.o menuDriver.o invmenu.o reports.o
 	g++ -o "serendipity" mainmenu.cpp menuDriver.o invmenu.o reports.o cashier.o -lncurses -lmenu
