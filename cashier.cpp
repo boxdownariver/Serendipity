@@ -1,3 +1,4 @@
+// BRANCH OF CASHIER.CPP
 // Saliha Babar                    CS1A                            Serendipity
 //
 /******************************************************************************
@@ -40,8 +41,7 @@ void askData (bookType &books);
 void FormatReport (const bookType &books);
 void setColour ( int colourCode );
 
-
-int main (){
+int mainCashier (){
 
 	bookType bookOne;
 	char choice;
