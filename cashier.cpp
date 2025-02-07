@@ -65,7 +65,8 @@ int mainCashier (){
 	cout << "Do you want to proceed another transaction(Y/N)?\n";
 	cin.get (choice);
 	cin.ignore (100, '\n');
-	
+		
+	}
 	while (toupper (choice) != 'N');
 
 	cout << "\033[0m"; // Back to default colour
