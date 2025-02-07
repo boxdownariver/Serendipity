@@ -90,10 +90,9 @@ int makeMenu(MenuLines &mainMenuInfo) {
 		case 10:
 			//Activate current user selection
 			breakOut = item_index(current_item(mainMenu));
-			if (breakOut < menuLineSize && breakOut != -1) {
+			if (breakOut < menuLineSize && breakOut != -1 && (mainMenuInfo.menuName == "Main Menu" || breakOut == menuLineSize - 1)) {
 				dontExit = 0;
 			}
-			//for testing purposes. Remove this later
 			break;
 		case KEY_UP:
 			menu_driver(mainMenu, REQ_PREV_ITEM);
