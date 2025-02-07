@@ -19,31 +19,26 @@
 #include <chrono>
 #include <thread>
 #include <cstdlib>
-#include <iostream>
+#include <string.h>
+//#include <iostream>
 #include "menuDipity.h"
+
+void createMenu(MENU *&mainMenu, WINDOW *mainWindow,
+		const MenuLines &mainMenuInfo, ITEM **&items);
+void deleteMenu(MENU *&mainMenu, ITEM **&items, size_t menuLineSize);
+void startWindow(WINDOW *&mainWindow);
+void endWindow(WINDOW *&mainWindow);
+void handleSignal(const int signal);
+void refreshWindow(MENU *&mainMenu, WINDOW *&mainWindow,
+		const MenuLines &mainMenuInfo);
 
 volatile sig_atomic_t stateProvider = 0;
 
-int main() {
-	MenuLines mainMenuInfo = 	 //INPUT- Information struct for main menu
-			{ "Reports", { "Inventory Listing", "Inventory Wholesale Value",
-					"Inventory Retail Value", "Listing by Quantity", 
-					"Listing by Cost", "Listing by Age", 
-					"Return to Main Menu"} };
-	std::cout << makeMenu(mainMenuInfo) << std::endl;
-	
-	return 0;
-}
 int makeMenu(MenuLines &mainMenuInfo) {
-	struct sigaction sa;	 	 //OUTPUT- Signal action handler
+	struct sigaction sa;	 //OUTPUT- Signal action handler
 	ITEM **items;			 //OUTPUT- Menu items
 	MENU *mainMenu;			 //OUTPUT- Complete menu
 	WINDOW *mainWindow;		 //OUTPUT- Window to hold menu
-	/*MenuLines mainMenuInfo = 	 //INPUT- Information struct for main menu
-			{ "Reports", { "Inventory Listing", "Inventory Wholesale Value",
-					"Inventory Retail Value", "Listing by Quantity", 
-					"Listing by Cost", "Listing by Age", 
-					"Return to Main Menu"} };*/
 	bool dontExit;			 //INPUT- Prevent exiting until need is met
 	int menuLineSize;
 	int userInput;
@@ -52,7 +47,7 @@ int makeMenu(MenuLines &mainMenuInfo) {
 
 	userInputChar = '1';
 		
-	menuLineSize = sizeof(mainMenuInfo.menuLines) / sizeof(mainMenuInfo.menuLines[0]);
+	menuLineSize = mainMenuInfo.menuLines.size();//!!!
 
 	//Handle system signals
 	sa.sa_flags = 0;
@@ -67,12 +62,12 @@ int makeMenu(MenuLines &mainMenuInfo) {
 	box(mainWindow, 0, 0);
 	mvwprintw(mainWindow, 1,
 			(getmaxx(mainWindow)
-				- sizeof(mainMenuInfo.storeName) / sizeof(char)) / 2,
-			mainMenuInfo.storeName);
+				- mainMenuInfo.storeName.length()) / 2,
+			mainMenuInfo.storeName.c_str());
 	mvwprintw(mainWindow, 2,
 			(getmaxx(mainWindow)
-				- sizeof(mainMenuInfo.menuName) / sizeof(char)) / 2,
-			mainMenuInfo.menuName);
+				- mainMenuInfo.menuName.length()) / 2,
+			mainMenuInfo.menuName.c_str());
 	post_menu(mainMenu);
 	mvwprintw(mainWindow, getmaxy(mainWindow) - 2,
 			(getmaxx(mainWindow) - 38) / 2,
@@ -98,6 +93,7 @@ int makeMenu(MenuLines &mainMenuInfo) {
 			if (breakOut < menuLineSize && breakOut != -1) {
 				dontExit = 0;
 			}
+			//for testing purposes. Remove this later
 			break;
 		case KEY_UP:
 			menu_driver(mainMenu, REQ_PREV_ITEM);
@@ -113,15 +109,17 @@ int makeMenu(MenuLines &mainMenuInfo) {
 		}
 	} while (dontExit);
 
+	clear();
+	if (strcmp(item_name(current_item(mainMenu)), "Exit") == 0) {
+		mvwprintw(mainWindow, getmaxy(mainWindow) / 2,
+			getmaxx(mainWindow) / 2 - 5, "Goodbye!");
+		wrefresh(mainWindow);
+		std::this_thread::sleep_for(std::chrono::seconds(1));
+	}
+
 	//End program
 	deleteMenu(mainMenu, items,
-			sizeof(mainMenuInfo.menuLines)
-				/ sizeof(mainMenuInfo.menuLines[0]) + 1);
-	clear();
-	//mvwprintw(mainWindow, getmaxy(mainWindow) / 2,
-	//		getmaxx(mainWindow) / 2 - 5, "Goodbye!");
-	wrefresh(mainWindow);
-	//std::this_thread::sleep_for(std::chrono::seconds(1));
+			mainMenuInfo.menuLines.size());
 	endWindow(mainWindow);
 
 	return breakOut;
@@ -135,14 +133,13 @@ void createMenu(MENU *&mainMenu, WINDOW *mainWindow,
 
 	//Init cols, menuLineSize & items
 	cols = getmaxx(mainWindow);
-	menuLineSize = sizeof(mainMenuInfo.menuLines)
-			/ sizeof(mainMenuInfo.menuLines[0]);
+	menuLineSize = mainMenuInfo.menuLines.size();
 	items = (ITEM**) calloc(menuLineSize + 1, sizeof(ITEM*));
 
 	//Items must be initialized to menu line items
 	for (i = 0; i < menuLineSize; i++) {
-		items[i] = new_item(mainMenuInfo.menuLines[i],
-				mainMenuInfo.menuLines[i]);
+		items[i] = new_item(mainMenuInfo.menuLines[i].c_str(),
+				mainMenuInfo.menuLines[i].c_str());
 	}
 	items[menuLineSize] = new_item((char*) NULL, (char*) NULL);
 
@@ -151,8 +148,8 @@ void createMenu(MENU *&mainMenu, WINDOW *mainWindow,
 	set_menu_win(mainMenu, mainWindow);
 	set_menu_sub(mainMenu,
 			derwin(mainWindow, menuLineSize,
-				sizeof(mainMenuInfo.menuLines[0]), 4,
-				(cols - sizeof(mainMenuInfo.menuLines[0])) / 2));
+				mainMenuInfo.longestMenuLength, 4,
+				(cols - mainMenuInfo.longestMenuLength) / 2));
 	set_menu_mark(mainMenu, ">");
 	post_menu(mainMenu);
 }
@@ -197,13 +194,12 @@ void endWindow(WINDOW *&mainWindow) {
 
 //Recalculate the window, but keep the menu the same.
 void refreshWindow(MENU *&mainMenu, WINDOW *&mainWindow,
-		MenuLines mainMenuInfo) {
+		const MenuLines &mainMenuInfo) {
 	size_t menuLineSize;		//INPUT- Size of menu lines for alignment
 	size_t cols;			//INPUT- Column count of inner window
 
 	//Initialize menuLineSize
-	menuLineSize = sizeof(mainMenuInfo.menuLines)
-			/ sizeof(mainMenuInfo.menuLines[0]);
+	menuLineSize = mainMenuInfo.menuLines.size();
 
 	//Get rid of the window before restarting it
 	unpost_menu(mainMenu);
@@ -216,17 +212,17 @@ void refreshWindow(MENU *&mainMenu, WINDOW *&mainWindow,
 	set_menu_win(mainMenu, mainWindow);
 	set_menu_sub(mainMenu,
 			derwin(mainWindow, menuLineSize,
-				sizeof(mainMenuInfo.menuLines[0]), 4,
-				(cols - sizeof(mainMenuInfo.menuLines[0])) / 2));
+				mainMenuInfo.menuLines[0].length(), 4,
+				(cols - mainMenuInfo.menuLines[0].length()) / 2));
 	box(mainWindow, 0, 0);
 	mvwprintw(mainWindow, 1,
 			(getmaxx(mainWindow)
-				- sizeof(mainMenuInfo.storeName) / sizeof(char)) / 2,
-			mainMenuInfo.storeName);
+				- mainMenuInfo.storeName.length() / 2),
+			mainMenuInfo.storeName.c_str());
 	mvwprintw(mainWindow, 2,
 			(getmaxx(mainWindow)
-				- sizeof(mainMenuInfo.menuName) / sizeof(char)) / 2,
-			mainMenuInfo.menuName);
+				- mainMenuInfo.menuName.length() / 2),
+			mainMenuInfo.menuName.c_str());
 	post_menu(mainMenu);
 	mvwprintw(mainWindow, getmaxy(mainWindow) - 2,
 			(getmaxx(mainWindow) - 38) / 2,
