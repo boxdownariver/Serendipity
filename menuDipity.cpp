@@ -34,21 +34,22 @@ void refreshWindow(MENU *&mainMenu, WINDOW *&mainWindow, WINDOW *&notification,
 volatile sig_atomic_t stateProvider = 0;
 
 int makeMenu(MenuLines &mainMenuInfo) {
-	struct sigaction sa;	 //OUTPUT- Signal action handler
 	ITEM **items;			 //OUTPUT- Menu items
 	MENU *mainMenu;			 //OUTPUT- Complete menu
 	WINDOW *mainWindow;		 //OUTPUT- Window to hold menu
-	bool dontExit;			 //INPUT- Prevent exiting until need is met
-	int menuLineSize;
-	int userInput;
-	char userInputChar;
-	int breakOut;
-	char * currentItemName;
-	WINDOW * notification;
+	WINDOW * notification;		 //OUTPUT- Notification at bottom of screen
+	struct sigaction sa;	 	 //OUTPUT- Signal action handler
+	int breakOut;			 //OUTPUT- Return of menu (for when it breaks out)
+	int menuLineSize;		 //INPUT-  Size of the list of menu lines
+	int userInput;			 //INPUT-  User key input
+	char userInputChar;		 //INPUT-  User input (hard- coded as char)
+	char * currentItemName;		 //INPUT-  Name of item currently selected
+	bool dontExit;			 //INPUT-  Prevent exiting until need is met
 
+	//Init menuLineSize and userInputChar
 	userInputChar = '1';
 
-	menuLineSize = mainMenuInfo.menuLines.size();			 //!!!
+	menuLineSize = mainMenuInfo.menuLines.size();		
 
 	//Handle system signals
 	sa.sa_flags = 0;
