@@ -20,7 +20,7 @@ int main() {
 		continueMenu = 1;
 		menuResult = makeMenu(mainMenuInfo);
 
-		switch (menuResult) {\
+		switch (menuResult) {
 		case 0:
 			mainCashier();
 			break;
