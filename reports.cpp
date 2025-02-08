@@ -1,7 +1,5 @@
-#include <iostream>
 #include "menuDipity.h"
 int main_reports() {
-	//MenuLines mainMenuInfo = 	 //INPUT- Information struct for main menu
 	std::string menuName = "Reports";
 	std::vector<std::string> menuListing = { "Inventory Listing", "Inventory Wholesale Value",
 					"Inventory Retail Value", "Listing by Quantity",
@@ -11,7 +9,7 @@ int main_reports() {
 	mainMenuInfo.menuName = menuName;
 	mainMenuInfo.menuLines = menuListing;
 	mainMenuInfo.longestMenuLength = sizeof("Inventory Wholesale Value") / sizeof(char);
-	std::cout << makeMenu(mainMenuInfo) << std::endl;
+	makeMenu(mainMenuInfo);
 
 	return 0;
 }
