@@ -1,7 +1,7 @@
-#include "menuDipity.h"
-#include "reports.h"
-#include "invmenu.h"
-#include "cashier.h"
+#include "headers/menuDipity.h"
+#include "headers/reports.h"
+#include "headers/invmenu.h"
+#include "headers/cashier.h"
 
 int main() {
 	MenuLines mainMenuInfo;

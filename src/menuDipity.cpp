@@ -1,13 +1,13 @@
 //Micah Krosby                      CS1B                        Serendipity
 /**************************************************************************
- * MENU GENERALIZATION 
+ * MENU GENERALIZATION
  *_________________________________________________________________________
  * This program generates menu interfaces for the Serendipity project
  *_________________________________________________________________________
  *	INPUTS-
  *	    Key input (char) -> Keyboard-based instruction for the program
  *	    Signals (int) -> Signals passed by the system
- *	    mainMenuInfo (char *, char **, char *) -> Menu name, 
+ *	    mainMenuInfo (char *, char **, char *) -> Menu name,
  *	    					menu options, store name
  *	OUTPUTS-
  *	    mainWindow -> Window containing mainMenu interface
@@ -20,7 +20,7 @@
 #include <thread>
 #include <cstdlib>
 #include <string.h>
-#include "menuDipity.h"
+#include "headers/menuDipity.h"
 
 void createMenu(MENU *&mainMenu, WINDOW *mainWindow,
 		const MenuLines &mainMenuInfo, ITEM **&items);
@@ -49,7 +49,7 @@ int makeMenu(MenuLines &mainMenuInfo) {
 	//Init menuLineSize and userInputChar
 	userInputChar = '1';
 
-	menuLineSize = mainMenuInfo.menuLines.size();		
+	menuLineSize = mainMenuInfo.menuLines.size();
 
 	//Handle system signals
 	sa.sa_flags = 0;
