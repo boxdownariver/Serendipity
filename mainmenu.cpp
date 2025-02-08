@@ -23,6 +23,7 @@ int main() {
 		switch (menuResult) {
 		case 0:
 			mainCashier();
+			system("clear");
 			break;
 		case 1:
 			main_invmenu();
