@@ -20,7 +20,6 @@
 #include <thread>
 #include <cstdlib>
 #include <string.h>
-//#include <iostream>
 #include "menuDipity.h"
 
 void createMenu(MENU *&mainMenu, WINDOW *mainWindow,
