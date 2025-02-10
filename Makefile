@@ -1,17 +1,17 @@
-everything: mainmenu cashier invmenu reports bookInfo
+all: out/serendipity out/bookInfo
 
-mainmenu: mainmenu.cpp menuDriver
-	g++ -o "mainmenu" mainmenu.cpp menuDriver.o -lncurses -lmenu
-cashier: cashier.cpp 
-	g++ -o "cashier" cashier.cpp
-invmenu: invmenu.cpp menuDriver
-	g++ -o "invmenu" invmenu.cpp menuDriver.o -lncurses -lmenu
-reports: reports.cpp menuDriver
-	g++ -o "reports" reports.cpp menuDriver.o -lncurses -lmenu
-bookInfo: bookInfo.cpp
-	g++ -o "bookinfo" bookInfo.cpp
-menuDriver: menuDipity.cpp
-	g++ -c -o "menuDriver.o" menuDipity.cpp 
+out/serendipity: src/mainmenu.cpp out/cashier.o out/menuDriver.o out/invmenu.o out/reports.o
+	g++ --std=c++20 -o "out/serendipity" src/mainmenu.cpp out/menuDriver.o out/invmenu.o out/reports.o out/cashier.o -lncurses -lmenu
+out/cashier.o: src/cashier.cpp
+	g++ -c -o "out/cashier.o" src/cashier.cpp
+out/invmenu.o: src/invmenu.cpp
+	g++ --std=c++20 -c -o "out/invmenu.o" src/invmenu.cpp
+out/reports.o: src/reports.cpp
+	g++ --std=c++20 -c -o "out/reports.o" src/reports.cpp
+out/bookInfo: src/bookInfo.cpp
+	g++ -o "out/bookinfo" src/bookInfo.cpp
+out/menuDriver.o: src/menuDipity.cpp
+	g++ --std=c++20 -c -o "out/menuDriver.o" src/menuDipity.cpp
 
 clean:
-	rm cashier mainmenu
+	rm out/*.o
