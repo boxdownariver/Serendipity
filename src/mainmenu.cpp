@@ -16,6 +16,7 @@ int main() {
 	mainMenuInfo.longestMenuLength = sizeof("Inventory Database Module")
 			/ sizeof(char);
 
+	system("clear");
 	do {
 		continueMenu = 1;
 		menuResult = makeMenu(mainMenuInfo);
