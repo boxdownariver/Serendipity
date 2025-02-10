@@ -1,7 +1,7 @@
-all: out/serendipity out/bookInfo
+all: serendipity out/bookInfo
 
-out/serendipity: src/mainmenu.cpp out/cashier.o out/menuDriver.o out/invmenu.o out/reports.o out/
-	g++ --std=c++20 -o "out/serendipity" src/mainmenu.cpp out/menuDriver.o out/invmenu.o out/reports.o out/cashier.o -lncurses -lmenu
+serendipity: src/mainmenu.cpp out/cashier.o out/menuDriver.o out/invmenu.o out/reports.o out/
+	g++ --std=c++20 -o "serendipity" src/mainmenu.cpp out/menuDriver.o out/invmenu.o out/reports.o out/cashier.o -lncurses -lmenu
 out/cashier.o: src/cashier.cpp out/
 	g++ -c -o "out/cashier.o" src/cashier.cpp
 out/invmenu.o: src/invmenu.cpp out/
