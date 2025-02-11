@@ -19,4 +19,16 @@ struct MenuLines {
 int makeMenu(MenuLines &);
 #endif
 
+#ifndef menu_utils
+#define menu_utils
+#include <menu.h>
+#include <curses.h>
+void createMenu(MENU *&mainMenu, WINDOW *mainWindow,
+                const MenuLines &mainMenuInfo, ITEM **&items);
+void deleteMenu(MENU *&mainMenu, ITEM **&items, size_t menuLineSize);
+void startWindow(WINDOW *&mainWindow);
+void endWindow(WINDOW *&mainWindow);
+void refreshWindow(MENU *&mainMenu, WINDOW *&mainWindow, WINDOW *&notification,
+                const MenuLines &mainMenuInfo);
+#endif
 #endif

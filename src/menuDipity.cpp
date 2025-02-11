@@ -12,7 +12,7 @@
  *	OUTPUTS-
  *	    mainWindow -> Window containing mainMenu interface
  *************************************************************************/
-
+#define menu_utils
 #include <curses.h>
 #include <signal.h>
 #include <menu.h>
