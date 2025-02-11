@@ -1,3 +1,4 @@
+#define menu_utils
 #include "headers/menuDipity.h"
 #include "headers/reports.h"
 #include "headers/invmenu.h"

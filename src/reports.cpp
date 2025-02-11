@@ -1,3 +1,4 @@
+#define menu_utils
 #include "headers/menuDipity.h"
 int main_reports() {
 	std::string menuName = "Reports";
