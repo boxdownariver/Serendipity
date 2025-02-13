@@ -102,14 +102,24 @@ int makeMenu(MenuLines &mainMenuInfo) {
 			wrefresh(notification);
 			break;
 		case KEY_UP:
+			wclear(notification);
+			wrefresh(notification);
 			menu_driver(mainMenu, REQ_PREV_ITEM);
 			break;
 		case KEY_DOWN:
+			wclear(notification);
+			wrefresh(notification);
 			menu_driver(mainMenu, REQ_NEXT_ITEM);
 			break;
 		default:
 			if (userInput >= '1' && userInput <= menuLineSize + 48) {
+				wclear(notification);
 				set_current_item(mainMenu, items[atoi(&userInputChar)]);
+				wrefresh(notification);
+			} else {
+				wclear(notification);
+				wprintw(notification, "Invalid Input");
+				wrefresh(notification);
 			}
 			break;
 		}
