@@ -2,6 +2,9 @@
 #include <iostream>
 #include <algorithm>
 #include <string>
+#include <cctype>
+#include <cstdlib>
+#include <iomanip>
 using namespace std;
 
 
@@ -25,22 +28,24 @@ int mainLookUp() {
     books[4].bookNames = "Star Wars: Verily, A New Hope";
     
     books[0].isbn = "01010101";
-    books[1].bookNames = "123456789";
-    books[2].bookNames = "101112131";
-    books[3].bookNames = "141516171";
-    books[4].bookNames = "18192021\n";
+    books[1].isbn = "123456789";
+    books[2].isbn = "101112131";
+    books[3].isbn = "141516171";
+    books[4].isbn = "18192021\n";
 
     cout << ">>> BOOK LOOKUP <<<\n";
     cout << "Search : ";
     getline (cin, toSearch);
 
     bookIndex = findString (toSearch, books);
-
     if (bookIndex != -1)
     {
         //show the book details to user
-        
+	system("clear");
+        showBook (bookIndex, books);
     }
+	
+	
     return 0;
 }
 
@@ -64,12 +69,11 @@ int findString (string toSearch, bookType array[])
              // Look up for the string name or isbn
              if (tempTitle.find(searchUpper) != string::npos || array[index].isbn.find (toSearch)!= string::npos)
              {
-                 cout << "\nRESULT > : Title - " << array[index].bookNames;
-                 cout << "\nRESULT > : ISBN  - " << array[index].isbn;
+                 cout << "\nRESULT -> : Title - " << array[index].bookNames;
 
-                 cout << "\nIs this the book you intended to search for? (Y/N)";
+                 cout << "\nIs this the book you intended to search for? (Y/N) : ";
                  cin.get (choice);
-	             cin.ignore (100, '\n');
+	         cin.ignore (100, '\n');
 
                  while (toupper(choice) != 'N' && toupper(choice) != 'Y' )
 			        {
@@ -91,6 +95,11 @@ int findString (string toSearch, bookType array[])
 
 void showBook (int index, const bookType array [])
 {
-    cout << "Book Title : ------------------> " << array[index].bookNames;
-    cout << "ISBN : ------------------------> " << array[index].isbn;
+	
+    cout << "----------------------------------------------------------------------------\n";	
+    cout << "* Book Title : ------------------> " << setw(40) << left << array[index].bookNames << "*\n";
+    cout << "* ISBN : ------------------------> " << setw(40) << left << array[index].isbn << "*\n";
+    cout << "----------------------------------------------------------------------------\n";	
+	cout << "\nPress any key to continue..\n";
+	cin.ignore();	
 }
