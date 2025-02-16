@@ -1,3 +1,4 @@
+// BRANCH OF CASHIER.CPP
 // Saliha Babar                    CS1A                            Serendipity
 //
 /******************************************************************************
@@ -40,27 +41,43 @@ void askData (bookType &books);
 void FormatReport (const bookType &books);
 void setColour ( int colourCode );
 
-
-int main (){
+int mainCashier (){
 
 	bookType bookOne;
 	char choice;
 
 	do {
+
+	// Clear the screen and set the colour
+	system("clear");
 	setColour (96);
+		
 	// Pass to a function to get the data.
 	askData ( bookOne);
-
+		
+	// Clear the screen
+	system("clear");
+		
 	// Pass to a function to show the formatted report
 	FormatReport (bookOne); 
-		
+
+	cout << "\033[0m"; // Back to default colour
 	cout << "Do you want to proceed another transaction(Y/N)?\n";
 	cin.get (choice);
 	cin.ignore (100, '\n');
+
+		while (toupper(choice) != 'N' && toupper(choice) != 'Y' )
+			{
+				cout << choice << " is invalid choice.. Only enter Y or N\n";
+				cin.get (choice);
+				cin.ignore (100, '\n');
+			}
 		
 	}
 	while (toupper (choice) != 'N');
-
+	
+	cout << "\033[0m"; // Back to default colour
+	
 	return 0;
 }
 
@@ -73,7 +90,7 @@ void askData (bookType &books)
 	cin >> books.quantity;
 	cin.ignore();
 	
-	cout << setw (20) << left << "\nISBN " << " : ";
+	cout << setw (20) << left << "\nISBN (10 - 13 digits)" << " : ";
 	getline (cin, books.isbn);
 
 	cout << setw (20) << left << "\nTitle" << " : ";
@@ -85,15 +102,18 @@ void askData (bookType &books)
 		
 	// Calculate the total.
 	books.total = books.price * books.quantity;
+
+	// Show the below txt in Yellow
+	setColour (93);
+	
+	cout << "Information added, press enter to view the cashier receipt\n";
+	cin.ignore();	
 	
 	return;
 }
 
 void FormatReport (const bookType &books)
 {
-	// Clear the screen
-	system("clear");
-
 	float subtotal;
 	float tax_amt;
 	const float TAX_PCT = 0.06;
@@ -155,7 +175,7 @@ void FormatReport (const bookType &books)
 	setColour (96);    // Back to cyan colour
 	cout << "|\n";
 	cout << "+------------------------------------------------------------------------------+\n";
-
+	
 	return;
 }
 

@@ -1,31 +1,26 @@
 //Micah Krosby                      CS1B                        Serendipity
 /**************************************************************************
- * REPORTS 
+ * MENU GENERALIZATION
  *_________________________________________________________________________
- * This program generates a report menu interface for the Serendipity 
- * project
+ * This program generates menu interfaces for the Serendipity project
  *_________________________________________________________________________
  *	INPUTS-
  *	    Key input (char) -> Keyboard-based instruction for the program
  *	    Signals (int) -> Signals passed by the system
- *	    mainMenuInfo (char *, char **, char *) -> Menu name, 
+ *	    mainMenuInfo (char *, char **, char *) -> Menu name,
  *	    					menu options, store name
  *	OUTPUTS-
  *	    mainWindow -> Window containing mainMenu interface
  *************************************************************************/
-
+#define menu_utils
 #include <curses.h>
 #include <signal.h>
 #include <menu.h>
 #include <chrono>
 #include <thread>
 #include <cstdlib>
-
-struct MenuLines {
-	char menuName[8];
-	char menuLines[7][26];
-	char storeName[24] = "Serendipity Booksellers";
-};
+#include <string.h>
+#include "headers/menuDipity.h"
 
 void createMenu(MENU *&mainMenu, WINDOW *mainWindow,
 		const MenuLines &mainMenuInfo, ITEM **&items);
@@ -33,29 +28,28 @@ void deleteMenu(MENU *&mainMenu, ITEM **&items, size_t menuLineSize);
 void startWindow(WINDOW *&mainWindow);
 void endWindow(WINDOW *&mainWindow);
 void handleSignal(const int signal);
-void refreshWindow(MENU *&mainMenu, WINDOW *&mainWindow,
-		MenuLines mainMenuInfo);
+void refreshWindow(MENU *&mainMenu, WINDOW *&mainWindow, WINDOW *&notification,
+		const MenuLines &mainMenuInfo);
 
 volatile sig_atomic_t stateProvider = 0;
 
-int main() {
-	struct sigaction sa;	 	 //OUTPUT- Signal action handler
+int makeMenu(MenuLines &mainMenuInfo) {
 	ITEM **items;			 //OUTPUT- Menu items
 	MENU *mainMenu;			 //OUTPUT- Complete menu
 	WINDOW *mainWindow;		 //OUTPUT- Window to hold menu
-	MenuLines mainMenuInfo = 	 //INPUT- Information struct for main menu
-			{ "Reports", { "Inventory Listing", "Inventory Wholesale Value",
-					"Inventory Retail Value", "Listing by Quantity", 
-					"Listing by Cost", "Listing by Age", 
-					"Return to Main Menu"} };
-	bool dontExit;			 //INPUT- Prevent exiting until need is met
-	int menuLineSize;
-	int userInput;
-	char userInputChar;
+	WINDOW * notification;		 //OUTPUT- Notification at bottom of screen
+	struct sigaction sa;	 	 //OUTPUT- Signal action handler
+	int breakOut;			 //OUTPUT- Return of menu (for when it breaks out)
+	int menuLineSize;		 //INPUT-  Size of the list of menu lines
+	int userInput;			 //INPUT-  User key input
+	char userInputChar;		 //INPUT-  User input (hard- coded as char)
+	char * currentItemName;		 //INPUT-  Name of item currently selected
+	bool dontExit;			 //INPUT-  Prevent exiting until need is met
 
+	//Init menuLineSize and userInputChar
 	userInputChar = '1';
-		
-	menuLineSize = sizeof(mainMenuInfo.menuLines) / sizeof(mainMenuInfo.menuLines[0]);
+
+	menuLineSize = mainMenuInfo.menuLines.size();
 
 	//Handle system signals
 	sa.sa_flags = 0;
@@ -69,67 +63,83 @@ int main() {
 	//Print menu dialog
 	box(mainWindow, 0, 0);
 	mvwprintw(mainWindow, 1,
-			(getmaxx(mainWindow)
-				- sizeof(mainMenuInfo.storeName) / sizeof(char)) / 2,
-			mainMenuInfo.storeName);
+			(getmaxx(mainWindow) - mainMenuInfo.storeName.length()) / 2,
+			mainMenuInfo.storeName.c_str());
 	mvwprintw(mainWindow, 2,
-			(getmaxx(mainWindow)
-				- sizeof(mainMenuInfo.menuName) / sizeof(char)) / 2,
-			mainMenuInfo.menuName);
+			(getmaxx(mainWindow) - mainMenuInfo.menuName.length()) / 2,
+			mainMenuInfo.menuName.c_str());
 	post_menu(mainMenu);
 	mvwprintw(mainWindow, getmaxy(mainWindow) - 2,
 			(getmaxx(mainWindow) - 38) / 2,
-			"Select [1-%d] or navigate to module...", 
-			menuLineSize);
+			"Select [1-%d] or navigate to module...", menuLineSize);
 	wrefresh(mainWindow);
+
+	notification = newwin(1, 3 * COLS / 5, 9 * LINES / 10, COLS / 5);
 
 	//Main program loop
 	dontExit = 1;
+	breakOut = -1;
 	do {
 		if (stateProvider) {
-			refreshWindow(mainMenu, mainWindow, mainMenuInfo);
+			refreshWindow(mainMenu, mainWindow, notification, mainMenuInfo);
 			stateProvider = 0;
 		}
- 		userInput = wgetch(mainWindow);
+		userInput = wgetch(mainWindow);
 		userInputChar = userInput - 1;
 		//Navigate the menu with input
 		switch (userInput) {
 		case 10:
 			//Activate current user selection
-			switch (item_index(current_item(mainMenu))) {
-			case 6:
+			breakOut = item_index(current_item(mainMenu));
+			if (breakOut < menuLineSize && breakOut != -1
+					&& (mainMenuInfo.menuName == "Main Menu"
+							|| breakOut == menuLineSize - 1)) {
 				dontExit = 0;
-				break;
-			default:
-				break;
 			}
+			wclear(notification);
+			currentItemName = (char *)item_name(current_item(mainMenu));
+			wprintw(notification, "Selected %s", currentItemName);
+			wrefresh(notification);
 			break;
 		case KEY_UP:
+			wclear(notification);
+			wrefresh(notification);
 			menu_driver(mainMenu, REQ_PREV_ITEM);
 			break;
 		case KEY_DOWN:
+			wclear(notification);
+			wrefresh(notification);
 			menu_driver(mainMenu, REQ_NEXT_ITEM);
 			break;
 		default:
 			if (userInput >= '1' && userInput <= menuLineSize + 48) {
+				wclear(notification);
 				set_current_item(mainMenu, items[atoi(&userInputChar)]);
+				wrefresh(notification);
+			} else {
+				wclear(notification);
+				wprintw(notification, "Invalid Input");
+				wrefresh(notification);
 			}
 			break;
 		}
 	} while (dontExit);
 
-	//End program
-	deleteMenu(mainMenu, items,
-			sizeof(mainMenuInfo.menuLines)
-				/ sizeof(mainMenuInfo.menuLines[0]) + 1);
 	clear();
-	mvwprintw(mainWindow, getmaxy(mainWindow) / 2,
-			getmaxx(mainWindow) / 2 - 5, "Goodbye!");
-	wrefresh(mainWindow);
-	std::this_thread::sleep_for(std::chrono::seconds(1));
+	if (strcmp(item_name(current_item(mainMenu)), "Exit") == 0) {
+		mvwprintw(mainWindow, getmaxy(mainWindow) / 2,
+				getmaxx(mainWindow) / 2 - 5, "Goodbye!");
+		wrefresh(mainWindow);
+		std::this_thread::sleep_for(std::chrono::seconds(1));
+	}
+
+	//End program
+	wclear(notification);
+	delwin(notification);
+	deleteMenu(mainMenu, items, mainMenuInfo.menuLines.size());
 	endWindow(mainWindow);
 
-	return 0;
+	return breakOut;
 }
 
 //Create menu & menu items
@@ -140,14 +150,13 @@ void createMenu(MENU *&mainMenu, WINDOW *mainWindow,
 
 	//Init cols, menuLineSize & items
 	cols = getmaxx(mainWindow);
-	menuLineSize = sizeof(mainMenuInfo.menuLines)
-			/ sizeof(mainMenuInfo.menuLines[0]);
+	menuLineSize = mainMenuInfo.menuLines.size();
 	items = (ITEM**) calloc(menuLineSize + 1, sizeof(ITEM*));
 
 	//Items must be initialized to menu line items
 	for (i = 0; i < menuLineSize; i++) {
-		items[i] = new_item(mainMenuInfo.menuLines[i],
-				mainMenuInfo.menuLines[i]);
+		items[i] = new_item(mainMenuInfo.menuLines[i].c_str(),
+				mainMenuInfo.menuLines[i].c_str());
 	}
 	items[menuLineSize] = new_item((char*) NULL, (char*) NULL);
 
@@ -156,8 +165,8 @@ void createMenu(MENU *&mainMenu, WINDOW *mainWindow,
 	set_menu_win(mainMenu, mainWindow);
 	set_menu_sub(mainMenu,
 			derwin(mainWindow, menuLineSize,
-				sizeof(mainMenuInfo.menuLines[0]), 4,
-				(cols - sizeof(mainMenuInfo.menuLines[0])) / 2));
+					mainMenuInfo.longestMenuLength, 4,
+					(cols - mainMenuInfo.longestMenuLength) / 2));
 	set_menu_mark(mainMenu, ">");
 	post_menu(mainMenu);
 }
@@ -185,8 +194,8 @@ void startWindow(WINDOW *&mainWindow) {
 	curs_set(0);
 
 	//Initialize main window and add settings
-	mainWindow = newwin((3 * LINES / 5), (3 * COLS / 5), (1 * LINES / 5),
-			(1 * COLS / 5));
+	mainWindow = newwin((3 * LINES / 5), (3 * COLS / 5), (LINES / 5),
+			(COLS / 5));
 	keypad(mainWindow, TRUE);
 	clear();
 }
@@ -201,37 +210,37 @@ void endWindow(WINDOW *&mainWindow) {
 }
 
 //Recalculate the window, but keep the menu the same.
-void refreshWindow(MENU *&mainMenu, WINDOW *&mainWindow,
-		MenuLines mainMenuInfo) {
+void refreshWindow(MENU *&mainMenu, WINDOW *&mainWindow, WINDOW *&notification,
+		const MenuLines &mainMenuInfo) {
 	size_t menuLineSize;		//INPUT- Size of menu lines for alignment
 	size_t cols;			//INPUT- Column count of inner window
 
 	//Initialize menuLineSize
-	menuLineSize = sizeof(mainMenuInfo.menuLines)
-			/ sizeof(mainMenuInfo.menuLines[0]);
+	menuLineSize = mainMenuInfo.menuLines.size();
 
 	//Get rid of the window before restarting it
 	unpost_menu(mainMenu);
 	endWindow(mainWindow);
+	wclear(notification);
+	delwin(notification);
 	refresh();			//Load bearing refresh
 
 	//Start a new window: put the menu in it, draw old data to it
+	notification = newwin(1, 3 * COLS / 5, 9 * LINES / 10, COLS / 5);
 	startWindow(mainWindow);
 	cols = getmaxx(mainWindow);
 	set_menu_win(mainMenu, mainWindow);
 	set_menu_sub(mainMenu,
 			derwin(mainWindow, menuLineSize,
-				sizeof(mainMenuInfo.menuLines[0]), 4,
-				(cols - sizeof(mainMenuInfo.menuLines[0])) / 2));
+					mainMenuInfo.menuLines[0].length(), 4,
+					(cols - mainMenuInfo.menuLines[0].length()) / 2));
 	box(mainWindow, 0, 0);
 	mvwprintw(mainWindow, 1,
-			(getmaxx(mainWindow)
-				- sizeof(mainMenuInfo.storeName) / sizeof(char)) / 2,
-			mainMenuInfo.storeName);
+			((getmaxx(mainWindow) - mainMenuInfo.storeName.length()) / 2),
+			mainMenuInfo.storeName.c_str());
 	mvwprintw(mainWindow, 2,
-			(getmaxx(mainWindow)
-				- sizeof(mainMenuInfo.menuName) / sizeof(char)) / 2,
-			mainMenuInfo.menuName);
+			((getmaxx(mainWindow) - mainMenuInfo.menuName.length()) / 2),
+			mainMenuInfo.menuName.c_str());
 	post_menu(mainMenu);
 	mvwprintw(mainWindow, getmaxy(mainWindow) - 2,
 			(getmaxx(mainWindow) - 38) / 2,
