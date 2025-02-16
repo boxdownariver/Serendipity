@@ -1,6 +1,6 @@
 #define menu_utils
 #include "headers/menuDipity.h"
-#include "headers/mainLookUp.h"
+#include "headers/lookUp.h"
 
 int main_invmenu() {
 	std::string menuName = "Inventory Database";

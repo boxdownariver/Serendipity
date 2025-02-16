@@ -3,7 +3,7 @@
 #include "headers/reports.h"
 #include "headers/invmenu.h"
 #include "headers/cashier.h"
-#include "headers/mainLookUp.h"
+#include "headers/lookUp.h"
 
 int main() {
 	MenuLines mainMenuInfo;
