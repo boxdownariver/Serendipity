@@ -1,4 +1,8 @@
 // This is a stub function
+// Requirements (requires a function call to addBook program)
+// Book Count while the user is adding book
+// Data from addbook function ( bookType array )
+
 #include <iostream>
 #include <algorithm>
 #include <string>
@@ -7,20 +11,21 @@
 #include <iomanip>
 using namespace std;
 
-
-struct bookType {
+struct bookType {     // defined struct only for this function to work
 string bookNames;
 string isbn;
 };
 
-int findString (string toSearch, bookType array[]);
+int findString (string toSearch, bookType array[], const int size);
 void showBook (int index, const bookType array []);
 
 int mainLookUp() {
     bookType books [5];
     string toSearch;
     int bookIndex;
-    
+    int bookCount = 0;  // This is just an example, book count only depend on addbook function.
+    char choice = 'Y';  // Initialized so the loop executes for the first time
+	
     books[0].bookNames = "Star Wars";
     books[1].bookNames = "Star Wars Part the First";
     books[2].bookNames = "Star Wars Part the Second";
@@ -31,25 +36,44 @@ int mainLookUp() {
     books[1].isbn = "123456789";
     books[2].isbn = "101112131";
     books[3].isbn = "141516171";
-    books[4].isbn = "18192021\n";
+    books[4].isbn = "18192021";
 
-    cout << ">>> BOOK LOOKUP <<<\n";
-    cout << "Search : ";
-    getline (cin, toSearch);
+	if (bookCount == 0)
+	{
+		cout << "The book list is empty, no books available for search.\n";
+	}
 
-    bookIndex = findString (toSearch, books);
-    if (bookIndex != -1)
-    {
-        //show the book details to user
-	system("clear");
-        showBook (bookIndex, books);
-    }
-	
+	else {
+		while (bookCount != 0 && toupper (choice) != 'N' )
+	{
+		cout << ">>> BOOK LOOKUP <<<\n";
+    		cout << "Search : ";
+    		getline (cin, toSearch);
+
+    		bookIndex = findString (toSearch, books, bookCount );
+    			if (bookIndex != -1)
+    				{
+        				//show the book details to user
+					system("clear");
+        				showBook (bookIndex, books);
+    				}
+		cout << "Do you want to proceed another look up(Y/N)?\n";
+		cin.get (choice);
+		cin.ignore (100, '\n');
+		
+		while (toupper(choice) != 'N' && toupper(choice) != 'Y' )
+			{
+				cout << choice << " is invalid choice.. Only enter Y or N\n";
+				cin.get (choice);
+				cin.ignore (100, '\n');
+			}
+	}
+	}
 	
     return 0;
 }
 
-int findString (string toSearch, bookType array[])
+int findString (string toSearch, bookType array[], const int size)
 {
     int index = 0;
     string tempTitle;
@@ -60,7 +84,7 @@ int findString (string toSearch, bookType array[])
     searchUpper = toSearch;
     transform (searchUpper.begin (), searchUpper.end(), searchUpper.begin (), :: toupper);
     
-     while (index < 5)
+     while (index < size)
          {
              // make each array uppercase based on the index
              tempTitle = array[index].bookNames;
@@ -100,6 +124,6 @@ void showBook (int index, const bookType array [])
     cout << "* Book Title : ------------------> " << setw(40) << left << array[index].bookNames << "*\n";
     cout << "* ISBN : ------------------------> " << setw(40) << left << array[index].isbn << "*\n";
     cout << "----------------------------------------------------------------------------\n";	
-	cout << "\nPress any key to continue..\n";
+	cout << "\nPress enter key to continue..\n";
 	cin.ignore();	
 }
