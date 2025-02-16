@@ -28,8 +28,8 @@ void deleteMenu(MENU *&mainMenu, ITEM **&items, size_t menuLineSize);
 void startWindow(WINDOW *&mainWindow);
 void endWindow(WINDOW *&mainWindow);
 void handleSignal(const int signal);
-void refreshWindow(MENU *&mainMenu, WINDOW *&mainWindow, WINDOW *&notification,
-		const MenuLines &mainMenuInfo);
+void refreshWindow(MENU *&mainMenu, WINDOW *&mainWindow,
+		WINDOW *&notification, const MenuLines &mainMenuInfo);
 
 volatile sig_atomic_t stateProvider = 0;
 
@@ -37,13 +37,13 @@ int makeMenu(MenuLines &mainMenuInfo) {
 	ITEM **items;			 //OUTPUT- Menu items
 	MENU *mainMenu;			 //OUTPUT- Complete menu
 	WINDOW *mainWindow;		 //OUTPUT- Window to hold menu
-	WINDOW * notification;		 //OUTPUT- Notification at bottom of screen
+	WINDOW *notification;		 //OUTPUT- Notification at bottom of screen
 	struct sigaction sa;	 	 //OUTPUT- Signal action handler
-	int breakOut;			 //OUTPUT- Return of menu (for when it breaks out)
+	int breakOut;		//OUTPUT- Return of menu (for when it breaks out)
 	int menuLineSize;		 //INPUT-  Size of the list of menu lines
 	int userInput;			 //INPUT-  User key input
 	char userInputChar;		 //INPUT-  User input (hard- coded as char)
-	char * currentItemName;		 //INPUT-  Name of item currently selected
+	char *currentItemName;		 //INPUT-  Name of item currently selected
 	bool dontExit;			 //INPUT-  Prevent exiting until need is met
 
 	//Init menuLineSize and userInputChar
@@ -81,7 +81,8 @@ int makeMenu(MenuLines &mainMenuInfo) {
 	breakOut = -1;
 	do {
 		if (stateProvider) {
-			refreshWindow(mainMenu, mainWindow, notification, mainMenuInfo);
+			refreshWindow(mainMenu, mainWindow, notification,
+					mainMenuInfo);
 			stateProvider = 0;
 		}
 		userInput = wgetch(mainWindow);
@@ -93,11 +94,14 @@ int makeMenu(MenuLines &mainMenuInfo) {
 			breakOut = item_index(current_item(mainMenu));
 			if (breakOut < menuLineSize && breakOut != -1
 					&& (mainMenuInfo.menuName == "Main Menu"
+							|| (mainMenuInfo.menuName
+									== "Inventory Database"
+									&& breakOut == 0)
 							|| breakOut == menuLineSize - 1)) {
 				dontExit = 0;
 			}
 			wclear(notification);
-			currentItemName = (char *)item_name(current_item(mainMenu));
+			currentItemName = (char*) item_name(current_item(mainMenu));
 			wprintw(notification, "Selected %s", currentItemName);
 			wrefresh(notification);
 			break;
@@ -210,8 +214,8 @@ void endWindow(WINDOW *&mainWindow) {
 }
 
 //Recalculate the window, but keep the menu the same.
-void refreshWindow(MENU *&mainMenu, WINDOW *&mainWindow, WINDOW *&notification,
-		const MenuLines &mainMenuInfo) {
+void refreshWindow(MENU *&mainMenu, WINDOW *&mainWindow,
+		WINDOW *&notification, const MenuLines &mainMenuInfo) {
 	size_t menuLineSize;		//INPUT- Size of menu lines for alignment
 	size_t cols;			//INPUT- Column count of inner window
 

@@ -37,6 +37,7 @@ int mainLookUp() {
     books[2].isbn = "101112131";
     books[3].isbn = "141516171";
     books[4].isbn = "18192021";
+    bookCount = 5;
 
 	if (bookCount == 0)
 	{
