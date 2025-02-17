@@ -48,8 +48,9 @@ int mainLookUp() {
 	else {
 		while (bookCount != 0 && toupper (choice) != 'N' )
 	{
-		cout << ">>> BOOK LOOKUP <<<\n";
-    		cout << "Search : ";
+		system ("clear");
+		cout << "         >>> BOOK LOOKUP <<<\n";
+    	cout << "         Search : ";
     		getline (cin, toSearch);
 
     		bookIndex = findString (toSearch, books, bookCount );
@@ -65,7 +66,7 @@ int mainLookUp() {
 		
 		while (toupper(choice) != 'N' && toupper(choice) != 'Y' )
 			{
-				cout << choice << " is invalid choice.. Only enter Y or N\n";
+				cout << choice << " is invalid choice.. Only enter Y or N. ";
 				cin.get (choice);
 				cin.ignore (100, '\n');
 			}
@@ -123,7 +124,13 @@ void showBook (int index, const BookType array [])
 {
 	
     cout << "----------------------------------------------------------------------------\n";	
-    cout << "* Book Title : ------------------> " << setw(40) << left << array[index].bookTitle << "*\n";
-    cout << "* ISBN : ------------------------> " << setw(40) << left << array[index].isbn << "*\n";
+    cout << "* Book Title            : -------> " << setw(40) << left << array[index].bookTitle << "*\n";
+    cout << "* ISBN                  : -------> " << setw(40) << left << array[index].isbn << "*\n";
+	 cout << "* Author                : -------> " << setw(42) << right << "*\n";
+	 cout << "* Publisher             : -------> " << setw(42) << right << "*\n";
+	 cout << "* Date added            : -------> " << setw (42) << right << "*\n";
+	 cout << "* Quantity On Hand      : -------> " << setw(42) << right << "*\n";
+	 cout << "* Wholesale Price ($)   : -------> " << setw (42) << right << "*\n";
+	 cout << "* Retail Price ($)      : -------> " << setw (42) << right << "*\n";
     cout << "----------------------------------------------------------------------------\n";		
 }
