@@ -5,6 +5,7 @@
 #ifndef invmenu
 #include "headers/invmenu.h"
 #endif
+#include <iostream>
 
 int main_invmenu() {
 	std::string menuName = "Inventory Database";

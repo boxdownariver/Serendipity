@@ -14,9 +14,11 @@ out/menuDriver.o: src/menuDipity.cpp out/
 	g++ --std=c++20 -c -o "out/menuDriver.o" src/menuDipity.cpp
 out/lookUp.o: src/lookUp.cpp out/
 	g++ -c -o "out/lookUp.o" src/lookUp.cpp
-out/bookfile.o: src/bookfile.cpp out/
+out/bookfile.o: src/bookfile.cpp booklist.dat out/
 	g++ -c -o "out/bookfile.o" src/bookfile.cpp
 out/:
 	mkdir out
+booklist.dat:
+	touch booklist.dat
 clean:
 	rm out/*.o
