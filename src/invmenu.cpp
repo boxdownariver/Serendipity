@@ -1,20 +1,25 @@
 #define menu_utils
 #include "headers/menuDipity.h"
 #include "headers/lookUp.h"
+#include "headers/invmenu.h"
 
 int main_invmenu() {
 	std::string menuName = "Inventory Database";
 	std::vector<std::string> menuListing = { "Look Up a Book", "Add a Book",
 			"Edit a Book's Record", "Delete a Book", "Return to the Main Menu" };
 	MenuLines mainMenuInfo;
+	BookType bookList[20];
+	int currentBookCount;
 	int choice;
 	bool keepGoing;
+
 	mainMenuInfo.menuName = menuName;
 	mainMenuInfo.menuLines = menuListing;
 	mainMenuInfo.longestMenuLength = sizeof("Return to the Main Menu") / sizeof(char);
 
 	keepGoing = 1;
 	do {
+		system("clear");
 		choice = makeMenu(mainMenuInfo);
 		switch (choice) {
 		case 0:
