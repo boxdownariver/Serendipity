@@ -1,7 +1,9 @@
 #ifndef menu_driver_h
 #define menu_driver_h
 
+#ifndef string
 #include <string>
+#endif
 #include <vector>
 
 #ifndef menu_lines_struct

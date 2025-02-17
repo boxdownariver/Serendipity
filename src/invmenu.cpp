@@ -1,7 +1,10 @@
 #define menu_utils
 #include "headers/menuDipity.h"
 #include "headers/lookUp.h"
+#include "headers/bookfile.h"
+#ifndef invmenu
 #include "headers/invmenu.h"
+#endif
 
 int main_invmenu() {
 	std::string menuName = "Inventory Database";
@@ -12,6 +15,9 @@ int main_invmenu() {
 	int currentBookCount;
 	int choice;
 	bool keepGoing;
+
+	currentBookCount = 0;
+	readFile(bookList, currentBookCount);
 
 	mainMenuInfo.menuName = menuName;
 	mainMenuInfo.menuLines = menuListing;

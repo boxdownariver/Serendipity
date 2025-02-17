@@ -1,3 +1,7 @@
+#ifndef string
+#include <string>
+#endif
+#define invmenu
 int main_invmenu();
 struct BookType {
 	std::string bookTitle;

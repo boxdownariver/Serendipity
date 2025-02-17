@@ -19,7 +19,9 @@
 #include <chrono>
 #include <thread>
 #include <cstdlib>
+#ifndef string
 #include <string.h>
+#endif
 #include "headers/menuDipity.h"
 
 void createMenu(MENU *&mainMenu, WINDOW *mainWindow,
