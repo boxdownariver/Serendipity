@@ -16,6 +16,8 @@ out/lookUp.o: src/lookUp.cpp out/
 	g++ -c -o "out/lookUp.o" src/lookUp.cpp
 out/bookfile.o: src/bookfile.cpp booklist.dat out/
 	g++ -c -o "out/bookfile.o" src/bookfile.cpp
+addbook: src/addbook.cpp out/menuDriver.o
+	g++ -o "addbook" src/addbook.cpp out/menuDriver.o -lncurses -lmenu
 out/:
 	mkdir out
 booklist.dat:
