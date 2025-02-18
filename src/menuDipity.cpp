@@ -269,7 +269,7 @@ void refreshWindow(MENU *&mainMenu, WINDOW *&mainWindow,
 	set_menu_sub(mainMenu,
 			derwin(mainWindow, menuLineSize,
 					mainMenuInfo.longestMenuLength, 4,
-					(cols - mainMenuInfo.menuLines[0].length()) / 2));
+					(cols - mainMenuInfo.longestMenuLength) / 2));
 	box(mainWindow, 0, 0);
 	mvwprintw(mainWindow, 1,
 			((getmaxx(mainWindow) - mainMenuInfo.storeName.length()) / 2),
