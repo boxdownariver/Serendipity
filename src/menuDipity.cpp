@@ -177,6 +177,36 @@ void createMenu(MENU *&mainMenu, WINDOW *mainWindow,
 	post_menu(mainMenu);
 }
 
+
+//Create menu & menu items
+void createMenuMiddleSplit(MENU *&mainMenu, WINDOW *mainWindow,
+		const MenuLines &mainMenuInfo, ITEM **&items) {
+	size_t menuLineSize, i;		//INPUT- Menu size, iterator
+	int cols;			//OUTPUT- Columns of current window
+
+	//Init cols, menuLineSize & items
+	cols = getmaxx(mainWindow);
+	menuLineSize = mainMenuInfo.menuLines.size();
+	items = (ITEM**) calloc(menuLineSize + 1, sizeof(ITEM*));
+
+	//Items must be initialized to menu line items
+	for (i = 0; i < menuLineSize; i++) {
+		items[i] = new_item(mainMenuInfo.menuLines[i].c_str(),
+				mainMenuInfo.menuLines[i].c_str());
+	}
+	items[menuLineSize] = new_item((char*) NULL, (char*) NULL);
+
+	//Initialize menu, apply settings
+	mainMenu = new_menu((ITEM**) items);
+	set_menu_win(mainMenu, mainWindow);
+	set_menu_sub(mainMenu,
+			derwin(mainWindow, menuLineSize,
+					mainMenuInfo.longestMenuLength, 4,
+					0));
+	set_menu_mark(mainMenu, ">");
+	post_menu(mainMenu);
+}
+
 //Safely kill menu & menu items
 void deleteMenu(MENU *&menu, ITEM **&items, size_t menuLineSize) {
 	size_t i;	//PROCESS- Iterator for item deletion
@@ -238,8 +268,47 @@ void refreshWindow(MENU *&mainMenu, WINDOW *&mainWindow,
 	set_menu_win(mainMenu, mainWindow);
 	set_menu_sub(mainMenu,
 			derwin(mainWindow, menuLineSize,
-					mainMenuInfo.menuLines[0].length(), 4,
+					mainMenuInfo.longestMenuLength, 4,
 					(cols - mainMenuInfo.menuLines[0].length()) / 2));
+	box(mainWindow, 0, 0);
+	mvwprintw(mainWindow, 1,
+			((getmaxx(mainWindow) - mainMenuInfo.storeName.length()) / 2),
+			mainMenuInfo.storeName.c_str());
+	mvwprintw(mainWindow, 2,
+			((getmaxx(mainWindow) - mainMenuInfo.menuName.length()) / 2),
+			mainMenuInfo.menuName.c_str());
+	post_menu(mainMenu);
+	mvwprintw(mainWindow, getmaxy(mainWindow) - 2,
+			(getmaxx(mainWindow) - 38) / 2,
+			"Select [1-%d] or navigate to module...", menuLineSize);
+}
+
+
+//Recalculate the window, but keep the menu the same.
+void refreshWindowMiddleSplit(MENU *&mainMenu, WINDOW *&mainWindow,
+		WINDOW *&notification, const MenuLines &mainMenuInfo) {
+	size_t menuLineSize;		//INPUT- Size of menu lines for alignment
+	size_t cols;			//INPUT- Column count of inner window
+
+	//Initialize menuLineSize
+	menuLineSize = mainMenuInfo.menuLines.size();
+
+	//Get rid of the window before restarting it
+	unpost_menu(mainMenu);
+	endWindow(mainWindow);
+	wclear(notification);
+	delwin(notification);
+	refresh();			//Load bearing refresh
+
+	//Start a new window: put the menu in it, draw old data to it
+	notification = newwin(1, 3 * COLS / 5, 9 * LINES / 10, COLS / 5);
+	startWindow(mainWindow);
+	cols = getmaxx(mainWindow);
+	set_menu_win(mainMenu, mainWindow);
+	set_menu_sub(mainMenu,
+			derwin(mainWindow, menuLineSize,
+					mainMenuInfo.longestMenuLength, 4,
+					0));
 	box(mainWindow, 0, 0);
 	mvwprintw(mainWindow, 1,
 			((getmaxx(mainWindow) - mainMenuInfo.storeName.length()) / 2),

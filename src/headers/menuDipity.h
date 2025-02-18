@@ -32,5 +32,9 @@ void startWindow(WINDOW *&mainWindow);
 void endWindow(WINDOW *&mainWindow);
 void refreshWindow(MENU *&mainMenu, WINDOW *&mainWindow, WINDOW *&notification,
                 const MenuLines &mainMenuInfo);
+void refreshWindowMiddleSplit(MENU *&mainMenu, WINDOW *&mainWindow, WINDOW *&notification,
+                const MenuLines &mainMenuInfo);
+void createMenuMiddleSplit(MENU *&mainMenu, WINDOW *mainWindow,
+                const MenuLines &mainMenuInfo, ITEM **&items);
 #endif
 #endif
