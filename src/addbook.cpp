@@ -153,14 +153,14 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 		wrefresh(notification);
 		wclear(bookDisplayWindow);
 		box(bookDisplayWindow, 0, 0);
-		mvwprintw(bookDisplayWindow, 1, 1, trim(bookBuffer.bookTitle));
-		mvwprintw(bookDisplayWindow, 2, 1, trim(bookBuffer.isbn));
-		mvwprintw(bookDisplayWindow, 3, 1, trim(bookBuffer.author));
-		mvwprintw(bookDisplayWindow, 4, 1, trim(bookBuffer.publisher));
-		mvwprintw(bookDisplayWindow, 5, 1, trim(bookBuffer.dateAdded));
-		mvwprintw(bookDisplayWindow, 6, 1, "%d", bookBuffer.qtyOnHand);
-		mvwprintw(bookDisplayWindow, 7, 1, "%.2f", bookBuffer.wholesale);
-		mvwprintw(bookDisplayWindow, 8, 1, "%.2f", bookBuffer.retail);
+		mvwprintw(bookDisplayWindow, 1, 1, "Title            : %s", trim(bookBuffer.bookTitle));
+		mvwprintw(bookDisplayWindow, 2, 1, "ISBN             : %s", trim(bookBuffer.isbn));
+		mvwprintw(bookDisplayWindow, 3, 1, "Author           : %s", trim(bookBuffer.author));
+		mvwprintw(bookDisplayWindow, 4, 1, "Publisher        : %s", trim(bookBuffer.publisher));
+		mvwprintw(bookDisplayWindow, 5, 1, "Date Added       : %s",trim(bookBuffer.dateAdded));
+		mvwprintw(bookDisplayWindow, 6, 1, "QoH              : %d", bookBuffer.qtyOnHand);
+		mvwprintw(bookDisplayWindow, 7, 1, "Wholesale Value  : %.2f", bookBuffer.wholesale);
+		mvwprintw(bookDisplayWindow, 8, 1, "Retail Value     : %.2f", bookBuffer.retail);
 		wrefresh(bookDisplayWindow);
 
 		input = wgetch(mainWindow);
