@@ -1,7 +1,3 @@
-// This is a stub function
-// Requirements (requires a function call to addBook program)
-// Book Count while the user is adding book
-// Data from addbook function ( bookType array )
 
 #include <iostream>
 #include <algorithm>
@@ -17,31 +13,17 @@ string bookNames;
 string isbn;
 };*/
 
-int findString (string toSearch, BookType array[], const int size);
+int findString (const string toSearch,const BookType array[], const int size);
 void showBook (int index, const BookType array []);
 
-int mainLookUp() {
-    BookType books [5];
+int mainLookUp( const BookType booklist[20], int bookCount ) {
     string toSearch;
     int bookIndex;
-    int bookCount = 0;  // This is just an example, book count only depend on addbook function.
     char choice = 'Y';  // Initialized so the loop executes for the first time
-	
-    books[0].bookTitle = "Star Wars";
-    books[1].bookTitle = "Star Wars Part the First";
-    books[2].bookTitle = "Star Wars Part the Second";
-    books[3].bookTitle = "Revenge of the Sith";
-    books[4].bookTitle = "Star Wars: Verily, A New Hope";
-    
-    books[0].isbn = "01010101";
-    books[1].isbn = "123456789";
-    books[2].isbn = "101112131";
-    books[3].isbn = "141516171";
-    books[4].isbn = "18192021";
-    bookCount = 5;
 
 	if (bookCount == 0)
 	{
+		system ("clear");
 		cout << "The book list is empty, no books available for search.\n";
 	}
 
@@ -53,12 +35,12 @@ int mainLookUp() {
     	cout << "         Search : ";
     		getline (cin, toSearch);
 
-    		bookIndex = findString (toSearch, books, bookCount );
+    		bookIndex = findString (toSearch, booklist, bookCount );
     			if (bookIndex != -1)
     				{
         				//show the book details to user
 					system("clear");
-        				showBook (bookIndex, books);
+        				showBook (bookIndex, booklist);
     				}
 		cout << "Do you want to proceed another look up(Y/N)?\n";
 		cin.get (choice);
@@ -76,7 +58,7 @@ int mainLookUp() {
     return 0;
 }
 
-int findString (string toSearch, BookType array[], const int size)
+int findString (const string toSearch, const BookType array[], const int size)
 {
     int index = 0;
     string tempTitle;
@@ -126,11 +108,11 @@ void showBook (int index, const BookType array [])
     cout << "----------------------------------------------------------------------------\n";	
     cout << "* Book Title            : -------> " << setw(40) << left << array[index].bookTitle << "*\n";
     cout << "* ISBN                  : -------> " << setw(40) << left << array[index].isbn << "*\n";
-	 cout << "* Author                : -------> " << setw(42) << right << "*\n";
-	 cout << "* Publisher             : -------> " << setw(42) << right << "*\n";
-	 cout << "* Date added            : -------> " << setw (42) << right << "*\n";
-	 cout << "* Quantity On Hand      : -------> " << setw(42) << right << "*\n";
-	 cout << "* Wholesale Price ($)   : -------> " << setw (42) << right << "*\n";
-	 cout << "* Retail Price ($)      : -------> " << setw (42) << right << "*\n";
+    cout << "* Author                : -------> " << setw(40) << left << array[index].author << "*\n";
+    cout << "* Publisher             : -------> " << setw(40) << left << array[index].publisher << "*\n";
+    cout << "* Date added            : -------> " << setw(40) << left << array[index].dateAdded << "*\n";
+    cout << "* Quantity On Hand      : -------> " << setw(40) << left << array[index].qtyOnHand << "*\n";
+    cout << "* Wholesale Price ($)   : -------> " << setw(40) << left << array[index].wholesale << "*\n";
+    cout << "* Retail Price ($)      : -------> " << setw(40) << left << array[index].retail << "*\n";
     cout << "----------------------------------------------------------------------------\n";		
 }
