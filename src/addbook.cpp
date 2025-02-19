@@ -5,19 +5,22 @@
 #include <signal.h>
 #endif
 #include <cstring>
+#include <deque>
 
 void ahandleSignal(const int signal);
 
 volatile sig_atomic_t astateProvider = 0;
 
-const char * trim(const std::string operandString) {
+const char* trim(const std::string operandString) {
 	std::string returnString;
 	bool keepTrimming;
 	int iter;
 
 	keepTrimming = 1;
 	returnString = operandString;
-	for (iter = 0; iter < returnString.length() && returnString.c_str()[iter] == ' '; iter++) {
+	for (iter = 0;
+			iter < returnString.length()
+					&& returnString.c_str()[iter] == ' '; iter++) {
 
 	}
 	returnString.erase(0, iter);
@@ -42,6 +45,9 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 	char inputChar;
 	char *fieldBuffer;
 	bool continueMenu;
+	std::deque<int> fieldQueue;
+	int exitChar;
+	bool bookWritten;
 
 	std::vector<std::string> menuListing = { "Set Title", "Set ISBN",
 			"Set Author", "Set Publisher", "Set Date Added",
@@ -79,7 +85,7 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 			menuListing.size() - 1);
 	wrefresh(mainWindow);
 
-	notification = newwin(1, 3 * COLS / 5, 9 * LINES / 10, COLS / 5);
+	notification = newwin(3, 3 * COLS / 5, 9 * LINES / 10, COLS / 5);
 	keypad(notification, true);
 	bookDisplayWindow = derwin(mainWindow, menuListing.size(),
 			getmaxx(mainWindow) / 2 - 1, 3, getmaxx(mainWindow) / 2);
@@ -97,7 +103,15 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 			derwin(notification, getmaxy(notification),
 					getmaxx(notification), 0, 0));
 
-	bookBuffer.bookTitle = "Oof";
+	bookBuffer.bookTitle = "UNSET";
+	bookBuffer.isbn = "UNSET";
+	bookBuffer.author = "UNSET";
+	bookBuffer.publisher = "UNSET";
+	bookBuffer.dateAdded = "UNSET";
+	bookBuffer.qtyOnHand = 0;
+	bookBuffer.wholesale = 0;
+	bookBuffer.retail = 0;
+	bookWritten = 0;
 
 	//Main program loop
 	while (currentBookCount < 20 && continueMenu) {
@@ -113,12 +127,40 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 					getmaxx(mainWindow) / 2 - 1, 3,
 					getmaxx(mainWindow) / 2);
 			box(bookDisplayWindow, 0, 0);
+			mvwprintw(bookDisplayWindow, 1, 1, trim(bookBuffer.bookTitle));
+			mvwprintw(bookDisplayWindow, 2, 1, trim(bookBuffer.isbn));
+			mvwprintw(bookDisplayWindow, 3, 1, trim(bookBuffer.author));
+			mvwprintw(bookDisplayWindow, 4, 1, trim(bookBuffer.publisher));
+			mvwprintw(bookDisplayWindow, 5, 1, trim(bookBuffer.dateAdded));
+			mvwprintw(bookDisplayWindow, 6, 1, "%d", bookBuffer.qtyOnHand);
+			mvwprintw(bookDisplayWindow, 7, 1, "%.2f",
+					bookBuffer.wholesale);
+			mvwprintw(bookDisplayWindow, 8, 1, "%.2f", bookBuffer.retail);
 			wrefresh(bookDisplayWindow);
+			mvwprintw(notification, 2, 1,
+					"%d books used out of 20 available", currentBookCount);
+			set_form_win(userInputForm, notification);
+			set_form_sub(userInputForm,
+					derwin(notification, getmaxy(notification),
+							getmaxx(notification), 0, 0));
+			wrefresh(notification);
 
 			astateProvider = 0;
 		}
 
+		mvwprintw(notification, 2, 1, "%d books used out of 20 available",
+				currentBookCount);
+		wrefresh(notification);
+		wclear(bookDisplayWindow);
+		box(bookDisplayWindow, 0, 0);
 		mvwprintw(bookDisplayWindow, 1, 1, trim(bookBuffer.bookTitle));
+		mvwprintw(bookDisplayWindow, 2, 1, trim(bookBuffer.isbn));
+		mvwprintw(bookDisplayWindow, 3, 1, trim(bookBuffer.author));
+		mvwprintw(bookDisplayWindow, 4, 1, trim(bookBuffer.publisher));
+		mvwprintw(bookDisplayWindow, 5, 1, trim(bookBuffer.dateAdded));
+		mvwprintw(bookDisplayWindow, 6, 1, "%d", bookBuffer.qtyOnHand);
+		mvwprintw(bookDisplayWindow, 7, 1, "%.2f", bookBuffer.wholesale);
+		mvwprintw(bookDisplayWindow, 8, 1, "%.2f", bookBuffer.retail);
 		wrefresh(bookDisplayWindow);
 
 		input = wgetch(mainWindow);
@@ -129,9 +171,6 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 			choice = item_index(current_item(mainMenu));
 			if (choice < menuListing.size() && choice != -1) {
 				if (choice < 8) {
-					//Note to self for tomorrow: JUST DO A CHARACTER STREAM WHAT ARE YOU DOING
-
-					//form_driver(userInputForm, REQ_CLR_FIELD);
 					if (choice > 4) {
 						set_field_type(userInputField, TYPE_NUMERIC);
 					} else {
@@ -150,20 +189,23 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 						case KEY_BACKSPACE:
 							form_driver(userInputForm, REQ_PREV_CHAR);
 							form_driver(userInputForm, REQ_DEL_CHAR);
+							fieldQueue.pop_back();
 							break;
 						default:
-							form_driver(userInputForm, formch);
+							if ((formch >= '!' && formch <= '~')
+									|| formch == ' ') {
+								form_driver(userInputForm, formch);
+								fieldQueue.push_back(formch);
+							}
 							break;
 						}
-						//wprintw(notification, "|");
 						wrefresh(notification);
 					}
-					/*form_driver(userInputForm, REQ_NEXT_FIELD);
-					form_driver(userInputForm, REQ_PREV_FIELD);
-					form_driver(userInputForm, REQ_VALIDATION);
-					fieldBuffer = new char[getmaxx(notification)];
-					memcpy(fieldBuffer, field_buffer(userInputField, 0),
-							getmaxx(notification) - 1);
+					fieldBuffer = new char[fieldQueue.size()];
+					for (int i = 0; i < fieldQueue.size(); i++) {
+						fieldBuffer[i] = fieldQueue.at(i);
+					}
+					fieldQueue.clear();
 					switch (choice) {
 					case 0:
 						//Get book title
@@ -200,15 +242,36 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 					default:
 
 						break;
-					}*/
+					}
 					unpost_form(userInputForm);
 					wrefresh(notification);
 					//delete[] fieldBuffer;
 				}
 				if (choice == 8) {
-					bookList[currentBookCount] = bookBuffer;
-					currentBookCount++;
-				} else if (choice == 9) continueMenu = 0;
+					mvwprintw(notification, 2, 1,
+							"Are you sure you want to write to book list? [Y/N]");
+					exitChar = wgetch(notification);
+					if (tolower(exitChar) == 'y') {
+						bookList[currentBookCount] = bookBuffer;
+						currentBookCount++;
+						bookWritten = 1;
+					}
+					wclear(notification);
+				} else if (choice == 9) {
+					if (bookWritten == 1) {
+						bookWritten = 0;
+						continueMenu = 0;
+					} else {
+						mvwprintw(notification, 2, 1,
+								"Book not saved. Really leave? [Y/N]");
+						exitChar = wgetch(notification);
+						if (tolower(exitChar) == 'y')
+							continueMenu = 0;
+						wclear(notification);
+					}
+				} else
+					bookWritten = 0;
+
 			}
 			break;
 		case KEY_UP:
