@@ -5,6 +5,7 @@
 #include <cctype>
 #include <cstdlib>
 #include <iomanip>
+#include <limits>
 #include "headers/invmenu.h"
 using namespace std;
 
@@ -21,8 +22,7 @@ int mainLookUp( const BookType booklist[], int &bookCount ) {
 		system ("clear");
 		cout << "The book list is empty, no books available for search.\n";
 		cout << "Press any key to continue\n";
-		cin.get();
-		cin.ignore (100, '\n');
+		cin.ignore(numeric_limits<streamsize>::max(), '\n')
 	}
 
 	else {
