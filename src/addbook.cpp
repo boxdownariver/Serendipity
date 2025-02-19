@@ -59,14 +59,16 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 	int exitChar;
 	bool bookWritten;
 
-	std::vector<std::string> menuListing = { "Set Title", "Set ISBN",
-			"Set Author", "Set Publisher", "Set Date Added",
-			"Set Quantity on Hand", "Set Wholesale Value",
-			"Set Retail Value", "Write to Book List", "Exit" };
+	std::vector<std::string> menuListing = { "Enter Book Title",
+			"Enter ISBN", "Enter Author", "Enter Publisher",
+			"Enter Date Added (mm/dd/yyyy)", "Enter Quantity on Hand",
+			"Enter Wholesale Value", "Enter Retail Price",
+			"Save Book to Database", "Exit" };
 
 	mainMenuInfo.menuName = "Add a Book";
 	mainMenuInfo.menuLines = menuListing;
-	mainMenuInfo.longestMenuLength = 21;
+	mainMenuInfo.longestMenuLength =
+			sizeof("Enter Date Added (mm/dd/yyyy)") / sizeof(char);
 
 	sa.sa_flags = 0;
 	sa.sa_handler = ahandleSignal;
