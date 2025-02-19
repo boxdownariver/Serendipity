@@ -22,7 +22,7 @@ int mainLookUp( const BookType booklist[], int &bookCount ) {
 		system ("clear");
 		cout << "The book list is empty, no books available for search.\n";
 		cout << "Press any key to continue\n";
-		cin.ignore(numeric_limits<streamsize>::max(), '\n')
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 	}
 
 	else {
