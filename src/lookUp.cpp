@@ -8,15 +8,10 @@
 #include "headers/invmenu.h"
 using namespace std;
 
-/*struct bookType {     // defined struct only for this function to work
-string bookNames;
-string isbn;
-};*/
-
 int findString (const string toSearch,const BookType array[], const int size);
 void showBook (int index, const BookType array []);
 
-int mainLookUp( const BookType booklist[], int bookCount ) {
+int mainLookUp( const BookType booklist[], int &bookCount ) {
     string toSearch;
     int bookIndex;
     char choice = 'Y';  // Initialized so the loop executes for the first time
@@ -28,7 +23,6 @@ int mainLookUp( const BookType booklist[], int bookCount ) {
 		cout << "Press any key to continue\n";
 		cin.get();
 		cin.ignore (100, '\n');
-		
 	}
 
 	else {
