@@ -111,7 +111,7 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 	bookBuffer.qtyOnHand = 0;
 	bookBuffer.wholesale = 0;
 	bookBuffer.retail = 0;
-	bookWritten = 0;
+	bookWritten = 1;
 
 	//Main program loop
 	while (currentBookCount < 20 && continueMenu) {
@@ -153,14 +153,22 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 		wrefresh(notification);
 		wclear(bookDisplayWindow);
 		box(bookDisplayWindow, 0, 0);
-		mvwprintw(bookDisplayWindow, 1, 1, "Title            : %s", trim(bookBuffer.bookTitle));
-		mvwprintw(bookDisplayWindow, 2, 1, "ISBN             : %s", trim(bookBuffer.isbn));
-		mvwprintw(bookDisplayWindow, 3, 1, "Author           : %s", trim(bookBuffer.author));
-		mvwprintw(bookDisplayWindow, 4, 1, "Publisher        : %s", trim(bookBuffer.publisher));
-		mvwprintw(bookDisplayWindow, 5, 1, "Date Added       : %s",trim(bookBuffer.dateAdded));
-		mvwprintw(bookDisplayWindow, 6, 1, "QoH              : %d", bookBuffer.qtyOnHand);
-		mvwprintw(bookDisplayWindow, 7, 1, "Wholesale Value  : %.2f", bookBuffer.wholesale);
-		mvwprintw(bookDisplayWindow, 8, 1, "Retail Value     : %.2f", bookBuffer.retail);
+		mvwprintw(bookDisplayWindow, 1, 1, "Title            : %s",
+				trim(bookBuffer.bookTitle));
+		mvwprintw(bookDisplayWindow, 2, 1, "ISBN             : %s",
+				trim(bookBuffer.isbn));
+		mvwprintw(bookDisplayWindow, 3, 1, "Author           : %s",
+				trim(bookBuffer.author));
+		mvwprintw(bookDisplayWindow, 4, 1, "Publisher        : %s",
+				trim(bookBuffer.publisher));
+		mvwprintw(bookDisplayWindow, 5, 1, "Date Added       : %s",
+				trim(bookBuffer.dateAdded));
+		mvwprintw(bookDisplayWindow, 6, 1, "QoH              : %d",
+				bookBuffer.qtyOnHand);
+		mvwprintw(bookDisplayWindow, 7, 1, "Wholesale Value  : %.2f",
+				bookBuffer.wholesale);
+		mvwprintw(bookDisplayWindow, 8, 1, "Retail Value     : %.2f",
+				bookBuffer.retail);
 		wrefresh(bookDisplayWindow);
 
 		input = wgetch(mainWindow);
@@ -254,6 +262,14 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 					if (tolower(exitChar) == 'y') {
 						bookList[currentBookCount] = bookBuffer;
 						currentBookCount++;
+						bookBuffer.bookTitle = "UNSET";
+						bookBuffer.isbn = "UNSET";
+						bookBuffer.author = "UNSET";
+						bookBuffer.publisher = "UNSET";
+						bookBuffer.dateAdded = "UNSET";
+						bookBuffer.qtyOnHand = 0;
+						bookBuffer.wholesale = 0;
+						bookBuffer.retail = 0;
 						bookWritten = 1;
 					}
 					wclear(notification);
