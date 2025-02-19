@@ -8,19 +8,12 @@ void ahandleSignal(const int signal);
 
 volatile sig_atomic_t astateProvider = 0;
 
-/*int main() {
-	BookType bookList[20];
-	int currentBookCount = 0;
-	addBook(bookList, currentBookCount);
-	return 0;
-}*/
-
 void addBook(BookType bookList[20], int &currentBookCount) {
-	WINDOW * mainWindow;
-	WINDOW * bookDisplayWindow;
-	WINDOW * notification;
-	ITEM ** items;
-	MENU * mainMenu;
+	WINDOW *mainWindow;
+	WINDOW *bookDisplayWindow;
+	WINDOW *notification;
+	ITEM **items;
+	MENU *mainMenu;
 	MenuLines mainMenuInfo;
 	BookType bookBuffer;
 	struct sigaction sa;
@@ -29,9 +22,10 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 	char inputChar;
 	bool continueMenu;
 
-	std::vector<std::string> menuListing = {"Set Title", "Set ISBN", "Set Author", 
-		"Set Publisher", "Set Date Added", "Set Quantity on Hand", "Set Wholesale Value", 
-		"Set Retail Value", "Write to Book List", "Exit"};
+	std::vector<std::string> menuListing = { "Set Title", "Set ISBN",
+			"Set Author", "Set Publisher", "Set Date Added",
+			"Set Quantity on Hand", "Set Wholesale Value",
+			"Set Retail Value", "Write to Book List", "Exit" };
 
 	mainMenuInfo.menuName = "Add a Book";
 	mainMenuInfo.menuLines = menuListing;
@@ -60,15 +54,27 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 	post_menu(mainMenu);
 	mvwprintw(mainWindow, getmaxy(mainWindow) - 2,
 			(getmaxx(mainWindow) - 38) / 2,
-			"Select [0-%d] or navigate to module...", menuListing.size() - 1);
+			"Select [0-%d] or navigate to module...",
+			menuListing.size() - 1);
 	wrefresh(mainWindow);
 
 	notification = newwin(1, 3 * COLS / 5, 9 * LINES / 10, COLS / 5);
+	bookDisplayWindow = derwin(mainWindow, menuListing.size(),
+			getmaxx(mainWindow) / 2 - 1, 3, getmaxx(mainWindow) / 2);
+	box(bookDisplayWindow, 0, 0);
+	wrefresh(bookDisplayWindow);
 
 	//Main program loop
 	while (currentBookCount < 20 && continueMenu) {
 		if (astateProvider) {
-			refreshWindowMiddleSplit(mainMenu, mainWindow, notification, mainMenuInfo);
+			delwin(bookDisplayWindow);
+			refreshWindowMiddleSplit(mainMenu, mainWindow,
+					notification, mainMenuInfo);
+			bookDisplayWindow = derwin(mainWindow, menuListing.size(),
+			getmaxx(mainWindow) / 2 - 1, 3, getmaxx(mainWindow) / 2);
+			box(bookDisplayWindow, 0, 0);
+			wrefresh(bookDisplayWindow);
+
 			astateProvider = 0;
 		}
 		input = wgetch(mainWindow);
@@ -79,37 +85,45 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 			choice = item_index(current_item(mainMenu));
 			if (choice < menuListing.size() && choice != -1) {
 				switch (choice) {
-					case 0:
-						//Get book title
-						break;
-					case 1:
-						//Get isbn
-						break;
-					case 2:
-						//Get author
-						break;
-					case 3:
-						//Get publisher
-						break;
-					case 4:
-						//Get date added
-						break;
-					case 5:
-						//Get quantity on hand
-						break;
-					case 6:
-						//Get wholesale value
-						break;
-					case 7:
-						//Get retail value
-						break;
-					case 8:
-						bookList[currentBookCount] = bookBuffer;
-						currentBookCount++;
-						break;
-					default:
-						continueMenu = 0;
-						break;
+				case 0:
+					//Get book title
+					//bookBuffer.bookTitle =;
+					break;
+				case 1:
+					//Get isbn
+					//bookBuffer.isbn =;
+					break;
+				case 2:
+					//Get author
+					//bookBuffer.author =;
+					break;
+				case 3:
+					//Get publisher
+					//bookBuffer.publisher =;
+					break;
+				case 4:
+					//Get date added
+					//bookBuffer.dateAdded =;
+					break;
+				case 5:
+					//Get quantity on hand
+					//bookBuffer.qtyOnHand =;
+					break;
+				case 6:
+					//Get wholesale value
+					//bookBuffer.wholesale =;
+					break;
+				case 7:
+					//Get retail value
+					//bookBuffer.retail =;
+					break;
+				case 8:
+					bookList[currentBookCount] = bookBuffer;
+					currentBookCount++;
+					break;
+				default:
+					continueMenu = 0;
+					break;
 				}
 			}
 			break;
@@ -138,7 +152,7 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 	}
 	wclear(notification);
 	delwin(notification);
-	//delwin(bookDisplayWindow);
+	delwin(bookDisplayWindow);
 	deleteMenu(mainMenu, items, menuListing.size());
 	endWindow(mainWindow);
 	return;
