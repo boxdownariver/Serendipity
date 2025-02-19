@@ -4,12 +4,26 @@
 #ifndef signal
 #include <signal.h>
 #endif
-//#include <string>
 #include <cstring>
 
 void ahandleSignal(const int signal);
 
 volatile sig_atomic_t astateProvider = 0;
+
+const char * trim(const std::string operandString) {
+	std::string returnString;
+	bool keepTrimming;
+	int iter;
+
+	keepTrimming = 1;
+	returnString = operandString;
+	for (iter = 0; iter < returnString.length() && returnString.c_str()[iter] == ' '; iter++) {
+
+	}
+	returnString.erase(0, iter);
+
+	return returnString.c_str();
+}
 
 void addBook(BookType bookList[20], int &currentBookCount) {
 	WINDOW *mainWindow;
@@ -83,6 +97,8 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 			derwin(notification, getmaxy(notification),
 					getmaxx(notification), 0, 0));
 
+	bookBuffer.bookTitle = "Oof";
+
 	//Main program loop
 	while (currentBookCount < 20 && continueMenu) {
 		if (astateProvider) {
@@ -101,6 +117,10 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 
 			astateProvider = 0;
 		}
+
+		mvwprintw(bookDisplayWindow, 1, 1, trim(bookBuffer.bookTitle));
+		wrefresh(bookDisplayWindow);
+
 		input = wgetch(mainWindow);
 		inputChar = ((input == '0') ? '9' : input - 1);
 
@@ -109,6 +129,9 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 			choice = item_index(current_item(mainMenu));
 			if (choice < menuListing.size() && choice != -1) {
 				if (choice < 8) {
+					//Note to self for tomorrow: JUST DO A CHARACTER STREAM WHAT ARE YOU DOING
+
+					//form_driver(userInputForm, REQ_CLR_FIELD);
 					if (choice > 4) {
 						set_field_type(userInputField, TYPE_NUMERIC);
 					} else {
@@ -135,9 +158,12 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 						//wprintw(notification, "|");
 						wrefresh(notification);
 					}
+					/*form_driver(userInputForm, REQ_NEXT_FIELD);
+					form_driver(userInputForm, REQ_PREV_FIELD);
+					form_driver(userInputForm, REQ_VALIDATION);
 					fieldBuffer = new char[getmaxx(notification)];
 					memcpy(fieldBuffer, field_buffer(userInputField, 0),
-							getmaxx(notification));
+							getmaxx(notification) - 1);
 					switch (choice) {
 					case 0:
 						//Get book title
@@ -161,23 +187,23 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 						break;
 					case 5:
 						//Get quantity on hand
-						//bookBuffer.qtyOnHand =;
+						bookBuffer.qtyOnHand = atoi(fieldBuffer);
 						break;
 					case 6:
 						//Get wholesale value
-						//bookBuffer.wholesale =;
+						bookBuffer.wholesale = atof(fieldBuffer);
 						break;
 					case 7:
 						//Get retail value
-						//bookBuffer.retail =;
+						bookBuffer.retail = atof(fieldBuffer);
 						break;
 					default:
 
 						break;
-					}
+					}*/
 					unpost_form(userInputForm);
 					wrefresh(notification);
-					delete[] fieldBuffer;
+					//delete[] fieldBuffer;
 				}
 				if (choice == 8) {
 					bookList[currentBookCount] = bookBuffer;
