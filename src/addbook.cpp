@@ -1,11 +1,21 @@
+#ifndef FORM_H
 #include <form.h>
+#endif
+#ifndef ADDBOOK_H
 #include "headers/addbook.h"
+#endif
+#ifndef menu_driver_h
 #include "headers/menuDipity.h"
-#ifndef signal
+#endif
+#ifndef _SIGNAL_H
 #include <signal.h>
 #endif
+#ifndef GLIBCXX_CSTRING
 #include <cstring>
+#endif
+#ifndef GLIBCXX_DEQUE
 #include <deque>
+#endif
 
 void ahandleSignal(const int signal);
 

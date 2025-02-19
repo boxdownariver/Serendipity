@@ -1,4 +1,4 @@
-#define addbook
+#define ADDBOOK_H
 
 #ifndef invmenu
 #include "invmenu.h"

@@ -1,4 +1,4 @@
-#ifndef string
+#ifndef GLIBCXX_STRING
 #include <string>
 #endif
 #define invmenu
