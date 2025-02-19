@@ -98,7 +98,7 @@ int makeMenu(MenuLines &mainMenuInfo) {
 					&& (mainMenuInfo.menuName == "Main Menu"
 							|| (mainMenuInfo.menuName
 									== "Inventory Database"
-									&& breakOut == 0)
+									&& (breakOut <= 1 && breakOut != -1))
 							|| breakOut == menuLineSize - 1)) {
 				dontExit = 0;
 			}
@@ -202,7 +202,7 @@ void createMenuMiddleSplit(MENU *&mainMenu, WINDOW *mainWindow,
 	set_menu_sub(mainMenu,
 			derwin(mainWindow, menuLineSize,
 					mainMenuInfo.longestMenuLength, 4,
-					0));
+					1));
 	set_menu_mark(mainMenu, ">");
 	post_menu(mainMenu);
 }
@@ -303,13 +303,13 @@ void refreshWindowMiddleSplit(MENU *&mainMenu, WINDOW *&mainWindow,
 	//Start a new window: put the menu in it, draw old data to it
 	notification = newwin(1, 3 * COLS / 5, 9 * LINES / 10, COLS / 5);
 	startWindow(mainWindow);
+	box(mainWindow, 0, 0);
 	cols = getmaxx(mainWindow);
 	set_menu_win(mainMenu, mainWindow);
 	set_menu_sub(mainMenu,
 			derwin(mainWindow, menuLineSize,
 					mainMenuInfo.longestMenuLength, 4,
-					0));
-	box(mainWindow, 0, 0);
+					1));
 	mvwprintw(mainWindow, 1,
 			((getmaxx(mainWindow) - mainMenuInfo.storeName.length()) / 2),
 			mainMenuInfo.storeName.c_str());

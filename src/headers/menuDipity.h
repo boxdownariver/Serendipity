@@ -36,5 +36,6 @@ void refreshWindowMiddleSplit(MENU *&mainMenu, WINDOW *&mainWindow, WINDOW *&not
                 const MenuLines &mainMenuInfo);
 void createMenuMiddleSplit(MENU *&mainMenu, WINDOW *mainWindow,
                 const MenuLines &mainMenuInfo, ITEM **&items);
+//void handleSignal(const int signal);
 #endif
 #endif
