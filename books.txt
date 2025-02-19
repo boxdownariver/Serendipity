@@ -17,8 +17,7 @@ Del Rey
 8
 100.00
 9
-y
-1
+y1
 The Empire Strikes Back (Star Wars)
 2
 0-3452-9209-X
@@ -35,8 +34,7 @@ Ballantine
 8
 185.00
 9
-y
-1
+y1
 Splinter of the Mind's Eye (Star Wars)
 2
 0-3453-2023-9
@@ -53,8 +51,7 @@ Del Rey
 8
 26.50
 9
-y
-1
+y1
 Return of the Jedi (Star Wars)
 2
 0-3453-0767-4
@@ -71,8 +68,7 @@ Del Rey
 8
 6.50
 9
-y
-1
+y1
 Heir to the Empire (Star Wars: The Thrawn Trilogy, Vol. 1)
 2
 0-5532-9612-4
@@ -89,8 +85,7 @@ Bantam
 8
 27.00
 9
-y
-1
+y1
 Dark Force Rising (Star Wars: The Thrawn Trilogy, Vol. 2
 2
 0-5535-6071-9
@@ -107,7 +102,7 @@ Bantam
 8
 27.00
 9
-1
+y1
 The Last Command (Star Wars: The Thrawn Trilogy)
 2
 0-5535-6492-7
@@ -124,8 +119,7 @@ Bantam
 8
 17
 9
-y
-1
+y1
 Specter of the Past (Star Wars: The Hand of Thrawn #1)
 2
 0-5532-9804-6
@@ -142,8 +136,7 @@ Bantam
 8
 15
 9
-y
-1
+y1
 Vision of the Future (Star Wars: The Hand of Thrawn, Book 2)
 2
 0-5535-7879-0
@@ -160,8 +153,7 @@ Bantam
 8
 15
 9
-y
-1
+y1
 Battlestar Galactica
 2
 1-8528-6088-X
@@ -178,8 +170,7 @@ Titan Books
 8
 150.00
 9
-y
-1
+y1
 New Battlestar Galactica Volume 1 (Battlestar Galactica (Dynamite)) (v. 1)
 2
 1-9333-0533-9
@@ -196,8 +187,7 @@ Dynamite Entertainment
 8
 35.00
 9
-y
-1
+y1
 New Battlestar Galactica Volume II Hardcover (Battlestar Galactica (Dynamite))
 2
 1-9333-0553-3
@@ -214,8 +204,7 @@ Dynamite Entertainment
 8
 37.00
 9
-y
-1
+y1
 The Hobbit
 2
 0-6189-6863-6
@@ -232,8 +221,7 @@ Houghton Mifflin Harcourt
 8
 20.00
 9
-y
-1
+y1
 The Lord of the Rings: 50th Anniversary, One Vol. Edition
 2
 0-6186-4561-6
@@ -250,8 +238,7 @@ Houghton Mifflin Harcourt
 8
 32.00
 9
-y
-1
+y1
 The Two Towers
 2
 0-3954-8933-4
@@ -268,8 +255,7 @@ Houghton Mifflin Harcourt
 8
 19.00
 9
-y
-1
+y1
 The Return of the King
 2
 0-3954-8930-X
@@ -286,8 +272,7 @@ Houghton Mifflin Harcourt
 8
 19.00
 9
-y
-1
+y1
 The Fellowship of the Ring
 2
 0-3954-8931-8
@@ -304,8 +289,7 @@ Houghton Mifflin Harcourt
 8
 20.00
 9
-y
-1
+y1
 C++ Programming: From Problem Analysis to Program Design 7th Edition
 2
 1-2858-5274-5
@@ -322,8 +306,7 @@ Course Technology
 8
 110.55
 9
-y
-1
+y1
 Digital Computer Electronics
 2
 0-0746-2235-8
@@ -340,8 +323,7 @@ Mc Graw Hill India
 8
 50.00
 9
-y
-1
+y1
 Assembly Language for x86 Processors (7th Edition)
 2
 0-1337-6940-2
@@ -358,7 +340,7 @@ Pearson
 8
 200
 9
-y
+y10
 
 
 ************************ Try to add The Tainted Sword **** should fail
