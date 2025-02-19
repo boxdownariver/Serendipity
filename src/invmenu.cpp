@@ -33,7 +33,7 @@ int main_invmenu() {
 		choice = makeMenu(mainMenuInfo);
 		switch (choice) {
 		case 0:
-			 mainLookUp();
+			 mainLookUp(bookList, currentBookCount);
 			 break;
 		case 1:
 			 addBook(bookList, currentBookCount);
