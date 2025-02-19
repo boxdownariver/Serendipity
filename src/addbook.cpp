@@ -8,12 +8,12 @@ void ahandleSignal(const int signal);
 
 volatile sig_atomic_t astateProvider = 0;
 
-int main() {
+/*int main() {
 	BookType bookList[20];
 	int currentBookCount = 0;
 	addBook(bookList, currentBookCount);
 	return 0;
-}
+}*/
 
 void addBook(BookType bookList[20], int &currentBookCount) {
 	WINDOW * mainWindow;
@@ -136,10 +136,9 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 			break;
 		}
 	}
-	clear();
 	wclear(notification);
 	delwin(notification);
-	delwin(bookDisplayWindow);
+	//delwin(bookDisplayWindow);
 	deleteMenu(mainMenu, items, menuListing.size());
 	endWindow(mainWindow);
 	return;

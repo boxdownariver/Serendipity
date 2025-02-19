@@ -1,7 +1,7 @@
 all: serendipity out/bookInfo
 
-serendipity: src/mainmenu.cpp out/cashier.o out/menuDriver.o out/invmenu.o out/reports.o out/lookUp.o out/bookfile.o out/
-	g++ --std=c++20 -o "serendipity" src/mainmenu.cpp out/menuDriver.o out/invmenu.o out/lookUp.o out/reports.o out/cashier.o out/bookfile.o -lncurses -lmenu
+serendipity: src/mainmenu.cpp out/cashier.o out/menuDriver.o out/invmenu.o out/reports.o out/lookUp.o out/bookfile.o out/addbook.o out/
+	g++ --std=c++20 -o "serendipity" src/mainmenu.cpp out/menuDriver.o out/invmenu.o out/lookUp.o out/reports.o out/cashier.o out/bookfile.o out/addbook.o -lncurses -lmenu
 out/cashier.o: src/cashier.cpp out/
 	g++ -c -o "out/cashier.o" src/cashier.cpp
 out/invmenu.o: src/invmenu.cpp out/
@@ -16,8 +16,8 @@ out/lookUp.o: src/lookUp.cpp out/
 	g++ -c -o "out/lookUp.o" src/lookUp.cpp
 out/bookfile.o: src/bookfile.cpp booklist.dat out/
 	g++ -c -o "out/bookfile.o" src/bookfile.cpp
-addbook: src/addbook.cpp out/menuDriver.o
-	g++ -o "addbook" src/addbook.cpp out/menuDriver.o -lncurses -lmenu
+out/addbook.o: src/addbook.cpp out/
+	g++ -c -o "out/addbook.o" src/addbook.cpp
 out/:
 	mkdir out
 booklist.dat:

@@ -5,6 +5,9 @@
 #ifndef invmenu
 #include "headers/invmenu.h"
 #endif
+#ifndef addbook
+#include "headers/addbook.h"
+#endif
 #include <iostream>
 
 int main_invmenu() {
@@ -31,6 +34,9 @@ int main_invmenu() {
 		switch (choice) {
 		case 0:
 			 mainLookUp();
+			 break;
+		case 1:
+			 addBook(bookList, currentBookCount);
 			 break;
 		case 4:
 			keepGoing = 0;
