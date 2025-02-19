@@ -16,7 +16,7 @@ string isbn;
 int findString (const string toSearch,const BookType array[], const int size);
 void showBook (int index, const BookType array []);
 
-int mainLookUp( const BookType booklist[20], int bookCount ) {
+int mainLookUp( const BookType booklist[], int bookCount ) {
     string toSearch;
     int bookIndex;
     char choice = 'Y';  // Initialized so the loop executes for the first time
