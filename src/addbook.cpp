@@ -38,6 +38,7 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 	FORM *userInputForm;
 	MenuLines mainMenuInfo;
 	BookType bookBuffer;
+	std::deque<int> fieldQueue;
 	struct sigaction sa;
 	int input;
 	int choice;
@@ -45,7 +46,6 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 	char inputChar;
 	char *fieldBuffer;
 	bool continueMenu;
-	std::deque<int> fieldQueue;
 	int exitChar;
 	bool bookWritten;
 
