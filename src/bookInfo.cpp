@@ -32,14 +32,14 @@ void bookInfoWindow(const BookType array[], const int bookIndex )
 	cout <<         "-               Serendipity Booksellers                   -\n";
 	cout <<         "-                    Book Information                     -\n";
 	cout <<         "-                                                         -\n";
-	cout <<         "-    ISBN:                                                -\n";
-	cout <<         "-    Title:                                               -\n";
-	cout <<         "-    Author:                                              -\n";
-	cout <<         "-    Publisher:                                           -\n";
-	cout <<         "-    Date Added:                                          -\n";
-	cout <<         "-    Quantity-On-Hand:                                    -\n";
-	cout <<         "-    Wholesale Cost:                                      -\n";
-	cout <<         "-    Retail Price:                                        -\n";
+	cout <<         "-    ISBN             : " << array[bookIndex].bookTitle << endl;
+	cout <<         "-    Title            : " << array[bookIndex].isbn << endl;                                             
+	cout <<         "-    Author           : " << array[bookIndex].author << endl;                                  
+	cout <<         "-    Publisher        : " << array[bookIndex].publisher << endl;
+	cout <<         "-    Date Added       : " << array[bookIndex].dateAdded << endl;
+	cout <<         "-    Quantity-On-Hand : " << array[bookIndex].qtyOnHand << endl;
+	cout <<         "-    Wholesale Cost   : " << array[bookIndex].wholesale << endl;
+	cout <<         "-    Retail Price     : " << array[bookIndex].retail << endl;
 	cout <<         "-                                                         -\n";
 	cout <<         "-----------------------------------------------------------\n";
 }
