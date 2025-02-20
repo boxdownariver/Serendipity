@@ -104,13 +104,13 @@ void showBook (int index, const BookType array [])
 {
 	
     cout << "----------------------------------------------------------------------------\n";	
-    cout << "* Book Title            : -------> " << setw(40) << left << array[index].bookTitle << "*\n";
-    cout << "* ISBN                  : -------> " << setw(40) << left << array[index].isbn << "*\n";
-    cout << "* Author                : -------> " << setw(40) << left << array[index].author << "*\n";
-    cout << "* Publisher             : -------> " << setw(40) << left << array[index].publisher << "*\n";
-    cout << "* Date added            : -------> " << setw(40) << left << array[index].dateAdded << "*\n";
-    cout << "* Quantity On Hand      : -------> " << setw(40) << left << array[index].qtyOnHand << "*\n";
-    cout << "* Wholesale Price ($)   : -------> " << setw(40) << left << array[index].wholesale << "*\n";
-    cout << "* Retail Price ($)      : -------> " << setw(40) << left << array[index].retail << "*\n";
+    cout << "* Book Title            : -------> " << setw(40) << left << array[index].bookTitle << "\n";
+    cout << "* ISBN                  : -------> " << setw(40) << left << array[index].isbn << "\n";
+    cout << "* Author                : -------> " << setw(40) << left << array[index].author << "\n";
+    cout << "* Publisher             : -------> " << setw(40) << left << array[index].publisher << "\n";
+    cout << "* Date added            : -------> " << setw(40) << left << array[index].dateAdded << "\n";
+    cout << "* Quantity On Hand      : -------> " << setw(40) << left << array[index].qtyOnHand << "\n";
+    cout << "* Wholesale Price ($)   : -------> " << setw(40) << left << array[index].wholesale << "\n";
+    cout << "* Retail Price ($)      : -------> " << setw(40) << left << array[index].retail << "\n";
     cout << "----------------------------------------------------------------------------\n";		
 }
