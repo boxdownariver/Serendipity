@@ -10,17 +10,17 @@
 #endif
 #include <iostream>
 
-int main_invmenu() {
+int main_invmenu(BookType (&bookList)[20], int &currentBookCount) {
 	std::string menuName = "Inventory Database";
 	std::vector<std::string> menuListing = { "Look Up a Book", "Add a Book",
 			"Edit a Book's Record", "Delete a Book", "Return to the Main Menu" };
 	MenuLines mainMenuInfo;
-	BookType bookList[20];
-	int currentBookCount;
+	//BookType bookList[20];
+	//int currentBookCount;
 	int choice;
 	bool keepGoing;
 
-	currentBookCount = 0;
+	//currentBookCount = 0;
 	readFile(bookList, currentBookCount);
 
 	mainMenuInfo.menuName = menuName;

@@ -2,7 +2,6 @@
 #include <string>
 #endif
 #define invmenu
-int main_invmenu();
 struct BookType {
 	std::string bookTitle;
 	std::string isbn;
@@ -13,3 +12,4 @@ struct BookType {
 	double wholesale;
 	double retail;
 };
+int main_invmenu(BookType (&books)[20], int &bookCount);
