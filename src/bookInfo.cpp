@@ -16,9 +16,9 @@
 
 using namespace std;
 // Funk prototype
-void bookInfoWindow(const BookType []array, const int bookIndex );
+void bookInfoWindow(const BookType array[], const int bookIndex );
 
-int mainbookInfo ( const BookType []array, const int &bookIndex );
+int mainbookInfo ( const BookType array[], const int &bookIndex )
 {
 // Outputs printed book info function
 	bookInfoWindow(array, bookIndex);
@@ -26,7 +26,7 @@ int mainbookInfo ( const BookType []array, const int &bookIndex );
 }
 
 // Function for printing book info
-void bookInfoWindow(const bookType []array, const int bookIndex )
+void bookInfoWindow(const BookType array[], const int bookIndex )
 {
 	cout << left << "-----------------------------------------------------------\n";
 	cout <<         "-               Serendipity Booksellers                   -\n";
