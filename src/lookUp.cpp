@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <algorithm>
 #include <string>
@@ -7,6 +6,7 @@
 #include <iomanip>
 #include <limits>
 #include "headers/invmenu.h"
+#include "headers/bookInfo"
 using namespace std;
 
 int findString (const string toSearch,const BookType array[], const int size);
