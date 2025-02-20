@@ -10,7 +10,6 @@
 using namespace std;
 
 int findString (const string toSearch,const BookType array[], const int size);
-void showBook (int index, const BookType array []);
 
 int mainLookUp( const BookType booklist[], int &bookCount ) {
     string toSearch;
@@ -38,7 +37,7 @@ int mainLookUp( const BookType booklist[], int &bookCount ) {
     				{
         				//show the book details to user
 					system("clear");
-        				showBook (bookIndex, booklist);
+        				mainbookInfo ( booklist, bookIndex );       // Pass array and index to mainbookInfo
     				}
 		cout << "Do you want to proceed another look up(Y/N)?\n";
 		cin.get (choice);
@@ -97,20 +96,4 @@ int findString (const string toSearch, const BookType array[], const int size)
          }
     cout << "Reached end of the book list. No book found..\n";
     return -1;
-}
-
-
-void showBook (int index, const BookType array [])
-{
-	
-    cout << "----------------------------------------------------------------------------\n";	
-    cout << "* Book Title            : -------> " << setw(40) << left << array[index].bookTitle << "\n";
-    cout << "* ISBN                  : -------> " << setw(40) << left << array[index].isbn << "\n";
-    cout << "* Author                : -------> " << setw(40) << left << array[index].author << "\n";
-    cout << "* Publisher             : -------> " << setw(40) << left << array[index].publisher << "\n";
-    cout << "* Date added            : -------> " << setw(40) << left << array[index].dateAdded << "\n";
-    cout << "* Quantity On Hand      : -------> " << setw(40) << left << array[index].qtyOnHand << "\n";
-    cout << "* Wholesale Price ($)   : -------> " << setw(40) << left << array[index].wholesale << "\n";
-    cout << "* Retail Price ($)      : -------> " << setw(40) << left << array[index].retail << "\n";
-    cout << "----------------------------------------------------------------------------\n";		
 }
