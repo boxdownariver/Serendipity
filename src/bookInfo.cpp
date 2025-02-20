@@ -12,15 +12,16 @@
 
 #include <iostream>
 #include <iomanip>  //To keep it clean
+#include
 
 using namespace std;
 // Funk prototype
-void bookInfoWindow();
+void bookInfoWindow(const bookType []array, const &bookIndex );
 
-int main()
+int mainbookInfo ( const bookType []array, const &bookIndex );
 {
 // Outputs printed book info function
-	bookInfoWindow();
+	bookInfoWindow(array, bookIndex);
 	return 0;
 }
 
