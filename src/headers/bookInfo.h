@@ -1,5 +1,7 @@
-#ifndef invmenu
-#include "invmenu.h"
-#endif
+#ifndef BOOKINFO_H
+#define BOOKINFO_H
 
-int mainbookInfo ( const bookType []array, const &bookIndex );
+#include "headers/invmenu.h"
+
+int mainbookInfo ( const bookType array[], const int &bookIndex );
+#endif
