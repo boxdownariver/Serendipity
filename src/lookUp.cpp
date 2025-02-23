@@ -111,8 +111,12 @@ int findString (const string toSearch, const BookType array[], const int size)
 		cout << toSearch;
 	else 
 		cout << setw(24) << left << toSearch.substr(0,24) << "...";
+	
+	if (searchLength <= 35 )
+	cout << setw (35-searchLength) << left << "' found." << " ║ \n" ;
+	else
+	cout << setw (0) << left << "' found." << " ║ \n" ;
 
-	 cout << setw (35-searchLength) << left << "' found." << " ║ \n" ;
 	 cout << "╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n"; 
 
     return -1;
