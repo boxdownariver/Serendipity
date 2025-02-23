@@ -25,6 +25,7 @@
 #include <cstring>     // To get the length
 #include <cstdlib>     // To clear the screen
 #include <cctype>      // To check for user choice effectively
+#include <limits>      // To handle garbage input well
 
 using namespace std;
 
@@ -107,7 +108,7 @@ void askData (bookType &books)
 	setColour (93);
 	
 	cout << "Information added, press enter to view the cashier receipt\n";
-	cin.ignore();	
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');	
 	
 	return;
 }
@@ -129,21 +130,21 @@ void FormatReport (const bookType &books)
 	setColour (96);   // Receipt generally using cyan colour
 	cout << fixed << setprecision(2);
 	
-	cout << "+------------------------------------------------------------------------------+\n";
-	cout << "|                                                                              |\n";
-	cout << "|"; 
+	cout << "╔═════════════════════════════════════════════~════════════════════════════════╗\n";
+	cout << "║                                                                              ║\n";
+	cout << "║"; 
 	// Set cyan colour for shop name
 	setColour(97);
 	cout << setw (78) << left << "Serendipity Book Sellers"; 
 	setColour (96);    // Back cyan colour
-	cout << "|\n";
-	cout << "|                                                                              |\n";
-	cout << "| Date: " << setw (71) << left << books.date << "|\n";
-	cout << "|                                                                              |\n";
-	cout << "|" << setw(5) << left << "Qty" << setw(14) << left << "ISBN" << setw(38) << left << "Title";
-	cout << setw (12) << left << "Price" << setw (9) << left << "Total" << "|\n";
-	cout << "--------------------------------------------------------------------------------\n";
-	cout << "|" << setw(3) << right << books.quantity << "  " << setw (14) << left << books.isbn;
+	cout << "║\n";
+	cout << "║                                                                              ║\n";
+	cout << "║ Date: " << setw (71) << left << books.date << "║\n";
+	cout << "║                                                                              ║\n";
+	cout << "║" << setw(5) << left << "Qty" << setw(14) << left << "ISBN" << setw(38) << left << "Title";
+	cout << setw (12) << left << "Price" << setw (9) << left << "Total" << "║\n";
+	cout << "╠══════════════════════════════════════════════════════════════════════════════╣\n";
+	cout << "║" << setw(3) << right << books.quantity << "  " << setw (14) << left << books.isbn;
 	
 	// placement of the book title
 	if (books.title.length() <= 34 )
@@ -156,25 +157,25 @@ void FormatReport (const bookType &books)
 		cout << setw (32) << left << tempTitle << "...";
 	}
 	
-	cout << setw (3) << right << "$" << setw (7) << right << books.price << setw (5) << right << "$" << setw(7) << right << books.total << " |\n";
-	cout << "|                                                                              |\n";
-	cout << "|                                                                              |\n";
-	cout << setw (58) << left << "|" << "Subtotal    $" << setw (7) << right << subtotal << setw (2) << right << " |\n";
-	cout << setw (58) << left << "|" << "Tax         $" << setw (7) << right << tax_amt << setw (2) << right << " |\n";
-	cout << setw (58) << left << "|";
+	cout << setw (3) << right << "$" << setw (7) << right << books.price << setw (5) << right << "$" << setw(7) << right << books.total << " ║\n";
+	cout << "║                                                                              ║\n";
+	cout << "║                                                                              ║\n";
+	cout << setw (58) << left << "║" << "Subtotal    $" << setw (8) << right << subtotal << "  ║\n";
+	cout << setw (58) << left << "║" << "Tax         $" << setw (8) << right << tax_amt << "  ║\n";
+	cout << setw (58) << left << "║";
 	// Set total colour to Yellow
 	setColour (93);
-	cout << "Total       $" << setw (7) << right << totalAfterTax;
+	cout << "Total       $" << setw (8) << right << totalAfterTax;
 	setColour (96);     // Back to cyan
-	cout << setw (2) << right << " |\n";
-	cout << "|                                                                              |\n";
-	cout << "| ";
+	cout << setw (3) << right << "  ║\n";
+	cout << "║                                                                              ║\n";
+	cout << "║ ";
 	// Print thank you text in white
 	setColour (97);
 	cout<< setw (77) << left << "Thank you for shopping at Serendipity!";
 	setColour (96);    // Back to cyan colour
-	cout << "|\n";
-	cout << "+------------------------------------------------------------------------------+\n";
+	cout << "║\n";
+	cout << "╚══════════════════════════════════════════════════════════════════════════════╝\n";
 	
 	return;
 }
