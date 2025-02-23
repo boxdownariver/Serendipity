@@ -28,19 +28,19 @@ int mainbookInfo ( const BookType array[], const int &bookIndex )
 // Function for printing book info
 void bookInfoWindow(const BookType array[], const int bookIndex )
 {
-	cout << left << "-----------------------------------------------------------\n";
-	cout <<         "-               Serendipity Booksellers                    \n";
-	cout <<         "-                    Book Information                      \n";
-	cout <<         "-                                                          \n";
-	cout <<         "-    ISBN             : " << array[bookIndex].bookTitle << endl;
-	cout <<         "-    Title            : " << array[bookIndex].isbn << endl;                                             
-	cout <<         "-    Author           : " << array[bookIndex].author << endl;                                  
-	cout <<         "-    Publisher        : " << array[bookIndex].publisher << endl;
-	cout <<         "-    Date Added       : " << array[bookIndex].dateAdded << endl;
-	cout <<         "-    Quantity-On-Hand : " << array[bookIndex].qtyOnHand << endl;
-	cout <<         "-    Wholesale Cost   : " << array[bookIndex].wholesale << endl;
-	cout <<         "-    Retail Price     : " << array[bookIndex].retail << endl;
-	cout <<         "-                                                          \n";
-	cout <<         "-----------------------------------------------------------\n";
+	cout << left << "╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n";
+	cout <<         "║                                       Serendipity Booksellers                                      ║\n";
+	cout <<         "║                                           Book Information                                         ║\n";
+	cout <<         "║                                                                                                    ║\n";
+	cout <<         "║  ISBN             : " << setw (78) << left << array[bookIndex].bookTitle << " ║\n";
+	cout <<         "║  Title            : " << setw(78) << left << array[bookIndex].isbn << " ║\n";                                              
+	cout <<         "║  Author           : " << setw (78) << left << array[bookIndex].author << " ║\n";                                 
+	cout <<         "║  Publisher        : " << setw (78) << left << array[bookIndex].publisher << " ║\n";
+	cout <<         "║  Date Added       : " << setw (78) << left << array[bookIndex].dateAdded << " ║\n";
+	cout <<         "║  Quantity-On-Hand : " << setw (78) << left << array[bookIndex].qtyOnHand << " ║\n";
+	cout <<         "║  Wholesale Cost   : " << setw (78) << left << array[bookIndex].wholesale << " ║\n";
+	cout <<         "║  Retail Price     : " << setw(78) << left << array[bookIndex].retail << " ║\n";
+	cout <<         "║                                                                                                    ║\n";
+	cout <<         "╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n";
 }
 
