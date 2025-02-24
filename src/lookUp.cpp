@@ -9,6 +9,7 @@
 #include "headers/invmenu.h"
 #include "headers/bookInfo.h"
 #include "headers/lookUp.h"
+#include "headers/setColour.h"
 using namespace std;
 
 
@@ -32,12 +33,13 @@ int mainLookUp( const BookType booklist[], int &bookCount ) {
 		while (bookCount != 0 && toupper (choice) != 'N' )
 	{
 		system ("clear");
+		setColour (33);
 		cout << "╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n"; 
     	cout << "║                                     >>> BOOK LOOKUP <<<                                            ║\n";
 		cout << "╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n";
     	cout << "                                      Search : ";
     	getline (cin, toSearch);
-
+	   resetColour();
 		// Function to find the string
     	bookIndex = findString (toSearch, booklist, bookCount );
 
@@ -87,7 +89,12 @@ int findString (const string toSearch, const BookType array[], const int size)
              if (tempTitle.find(searchUpper) != string::npos || array[index].isbn.find (toSearch)!= string::npos)
              {
 					  cout << "║ [" << setw (2) << right << bookFoundCount <<"]" << setw (100) << right << " ║ \n";
-                 cout << "║ RESULT -> : Title - " << setw (78) << left << array[index].bookTitle << " ║\n";
+                 cout << "║ ";
+					  setColour(32); // Yellow text  
+					  cout << "RESULT -> : Title - " << setw (78) << left << array[index].bookTitle;
+					  resetColour();
+
+					  cout << " ║\n";
                  cout << "║ " << setw (98) << left << "Is this the book you intended to search for? (Y/N) : " << " ║ " ;
                  cin.get (choice);
 	        		  cin.ignore (100, '\n');
@@ -107,16 +114,20 @@ int findString (const string toSearch, const BookType array[], const int size)
              
              index++;
          }
-    cout << "║ End of the book list reached. No books with the title or ISBN '";
-	if (searchLength < 25 )
+    cout << "║ ";
+    setColour (96);    // set to cyan
+	 cout << "End of the book list reached. NO books with the title or ISBN '";
+   	if (searchLength < 25 )
 		cout << toSearch;
-	else 
+   	else 
 		cout << setw(24) << left << toSearch.substr(0,24) << "...";
 	
 	if (searchLength <= 35 )
-	cout << setw (35-searchLength) << left << "' found." << " ║ \n" ;
+	cout << setw (35-searchLength) << left << "' found.";
 	else
-	cout << setw (0) << left << "' found." << " ║ \n" ;
+	cout << setw (0) << left << "' found." ;
+	resetColour ();
+	cout << " ║ \n";
 
 	 cout << "╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n"; 
 
