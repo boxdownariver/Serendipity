@@ -4,4 +4,5 @@
 #include "invmenu.h"
 #endif
 
-void editBook(BookType books[20], const int &bookIndex);
+void mainEditBook(BookType books[20], int bookCount);
+void editBook(BookType books[20], int bookIndex);

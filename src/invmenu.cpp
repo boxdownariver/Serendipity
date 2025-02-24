@@ -9,18 +9,18 @@
 #include "headers/addbook.h"
 #endif
 #include <iostream>
+#ifndef EDITBOOK_HPP
+#include "headers/editbook.hpp"
+#endif
 
 int main_invmenu(BookType (&bookList)[20], int &currentBookCount) {
 	std::string menuName = "Inventory Database";
 	std::vector<std::string> menuListing = { "Look Up a Book", "Add a Book",
 			"Edit a Book's Record", "Delete a Book", "Return to the Main Menu" };
 	MenuLines mainMenuInfo;
-	//BookType bookList[20];
-	//int currentBookCount;
 	int choice;
 	bool keepGoing;
 
-	//currentBookCount = 0;
 	readFile(bookList, currentBookCount);
 
 	mainMenuInfo.menuName = menuName;
@@ -38,6 +38,9 @@ int main_invmenu(BookType (&bookList)[20], int &currentBookCount) {
 		case 1:
 			 addBook(bookList, currentBookCount);
 			 break;
+		case 2:
+			mainEditBook(bookList, currentBookCount);
+			break;
 		case 4:
 			keepGoing = 0;
 			break;

@@ -21,9 +21,9 @@
 #endif
 #include <iostream>
 
-void ahandleSignal(const int signal);
+void bhandleSignal(const int signal);
 
-volatile sig_atomic_t astateProvider = 0;
+volatile sig_atomic_t bstateProvider = 0;
 
 void mainEditBook(BookType bookList[20], int currentSize) {
 	std::string searchTerm;
@@ -45,7 +45,7 @@ void mainEditBook(BookType bookList[20], int currentSize) {
 	}
 }
 
-const char* trim(const std::string operandString) {
+const char* atrim(const std::string operandString) {
 	std::string returnString;
 	size_t iter;
 
@@ -92,7 +92,7 @@ void editBook(BookType bookList[20], int bookIndex) {
 			sizeof("Enter Date Added (mm/dd/yyyy)") / sizeof(char);
 
 	sa.sa_flags = 0;
-	sa.sa_handler = ahandleSignal;
+	sa.sa_handler = bhandleSignal;
 	sigaction(SIGWINCH, &sa, NULL);
 
 	startWindow(mainWindow);
@@ -135,23 +135,14 @@ void editBook(BookType bookList[20], int bookIndex) {
 	set_form_sub(userInputForm,
 			derwin(notification, getmaxy(notification),
 					getmaxx(notification), 0, 0));
-	/*
-	 bookBuffer.bookTitle = "UNSET";
-	 bookBuffer.isbn = "UNSET";
-	 bookBuffer.author = "UNSET";
-	 bookBuffer.publisher = "UNSET";
-	 bookBuffer.dateAdded = "UNSET";
-	 bookBuffer.qtyOnHand = 0;
-	 bookBuffer.wholesale = 0;
-	 bookBuffer.retail = 0;
-	 */
+
 	bookBuffer = bookList[bookIndex];
 
 	bookWritten = 1;
 
 	//Main program loop
 	while (continueMenu) {
-		if (astateProvider) {
+		if (bstateProvider) {
 			delwin(bookDisplayWindow);
 			refreshWindowMiddleSplit(mainMenu, mainWindow, notification,
 					mainMenuInfo);
@@ -163,11 +154,11 @@ void editBook(BookType bookList[20], int bookIndex) {
 					getmaxx(mainWindow) / 2 - 1, 3,
 					getmaxx(mainWindow) / 2);
 			box(bookDisplayWindow, 0, 0);
-			mvwprintw(bookDisplayWindow, 1, 1, trim(bookBuffer.bookTitle));
-			mvwprintw(bookDisplayWindow, 2, 1, trim(bookBuffer.isbn));
-			mvwprintw(bookDisplayWindow, 3, 1, trim(bookBuffer.author));
-			mvwprintw(bookDisplayWindow, 4, 1, trim(bookBuffer.publisher));
-			mvwprintw(bookDisplayWindow, 5, 1, trim(bookBuffer.dateAdded));
+			mvwprintw(bookDisplayWindow, 1, 1, atrim(bookBuffer.bookTitle));
+			mvwprintw(bookDisplayWindow, 2, 1, atrim(bookBuffer.isbn));
+			mvwprintw(bookDisplayWindow, 3, 1, atrim(bookBuffer.author));
+			mvwprintw(bookDisplayWindow, 4, 1, atrim(bookBuffer.publisher));
+			mvwprintw(bookDisplayWindow, 5, 1, atrim(bookBuffer.dateAdded));
 			mvwprintw(bookDisplayWindow, 6, 1, "%d", bookBuffer.qtyOnHand);
 			mvwprintw(bookDisplayWindow, 7, 1, "%.2f",
 					bookBuffer.wholesale);
@@ -181,7 +172,7 @@ void editBook(BookType bookList[20], int bookIndex) {
 							getmaxx(notification), 0, 0));
 			wrefresh(notification);
 
-			astateProvider = 0;
+			bstateProvider = 0;
 		}
 
 		mvwprintw(notification, 2, 1, "Currently editing index %d",
@@ -190,15 +181,15 @@ void editBook(BookType bookList[20], int bookIndex) {
 		wclear(bookDisplayWindow);
 		box(bookDisplayWindow, 0, 0);
 		mvwprintw(bookDisplayWindow, 1, 1, "Title            : %s",
-				trim(bookBuffer.bookTitle));
+				atrim(bookBuffer.bookTitle));
 		mvwprintw(bookDisplayWindow, 2, 1, "ISBN             : %s",
-				trim(bookBuffer.isbn));
+				atrim(bookBuffer.isbn));
 		mvwprintw(bookDisplayWindow, 3, 1, "Author           : %s",
-				trim(bookBuffer.author));
+				atrim(bookBuffer.author));
 		mvwprintw(bookDisplayWindow, 4, 1, "Publisher        : %s",
-				trim(bookBuffer.publisher));
+				atrim(bookBuffer.publisher));
 		mvwprintw(bookDisplayWindow, 5, 1, "Date Added       : %s",
-				trim(bookBuffer.dateAdded));
+				atrim(bookBuffer.dateAdded));
 		mvwprintw(bookDisplayWindow, 6, 1, "QoH              : %d",
 				bookBuffer.qtyOnHand);
 		mvwprintw(bookDisplayWindow, 7, 1, "Wholesale Value  : %.2f",
@@ -297,14 +288,6 @@ void editBook(BookType bookList[20], int bookIndex) {
 					exitChar = wgetch(notification);
 					if (tolower(exitChar) == 'y') {
 						bookList[bookIndex] = bookBuffer;
-						bookBuffer.bookTitle = "UNSET";
-						bookBuffer.isbn = "UNSET";
-						bookBuffer.author = "UNSET";
-						bookBuffer.publisher = "UNSET";
-						bookBuffer.dateAdded = "UNSET";
-						bookBuffer.qtyOnHand = 0;
-						bookBuffer.wholesale = 0;
-						bookBuffer.retail = 0;
 						bookWritten = 1;
 					}
 					wclear(notification);
@@ -358,7 +341,7 @@ void editBook(BookType bookList[20], int bookIndex) {
 	return;
 }
 
-void ahandleSignal(const int signal) {
-	astateProvider = signal;
+void bhandleSignal(const int signal) {
+	bstateProvider = signal;
 	return;
 }
