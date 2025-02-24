@@ -1,7 +1,7 @@
 all: serendipity
 
-serendipity: src/mainmenu.cpp out/cashier.o out/menuDriver.o out/invmenu.o out/reports.o out/lookUp.o out/bookfile.o out/addbook.o out/bookInfo.o out/editbook.o out/ 
-	g++ --std=c++20 -o "serendipity" src/mainmenu.cpp out/menuDriver.o out/invmenu.o out/lookUp.o out/reports.o out/cashier.o out/bookfile.o out/addbook.o out/bookInfo.o out/editbook.o -lncurses -lmenu -lform
+serendipity: src/mainmenu.cpp out/cashier.o out/menuDriver.o out/invmenu.o out/reports.o out/lookUp.o out/bookfile.o out/addbook.o out/bookInfo.o out/editbook.o out/setColour.o out/  
+	g++ --std=c++20 -o "serendipity" src/mainmenu.cpp out/menuDriver.o out/invmenu.o out/lookUp.o out/reports.o out/cashier.o out/bookfile.o out/addbook.o out/bookInfo.o out/editbook.o out/setColour.o -lncurses -lmenu -lform
 out/cashier.o: src/cashier.cpp out/
 	g++ -c -o "out/cashier.o" src/cashier.cpp
 out/invmenu.o: src/invmenu.cpp out/
@@ -20,6 +20,8 @@ out/addbook.o: src/addbook.cpp out/
 	g++ -c -o "out/addbook.o" src/addbook.cpp
 out/editbook.o: src/editbook.cpp out/
 	g++ -c -o "out/editbook.o" src/editbook.cpp
+out/setColour.o: src/setColour.cpp out/
+	g++ -c -o "out/setColour.o" src/setColour.cpp
 out/:
 	mkdir out
 booklist.dat:

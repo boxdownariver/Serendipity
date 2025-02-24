@@ -26,7 +26,7 @@
 #include <cstdlib>     // To clear the screen
 #include <cctype>      // To check for user choice effectively
 #include <limits>      // To handle garbage input well
-
+#include "headers/setColour.h"
 using namespace std;
 
 struct bookType {
@@ -40,7 +40,6 @@ struct bookType {
 
 void askData (bookType &books);
 void FormatReport (const bookType &books);
-void setColour ( int colourCode );
 
 int mainCashier (){
 
@@ -177,11 +176,5 @@ void FormatReport (const bookType &books)
 	cout << "║\n";
 	cout << "╚══════════════════════════════════════════════════════════════════════════════╝\n";
 	
-	return;
-}
-
-void setColour (int colourCode )
-{
-	cout << "\033[1;" << colourCode << "m";
 	return;
 }
