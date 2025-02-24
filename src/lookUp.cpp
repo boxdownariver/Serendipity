@@ -8,9 +8,10 @@
 #include <limits>
 #include "headers/invmenu.h"
 #include "headers/bookInfo.h"
+#include "headers/lookUp.h"
 using namespace std;
 
-int findString (const string toSearch,const BookType array[], const int size);
+
 
 int mainLookUp( const BookType booklist[], int &bookCount ) {
     string toSearch;
