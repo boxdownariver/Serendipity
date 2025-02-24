@@ -98,7 +98,7 @@ int makeMenu(MenuLines &mainMenuInfo) {
 					&& (mainMenuInfo.menuName == "Main Menu"
 							|| (mainMenuInfo.menuName
 									== "Inventory Database"
-									&& (breakOut <= 1 && breakOut != -1))
+									&& (breakOut <= 2 && breakOut != -1))
 							|| breakOut == menuLineSize - 1)) {
 				dontExit = 0;
 			}
