@@ -235,36 +235,37 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 						wrefresh(notification);
 					}
 					QueueSize = fieldQueue.size();
-					fieldBuffer = new char[QueueSize];
+					fieldBuffer = new char[QueueSize + 1];
 					for (int i = 0; i < QueueSize; i++) {
 						fieldBuffer[i] = fieldQueue.at(i);
 					}
 					fieldQueue.clear();
+					fieldBuffer[QueueSize] = '\0';
 					switch (choice) {
 					case 0:
 						//Get book title
 						bookBuffer.bookTitle = fieldBuffer;
-						bookBuffer.bookTitle.resize(QueueSize);
+						//bookBuffer.bookTitle.resize(QueueSize);
 						break;
 					case 1:
 						//Get isbn
 						bookBuffer.isbn = fieldBuffer;
-						bookBuffer.isbn.resize(QueueSize);
+						//bookBuffer.isbn.resize(QueueSize);
 						break;
 					case 2:
 						//Get author
 						bookBuffer.author = fieldBuffer;
-						bookBuffer.author.resize(QueueSize);
+						//bookBuffer.author.resize(QueueSize);
 						break;
 					case 3:
 						//Get publisher
 						bookBuffer.publisher = fieldBuffer;
-						bookBuffer.publisher.resize(QueueSize);
+						//bookBuffer.publisher.resize(QueueSize);
 						break;
 					case 4:
 						//Get date added
 						bookBuffer.dateAdded = fieldBuffer;
-						bookBuffer.dateAdded.resize(QueueSize);
+						//bookBuffer.dateAdded.resize(QueueSize);
 						break;
 					case 5:
 						//Get quantity on hand
