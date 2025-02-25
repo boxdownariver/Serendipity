@@ -63,12 +63,12 @@ const char* atrim(const std::string operandString, WINDOW * window) {
 	returnString.erase(0, iter);
 	returnString.shrink_to_fit();
 
-	if (returnString.length() > (getmaxx(window) - sizeof("Title            : "))) {
-		returnString.erase(returnString.begin() + getmaxx(window) - sizeof("Title            : "), returnString.end());
+	if (returnString.length() > (getmaxx(window)
+			- sizeof("Title            : ") - 6)) {
+		returnString.erase(returnString.begin() + getmaxx(window)
+				- sizeof("Title            : ") - 9, returnString.end());
 		returnString.append("...");
-		//returnString = "Bob";
 	}
-	//returnString = "Bob";
 	returnString.shrink_to_fit();
 	return returnString.c_str();
 }

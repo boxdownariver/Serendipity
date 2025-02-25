@@ -21,20 +21,27 @@ void ahandleSignal(const int signal);
 
 volatile sig_atomic_t astateProvider = 0;
 
-const char* trim(const std::string operandString) {
+const char* trim(const std::string operandString, WINDOW *window) {
 	std::string returnString;
-	bool keepTrimming;
-	int iter;
+	size_t iter;
 
-	keepTrimming = 1;
-	returnString = operandString;
+	returnString = std::string(operandString);
 	for (iter = 0;
 			iter < returnString.length()
-					&& returnString.c_str()[iter] == ' '; iter++) {
-
-	}
+					&& returnString.c_str()[iter] == ' '; iter++)
+		;
 	returnString.erase(0, iter);
+	returnString.shrink_to_fit();
 
+	if (returnString.length()
+			> (getmaxx(window) - sizeof("Title            : ") - 6)) {
+		returnString.erase(
+				returnString.begin() + getmaxx(window)
+						- sizeof("Title            : ") - 9,
+				returnString.end());
+		returnString.append("...");
+	}
+	returnString.shrink_to_fit();
 	return returnString.c_str();
 }
 
@@ -140,11 +147,16 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 					getmaxx(mainWindow) / 2 - 1, 3,
 					getmaxx(mainWindow) / 2);
 			box(bookDisplayWindow, 0, 0);
-			mvwprintw(bookDisplayWindow, 1, 1, trim(bookBuffer.bookTitle));
-			mvwprintw(bookDisplayWindow, 2, 1, trim(bookBuffer.isbn));
-			mvwprintw(bookDisplayWindow, 3, 1, trim(bookBuffer.author));
-			mvwprintw(bookDisplayWindow, 4, 1, trim(bookBuffer.publisher));
-			mvwprintw(bookDisplayWindow, 5, 1, trim(bookBuffer.dateAdded));
+			mvwprintw(bookDisplayWindow, 1, 1,
+					trim(bookBuffer.bookTitle, bookDisplayWindow));
+			mvwprintw(bookDisplayWindow, 2, 1,
+					trim(bookBuffer.isbn, bookDisplayWindow));
+			mvwprintw(bookDisplayWindow, 3, 1,
+					trim(bookBuffer.author, bookDisplayWindow));
+			mvwprintw(bookDisplayWindow, 4, 1,
+					trim(bookBuffer.publisher, bookDisplayWindow));
+			mvwprintw(bookDisplayWindow, 5, 1,
+					trim(bookBuffer.dateAdded, bookDisplayWindow));
 			mvwprintw(bookDisplayWindow, 6, 1, "%d", bookBuffer.qtyOnHand);
 			mvwprintw(bookDisplayWindow, 7, 1, "%.2f",
 					bookBuffer.wholesale);
@@ -167,15 +179,15 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 		wclear(bookDisplayWindow);
 		box(bookDisplayWindow, 0, 0);
 		mvwprintw(bookDisplayWindow, 1, 1, "Title            : %s",
-				trim(bookBuffer.bookTitle));
+				trim(bookBuffer.bookTitle, bookDisplayWindow));
 		mvwprintw(bookDisplayWindow, 2, 1, "ISBN             : %s",
-				trim(bookBuffer.isbn));
+				trim(bookBuffer.isbn, bookDisplayWindow));
 		mvwprintw(bookDisplayWindow, 3, 1, "Author           : %s",
-				trim(bookBuffer.author));
+				trim(bookBuffer.author, bookDisplayWindow));
 		mvwprintw(bookDisplayWindow, 4, 1, "Publisher        : %s",
-				trim(bookBuffer.publisher));
+				trim(bookBuffer.publisher, bookDisplayWindow));
 		mvwprintw(bookDisplayWindow, 5, 1, "Date Added       : %s",
-				trim(bookBuffer.dateAdded));
+				trim(bookBuffer.dateAdded, bookDisplayWindow));
 		mvwprintw(bookDisplayWindow, 6, 1, "QoH              : %d",
 				bookBuffer.qtyOnHand);
 		mvwprintw(bookDisplayWindow, 7, 1, "Wholesale Value  : %.2f",
