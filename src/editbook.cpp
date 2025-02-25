@@ -1,6 +1,12 @@
 #ifndef FORM_H
 #include <form.h>
 #endif
+#ifndef __NCURSES_H
+#include <curses.h>
+#endif
+#ifndef ETI_MENU
+#include <menu.h>
+#endif
 #ifndef EDITBOOK_HPP
 #include "headers/editbook.hpp"
 #endif
@@ -45,17 +51,25 @@ void mainEditBook(BookType bookList[20], int currentSize) {
 	}
 }
 
-const char* atrim(const std::string operandString) {
+const char* atrim(const std::string operandString, WINDOW * window) {
 	std::string returnString;
 	size_t iter;
 
-	returnString = operandString;
+	returnString = std::string(operandString);
 	for (iter = 0;
 			iter < returnString.length()
 					&& returnString.c_str()[iter] == ' '; iter++)
 		;
 	returnString.erase(0, iter);
+	returnString.shrink_to_fit();
 
+	if (returnString.length() > (getmaxx(window) - sizeof("Title            : "))) {
+		returnString.erase(returnString.begin() + getmaxx(window) - sizeof("Title            : "), returnString.end());
+		returnString.append("...");
+		//returnString = "Bob";
+	}
+	//returnString = "Bob";
+	returnString.shrink_to_fit();
 	return returnString.c_str();
 }
 
@@ -78,6 +92,7 @@ void editBook(BookType bookList[20], int bookIndex) {
 	char *fieldBuffer;
 	bool continueMenu;
 	int exitChar;
+	int queueSize;
 	bool bookWritten;
 
 	std::vector<std::string> menuListing = { "Enter Book Title",
@@ -86,7 +101,7 @@ void editBook(BookType bookList[20], int bookIndex) {
 			"Enter Wholesale Value", "Enter Retail Price",
 			"Save Book to Database", "Exit" };
 
-	mainMenuInfo.menuName = "Add a Book";
+	mainMenuInfo.menuName = "Edit a Book";
 	mainMenuInfo.menuLines = menuListing;
 	mainMenuInfo.longestMenuLength =
 			sizeof("Enter Date Added (mm/dd/yyyy)") / sizeof(char);
@@ -154,11 +169,11 @@ void editBook(BookType bookList[20], int bookIndex) {
 					getmaxx(mainWindow) / 2 - 1, 3,
 					getmaxx(mainWindow) / 2);
 			box(bookDisplayWindow, 0, 0);
-			mvwprintw(bookDisplayWindow, 1, 1, atrim(bookBuffer.bookTitle));
-			mvwprintw(bookDisplayWindow, 2, 1, atrim(bookBuffer.isbn));
-			mvwprintw(bookDisplayWindow, 3, 1, atrim(bookBuffer.author));
-			mvwprintw(bookDisplayWindow, 4, 1, atrim(bookBuffer.publisher));
-			mvwprintw(bookDisplayWindow, 5, 1, atrim(bookBuffer.dateAdded));
+			mvwprintw(bookDisplayWindow, 1, 1, atrim(bookBuffer.bookTitle, bookDisplayWindow));
+			mvwprintw(bookDisplayWindow, 2, 1, atrim(bookBuffer.isbn, bookDisplayWindow));
+			mvwprintw(bookDisplayWindow, 3, 1, atrim(bookBuffer.author, bookDisplayWindow));
+			mvwprintw(bookDisplayWindow, 4, 1, atrim(bookBuffer.publisher, bookDisplayWindow));
+			mvwprintw(bookDisplayWindow, 5, 1, atrim(bookBuffer.dateAdded, bookDisplayWindow));
 			mvwprintw(bookDisplayWindow, 6, 1, "%d", bookBuffer.qtyOnHand);
 			mvwprintw(bookDisplayWindow, 7, 1, "%.2f",
 					bookBuffer.wholesale);
@@ -181,15 +196,15 @@ void editBook(BookType bookList[20], int bookIndex) {
 		wclear(bookDisplayWindow);
 		box(bookDisplayWindow, 0, 0);
 		mvwprintw(bookDisplayWindow, 1, 1, "Title            : %s",
-				atrim(bookBuffer.bookTitle));
+				atrim(bookBuffer.bookTitle, bookDisplayWindow));
 		mvwprintw(bookDisplayWindow, 2, 1, "ISBN             : %s",
-				atrim(bookBuffer.isbn));
+				atrim(bookBuffer.isbn, bookDisplayWindow));
 		mvwprintw(bookDisplayWindow, 3, 1, "Author           : %s",
-				atrim(bookBuffer.author));
+				atrim(bookBuffer.author, bookDisplayWindow));
 		mvwprintw(bookDisplayWindow, 4, 1, "Publisher        : %s",
-				atrim(bookBuffer.publisher));
+				atrim(bookBuffer.publisher, bookDisplayWindow));
 		mvwprintw(bookDisplayWindow, 5, 1, "Date Added       : %s",
-				atrim(bookBuffer.dateAdded));
+				atrim(bookBuffer.dateAdded, bookDisplayWindow));
 		mvwprintw(bookDisplayWindow, 6, 1, "QoH              : %d",
 				bookBuffer.qtyOnHand);
 		mvwprintw(bookDisplayWindow, 7, 1, "Wholesale Value  : %.2f",
@@ -213,6 +228,7 @@ void editBook(BookType bookList[20], int bookIndex) {
 					}
 					post_form(userInputForm);
 					wrefresh(notification);
+
 					while ((formch = wgetch(notification)) != 10) {
 						switch (formch) {
 						case KEY_LEFT:
@@ -236,8 +252,9 @@ void editBook(BookType bookList[20], int bookIndex) {
 						}
 						wrefresh(notification);
 					}
-					fieldBuffer = new char[fieldQueue.size()];
-					for (int i = 0; i < fieldQueue.size(); i++) {
+					queueSize = fieldQueue.size();
+					fieldBuffer = new char[queueSize];
+					for (int i = 0; i < queueSize; i++) {
 						fieldBuffer[i] = fieldQueue.at(i);
 					}
 					fieldQueue.clear();
@@ -245,22 +262,27 @@ void editBook(BookType bookList[20], int bookIndex) {
 					case 0:
 						//Get book title
 						bookBuffer.bookTitle = fieldBuffer;
+						bookBuffer.bookTitle.resize(queueSize);
 						break;
 					case 1:
 						//Get isbn
 						bookBuffer.isbn = fieldBuffer;
+						bookBuffer.isbn.resize(queueSize);
 						break;
 					case 2:
 						//Get author
 						bookBuffer.author = fieldBuffer;
+						bookBuffer.author.resize(queueSize);
 						break;
 					case 3:
 						//Get publisher
 						bookBuffer.publisher = fieldBuffer;
+						bookBuffer.publisher.resize(queueSize);
 						break;
 					case 4:
 						//Get date added
 						bookBuffer.dateAdded = fieldBuffer;
+						bookBuffer.dateAdded.resize(queueSize);
 						break;
 					case 5:
 						//Get quantity on hand
@@ -280,7 +302,7 @@ void editBook(BookType bookList[20], int bookIndex) {
 					}
 					unpost_form(userInputForm);
 					wrefresh(notification);
-					//delete[] fieldBuffer;
+					delete[] fieldBuffer;
 				}
 				if (choice == 8) {
 					mvwprintw(notification, 2, 1,
