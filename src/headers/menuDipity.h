@@ -18,7 +18,7 @@ struct MenuLines {
 
 #ifndef make_menu
 #define make_menu
-int makeMenu(MenuLines &);
+int makeMenu(MenuLines &, std::string);
 #endif
 
 #ifndef menu_utils

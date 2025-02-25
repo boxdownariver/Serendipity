@@ -35,7 +35,7 @@ void refreshWindow(MENU *&mainMenu, WINDOW *&mainWindow,
 
 volatile sig_atomic_t stateProvider = 0;
 
-int makeMenu(MenuLines &mainMenuInfo) {
+int makeMenu(MenuLines &mainMenuInfo, std::string startInfo) {
 	ITEM **items;			 //OUTPUT- Menu items
 	MENU *mainMenu;			 //OUTPUT- Complete menu
 	WINDOW *mainWindow;		 //OUTPUT- Window to hold menu
@@ -77,6 +77,8 @@ int makeMenu(MenuLines &mainMenuInfo) {
 	wrefresh(mainWindow);
 
 	notification = newwin(1, 3 * COLS / 5, 9 * LINES / 10, COLS / 5);
+	wprintw(notification, startInfo.c_str());
+	wrefresh(notification);
 
 	//Main program loop
 	dontExit = 1;

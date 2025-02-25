@@ -25,7 +25,7 @@ int main() {
 	system("clear");
 	do {
 		continueMenu = 1;
-		menuResult = makeMenu(mainMenuInfo);
+		menuResult = makeMenu(mainMenuInfo, "");
 
 		switch (menuResult) {
 		case 0:

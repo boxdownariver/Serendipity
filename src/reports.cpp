@@ -10,7 +10,7 @@ int main_reports() {
 	mainMenuInfo.menuName = menuName;
 	mainMenuInfo.menuLines = menuListing;
 	mainMenuInfo.longestMenuLength = sizeof("Inventory Wholesale Value") / sizeof(char);
-	makeMenu(mainMenuInfo);
+	makeMenu(mainMenuInfo, "");
 
 	return 0;
 }
