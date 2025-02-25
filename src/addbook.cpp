@@ -284,7 +284,7 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 					}
 					unpost_form(userInputForm);
 					wrefresh(notification);
-					//delete[] fieldBuffer;
+					delete[] fieldBuffer;
 				}
 				if (choice == 8) {
 					mvwprintw(notification, 2, 1,
