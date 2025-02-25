@@ -35,6 +35,7 @@ int mainLookUp( const BookType booklist[], int &bookCount ) {
 							cout << "Do you want to proceed another look up(Y/N)?\n";
 							cin.get (choice);
 							cin.ignore (100, '\n');
+
 									while (toupper(choice) != 'N' && toupper(choice) != 'Y' )
 										{
 											cout << choice << " is invalid choice.. Only enter Y or N. ";
