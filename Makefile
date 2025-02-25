@@ -13,7 +13,7 @@ out/bookInfo.o: src/bookInfo.cpp out/
 out/menuDriver.o: src/menuDipity.cpp out/
 	g++ --std=c++20 -c -o "out/menuDriver.o" src/menuDipity.cpp
 out/lookUp.o: src/lookUp.cpp out/
-	g++ -c -o "out/lookUp.o" src/lookUp.cpp
+	g++ --std=c++20 -c -o "out/lookUp.o" src/lookUp.cpp
 out/bookfile.o: src/bookfile.cpp booklist.dat out/
 	g++ -c -o "out/bookfile.o" src/bookfile.cpp
 out/addbook.o: src/addbook.cpp out/

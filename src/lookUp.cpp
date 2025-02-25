@@ -12,56 +12,39 @@
 #include "headers/setColour.h"
 using namespace std;
 
-
-
 int mainLookUp( const BookType booklist[], int &bookCount ) {
-    string toSearch;
-    int bookIndex;
-    char choice = 'Y';  // Initialized so the loop executes for the first time
+	string toSearch;
+	char choice;
+	int bookIndex;
 
-	if (bookCount == 0)
-	{
-		system ("clear");
-		cout << "╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n";
-		cout << "║ " << setw (98) << left << "The book list is empty, no books available for search.. " << " ║ \n" ;
-	   cout << "║ " << setw (98) << left << "Press any key to continue " << " ║ \n" ;
-	   cout << "╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n"; 
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-	}
+	do {
 
-	else {
-		while (bookCount != 0 && toupper (choice) != 'N' )
-	{
-		system ("clear");
-		setColour (33);
-		cout << "╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n"; 
-    	cout << "║                                     >>> BOOK LOOKUP <<<                                            ║\n";
-		cout << "╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n";
-    	cout << "                                      Search : ";
-    	getline (cin, toSearch);
-	   resetColour();
-		// Function to find the string
-    	bookIndex = findString (toSearch, booklist, bookCount );
-
-    			if (bookIndex != -1)
-    				{
-        				//show the book details to user
-					system("clear");
-						// Pass the array to show the bookInfo
-        				mainbookInfo ( booklist, bookIndex );       
-    				}
-		cout << "Do you want to proceed another look up(Y/N)?\n";
-		cin.get (choice);
-		cin.ignore (100, '\n');
-		
-		while (toupper(choice) != 'N' && toupper(choice) != 'Y' )
+    toSearch = validateAndAsk ( bookCount );
+		// Proceed with finding string only if the book count is > 1
+		if (toSearch != "invalid" )
 			{
-				cout << choice << " is invalid choice.. Only enter Y or N. ";
-				cin.get (choice);
-				cin.ignore (100, '\n');
-			}
+				// Function to find the string
+    			bookIndex = findString (toSearch, booklist, bookCount );
+							if (bookIndex != -1)
+    								{
+        									//show the book details to user
+												system("clear");
+											// Pass the array to show the bookInfo
+        										mainbookInfo ( booklist, bookIndex );       
+    								}
+							cout << "Do you want to proceed another look up(Y/N)?\n";
+							cin.get (choice);
+							cin.ignore (100, '\n');
+									while (toupper(choice) != 'N' && toupper(choice) != 'Y' )
+										{
+											cout << choice << " is invalid choice.. Only enter Y or N. ";
+											cin.get (choice);
+											cin.ignore (100, '\n');
+										}
+			}		
 	}
-	}
+	while (toupper(choice) != 'N' && bookCount!= 0);
+
 	
     return 0;
 }
@@ -132,4 +115,35 @@ int findString (const string toSearch, const BookType array[], const int size)
 	 cout << "╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n"; 
 
     return -1;
+}
+
+string validateAndAsk ( const int &bookCount)
+{
+	 string toSearch;
+    int bookIndex;
+    char choice = 'Y';  // Initialized so the loop executes for the first time
+
+	if (bookCount == 0)
+	{
+		system ("clear");
+		cout << "╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n";
+		cout << "║ " << setw (98) << left << "The book list is empty, no books available for search.. " << " ║ \n" ;
+	   cout << "║ " << setw (98) << left << "Press any key to continue " << " ║ \n" ;
+	   cout << "╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n"; 
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	}
+
+	else {
+		system ("clear");
+		setColour (33);
+		cout << "╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n"; 
+    	cout << "║                                     >>> BOOK LOOKUP <<<                                            ║\n";
+		cout << "╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n";
+    	cout << "                                      Search : ";
+    	getline (cin, toSearch);
+	   resetColour();
+		return toSearch;
+	}
+
+	return "invalid";
 }
