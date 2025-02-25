@@ -12,6 +12,9 @@
 #ifndef EDITBOOK_HPP
 #include "headers/editbook.hpp"
 #endif
+#ifndef DELETEBOOK_HPP
+#include "headers/deleteBook.hpp"
+#endif
 
 int main_invmenu(BookType (&bookList)[20], int &currentBookCount) {
 	std::string menuName = "Inventory Database";
@@ -40,6 +43,9 @@ int main_invmenu(BookType (&bookList)[20], int &currentBookCount) {
 			 break;
 		case 2:
 			mainEditBook(bookList, currentBookCount);
+			break;
+		case 3:
+			mainDelete (bookList, currentBookCount);
 			break;
 		case 4:
 			keepGoing = 0;

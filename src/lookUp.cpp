@@ -136,8 +136,9 @@ string validateAndAsk ( const int &bookCount)
 	else {
 		system ("clear");
 		setColour (33);
+		cout << "There is currently " << bookCount << " books available at Serendipity Booksellers\n";
 		cout << "╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n"; 
-    	cout << "║                                     >>> BOOK LOOKUP <<<                                            ║\n";
+    	cout << "║                                       >>> BOOK LOOKUP <<<                                          ║\n";
 		cout << "╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n";
     	cout << "                                      Search : ";
     	getline (cin, toSearch);
