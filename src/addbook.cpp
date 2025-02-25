@@ -24,6 +24,7 @@ volatile sig_atomic_t astateProvider = 0;
 const char* trim(const std::string operandString, WINDOW *window) {
 	std::string returnString;
 	size_t iter;
+	int maxSize;
 
 	returnString = std::string(operandString);
 	for (iter = 0;
@@ -33,12 +34,13 @@ const char* trim(const std::string operandString, WINDOW *window) {
 	returnString.erase(0, iter);
 	returnString.shrink_to_fit();
 
+	//maxSize =  (getmaxx(window) - sizeof("Title            : ") - 6);
+	maxSize = 15;
 	if (returnString.length()
-			> (getmaxx(window) - sizeof("Title            : ") - 6)) {
+			> maxSize) {
 		returnString.erase(
-				returnString.begin() + getmaxx(window)
-						- sizeof("Title            : ") - 9,
-				returnString.end());
+				returnString.begin() + maxSize - 3,
+			returnString.end());
 		returnString.append("...");
 	}
 	returnString.shrink_to_fit();

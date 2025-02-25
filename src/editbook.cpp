@@ -54,6 +54,7 @@ void mainEditBook(BookType bookList[20], int currentSize) {
 const char* atrim(const std::string operandString, WINDOW * window) {
 	std::string returnString;
 	size_t iter;
+	int maxSize;
 
 	returnString = std::string(operandString);
 	for (iter = 0;
@@ -63,10 +64,10 @@ const char* atrim(const std::string operandString, WINDOW * window) {
 	returnString.erase(0, iter);
 	returnString.shrink_to_fit();
 
-	if (returnString.length() > (getmaxx(window)
-			- sizeof("Title            : ") - 6)) {
-		returnString.erase(returnString.begin() + getmaxx(window)
-				- sizeof("Title            : ") - 9, returnString.end());
+	//maxSize =  (getmaxx(window) - sizeof("Title            : ") - 7);
+	maxSize = 15;
+	if (returnString.length() > maxSize) {
+		returnString.erase(maxSize - 3, returnString.length());
 		returnString.append("...");
 	}
 	returnString.shrink_to_fit();

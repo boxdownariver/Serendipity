@@ -17,9 +17,9 @@ out/lookUp.o: src/lookUp.cpp out/
 out/bookfile.o: src/bookfile.cpp booklist.dat out/
 	g++ -c -o "out/bookfile.o" src/bookfile.cpp
 out/addbook.o: src/addbook.cpp out/
-	g++ -c -o "out/addbook.o" src/addbook.cpp
+	g++ --std=c++20 -c -o "out/addbook.o" src/addbook.cpp
 out/editbook.o: src/editbook.cpp out/
-	g++ -c -o "out/editbook.o" src/editbook.cpp
+	g++ --std=c++20 -c -o "out/editbook.o" src/editbook.cpp
 out/deleteBook.o: src/deleteBook.cpp out/
 	g++ -c -o "out/deleteBook.o" src/deleteBook.cpp
 out/setColour.o: src/setColour.cpp out/
