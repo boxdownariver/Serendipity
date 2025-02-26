@@ -1,4 +1,4 @@
-// Saliha Babar                    CS1A                            Serendipity
+// Saliha Babar                    CS1B                            Serendipity
 //
 /**************************************************************************//**
  * DISPLAY A CASHIER REPORT
