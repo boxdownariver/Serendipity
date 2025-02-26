@@ -7,7 +7,7 @@
  * @file mainmenu.cpp
  * ________________________________________________________________________
  *
- * PROCESS-
+ *	PROCESS-
  * 		BookType[20] books, int bookCount -> Book list with size for use
  * 			in the inventory interface.
  * 		int menuResult -> User menu decision for branching into

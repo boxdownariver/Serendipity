@@ -8,10 +8,10 @@
  * @file addbook.cpp
  * ________________________________________________________________________
  *
- * INPUTS-
+ *	INPUTS-
  * 		BookType[20] bookList, int currentBookCount -> Current list of book
  * 			objects initialized, and current list size.
- * OUTPUTS-
+ *	OUTPUTS-
  * 		WINDOW * mainWindow -> Window containing all sub-interfaces
  * 		WINDOW * notification -> Window containing notifications for the
  * 			user; also contains form for filling in book members.
