@@ -6,7 +6,7 @@
  * @file menuDipity.cpp
  *_________________________________________________________________________
  *
- *	INPUTS-\n
+ *	INPUTS-
  *	    Key input (char) -> Keyboard-based instruction for the program
  *	    Signals (int) -> Signals passed by the system
  *	    mainMenuInfo (char *, char **, char *) -> Menu name,

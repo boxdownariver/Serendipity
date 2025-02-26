@@ -1,3 +1,17 @@
+/**********************************************************************//**
+ * BRANCHING INVENTORY MENU IMPLEMENTATION
+ * ________________________________________________________________________
+ * This program displays the inventory menu and manages user choices.
+ * Displays a notice for full book list.
+ * @author Micah Krosby
+ * @file invmenu.cpp
+ * ________________________________________________________________________
+ *
+ * PROCESS-
+ * 		BookType[20] bookList -> List of all books currently available
+ * 		int currentBookCount -> Count of books currently indexed
+ *		int choice -> Menu branching option
+ *************************************************************************/
 #define menu_utils
 #include "headers/menuDipity.h"
 #include "headers/lookUp.h"
@@ -16,6 +30,12 @@
 #include "headers/deleteBook.hpp"
 #endif
 
+
+/**
+ * main_invmenu(BookType, int) ->
+ * Runs inventory menu interface, then either branches into next menu or
+ * moves backward into the previous menu.
+ */
 int main_invmenu(BookType (&bookList)[20], int &currentBookCount) {
 	std::string menuName = "Inventory Database";
 	std::vector<std::string> menuListing = { "Look Up a Book", "Add a Book",
