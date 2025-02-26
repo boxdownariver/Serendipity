@@ -29,6 +29,16 @@
 #include "headers/setColour.h"
 using namespace std;
 
+/**
+ * mainLookUp manages the process of searching for a book in the database.
+ * 
+ * Parameters:
+ * - booklist: An array of `BookType` objects representing the book database.
+ * - bookCount: A reference to the integer representing the number of books in the database.
+ * 
+ * Returns:
+ * - This function does not return any value. It is used for searching and displaying book details.
+ */
 int mainLookUp( const BookType booklist[], int &bookCount ) {
 	string toSearch;
 	char choice;
@@ -192,7 +202,6 @@ string validateAndAsk ( const int &bookCount)
 	else {
 		system ("clear");
 		setColour (33);
-		cout << "There is currently " << bookCount << " books available at Serendipity Booksellers\n";
 		cout << "╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n"; 
     		cout << "║                                       >>> BOOK LOOKUP <<<                                          ║\n";
 		cout << "╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n";

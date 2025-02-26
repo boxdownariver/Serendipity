@@ -1,3 +1,24 @@
+// Saliha Babar                    CS1B                            Serendipity
+//
+/******************************************************************************
+ * DELETE BOOK IN DATABASE
+ * ____________________________________________________________________________
+ This deleteBook.cpp file allows the user to search for a book in the 
+ * database using a keyword from the title or ISBN. If the book is found, 
+ * the program deletes the entire record and updates the book count. 
+ * If the book count is greater than 1, the user can continue searching for
+ * and deleting more books.
+ * @author Saliha Babar
+ * @file deleteBook.cpp
+ * ____________________________________________________________________________
+ * INPUT 
+ *   toDelete     : A keyword used to search for a book by title or ISBN, 
+ *                  which will then be deleted from the database.
+ * 
+ * OUTPUT
+ *  The book record that matches the search keyword is deleted, and the 
+ *  book count is reduced by one.
+ * ***************************************************************************/
 #include <iomanip>
 #include <iostream>
 #include <cctype>
@@ -17,6 +38,16 @@
 
 using namespace std;
 
+/**
+ * mainDelete manages the process of deleting a book from the database.
+ * 
+ * Parameters:
+ * - books: An array of `BookType` objects representing the database of books.
+ * - bookCount: A reference to the integer representing the number of books in the database, which is updated after each deletion.
+ * 
+ * Returns:
+ * - This function does not return any values. It updates the `bookCount` by decrementing it after a successful deletion.
+ */
 void mainDelete (BookType books[], int &bookCount)
 {
 	string toDelete;
@@ -24,28 +55,33 @@ void mainDelete (BookType books[], int &bookCount)
 	int indexToDelete;
 
 	do {
-    toDelete = validateAndAsk ( bookCount );
+		// Prompt user for a search term, ensuring bookCount is valid
+    		toDelete = validateAndAsk ( bookCount );
+		
 		// Proceed with finding string only if the book count is > 1
-		if (toDelete != "invalid" )
+		if (toDelete != "" )
 			{
-				// Function to find the string
+			// Function to find the string
     			indexToDelete = findString (toDelete, books, bookCount );
-							if (indexToDelete != -1)
-    								{
-        									// continue with deletion
-												system("clear");
-											// Pass the array to show the bookInfo
-        										discardBook ( books, indexToDelete, bookCount);       
-    								}
-							cout << "Do you want to proceed another deletion (Y/N)?\n";
-							cin.get (choice);
-							cin.ignore (100, '\n');
-									while (toupper(choice) != 'N' && toupper(choice) != 'Y' )
-										{
-											cout << choice << " is invalid choice.. Only enter Y or N. ";
-											cin.get (choice);
-											cin.ignore (100, '\n');
-										}
+				
+				if (indexToDelete != -1)
+    					{
+        					// continue with deletion
+						system("clear");
+						// Pass the array to show the bookInfo
+        					discardBook ( books, indexToDelete, bookCount);       
+    					}
+				
+				cout << "Do you want to proceed another deletion (Y/N)?\n";
+				cin.get (choice);
+				cin.ignore (100, '\n');
+				
+				while (toupper(choice) != 'N' && toupper(choice) != 'Y' )
+					{
+						cout << choice << " is invalid choice.. Only enter Y or N. ";
+						cin.get (choice);
+						cin.ignore (100, '\n');
+					}
 			}		
 	}
 	while (toupper(choice) != 'N' && bookCount!= 0);
@@ -54,6 +90,18 @@ void mainDelete (BookType books[], int &bookCount)
     return;
 }
 
+
+/**
+ * discardBook handles the deletion of a book from the database.
+ * 
+ * Parameters:
+ * - books: An array of `BookType` objects representing the book database.
+ * - index: The index of the book to be deleted.
+ * - bookCount: A reference to the integer representing the number of books in the database, which is updated after the deletion.
+ * 
+ * Returns:
+ * - This function does not return any value. It updates the `bookCount` by decrementing it after a successful deletion.
+ */
 void discardBook (BookType books[], int index, int &bookCount )
 {
 	char decision;
