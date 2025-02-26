@@ -4,6 +4,8 @@
  ********************************************************************************** 
  * This program is a placeholder for the information page on the different books
  * in the serendipity bookstore.
+ * @author TJ Dignan
+ * @file bookInfo.cpp
  **********************************************************************************
  * OUTPUTS
  **********************************************************************************
@@ -18,14 +20,33 @@ using namespace std;
 // Funk prototype
 void bookInfoWindow(const BookType array[], const int bookIndex );
 
+
+/**
+ * mainbookInfo serves as a wrapper function that calls `bookInfoWindow` to display detailed information 
+ * about a specific book from the database.
+ * 
+ * This function takes in the following parameters:
+ * - array: A constant reference to an array of `BookType` objects representing the book database.
+ * - bookIndex: The index of the specific book within the array that the function will display.
+ * 
+ * The function does not return any usable value. It uses `bookInfoWindow` to output the details of the selected book.
+ */
 int mainbookInfo ( const BookType array[], const int &bookIndex )
 {
-// Outputs printed book info function
 	bookInfoWindow(array, bookIndex);
 	return 0;
 }
 
-// Function for printing book info
+
+/**
+ * bookInfoWindow is responsible for printing detailed information about a specific book.
+ * 
+ * This function takes in the following parameters:
+ * - array: A constant reference to an array of `BookType` objects representing the book database.
+ * - bookIndex: The index of the book whose information is to be displayed.
+ * 
+ * The function does not return any value. It is used to display the book's information in a user-friendly format.
+ */
 void bookInfoWindow(const BookType array[], const int bookIndex )
 {
 	cout << left << "╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n";
