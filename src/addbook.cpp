@@ -1,3 +1,24 @@
+/**********************************************************************//**
+ * ADDBOOK MENU IMPLEMENTATION
+ * ________________________________________________________________________
+ * This program allows the user to add a book to the book list,
+ * initializing members as-needed. Offers the ability to write the new book
+ * and to exit.
+ * @author Micah Krosby
+ * @file addbook.cpp
+ * ________________________________________________________________________
+ *
+ * INPUTS-
+ * 		BookType[20] bookList, int currentBookCount -> Current list of book
+ * 			objects initialized, and current list size.
+ * OUTPUTS-
+ * 		WINDOW * mainWindow -> Window containing all sub-interfaces
+ * 		WINDOW * notification -> Window containing notifications for the
+ * 			user; also contains form for filling in book members.
+ * 		WINDOW * bookDisplayWindow -> Window containing stub preview of
+ * 			book members.
+ *************************************************************************/
+
 #ifndef FORM_H
 #include <form.h>
 #endif
@@ -17,10 +38,16 @@
 #include <deque>
 #endif
 
+///Signal handler for window change
 void ahandleSignal(const int signal);
 
 volatile sig_atomic_t astateProvider = 0;
 
+/**
+ * trim(string, WINDOW *) ->
+ * Trims string to appropriate size depending on whitespaces and window
+ * size.
+ */
 const char* trim(const std::string operandString, WINDOW *window) {
 	std::string returnString;
 	size_t iter;
@@ -47,6 +74,11 @@ const char* trim(const std::string operandString, WINDOW *window) {
 	return returnString.c_str();
 }
 
+/**
+ * addBook(BookType[20], int) -> Generates menu interface for adding books.
+ * Displays stub view of book members, and allows saving and leaving with
+ * confirmation.
+ */
 void addBook(BookType bookList[20], int &currentBookCount) {
 	WINDOW *mainWindow;
 	WINDOW *bookDisplayWindow;

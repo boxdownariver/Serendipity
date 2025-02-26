@@ -1,3 +1,18 @@
+/**********************************************************************//**
+ * MAIN MENU IMPLEMENTATION
+ * ________________________________________________________________________
+ * This program generates a menu interface for branching into all
+ * subprograms in the project.
+ * @author Micah Krosby
+ * @file mainmenu.cpp
+ * ________________________________________________________________________
+ *
+ * PROCESS-
+ * 		BookType[20] books, int bookCount -> Book list with size for use
+ * 			in the inventory interface.
+ * 		int menuResult -> User menu decision for branching into
+ * 			subprograms.
+ *************************************************************************/
 #define menu_utils
 #include "headers/menuDipity.h"
 #include "headers/reports.h"
@@ -5,6 +20,11 @@
 #include "headers/cashier.h"
 #include "headers/lookUp.h"
 
+/**
+ * main() ->
+ * Generates main menu interface, allowing for branching into all
+ * subprograms in the program.
+ */
 int main() {
 	MenuLines mainMenuInfo;
 	std::vector<std::string> menuListing = { "Cashier Module",
