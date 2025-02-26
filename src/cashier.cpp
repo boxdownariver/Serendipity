@@ -29,7 +29,7 @@
 #include "headers/setColour.h"
 using namespace std;
 
-struct bookType {
+struct CashierBookType {
 	string date;
 	int quantity;
 	string isbn;
@@ -38,12 +38,12 @@ struct bookType {
 	float total;
 };
 
-void askData (bookType &books);
-void FormatReport (const bookType &books);
+void askData (CashierBookType &books);
+void FormatReport (const CashierBookType &books);
 
 int mainCashier (){
 
-	bookType bookOne;
+	CashierBookType bookOne;
 	char choice;
 
 	do {
@@ -81,7 +81,7 @@ int mainCashier (){
 	return 0;
 }
 
-void askData (bookType &books)
+void askData (CashierBookType &books)
 {
 	cout << setw (20) << left << "\nDate (MM/DD/YYYY)" << " : ";
 	getline (cin, books.date);
@@ -112,7 +112,7 @@ void askData (bookType &books)
 	return;
 }
 
-void FormatReport (const bookType &books)
+void FormatReport (const CashierBookType &books)
 {
 	float subtotal;
 	float tax_amt;
