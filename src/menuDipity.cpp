@@ -1,10 +1,12 @@
-//Micah Krosby                      CS1B                        Serendipity
 /**********************************************************************//**
  * MENU GENERALIZATION
  *_________________________________________________________________________
  * This program generates menu interfaces for the Serendipity project
+ * @author Micah Krosby
+ * @file menuDipity.cpp
  *_________________________________________________________________________
- *	INPUTS-
+ *
+ *	INPUTS-\n
  *	    Key input (char) -> Keyboard-based instruction for the program
  *	    Signals (int) -> Signals passed by the system
  *	    mainMenuInfo (char *, char **, char *) -> Menu name,
@@ -35,18 +37,25 @@ void refreshWindow(MENU *&mainMenu, WINDOW *&mainWindow,
 
 volatile sig_atomic_t stateProvider = 0;
 
+/**
+ * makeMenu(MenuLines, string) ->
+ * Makes a basic menu interface, using a MenuLines object holding the
+ * title of the program, the title of the menu, and the titles of the
+ * options, as well as a string holding the information potentially
+ * required for initial notification of the user.
+ */
 int makeMenu(MenuLines &mainMenuInfo, std::string startInfo) {
-	ITEM **items;			 //OUTPUT- Menu items
-	MENU *mainMenu;			 //OUTPUT- Complete menu
-	WINDOW *mainWindow;		 //OUTPUT- Window to hold menu
-	WINDOW *notification;		 //OUTPUT- Notification at bottom of screen
-	struct sigaction sa;	 	 //OUTPUT- Signal action handler
-	int breakOut;		//OUTPUT- Return of menu (for when it breaks out)
-	int menuLineSize;		 //INPUT-  Size of the list of menu lines
-	int userInput;			 //INPUT-  User key input
-	char userInputChar;		 //INPUT-  User input (hard- coded as char)
-	char *currentItemName;		 //INPUT-  Name of item currently selected
-	bool dontExit;			 //INPUT-  Prevent exiting until need is met
+	ITEM **items;		  //OUTPUT- Menu items
+	MENU *mainMenu;		  //OUTPUT- Complete menu
+	WINDOW *mainWindow;	  //OUTPUT- Window to hold menu
+	WINDOW *notification; //OUTPUT- Notification at bottom of screen
+	struct sigaction sa;  //OUTPUT- Signal action handler
+	int breakOut;		  //OUTPUT- Return of menu (for when it breaks out)
+	int menuLineSize;     //INPUT-  Size of the list of menu lines
+	int userInput;		  //INPUT-  User key input
+	char userInputChar;	  //INPUT-  User input (hard- coded as char)
+	char *currentItemName;//INPUT-  Name of item currently selected
+	bool dontExit;		  //INPUT-  Prevent exiting until need is met
 
 	//Init menuLineSize and userInputChar
 	userInputChar = '1';
@@ -150,7 +159,7 @@ int makeMenu(MenuLines &mainMenuInfo, std::string startInfo) {
 	return breakOut;
 }
 
-//Create menu & menu items
+///Create menu & menu items
 void createMenu(MENU *&mainMenu, WINDOW *mainWindow,
 		const MenuLines &mainMenuInfo, ITEM **&items) {
 	size_t menuLineSize, i;		//INPUT- Menu size, iterator
@@ -180,7 +189,8 @@ void createMenu(MENU *&mainMenu, WINDOW *mainWindow,
 }
 
 
-//Create menu & menu items
+///Create menu & menu items WITH a middle split for printing on the
+///right side of the screen.
 void createMenuMiddleSplit(MENU *&mainMenu, WINDOW *mainWindow,
 		const MenuLines &mainMenuInfo, ITEM **&items) {
 	size_t menuLineSize, i;		//INPUT- Menu size, iterator
@@ -209,7 +219,7 @@ void createMenuMiddleSplit(MENU *&mainMenu, WINDOW *mainWindow,
 	post_menu(mainMenu);
 }
 
-//Safely kill menu & menu items
+///Safely kill menu & menu items
 void deleteMenu(MENU *&menu, ITEM **&items, size_t menuLineSize) {
 	size_t i;	//PROCESS- Iterator for item deletion
 
@@ -223,7 +233,7 @@ void deleteMenu(MENU *&menu, ITEM **&items, size_t menuLineSize) {
 	}
 }
 
-//Start window with settings
+///Start window with default esettings
 void startWindow(WINDOW *&mainWindow) {
 	//Initialize screen and add settings
 	initscr();
@@ -238,7 +248,7 @@ void startWindow(WINDOW *&mainWindow) {
 	clear();
 }
 
-//Safely kill the window
+///Safely kill the window
 void endWindow(WINDOW *&mainWindow) {
 	//Delete main window, refresh, and delete screen
 	clear();
@@ -247,7 +257,7 @@ void endWindow(WINDOW *&mainWindow) {
 	endwin();
 }
 
-//Recalculate the window, but keep the menu the same.
+///Recalculate the window, but keep the menu the same.
 void refreshWindow(MENU *&mainMenu, WINDOW *&mainWindow,
 		WINDOW *&notification, const MenuLines &mainMenuInfo) {
 	size_t menuLineSize;		//INPUT- Size of menu lines for alignment
@@ -286,7 +296,8 @@ void refreshWindow(MENU *&mainMenu, WINDOW *&mainWindow,
 }
 
 
-//Recalculate the window, but keep the menu the same.
+///Recalculate the window WITH a middle split, but keep the menu the same.
+///Refer to refreshWindow for original implementation
 void refreshWindowMiddleSplit(MENU *&mainMenu, WINDOW *&mainWindow,
 		WINDOW *&notification, const MenuLines &mainMenuInfo) {
 	size_t menuLineSize;		//INPUT- Size of menu lines for alignment
@@ -324,7 +335,7 @@ void refreshWindowMiddleSplit(MENU *&mainMenu, WINDOW *&mainWindow,
 			"Select [1-%d] or navigate to module...", menuLineSize);
 }
 
-//This passes the signal to a state provider: unsafe, but the best we have
+///This passes signals to the state provider; normally means recalculating the interface.
 void handleSignal(const int signal) {
 	stateProvider = signal;
 }
