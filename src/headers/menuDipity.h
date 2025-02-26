@@ -8,11 +8,15 @@
 
 #ifndef menu_lines_struct
 #define menu_lines_struct
+/**
+ * MenuLines\n
+ * Contains all the text information required for menu generation.\n
+ */
 struct MenuLines {
-	std::string menuName;
-	std::vector<std::string> menuLines;
-	int longestMenuLength;
-	std::string storeName = "Serendipity Booksellers";
+	std::string menuName;								///< Menu Name
+	std::vector<std::string> menuLines;					///< Menu Options
+	int longestMenuLength;								///< Longest Line Length
+	std::string storeName = "Serendipity Booksellers";	///< Name of Store
 };
 #endif
 
