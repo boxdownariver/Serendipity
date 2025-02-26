@@ -1,3 +1,22 @@
+/**********************************************************************//**
+ * EDIT BOOK INTERFACE IMPLEMENTATION
+ * ________________________________________________________________________
+ * This program displays a menu to edit books, as well as a stub preview of
+ * the book in question. This program does not work with 0 available books.
+ * @author Micah Krosby
+ * @file editbook.cpp
+ * ________________________________________________________________________
+ *
+ * INPUTS-
+ * 		BookType[20] bookList, int currentSize -> Book list with current
+ * 			quantity of available book types.
+ * OUTPUTS-
+ * 		WINDOW * mainWindow -> Window containing all sub-interfaces
+ * 		WINDOW * notification -> Window containing notifications for the
+ * 			user; also contains form for filling in book members.
+ * 		WINDOW * bookDisplayWindow -> Window containing stub preview of
+ * 			book members.
+ *************************************************************************/
 #ifndef FORM_H
 #include <form.h>
 #endif
@@ -27,10 +46,16 @@
 #endif
 #include <iostream>
 
+///Signal handler for window size change
 void bhandleSignal(const int signal);
 
 volatile sig_atomic_t bstateProvider = 0;
 
+/**
+ * mainEditBook(BookType, int) ->
+ * Generates menu for book editing, following a quick search for the book
+ * in question.
+ */
 void mainEditBook(BookType bookList[20], int currentSize) {
 	std::string searchTerm;
 	int bookIndex;
@@ -51,6 +76,11 @@ void mainEditBook(BookType bookList[20], int currentSize) {
 	}
 }
 
+/**
+ * atrim(string, WINDOW *) ->
+ * Trims string to appropriate size depending on whitespaces and window
+ * size.
+ */
 const char* atrim(const std::string operandString, WINDOW * window) {
 	std::string returnString;
 	size_t iter;
@@ -74,6 +104,13 @@ const char* atrim(const std::string operandString, WINDOW * window) {
 	return returnString.c_str();
 }
 
+/**
+ * editBook(BookType, int) ->
+ * The meat and potatoes of the edit interface. Creates the menu with an
+ * associated display, and allows the user to select members of a book to
+ * mutate. Then offers the option to overwrite the current book in-place,
+ * and an option to exit. Warns before writing or exiting without writing.
+ */
 void editBook(BookType bookList[20], int bookIndex) {
 	WINDOW *mainWindow;
 	WINDOW *bookDisplayWindow;
