@@ -29,18 +29,34 @@
 #include "headers/setColour.h"
 using namespace std;
 
+/**
+ * CashierBookType\n
+ * Currently, only cashier interfaces use this type.\n
+ * Not to be confused with BookType
+ */
 struct CashierBookType {
-	string date;
-	int quantity;
-	string isbn;
-	string title;
-	float price;
-	float total;
+	string date;    ///< Date to display on receipt
+	int quantity;   ///< Quantity of book purchased
+	string isbn;    ///< Book ISBN (10-13 digit code)
+	string title;   ///< Book Title
+	float price;    ///< Price of a book 
+	float total;    ///< Total price of single type
 };
 
 void askData (CashierBookType &books);
 void FormatReport (const CashierBookType &books);
 
+/**
+ * mainCashier handles the process of printing a receipt for a 
+ * cashier transaction
+ * This function manages the main cashier operations, including:
+ * 1- Clearing the screen.
+ * 2- Prompting the cashier for transaction data.
+ * 3- Generating and formatting the receipt report.
+ * 4- Asking if the cashier wants to proceed with another transaction
+ * 
+ * The function does not take any parameters and does not return any values.
+ */
 int mainCashier (){
 
 	CashierBookType bookOne;
@@ -81,6 +97,21 @@ int mainCashier (){
 	return 0;
 }
 
+/**
+ * askData takes the input and stores it in 'CashierBookType' struct
+ *
+ * This function prompts user for the following data
+ * 1- Date of book purchased
+ * 2- Quantity of book
+ * 3- Book isbn
+ * 4- Book title
+ * 5- Book price
+ *
+ * Then it calculates the total price based on quantity and price of each book
+ * 
+ * Function takes 'CashierBookType' as a parameter, and stores values in
+ *  it and doesn't return any values
+ */
 void askData (CashierBookType &books)
 {
 	cout << setw (20) << left << "\nDate (MM/DD/YYYY)" << " : ";
@@ -112,6 +143,16 @@ void askData (CashierBookType &books)
 	return;
 }
 
+
+/**
+ * FormatReport geenerates a cashier transaction using 'CashierBookType' 
+ * 
+ * It takes all the data stored, and proceed calculating the tax amount
+ * 
+ * Function takes 'CashierBookType' as a constant parameter, and retrieve values 
+ * from 'CashierBookType'. It simply formats and prints the cashier receipt.
+ * Function doesn't return any values
+ */
 void FormatReport (const CashierBookType &books)
 {
 	float subtotal;
