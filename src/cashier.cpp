@@ -1,12 +1,14 @@
 // BRANCH OF CASHIER.CPP
 // Saliha Babar                    CS1A                            Serendipity
 //
-/******************************************************************************
+/**************************************************************************//**
  * DISPLAY A CASHIER REPORT
  * ____________________________________________________________________________
  * This cpp asks for book information ( date, quantity, isbn, title, and price ),
  * then it calculates the total price for each book type.
  * Finally it will create a nicely formatted cashier report.
+ * @author Saliha Babar
+ * @file cashier.cpp
  * ____________________________________________________________________________
  * INPUT 
  *    date                      : date the books are purchased
