@@ -1,6 +1,5 @@
-#include <iostream>
-#include <string>
 #include <iomanip>
+#include <iostream>
 #include <cctype>
 #include "headers/invmenu.h"
 #ifndef LOOKUP_H
@@ -12,6 +11,9 @@
 #ifndef DELETEBOOK_HPP
 #include "headers/deleteBook.hpp"
 #endif
+#ifndef SETCOLOUR_H
+#include "headers/setColour.h"
+#endif
 
 using namespace std;
 
@@ -22,7 +24,6 @@ void mainDelete (BookType books[], int &bookCount)
 	int indexToDelete;
 
 	do {
-	 cout << "         >>>>>>>>>>   DELETE BOOK   <<<<<<<<<<\n";
     toDelete = validateAndAsk ( bookCount );
 		// Proceed with finding string only if the book count is > 1
 		if (toDelete != "invalid" )
@@ -36,7 +37,7 @@ void mainDelete (BookType books[], int &bookCount)
 											// Pass the array to show the bookInfo
         										discardBook ( books, indexToDelete, bookCount);       
     								}
-							cout << "Do you want to proceed another deletion(Y/N)?\n";
+							cout << "Do you want to proceed another deletion (Y/N)?\n";
 							cin.get (choice);
 							cin.ignore (100, '\n');
 									while (toupper(choice) != 'N' && toupper(choice) != 'Y' )
@@ -58,13 +59,19 @@ void discardBook (BookType books[], int index, int &bookCount )
 	char decision;
 
 	mainbookInfo(books, index);
-	cout << "Are you sure you want to delete this book? (Y/N)\n";
+	setColour (33);
+	cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
+	cout << "                │  Are you sure you want to delete this book? (Y/N).Think Wisely   │\n";
+	cout << "                └──────────────────────────────────────────────────────────────────┘\n";
+	resetColour();
+	cout << right << setw(50)<< "→  ";
 	cin.get (decision);
 	cin.ignore (100, '\n');
 
 		while (toupper(decision) != 'N' && toupper(decision) != 'Y' )
 			{
 				cout << decision << " is invalid choice.. Only enter Y or N. ";
+				cout << right << setw(50)<< "→";
 				cin.get (decision);
 				cin.ignore (100, '\n');
 			}
@@ -94,8 +101,10 @@ void discardBook (BookType books[], int index, int &bookCount )
 
 				// reduce the book count by one
 				bookCount--;
-				cout << "SUCCESSFULLY DELETED A BOOK\n";
-
+				setColour (96);
+				cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
+				cout << "                │                     DELETED BOOK SUCCESSFULLY                    │\n";
+				cout << "                └──────────────────────────────────────────────────────────────────┘\n";
+				resetColour();
 		}
-
 }
