@@ -392,7 +392,11 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 	endWindow(mainWindow);
 
 	if (currentBookCount >= 20) {
-		std::cout << "Book list full! Cannot add any more books." << std::endl << "Press enter to continue..." << std::endl;
+		std::cout << "╔══════════════════════════════════════════╗" <<
+		std::endl;
+		std::cout << "║Book list full! Cannot add any more books.║" <<
+		std::endl << "╚══════════════════════════════════════════╝" <<
+	    std::endl << "Press enter to continue..." << std::endl;
 		getline(std::cin, dummyString);
 	}
 	return;

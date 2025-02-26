@@ -61,8 +61,9 @@ void mainEditBook(BookType bookList[20], int currentSize) {
 	int bookIndex;
 
 	if (currentSize) {
-
-		std::cout << "Please enter a book to edit..." << std::endl;
+		std::cout << "╔══════════════════════════════╗" << std::endl;
+		std::cout << "║Please enter a book to edit...║" << std::endl;
+		std::cout << "╚══════════════════════════════╝" << std::endl;
 		std::getline(std::cin, searchTerm);
 
 		bookIndex = findString(searchTerm, bookList, currentSize);
@@ -73,8 +74,10 @@ void mainEditBook(BookType bookList[20], int currentSize) {
 			std::getline(std::cin, searchTerm);
 		}
 	} else {
-		std::cout << "No books to edit! Press enter to continue..."
+		std::cout << "╔════════════════════════════════════════════╗" << std::endl;
+		std::cout << "║No books to edit! Press enter to continue...║"
 				<< std::endl;
+		std::cout << "╚════════════════════════════════════════════╝" << std::endl;
 		std::getline(std::cin, searchTerm);
 	}
 }
