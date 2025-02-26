@@ -1,10 +1,9 @@
-// BRANCH OF CASHIER.CPP
-// Saliha Babar                    CS1A                            Serendipity
+// Saliha Babar                    CS1B                            Serendipity
 //
 /**************************************************************************//**
  * DISPLAY A CASHIER REPORT
  * ____________________________________________________________________________
- * This cpp asks for book information ( date, quantity, isbn, title, and price ),
+ * This cashier.cpp asks for book information ( date, quantity, isbn, title, and price ),
  * then it calculates the total price for each book type.
  * Finally it will create a nicely formatted cashier report.
  * @author Saliha Babar
@@ -37,12 +36,12 @@ using namespace std;
  * Not to be confused with BookType
  */
 struct CashierBookType {
-	string date;    ///< Date to display on receipt
+	string date;    ///< Date of the transaction to display on the receipt
 	int quantity;   ///< Quantity of book purchased
-	string isbn;    ///< Book ISBN (10-13 digit code)
-	string title;   ///< Book Title
-	float price;    ///< Price of a book 
-	float total;    ///< Total price of single type
+	string isbn;    ///< ISBN of the book (10-13 digit code)
+	string title;   ///< Title of the book being purchased
+	float price;    ///< Price of a single book 
+	float total;    ///< Total price for the books purchased (quantity * price)
 };
 
 void askData (CashierBookType &books);
@@ -109,10 +108,10 @@ int mainCashier (){
  * 4- Book title
  * 5- Book price
  *
- * Then it calculates the total price based on quantity and price of each book
+ * Then it calculates the total price based on quantity and price of each book.
  * 
  * Function takes 'CashierBookType' as a parameter, and stores values in
- *  it and doesn't return any values
+ * it and doesn't return any values.
  */
 void askData (CashierBookType &books)
 {
@@ -147,13 +146,14 @@ void askData (CashierBookType &books)
 
 
 /**
- * FormatReport geenerates a cashier transaction using 'CashierBookType' 
+ * FormatReport generates a cashier transaction using 'CashierBookType'. 
  * 
- * It takes all the data stored, and proceed calculating the tax amount
- * 
+ * It takes all the data stored, and calculates the tax amount
+ * tax percentage(assumed to be 6%).
+ *
  * Function takes 'CashierBookType' as a constant parameter, and retrieve values 
  * from 'CashierBookType'. It simply formats and prints the cashier receipt.
- * Function doesn't return any values
+ * Function doesn't return any values.
  */
 void FormatReport (const CashierBookType &books)
 {
