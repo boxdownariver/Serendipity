@@ -37,6 +37,9 @@
 #ifndef GLIBCXX_DEQUE
 #include <deque>
 #endif
+#ifndef _LIBCPP_IOSTREAM
+#include <iostream>
+#endif
 
 ///Signal handler for window change
 void ahandleSignal(const int signal);
@@ -91,6 +94,7 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 	BookType bookBuffer;
 	std::deque<int> fieldQueue;
 	struct sigaction sa;
+	std::string dummyString;
 	int input;
 	int choice;
 	int formch;
@@ -386,6 +390,11 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 	delwin(bookDisplayWindow);
 	deleteMenu(mainMenu, items, menuListing.size());
 	endWindow(mainWindow);
+
+	if (currentBookCount >= 20) {
+		std::cout << "Book list full! Cannot add any more books." << std::endl << "Press enter to continue..." << std::endl;
+		getline(std::cin, dummyString);
+	}
 	return;
 }
 
