@@ -1,18 +1,25 @@
 #include <string>
-
 using namespace std;
 
+/**
+ * bookType class represents a book with various attributes such as title, ISBN, author, etc.
+ * 
+ * The `bookType` class stores information about a book, including its title, ISBN, author, publisher, 
+ * date added, quantity on hand, wholesale price, and retail price. It provides setter and getter functions for 
+ * these attributes, along with functions to manage the book count, compare the book by title or ISBN, and print 
+ * detailed book information.
+ */
 class bookType
 {
 	public:
-	void setTitle (string title)	{	title = bookTitle;	}
-	void setISBN (string bookisbn )	{	bookisbn = isbn;	}
-	void setAuthor (string bookAuthor )	{	bookAuthor = author;	}
-	void setPublisher (string bookPublisher)	{	bookPublisher = publisher;	}
-	void setDate (string date )	{	date = dateAdded	}
-	void setQuantity (int quantity)	{	quantity = qtyOnHand; }
-	void setWholesale (double wholesalePrice)	{	wholesalePrice = wholesale;	}
-	void setRetail (double retailPrice)	{	retaiPrice = retail;	}
+	void setTitle (string title)	{	bookTitle = title;	}
+	void setISBN (string bookisbn )	{	isbn = bookisbn;	}
+	void setAuthor (string bookAuthor )	{	author = bookAuthor;	}
+	void setPublisher (string bookPublisher)	{	 publisher = bookPublisher;	}
+	void setDate (string date )	{	dateAdded = date;	}
+	void setQuantity (int quantity)	{	qtyOnHand= quantity; }
+	void setWholesale (double wholesalePrice)	{	wholesale= wholesalePrice;	}
+	void setRetail (double retailPrice)	{	retail = retailPrice;	}
 
 	string getTitle () const	{	return bookTitle;	}
 	string getISBN () const	{	return isbn;	}
@@ -29,7 +36,7 @@ class bookType
 
 	void printBookInfo () const ;
 
-	bool compareByTitleOrISBN (string toSearch);
+	bool foundKeyword (string toSearch);
 
 	bookType();
 
@@ -43,6 +50,6 @@ class bookType
 	string dateAdded;      ///< The date at which the book was added
 	int qtyOnHand;         ///< Current book count for this book 
 	double wholesale;      ///< Wholesale price of book
-	double retail;   	     ///< Retail value of book
+	double retail;         ///< Retail value of book
 	static int bookCount;  ///< Holds the current book count in array
 };
