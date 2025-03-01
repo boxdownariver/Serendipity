@@ -15,30 +15,32 @@ class bookType
 	void setTitle (string title)	{	bookTitle = title;	}
 	void setISBN (string bookisbn )	{	isbn = bookisbn;	}
 	void setAuthor (string bookAuthor )	{	author = bookAuthor;	}
-	void setPublisher (string bookPublisher)	{	 publisher = bookPublisher;	}
-	void setDate (string date )	{	dateAdded = date;	}
-	void setQuantity (int quantity)	{	qtyOnHand= quantity; }
+	void setPub (string bookPublisher)	{	 publisher = bookPublisher;	}
+	void setDateAdded (string date )	{	dateAdded = date;	}
+	void setQtyOnHand (int quantity)	{	qtyOnHand= quantity; }
 	void setWholesale (double wholesalePrice)	{	wholesale= wholesalePrice;	}
 	void setRetail (double retailPrice)	{	retail = retailPrice;	}
+	static void incBookCount () {	bookCount++; }
+	static void decBookCount () { bookCount --; }
 
 	string getTitle () const	{	return bookTitle;	}
 	string getISBN () const	{	return isbn;	}
 	string getAuthor () const	{	return author;	}
-	string getPublisher () const	{	return publisher;	}
-	string getDate () const	{	return dateAdded;	}
-	int getQuantity () const	{	return qtyOnHand;	}
+	string getPub () const	{	return publisher;	}
+	string getDateAdded () const	{	return dateAdded;	}
+	int getQtyOnHand () const	{	return qtyOnHand;	}
 	double getWholesale () const	{	return wholesale;	}
 	double getRetail () const	{	return retail;	}
-
-	static void incrementBookCount () {	bookCount++; }
-
-	static void decrementBookCount () { bookCount --; }
+	int getBookCount () const {	return bookCount;	} 
+	
 
 	void printBookInfo () const ;
 
 	bool foundKeyword (string toSearch);
+	bool equalData (const bookType) const ;
 
 	bookType();
+	bookType (string, string, string, string, string, int, double, double);
 
 	~bookType();
 
