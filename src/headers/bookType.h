@@ -33,7 +33,7 @@ class BookType
 	int getQtyOnHand () const	{	return qtyOnHand;	}
 	double getWholesale () const	{	return wholesale;	}
 	double getRetail () const	{	return retail;	}
-	int getBookCount () const {	return bookCount;	} 
+	static int getBookCount () {	return bookCount;	}
 	
 
 	void printBookInfo () const ;
