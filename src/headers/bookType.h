@@ -11,7 +11,7 @@ using namespace std;
  * these attributes, along with functions to manage the book count, compare the book by title or ISBN, and print 
  * detailed book information.
  */
-class bookType
+class BookType
 {
 	public:
 	void setTitle (string title)	{	bookTitle = title;	}
@@ -19,8 +19,8 @@ class bookType
 	void setAuthor (string bookAuthor )	{	author = bookAuthor;	}
 	void setPub (string bookPublisher)	{	 publisher = bookPublisher;	}
 	void setDateAdded (string date )	{	dateAdded = date;	}
-	void setQtyOnHand (int quantity)	{	qtyOnHand= quantity; }
-	void setWholesale (double wholesalePrice)	{	wholesale= wholesalePrice;	}
+	void setQtyOnHand (int quantity)	{	qtyOnHand = quantity; }
+	void setWholesale (double wholesalePrice)	{	wholesale = wholesalePrice;	}
 	void setRetail (double retailPrice)	{	retail = retailPrice;	}
 	static void incBookCount () {	bookCount++; }
 	static void decBookCount () { bookCount --; }
@@ -39,12 +39,12 @@ class bookType
 	void printBookInfo () const ;
 
 	bool foundKeyword (string toSearch);
-	bool equalData (const bookType) const ;
+	bool equalData (const BookType) const ;
 
-	bookType();
-	bookType (string, string, string, string, string, int, double, double);
+	BookType();
+	BookType (string, string, string, string, string, int, double, double);
 
-	~bookType();
+	~BookType();
 
 	private:
 	string bookTitle;      ///< Book Title

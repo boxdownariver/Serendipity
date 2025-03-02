@@ -3,16 +3,16 @@
 #include <iomanip>
 #include <algorithm>
 #include <cctype>
-#include "bookType"
+#include "headers/bookType.h"
 
 using namespace std;
 
-int bookType::bookCount = 0;
+int BookType::bookCount = 0;
 
 /**
 * Default constructor for bookType class. Initializes member variables with default values.
 */
-bookType::bookType()
+BookType::BookType()
 {
 	bookTitle = "UNSET";
 	isbn = "UNSET";
@@ -27,7 +27,7 @@ bookType::bookType()
 /**
 * Constructor with parameters for bookType class. Initializes member variables with given values.
 */
-bookType ::bookType (string title, string isbn , string auth, string pub, string date , int qty, double ws, double ret)
+BookType::BookType (string title, string isbn , string auth, string pub, string date , int qty, double ws, double ret)
 {
 	setTitle (title);
 	setISBN (isbn);
@@ -45,7 +45,7 @@ bookType ::bookType (string title, string isbn , string auth, string pub, string
  * The function prints details like ISBN, title, author, publisher, date added, 
  * quantity on hand, wholesale cost, and retail price in a well-organized table.
  */
-void bookType :: printBookInfo () const
+void BookType::printBookInfo () const
 {
 	cout <<         "╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n";
 	cout <<         "║                                       Serendipity Booksellers                                      ║\n";
@@ -70,7 +70,7 @@ void bookType :: printBookInfo () const
  * @return true if all attributes of both books are identical.
  * @return false if any attribute of the two books differs.
  */
-bool bookType::equalData (const bookType anotherBook) const 
+bool BookType::equalData (const BookType anotherBook) const
 {
 	if (bookTitle == anotherBook.bookTitle && isbn == anotherBook.isbn && author == anotherBook.author &&
 		publisher == anotherBook.publisher && dateAdded == anotherBook.dateAdded && qtyOnHand == anotherBook.qtyOnHand &&
@@ -91,7 +91,7 @@ bool bookType::equalData (const bookType anotherBook) const
  * @return true If the search keyword is found in the title or ISBN.
  * @return false If the search keyword is not found in either the title or ISBN.
  */
-bool bookType:: foundKeyword (string toSearch)
+bool BookType::foundKeyword (string toSearch)
 {
 	string tempTitle;
 	string searchUpper;

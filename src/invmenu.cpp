@@ -16,9 +16,8 @@
 #include "headers/menuDipity.h"
 #include "headers/lookUp.h"
 #include "headers/bookfile.h"
-#ifndef invmenu
 #include "headers/invmenu.h"
-#endif
+#include "headers/bookType.h"
 #ifndef addbook
 #include "headers/addbook.h"
 #endif
