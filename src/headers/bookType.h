@@ -1,3 +1,5 @@
+#ifndef BOOKTYPE_H
+#define BOOKTYPE_H
 #include <string>
 using namespace std;
 
@@ -55,3 +57,4 @@ class bookType
 	double retail;         ///< Retail value of book
 	static int bookCount;  ///< Holds the current book count in array
 };
+#endif
