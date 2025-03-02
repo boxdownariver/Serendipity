@@ -39,7 +39,7 @@ using namespace std;
  * Returns:
  * - This function does not return any value. It is used for searching and displaying book details.
  */
-int mainLookUp( const BookType booklist[], int &bookCount ) {
+int mainLookUp( const BookType booklist[]) {
 	string toSearch;
 	char choice;
 	int bookIndex;
@@ -47,14 +47,14 @@ int mainLookUp( const BookType booklist[], int &bookCount ) {
 	do {
 		
 	// Prompt user for a search term, ensuring bookCount is valid
-	toSearch = validateAndAsk ( bookCount );
+	toSearch = validateAndAsk ( BookType::getBookCount() );
 
 		// Proceed with search if input is valid
 		if (toSearch != "" )
 			{
 				
 			// Search for the book in the list
-    			bookIndex = findString (toSearch, booklist, bookCount );
+    			bookIndex = findString (toSearch, booklist, BookType::getBookCount() );
 			if (bookIndex != -1)
     				{
         				//show the book details to user
@@ -75,7 +75,7 @@ int mainLookUp( const BookType booklist[], int &bookCount ) {
 					}
 			}		
 	}
-	while (toupper(choice) != 'N' && bookCount!= 0);
+	while (toupper(choice) != 'N' && BookType::getBookCount() != 0);
 
 	
     return 0;
@@ -114,16 +114,17 @@ int findString (const string toSearch, const BookType array[], const int size)
      while (index < size)
          {
              // Convert book title to uppercase for case-insensitive search
-             tempTitle = array[index].bookTitle; transform (tempTitle.begin (), tempTitle.end(), tempTitle.begin (), :: 
+             tempTitle = array[index].getTitle();
+             transform (tempTitle.begin (), tempTitle.end(), tempTitle.begin (), ::
              toupper);
 
              // Search for title or ISBN match
-             if (tempTitle.find(searchUpper) != string::npos || array[index].isbn.find (toSearch)!= string::npos)
+             if (tempTitle.find(searchUpper) != string::npos || array[index].getISBN().find (toSearch)!= string::npos)
              {
 		cout << "║ [" << setw (2) << right << bookFoundCount <<"]" << setw (100) << right << " ║ \n";
         	cout << "║ ";
 		setColour(32); // Yellow text  
-		cout << "RESULT -> : Title - " << setw (78) << left << array[index].bookTitle;
+		cout << "RESULT -> : Title - " << setw (78) << left << array[index].getTitle();
 		resetColour();
 
 		cout << " ║\n";

@@ -56,17 +56,17 @@ volatile sig_atomic_t bstateProvider = 0;
  * Generates menu for book editing, following a quick search for the book
  * in question.
  */
-void mainEditBook(BookType bookList[20], int currentSize) {
+void mainEditBook(BookType bookList[20]) {
 	std::string searchTerm;
 	int bookIndex;
 
-	if (currentSize) {
+	if (BookType::getBookCount()) {
 		std::cout << "╔══════════════════════════════╗" << std::endl;
 		std::cout << "║Please enter a book to edit...║" << std::endl;
 		std::cout << "╚══════════════════════════════╝" << std::endl;
 		std::getline(std::cin, searchTerm);
 
-		bookIndex = findString(searchTerm, bookList, currentSize);
+		bookIndex = findString(searchTerm, bookList, BookType::getBookCount());
 		if (bookIndex > -1) {
 			editBook(bookList, bookIndex);
 		} else {
@@ -235,7 +235,7 @@ void editBook(BookType bookList[20], int bookIndex) {
 		}
 
 		mvwprintw(notification, 2, 1, "Currently editing index %d",
-				BookType::getBookCount());
+				bookIndex);
 		wrefresh(notification);
 		wclear(bookDisplayWindow);
 		box(bookDisplayWindow, 0, 0);

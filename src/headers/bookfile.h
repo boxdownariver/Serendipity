@@ -2,4 +2,4 @@
 #include "invmenu.h"
 #endif
 
-void readFile(BookType books[20], int &bookNumber);
+void readFile(BookType books[20]);

@@ -15,14 +15,14 @@
 #include <fstream>
 
 ///readFile(BookType[20], int) -> Stores file entries as members of books.
-void readFile(BookType books[20], int &bookNumber) {
+void readFile(BookType books[20]) {
 	BookType bookBuffer;
 	std::ifstream file;
 	std::string numbers;
 
 	file.open("booklist.dat");
 
-	while (bookNumber < 20 && getline(file, books[bookNumber].bookTitle, ',')) {
+	while (BookType::getBookCount < 20 && getline(file, books[BookType::getBookCount()].bookTitle, ',')) {
 		getline(file, bookBuffer.isbn, ',');
 		getline(file, bookBuffer.author, ',');
 		getline(file, bookBuffer.publisher, ',');
@@ -33,8 +33,8 @@ void readFile(BookType books[20], int &bookNumber) {
 		bookBuffer.wholesale = stod(numbers);
 		getline(file, numbers, ',');
 		bookBuffer.retail = stod(numbers);
-		books[bookNumber] = bookBuffer;
-		bookNumber++;
+		books[BookType::getBookCount] = bookBuffer;
+		BookType::incBookCount();
 	}
 	file.close();
 	return;
