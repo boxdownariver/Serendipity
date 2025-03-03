@@ -1,0 +1,10 @@
+<map id="bookInfo.h" name="bookInfo.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,88,32"/>
+<area shape="rect" id="Node000002" href="$invmenu_8h.html" title=" " alt="" coords="6,80,87,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="49,33,49,64,44,64,44,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="20,229,73,256"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="45,108,34,155,35,186,41,214,35,215,30,186,29,154,40,106"/>
+<area shape="rect" id="Node000004" href="$bookType_8h.html" title=" " alt="" coords="44,155,132,181"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="56,106,76,140,71,143,51,109"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="83,183,63,217,59,215,78,181"/>
+</map>

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['qtyonhand_0',['qtyOnHand',['../structBookType.html#a5ed3ab7a7b9932d912ebf73d23d111c5',1,'BookType']]],
-  ['quantity_1',['quantity',['../structCashierBookType.html#ac38659b97b5c9f0b62a6393ab8d8e5a1',1,'CashierBookType']]]
+  ['price_0',['price',['../structCashierBookType.html#a4fe5e7d5c7ab4e65092b430a4b922ba1',1,'CashierBookType']]],
+  ['printbookinfo_1',['printBookInfo',['../classBookType.html#af5eadc6e768e9a8213696355f8f25481',1,'BookType']]],
+  ['publisher_2',['publisher',['../classBookType.html#ac79aafce505dab215f898ef6de138fa8',1,'BookType']]]
 ];

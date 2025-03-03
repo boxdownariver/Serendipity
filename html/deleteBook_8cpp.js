@@ -1,5 +1,5 @@
 var deleteBook_8cpp =
 [
-    [ "discardBook", "deleteBook_8cpp.html#a128a987e1d8017790e86d1f93186a1bf", null ],
-    [ "mainDelete", "deleteBook_8cpp.html#a2be152e1c0ca150588ab7a54715faee1", null ]
+    [ "discardBook", "deleteBook_8cpp.html#af57031cfe4f59c5b5da799e56320ec29", null ],
+    [ "mainDelete", "deleteBook_8cpp.html#ab3253dc9320e6293c09e40dc8efc95a7", null ]
 ];

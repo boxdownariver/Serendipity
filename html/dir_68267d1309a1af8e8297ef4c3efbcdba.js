@@ -4,6 +4,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "addbook.cpp", "addbook_8cpp.html", "addbook_8cpp" ],
     [ "bookfile.cpp", "bookfile_8cpp.html", "bookfile_8cpp" ],
     [ "bookInfo.cpp", "bookInfo_8cpp.html", "bookInfo_8cpp" ],
+    [ "bookType.cpp", "bookType_8cpp.html", null ],
     [ "cashier.cpp", "cashier_8cpp.html", "cashier_8cpp" ],
     [ "deleteBook.cpp", "deleteBook_8cpp.html", "deleteBook_8cpp" ],
     [ "editbook.cpp", "editbook_8cpp.html", "editbook_8cpp" ],
@@ -12,5 +13,5 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "mainmenu.cpp", "mainmenu_8cpp.html", "mainmenu_8cpp" ],
     [ "menuDipity.cpp", "menuDipity_8cpp.html", "menuDipity_8cpp" ],
     [ "reports.cpp", "reports_8cpp.html", "reports_8cpp" ],
-    [ "setColour.cpp", "setColour_8cpp_source.html", null ]
+    [ "setColour.cpp", "setColour_8cpp.html", "setColour_8cpp" ]
 ];

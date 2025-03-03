@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['author_0',['author',['../structBookType.html#ad14f63d2931a6db977d63fcba998bf3b',1,'BookType']]]
+  ['astateprovider_0',['astateProvider',['../addbook_8cpp.html#a6280ed7ee6637077042b2499fc9c4656',1,'addbook.cpp']]],
+  ['author_1',['author',['../classBookType.html#a22649907037470da13c38f7bc9de4fdf',1,'BookType']]]
 ];

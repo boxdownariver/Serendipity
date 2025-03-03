@@ -1,6 +1,6 @@
 var annotated_dup =
 [
-    [ "BookType", "structBookType.html", "structBookType" ],
+    [ "BookType", "classBookType.html", "classBookType" ],
     [ "CashierBookType", "structCashierBookType.html", "structCashierBookType" ],
     [ "MenuLines", "structMenuLines.html", "structMenuLines" ]
 ];
