@@ -44,7 +44,7 @@ class BookType
 	BookType();
 	BookType (string, string, string, string, string, int, double, double);
 
-	~BookType();
+	~BookType() {}
 
 	private:
 	string bookTitle;      ///< Book Title

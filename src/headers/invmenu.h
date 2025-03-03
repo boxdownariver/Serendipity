@@ -25,5 +25,5 @@
 	double retail;         ///< Retail value of book
 };*/
 
-int main_invmenu(BookType (&books)[20], int &bookCount);
+int main_invmenu(BookType (&books)[20]);
 #endif

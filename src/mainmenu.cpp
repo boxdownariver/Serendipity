@@ -53,7 +53,7 @@ int main() {
 			system("clear");
 			break;
 		case 1:
-			main_invmenu(books, bookCount);
+			main_invmenu(books);
 			break;
 		case 2:
 			main_reports();

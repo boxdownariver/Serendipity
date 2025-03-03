@@ -102,7 +102,7 @@ const char* atrim(const std::string operandString, WINDOW * window) {
 
 	maxSize =  (getmaxx(window) - sizeof("Title            : ") - 2);
 	//maxSize = 15;
-	if (returnString.length() > maxSize) {
+	if ((int)returnString.length() > maxSize) {
 		returnString.erase(maxSize - 3, returnString.length());
 		returnString.append("...");
 	}
@@ -263,7 +263,7 @@ void editBook(BookType bookList[20], int bookIndex) {
 		switch (input) {
 		case 10:
 			choice = item_index(current_item(mainMenu));
-			if (choice < menuListing.size() && choice != -1) {
+			if (choice < (int)menuListing.size() && choice != -1) {
 				if (choice < 8) {
 					if (choice > 4) {
 						set_field_type(userInputField, TYPE_NUMERIC);

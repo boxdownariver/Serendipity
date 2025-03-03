@@ -66,7 +66,7 @@ const char* trim(const std::string operandString, WINDOW *window) {
 
 	maxSize =  (getmaxx(window) - (int)sizeof("Title            : ") - 2);
 	//maxSize = 15;
-	if (returnString.length()
+	if ((int)returnString.length()
 			> maxSize) {
 		returnString.erase(
 				returnString.begin() + maxSize - 3,
@@ -95,7 +95,7 @@ void addBook(BookType bookList[20]) {
 	std::deque<int> fieldQueue;
 	struct sigaction sa;
 	std::string dummyString;
-	int input;
+	size_t input;
 	int choice;
 	int formch;
 	char inputChar;
@@ -181,7 +181,7 @@ void addBook(BookType bookList[20]) {
 			mvwprintw(mainWindow, getmaxy(mainWindow) - 2,
 					(getmaxx(mainWindow) - 38) / 2,
 					"Select [0-%d] or navigate to choice...",
-					menuListing.size() - 1);
+					(int)menuListing.size() - 1);
 			bookDisplayWindow = derwin(mainWindow, menuListing.size(),
 					getmaxx(mainWindow) / 2 - 1, 3,
 					getmaxx(mainWindow) / 2);
@@ -241,7 +241,7 @@ void addBook(BookType bookList[20]) {
 		switch (input) {
 		case 10:
 			choice = item_index(current_item(mainMenu));
-			if (choice < menuListing.size() && choice != -1) {
+			if (choice < (int)menuListing.size() && choice != -1) {
 				if (choice < 8) {
 					if (choice > 4) {
 						set_field_type(userInputField, TYPE_NUMERIC);

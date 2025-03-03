@@ -188,7 +188,6 @@ int findString (const string toSearch, const BookType array[], const int size)
 string validateAndAsk ( const int &bookCount)
 {
 	string toSearch;
-	int bookIndex;
 
 	if (bookCount == 0)
 	{
