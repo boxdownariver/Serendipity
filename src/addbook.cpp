@@ -64,7 +64,7 @@ const char* trim(const std::string operandString, WINDOW *window) {
 	returnString.erase(0, iter);
 	returnString.shrink_to_fit();
 
-	maxSize =  (getmaxx(window) - sizeof("Title            : ") - 2);
+	maxSize =  (getmaxx(window) - (int)sizeof("Title            : ") - 2);
 	//maxSize = 15;
 	if (returnString.length()
 			> maxSize) {
@@ -82,7 +82,7 @@ const char* trim(const std::string operandString, WINDOW *window) {
  * Displays stub view of book members, and allows saving and leaving with
  * confirmation.
  */
-void addBook(BookType bookList[20], int &currentBookCount) {
+void addBook(BookType bookList[20]) {
 	WINDOW *mainWindow;
 	WINDOW *bookDisplayWindow;
 	WINDOW *notification;
@@ -140,7 +140,7 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 	mvwprintw(mainWindow, getmaxy(mainWindow) - 2,
 			(getmaxx(mainWindow) - 38) / 2,
 			"Select [0-%d] or navigate to choice...",
-			menuListing.size() - 1);
+			(int)menuListing.size() - 1);
 	wrefresh(mainWindow);
 
 	notification = newwin(3, 3 * COLS / 5, 9 * LINES / 10, COLS / 5);
@@ -161,18 +161,19 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 			derwin(notification, getmaxy(notification),
 					getmaxx(notification), 0, 0));
 
-	bookBuffer.bookTitle = "UNSET";
+	//Replaced with Constructor
+	/*bookBuffer.bookTitle = "UNSET";
 	bookBuffer.isbn = "UNSET";
 	bookBuffer.author = "UNSET";
 	bookBuffer.publisher = "UNSET";
 	bookBuffer.dateAdded = "UNSET";
 	bookBuffer.qtyOnHand = 0;
 	bookBuffer.wholesale = 0;
-	bookBuffer.retail = 0;
+	bookBuffer.retail = 0;*/
 	bookWritten = 1;
 
 	//Main program loop
-	while (currentBookCount < 20 && continueMenu) {
+	while (BookType::getBookCount() < 20 && continueMenu) {
 		if (astateProvider) {
 			delwin(bookDisplayWindow);
 			refreshWindowMiddleSplit(mainMenu, mainWindow, notification,
@@ -186,22 +187,22 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 					getmaxx(mainWindow) / 2);
 			box(bookDisplayWindow, 0, 0);
 			mvwprintw(bookDisplayWindow, 1, 1,
-					trim(bookBuffer.bookTitle, bookDisplayWindow));
+					trim(bookBuffer.getTitle(), bookDisplayWindow));
 			mvwprintw(bookDisplayWindow, 2, 1,
-					trim(bookBuffer.isbn, bookDisplayWindow));
+					trim(bookBuffer.getISBN(), bookDisplayWindow));
 			mvwprintw(bookDisplayWindow, 3, 1,
-					trim(bookBuffer.author, bookDisplayWindow));
+					trim(bookBuffer.getAuthor(), bookDisplayWindow));
 			mvwprintw(bookDisplayWindow, 4, 1,
-					trim(bookBuffer.publisher, bookDisplayWindow));
+					trim(bookBuffer.getPub(), bookDisplayWindow));
 			mvwprintw(bookDisplayWindow, 5, 1,
-					trim(bookBuffer.dateAdded, bookDisplayWindow));
-			mvwprintw(bookDisplayWindow, 6, 1, "%d", bookBuffer.qtyOnHand);
+					trim(bookBuffer.getDateAdded(), bookDisplayWindow));
+			mvwprintw(bookDisplayWindow, 6, 1, "%d", bookBuffer.getQtyOnHand());
 			mvwprintw(bookDisplayWindow, 7, 1, "%.2f",
-					bookBuffer.wholesale);
-			mvwprintw(bookDisplayWindow, 8, 1, "%.2f", bookBuffer.retail);
+					bookBuffer.getWholesale());
+			mvwprintw(bookDisplayWindow, 8, 1, "%.2f", bookBuffer.getRetail());
 			wrefresh(bookDisplayWindow);
 			mvwprintw(notification, 2, 1,
-					"%d books used out of 20 available", currentBookCount);
+					"%d books used out of 20 available", BookType::getBookCount());
 			set_form_win(userInputForm, notification);
 			set_form_sub(userInputForm,
 					derwin(notification, getmaxy(notification),
@@ -212,26 +213,26 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 		}
 
 		mvwprintw(notification, 2, 1, "%d books used out of 20 available",
-				currentBookCount);
+				BookType::getBookCount());
 		wrefresh(notification);
 		wclear(bookDisplayWindow);
 		box(bookDisplayWindow, 0, 0);
 		mvwprintw(bookDisplayWindow, 1, 1, "Title            : %s",
-				trim(bookBuffer.bookTitle, bookDisplayWindow));
+				trim(bookBuffer.getTitle(), bookDisplayWindow));
 		mvwprintw(bookDisplayWindow, 2, 1, "ISBN             : %s",
-				trim(bookBuffer.isbn, bookDisplayWindow));
+				trim(bookBuffer.getISBN(), bookDisplayWindow));
 		mvwprintw(bookDisplayWindow, 3, 1, "Author           : %s",
-				trim(bookBuffer.author, bookDisplayWindow));
+				trim(bookBuffer.getAuthor(), bookDisplayWindow));
 		mvwprintw(bookDisplayWindow, 4, 1, "Publisher        : %s",
-				trim(bookBuffer.publisher, bookDisplayWindow));
+				trim(bookBuffer.getPub(), bookDisplayWindow));
 		mvwprintw(bookDisplayWindow, 5, 1, "Date Added       : %s",
-				trim(bookBuffer.dateAdded, bookDisplayWindow));
+				trim(bookBuffer.getDateAdded(), bookDisplayWindow));
 		mvwprintw(bookDisplayWindow, 6, 1, "QoH              : %d",
-				bookBuffer.qtyOnHand);
+				bookBuffer.getQtyOnHand());
 		mvwprintw(bookDisplayWindow, 7, 1, "Wholesale Value  : %.2f",
-				bookBuffer.wholesale);
+				bookBuffer.getWholesale());
 		mvwprintw(bookDisplayWindow, 8, 1, "Retail Value     : %.2f",
-				bookBuffer.retail);
+				bookBuffer.getRetail());
 		wrefresh(bookDisplayWindow);
 
 		input = wgetch(mainWindow);
@@ -282,40 +283,40 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 					switch (choice) {
 					case 0:
 						//Get book title
-						bookBuffer.bookTitle = fieldBuffer;
+						bookBuffer.setTitle(fieldBuffer);
 						//bookBuffer.bookTitle.resize(QueueSize);
 						break;
 					case 1:
 						//Get isbn
-						bookBuffer.isbn = fieldBuffer;
+						bookBuffer.setISBN(fieldBuffer);
 						//bookBuffer.isbn.resize(QueueSize);
 						break;
 					case 2:
 						//Get author
-						bookBuffer.author = fieldBuffer;
+						bookBuffer.setAuthor(fieldBuffer);
 						//bookBuffer.author.resize(QueueSize);
 						break;
 					case 3:
 						//Get publisher
-						bookBuffer.publisher = fieldBuffer;
+						bookBuffer.setPub(fieldBuffer);
 						//bookBuffer.publisher.resize(QueueSize);
 						break;
 					case 4:
 						//Get date added
-						bookBuffer.dateAdded = fieldBuffer;
+						bookBuffer.setDateAdded(fieldBuffer);
 						//bookBuffer.dateAdded.resize(QueueSize);
 						break;
 					case 5:
 						//Get quantity on hand
-						bookBuffer.qtyOnHand = atoi(fieldBuffer);
+						bookBuffer.setQtyOnHand(atoi(fieldBuffer));
 						break;
 					case 6:
 						//Get wholesale value
-						bookBuffer.wholesale = atof(fieldBuffer);
+						bookBuffer.setWholesale(atof(fieldBuffer));
 						break;
 					case 7:
 						//Get retail value
-						bookBuffer.retail = atof(fieldBuffer);
+						bookBuffer.setRetail(atof(fieldBuffer));
 						break;
 					default:
 
@@ -330,16 +331,16 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 							"Are you sure you want to write to book list? [Y/N]");
 					exitChar = wgetch(notification);
 					if (tolower(exitChar) == 'y') {
-						bookList[currentBookCount] = bookBuffer;
-						currentBookCount++;
-						bookBuffer.bookTitle = "UNSET";
-						bookBuffer.isbn = "UNSET";
-						bookBuffer.author = "UNSET";
-						bookBuffer.publisher = "UNSET";
-						bookBuffer.dateAdded = "UNSET";
-						bookBuffer.qtyOnHand = 0;
-						bookBuffer.wholesale = 0;
-						bookBuffer.retail = 0;
+						bookList[BookType::getBookCount()] = bookBuffer;
+						BookType::incBookCount();
+						bookBuffer.setTitle("UNSET");
+						bookBuffer.setISBN("UNSET");
+						bookBuffer.setAuthor("UNSET");
+						bookBuffer.setPub("UNSET");
+						bookBuffer.setDateAdded("UNSET");
+						bookBuffer.setQtyOnHand(0);
+						bookBuffer.setWholesale(0);
+						bookBuffer.setRetail(0);
 						bookWritten = 1;
 					}
 					wclear(notification);
@@ -391,7 +392,7 @@ void addBook(BookType bookList[20], int &currentBookCount) {
 	deleteMenu(mainMenu, items, menuListing.size());
 	endWindow(mainWindow);
 
-	if (currentBookCount >= 20) {
+	if (BookType::getBookCount() >= 20) {
 		std::cout << "╔══════════════════════════════════════════╗" <<
 		std::endl;
 		std::cout << "║Book list full! Cannot add any more books.║" <<
