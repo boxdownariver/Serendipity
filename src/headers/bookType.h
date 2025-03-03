@@ -14,26 +14,26 @@ using namespace std;
 class BookType
 {
 	public:
-	void setTitle (string title)	{	bookTitle = title;	}
-	void setISBN (string bookisbn )	{	isbn = bookisbn;	}
-	void setAuthor (string bookAuthor )	{	author = bookAuthor;	}
-	void setPub (string bookPublisher)	{	 publisher = bookPublisher;	}
-	void setDateAdded (string date )	{	dateAdded = date;	}
-	void setQtyOnHand (int quantity)	{	qtyOnHand = quantity; }
+	void setTitle (string title)				{	bookTitle = title;			}
+	void setISBN (string bookisbn )				{	isbn = bookisbn;			}
+	void setAuthor (string bookAuthor )			{	author = bookAuthor;		}
+	void setPub (string bookPublisher)			{	 publisher = bookPublisher;	}
+	void setDateAdded (string date )			{	dateAdded = date;			}
+	void setQtyOnHand (int quantity)			{	qtyOnHand = quantity; 		}
 	void setWholesale (double wholesalePrice)	{	wholesale = wholesalePrice;	}
-	void setRetail (double retailPrice)	{	retail = retailPrice;	}
-	static void incBookCount () {	bookCount++; }
-	static void decBookCount () { bookCount --; }
+	void setRetail (double retailPrice)			{	retail = retailPrice;		}
+	static void incBookCount () 				{	bookCount++; 				}
+	static void decBookCount () 				{ bookCount--; 					}
 
-	string getTitle () const	{	return bookTitle;	}
-	string getISBN () const	{	return isbn;	}
-	string getAuthor () const	{	return author;	}
-	string getPub () const	{	return publisher;	}
+	string getTitle () const		{	return bookTitle;	}
+	string getISBN () const			{	return isbn;		}
+	string getAuthor () const		{	return author;		}
+	string getPub () const			{	return publisher;	}
 	string getDateAdded () const	{	return dateAdded;	}
-	int getQtyOnHand () const	{	return qtyOnHand;	}
+	int getQtyOnHand () const		{	return qtyOnHand;	}
 	double getWholesale () const	{	return wholesale;	}
-	double getRetail () const	{	return retail;	}
-	static int getBookCount () {	return bookCount;	}
+	double getRetail () const		{	return retail;		}
+	static int getBookCount () 		{	return bookCount;	}
 	
 
 	void printBookInfo () const ;
