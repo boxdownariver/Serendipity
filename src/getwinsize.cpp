@@ -9,7 +9,7 @@ namespace getwinsize {
 		int filedesc;
 
 		filedesc = open("/dev/tty", O_RDWR);
-		if (filedesc >= 0 && ioctl(filedesc, TIOCGWINSZ, &ws)); else ws.ws_col = 0;
+		if (filedesc >= 0 && !(ioctl(filedesc, TIOCGWINSZ, &ws))); else ws.ws_col = 0;
 		close(filedesc);
       		return ws.ws_col;	
 	}
