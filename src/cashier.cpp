@@ -28,24 +28,16 @@
 #include <cctype>      // To check for user choice effectively
 #include <limits>      // To handle garbage input well
 #include "headers/setColour.h"
+#include "headers/invmenu.h"
+#include "headers/bookInfo.h"
+#include "headers/lookUp.h"
+
 using namespace std;
 
-/**
- * CashierBookType\n
- * Currently, only cashier interfaces use this type.\n
- * Not to be confused with BookType
- */
-struct CashierBookType {
-	string date;    ///< Date of the transaction to display on the receipt
-	int quantity;   ///< Quantity of book purchased
-	string isbn;    ///< ISBN of the book (10-13 digit code)
-	string title;   ///< Title of the book being purchased
-	float price;    ///< Price of a single book 
-	float total;    ///< Total price for the books purchased (quantity * price)
-};
-
-void askData (CashierBookType &books);
-void FormatReport (const CashierBookType &books);
+void purchaseBook (BookType books[], int index, int cart[] );
+void showCart (BookType books[], int cart[]);
+void FormatReport ( BookType books[], int cart[], string date);
+string generateDate ();
 
 /**
  * mainCashier handles the process of printing a receipt for a 
@@ -58,95 +50,238 @@ void FormatReport (const CashierBookType &books);
  * 
  * The function does not take any parameters and does not return any values.
  */
-int mainCashier (){
-
-	CashierBookType bookOne;
+int mainCashier (BookType books[]){
+	int cart [20];
+	string toPurchase;
+	int indexToPurchase;
 	char choice;
+	char confirmPurchase;
+	char repeat;
+	string date;
 
-	do {
 
-	// Clear the screen and set the colour
-	system("clear");
-	setColour (96);
-		
-	// Pass to a function to get the data.
-	askData ( bookOne);
-		
-	// Clear the screen
-	system("clear");
-		
-	// Pass to a function to show the formatted report
-	FormatReport (bookOne); 
+do {
 
-	cout << "\033[0m"; // Back to default colour
-	cout << "Do you want to proceed another transaction(Y/N)?\n";
-	cin.get (choice);
-	cin.ignore (100, '\n');
+	toPurchase = validateAndAsk (BookType::getBookCount());
+		if (toPurchase != "")
+		{
+			for (int i = 0; i < 20 ; i++)
+				{
+					cart[i]=0;
+				}
 
-		while (toupper(choice) != 'N' && toupper(choice) != 'Y' )
-			{
-				cout << choice << " is invalid choice.. Only enter Y or N\n";
-				cin.get (choice);
-				cin.ignore (100, '\n');
-			}
-		
-	}
-	while (toupper (choice) != 'N');
-	
-	cout << "\033[0m"; // Back to default colour
-	
-	return 0;
+						do {	
+
+								indexToPurchase = findString (toPurchase, books, BookType::getBookCount() );
+									if (indexToPurchase != -1)
+											{
+												system("clear");
+												purchaseBook ( books, indexToPurchase, cart);
+												system("clear");
+												showCart (books, cart);
+											}
+
+								cout << "Do you want to proceed another book purchase on the same receipt? (Y/N)?\n";
+								cin.get (choice);
+								cin.ignore (100, '\n');
+									while (toupper(choice) != 'N' && toupper(choice) != 'Y')
+										{
+											cout << choice << " is invalid choice.. Only enter Y or N. ";
+											cin.get (confirmPurchase);
+											cin.ignore(100, '\n');
+										}
+								if (toupper(choice) == 'Y' ){
+								toPurchase = validateAndAsk (BookType::getBookCount()); }
+
+						}
+
+
+						while (toupper (choice) != 'N');
+
+						system("clear");
+						showCart (books, cart);
+						cout << "Confirm Purchase and view the receipt ? (Y/N)\n";
+						cin.get(confirmPurchase);
+						cin.ignore (100,'\n');
+						while (toupper(confirmPurchase) != 'N' && toupper(confirmPurchase) != 'Y')
+							{
+									cout << choice << " is invalid choice.. Only enter Y or N. ";
+									cin.get (confirmPurchase);
+									cin.ignore(100, '\n');
+							}
+
+						if (toupper(confirmPurchase) == 'Y')	
+							{	
+								date = generateDate();
+								system("clear");
+								FormatReport (books,cart, date );
+							}
+								cout << "Do you want to make another transaction ? (Y/N)\n";
+								cin.get (repeat);
+								cin.ignore (100, '\n');
+									while (toupper(repeat) != 'N' && toupper(repeat) != 'Y' )
+										{
+											cout << choice << " is invalid choice.. Only enter Y or N. ";
+											cin.get (repeat);
+											cin.ignore (100, '\n');
+										}
+		}
+
+}
+while (BookType::getBookCount() != 0 && toupper(repeat) != 'N');
+
+	return 0;		
 }
 
-/**
- * askData takes the input and stores it in 'CashierBookType' struct
- *
- * This function prompts user for the following data
- * 1- Date of book purchased
- * 2- Quantity of book
- * 3- Book isbn
- * 4- Book title
- * 5- Book price
- *
- * Then it calculates the total price based on quantity and price of each book.
- * 
- * Function takes 'CashierBookType' as a parameter, and stores values in
- * it and doesn't return any values.
- */
-void askData (CashierBookType &books)
+string generateDate ()
 {
-	cout << setw (20) << left << "\nDate (MM/DD/YYYY)" << " : ";
-	getline (cin, books.date);
+	time_t t = time(nullptr);  
+   tm* tm = localtime(&t); // Convert to local time
 
-	cout << setw (20) << left << "\nQuantity" << " : ";
-	cin >> books.quantity;
-	cin.ignore();
+    // Format the date as MM/DD/YYYY and store it in a string
+    stringstream ss;
+    ss << setfill('0') << setw(2) << (tm->tm_mon + 1) << "/"  // Month
+       << setw(2) << tm->tm_mday << "/"                       // Day
+       << (tm->tm_year + 1900);                               // Year
+
+    // Copy the formatted date to a std::string
+    string currentDate = ss.str();  // Now `currentDate` holds the date as a string
+
+    // Print the string (date)
+    cout << "Current date: " << currentDate << "\n";
+
+    // You can use currentDate as a string now
+    // Example: Copy to another string variable
+    string copiedDate = currentDate;
+
+	return copiedDate;
+
+}
+
+
+void purchaseBook (BookType books[], int index, int cart[])
+{
+	// show the book info to user to confirm purchase
+	char decision;
+	int numToPurchase;
+	int numAvailable;
+	numAvailable = books[index].getQtyOnHand() - cart[index];
+
+	mainbookInfo(books, index);
+	setColour (33);
+	cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
+	cout << "                │     Would you like to add this book to your cart? (Y/N)          │\n";
+	cout << "                └──────────────────────────────────────────────────────────────────┘\n";
+	resetColour();
+	cout << right << setw(50)<< "→  ";
+	cin.get (decision);
+	cin.ignore (100, '\n');
 	
-	cout << setw (20) << left << "\nISBN (10 - 13 digits)" << " : ";
-	getline (cin, books.isbn);
+	while (toupper(decision) != 'N' && toupper(decision) != 'Y' )
+			{
+				cout << decision << " is invalid choice.. Only enter Y or N. ";
+				cout << right << setw(50)<< "→";
+				cin.get (decision);
+				cin.ignore (100, '\n');
+			}
+	if (toupper(decision) == 'Y')
+	{
+		numAvailable = books[index].getQtyOnHand() - cart[index];
+		setColour (97);
+		cout << "                           ┌────────────────────────────────────────┐\n";
+		cout << "                                 Stock available : " << books[index].getQtyOnHand() << endl;
+		cout << "                                 In Your Cart    : " << cart[index] << endl;
+		cout << "                           └────────────────────────────────────────┘\n";
+		if (numAvailable == 0)
+			{
+				cout << setw (15) << left << " " << "Sorry, we are out of stock of this book\n";
+				cout << setw (25) << left << "Press enter to continue...\n";
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-	cout << setw (20) << left << "\nTitle" << " : ";
-	getline (cin, books.title);
+				return;
+			}
 
-	cout << setw(20) << left << "\nPrice ($)" << " : ";
-	cin >> books.price;
-	cin.ignore();
-		
-	// Calculate the total.
-	books.total = books.price * books.quantity;
+		cout << setw (40) << right << "You can add up to " << numAvailable << " books. Please enter quantity below.\n";
+		resetColour();
+		cout << right << setw(50)<< "→  ";
+		cin >> numToPurchase;
+		cin.ignore();
+			while (numToPurchase < 0)
+			{
+				cout << setw (40) << right <<"Invalid quantity entered..Enter quantity again..\n";
+				cout << right << setw(50)<< "→  ";
+				cin >> numToPurchase;
+				cin.ignore();
+			}
 
-	// Show the below txt in Yellow
-	setColour (93);
-	
-	cout << "Information added, press enter to view the cashier receipt\n";
-	cin.ignore(numeric_limits<streamsize>::max(), '\n');	
-	
+			if (numToPurchase > numAvailable)
+			{
+				cout << setw (40) << right << " Quantity entered is more than quantity available..\n";
+				numToPurchase = numAvailable ;
+			}
+			setColour(33);
+			cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
+			cout << "                │  " << setw (3) << right << numToPurchase << " books added to your cart successfully            │\n";
+			cout << "                └──────────────────────────────────────────────────────────────────┘\n";
+			cout << "Press enter to continue...\n";
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cart[index] += numToPurchase;
+			resetColour();
+	}
+
+
 	return;
 }
 
+void showCart (BookType books[], int cart[])
+{	setColour (96);
+	char choice;
+	bool cartPrinted = false;
+	string substring;
+	double totalBeforeTax = 0;
+	cout << fixed << setprecision(2);
+
+	for (int i = 0; i < 20; i++)
+	 {
+        if (cart[i] > 0 && !cartPrinted) 
+			{  // If any positive number found and "cart" not printed yet
+            cout << "┌─────────────────────────────────────────────────────────────────────────┐\n";
+				cout << "│  SERENDIPITY BOOK SELLERS                   ***      YOUR SHOPPING CART │\n";
+				cout << "├─────────────────────────────────────────────────────────────────────────┤\n";
+
+            cartPrinted = true;            // Mark "cart" as printed
+            break;                         // Exit the loop after printing "cart"
+        }
+    }
+	
+	for (int i = 0; i < 20; i++)
+	{
+		if (cart[i] > 0)
+			{
+				cout << "│ " << setw (66) << left << books[i].getTitle() << setw (4) << right << cart[i] << "  │\n";
+				totalBeforeTax += books[i].getRetail() * cart[i];
+
+			}
+	}
+	cartPrinted = false;
+	for (int i =0; i < 20; i++)
+	{
+		if (cart[i] > 0 && !cartPrinted)
+		{
+			cout << "│                                                                         │\n";
+			cout << "│                                                                         │\n";
+			cout << "│   " << setw (61) << right << "Total Before Tax  : " << " $" << right << setw (3) << totalBeforeTax << " │ \n";
+			cout << "└─────────────────────────────────────────────────────────────────────────┘\n";
+			cartPrinted = true;
+			break;
+		}
+	}
+	resetColour();
+
+}
 
 /**
- * FormatReport generates a cashier transaction using 'CashierBookType'. 
+ * FormatReport generates a cashier transaction using 'BookType'. 
  * 
  * It takes all the data stored, and calculates the tax amount
  * tax percentage(assumed to be 6%).
@@ -155,18 +290,25 @@ void askData (CashierBookType &books)
  * from 'CashierBookType'. It simply formats and prints the cashier receipt.
  * Function doesn't return any values.
  */
-void FormatReport (const CashierBookType &books)
+void FormatReport ( BookType books[], int cart[], string date)
 {
-	float subtotal;
+	float subtotal = 0;
 	float tax_amt;
 	const float TAX_PCT = 0.06;
 	float totalAfterTax;
 	string tempTitle;
 	
-	// Do the calculations
-	subtotal = books.total;
+	// making calculations adn reduce the quantity on database
+	for (int i = 0; i < 20 ; i++)
+	{
+		if (cart[i] > 0)
+			{
+				books[i].setQtyOnHand(books[i].getQtyOnHand() - cart[i]);
+				subtotal += books[i].getRetail() * cart[i];
+			}
+	}
 	tax_amt = TAX_PCT * subtotal;
-	totalAfterTax = tax_amt + subtotal;
+	totalAfterTax = subtotal + tax_amt;
 
 	// For fixed precision ( show 2 decimal point )
 	setColour (96);   // Receipt generally using cyan colour
@@ -181,25 +323,32 @@ void FormatReport (const CashierBookType &books)
 	setColour (96);    // Back cyan colour
 	cout << "║\n";
 	cout << "║                                                                              ║\n";
-	cout << "║ Date: " << setw (71) << left << books.date << "║\n";
+	cout << "║ Date: " << setw (71) << left << date << "║\n";
 	cout << "║                                                                              ║\n";
 	cout << "║" << setw(5) << left << "Qty" << setw(14) << left << "ISBN" << setw(38) << left << "Title";
 	cout << setw (12) << left << "Price" << setw (9) << left << "Total" << "║\n";
 	cout << "╠══════════════════════════════════════════════════════════════════════════════╣\n";
-	cout << "║" << setw(3) << right << books.quantity << "  " << setw (14) << left << books.isbn;
-	
-	// placement of the book title
-	if (books.title.length() <= 34 )
+
+for (int i = 0; i < 20 ; i++)
+{
+	if (cart[i] > 0)
 	{
-		cout << setw (36) << left << books.title;
-	}
-	else
-	{
-		tempTitle = books.title.substr(0, 33);
-		cout << setw (32) << left << tempTitle << "...";
-	}
+			cout << "║" << setw(3) << right << cart[i] << "  " << setw (14) << left << books[i].getISBN();
 	
-	cout << setw (3) << right << "$" << setw (7) << right << books.price << setw (5) << right << "$" << setw(7) << right << books.total << " ║\n";
+			// placement of the book title
+			if (books[i].getTitle().length() <= 34 )
+			{
+				cout << setw (36) << left << books[i].getTitle();
+			}
+			else
+			{
+				tempTitle = books[i].getTitle().substr(0, 33);
+				cout << setw (32) << left << tempTitle << "...";
+			}
+
+			cout << setw (3) << right << "$" << setw (7) << right << books[i].getRetail() << setw (5) << right << "$" << setw(7) << right << books[i].getRetail() * cart[i] << " ║\n";
+	}
+}	
 	cout << "║                                                                              ║\n";
 	cout << "║                                                                              ║\n";
 	cout << setw (58) << left << "║" << "Subtotal    $" << setw (8) << right << subtotal << "  ║\n";
