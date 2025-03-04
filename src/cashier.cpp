@@ -62,88 +62,76 @@ int mainCashier (BookType books[]){
 
 
 do {
-hasBooksInCart = false;
+	hasBooksInCart = false;
 	toPurchase = validateAndAsk (BookType::getBookCount());
-		if (toPurchase != "")
-		{
-			for (int i = 0; i < 20 ; i++)
-				{
-					cart[i]=0;
-				}
+		if (toPurchase != "") {
+			for (int i = 0; i < 20 ; i++){
+				cart[i]=0;
+			}
 
-						do {	
-
-								indexToPurchase = findString (toPurchase, books, BookType::getBookCount() );
-									if (indexToPurchase != -1)
-											{
-												system("clear");
-												purchaseBook ( books, indexToPurchase, cart);
-												system("clear");
-												showCart (books, cart);
-													}
-
-										for (int i = 0; i < 20; i++) {
-    									if (cart[i] > 0) {
-        								hasBooksInCart = true;
-        								break;
-    									}
-								if (hasBooksInCart){
-								cout << "Do you want to proceed another book purchase on the same receipt? (Y/N)?\n";
-								cin.get (choice);
-								cin.ignore (100, '\n');
-									while (toupper(choice) != 'N' && toupper(choice) != 'Y')
-										{
-											cout << choice << " is invalid choice.. Only enter Y or N. ";
-											cin.get (choice);
-											cin.ignore(100, '\n');
-										}
-								if (toupper(choice) == 'Y' ){
-								toPurchase = validateAndAsk (BookType::getBookCount()); }
-									}
-
-						}
-
-
-						while (toupper (choice) != 'N');
-
-								for (int i = 0; i < 20; i++) {
-    									if (cart[i] > 0) {
-        								hasBooksInCart = true;
-        								break;
-    									}
-}
-					if (hasBooksInCart){
-
+				do {	
+					indexToPurchase = findString (toPurchase, books, BookType::getBookCount() );
+					if (indexToPurchase != -1){
+						system("clear");
+						purchaseBook ( books, indexToPurchase, cart);
 						system("clear");
 						showCart (books, cart);
-						cout << "Confirm Purchase and view the receipt ? (Y/N)\n";
-						cin.get(confirmPurchase);
-						cin.ignore (100,'\n');
-						while (toupper(confirmPurchase) != 'N' && toupper(confirmPurchase) != 'Y')
-							{
-									cout << choice << " is invalid choice.. Only enter Y or N. ";
-									cin.get (confirmPurchase);
-									cin.ignore(100, '\n');
-							}
+					}
 
-						if (toupper(confirmPurchase) == 'Y')	
-							{	
-								date = generateDate();
-								system("clear");
-								FormatReport (books,cart, date );
-							}
-							}
-								cout << "Do you want to make another transaction ? (Y/N)\n";
-								cin.get (repeat);
-								cin.ignore (100, '\n');
-									while (toupper(repeat) != 'N' && toupper(repeat) != 'Y' )
-										{
-											cout << choice << " is invalid choice.. Only enter Y or N. ";
-											cin.get (repeat);
-											cin.ignore (100, '\n');
-										}
+					//Check if theres book in cart
+					for (int i = 0; i < 20; i++) {
+    						if (cart[i] > 0) {
+        					hasBooksInCart = true;
+        					break;
+    						}
+					}
+					if (hasBooksInCart){
+					cout << "Do you want to proceed another book purchase on the same receipt? (Y/N)?\n";
+					cin.get (choice);
+					cin.ignore (100, '\n');
+					while (toupper(choice) != 'N' && toupper(choice) != 'Y') {
+						cout << choice << " is invalid choice.. Only enter Y or N. ";
+						cin.get (choice);
+						cin.ignore(100, '\n');
+					}
+					if (toupper(choice) == 'Y' ){
+					toPurchase = validateAndAsk (BookType::getBookCount()); 
+					}
+				}
+				}	while (toupper (choice) != 'N');
+
+			if (hasBooksInCart){
+			system("clear");
+			showCart (books, cart);
+			cout << "Confirm Purchase and view the receipt ? (Y/N)\n";
+			cin.get(confirmPurchase);
+			cin.ignore (100,'\n');
+			while (toupper(confirmPurchase) != 'N' && toupper(confirmPurchase) != 'Y')
+				{
+					cout << choice << " is invalid choice.. Only enter Y or N. ";
+					cin.get (confirmPurchase);
+					cin.ignore(100, '\n');
+				}
+
+			if (toupper(confirmPurchase) == 'Y')	
+			{	
+				date = generateDate();
+				system("clear");
+				FormatReport (books,cart, date );
+			}
+			}
+
+
+			// Showed receipt, therefore ask if they want to repat
+			cout << "Do you want to make another transaction ? (Y/N)\n";
+			cin.get (repeat);
+			cin.ignore (100, '\n');
+			while (toupper(repeat) != 'N' && toupper(repeat) != 'Y' ){
+					cout << repeat << " is invalid choice.. Only enter Y or N. ";
+					cin.get (repeat);
+					cin.ignore (100, '\n');
+				}
 		}
-
 }
 while (BookType::getBookCount() != 0 && toupper(repeat) != 'N');
 
