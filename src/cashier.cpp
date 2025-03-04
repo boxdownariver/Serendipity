@@ -58,6 +58,7 @@ int mainCashier (BookType books[]){
 	char confirmPurchase;
 	char repeat;
 	string date;
+	bool hasBooksInCart = false;
 
 
 do {
@@ -98,6 +99,14 @@ do {
 
 						while (toupper (choice) != 'N');
 
+								for (int i = 0; i < 20; i++) {
+    									if (cart[i] > 0) {
+        								hasBooksInCart = true;
+        								break;
+    									}
+}
+					if (hasBooksInCart){
+
 						system("clear");
 						showCart (books, cart);
 						cout << "Confirm Purchase and view the receipt ? (Y/N)\n";
@@ -115,6 +124,7 @@ do {
 								date = generateDate();
 								system("clear");
 								FormatReport (books,cart, date );
+							}
 							}
 								cout << "Do you want to make another transaction ? (Y/N)\n";
 								cin.get (repeat);
@@ -216,12 +226,14 @@ void purchaseBook (BookType books[], int index, int cart[])
 
 			if (numToPurchase > numAvailable)
 			{
-				cout << setw (40) << right << " Quantity entered is more than quantity available..\n";
+				setColour (96);
+				cout << " The requested quantity exceeds stock, so we've added the maximum available to your cart..\n";
+				resetColour();
 				numToPurchase = numAvailable ;
 			}
 			setColour(33);
 			cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
-			cout << "                │  " << setw (3) << right << numToPurchase << " books added to your cart successfully            │\n";
+			cout << "                │            " << setw (3) << right << numToPurchase << " books added to your cart successfully!            │\n";
 			cout << "                └──────────────────────────────────────────────────────────────────┘\n";
 			cout << "Press enter to continue...\n";
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
