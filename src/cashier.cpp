@@ -58,11 +58,11 @@ int mainCashier (BookType books[]){
 	char confirmPurchase;
 	char repeat;
 	string date;
-	bool hasBooksInCart = false;
+	bool hasBooksInCart;
 
 
 do {
-
+hasBooksInCart = false;
 	toPurchase = validateAndAsk (BookType::getBookCount());
 		if (toPurchase != "")
 		{
@@ -80,19 +80,26 @@ do {
 												purchaseBook ( books, indexToPurchase, cart);
 												system("clear");
 												showCart (books, cart);
-											}
+													}
 
+										for (int i = 0; i < 20; i++) {
+    									if (cart[i] > 0) {
+        								hasBooksInCart = true;
+        								break;
+    									}
+								if (hasBooksInCart){
 								cout << "Do you want to proceed another book purchase on the same receipt? (Y/N)?\n";
 								cin.get (choice);
 								cin.ignore (100, '\n');
 									while (toupper(choice) != 'N' && toupper(choice) != 'Y')
 										{
 											cout << choice << " is invalid choice.. Only enter Y or N. ";
-											cin.get (confirmPurchase);
+											cin.get (choice);
 											cin.ignore(100, '\n');
 										}
 								if (toupper(choice) == 'Y' ){
 								toPurchase = validateAndAsk (BookType::getBookCount()); }
+									}
 
 						}
 
@@ -175,9 +182,25 @@ void purchaseBook (BookType books[], int index, int cart[])
 	char decision;
 	int numToPurchase;
 	int numAvailable;
-	numAvailable = books[index].getQtyOnHand() - cart[index];
 
+	numAvailable = books[index].getQtyOnHand() - cart[index];
 	mainbookInfo(books, index);
+
+	setColour (97);
+	cout << "                           ┌────────────────────────────────────────┐\n";
+	cout << "                                 Stock available : " << books[index].getQtyOnHand() << endl;
+	cout << "                                 In Your Cart    : " << cart[index] << endl;
+	cout << "                           └────────────────────────────────────────┘\n";
+
+	if (numAvailable == 0)
+			{
+				cout << setw (15) << left << " " << "Sorry, we are out of stock of this book\n";
+				cout << setw (25) << left << "Press enter to continue...\n";
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+				return;
+			}
+
 	setColour (33);
 	cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
 	cout << "                │     Would you like to add this book to your cart? (Y/N)          │\n";
@@ -196,21 +219,7 @@ void purchaseBook (BookType books[], int index, int cart[])
 			}
 	if (toupper(decision) == 'Y')
 	{
-		numAvailable = books[index].getQtyOnHand() - cart[index];
-		setColour (97);
-		cout << "                           ┌────────────────────────────────────────┐\n";
-		cout << "                                 Stock available : " << books[index].getQtyOnHand() << endl;
-		cout << "                                 In Your Cart    : " << cart[index] << endl;
-		cout << "                           └────────────────────────────────────────┘\n";
-		if (numAvailable == 0)
-			{
-				cout << setw (15) << left << " " << "Sorry, we are out of stock of this book\n";
-				cout << setw (25) << left << "Press enter to continue...\n";
-				cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
-				return;
-			}
-
+		setColour (93);
 		cout << setw (40) << right << "You can add up to " << numAvailable << " books. Please enter quantity below.\n";
 		resetColour();
 		cout << right << setw(50)<< "→  ";
@@ -227,18 +236,19 @@ void purchaseBook (BookType books[], int index, int cart[])
 			if (numToPurchase > numAvailable)
 			{
 				setColour (96);
-				cout << " The requested quantity exceeds stock, so we've added the maximum available to your cart..\n";
+				cout << "    The requested quantity exceeds stock, so we've added the maximum available to your cart..\n";
 				resetColour();
 				numToPurchase = numAvailable ;
 			}
-			setColour(33);
+			setColour(32);
 			cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
 			cout << "                │            " << setw (3) << right << numToPurchase << " books added to your cart successfully!            │\n";
 			cout << "                └──────────────────────────────────────────────────────────────────┘\n";
+			resetColour();
 			cout << "Press enter to continue...\n";
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 			cart[index] += numToPurchase;
-			resetColour();
+			
 	}
 
 
@@ -252,15 +262,18 @@ void showCart (BookType books[], int cart[])
 	string substring;
 	double totalBeforeTax = 0;
 	cout << fixed << setprecision(2);
+	int bookAddedCount = 1;
+	string tempTitle;
 
 	for (int i = 0; i < 20; i++)
 	 {
         if (cart[i] > 0 && !cartPrinted) 
 			{  // If any positive number found and "cart" not printed yet
             cout << "┌─────────────────────────────────────────────────────────────────────────┐\n";
-				cout << "│  SERENDIPITY BOOK SELLERS                   ***      YOUR SHOPPING CART │\n";
+				cout << "│  SERENDIPITY BOOK SELLERS                            YOUR SHOPPING CART │\n";
+				cout << "│                                                                         │\n";
+				cout << "│ No. Title                                                           Qty │\n";
 				cout << "├─────────────────────────────────────────────────────────────────────────┤\n";
-
             cartPrinted = true;            // Mark "cart" as printed
             break;                         // Exit the loop after printing "cart"
         }
@@ -270,9 +283,20 @@ void showCart (BookType books[], int cart[])
 	{
 		if (cart[i] > 0)
 			{
-				cout << "│ " << setw (66) << left << books[i].getTitle() << setw (4) << right << cart[i] << "  │\n";
+						cout << "│ " << setw (2) << right << bookAddedCount << ". ";
+						// For placement of the title
+						if (books[i].getTitle().length() <= 60 )
+							{
+								cout << setw (62) << left << books[i].getTitle();
+							}
+							else
+							{
+								tempTitle = books[i].getTitle().substr(0, 59);
+								cout << setw (58) << left << tempTitle << "...";
+							}
+				cout << setw (4) << right << cart[i] << "  │\n";
 				totalBeforeTax += books[i].getRetail() * cart[i];
-
+				bookAddedCount++;
 			}
 	}
 	cartPrinted = false;
@@ -282,7 +306,7 @@ void showCart (BookType books[], int cart[])
 		{
 			cout << "│                                                                         │\n";
 			cout << "│                                                                         │\n";
-			cout << "│   " << setw (61) << right << "Total Before Tax  : " << " $" << right << setw (3) << totalBeforeTax << " │ \n";
+			cout << "│   " << setw (58) << right << "Total Before Tax  : " << " $ " << right << setw (8) << totalBeforeTax << " │ \n";
 			cout << "└─────────────────────────────────────────────────────────────────────────┘\n";
 			cartPrinted = true;
 			break;
@@ -374,11 +398,11 @@ for (int i = 0; i < 20 ; i++)
 	cout << "║                                                                              ║\n";
 	cout << "║ ";
 	// Print thank you text in white
-	setColour (97);
+	resetColour();
 	cout<< setw (77) << left << "Thank you for shopping at Serendipity!";
 	setColour (96);    // Back to cyan colour
 	cout << "║\n";
 	cout << "╚══════════════════════════════════════════════════════════════════════════════╝\n";
-	
+	resetColour();
 	return;
 }
