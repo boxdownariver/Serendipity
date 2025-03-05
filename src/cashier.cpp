@@ -62,6 +62,8 @@ int mainCashier (BookType books[]){
 
 
 do {
+	choice = 'N';
+	repeat = 'N';
 	hasBooksInCart = false;
 	toPurchase = validateAndAsk (BookType::getBookCount());
 		if (toPurchase != "") {
@@ -90,7 +92,7 @@ do {
 					cin.get (choice);
 					cin.ignore (100, '\n');
 					while (toupper(choice) != 'N' && toupper(choice) != 'Y') {
-						cout << choice << " is invalid choice.. Only enter Y or N. ";
+						cout << choice << " is invalid choice.. Only enter Y or N.\n";
 						cin.get (choice);
 						cin.ignore(100, '\n');
 					}
@@ -108,7 +110,7 @@ do {
 			cin.ignore (100,'\n');
 			while (toupper(confirmPurchase) != 'N' && toupper(confirmPurchase) != 'Y')
 				{
-					cout << choice << " is invalid choice.. Only enter Y or N. ";
+					cout << choice << " is invalid choice.. Only enter Y or N.\n";
 					cin.get (confirmPurchase);
 					cin.ignore(100, '\n');
 				}
@@ -127,7 +129,7 @@ do {
 			cin.get (repeat);
 			cin.ignore (100, '\n');
 			while (toupper(repeat) != 'N' && toupper(repeat) != 'Y' ){
-					cout << repeat << " is invalid choice.. Only enter Y or N. ";
+					cout << repeat << " is invalid choice.. Only enter Y or N.\n";
 					cin.get (repeat);
 					cin.ignore (100, '\n');
 				}
