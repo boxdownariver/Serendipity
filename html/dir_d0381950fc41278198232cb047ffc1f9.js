@@ -7,6 +7,7 @@ var dir_d0381950fc41278198232cb047ffc1f9 =
     [ "cashier.h", "cashier_8h.html", "cashier_8h" ],
     [ "deleteBook.hpp", "deleteBook_8hpp.html", "deleteBook_8hpp" ],
     [ "editbook.hpp", "editbook_8hpp.html", "editbook_8hpp" ],
+    [ "getwinsize.h", "getwinsize_8h.html", "getwinsize_8h" ],
     [ "invmenu.h", "invmenu_8h.html", "invmenu_8h" ],
     [ "lookUp.h", "lookUp_8h.html", "lookUp_8h" ],
     [ "menuDipity.h", "menuDipity_8h.html", "menuDipity_8h" ],

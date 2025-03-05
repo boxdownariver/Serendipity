@@ -1,27 +1,13 @@
 <map id="mainmenu.cpp" name="mainmenu.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="283,5,390,32"/>
-<area shape="rect" id="Node000002" href="$menuDipity_8h.html" title=" " alt="" coords="5,80,153,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="292,35,139,78,138,73,291,30"/>
-<area shape="rect" id="Node000007" href="$reports_8h.html" title=" " alt="" coords="176,80,299,107"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="321,35,268,73,265,69,318,30"/>
-<area shape="rect" id="Node000008" href="$invmenu_8h.html" title=" " alt="" coords="365,155,497,181"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="340,32,347,66,364,105,381,126,401,143,397,147,377,130,359,108,342,68,335,33"/>
-<area shape="rect" id="Node000010" href="$cashier_8h.html" title=" " alt="" coords="374,80,498,107"/>
-<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="355,30,408,68,405,73,352,35"/>
-<area shape="rect" id="Node000011" href="$lookUp_8h.html" title=" " alt="" coords="523,80,646,107"/>
-<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="380,30,527,73,526,78,379,35"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="386,304,439,331"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="67,109,53,124,41,143,35,162,40,180,73,216,112,246,157,268,203,286,250,298,295,306,370,313,370,318,295,311,249,303,202,291,154,273,109,250,69,220,35,183,30,162,36,141,49,121,63,105"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="50,155,108,181"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="82,107,82,139,76,139,76,107"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="132,155,196,181"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="96,105,140,143,137,147,92,109"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="221,155,292,181"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="111,105,212,146,210,151,109,110"/>
-<area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="424,183,411,204,400,230,399,260,405,289,399,290,393,261,395,229,406,202,419,180"/>
-<area shape="rect" id="Node000009" href="$bookType_8h.html" title=" " alt="" coords="410,229,498,256"/>
-<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="437,181,448,214,443,215,432,183"/>
-<area shape="poly" id="edge10_Node000009_Node000003" title=" " alt="" coords="449,258,429,292,425,289,444,255"/>
-<area shape="poly" id="edge14_Node000011_Node000003" title=" " alt="" coords="584,108,561,176,540,218,512,258,484,282,454,300,451,296,481,278,508,254,535,216,556,174,579,106"/>
-<area shape="poly" id="edge13_Node000011_Node000008" title=" " alt="" coords="559,110,473,150,471,145,556,105"/>
+<area shape="rect" id="node1" title=" " alt="" coords="283,5,390,32"/>
+<area shape="rect" id="node2" href="$menuDipity_8h.html" title=" " alt="" coords="5,80,153,107"/>
+<area shape="rect" id="node7" href="$reports_8h.html" title=" " alt="" coords="176,80,299,107"/>
+<area shape="rect" id="node8" href="$invmenu_8h.html" title=" " alt="" coords="371,155,502,181"/>
+<area shape="rect" id="node10" href="$cashier_8h.html" title=" " alt="" coords="374,80,498,107"/>
+<area shape="rect" id="node11" href="$lookUp_8h.html" title=" " alt="" coords="523,80,646,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="390,304,443,331"/>
+<area shape="rect" id="node4" title=" " alt="" coords="50,155,108,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="132,155,196,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="221,155,292,181"/>
+<area shape="rect" id="node9" href="$bookType_8h.html" title=" " alt="" coords="414,229,502,256"/>
 </map>

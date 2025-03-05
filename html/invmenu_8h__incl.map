@@ -1,8 +1,5 @@
 <map id="invmenu.h" name="invmenu.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,87,32"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="19,155,73,181"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="45,33,34,80,34,111,40,139,35,140,29,111,29,80,39,32"/>
-<area shape="rect" id="Node000003" href="$bookType_8h.html" title=" " alt="" coords="43,80,132,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="56,31,75,65,70,68,51,34"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="82,109,63,143,58,140,78,106"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,87,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="19,155,73,181"/>
+<area shape="rect" id="node3" href="$bookType_8h.html" title=" " alt="" coords="43,80,132,107"/>
 </map>

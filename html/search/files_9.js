@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['setcolour_2ecpp_0',['setColour.cpp',['../setColour_8cpp.html',1,'']]],
-  ['setcolour_2ed_1',['setColour.d',['../setColour_8d.html',1,'']]],
-  ['setcolour_2eh_2',['setColour.h',['../setColour_8h.html',1,'']]],
-  ['src_2fcashier_2ed_3',['cashier.d',['../src_2cashier_8d.html',1,'']]],
-  ['src_2fmainmenu_2ed_4',['mainmenu.d',['../src_2mainmenu_8d.html',1,'']]]
+  ['readme_2emd_0',['README.md',['../README_8md.html',1,'']]],
+  ['reports_2ecpp_1',['reports.cpp',['../reports_8cpp.html',1,'']]],
+  ['reports_2eh_2',['reports.h',['../reports_8h.html',1,'']]]
 ];

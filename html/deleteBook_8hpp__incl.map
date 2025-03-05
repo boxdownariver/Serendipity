@@ -1,14 +1,7 @@
 <map id="deleteBook.hpp" name="deleteBook.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="32,5,143,32"/>
-<area shape="rect" id="Node000002" href="$invmenu_8h.html" title=" " alt="" coords="5,155,87,181"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,34,53,55,37,81,33,111,38,140,33,141,27,111,31,79,49,51,69,30"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="58,304,111,331"/>
-<area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="105,30,126,51,143,79,159,128,165,168,159,209,143,257,131,278,115,295,111,292,127,275,138,255,154,207,159,168,154,129,138,81,122,55,101,34"/>
-<area shape="rect" id="Node000005" href="$bookInfo_8h.html" title=" " alt="" coords="46,80,128,107"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="90,33,90,64,85,64,85,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="42,182,30,216,28,236,31,255,43,275,58,292,54,295,38,278,26,257,22,236,25,215,37,181"/>
-<area shape="rect" id="Node000004" href="$bookType_8h.html" title=" " alt="" coords="40,229,129,256"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="55,181,73,214,69,217,50,183"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="87,257,87,288,82,288,82,257"/>
-<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="82,109,63,143,58,140,78,106"/>
+<area shape="rect" id="node1" title=" " alt="" coords="32,5,143,32"/>
+<area shape="rect" id="node2" href="$invmenu_8h.html" title=" " alt="" coords="5,155,87,181"/>
+<area shape="rect" id="node3" title=" " alt="" coords="58,304,111,331"/>
+<area shape="rect" id="node5" href="$bookInfo_8h.html" title=" " alt="" coords="46,80,128,107"/>
+<area shape="rect" id="node4" href="$bookType_8h.html" title=" " alt="" coords="40,229,129,256"/>
 </map>

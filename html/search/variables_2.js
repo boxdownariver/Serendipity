@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['date_0',['date',['../structCashierBookType.html#a68d5e4bc1009299878aa81a1e06b04be',1,'CashierBookType']]],
-  ['dateadded_1',['dateAdded',['../classBookType.html#abb415630cf04610b537caacaf4300fd2',1,'BookType']]]
+  ['cart_0',['cart',['../cashier_8h.html#a2d308849667e1bd97090c1c472986c7a',1,'cashier.h']]]
 ];
