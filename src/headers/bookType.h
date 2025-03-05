@@ -14,37 +14,36 @@ using namespace std;
 class BookType
 {
 	public:
-	void setTitle (string title)				{	bookTitle = title;			}
-	void setISBN (string bookisbn )				{	isbn = bookisbn;			}
-	void setAuthor (string bookAuthor )			{	author = bookAuthor;		}
-	void setPub (string bookPublisher)			{	 publisher = bookPublisher;	}
-	void setDateAdded (string date )			{	dateAdded = date;			}
-	void setQtyOnHand (int quantity)			{	qtyOnHand = quantity; 		}
-	void setWholesale (double wholesalePrice)	{	wholesale = wholesalePrice;	}
-	void setRetail (double retailPrice)			{	retail = retailPrice;		}
-	static void incBookCount () 				{	bookCount++; 				}
-	static void decBookCount () 				{ bookCount--; 					}
+	void setTitle (string title)				{	bookTitle = title;			} ///< Sets the book title
+	void setISBN (string bookisbn )				{	isbn = bookisbn;			} ///< Sets the book ISBN
+	void setAuthor (string bookAuthor )			{	author = bookAuthor;		} ///< Sets the book author
+	void setPub (string bookPublisher)			{	 publisher = bookPublisher;	} ///< Sets the book publisher
+	void setDateAdded (string date )			{	dateAdded = date;			} ///< Sets the date at which the book was added
+	void setQtyOnHand (int quantity)			{	qtyOnHand = quantity; 		} ///< Sets the quantity of books available
+	void setWholesale (double wholesalePrice)	{	wholesale = wholesalePrice;	} ///< Sets the wholesale price of book
+	void setRetail (double retailPrice)			{	retail = retailPrice;		} ///< Sets the retail value of book
+	static void incBookCount () 				{	bookCount++; 				} ///< Increments the count of all book types
+	static void decBookCount () 				{ bookCount--; 					} ///< Decrements the count of all book types
 
-	string getTitle () const		{	return bookTitle;	}
-	string getISBN () const			{	return isbn;		}
-	string getAuthor () const		{	return author;		}
-	string getPub () const			{	return publisher;	}
-	string getDateAdded () const	{	return dateAdded;	}
-	int getQtyOnHand () const		{	return qtyOnHand;	}
-	double getWholesale () const	{	return wholesale;	}
-	double getRetail () const		{	return retail;		}
-	static int getBookCount () 		{	return bookCount;	}
-	
+	string getTitle () const		{	return bookTitle;	} ///< Gets the book title
+	string getISBN () const			{	return isbn;		} ///< Gets the book ISBN
+	string getAuthor () const		{	return author;		} ///< Gets the book author
+	string getPub () const			{	return publisher;	} ///< Gets the book publisher
+	string getDateAdded () const	{	return dateAdded;	} ///< Gets the date at which the book was added
+	int getQtyOnHand () const		{	return qtyOnHand;	} ///< Gets the quantity of books available
+	double getWholesale () const	{	return wholesale;	} ///< Gets the wholesale price of book
+	double getRetail () const		{	return retail;		} ///< Gets the retail value of book
+	static int getBookCount () 		{	return bookCount;	} ///< Gets the count of all book types
 
-	void printBookInfo () const ;
+	void printBookInfo () const ; ///< bookInfo() replacement
 
-	bool foundKeyword (string toSearch);
-	bool equalData (const BookType) const ;
+	bool foundKeyword (string toSearch); ///< Searches for substring within book name
+	bool equalData (const BookType) const ; ///< Checks whether two books are equivalent
 
-	BookType();
-	BookType (string, string, string, string, string, int, double, double);
+	BookType(); ///< Constructor with no arguments
+	BookType (string, string, string, string, string, int, double, double); ///< Constructor with all possible values for book
 
-	~BookType() {}
+	~BookType() {} ///< Destructor
 
 	private:
 	string bookTitle;      ///< Book Title
