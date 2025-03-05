@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['title_0',['title',['../structCashierBookType.html#ab0ed472bc241b402c95c096de06025df',1,'CashierBookType']]],
-  ['total_1',['total',['../structCashierBookType.html#aa15a9daae2de8d4ceabe1a07635399bf',1,'CashierBookType']]]
+  ['stateprovider_0',['stateProvider',['../menuDipity_8cpp.html#a8a2651374b4c745171073b8aee20eee3',1,'menuDipity.cpp']]],
+  ['storename_1',['storeName',['../structMenuLines.html#a0af95e4dcce7da30088989156d66ffaf',1,'MenuLines']]]
 ];

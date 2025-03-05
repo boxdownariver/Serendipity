@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('menuDipity_8cpp.html',''); initResizab
 <code>#include &lt;thread&gt;</code><br />
 <code>#include &lt;cstdlib&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
-<code>#include &quot;headers/menuDipity.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="menuDipity_8h_source.html">headers/menuDipity.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for menuDipity.cpp:</div>
 <div class="dyncontent">
@@ -123,7 +123,7 @@ Include dependency graph for menuDipity.cpp:</div>
 <area shape="rect" title=" " alt="" coords="484,80,542,107"/>
 <area shape="rect" title=" " alt="" coords="566,80,625,107"/>
 <area shape="rect" title=" " alt="" coords="649,80,713,107"/>
-<area shape="rect" href="menuDipity_8h_source.html" title=" " alt="" coords="138,80,285,107"/>
+<area shape="rect" href="menuDipity_8h.html" title=" " alt="" coords="138,80,285,107"/>
 <area shape="rect" title=" " alt="" coords="189,155,242,181"/>
 <area shape="rect" title=" " alt="" coords="267,155,324,181"/>
 </map>
@@ -131,6 +131,11 @@ Include dependency graph for menuDipity.cpp:</div>
 </div>
 <p><a href="menuDipity_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a5844bf1e3a872a1d090fe7d7c3f4b6ae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menuDipity_8cpp.html#a5844bf1e3a872a1d090fe7d7c3f4b6ae">menu_utils</a></td></tr>
+<tr class="separator:a5844bf1e3a872a1d090fe7d7c3f4b6ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ad42ebdb9d84d8ef7cd1cfd8eff824a64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menuDipity_8cpp.html#ad42ebdb9d84d8ef7cd1cfd8eff824a64">createMenu</a> (MENU *&amp;mainMenu, WINDOW *mainWindow, const <a class="el" href="structMenuLines.html">MenuLines</a> &amp;mainMenuInfo, ITEM **&amp;items)</td></tr>
@@ -434,8 +439,9 @@ OUTPUTS-
 
 <p class="definition">Definition at line <a class="el" href="menuDipity_8cpp_source.html#l00339">339</a> of file <a class="el" href="menuDipity_8cpp_source.html">menuDipity.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  339</span>                                    {</div>
-<div class="line"><span class="lineno">  340</span>    stateProvider = signal;</div>
+<div class="line"><span class="lineno">  340</span>    <a class="code hl_variable" href="menuDipity_8cpp.html#a8a2651374b4c745171073b8aee20eee3">stateProvider</a> = signal;</div>
 <div class="line"><span class="lineno">  341</span>}</div>
+<div class="ttc" id="amenuDipity_8cpp_html_a8a2651374b4c745171073b8aee20eee3"><div class="ttname"><a href="menuDipity_8cpp.html#a8a2651374b4c745171073b8aee20eee3">stateProvider</a></div><div class="ttdeci">volatile sig_atomic_t stateProvider</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00038">menuDipity.cpp:38</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -516,10 +522,10 @@ OUTPUTS-
 <div class="line"><span class="lineno">   93</span>    dontExit = 1;</div>
 <div class="line"><span class="lineno">   94</span>    breakOut = -1;</div>
 <div class="line"><span class="lineno">   95</span>    <span class="keywordflow">do</span> {</div>
-<div class="line"><span class="lineno">   96</span>        <span class="keywordflow">if</span> (stateProvider) {</div>
+<div class="line"><span class="lineno">   96</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="menuDipity_8cpp.html#a8a2651374b4c745171073b8aee20eee3">stateProvider</a>) {</div>
 <div class="line"><span class="lineno">   97</span>            <a class="code hl_function" href="menuDipity_8cpp.html#a605c5257dc24aab4ef869164de121d5b">refreshWindow</a>(mainMenu, mainWindow, notification,</div>
 <div class="line"><span class="lineno">   98</span>                    mainMenuInfo);</div>
-<div class="line"><span class="lineno">   99</span>            stateProvider = 0;</div>
+<div class="line"><span class="lineno">   99</span>            <a class="code hl_variable" href="menuDipity_8cpp.html#a8a2651374b4c745171073b8aee20eee3">stateProvider</a> = 0;</div>
 <div class="line"><span class="lineno">  100</span>        }</div>
 <div class="line"><span class="lineno">  101</span>        userInput = wgetch(mainWindow);</div>
 <div class="line"><span class="lineno">  102</span>        userInputChar = userInput - 1;</div>

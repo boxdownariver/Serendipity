@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('bookInfo_8cpp.html',''); initResizable
 <div class="contents">
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;iomanip&gt;</code><br />
-<code>#include &quot;headers/bookInfo.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="bookInfo_8h_source.html">headers/bookInfo.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for bookInfo.cpp:</div>
 <div class="dyncontent">
@@ -111,9 +111,10 @@ Include dependency graph for bookInfo.cpp:</div>
 <area shape="rect" title=" " alt="" coords="86,5,182,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,77,107"/>
 <area shape="rect" title=" " alt="" coords="101,80,168,107"/>
-<area shape="rect" href="bookInfo_8h_source.html" title=" " alt="" coords="192,80,324,107"/>
-<area shape="rect" href="invmenu_8h_source.html" title=" " alt="" coords="218,155,299,181"/>
-<area shape="rect" title=" " alt="" coords="232,229,285,256"/>
+<area shape="rect" href="bookInfo_8h.html" title=" " alt="" coords="192,80,324,107"/>
+<area shape="rect" href="invmenu_8h.html" title=" " alt="" coords="218,155,299,181"/>
+<area shape="rect" title=" " alt="" coords="232,304,285,331"/>
+<area shape="rect" href="bookType_8h.html" title=" " alt="" coords="256,229,344,256"/>
 </map>
 </div>
 </div>
@@ -121,9 +122,9 @@ Include dependency graph for bookInfo.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9b889a70c8c55b2ce6318fee9dd9cf61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bookInfo_8cpp.html#a9b889a70c8c55b2ce6318fee9dd9cf61">bookInfoWindow</a> (const <a class="el" href="structBookType.html">BookType</a> array[], const int bookIndex)</td></tr>
+<tr class="memitem:a9b889a70c8c55b2ce6318fee9dd9cf61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bookInfo_8cpp.html#a9b889a70c8c55b2ce6318fee9dd9cf61">bookInfoWindow</a> (const <a class="el" href="classBookType.html">BookType</a> array[], const int bookIndex)</td></tr>
 <tr class="separator:a9b889a70c8c55b2ce6318fee9dd9cf61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27663e6052e5acc659c7ac700bd99053"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bookInfo_8cpp.html#a27663e6052e5acc659c7ac700bd99053">mainbookInfo</a> (const <a class="el" href="structBookType.html">BookType</a> array[], const int &amp;bookIndex)</td></tr>
+<tr class="memitem:a27663e6052e5acc659c7ac700bd99053"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bookInfo_8cpp.html#a27663e6052e5acc659c7ac700bd99053">mainbookInfo</a> (const <a class="el" href="classBookType.html">BookType</a> array[], const int &amp;bookIndex)</td></tr>
 <tr class="separator:a27663e6052e5acc659c7ac700bd99053"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -143,7 +144,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void bookInfoWindow </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structBookType.html">BookType</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="classBookType.html">BookType</a>&#160;</td>
           <td class="paramname"><em>array</em>[], </td>
         </tr>
         <tr>
@@ -161,7 +162,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>bookInfoWindow is responsible for printing detailed information about a specific book.</p>
 <p>This function takes in the following parameters:</p><ul>
-<li>array: A constant reference to an array of <code><a class="el" href="structBookType.html">BookType</a></code> objects representing the book database.</li>
+<li>array: A constant reference to an array of <code><a class="el" href="classBookType.html">BookType</a></code> objects representing the book database.</li>
 <li>bookIndex: The index of the book whose information is to be displayed.</li>
 </ul>
 <p>The function does not return any value. It is used to display the book's information in a user-friendly format. </p>
@@ -172,25 +173,25 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   53</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║                                       Serendipity Booksellers                                      ║\n&quot;</span>;</div>
 <div class="line"><span class="lineno">   54</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║                                           Book Information                                         ║\n&quot;</span>;</div>
 <div class="line"><span class="lineno">   55</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║                                                                                                    ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   56</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  ISBN             : &quot;</span> &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; array[bookIndex].<a class="code hl_variable" href="structBookType.html#abfb4d463200dd7514ec6feba6d1c4a49">bookTitle</a> &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   57</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Title            : &quot;</span> &lt;&lt; setw(78) &lt;&lt; left &lt;&lt; array[bookIndex].<a class="code hl_variable" href="structBookType.html#ac8961b73c8375977f8effca87af540f6">isbn</a> &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;                                              </div>
-<div class="line"><span class="lineno">   58</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Author           : &quot;</span> &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; array[bookIndex].<a class="code hl_variable" href="structBookType.html#ad14f63d2931a6db977d63fcba998bf3b">author</a> &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;                                 </div>
-<div class="line"><span class="lineno">   59</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Publisher        : &quot;</span> &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; array[bookIndex].<a class="code hl_variable" href="structBookType.html#a4940961205d81e7af6c58292b9f6ed56">publisher</a> &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   60</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Date Added       : &quot;</span> &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; array[bookIndex].<a class="code hl_variable" href="structBookType.html#a70e6a65c0c76bba9149547517e80d531">dateAdded</a> &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   61</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Quantity-On-Hand : &quot;</span> &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; array[bookIndex].<a class="code hl_variable" href="structBookType.html#a5ed3ab7a7b9932d912ebf73d23d111c5">qtyOnHand</a> &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   62</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Wholesale Cost   : &quot;</span> &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; array[bookIndex].<a class="code hl_variable" href="structBookType.html#a174ba396ffb39483a57e3bc077cd4f83">wholesale</a> &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   63</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Retail Price     : &quot;</span> &lt;&lt; setw(78) &lt;&lt; left &lt;&lt; array[bookIndex].<a class="code hl_variable" href="structBookType.html#a865c993f2d1a82d53cb5f64a042d93e5">retail</a> &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   56</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  ISBN             : &quot;</span> &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; array[bookIndex].<a class="code hl_function" href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">getTitle</a>() &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   57</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Title            : &quot;</span> &lt;&lt; setw(78) &lt;&lt; left &lt;&lt; array[bookIndex].<a class="code hl_function" href="classBookType.html#ac1e5aab4bc4f18eaad0ebe14f3046b7b">getISBN</a>() &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   58</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Author           : &quot;</span> &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; array[bookIndex].<a class="code hl_function" href="classBookType.html#a0326e55232a94efb1c6fa29ec5e99e34">getAuthor</a>() &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   59</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Publisher        : &quot;</span> &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; array[bookIndex].<a class="code hl_function" href="classBookType.html#a8684b5b66f7c5c56d457642edfafaba7">getPub</a>() &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   60</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Date Added       : &quot;</span> &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; array[bookIndex].<a class="code hl_function" href="classBookType.html#ae3f36bb2025322d0a8982887a12e818e">getDateAdded</a>() &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   61</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Quantity-On-Hand : &quot;</span> &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; array[bookIndex].<a class="code hl_function" href="classBookType.html#a8429f87cac6b7d70ef56f6821cdccfba">getQtyOnHand</a>() &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   62</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Wholesale Cost   : &quot;</span> &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; array[bookIndex].<a class="code hl_function" href="classBookType.html#a9a5b1c3a4fa50b9983095d2a75a11f73">getWholesale</a>() &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   63</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Retail Price     : &quot;</span> &lt;&lt; setw(78) &lt;&lt; left &lt;&lt; array[bookIndex].<a class="code hl_function" href="classBookType.html#a60e45a826a946b465b222849477c9b41">getRetail</a>() &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
 <div class="line"><span class="lineno">   64</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║                                                                                                    ║\n&quot;</span>;</div>
 <div class="line"><span class="lineno">   65</span>    cout &lt;&lt;         <span class="stringliteral">&quot;╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n&quot;</span>;</div>
 <div class="line"><span class="lineno">   66</span>}</div>
-<div class="ttc" id="astructBookType_html_a174ba396ffb39483a57e3bc077cd4f83"><div class="ttname"><a href="structBookType.html#a174ba396ffb39483a57e3bc077cd4f83">BookType::wholesale</a></div><div class="ttdeci">double wholesale</div><div class="ttdoc">Wholesale price of book.</div><div class="ttdef"><b>Definition:</b> <a href="invmenu_8h_source.html#l00019">invmenu.h:19</a></div></div>
-<div class="ttc" id="astructBookType_html_a4940961205d81e7af6c58292b9f6ed56"><div class="ttname"><a href="structBookType.html#a4940961205d81e7af6c58292b9f6ed56">BookType::publisher</a></div><div class="ttdeci">std::string publisher</div><div class="ttdoc">Book Publisher.</div><div class="ttdef"><b>Definition:</b> <a href="invmenu_8h_source.html#l00016">invmenu.h:16</a></div></div>
-<div class="ttc" id="astructBookType_html_a5ed3ab7a7b9932d912ebf73d23d111c5"><div class="ttname"><a href="structBookType.html#a5ed3ab7a7b9932d912ebf73d23d111c5">BookType::qtyOnHand</a></div><div class="ttdeci">int qtyOnHand</div><div class="ttdoc">Current book count for this book.</div><div class="ttdef"><b>Definition:</b> <a href="invmenu_8h_source.html#l00018">invmenu.h:18</a></div></div>
-<div class="ttc" id="astructBookType_html_a70e6a65c0c76bba9149547517e80d531"><div class="ttname"><a href="structBookType.html#a70e6a65c0c76bba9149547517e80d531">BookType::dateAdded</a></div><div class="ttdeci">std::string dateAdded</div><div class="ttdoc">The date at which the book was added.</div><div class="ttdef"><b>Definition:</b> <a href="invmenu_8h_source.html#l00017">invmenu.h:17</a></div></div>
-<div class="ttc" id="astructBookType_html_a865c993f2d1a82d53cb5f64a042d93e5"><div class="ttname"><a href="structBookType.html#a865c993f2d1a82d53cb5f64a042d93e5">BookType::retail</a></div><div class="ttdeci">double retail</div><div class="ttdoc">Retail value of book.</div><div class="ttdef"><b>Definition:</b> <a href="invmenu_8h_source.html#l00020">invmenu.h:20</a></div></div>
-<div class="ttc" id="astructBookType_html_abfb4d463200dd7514ec6feba6d1c4a49"><div class="ttname"><a href="structBookType.html#abfb4d463200dd7514ec6feba6d1c4a49">BookType::bookTitle</a></div><div class="ttdeci">std::string bookTitle</div><div class="ttdoc">Book Title.</div><div class="ttdef"><b>Definition:</b> <a href="invmenu_8h_source.html#l00013">invmenu.h:13</a></div></div>
-<div class="ttc" id="astructBookType_html_ac8961b73c8375977f8effca87af540f6"><div class="ttname"><a href="structBookType.html#ac8961b73c8375977f8effca87af540f6">BookType::isbn</a></div><div class="ttdeci">std::string isbn</div><div class="ttdoc">Book ISBN-13 code.</div><div class="ttdef"><b>Definition:</b> <a href="invmenu_8h_source.html#l00014">invmenu.h:14</a></div></div>
-<div class="ttc" id="astructBookType_html_ad14f63d2931a6db977d63fcba998bf3b"><div class="ttname"><a href="structBookType.html#ad14f63d2931a6db977d63fcba998bf3b">BookType::author</a></div><div class="ttdeci">std::string author</div><div class="ttdoc">Book Author.</div><div class="ttdef"><b>Definition:</b> <a href="invmenu_8h_source.html#l00015">invmenu.h:15</a></div></div>
+<div class="ttc" id="aclassBookType_html_a0326e55232a94efb1c6fa29ec5e99e34"><div class="ttname"><a href="classBookType.html#a0326e55232a94efb1c6fa29ec5e99e34">BookType::getAuthor</a></div><div class="ttdeci">string getAuthor() const</div><div class="ttdoc">Gets the book author.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00030">bookType.h:30</a></div></div>
+<div class="ttc" id="aclassBookType_html_a369dfce6a37730fd0d9b4b2b4586707b"><div class="ttname"><a href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">BookType::getTitle</a></div><div class="ttdeci">string getTitle() const</div><div class="ttdoc">Gets the book title.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00028">bookType.h:28</a></div></div>
+<div class="ttc" id="aclassBookType_html_a60e45a826a946b465b222849477c9b41"><div class="ttname"><a href="classBookType.html#a60e45a826a946b465b222849477c9b41">BookType::getRetail</a></div><div class="ttdeci">double getRetail() const</div><div class="ttdoc">Gets the retail value of book.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00035">bookType.h:35</a></div></div>
+<div class="ttc" id="aclassBookType_html_a8429f87cac6b7d70ef56f6821cdccfba"><div class="ttname"><a href="classBookType.html#a8429f87cac6b7d70ef56f6821cdccfba">BookType::getQtyOnHand</a></div><div class="ttdeci">int getQtyOnHand() const</div><div class="ttdoc">Gets the quantity of books available.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00033">bookType.h:33</a></div></div>
+<div class="ttc" id="aclassBookType_html_a8684b5b66f7c5c56d457642edfafaba7"><div class="ttname"><a href="classBookType.html#a8684b5b66f7c5c56d457642edfafaba7">BookType::getPub</a></div><div class="ttdeci">string getPub() const</div><div class="ttdoc">Gets the book publisher.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00031">bookType.h:31</a></div></div>
+<div class="ttc" id="aclassBookType_html_a9a5b1c3a4fa50b9983095d2a75a11f73"><div class="ttname"><a href="classBookType.html#a9a5b1c3a4fa50b9983095d2a75a11f73">BookType::getWholesale</a></div><div class="ttdeci">double getWholesale() const</div><div class="ttdoc">Gets the wholesale price of book.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00034">bookType.h:34</a></div></div>
+<div class="ttc" id="aclassBookType_html_ac1e5aab4bc4f18eaad0ebe14f3046b7b"><div class="ttname"><a href="classBookType.html#ac1e5aab4bc4f18eaad0ebe14f3046b7b">BookType::getISBN</a></div><div class="ttdeci">string getISBN() const</div><div class="ttdoc">Gets the book ISBN.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00029">bookType.h:29</a></div></div>
+<div class="ttc" id="aclassBookType_html_ae3f36bb2025322d0a8982887a12e818e"><div class="ttname"><a href="classBookType.html#ae3f36bb2025322d0a8982887a12e818e">BookType::getDateAdded</a></div><div class="ttdeci">string getDateAdded() const</div><div class="ttdoc">Gets the date at which the book was added.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00032">bookType.h:32</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -203,7 +204,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int mainbookInfo </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structBookType.html">BookType</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="classBookType.html">BookType</a>&#160;</td>
           <td class="paramname"><em>array</em>[], </td>
         </tr>
         <tr>
@@ -221,7 +222,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>mainbookInfo serves as a wrapper function that calls <code>bookInfoWindow</code> to display detailed information about a specific book from the database.</p>
 <p>This function takes in the following parameters:</p><ul>
-<li>array: A constant reference to an array of <code><a class="el" href="structBookType.html">BookType</a></code> objects representing the book database.</li>
+<li>array: A constant reference to an array of <code><a class="el" href="classBookType.html">BookType</a></code> objects representing the book database.</li>
 <li>bookIndex: The index of the specific book within the array that the function will display.</li>
 </ul>
 <p>The function does not return any usable value. It uses <code>bookInfoWindow</code> to output the details of the selected book. </p>

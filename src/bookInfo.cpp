@@ -53,14 +53,14 @@ void bookInfoWindow(const BookType array[], const int bookIndex )
 	cout <<         "║                                       Serendipity Booksellers                                      ║\n";
 	cout <<         "║                                           Book Information                                         ║\n";
 	cout <<         "║                                                                                                    ║\n";
-	cout <<         "║  ISBN             : " << setw (78) << left << array[bookIndex].bookTitle << " ║\n";
-	cout <<         "║  Title            : " << setw(78) << left << array[bookIndex].isbn << " ║\n";                                              
-	cout <<         "║  Author           : " << setw (78) << left << array[bookIndex].author << " ║\n";                                 
-	cout <<         "║  Publisher        : " << setw (78) << left << array[bookIndex].publisher << " ║\n";
-	cout <<         "║  Date Added       : " << setw (78) << left << array[bookIndex].dateAdded << " ║\n";
-	cout <<         "║  Quantity-On-Hand : " << setw (78) << left << array[bookIndex].qtyOnHand << " ║\n";
-	cout <<         "║  Wholesale Cost   : " << setw (78) << left << array[bookIndex].wholesale << " ║\n";
-	cout <<         "║  Retail Price     : " << setw(78) << left << array[bookIndex].retail << " ║\n";
+	cout <<         "║  ISBN             : " << setw (78) << left << array[bookIndex].getTitle() << " ║\n";
+	cout <<         "║  Title            : " << setw(78) << left << array[bookIndex].getISBN() << " ║\n";
+	cout <<         "║  Author           : " << setw (78) << left << array[bookIndex].getAuthor() << " ║\n";
+	cout <<         "║  Publisher        : " << setw (78) << left << array[bookIndex].getPub() << " ║\n";
+	cout <<         "║  Date Added       : " << setw (78) << left << array[bookIndex].getDateAdded() << " ║\n";
+	cout <<         "║  Quantity-On-Hand : " << setw (78) << left << array[bookIndex].getQtyOnHand() << " ║\n";
+	cout <<         "║  Wholesale Cost   : " << setw (78) << left << array[bookIndex].getWholesale() << " ║\n";
+	cout <<         "║  Retail Price     : " << setw(78) << left << array[bookIndex].getRetail() << " ║\n";
 	cout <<         "║                                                                                                    ║\n";
 	cout <<         "╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n";
 }

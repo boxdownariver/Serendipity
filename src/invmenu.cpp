@@ -16,9 +16,8 @@
 #include "headers/menuDipity.h"
 #include "headers/lookUp.h"
 #include "headers/bookfile.h"
-#ifndef invmenu
 #include "headers/invmenu.h"
-#endif
+#include "headers/bookType.h"
 #ifndef addbook
 #include "headers/addbook.h"
 #endif
@@ -36,7 +35,7 @@
  * Runs inventory menu interface, then either branches into next menu or
  * moves backward into the previous menu.
  */
-int main_invmenu(BookType (&bookList)[20], int &currentBookCount) {
+int main_invmenu(BookType (&bookList)[20]) {
 	std::string menuName = "Inventory Database";
 	std::vector<std::string> menuListing = { "Look Up a Book", "Add a Book",
 			"Edit a Book's Record", "Delete a Book", "Return to the Main Menu" };
@@ -45,7 +44,7 @@ int main_invmenu(BookType (&bookList)[20], int &currentBookCount) {
 	int choice;
 	bool keepGoing;
 
-	readFile(bookList, currentBookCount);
+	readFile(bookList);
 
 	mainMenuInfo.menuName = menuName;
 	mainMenuInfo.menuLines = menuListing;
@@ -54,23 +53,23 @@ int main_invmenu(BookType (&bookList)[20], int &currentBookCount) {
 	keepGoing = 1;
 	do {
 		startNotif = "";
-		if (currentBookCount >= 20) {
+		if (BookType::getBookCount() >= 20) {
 			startNotif = "--NOTICE-- Book list full! Can no longer add book";
 		}
 		system("clear");
 		choice = makeMenu(mainMenuInfo, startNotif);
 		switch (choice) {
 		case 0:
-			 mainLookUp(bookList, currentBookCount);
+			 mainLookUp(bookList);
 			 break;
 		case 1:
-			 addBook(bookList, currentBookCount);
+			 addBook(bookList);
 			 break;
 		case 2:
-			mainEditBook(bookList, currentBookCount);
+			mainEditBook(bookList);
 			break;
 		case 3:
-			mainDelete (bookList, currentBookCount);
+			mainDelete (bookList);
 			break;
 		case 4:
 			keepGoing = 0;

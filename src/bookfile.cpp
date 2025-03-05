@@ -15,26 +15,31 @@
 #include <fstream>
 
 ///readFile(BookType[20], int) -> Stores file entries as members of books.
-void readFile(BookType books[20], int &bookNumber) {
+void readFile(BookType books[20]) {
 	BookType bookBuffer;
 	std::ifstream file;
 	std::string numbers;
+	std::string bookTitle, isbn, author, publisher, dateAdded;
+	int qtyOnHand;
+	double wholesale, retail;
 
 	file.open("booklist.dat");
 
-	while (bookNumber < 20 && getline(file, books[bookNumber].bookTitle, ',')) {
-		getline(file, bookBuffer.isbn, ',');
-		getline(file, bookBuffer.author, ',');
-		getline(file, bookBuffer.publisher, ',');
-		getline(file, bookBuffer.dateAdded, ',');
+	while (BookType::getBookCount() < 20 && getline(file, bookTitle, ',')) {
+		getline(file, isbn, ',');
+		getline(file, author, ',');
+		getline(file, publisher, ',');
+		getline(file, dateAdded, ',');
 		getline(file, numbers, ',');
-		bookBuffer.qtyOnHand = stoi(numbers);
+		qtyOnHand = stoi(numbers);
 		getline(file, numbers, ',');
-		bookBuffer.wholesale = stod(numbers);
+		wholesale = stod(numbers);
 		getline(file, numbers, ',');
-		bookBuffer.retail = stod(numbers);
-		books[bookNumber] = bookBuffer;
-		bookNumber++;
+		retail = stod(numbers);
+		bookBuffer = BookType(bookTitle, isbn, author, publisher,
+				dateAdded, qtyOnHand, wholesale, retail);
+		books[BookType::getBookCount()] = bookBuffer;
+		BookType::incBookCount();
 	}
 	file.close();
 	return;

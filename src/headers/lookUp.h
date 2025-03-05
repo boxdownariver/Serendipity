@@ -8,7 +8,7 @@
 #include <string>
 using namespace std;
 
-int mainLookUp( const BookType booklist[20], int &bookCount );
+int mainLookUp( const BookType booklist[20] );
 int findString (const std::string toSearch,const BookType array[], const int size);
 string validateAndAsk (const int &bookCount );
 

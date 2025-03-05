@@ -48,7 +48,7 @@ using namespace std;
  * Returns:
  * - This function does not return any values. It updates the `bookCount` by decrementing it after a successful deletion.
  */
-void mainDelete (BookType books[], int &bookCount)
+void mainDelete (BookType books[])
 {
 	string toDelete;
 	char choice;
@@ -56,20 +56,20 @@ void mainDelete (BookType books[], int &bookCount)
 
 	do {
 		// Prompt user for a search term, ensuring bookCount is valid
-    		toDelete = validateAndAsk ( bookCount );
+    		toDelete = validateAndAsk ( BookType::getBookCount() );
 		
 		// Proceed with finding string only if the book count is > 1
 		if (toDelete != "" )
 			{
 			// Function to find the string
-    			indexToDelete = findString (toDelete, books, bookCount );
+    			indexToDelete = findString (toDelete, books, BookType::getBookCount() );
 				
 				if (indexToDelete != -1)
     					{
         					// continue with deletion
 						system("clear");
 						// Pass the array to show the bookInfo
-        					discardBook ( books, indexToDelete, bookCount);       
+        					discardBook ( books, indexToDelete);
     					}
 				
 				cout << "Do you want to proceed another deletion (Y/N)?\n";
@@ -84,7 +84,7 @@ void mainDelete (BookType books[], int &bookCount)
 					}
 			}		
 	}
-	while (toupper(choice) != 'N' && bookCount!= 0);
+	while (toupper(choice) != 'N' && BookType::getBookCount() != 0);
 
 	
     return;
@@ -102,9 +102,10 @@ void mainDelete (BookType books[], int &bookCount)
  * Returns:
  * - This function does not return any value. It updates the `bookCount` by decrementing it after a successful deletion.
  */
-void discardBook (BookType books[], int index, int &bookCount )
+void discardBook (BookType books[], int index)
 {
 	char decision;
+	int curBookCount;
 
 	mainbookInfo(books, index);
 	setColour (33);
@@ -125,30 +126,33 @@ void discardBook (BookType books[], int index, int &bookCount )
 			}
 
 		// Only proceed deleting if user is sure && bookCount is not 0
-		if (toupper(decision) == 'Y' && bookCount > 0)
+		if (toupper(decision) == 'Y' && BookType::getBookCount() > 0)
 		{
+				// reduce the book count by one
+				BookType::decBookCount();
+				curBookCount = BookType::getBookCount();
+
 				// Bring the last index data to current index
-				books[index].bookTitle = books[bookCount-1].bookTitle;
-				books[index].isbn = books[bookCount-1].isbn;
-				books[index].author = books[bookCount-1].author;
-				books[index].publisher = books[bookCount-1].publisher;
-				books[index].dateAdded = books[bookCount-1].dateAdded;
-				books[index].qtyOnHand = books[bookCount-1].qtyOnHand;
-				books[index].wholesale = books[bookCount-1].wholesale;
-				books[index].retail = books[bookCount-1].retail;
+				// !!! Could make a new constructor for this
+				// !!! Also try aggregate set
+				books[index].setTitle(books[curBookCount].getTitle());
+				books[index].setISBN(books[curBookCount].getISBN());
+				books[index].setAuthor(books[curBookCount].getAuthor());
+				books[index].setPub(books[curBookCount].getPub());
+				books[index].setDateAdded(books[curBookCount].getDateAdded());
+				books[index].setQtyOnHand(books[curBookCount].getQtyOnHand());
+				books[index].setWholesale(books[curBookCount].getWholesale());
+				books[index].setRetail(books[curBookCount].getRetail());
 				
 				// set the last index to default values
-				books[bookCount -1].bookTitle = "EMPTY";
-				books[bookCount -1].isbn = "EMPTY";
-				books[bookCount -1].author = "EMPTY";
-				books[bookCount -1].publisher = "EMPTY";
-				books[bookCount -1].dateAdded = "EMPTY";
-				books[bookCount -1].qtyOnHand = 0 ;
-				books[bookCount -1].wholesale = 0 ;
-				books[bookCount -1].retail = 0;
-
-				// reduce the book count by one
-				bookCount--;
+				books[curBookCount].setTitle("EMPTY");
+				books[curBookCount].setISBN("EMPTY");
+				books[curBookCount].setAuthor("EMPTY");
+				books[curBookCount].setPub("EMPTY");
+				books[curBookCount].setDateAdded("EMPTY");
+				books[curBookCount].setQtyOnHand(0);
+				books[curBookCount].setWholesale(0);
+				books[curBookCount].setRetail(0);
 				setColour (96);
 				cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
 				cout << "                │                     DELETED BOOK SUCCESSFULLY                    │\n";

@@ -8,7 +8,7 @@
 #include "bookInfo.h"
 #include <string>
 
-void mainDelete (BookType books [], int &bookCount);
-void discardBook (BookType books [], int index, int &bookCount); 
+void mainDelete (BookType books []);
+void discardBook (BookType books [], int index);
 
 #endif

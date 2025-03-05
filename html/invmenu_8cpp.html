@@ -101,47 +101,55 @@ $(document).ready(function(){initNavTree('invmenu_8cpp.html',''); initResizable(
   <div class="headertitle"><div class="title">invmenu.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;headers/menuDipity.h&quot;</code><br />
-<code>#include &quot;headers/lookUp.h&quot;</code><br />
-<code>#include &quot;headers/bookfile.h&quot;</code><br />
-<code>#include &quot;headers/addbook.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="menuDipity_8h_source.html">headers/menuDipity.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lookUp_8h_source.html">headers/lookUp.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="bookfile_8h_source.html">headers/bookfile.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="invmenu_8h_source.html">headers/invmenu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="bookType_8h_source.html">headers/bookType.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="addbook_8h_source.html">headers/addbook.h</a>&quot;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
-<code>#include &quot;headers/editbook.hpp&quot;</code><br />
-<code>#include &quot;headers/deleteBook.hpp&quot;</code><br />
+<code>#include &quot;<a class="el" href="editbook_8hpp_source.html">headers/editbook.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="deleteBook_8hpp_source.html">headers/deleteBook.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for invmenu.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="invmenu_8cpp__incl.png" border="0" usemap="#ainvmenu_8cpp" alt=""/></div>
 <map name="ainvmenu_8cpp" id="ainvmenu_8cpp">
-<area shape="rect" title=" " alt="" coords="367,5,463,32"/>
-<area shape="rect" href="menuDipity_8h_source.html" title=" " alt="" coords="65,80,213,107"/>
-<area shape="rect" href="lookUp_8h_source.html" title=" " alt="" coords="291,155,414,181"/>
-<area shape="rect" href="bookfile_8h_source.html" title=" " alt="" coords="438,155,565,181"/>
-<area shape="rect" href="addbook_8h_source.html" title=" " alt="" coords="349,80,481,107"/>
-<area shape="rect" title=" " alt="" coords="505,80,576,107"/>
-<area shape="rect" href="editbook_8hpp_source.html" title=" " alt="" coords="600,80,745,107"/>
-<area shape="rect" href="deleteBook_8hpp_source.html" title=" " alt="" coords="769,80,930,107"/>
-<area shape="rect" title=" " alt="" coords="514,304,567,331"/>
-<area shape="rect" title=" " alt="" coords="25,155,82,181"/>
-<area shape="rect" title=" " alt="" coords="107,155,171,181"/>
-<area shape="rect" title=" " alt="" coords="195,155,267,181"/>
-<area shape="rect" href="invmenu_8h_source.html" title=" " alt="" coords="562,229,644,256"/>
-<area shape="rect" href="bookInfo_8h_source.html" title=" " alt="" coords="742,155,824,181"/>
+<area shape="rect" title=" " alt="" coords="530,5,625,32"/>
+<area shape="rect" href="menuDipity_8h.html" title=" " alt="" coords="771,80,918,107"/>
+<area shape="rect" href="lookUp_8h.html" title=" " alt="" coords="5,155,129,181"/>
+<area shape="rect" href="invmenu_8h.html" title=" " alt="" coords="349,229,430,256"/>
+<area shape="rect" href="bookType_8h.html" title=" " alt="" coords="444,304,532,331"/>
+<area shape="rect" href="bookfile_8h.html" title=" " alt="" coords="361,80,488,107"/>
+<area shape="rect" href="addbook_8h.html" title=" " alt="" coords="512,80,643,107"/>
+<area shape="rect" title=" " alt="" coords="942,80,1013,107"/>
+<area shape="rect" href="editbook_8hpp.html" title=" " alt="" coords="513,155,658,181"/>
+<area shape="rect" href="deleteBook_8hpp.html" title=" " alt="" coords="124,80,285,107"/>
+<area shape="rect" title=" " alt="" coords="363,379,416,405"/>
+<area shape="rect" title=" " alt="" coords="752,155,809,181"/>
+<area shape="rect" title=" " alt="" coords="834,155,898,181"/>
+<area shape="rect" title=" " alt="" coords="922,155,993,181"/>
+<area shape="rect" href="bookInfo_8h.html" title=" " alt="" coords="254,155,336,181"/>
 </map>
 </div>
 </div>
 <p><a href="invmenu_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a5844bf1e3a872a1d090fe7d7c3f4b6ae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="invmenu_8cpp.html#a5844bf1e3a872a1d090fe7d7c3f4b6ae">menu_utils</a></td></tr>
+<tr class="separator:a5844bf1e3a872a1d090fe7d7c3f4b6ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae436e5d8d0cfbe92a59647f92926c4e8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="invmenu_8cpp.html#ae436e5d8d0cfbe92a59647f92926c4e8">main_invmenu</a> (<a class="el" href="structBookType.html">BookType</a>(&amp;bookList)[20], int &amp;currentBookCount)</td></tr>
-<tr class="separator:ae436e5d8d0cfbe92a59647f92926c4e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34062dc918a0ade089b7da143cc3dd3e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="invmenu_8cpp.html#a34062dc918a0ade089b7da143cc3dd3e">main_invmenu</a> (<a class="el" href="classBookType.html">BookType</a>(&amp;bookList)[20])</td></tr>
+<tr class="separator:a34062dc918a0ade089b7da143cc3dd3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>BRANCHING INVENTORY MENU IMPLEMENTATION </p><hr  />
 <p> This program displays the inventory menu and manages user choices. Displays a notice for full book list. </p><dl class="section author"><dt>Author</dt><dd>Micah Krosby</dd></dl>
 <hr  />
-<p>PROCESS- <a class="el" href="structBookType.html">BookType</a>[20] bookList -&gt; List of all books currently available int currentBookCount -&gt; Count of books currently indexed int choice -&gt; Menu branching option </p>
+<p>PROCESS- <a class="el" href="classBookType.html">BookType</a>[20] bookList -&gt; List of all books currently available int currentBookCount -&gt; Count of books currently indexed int choice -&gt; Menu branching option </p>
 
 <p class="definition">Definition in file <a class="el" href="invmenu_8cpp_source.html">invmenu.cpp</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
@@ -162,8 +170,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ae436e5d8d0cfbe92a59647f92926c4e8" name="ae436e5d8d0cfbe92a59647f92926c4e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae436e5d8d0cfbe92a59647f92926c4e8">&#9670;&#160;</a></span>main_invmenu()</h2>
+<a id="a34062dc918a0ade089b7da143cc3dd3e" name="a34062dc918a0ade089b7da143cc3dd3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34062dc918a0ade089b7da143cc3dd3e">&#9670;&#160;</a></span>main_invmenu()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -171,75 +179,68 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int main_invmenu </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structBookType.html">BookType</a>(&amp;)&#160;</td>
-          <td class="paramname"><em>bookList</em>[20], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="classBookType.html">BookType</a>(&amp;)&#160;</td>
+          <td class="paramname"><em>bookList</em>[20]</td><td>)</td>
           <td></td>
-          <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>currentBookCount</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>main_invmenu(BookType, int) -&gt; Runs inventory menu interface, then either branches into next menu or moves backward into the previous menu. </p>
 
-<p class="definition">Definition at line <a class="el" href="invmenu_8cpp_source.html#l00039">39</a> of file <a class="el" href="invmenu_8cpp_source.html">invmenu.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>                                                                  {</div>
-<div class="line"><span class="lineno">   40</span>    std::string menuName = <span class="stringliteral">&quot;Inventory Database&quot;</span>;</div>
-<div class="line"><span class="lineno">   41</span>    std::vector&lt;std::string&gt; menuListing = { <span class="stringliteral">&quot;Look Up a Book&quot;</span>, <span class="stringliteral">&quot;Add a Book&quot;</span>,</div>
-<div class="line"><span class="lineno">   42</span>            <span class="stringliteral">&quot;Edit a Book&#39;s Record&quot;</span>, <span class="stringliteral">&quot;Delete a Book&quot;</span>, <span class="stringliteral">&quot;Return to the Main Menu&quot;</span> };</div>
-<div class="line"><span class="lineno">   43</span>    <a class="code hl_struct" href="structMenuLines.html">MenuLines</a> mainMenuInfo;</div>
-<div class="line"><span class="lineno">   44</span>    std::string startNotif;</div>
-<div class="line"><span class="lineno">   45</span>    <span class="keywordtype">int</span> choice;</div>
-<div class="line"><span class="lineno">   46</span>    <span class="keywordtype">bool</span> keepGoing;</div>
-<div class="line"><span class="lineno">   47</span> </div>
-<div class="line"><span class="lineno">   48</span>    <a class="code hl_function" href="bookfile_8cpp.html#a655654f058e6d28953788086bd3e6330">readFile</a>(bookList, currentBookCount);</div>
-<div class="line"><span class="lineno">   49</span> </div>
-<div class="line"><span class="lineno">   50</span>    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">menuName</a> = menuName;</div>
-<div class="line"><span class="lineno">   51</span>    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a> = menuListing;</div>
-<div class="line"><span class="lineno">   52</span>    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a15b8a52d1b8c366a0af2f56761c411c6">longestMenuLength</a> = <span class="keyword">sizeof</span>(<span class="stringliteral">&quot;Return to the Main Menu&quot;</span>) / <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>);</div>
-<div class="line"><span class="lineno">   53</span> </div>
-<div class="line"><span class="lineno">   54</span>    keepGoing = 1;</div>
-<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">do</span> {</div>
-<div class="line"><span class="lineno">   56</span>        startNotif = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">if</span> (currentBookCount &gt;= 20) {</div>
-<div class="line"><span class="lineno">   58</span>            startNotif = <span class="stringliteral">&quot;--NOTICE-- Book list full! Can no longer add book&quot;</span>;</div>
-<div class="line"><span class="lineno">   59</span>        }</div>
-<div class="line"><span class="lineno">   60</span>        system(<span class="stringliteral">&quot;clear&quot;</span>);</div>
-<div class="line"><span class="lineno">   61</span>        choice = makeMenu(mainMenuInfo, startNotif);</div>
-<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">switch</span> (choice) {</div>
-<div class="line"><span class="lineno">   63</span>        <span class="keywordflow">case</span> 0:</div>
-<div class="line"><span class="lineno">   64</span>             mainLookUp(bookList, currentBookCount);</div>
-<div class="line"><span class="lineno">   65</span>             <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   66</span>        <span class="keywordflow">case</span> 1:</div>
-<div class="line"><span class="lineno">   67</span>             <a class="code hl_function" href="addbook_8cpp.html#a6c59ec881683e203cb3d025faabd1d54">addBook</a>(bookList, currentBookCount);</div>
-<div class="line"><span class="lineno">   68</span>             <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   69</span>        <span class="keywordflow">case</span> 2:</div>
-<div class="line"><span class="lineno">   70</span>            <a class="code hl_function" href="editbook_8cpp.html#a3b5ebfcc08b590c92ab3c28884f2c8f2">mainEditBook</a>(bookList, currentBookCount);</div>
-<div class="line"><span class="lineno">   71</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   72</span>        <span class="keywordflow">case</span> 3:</div>
-<div class="line"><span class="lineno">   73</span>            <a class="code hl_function" href="deleteBook_8cpp.html#a2be152e1c0ca150588ab7a54715faee1">mainDelete</a> (bookList, currentBookCount);</div>
-<div class="line"><span class="lineno">   74</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">case</span> 4:</div>
-<div class="line"><span class="lineno">   76</span>            keepGoing = 0;</div>
-<div class="line"><span class="lineno">   77</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   78</span>        <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">   79</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   80</span>        }</div>
-<div class="line"><span class="lineno">   81</span>    } <span class="keywordflow">while</span> (keepGoing);</div>
-<div class="line"><span class="lineno">   82</span> </div>
-<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   84</span>}</div>
-<div class="ttc" id="aaddbook_8cpp_html_a6c59ec881683e203cb3d025faabd1d54"><div class="ttname"><a href="addbook_8cpp.html#a6c59ec881683e203cb3d025faabd1d54">addBook</a></div><div class="ttdeci">void addBook(BookType bookList[20], int &amp;currentBookCount)</div><div class="ttdef"><b>Definition:</b> <a href="addbook_8cpp_source.html#l00085">addbook.cpp:85</a></div></div>
-<div class="ttc" id="abookfile_8cpp_html_a655654f058e6d28953788086bd3e6330"><div class="ttname"><a href="bookfile_8cpp.html#a655654f058e6d28953788086bd3e6330">readFile</a></div><div class="ttdeci">void readFile(BookType books[20], int &amp;bookNumber)</div><div class="ttdoc">readFile(BookType[20], int) -&gt; Stores file entries as members of books.</div><div class="ttdef"><b>Definition:</b> <a href="bookfile_8cpp_source.html#l00018">bookfile.cpp:18</a></div></div>
-<div class="ttc" id="adeleteBook_8cpp_html_a2be152e1c0ca150588ab7a54715faee1"><div class="ttname"><a href="deleteBook_8cpp.html#a2be152e1c0ca150588ab7a54715faee1">mainDelete</a></div><div class="ttdeci">void mainDelete(BookType books[], int &amp;bookCount)</div><div class="ttdef"><b>Definition:</b> <a href="deleteBook_8cpp_source.html#l00051">deleteBook.cpp:51</a></div></div>
-<div class="ttc" id="aeditbook_8cpp_html_a3b5ebfcc08b590c92ab3c28884f2c8f2"><div class="ttname"><a href="editbook_8cpp.html#a3b5ebfcc08b590c92ab3c28884f2c8f2">mainEditBook</a></div><div class="ttdeci">void mainEditBook(BookType bookList[20], int currentSize)</div><div class="ttdef"><b>Definition:</b> <a href="editbook_8cpp_source.html#l00059">editbook.cpp:59</a></div></div>
+<p class="definition">Definition at line <a class="el" href="invmenu_8cpp_source.html#l00038">38</a> of file <a class="el" href="invmenu_8cpp_source.html">invmenu.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>                                           {</div>
+<div class="line"><span class="lineno">   39</span>    std::string menuName = <span class="stringliteral">&quot;Inventory Database&quot;</span>;</div>
+<div class="line"><span class="lineno">   40</span>    std::vector&lt;std::string&gt; menuListing = { <span class="stringliteral">&quot;Look Up a Book&quot;</span>, <span class="stringliteral">&quot;Add a Book&quot;</span>,</div>
+<div class="line"><span class="lineno">   41</span>            <span class="stringliteral">&quot;Edit a Book&#39;s Record&quot;</span>, <span class="stringliteral">&quot;Delete a Book&quot;</span>, <span class="stringliteral">&quot;Return to the Main Menu&quot;</span> };</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_struct" href="structMenuLines.html">MenuLines</a> mainMenuInfo;</div>
+<div class="line"><span class="lineno">   43</span>    std::string startNotif;</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordtype">int</span> choice;</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordtype">bool</span> keepGoing;</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    <a class="code hl_function" href="bookfile_8cpp.html#ab07b709e3903d31173af138139648663">readFile</a>(bookList);</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">menuName</a> = menuName;</div>
+<div class="line"><span class="lineno">   50</span>    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a> = menuListing;</div>
+<div class="line"><span class="lineno">   51</span>    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a15b8a52d1b8c366a0af2f56761c411c6">longestMenuLength</a> = <span class="keyword">sizeof</span>(<span class="stringliteral">&quot;Return to the Main Menu&quot;</span>) / <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>);</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>    keepGoing = 1;</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">do</span> {</div>
+<div class="line"><span class="lineno">   55</span>        startNotif = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>() &gt;= 20) {</div>
+<div class="line"><span class="lineno">   57</span>            startNotif = <span class="stringliteral">&quot;--NOTICE-- Book list full! Can no longer add book&quot;</span>;</div>
+<div class="line"><span class="lineno">   58</span>        }</div>
+<div class="line"><span class="lineno">   59</span>        system(<span class="stringliteral">&quot;clear&quot;</span>);</div>
+<div class="line"><span class="lineno">   60</span>        choice = <a class="code hl_function" href="menuDipity_8h.html#a03f5a2d5a6ea7f847fc6afb9118eef05">makeMenu</a>(mainMenuInfo, startNotif);</div>
+<div class="line"><span class="lineno">   61</span>        <span class="keywordflow">switch</span> (choice) {</div>
+<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">case</span> 0:</div>
+<div class="line"><span class="lineno">   63</span>             <a class="code hl_function" href="lookUp_8h.html#abf04499e1c95fb90d331ebee6074d3b8">mainLookUp</a>(bookList);</div>
+<div class="line"><span class="lineno">   64</span>             <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">case</span> 1:</div>
+<div class="line"><span class="lineno">   66</span>             <a class="code hl_function" href="addbook_8cpp.html#ad230f8fc036e07793bb8e2b49f398814">addBook</a>(bookList);</div>
+<div class="line"><span class="lineno">   67</span>             <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">case</span> 2:</div>
+<div class="line"><span class="lineno">   69</span>            <a class="code hl_function" href="editbook_8cpp.html#ac8692b5b2f89dce46b66b6c7b1d497d4">mainEditBook</a>(bookList);</div>
+<div class="line"><span class="lineno">   70</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   71</span>        <span class="keywordflow">case</span> 3:</div>
+<div class="line"><span class="lineno">   72</span>            <a class="code hl_function" href="deleteBook_8cpp.html#ab3253dc9320e6293c09e40dc8efc95a7">mainDelete</a> (bookList);</div>
+<div class="line"><span class="lineno">   73</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">case</span> 4:</div>
+<div class="line"><span class="lineno">   75</span>            keepGoing = 0;</div>
+<div class="line"><span class="lineno">   76</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">   78</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   79</span>        }</div>
+<div class="line"><span class="lineno">   80</span>    } <span class="keywordflow">while</span> (keepGoing);</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   83</span>}</div>
+<div class="ttc" id="aaddbook_8cpp_html_ad230f8fc036e07793bb8e2b49f398814"><div class="ttname"><a href="addbook_8cpp.html#ad230f8fc036e07793bb8e2b49f398814">addBook</a></div><div class="ttdeci">void addBook(BookType bookList[20])</div><div class="ttdef"><b>Definition:</b> <a href="addbook_8cpp_source.html#l00085">addbook.cpp:85</a></div></div>
+<div class="ttc" id="abookfile_8cpp_html_ab07b709e3903d31173af138139648663"><div class="ttname"><a href="bookfile_8cpp.html#ab07b709e3903d31173af138139648663">readFile</a></div><div class="ttdeci">void readFile(BookType books[20])</div><div class="ttdoc">readFile(BookType[20], int) -&gt; Stores file entries as members of books.</div><div class="ttdef"><b>Definition:</b> <a href="bookfile_8cpp_source.html#l00018">bookfile.cpp:18</a></div></div>
+<div class="ttc" id="aclassBookType_html_ab3d149c73829ea6b2a676795a485b70c"><div class="ttname"><a href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a></div><div class="ttdeci">static int getBookCount()</div><div class="ttdoc">Gets the count of all book types.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00036">bookType.h:36</a></div></div>
+<div class="ttc" id="adeleteBook_8cpp_html_ab3253dc9320e6293c09e40dc8efc95a7"><div class="ttname"><a href="deleteBook_8cpp.html#ab3253dc9320e6293c09e40dc8efc95a7">mainDelete</a></div><div class="ttdeci">void mainDelete(BookType books[])</div><div class="ttdef"><b>Definition:</b> <a href="deleteBook_8cpp_source.html#l00051">deleteBook.cpp:51</a></div></div>
+<div class="ttc" id="aeditbook_8cpp_html_ac8692b5b2f89dce46b66b6c7b1d497d4"><div class="ttname"><a href="editbook_8cpp.html#ac8692b5b2f89dce46b66b6c7b1d497d4">mainEditBook</a></div><div class="ttdeci">void mainEditBook(BookType bookList[20])</div><div class="ttdef"><b>Definition:</b> <a href="editbook_8cpp_source.html#l00059">editbook.cpp:59</a></div></div>
+<div class="ttc" id="alookUp_8h_html_abf04499e1c95fb90d331ebee6074d3b8"><div class="ttname"><a href="lookUp_8h.html#abf04499e1c95fb90d331ebee6074d3b8">mainLookUp</a></div><div class="ttdeci">int mainLookUp(const BookType booklist[20])</div></div>
+<div class="ttc" id="amenuDipity_8h_html_a03f5a2d5a6ea7f847fc6afb9118eef05"><div class="ttname"><a href="menuDipity_8h.html#a03f5a2d5a6ea7f847fc6afb9118eef05">makeMenu</a></div><div class="ttdeci">int makeMenu(MenuLines &amp;, std::string)</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00047">menuDipity.cpp:47</a></div></div>
 <div class="ttc" id="astructMenuLines_html"><div class="ttname"><a href="structMenuLines.html">MenuLines</a></div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8h_source.html#l00015">menuDipity.h:15</a></div></div>
 <div class="ttc" id="astructMenuLines_html_a15b8a52d1b8c366a0af2f56761c411c6"><div class="ttname"><a href="structMenuLines.html#a15b8a52d1b8c366a0af2f56761c411c6">MenuLines::longestMenuLength</a></div><div class="ttdeci">int longestMenuLength</div><div class="ttdoc">Longest Line Length.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8h_source.html#l00018">menuDipity.h:18</a></div></div>
 <div class="ttc" id="astructMenuLines_html_a4a30d31a41fa0757a8c1173384e81721"><div class="ttname"><a href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">MenuLines::menuName</a></div><div class="ttdeci">std::string menuName</div><div class="ttdoc">Menu Name.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8h_source.html#l00016">menuDipity.h:16</a></div></div>

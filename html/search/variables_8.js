@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['retail_0',['retail',['../structBookType.html#a865c993f2d1a82d53cb5f64a042d93e5',1,'BookType']]]
+  ['qtyonhand_0',['qtyOnHand',['../classBookType.html#a5ed3ab7a7b9932d912ebf73d23d111c5',1,'BookType']]]
 ];

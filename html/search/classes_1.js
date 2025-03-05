@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cashierbooktype_0',['CashierBookType',['../structCashierBookType.html',1,'']]]
+  ['menulines_0',['MenuLines',['../structMenuLines.html',1,'']]]
 ];

@@ -1,4 +1,5 @@
 var invmenu_8cpp =
 [
-    [ "main_invmenu", "invmenu_8cpp.html#ae436e5d8d0cfbe92a59647f92926c4e8", null ]
+    [ "menu_utils", "invmenu_8cpp.html#a5844bf1e3a872a1d090fe7d7c3f4b6ae", null ],
+    [ "main_invmenu", "invmenu_8cpp.html#a34062dc918a0ade089b7da143cc3dd3e", null ]
 ];

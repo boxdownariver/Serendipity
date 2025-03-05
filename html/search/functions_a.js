@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['trim_0',['trim',['../addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea',1,'addbook.cpp']]]
+  ['printbookinfo_0',['printBookInfo',['../classBookType.html#af5eadc6e768e9a8213696355f8f25481',1,'BookType']]],
+  ['purchasebook_1',['purchaseBook',['../cashier_8cpp.html#a55c9d925a001cb9f330bb9697a2785ad',1,'cashier.cpp']]]
 ];
