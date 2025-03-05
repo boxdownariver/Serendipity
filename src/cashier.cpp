@@ -77,7 +77,6 @@ do {
 					if (indexToPurchase != -1){
 						system("clear");
 						purchaseBook ( books, indexToPurchase, cart);
-						system("clear");
 						showCart (books, cart);
 					}
 
@@ -104,7 +103,6 @@ do {
 				}	while (toupper (choice) != 'N');
 
 			if (hasBooksInCart){
-			system("clear");
 			showCart (books, cart);
 			cout << "Confirm Purchase and view the receipt ? (Y/N)\n";
 			cin.get(confirmPurchase);
@@ -287,16 +285,16 @@ void showCart (BookType books[], int cart[])
 	cout << fixed << setprecision(2);
 	int bookAddedCount = 1;
 	string tempTitle;
-
+	system("clear");
 	for (int i = 0; i < 20; i++)
 	 {
         if (cart[i] > 0 && !cartPrinted) 
 			{  // If any positive number found and "cart" not printed yet
-            cout << "┌─────────────────────────────────────────────────────────────────────────┐\n";
-				cout << "│  SERENDIPITY BOOK SELLERS                            YOUR SHOPPING CART │\n";
-				cout << "│                                                                         │\n";
-				cout << "│ No. Title                                                           Qty │\n";
-				cout << "├─────────────────────────────────────────────────────────────────────────┤\n";
+        cout << "┌─────────────────────────────────────────────────────────────────────────┐\n";
+	cout << "│  SERENDIPITY BOOK SELLERS                            YOUR SHOPPING CART │\n";
+	cout << "│                                                                         │\n";
+	cout << "│ No. Title                                                           Qty │\n";
+	cout << "├─────────────────────────────────────────────────────────────────────────┤\n";
             cartPrinted = true;            // Mark "cart" as printed
             break;                         // Exit the loop after printing "cart"
         }
@@ -306,17 +304,17 @@ void showCart (BookType books[], int cart[])
 	{
 		if (cart[i] > 0)
 			{
-						cout << "│ " << setw (2) << right << bookAddedCount << ". ";
-						// For placement of the title
-						if (books[i].getTitle().length() <= 60 )
-							{
-								cout << setw (62) << left << books[i].getTitle();
-							}
-							else
-							{
-								tempTitle = books[i].getTitle().substr(0, 59);
-								cout << setw (58) << left << tempTitle << "...";
-							}
+				cout << "│ " << setw (2) << right << bookAddedCount << ". ";
+				// For placement of the title
+				if (books[i].getTitle().length() <= 60 )
+					{
+						cout << setw (62) << left << books[i].getTitle();
+					}
+					else
+					{
+						tempTitle = books[i].getTitle().substr(0, 59);
+						cout << setw (58) << left << tempTitle << "...";
+					}
 				cout << setw (4) << right << cart[i] << "  │\n";
 				totalBeforeTax += books[i].getRetail() * cart[i];
 				bookAddedCount++;
