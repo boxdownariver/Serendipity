@@ -3,21 +3,22 @@
 /**************************************************************************//**
  * DISPLAY A CASHIER REPORT
  * ____________________________________________________________________________
- * This cashier.cpp asks for book information ( date, quantity, isbn, title, and price ),
- * then it calculates the total price for each book type.
+ * This cashier.cpp asks for book information to purchase (by title or by name)
+ * and it allows user to select more books on the same receipt.
+ * Then it calculates the total price for each book type.
  * Finally it will create a nicely formatted cashier report.
  * @author Saliha Babar
  * @file cashier.cpp
  * ____________________________________________________________________________
  * INPUT 
- *    date                      : date the books are purchased
- *    quantity                  : quantity of books purchased
- *    isbn                      : book isbn
- *    title                     : title of the book
- *    price                     : price of a book
+ *    toPurchase                  : title or isbn of the book to search for
+ *    cart                        : array of user shopping cart
  * 
  * OUTPUT
- *  formatted cashier report
+ *    date                        : current date to be printed on receipt
+ *    subtotal                    : total before tax
+ *		tax_amt                     : amount of tax applied
+ *    totalAfterTax               : total after tax (subtotal + tax_amt)
  * ***************************************************************************/
 
 #include <iostream>
@@ -124,7 +125,7 @@ do {
 			}
 
 
-			// Showed receipt, therefore ask if they want to repat
+			// Showed receipt, therefore ask if they want to repeat menu
 			cout << "Do you want to make another transaction ? (Y/N)\n";
 			cin.get (repeat);
 			cin.ignore (100, '\n');
@@ -140,6 +141,16 @@ while (BookType::getBookCount() != 0 && toupper(repeat) != 'N');
 	return 0;		
 }
 
+
+/**
+ * generateDate Generates the current date in MM/DD/YYYY format.
+ *
+ * This function retrieves the system's current date using the `time` library,
+ * converts it to local time, and formats it into a string representation.
+ * The generated date is returned as a string.
+ *
+ * returns a string representing the current date in MM/DD/YYYY format.
+ */
 string generateDate ()
 {
 	time_t t = time(nullptr);  
@@ -165,7 +176,18 @@ string generateDate ()
 
 }
 
-
+/**
+ * purchaseBook allows a user to purchase a book and adds it to their cart.
+ *
+ * This function displays the selected book's information, checks availability, 
+ * and prompts the user to confirm adding it to their cart. If the stock is 
+ * insufficient, the function automatically adjusts the purchase quantity to 
+ * the maximum available stock. The user's cart is then updated accordingly.
+ *
+ * first parameter is books Array of `BookType` objects containing book information.
+ * second parameter is index of the book being purchased in the `books` array.
+ * third array is cart Array representing the user's cart, tracking quantities of books added.
+ */
 void purchaseBook (BookType books[], int index, int cart[])
 {
 	// show the book info to user to confirm purchase
@@ -185,7 +207,7 @@ void purchaseBook (BookType books[], int index, int cart[])
 	if (numAvailable == 0)
 			{
 				cout << setw (15) << left << " " << "Sorry, we are out of stock of this book\n";
-				cout << setw (25) << left << "Press enter to continue...\n";
+				cout << setw (30) << left << "Press enter to continue...\n";
 				cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 				return;
@@ -202,8 +224,8 @@ void purchaseBook (BookType books[], int index, int cart[])
 	
 	while (toupper(decision) != 'N' && toupper(decision) != 'Y' )
 			{
-				cout << decision << " is invalid choice.. Only enter Y or N. ";
-				cout << right << setw(50)<< "→";
+				cout << decision << " is invalid choice.. Only enter Y or N.\n";
+				cout << right << setw(50)<< "→  ";
 				cin.get (decision);
 				cin.ignore (100, '\n');
 			}
@@ -235,7 +257,7 @@ void purchaseBook (BookType books[], int index, int cart[])
 			cout << "                │            " << setw (3) << right << numToPurchase << " books added to your cart successfully!            │\n";
 			cout << "                └──────────────────────────────────────────────────────────────────┘\n";
 			resetColour();
-			cout << "Press enter to continue...\n";
+			cout << setw (30) << left << "Press enter to continue...\n";
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 			cart[index] += numToPurchase;
 			
@@ -245,6 +267,17 @@ void purchaseBook (BookType books[], int index, int cart[])
 	return;
 }
 
+
+/**
+ * showCart Displays the contents of the shopping cart.
+ *
+ * This function iterates through the `cart` array and prints a formatted table 
+ * displaying the books that have been added to the cart along with their 
+ * quantities. It also calculates and displays the total cost before tax.
+ *
+ * first paramter is books Array of `BookType` objects containing book information.
+ * second paramater is cart Array representing the user's cart, tracking quantities of books added.
+ */
 void showCart (BookType books[], int cart[])
 {	setColour (96);
 	char choice;
@@ -307,14 +340,16 @@ void showCart (BookType books[], int cart[])
 }
 
 /**
- * FormatReport generates a cashier transaction using 'BookType'. 
- * 
- * It takes all the data stored, and calculates the tax amount
- * tax percentage(assumed to be 6%).
+ * FormatReport Generates and displays a formatted sales receipt for the purchased books.
  *
- * Function takes 'CashierBookType' as a constant parameter, and retrieve values 
- * from 'CashierBookType'. It simply formats and prints the cashier receipt.
- * Function doesn't return any values.
+ * This function calculates the subtotal, tax amount, and total price of the books 
+ * purchased. It then prints a receipt-like output that includes book details, 
+ * purchase quantities, prices, and the final total. Additionally, it updates 
+ * the available stock by deducting the purchased quantities from inventory.
+ *
+ * first parameter is books Array of `BookType` objects containing book details.
+ * second parameter cart Array representing the user's shopping cart with quantities of books purchased.
+ * third parameter is a date as a string to be displayed on the receipt.
  */
 void FormatReport ( BookType books[], int cart[], string date)
 {
