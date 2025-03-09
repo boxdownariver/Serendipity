@@ -11,7 +11,7 @@
  * @file cashier.cpp
  * ____________________________________________________________________________
  * INPUT 
- *    toPurchase                  : title or isbn of the book to search for
+ *    keyword                     : title or isbn of the book to search for
  *    cart                        : array of user shopping cart
  * 
  * OUTPUT
@@ -34,8 +34,9 @@
 #include "headers/lookUp.h"
 
 using namespace std;
-
-void purchaseBook (BookType books[], int index, int cart[] );
+char showCashierMenu ();
+void addBook (BookType books[], int index, int cart[] );
+void removeBook (BookType books[], int index, int cart[]);
 void showCart (BookType books[], int cart[]);
 void FormatReport ( BookType books[], int cart[], string date);
 string generateDate ();
@@ -51,92 +52,222 @@ string generateDate ();
  * 
  * The function does not take any parameters and does not return any values.
  */
-int mainCashier (BookType books[]){
-	int cart [20];
-	string toPurchase;
-	int indexToPurchase;
+int mainCashier (BookType books[])
+{
+		if (BookType::getBookCount() == 0)
+			{
+			// immediately exit program
+			system ("clear");
+			cout << "╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n";
+			cout << "║ " << setw (98) << left << "The book list is empty. No books available for cashier registration." << " ║ \n" ;
+	   	cout << "║ " << setw (98) << left << "Press any key to continue " << " ║ \n" ;
+	   	cout << "╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n"; 
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			return 0;
+			}
+
+
+	int cart[20];
 	char choice;
-	char confirmPurchase;
+	string keyword;
+	int indexOfBook;
+	bool cartFilled;
+	char confirm;
 	char repeat;
 	string date;
-	bool hasBooksInCart;
+	char exit;
+
+// initialize cart with 0s before entering loop
+	for (int i = 0; i < 20 ; i++){
+				cart[i] = 0;
+			}
+	cartFilled = false;
 
 
 do {
-	choice = 'N';
-	repeat = 'N';
-	hasBooksInCart = false;
-	toPurchase = validateAndAsk (BookType::getBookCount());
-		if (toPurchase != "") {
-			for (int i = 0; i < 20 ; i++){
-				cart[i]=0;
+		//	Before entering inner loop, always check if cart is filled
+		cartFilled = false;
+		for (int i = 0; i < 20; i++) {
+    		if (cart[i] > 0) {
+      			cartFilled = true;
+					break;	}	}
+
+		// show menu
+		choice = showCashierMenu ();
+
+		switch(choice)
+		{
+			case '1' :
+			keyword = AskKeyword (BookType::getBookCount());
+			indexOfBook = findString (keyword, books, BookType::getBookCount());
+			if (indexOfBook == -1){
+			cout << "Press enter to continue...\n";
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');}
+			else	{
+				addBook ( books, indexOfBook, cart);
+			}
+			break;
+
+			case '2' :
+			if (cartFilled)
+			{
+					keyword = AskKeyword (BookType::getBookCount());
+					indexOfBook = findStringInCart (keyword, books, BookType::getBookCount(), cart);
+					if (indexOfBook == -1){
+					cout << "Press enter to continue...\n"; 
+					cin.ignore(numeric_limits<streamsize>::max(), '\n');}
+					else 	{
+								removeBook ( books, indexOfBook, cart);
+							}
+			}
+			// if not filled
+			else{
+			setColour (96);
+			cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
+			cout << "                │   The cart is currently empty, so there are no books to remove.  │\n";
+			cout << "                └──────────────────────────────────────────────────────────────────┘\n";
+			resetColour();
+			cout << "Press enter to continue\n";
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	        	}
+			break;
+  
+			
+			case '3':
+			// show cart 
+			if (cartFilled){
+			showCart(books, cart);
+			cout << "Press any key to continue...\n";
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 			}
 
-				do {	
-					indexToPurchase = findString (toPurchase, books, BookType::getBookCount() );
-					if (indexToPurchase != -1){
-						system("clear");
-						purchaseBook ( books, indexToPurchase, cart);
-						showCart (books, cart);
-					}
+			else{
+			setColour (96);
+			cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
+			cout << "                │   The cart is currently empty, so there are no books to show.    │\n";
+			cout << "                └──────────────────────────────────────────────────────────────────┘\n";
+			resetColour();
+			cout << "Press enter to continue\n";
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			}
 
-					//Check if theres book in cart
-					for (int i = 0; i < 20; i++) {
-    						if (cart[i] > 0) {
-        					hasBooksInCart = true;
-        					break;
-    						}
-					}
-					if (hasBooksInCart){
-					cout << "Do you want to proceed another book purchase on the same receipt? (Y/N)?\n";
-					cin.get (choice);
-					cin.ignore (100, '\n');
-					while (toupper(choice) != 'N' && toupper(choice) != 'Y') {
-						cout << choice << " is invalid choice.. Only enter Y or N.\n";
-						cin.get (choice);
-						cin.ignore(100, '\n');
-					}
-					if (toupper(choice) == 'Y' ){
-					toPurchase = validateAndAsk (BookType::getBookCount()); 
-					}
-				}
-				}	while (toupper (choice) != 'N');
-
-			if (hasBooksInCart){
-			showCart (books, cart);
-			cout << "Confirm Purchase and view the receipt ? (Y/N)\n";
-			cin.get(confirmPurchase);
-			cin.ignore (100,'\n');
-			while (toupper(confirmPurchase) != 'N' && toupper(confirmPurchase) != 'Y')
+			break;
+			
+			case '4':
+			if (cartFilled)
 				{
-					cout << choice << " is invalid choice.. Only enter Y or N.\n";
-					cin.get (confirmPurchase);
-					cin.ignore(100, '\n');
-				}
-
-			if (toupper(confirmPurchase) == 'Y')	
-			{	
-				date = generateDate();
-				system("clear");
-				FormatReport (books,cart, date );
-			}
-			}
-
-
-			// Showed receipt, therefore ask if they want to repeat menu
-			cout << "Do you want to make another transaction ? (Y/N)\n";
-			cin.get (repeat);
-			cin.ignore (100, '\n');
-			while (toupper(repeat) != 'N' && toupper(repeat) != 'Y' ){
-					cout << repeat << " is invalid choice.. Only enter Y or N.\n";
-					cin.get (repeat);
+					system ("Clear");
+					showCart (books, cart);
+					cout << "Confirm Purchase ? (Y/N)\n";
+					cin.get (confirm);
 					cin.ignore (100, '\n');
-				}
-		}
-}
-while (BookType::getBookCount() != 0 && toupper(repeat) != 'N');
 
-	return 0;		
+					while (toupper(confirm) != 'N' && toupper(confirm) != 'Y' ){
+					cout << confirm << " is invalid choice.. Only enter Y or N.\n";
+					cin.get (confirm);
+					cin.ignore (100, '\n');}
+
+					if (toupper(confirm) == 'Y')
+						{
+
+							date = generateDate ();
+							FormatReport (books, cart, date);
+							cout << "      ┌──────────────────────────────────────────────────────────────────┐\n";
+							cout << "      │                       TRANSACTION COMPLETED !                    │\n";
+							cout << "      ├──────────────────────────────────────────────────────────────────┤\n";
+							cout << "      │            Would you like to make another transaction? (Y/N)     │\n";
+							cout << "      └──────────────────────────────────────────────────────────────────┘\n";
+							cout << right << setw(35)<< "→  ";
+							cin.get (repeat);
+							cin.ignore (100, '\n');
+
+							while (toupper(repeat) != 'N' && toupper(repeat) != 'Y' ){
+							cout << right << setw(35)<< "→  ";
+							cout << repeat << " is invalid choice.. Only enter Y or N.\n";
+							cin.get (repeat);
+							cin.ignore (100, '\n');}
+									 if (toupper(repeat) == 'Y')
+											{	for (int i = 0; i < 20 ; i++){
+											cart[i] = 0;
+											cartFilled = false;} }
+									else
+									return 0;
+						}
+				}
+				else
+					{
+						setColour (96);
+						cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
+						cout << "                │Your cart is empty, and checkout cannot be completed at this time.│\n";
+						cout << "                └──────────────────────────────────────────────────────────────────┘\n";
+						resetColour();
+						cout << "Press enter to continue\n";
+						cin.ignore(numeric_limits<streamsize>::max(), '\n');
+					}
+			break;
+
+			case '5':
+			if (cartFilled){
+			cout << "  ┌─────────────────────────────────────────────────────────────────────────────────────┐\n";
+			cout << "  │                Exit the Cashier? (Y/N) Your current cart will be lost.              │\n";
+			cout << "  └─────────────────────────────────────────────────────────────────────────────────────┘\n";
+			cin.get (exit);
+			cin.ignore (100, '\n');
+
+					while (toupper(exit) != 'N' && toupper(exit) != 'Y' ){
+					cout << exit << " is invalid choice.. Only enter Y or N.\n";
+					cin.get (exit);
+					cin.ignore (100, '\n');}
+			if (toupper(exit) == 'Y')
+			return 0;
+			}
+			
+			else {
+				return 0; }
+			break;
+		};
+
+	}	while (BookType::getBookCount() !=0);
+
+	return 0;
+}
+
+
+/**
+* showCashierMenu displays the cashier menu and prompts the user for a choice.
+*
+* returns a char representing the user choice for the menu.
+*/
+char showCashierMenu ()
+{
+	char choice;
+	system ("clear");
+	setColour(96);
+	cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
+	cout << "                │                 Welcome to Serendipity Cash Register             │\n";
+ 	cout << "                │                                                                  │\n";
+	cout << "                │     (1) -   Add a Book to Your Cart                              │\n";
+	cout << "                │     (2) -   Remove a Book from Your Cart                         │\n";
+	cout << "                │     (3) -   View Your Cart                                       │\n";
+	cout << "                │     (4) -   CheckOut Your Cart                                   │\n";
+	cout << "                ├──────────────────────────────────────────────────────────────────┤\n";	
+	cout << "                │     (5) -   Exit the Cashier AND Cancel the Current Transaction  │\n";
+	cout << "                └──────────────────────────────────────────────────────────────────┘\n";
+	resetColour();
+	cout << "                                    Enter your choice ( 1 - 5 )\n";
+	cout << right << setw(50)<< "→  ";
+	cin.get (choice);
+	cin.ignore (100, '\n');
+
+	while (choice < '1' || choice > '5' )
+	{
+		cout << choice << " is not a valid option. Please enter a number between 1 and 5 based on the menu.\n";
+		cout << right << setw(50)<< "→  ";
+		cin.get (choice);
+		cin.ignore (100, '\n');
+	}
+
+	return choice;
 }
 
 
@@ -186,7 +317,7 @@ string generateDate ()
  * second parameter is index of the book being purchased in the `books` array.
  * third array is cart Array representing the user's cart, tracking quantities of books added.
  */
-void purchaseBook (BookType books[], int index, int cart[])
+void addBook (BookType books[], int index, int cart[])
 {
 	// show the book info to user to confirm purchase
 	char decision;
@@ -194,6 +325,7 @@ void purchaseBook (BookType books[], int index, int cart[])
 	int numAvailable;
 
 	numAvailable = books[index].getQtyOnHand() - cart[index];
+	system ("clear");
 	mainbookInfo(books, index);
 
 	setColour (97);
@@ -202,18 +334,30 @@ void purchaseBook (BookType books[], int index, int cart[])
 	cout << "                                 In Your Cart    : " << cart[index] << endl;
 	cout << "                           └────────────────────────────────────────┘\n";
 
-	if (numAvailable == 0)
-			{
-				cout << setw (15) << left << " " << "Sorry, we are out of stock of this book\n";
-				cout << setw (30) << left << "Press enter to continue...\n";
+	if ( books[index].getQtyOnHand() == 0 && cart[index] == 0 )
+			{	setColour (33);
+				cout << setw(70) << right << "Sorry, we are out of stock for this book.\n";
+				resetColour();
+				cout << "Press enter to continue...\n";
 				cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 				return;
 			}
 
+	if (numAvailable == 0 && books[index].getQtyOnHand() == cart[index] )
+			{	setColour (33);
+				cout << "          Can't add more of this book. Your cart has the maximum quantity of this book. \n";
+				resetColour();
+				cout << "Press enter to continue...\n";
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+				return;
+			}
+
+	
 	setColour (33);
 	cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
-	cout << "                │     Would you like to add this book to your cart? (Y/N)          │\n";
+	cout << "                │       Would you like to add this book to your cart? (Y/N)        │\n";
 	cout << "                └──────────────────────────────────────────────────────────────────┘\n";
 	resetColour();
 	cout << right << setw(50)<< "→  ";
@@ -230,7 +374,7 @@ void purchaseBook (BookType books[], int index, int cart[])
 	if (toupper(decision) == 'Y')
 	{
 		setColour (93);
-		cout << setw (40) << right << "You can add up to " << numAvailable << " books. Please enter quantity below.\n";
+		cout << setw (40) << right << "You can add up to " << numAvailable << " book(s). Please enter quantity below.\n";
 		resetColour();
 		cout << right << setw(50)<< "→  ";
 		cin >> numToPurchase;
@@ -243,13 +387,14 @@ void purchaseBook (BookType books[], int index, int cart[])
 				cin.ignore();
 			}
 
-			if (numToPurchase > numAvailable)
+			if (numToPurchase > numAvailable )
 			{
 				setColour (96);
 				cout << "    The requested quantity exceeds stock, so we've added the maximum available to your cart..\n";
 				resetColour();
 				numToPurchase = numAvailable ;
 			}
+
 			setColour(32);
 			cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
 			cout << "                │            " << setw (3) << right << numToPurchase << " books added to your cart successfully!            │\n";
@@ -258,13 +403,89 @@ void purchaseBook (BookType books[], int index, int cart[])
 			cout << setw (30) << left << "Press enter to continue...\n";
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 			cart[index] += numToPurchase;
-			
 	}
-
 
 	return;
 }
 
+/**
+ * removeBook allows user to remove a book from their cart
+ *
+ * This function displays the selected book's information, checks if the book is currently in cart,
+ * and prompts the user to confirm delete it from their cart.
+ *
+ * first parameter is books Array of `BookType` objects containing book information.
+ * second parameter is index of the book being deleted in the `books` array.
+ * third array is cart Array representing the user's cart, tracking quantities of books deleted
+ */
+void removeBook (BookType books[], int index, int cart[])
+{
+	char decision;
+	int numToDelete;
+	int numAvailable = cart[index];
+	system ("clear");
+	mainbookInfo(books, index);
+	cout << "                           ┌────────────────────────────────────────┐\n";
+	cout << "                                 Stock available : " << books[index].getQtyOnHand() << endl;
+	cout << "                                 In Your Cart    : " << cart[index] << endl;
+	cout << "                           └────────────────────────────────────────┘\n";
+	setColour (33);
+	cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
+	cout << "                │     Would you like to remove this book from your cart (Y/N)      │\n";
+	cout << "                └──────────────────────────────────────────────────────────────────┘\n";
+	resetColour();
+	cout << right << setw(50)<< "→  ";
+	cin.get (decision);
+	cin.ignore (100, '\n');
+	
+	while (toupper(decision) != 'N' && toupper(decision) != 'Y' )
+			{
+				cout << decision << " is invalid choice.. Only enter Y or N.\n";
+				cout << right << setw(50)<< "→  ";
+				cin.get (decision);
+				cin.ignore (100, '\n');
+			}
+
+
+	if (toupper(decision) == 'Y')
+	{
+		setColour (93);
+		cout << setw (40) << right << "You can delete up to " << numAvailable << " book(s). Please enter quantity below.\n";
+		resetColour();
+		cout << right << setw(50)<< "→  ";
+		cin >> numToDelete;
+		cin.ignore();
+			while (numToDelete < 0 || numToDelete > numAvailable)
+			{
+				cout << setw(50) << right << "Invalid quantity entered. Only enter quantity within 0 - " << numAvailable << endl;
+				cout << right << setw(50)<< "→  ";
+				cin >> numToDelete;
+				cin.ignore();
+			}
+			
+			if (numToDelete > 0){
+			setColour(32);
+			cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
+			cout << "                │        " << setw (3) << right << numToDelete << " books removed from your cart successfully!            │\n";
+			cout << "                └──────────────────────────────────────────────────────────────────┘\n";
+			resetColour();
+			}
+			else		{
+			setColour(32);
+			cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
+			cout << "                │         Quantity of the book remains the same in your cart       │\n";
+			cout << "                └──────────────────────────────────────────────────────────────────┘\n";
+			resetColour();}
+			
+			cout << setw (30) << left << "Press enter to continue...\n";
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cart[index] -= numToDelete;
+
+			
+	}
+
+return;
+}
 
 /**
  * showCart Displays the contents of the shopping cart.
@@ -278,28 +499,39 @@ void purchaseBook (BookType books[], int index, int cart[])
  */
 void showCart (BookType books[], int cart[])
 {	setColour (96);
-	char choice;
-	bool cartPrinted = false;
-	string substring;
+	bool cartFilled;
 	double totalBeforeTax = 0;
-	cout << fixed << setprecision(2);
 	int bookAddedCount = 1;
 	string tempTitle;
-	system("clear");
+
 	for (int i = 0; i < 20; i++)
 	 {
-        if (cart[i] > 0 && !cartPrinted) 
-			{  // If any positive number found and "cart" not printed yet
-        cout << "┌─────────────────────────────────────────────────────────────────────────┐\n";
+        if (cart[i] > 0) 
+		  {
+				cartFilled = true;
+				break;
+        }
+    }
+	
+	if (cartFilled == false)
+	{
+	cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
+	cout << "                │        Cart is currently empty, Add book to view the cart.       │\n";
+	cout << "                └──────────────────────────────────────────────────────────────────┘\n";
+	resetColour();
+	cout << "Press any key to continue..\n";
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	return;
+
+	}
+	cout << fixed << setprecision(2);
+	system ("clear");
+	cout << "┌─────────────────────────────────────────────────────────────────────────┐\n";
 	cout << "│  SERENDIPITY BOOK SELLERS                            YOUR SHOPPING CART │\n";
 	cout << "│                                                                         │\n";
 	cout << "│ No. Title                                                           Qty │\n";
 	cout << "├─────────────────────────────────────────────────────────────────────────┤\n";
-            cartPrinted = true;            // Mark "cart" as printed
-            break;                         // Exit the loop after printing "cart"
-        }
-    }
-	
+    
 	for (int i = 0; i < 20; i++)
 	{
 		if (cart[i] > 0)
@@ -320,21 +552,12 @@ void showCart (BookType books[], int cart[])
 				bookAddedCount++;
 			}
 	}
-	cartPrinted = false;
-	for (int i =0; i < 20; i++)
-	{
-		if (cart[i] > 0 && !cartPrinted)
-		{
-			cout << "│                                                                         │\n";
-			cout << "│                                                                         │\n";
-			cout << "│   " << setw (58) << right << "Total Before Tax  : " << " $ " << right << setw (8) << totalBeforeTax << " │ \n";
-			cout << "└─────────────────────────────────────────────────────────────────────────┘\n";
-			cartPrinted = true;
-			break;
-		}
-	}
-	resetColour();
-
+	
+		cout << "│                                                                         │\n";
+		cout << "│                                                                         │\n";
+		cout << "│   " << setw (58) << right << "Total Before Tax  : " << " $ " << right << setw (8) << totalBeforeTax << " │ \n";
+		cout << "└─────────────────────────────────────────────────────────────────────────┘\n";
+		resetColour();
 }
 
 /**
@@ -372,7 +595,7 @@ void FormatReport ( BookType books[], int cart[], string date)
 	// For fixed precision ( show 2 decimal point )
 	setColour (96);   // Receipt generally using cyan colour
 	cout << fixed << setprecision(2);
-	
+	system ("clear");
 	cout << "╔═════════════════════════════════════════════~════════════════════════════════╗\n";
 	cout << "║                                                                              ║\n";
 	cout << "║"; 

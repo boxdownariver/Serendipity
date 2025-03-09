@@ -39,19 +39,31 @@ using namespace std;
  * Returns:
  * - This function does not return any value. It is used for searching and displaying book details.
  */
+
 int mainLookUp( const BookType booklist[]) {
 	string toSearch;
 	char choice;
 	int bookIndex;
 
+
+// immediately let user exit if the book count is 0.
+if (BookType::getBookCount() == 0)
+	{
+		system ("clear");
+		cout << "╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n";
+		cout << "║ " << setw (98) << left << "The book list is empty, no books available for search.. " << " ║ \n" ;
+	   cout << "║ " << setw (98) << left << "Press any key to continue " << " ║ \n" ;
+	   cout << "╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n"; 
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Wait for user input before continuing
+
+		return 0;
+	}
+
+
 	do {
 		
 	// Prompt user for a search term, ensuring bookCount is valid
-	toSearch = validateAndAsk ( BookType::getBookCount() );
-
-		// Proceed with search if input is valid
-		if (toSearch != "" )
-			{
+	toSearch = AskKeyword ( BookType::getBookCount() );
 				
 			// Search for the book in the list
     			bookIndex = findString (toSearch, booklist, BookType::getBookCount() );
@@ -72,8 +84,7 @@ int mainLookUp( const BookType booklist[]) {
 						cout << choice << " is invalid choice.. Only enter Y or N.\n";
 						cin.get (choice);
 						cin.ignore (100, '\n');
-					}
-			}		
+					}		
 	}
 	while (toupper(choice) != 'N' && BookType::getBookCount() != 0);
 
@@ -163,7 +174,7 @@ int findString (const string toSearch, const BookType array[], const int size)
 	if (searchLength <= 35 )
 	cout << setw (35-searchLength) << left << "' found.";
 	else
-	cout << setw (0) << left << "' found." ;
+	cout << "' found." ;
 	resetColour ();
 	cout << " ║ \n";
 
@@ -173,44 +184,125 @@ int findString (const string toSearch, const BookType array[], const int size)
 }
 
 
+/**
+ * findStringInCart searches for a book in the cart based on the title or ISBN.
+ * Returns the index of the found book if the user confirms, otherwise continues searching.
+ * If no match is found after checking all books, informs the user and returns -1.
+ * 
+ * Parameters:
+ * - toSearch: The search term (book title or ISBN) entered by the user.
+ * - array: An array of books to search through.
+ * - size: The number of books in the array.
+ * - cart: represents a user cart, a parallel array of BookType
+ * 
+ * Returns:
+ * - The index of the first matching book if found and confirmed by the user.
+ * - -1 if no matching book is found in the array.
+ */
+int findStringInCart (const string toSearch, const BookType array[], const int size, int cart[])
+{
+	int index = 0;
+	int bookFoundCount = 1;
+	string tempTitle;
+	string searchUpper;
+	char choice;
+	int searchLength = toSearch.length();   // Get length of search term
+	
+    // Convert search string to uppercase
+    searchUpper = toSearch;
+    transform (searchUpper.begin (), searchUpper.end(), searchUpper.begin (), :: toupper);
+    cout << "╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n"; 
+    cout << "║                                                                                                    ║\n";
+	
+     while (index < size)
+         {
+            if (cart[index] > 0) 
+					{
+				// Convert book title to uppercase for case-insensitive search
+             tempTitle = array[index].getTitle();
+             transform (tempTitle.begin (), tempTitle.end(), tempTitle.begin (), ::
+             toupper);
+
+             // Search for title or ISBN match
+             if (tempTitle.find(searchUpper) != string::npos || array[index].getISBN().find (toSearch)!= string::npos)
+             {
+		cout << "║ [" << setw (2) << right << bookFoundCount <<"]" << setw (100) << right << " ║ \n";
+        	cout << "║ ";
+		setColour(32); // Yellow text  
+		cout << "RESULT -> : Title - " << setw (78) << left << array[index].getTitle();
+		resetColour();
+		cout << " ║ \n║ ";
+		setColour(32); // Yellow text
+		cout << "Quantity -> : In your cart - [" << setw (2) << right << cart[index] << setw(66) << left << "]"; 
+		resetColour();
+		cout << " ║\n";
+                cout << "║ " << setw (98) << left << "Is this the book you intended to search for? (Y/N) : " << " ║ " ;
+                cin.get (choice);
+	        cin.ignore (100, '\n');
+		cout << "║                                                                                                    ║\n";
+		     
+		// Validate user input
+                while (toupper(choice) != 'N' && toupper(choice) != 'Y' )
+			{
+				cout << "║ " << choice << setw (97) << " is invalid choice.. Only enter Y or N " << " ║ ";
+				cin.get (choice);
+			        cin.ignore (100, '\n');
+ 			  	cout << "║                                                                                                    ║\n";
+		        }    
+		     
+                if (toupper (choice) == 'Y' )
+                return index;        // Return the index if user confirms
+		bookFoundCount++;
+
+             }
+			}
+             
+             index++;
+         }
+
+	// No match found
+	cout << "║ ";
+	setColour (96);    // set to cyan
+	cout << "End of cart reached. NO books with the title or ISBN '";
+   	if (searchLength < 35 )
+		cout << toSearch;
+   	else 
+		cout << setw(34) << left << toSearch.substr(0,34) << "...";
+	
+	if (searchLength <= 44 )
+	cout << setw (44-searchLength) << left << "' found in your cart.";
+	else
+	cout << "' found in your cart." ;
+	resetColour ();
+	cout << " ║ \n";
+	cout << "╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n"; 
+
+    return -1;  // Return -1 if no book was found
+}
+
 
 /**
  * validateAndAsk prompts the user to search for a book and returns the search term.
- * If the book list is empty, it waits for user input before returning an empty string.
- * 
+ *
  * Parameters:
  * - bookCount: The number of books available in the book list (passed by reference).
  * 
  * Returns:
  * - A string representing the user's search term if the book list is not empty.
- * - An empty string ("") if the book list is empty.
+ * 
  */
-string validateAndAsk ( const int &bookCount)
+string AskKeyword ( const int &bookCount)
 {
 	string toSearch;
 
-	if (bookCount == 0)
-	{
-		system ("clear");
-		cout << "╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n";
-		cout << "║ " << setw (98) << left << "The book list is empty, no books available for search.. " << " ║ \n" ;
-	   	cout << "║ " << setw (98) << left << "Press any key to continue " << " ║ \n" ;
-	   	cout << "╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n"; 
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Wait for user input before continuing
-	}
-
-	else {
-		system ("clear");
-		setColour (33);
-		cout << "╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n"; 
-    		cout << "║                                       >>> BOOK LOOKUP <<<                                          ║\n";
-		cout << "╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n";
-    		cout << "                                      Search : ";
+	system ("clear");
+	setColour (33);
+	cout << "╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n"; 
+   cout << "║                                       >>> BOOK LOOKUP <<<                                          ║\n";
+	cout << "╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n";
+   cout << "                                      Search → ";
 		
-    	getline (cin, toSearch);
+   getline (cin, toSearch);
 	resetColour();
 	return toSearch;
-	}
-
-	return ""; // Return empty string if book count is 0 and user pressed a key
 }
