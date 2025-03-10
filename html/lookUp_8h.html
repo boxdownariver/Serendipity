@@ -136,10 +136,55 @@ Functions</h2></td></tr>
 <tr class="separator:abf04499e1c95fb90d331ebee6074d3b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa3875315ce7e454544a9edafdf27f45"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lookUp_8h.html#afa3875315ce7e454544a9edafdf27f45">findString</a> (const std::string toSearch, const <a class="el" href="classBookType.html">BookType</a> array[], const int size)</td></tr>
 <tr class="separator:afa3875315ce7e454544a9edafdf27f45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf7cae378d5f2bef18b6e4bbdc270c43"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lookUp_8h.html#acf7cae378d5f2bef18b6e4bbdc270c43">validateAndAsk</a> (const int &amp;bookCount)</td></tr>
-<tr class="separator:acf7cae378d5f2bef18b6e4bbdc270c43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1898c0545d6342f653f0db2999876564"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lookUp_8h.html#a1898c0545d6342f653f0db2999876564">findStringInCart</a> (const std::string toSearch, const <a class="el" href="classBookType.html">BookType</a> array[], const int size, int <a class="el" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[])</td></tr>
+<tr class="separator:a1898c0545d6342f653f0db2999876564"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad03651902aa14f3cd4d15385f2a8a5b6"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lookUp_8h.html#ad03651902aa14f3cd4d15385f2a8a5b6">AskKeyword</a> (const int &amp;bookCount)</td></tr>
+<tr class="separator:ad03651902aa14f3cd4d15385f2a8a5b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ad03651902aa14f3cd4d15385f2a8a5b6" name="ad03651902aa14f3cd4d15385f2a8a5b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad03651902aa14f3cd4d15385f2a8a5b6">&#9670;&#160;</a></span>AskKeyword()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string AskKeyword </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>bookCount</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>validateAndAsk prompts the user to search for a book and returns the search term.</p>
+<p>Parameters:</p><ul>
+<li>bookCount: The number of books available in the book list (passed by reference).</li>
+</ul>
+<p>Returns:</p><ul>
+<li>A string representing the user's search term if the book list is not empty. </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="lookUp_8cpp_source.html#l00295">295</a> of file <a class="el" href="lookUp_8cpp_source.html">lookUp.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  296</span>{</div>
+<div class="line"><span class="lineno">  297</span>    <span class="keywordtype">string</span> toSearch;</div>
+<div class="line"><span class="lineno">  298</span> </div>
+<div class="line"><span class="lineno">  299</span>    system (<span class="stringliteral">&quot;clear&quot;</span>);</div>
+<div class="line"><span class="lineno">  300</span>    <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (33);</div>
+<div class="line"><span class="lineno">  301</span>    cout &lt;&lt; <span class="stringliteral">&quot;╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n&quot;</span>; </div>
+<div class="line"><span class="lineno">  302</span>   cout &lt;&lt; <span class="stringliteral">&quot;║                                       &gt;&gt;&gt; BOOK LOOKUP &lt;&lt;&lt;                                          ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  303</span>    cout &lt;&lt; <span class="stringliteral">&quot;╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  304</span>   cout &lt;&lt; <span class="stringliteral">&quot;                                      Search → &quot;</span>;</div>
+<div class="line"><span class="lineno">  305</span>        </div>
+<div class="line"><span class="lineno">  306</span>   getline (cin, toSearch);</div>
+<div class="line"><span class="lineno">  307</span>    <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
+<div class="line"><span class="lineno">  308</span>    <span class="keywordflow">return</span> toSearch;</div>
+<div class="line"><span class="lineno">  309</span>}</div>
+<div class="ttc" id="asetColour_8h_html_a682d98f55e0091ceaff7e01e243fd8e5"><div class="ttname"><a href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a></div><div class="ttdeci">void setColour(int colourCode)</div><div class="ttdef"><b>Definition:</b> <a href="setColour_8cpp_source.html#l00013">setColour.cpp:13</a></div></div>
+<div class="ttc" id="asetColour_8h_html_a92d2d8b4856c8fada2acd3e38538f493"><div class="ttname"><a href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a></div><div class="ttdeci">void resetColour()</div><div class="ttdef"><b>Definition:</b> <a href="setColour_8cpp_source.html#l00024">setColour.cpp:24</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="afa3875315ce7e454544a9edafdf27f45" name="afa3875315ce7e454544a9edafdf27f45"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afa3875315ce7e454544a9edafdf27f45">&#9670;&#160;</a></span>findString()</h2>
 
@@ -174,6 +219,46 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a1898c0545d6342f653f0db2999876564" name="a1898c0545d6342f653f0db2999876564"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1898c0545d6342f653f0db2999876564">&#9670;&#160;</a></span>findStringInCart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int findStringInCart </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>toSearch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classBookType.html">BookType</a>&#160;</td>
+          <td class="paramname"><em>array</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cart</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="abf04499e1c95fb90d331ebee6074d3b8" name="abf04499e1c95fb90d331ebee6074d3b8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abf04499e1c95fb90d331ebee6074d3b8">&#9670;&#160;</a></span>mainLookUp()</h2>
 
@@ -190,64 +275,6 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="acf7cae378d5f2bef18b6e4bbdc270c43" name="acf7cae378d5f2bef18b6e4bbdc270c43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf7cae378d5f2bef18b6e4bbdc270c43">&#9670;&#160;</a></span>validateAndAsk()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string validateAndAsk </td>
-          <td>(</td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>bookCount</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>validateAndAsk prompts the user to search for a book and returns the search term. If the book list is empty, it waits for user input before returning an empty string.</p>
-<p>Parameters:</p><ul>
-<li>bookCount: The number of books available in the book list (passed by reference).</li>
-</ul>
-<p>Returns:</p><ul>
-<li>A string representing the user's search term if the book list is not empty.</li>
-<li>An empty string ("") if the book list is empty. </li>
-</ul>
-
-<p class="definition">Definition at line <a class="el" href="lookUp_8cpp_source.html#l00188">188</a> of file <a class="el" href="lookUp_8cpp_source.html">lookUp.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  189</span>{</div>
-<div class="line"><span class="lineno">  190</span>    <span class="keywordtype">string</span> toSearch;</div>
-<div class="line"><span class="lineno">  191</span> </div>
-<div class="line"><span class="lineno">  192</span>    <span class="keywordflow">if</span> (bookCount == 0)</div>
-<div class="line"><span class="lineno">  193</span>    {</div>
-<div class="line"><span class="lineno">  194</span>        system (<span class="stringliteral">&quot;clear&quot;</span>);</div>
-<div class="line"><span class="lineno">  195</span>        cout &lt;&lt; <span class="stringliteral">&quot;╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  196</span>        cout &lt;&lt; <span class="stringliteral">&quot;║ &quot;</span> &lt;&lt; setw (98) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;The book list is empty, no books available for search.. &quot;</span> &lt;&lt; <span class="stringliteral">&quot; ║ \n&quot;</span> ;</div>
-<div class="line"><span class="lineno">  197</span>        cout &lt;&lt; <span class="stringliteral">&quot;║ &quot;</span> &lt;&lt; setw (98) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;Press any key to continue &quot;</span> &lt;&lt; <span class="stringliteral">&quot; ║ \n&quot;</span> ;</div>
-<div class="line"><span class="lineno">  198</span>        cout &lt;&lt; <span class="stringliteral">&quot;╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n&quot;</span>; </div>
-<div class="line"><span class="lineno">  199</span>        cin.ignore(numeric_limits&lt;streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);  <span class="comment">// Wait for user input before continuing</span></div>
-<div class="line"><span class="lineno">  200</span>    }</div>
-<div class="line"><span class="lineno">  201</span> </div>
-<div class="line"><span class="lineno">  202</span>    <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  203</span>        system (<span class="stringliteral">&quot;clear&quot;</span>);</div>
-<div class="line"><span class="lineno">  204</span>        <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (33);</div>
-<div class="line"><span class="lineno">  205</span>        cout &lt;&lt; <span class="stringliteral">&quot;╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n&quot;</span>; </div>
-<div class="line"><span class="lineno">  206</span>            cout &lt;&lt; <span class="stringliteral">&quot;║                                       &gt;&gt;&gt; BOOK LOOKUP &lt;&lt;&lt;                                          ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  207</span>        cout &lt;&lt; <span class="stringliteral">&quot;╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  208</span>            cout &lt;&lt; <span class="stringliteral">&quot;                                      Search : &quot;</span>;</div>
-<div class="line"><span class="lineno">  209</span>        </div>
-<div class="line"><span class="lineno">  210</span>        getline (cin, toSearch);</div>
-<div class="line"><span class="lineno">  211</span>    <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
-<div class="line"><span class="lineno">  212</span>    <span class="keywordflow">return</span> toSearch;</div>
-<div class="line"><span class="lineno">  213</span>    }</div>
-<div class="line"><span class="lineno">  214</span> </div>
-<div class="line"><span class="lineno">  215</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>; <span class="comment">// Return empty string if book count is 0 and user pressed a key</span></div>
-<div class="line"><span class="lineno">  216</span>}</div>
-<div class="ttc" id="asetColour_8h_html_a682d98f55e0091ceaff7e01e243fd8e5"><div class="ttname"><a href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a></div><div class="ttdeci">void setColour(int colourCode)</div><div class="ttdef"><b>Definition:</b> <a href="setColour_8cpp_source.html#l00013">setColour.cpp:13</a></div></div>
-<div class="ttc" id="asetColour_8h_html_a92d2d8b4856c8fada2acd3e38538f493"><div class="ttname"><a href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a></div><div class="ttdeci">void resetColour()</div><div class="ttdef"><b>Definition:</b> <a href="setColour_8cpp_source.html#l00024">setColour.cpp:24</a></div></div>
-</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

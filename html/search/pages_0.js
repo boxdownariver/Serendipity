@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['serendipity_0',['Serendipity',['../md_README.html',1,'']]]
+  ['deprecated_20list_0',['Deprecated List',['../deprecated.html',1,'']]]
 ];

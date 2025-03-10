@@ -26,6 +26,7 @@ var NAVTREE =
 [
   [ "Group 1 Serendipity Project", "index.html", [
     [ "Serendipity", "md_README.html", null ],
+    [ "Deprecated List", "deprecated.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [

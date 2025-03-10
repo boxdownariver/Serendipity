@@ -21,7 +21,7 @@ using namespace std;
 void bookInfoWindow(const BookType array[], const int bookIndex );
 
 
-/**
+/** \deprecated
  * mainbookInfo serves as a wrapper function that calls `bookInfoWindow` to display detailed information 
  * about a specific book from the database.
  * 
@@ -38,7 +38,7 @@ int mainbookInfo ( const BookType array[], const int &bookIndex )
 }
 
 
-/**
+/** \deprecated
  * bookInfoWindow is responsible for printing detailed information about a specific book.
  * 
  * This function takes in the following parameters:

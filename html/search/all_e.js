@@ -13,7 +13,8 @@ var searchData=
   ['settitle_10',['setTitle',['../classBookType.html#a48aa8e4eb23818c086ed84bc22d25269',1,'BookType']]],
   ['setwholesale_11',['setWholesale',['../classBookType.html#ab7c836e9b1307497b34ae6fe5d0734f1',1,'BookType']]],
   ['showcart_12',['showCart',['../cashier_8cpp.html#aef0b7e4f36dfdc9630fe9c17d9d8baeb',1,'cashier.cpp']]],
-  ['startwindow_13',['startWindow',['../menuDipity_8h.html#ae7fa97802caf4dbaf3d16339f1f977ca',1,'startWindow(WINDOW *&amp;mainWindow):&#160;menuDipity.cpp'],['../menuDipity_8cpp.html#ae7fa97802caf4dbaf3d16339f1f977ca',1,'startWindow(WINDOW *&amp;mainWindow):&#160;menuDipity.cpp']]],
-  ['stateprovider_14',['stateProvider',['../menuDipity_8cpp.html#a8a2651374b4c745171073b8aee20eee3',1,'menuDipity.cpp']]],
-  ['storename_15',['storeName',['../structMenuLines.html#a0af95e4dcce7da30088989156d66ffaf',1,'MenuLines']]]
+  ['showcashiermenu_13',['showCashierMenu',['../cashier_8cpp.html#ac1691320d0e13ff1eb39e4121c3a34e8',1,'cashier.cpp']]],
+  ['startwindow_14',['startWindow',['../menuDipity_8h.html#ae7fa97802caf4dbaf3d16339f1f977ca',1,'startWindow(WINDOW *&amp;mainWindow):&#160;menuDipity.cpp'],['../menuDipity_8cpp.html#ae7fa97802caf4dbaf3d16339f1f977ca',1,'startWindow(WINDOW *&amp;mainWindow):&#160;menuDipity.cpp']]],
+  ['stateprovider_15',['stateProvider',['../menuDipity_8cpp.html#a8a2651374b4c745171073b8aee20eee3',1,'menuDipity.cpp']]],
+  ['storename_16',['storeName',['../structMenuLines.html#a0af95e4dcce7da30088989156d66ffaf',1,'MenuLines']]]
 ];

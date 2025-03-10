@@ -136,8 +136,12 @@ Include dependency graph for cashier.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a55c9d925a001cb9f330bb9697a2785ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cashier_8cpp.html#a55c9d925a001cb9f330bb9697a2785ad">purchaseBook</a> (<a class="el" href="classBookType.html">BookType</a> books[], int index, int <a class="el" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[])</td></tr>
-<tr class="separator:a55c9d925a001cb9f330bb9697a2785ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1691320d0e13ff1eb39e4121c3a34e8"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cashier_8cpp.html#ac1691320d0e13ff1eb39e4121c3a34e8">showCashierMenu</a> ()</td></tr>
+<tr class="separator:ac1691320d0e13ff1eb39e4121c3a34e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32a015c18396175be8c3efe898da07cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cashier_8cpp.html#a32a015c18396175be8c3efe898da07cc">addBook</a> (<a class="el" href="classBookType.html">BookType</a> books[], int index, int <a class="el" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[])</td></tr>
+<tr class="separator:a32a015c18396175be8c3efe898da07cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5c6fe67a68bf74d321d11303c66d4c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cashier_8cpp.html#af5c6fe67a68bf74d321d11303c66d4c3">removeBook</a> (<a class="el" href="classBookType.html">BookType</a> books[], int index, int <a class="el" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[])</td></tr>
+<tr class="separator:af5c6fe67a68bf74d321d11303c66d4c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef0b7e4f36dfdc9630fe9c17d9d8baeb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cashier_8cpp.html#aef0b7e4f36dfdc9630fe9c17d9d8baeb">showCart</a> (<a class="el" href="classBookType.html">BookType</a> books[], int <a class="el" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[])</td></tr>
 <tr class="separator:aef0b7e4f36dfdc9630fe9c17d9d8baeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7e7d558ede8fc08bdf988885c460a34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cashier_8cpp.html#ad7e7d558ede8fc08bdf988885c460a34">FormatReport</a> (<a class="el" href="classBookType.html">BookType</a> books[], int <a class="el" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[], string date)</td></tr>
@@ -151,11 +155,145 @@ Functions</h2></td></tr>
 <div class="textblock"><p>DISPLAY A CASHIER REPORT </p><hr  />
 <p> This <a class="el" href="cashier_8cpp.html">cashier.cpp</a> asks for book information to purchase (by title or by name) and it allows user to select more books on the same receipt. Then it calculates the total price for each book type. Finally it will create a nicely formatted cashier report. </p><dl class="section author"><dt>Author</dt><dd>Saliha Babar</dd></dl>
 <hr  />
-<p> INPUT toPurchase : title or isbn of the book to search for cart : array of user shopping cart</p>
+<p> INPUT keyword : title or isbn of the book to search for cart : array of user shopping cart</p>
 <p>OUTPUT date : current date to be printed on receipt subtotal : total before tax tax_amt : amount of tax applied totalAfterTax : total after tax (subtotal + tax_amt) </p>
 
 <p class="definition">Definition in file <a class="el" href="cashier_8cpp_source.html">cashier.cpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a32a015c18396175be8c3efe898da07cc" name="a32a015c18396175be8c3efe898da07cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32a015c18396175be8c3efe898da07cc">&#9670;&#160;</a></span>addBook()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addBook </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classBookType.html">BookType</a>&#160;</td>
+          <td class="paramname"><em>books</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cart</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>purchaseBook allows a user to purchase a book and adds it to their cart.</p>
+<p>This function displays the selected book's information, checks availability, and prompts the user to confirm adding it to their cart. If the stock is insufficient, the function automatically adjusts the purchase quantity to the maximum available stock. The user's cart is then updated accordingly.</p>
+<p>first parameter is books Array of <code><a class="el" href="classBookType.html">BookType</a></code> objects containing book information. second parameter is index of the book being purchased in the <code>books</code> array. third array is cart Array representing the user's cart, tracking quantities of books added. </p>
+
+<p class="definition">Definition at line <a class="el" href="cashier_8cpp_source.html#l00320">320</a> of file <a class="el" href="cashier_8cpp_source.html">cashier.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  321</span>{</div>
+<div class="line"><span class="lineno">  322</span>    <span class="comment">// show the book info to user to confirm purchase</span></div>
+<div class="line"><span class="lineno">  323</span>    <span class="keywordtype">char</span> decision;</div>
+<div class="line"><span class="lineno">  324</span>    <span class="keywordtype">int</span> numToPurchase;</div>
+<div class="line"><span class="lineno">  325</span>    <span class="keywordtype">int</span> numAvailable;</div>
+<div class="line"><span class="lineno">  326</span> </div>
+<div class="line"><span class="lineno">  327</span>    numAvailable = books[index].<a class="code hl_function" href="classBookType.html#a8429f87cac6b7d70ef56f6821cdccfba">getQtyOnHand</a>() - <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[index];</div>
+<div class="line"><span class="lineno">  328</span>    system (<span class="stringliteral">&quot;clear&quot;</span>);</div>
+<div class="line"><span class="lineno">  329</span>    <span class="comment">//mainbookInfo(books, index);</span></div>
+<div class="line"><span class="lineno">  330</span>    books[index].<a class="code hl_function" href="classBookType.html#af5eadc6e768e9a8213696355f8f25481">printBookInfo</a>();</div>
+<div class="line"><span class="lineno">  331</span> </div>
+<div class="line"><span class="lineno">  332</span>    <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (97);</div>
+<div class="line"><span class="lineno">  333</span>    cout &lt;&lt; <span class="stringliteral">&quot;                           ┌────────────────────────────────────────┐\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  334</span>    cout &lt;&lt; <span class="stringliteral">&quot;                                 Stock available : &quot;</span> &lt;&lt; books[index].<a class="code hl_function" href="classBookType.html#a8429f87cac6b7d70ef56f6821cdccfba">getQtyOnHand</a>() &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  335</span>    cout &lt;&lt; <span class="stringliteral">&quot;                                 In Your Cart    : &quot;</span> &lt;&lt; <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[index] &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  336</span>    cout &lt;&lt; <span class="stringliteral">&quot;                           └────────────────────────────────────────┘\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  337</span> </div>
+<div class="line"><span class="lineno">  338</span>    <span class="keywordflow">if</span> ( books[index].getQtyOnHand() == 0 &amp;&amp; <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[index] == 0 )</div>
+<div class="line"><span class="lineno">  339</span>            {   <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (33);</div>
+<div class="line"><span class="lineno">  340</span>                cout &lt;&lt; setw(70) &lt;&lt; right &lt;&lt; <span class="stringliteral">&quot;Sorry, we are out of stock for this book.\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  341</span>                <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
+<div class="line"><span class="lineno">  342</span>                cout &lt;&lt; <span class="stringliteral">&quot;Press enter to continue...\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  343</span>                cin.ignore(numeric_limits&lt;streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">  344</span> </div>
+<div class="line"><span class="lineno">  345</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  346</span>            }</div>
+<div class="line"><span class="lineno">  347</span> </div>
+<div class="line"><span class="lineno">  348</span>    <span class="keywordflow">if</span> (numAvailable == 0 &amp;&amp; books[index].getQtyOnHand() == <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[index] )</div>
+<div class="line"><span class="lineno">  349</span>            {   <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (33);</div>
+<div class="line"><span class="lineno">  350</span>                cout &lt;&lt; <span class="stringliteral">&quot;          Can&#39;t add more of this book. Your cart has the maximum quantity of this book. \n&quot;</span>;</div>
+<div class="line"><span class="lineno">  351</span>                <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
+<div class="line"><span class="lineno">  352</span>                cout &lt;&lt; <span class="stringliteral">&quot;Press enter to continue...\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  353</span>                cin.ignore(numeric_limits&lt;streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">  354</span> </div>
+<div class="line"><span class="lineno">  355</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  356</span>            }</div>
+<div class="line"><span class="lineno">  357</span> </div>
+<div class="line"><span class="lineno">  358</span>    </div>
+<div class="line"><span class="lineno">  359</span>    <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (33);</div>
+<div class="line"><span class="lineno">  360</span>    cout &lt;&lt; <span class="stringliteral">&quot;                ┌──────────────────────────────────────────────────────────────────┐\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  361</span>    cout &lt;&lt; <span class="stringliteral">&quot;                │       Would you like to add this book to your cart? (Y/N)        │\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  362</span>    cout &lt;&lt; <span class="stringliteral">&quot;                └──────────────────────────────────────────────────────────────────┘\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  363</span>    <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
+<div class="line"><span class="lineno">  364</span>    cout &lt;&lt; right &lt;&lt; setw(50)&lt;&lt; <span class="stringliteral">&quot;→  &quot;</span>;</div>
+<div class="line"><span class="lineno">  365</span>    cin.get (decision);</div>
+<div class="line"><span class="lineno">  366</span>    cin.ignore (100, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">  367</span>    </div>
+<div class="line"><span class="lineno">  368</span>    <span class="keywordflow">while</span> (toupper(decision) != <span class="charliteral">&#39;N&#39;</span> &amp;&amp; toupper(decision) != <span class="charliteral">&#39;Y&#39;</span> )</div>
+<div class="line"><span class="lineno">  369</span>            {</div>
+<div class="line"><span class="lineno">  370</span>                cout &lt;&lt; decision &lt;&lt; <span class="stringliteral">&quot; is invalid choice.. Only enter Y or N.\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  371</span>                cout &lt;&lt; right &lt;&lt; setw(50)&lt;&lt; <span class="stringliteral">&quot;→  &quot;</span>;</div>
+<div class="line"><span class="lineno">  372</span>                cin.get (decision);</div>
+<div class="line"><span class="lineno">  373</span>                cin.ignore (100, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">  374</span>            }</div>
+<div class="line"><span class="lineno">  375</span>    <span class="keywordflow">if</span> (toupper(decision) == <span class="charliteral">&#39;Y&#39;</span>)</div>
+<div class="line"><span class="lineno">  376</span>    {</div>
+<div class="line"><span class="lineno">  377</span>        <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (93);</div>
+<div class="line"><span class="lineno">  378</span>        cout &lt;&lt; setw (40) &lt;&lt; right &lt;&lt; <span class="stringliteral">&quot;You can add up to &quot;</span> &lt;&lt; numAvailable &lt;&lt; <span class="stringliteral">&quot; book(s). Please enter quantity below.\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  379</span>        <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
+<div class="line"><span class="lineno">  380</span>        cout &lt;&lt; right &lt;&lt; setw(50)&lt;&lt; <span class="stringliteral">&quot;→  &quot;</span>;</div>
+<div class="line"><span class="lineno">  381</span>        cin &gt;&gt; numToPurchase;</div>
+<div class="line"><span class="lineno">  382</span>        cin.ignore();</div>
+<div class="line"><span class="lineno">  383</span>            <span class="keywordflow">while</span> (numToPurchase &lt; 0)</div>
+<div class="line"><span class="lineno">  384</span>            {</div>
+<div class="line"><span class="lineno">  385</span>                cout &lt;&lt; setw (40) &lt;&lt; right &lt;&lt;<span class="stringliteral">&quot;Invalid quantity entered..Enter quantity again..\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  386</span>                cout &lt;&lt; right &lt;&lt; setw(50)&lt;&lt; <span class="stringliteral">&quot;→  &quot;</span>;</div>
+<div class="line"><span class="lineno">  387</span>                cin &gt;&gt; numToPurchase;</div>
+<div class="line"><span class="lineno">  388</span>                cin.ignore();</div>
+<div class="line"><span class="lineno">  389</span>            }</div>
+<div class="line"><span class="lineno">  390</span> </div>
+<div class="line"><span class="lineno">  391</span>            <span class="keywordflow">if</span> (numToPurchase &gt; numAvailable )</div>
+<div class="line"><span class="lineno">  392</span>            {</div>
+<div class="line"><span class="lineno">  393</span>                <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (96);</div>
+<div class="line"><span class="lineno">  394</span>                cout &lt;&lt; <span class="stringliteral">&quot;    The requested quantity exceeds stock, so we&#39;ve added the maximum available to your cart..\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  395</span>                <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
+<div class="line"><span class="lineno">  396</span>                numToPurchase = numAvailable ;</div>
+<div class="line"><span class="lineno">  397</span>            }</div>
+<div class="line"><span class="lineno">  398</span> </div>
+<div class="line"><span class="lineno">  399</span>            <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a>(32);</div>
+<div class="line"><span class="lineno">  400</span>            cout &lt;&lt; <span class="stringliteral">&quot;                ┌──────────────────────────────────────────────────────────────────┐\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  401</span>            cout &lt;&lt; <span class="stringliteral">&quot;                │            &quot;</span> &lt;&lt; setw (3) &lt;&lt; right &lt;&lt; numToPurchase &lt;&lt; <span class="stringliteral">&quot; books added to your cart successfully!            │\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  402</span>            cout &lt;&lt; <span class="stringliteral">&quot;                └──────────────────────────────────────────────────────────────────┘\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  403</span>            <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
+<div class="line"><span class="lineno">  404</span>            cout &lt;&lt; setw (30) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;Press enter to continue...\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  405</span>            cin.ignore(numeric_limits&lt;streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">  406</span>            <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[index] += numToPurchase;</div>
+<div class="line"><span class="lineno">  407</span>    }</div>
+<div class="line"><span class="lineno">  408</span> </div>
+<div class="line"><span class="lineno">  409</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  410</span>}</div>
+<div class="ttc" id="acashier_8h_html_a2d308849667e1bd97090c1c472986c7a"><div class="ttname"><a href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a></div><div class="ttdeci">int cart[20]</div><div class="ttdef"><b>Definition:</b> <a href="cashier_8h_source.html#l00008">cashier.h:8</a></div></div>
+<div class="ttc" id="aclassBookType_html_a8429f87cac6b7d70ef56f6821cdccfba"><div class="ttname"><a href="classBookType.html#a8429f87cac6b7d70ef56f6821cdccfba">BookType::getQtyOnHand</a></div><div class="ttdeci">int getQtyOnHand() const</div><div class="ttdoc">Gets the quantity of books available.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00033">bookType.h:33</a></div></div>
+<div class="ttc" id="aclassBookType_html_af5eadc6e768e9a8213696355f8f25481"><div class="ttname"><a href="classBookType.html#af5eadc6e768e9a8213696355f8f25481">BookType::printBookInfo</a></div><div class="ttdeci">void printBookInfo() const</div><div class="ttdoc">bookInfo() replacement</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8cpp_source.html#l00048">bookType.cpp:48</a></div></div>
+<div class="ttc" id="asetColour_8h_html_a682d98f55e0091ceaff7e01e243fd8e5"><div class="ttname"><a href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a></div><div class="ttdeci">void setColour(int colourCode)</div><div class="ttdef"><b>Definition:</b> <a href="setColour_8cpp_source.html#l00013">setColour.cpp:13</a></div></div>
+<div class="ttc" id="asetColour_8h_html_a92d2d8b4856c8fada2acd3e38538f493"><div class="ttname"><a href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a></div><div class="ttdeci">void resetColour()</div><div class="ttdef"><b>Definition:</b> <a href="setColour_8cpp_source.html#l00024">setColour.cpp:24</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ad7e7d558ede8fc08bdf988885c460a34" name="ad7e7d558ede8fc08bdf988885c460a34"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad7e7d558ede8fc08bdf988885c460a34">&#9670;&#160;</a></span>FormatReport()</h2>
 
@@ -191,93 +329,90 @@ Functions</h2></td></tr>
 <p>This function calculates the subtotal, tax amount, and total price of the books purchased. It then prints a receipt-like output that includes book details, purchase quantities, prices, and the final total. Additionally, it updates the available stock by deducting the purchased quantities from inventory.</p>
 <p>first parameter is books Array of <code><a class="el" href="classBookType.html">BookType</a></code> objects containing book details. second parameter cart Array representing the user's shopping cart with quantities of books purchased. third parameter is a date as a string to be displayed on the receipt. </p>
 
-<p class="definition">Definition at line <a class="el" href="cashier_8cpp_source.html#l00352">352</a> of file <a class="el" href="cashier_8cpp_source.html">cashier.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  353</span>{</div>
-<div class="line"><span class="lineno">  354</span>    <span class="keywordtype">float</span> subtotal = 0;</div>
-<div class="line"><span class="lineno">  355</span>    <span class="keywordtype">float</span> tax_amt;</div>
-<div class="line"><span class="lineno">  356</span>    <span class="keyword">const</span> <span class="keywordtype">float</span> TAX_PCT = 0.06;</div>
-<div class="line"><span class="lineno">  357</span>    <span class="keywordtype">float</span> totalAfterTax;</div>
-<div class="line"><span class="lineno">  358</span>    <span class="keywordtype">string</span> tempTitle;</div>
-<div class="line"><span class="lineno">  359</span>    </div>
-<div class="line"><span class="lineno">  360</span>    <span class="comment">// making calculations adn reduce the quantity on database</span></div>
-<div class="line"><span class="lineno">  361</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 20 ; i++)</div>
-<div class="line"><span class="lineno">  362</span>    {</div>
-<div class="line"><span class="lineno">  363</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i] &gt; 0)</div>
-<div class="line"><span class="lineno">  364</span>            {</div>
-<div class="line"><span class="lineno">  365</span>                books[i].<a class="code hl_function" href="classBookType.html#a7c092faa1707219b63aa2e9e6f61eb4b">setQtyOnHand</a>(books[i].getQtyOnHand() - <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i]);</div>
-<div class="line"><span class="lineno">  366</span>                subtotal += books[i].<a class="code hl_function" href="classBookType.html#a60e45a826a946b465b222849477c9b41">getRetail</a>() * <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i];</div>
-<div class="line"><span class="lineno">  367</span>            }</div>
-<div class="line"><span class="lineno">  368</span>    }</div>
-<div class="line"><span class="lineno">  369</span>    tax_amt = TAX_PCT * subtotal;</div>
-<div class="line"><span class="lineno">  370</span>    totalAfterTax = subtotal + tax_amt;</div>
-<div class="line"><span class="lineno">  371</span> </div>
-<div class="line"><span class="lineno">  372</span>    <span class="comment">// For fixed precision ( show 2 decimal point )</span></div>
-<div class="line"><span class="lineno">  373</span>    <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (96);   <span class="comment">// Receipt generally using cyan colour</span></div>
-<div class="line"><span class="lineno">  374</span>    cout &lt;&lt; fixed &lt;&lt; setprecision(2);</div>
-<div class="line"><span class="lineno">  375</span>    </div>
-<div class="line"><span class="lineno">  376</span>    cout &lt;&lt; <span class="stringliteral">&quot;╔═════════════════════════════════════════════~════════════════════════════════╗\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  377</span>    cout &lt;&lt; <span class="stringliteral">&quot;║                                                                              ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  378</span>    cout &lt;&lt; <span class="stringliteral">&quot;║&quot;</span>; </div>
-<div class="line"><span class="lineno">  379</span>    <span class="comment">// Set cyan colour for shop name</span></div>
-<div class="line"><span class="lineno">  380</span>    <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a>(97);</div>
-<div class="line"><span class="lineno">  381</span>    cout &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;Serendipity Book Sellers&quot;</span>; </div>
-<div class="line"><span class="lineno">  382</span>    <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (96);    <span class="comment">// Back cyan colour</span></div>
-<div class="line"><span class="lineno">  383</span>    cout &lt;&lt; <span class="stringliteral">&quot;║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  384</span>    cout &lt;&lt; <span class="stringliteral">&quot;║                                                                              ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  385</span>    cout &lt;&lt; <span class="stringliteral">&quot;║ Date: &quot;</span> &lt;&lt; setw (71) &lt;&lt; left &lt;&lt; date &lt;&lt; <span class="stringliteral">&quot;║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  386</span>    cout &lt;&lt; <span class="stringliteral">&quot;║                                                                              ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  387</span>    cout &lt;&lt; <span class="stringliteral">&quot;║&quot;</span> &lt;&lt; setw(5) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;Qty&quot;</span> &lt;&lt; setw(14) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;ISBN&quot;</span> &lt;&lt; setw(38) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;Title&quot;</span>;</div>
-<div class="line"><span class="lineno">  388</span>    cout &lt;&lt; setw (12) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;Price&quot;</span> &lt;&lt; setw (9) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;Total&quot;</span> &lt;&lt; <span class="stringliteral">&quot;║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  389</span>    cout &lt;&lt; <span class="stringliteral">&quot;╠══════════════════════════════════════════════════════════════════════════════╣\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  390</span> </div>
-<div class="line"><span class="lineno">  391</span><span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 20 ; i++)</div>
-<div class="line"><span class="lineno">  392</span>{</div>
-<div class="line"><span class="lineno">  393</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i] &gt; 0)</div>
-<div class="line"><span class="lineno">  394</span>    {</div>
-<div class="line"><span class="lineno">  395</span>            cout &lt;&lt; <span class="stringliteral">&quot;║&quot;</span> &lt;&lt; setw(3) &lt;&lt; right &lt;&lt; <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i] &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; setw (14) &lt;&lt; left &lt;&lt; books[i].<a class="code hl_function" href="classBookType.html#ac1e5aab4bc4f18eaad0ebe14f3046b7b">getISBN</a>();</div>
-<div class="line"><span class="lineno">  396</span>    </div>
-<div class="line"><span class="lineno">  397</span>            <span class="comment">// placement of the book title</span></div>
-<div class="line"><span class="lineno">  398</span>            <span class="keywordflow">if</span> (books[i].getTitle().length() &lt;= 34 )</div>
-<div class="line"><span class="lineno">  399</span>            {</div>
-<div class="line"><span class="lineno">  400</span>                cout &lt;&lt; setw (36) &lt;&lt; left &lt;&lt; books[i].<a class="code hl_function" href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">getTitle</a>();</div>
-<div class="line"><span class="lineno">  401</span>            }</div>
-<div class="line"><span class="lineno">  402</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  403</span>            {</div>
-<div class="line"><span class="lineno">  404</span>                tempTitle = books[i].<a class="code hl_function" href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">getTitle</a>().substr(0, 33);</div>
-<div class="line"><span class="lineno">  405</span>                cout &lt;&lt; setw (32) &lt;&lt; left &lt;&lt; tempTitle &lt;&lt; <span class="stringliteral">&quot;...&quot;</span>;</div>
-<div class="line"><span class="lineno">  406</span>            }</div>
-<div class="line"><span class="lineno">  407</span> </div>
-<div class="line"><span class="lineno">  408</span>            cout &lt;&lt; setw (3) &lt;&lt; right &lt;&lt; <span class="stringliteral">&quot;$&quot;</span> &lt;&lt; setw (7) &lt;&lt; right &lt;&lt; books[i].<a class="code hl_function" href="classBookType.html#a60e45a826a946b465b222849477c9b41">getRetail</a>() &lt;&lt; setw (5) &lt;&lt; right &lt;&lt; <span class="stringliteral">&quot;$&quot;</span> &lt;&lt; setw(7) &lt;&lt; right &lt;&lt; books[i].<a class="code hl_function" href="classBookType.html#a60e45a826a946b465b222849477c9b41">getRetail</a>() * <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i] &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  409</span>    }</div>
-<div class="line"><span class="lineno">  410</span>}   </div>
-<div class="line"><span class="lineno">  411</span>    cout &lt;&lt; <span class="stringliteral">&quot;║                                                                              ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  412</span>    cout &lt;&lt; <span class="stringliteral">&quot;║                                                                              ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  413</span>    cout &lt;&lt; setw (58) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;║&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Subtotal    $&quot;</span> &lt;&lt; setw (8) &lt;&lt; right &lt;&lt; subtotal &lt;&lt; <span class="stringliteral">&quot;  ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  414</span>    cout &lt;&lt; setw (58) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;║&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Tax         $&quot;</span> &lt;&lt; setw (8) &lt;&lt; right &lt;&lt; tax_amt &lt;&lt; <span class="stringliteral">&quot;  ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  415</span>    cout &lt;&lt; setw (58) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;║&quot;</span>;</div>
-<div class="line"><span class="lineno">  416</span>    <span class="comment">// Set total colour to Yellow</span></div>
-<div class="line"><span class="lineno">  417</span>    <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (93);</div>
-<div class="line"><span class="lineno">  418</span>    cout &lt;&lt; <span class="stringliteral">&quot;Total       $&quot;</span> &lt;&lt; setw (8) &lt;&lt; right &lt;&lt; totalAfterTax;</div>
-<div class="line"><span class="lineno">  419</span>    <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (96);     <span class="comment">// Back to cyan</span></div>
-<div class="line"><span class="lineno">  420</span>    cout &lt;&lt; setw (3) &lt;&lt; right &lt;&lt; <span class="stringliteral">&quot;  ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  421</span>    cout &lt;&lt; <span class="stringliteral">&quot;║                                                                              ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  422</span>    cout &lt;&lt; <span class="stringliteral">&quot;║ &quot;</span>;</div>
-<div class="line"><span class="lineno">  423</span>    <span class="comment">// Print thank you text in white</span></div>
-<div class="line"><span class="lineno">  424</span>    <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
-<div class="line"><span class="lineno">  425</span>    cout&lt;&lt; setw (77) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;Thank you for shopping at Serendipity!&quot;</span>;</div>
-<div class="line"><span class="lineno">  426</span>    <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (96);    <span class="comment">// Back to cyan colour</span></div>
-<div class="line"><span class="lineno">  427</span>    cout &lt;&lt; <span class="stringliteral">&quot;║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  428</span>    cout &lt;&lt; <span class="stringliteral">&quot;╚══════════════════════════════════════════════════════════════════════════════╝\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  429</span>    <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
-<div class="line"><span class="lineno">  430</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  431</span>}</div>
-<div class="ttc" id="acashier_8h_html_a2d308849667e1bd97090c1c472986c7a"><div class="ttname"><a href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a></div><div class="ttdeci">int cart[20]</div><div class="ttdef"><b>Definition:</b> <a href="cashier_8h_source.html#l00008">cashier.h:8</a></div></div>
+<p class="definition">Definition at line <a class="el" href="cashier_8cpp_source.html#l00577">577</a> of file <a class="el" href="cashier_8cpp_source.html">cashier.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  578</span>{</div>
+<div class="line"><span class="lineno">  579</span>    <span class="keywordtype">float</span> subtotal = 0;</div>
+<div class="line"><span class="lineno">  580</span>    <span class="keywordtype">float</span> tax_amt;</div>
+<div class="line"><span class="lineno">  581</span>    <span class="keyword">const</span> <span class="keywordtype">float</span> TAX_PCT = 0.06;</div>
+<div class="line"><span class="lineno">  582</span>    <span class="keywordtype">float</span> totalAfterTax;</div>
+<div class="line"><span class="lineno">  583</span>    <span class="keywordtype">string</span> tempTitle;</div>
+<div class="line"><span class="lineno">  584</span>    </div>
+<div class="line"><span class="lineno">  585</span>    <span class="comment">// making calculations adn reduce the quantity on database</span></div>
+<div class="line"><span class="lineno">  586</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 20 ; i++)</div>
+<div class="line"><span class="lineno">  587</span>    {</div>
+<div class="line"><span class="lineno">  588</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i] &gt; 0)</div>
+<div class="line"><span class="lineno">  589</span>            {</div>
+<div class="line"><span class="lineno">  590</span>                books[i].<a class="code hl_function" href="classBookType.html#a7c092faa1707219b63aa2e9e6f61eb4b">setQtyOnHand</a>(books[i].getQtyOnHand() - <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i]);</div>
+<div class="line"><span class="lineno">  591</span>                subtotal += books[i].<a class="code hl_function" href="classBookType.html#a60e45a826a946b465b222849477c9b41">getRetail</a>() * <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i];</div>
+<div class="line"><span class="lineno">  592</span>            }</div>
+<div class="line"><span class="lineno">  593</span>    }</div>
+<div class="line"><span class="lineno">  594</span>    tax_amt = TAX_PCT * subtotal;</div>
+<div class="line"><span class="lineno">  595</span>    totalAfterTax = subtotal + tax_amt;</div>
+<div class="line"><span class="lineno">  596</span> </div>
+<div class="line"><span class="lineno">  597</span>    <span class="comment">// For fixed precision ( show 2 decimal point )</span></div>
+<div class="line"><span class="lineno">  598</span>    <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (96);   <span class="comment">// Receipt generally using cyan colour</span></div>
+<div class="line"><span class="lineno">  599</span>    cout &lt;&lt; fixed &lt;&lt; setprecision(2);</div>
+<div class="line"><span class="lineno">  600</span>    system (<span class="stringliteral">&quot;clear&quot;</span>);</div>
+<div class="line"><span class="lineno">  601</span>    cout &lt;&lt; <span class="stringliteral">&quot;╔═════════════════════════════════════════════~════════════════════════════════╗\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  602</span>    cout &lt;&lt; <span class="stringliteral">&quot;║                                                                              ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  603</span>    cout &lt;&lt; <span class="stringliteral">&quot;║&quot;</span>; </div>
+<div class="line"><span class="lineno">  604</span>    <span class="comment">// Set cyan colour for shop name</span></div>
+<div class="line"><span class="lineno">  605</span>    <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a>(97);</div>
+<div class="line"><span class="lineno">  606</span>    cout &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;Serendipity Book Sellers&quot;</span>; </div>
+<div class="line"><span class="lineno">  607</span>    <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (96);    <span class="comment">// Back cyan colour</span></div>
+<div class="line"><span class="lineno">  608</span>    cout &lt;&lt; <span class="stringliteral">&quot;║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  609</span>    cout &lt;&lt; <span class="stringliteral">&quot;║                                                                              ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  610</span>    cout &lt;&lt; <span class="stringliteral">&quot;║ Date: &quot;</span> &lt;&lt; setw (71) &lt;&lt; left &lt;&lt; date &lt;&lt; <span class="stringliteral">&quot;║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  611</span>    cout &lt;&lt; <span class="stringliteral">&quot;║                                                                              ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  612</span>    cout &lt;&lt; <span class="stringliteral">&quot;║&quot;</span> &lt;&lt; setw(5) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;Qty&quot;</span> &lt;&lt; setw(14) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;ISBN&quot;</span> &lt;&lt; setw(38) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;Title&quot;</span>;</div>
+<div class="line"><span class="lineno">  613</span>    cout &lt;&lt; setw (12) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;Price&quot;</span> &lt;&lt; setw (9) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;Total&quot;</span> &lt;&lt; <span class="stringliteral">&quot;║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  614</span>    cout &lt;&lt; <span class="stringliteral">&quot;╠══════════════════════════════════════════════════════════════════════════════╣\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  615</span> </div>
+<div class="line"><span class="lineno">  616</span><span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 20 ; i++)</div>
+<div class="line"><span class="lineno">  617</span>{</div>
+<div class="line"><span class="lineno">  618</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i] &gt; 0)</div>
+<div class="line"><span class="lineno">  619</span>    {</div>
+<div class="line"><span class="lineno">  620</span>            cout &lt;&lt; <span class="stringliteral">&quot;║&quot;</span> &lt;&lt; setw(3) &lt;&lt; right &lt;&lt; <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i] &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; setw (14) &lt;&lt; left &lt;&lt; books[i].<a class="code hl_function" href="classBookType.html#ac1e5aab4bc4f18eaad0ebe14f3046b7b">getISBN</a>();</div>
+<div class="line"><span class="lineno">  621</span>    </div>
+<div class="line"><span class="lineno">  622</span>            <span class="comment">// placement of the book title</span></div>
+<div class="line"><span class="lineno">  623</span>            <span class="keywordflow">if</span> (books[i].getTitle().length() &lt;= 34 )</div>
+<div class="line"><span class="lineno">  624</span>            {</div>
+<div class="line"><span class="lineno">  625</span>                cout &lt;&lt; setw (36) &lt;&lt; left &lt;&lt; books[i].<a class="code hl_function" href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">getTitle</a>();</div>
+<div class="line"><span class="lineno">  626</span>            }</div>
+<div class="line"><span class="lineno">  627</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  628</span>            {</div>
+<div class="line"><span class="lineno">  629</span>                tempTitle = books[i].<a class="code hl_function" href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">getTitle</a>().substr(0, 33);</div>
+<div class="line"><span class="lineno">  630</span>                cout &lt;&lt; setw (32) &lt;&lt; left &lt;&lt; tempTitle &lt;&lt; <span class="stringliteral">&quot;...&quot;</span>;</div>
+<div class="line"><span class="lineno">  631</span>            }</div>
+<div class="line"><span class="lineno">  632</span> </div>
+<div class="line"><span class="lineno">  633</span>            cout &lt;&lt; setw (3) &lt;&lt; right &lt;&lt; <span class="stringliteral">&quot;$&quot;</span> &lt;&lt; setw (7) &lt;&lt; right &lt;&lt; books[i].<a class="code hl_function" href="classBookType.html#a60e45a826a946b465b222849477c9b41">getRetail</a>() &lt;&lt; setw (5) &lt;&lt; right &lt;&lt; <span class="stringliteral">&quot;$&quot;</span> &lt;&lt; setw(7) &lt;&lt; right &lt;&lt; books[i].<a class="code hl_function" href="classBookType.html#a60e45a826a946b465b222849477c9b41">getRetail</a>() * <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i] &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  634</span>    }</div>
+<div class="line"><span class="lineno">  635</span>}   </div>
+<div class="line"><span class="lineno">  636</span>    cout &lt;&lt; <span class="stringliteral">&quot;║                                                                              ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  637</span>    cout &lt;&lt; <span class="stringliteral">&quot;║                                                                              ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  638</span>    cout &lt;&lt; setw (58) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;║&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Subtotal    $&quot;</span> &lt;&lt; setw (8) &lt;&lt; right &lt;&lt; subtotal &lt;&lt; <span class="stringliteral">&quot;  ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  639</span>    cout &lt;&lt; setw (58) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;║&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Tax         $&quot;</span> &lt;&lt; setw (8) &lt;&lt; right &lt;&lt; tax_amt &lt;&lt; <span class="stringliteral">&quot;  ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  640</span>    cout &lt;&lt; setw (58) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;║&quot;</span>;</div>
+<div class="line"><span class="lineno">  641</span>    <span class="comment">// Set total colour to Yellow</span></div>
+<div class="line"><span class="lineno">  642</span>    <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (93);</div>
+<div class="line"><span class="lineno">  643</span>    cout &lt;&lt; <span class="stringliteral">&quot;Total       $&quot;</span> &lt;&lt; setw (8) &lt;&lt; right &lt;&lt; totalAfterTax;</div>
+<div class="line"><span class="lineno">  644</span>    <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (96);     <span class="comment">// Back to cyan</span></div>
+<div class="line"><span class="lineno">  645</span>    cout &lt;&lt; setw (3) &lt;&lt; right &lt;&lt; <span class="stringliteral">&quot;  ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  646</span>    cout &lt;&lt; <span class="stringliteral">&quot;║                                                                              ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  647</span>    cout &lt;&lt; <span class="stringliteral">&quot;║ &quot;</span>;</div>
+<div class="line"><span class="lineno">  648</span>    <span class="comment">// Print thank you text in white</span></div>
+<div class="line"><span class="lineno">  649</span>    <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
+<div class="line"><span class="lineno">  650</span>    cout&lt;&lt; setw (77) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;Thank you for shopping at Serendipity!&quot;</span>;</div>
+<div class="line"><span class="lineno">  651</span>    <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (96);    <span class="comment">// Back to cyan colour</span></div>
+<div class="line"><span class="lineno">  652</span>    cout &lt;&lt; <span class="stringliteral">&quot;║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  653</span>    cout &lt;&lt; <span class="stringliteral">&quot;╚══════════════════════════════════════════════════════════════════════════════╝\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  654</span>    <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
+<div class="line"><span class="lineno">  655</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  656</span>}</div>
 <div class="ttc" id="aclassBookType_html_a369dfce6a37730fd0d9b4b2b4586707b"><div class="ttname"><a href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">BookType::getTitle</a></div><div class="ttdeci">string getTitle() const</div><div class="ttdoc">Gets the book title.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00028">bookType.h:28</a></div></div>
 <div class="ttc" id="aclassBookType_html_a60e45a826a946b465b222849477c9b41"><div class="ttname"><a href="classBookType.html#a60e45a826a946b465b222849477c9b41">BookType::getRetail</a></div><div class="ttdeci">double getRetail() const</div><div class="ttdoc">Gets the retail value of book.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00035">bookType.h:35</a></div></div>
 <div class="ttc" id="aclassBookType_html_a7c092faa1707219b63aa2e9e6f61eb4b"><div class="ttname"><a href="classBookType.html#a7c092faa1707219b63aa2e9e6f61eb4b">BookType::setQtyOnHand</a></div><div class="ttdeci">void setQtyOnHand(int quantity)</div><div class="ttdoc">Sets the quantity of books available.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00022">bookType.h:22</a></div></div>
 <div class="ttc" id="aclassBookType_html_ac1e5aab4bc4f18eaad0ebe14f3046b7b"><div class="ttname"><a href="classBookType.html#ac1e5aab4bc4f18eaad0ebe14f3046b7b">BookType::getISBN</a></div><div class="ttdeci">string getISBN() const</div><div class="ttdoc">Gets the book ISBN.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00029">bookType.h:29</a></div></div>
-<div class="ttc" id="asetColour_8h_html_a682d98f55e0091ceaff7e01e243fd8e5"><div class="ttname"><a href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a></div><div class="ttdeci">void setColour(int colourCode)</div><div class="ttdef"><b>Definition:</b> <a href="setColour_8cpp_source.html#l00013">setColour.cpp:13</a></div></div>
-<div class="ttc" id="asetColour_8h_html_a92d2d8b4856c8fada2acd3e38538f493"><div class="ttname"><a href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a></div><div class="ttdeci">void resetColour()</div><div class="ttdef"><b>Definition:</b> <a href="setColour_8cpp_source.html#l00024">setColour.cpp:24</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -299,30 +434,30 @@ Functions</h2></td></tr>
 <p>This function retrieves the system's current date using the <code>time</code> library, converts it to local time, and formats it into a string representation. The generated date is returned as a string.</p>
 <p>returns a string representing the current date in MM/DD/YYYY format. </p>
 
-<p class="definition">Definition at line <a class="el" href="cashier_8cpp_source.html#l00152">152</a> of file <a class="el" href="cashier_8cpp_source.html">cashier.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  153</span>{</div>
-<div class="line"><span class="lineno">  154</span>    time_t t = time(<span class="keyword">nullptr</span>);  </div>
-<div class="line"><span class="lineno">  155</span>   tm* tm = localtime(&amp;t); <span class="comment">// Convert to local time</span></div>
-<div class="line"><span class="lineno">  156</span> </div>
-<div class="line"><span class="lineno">  157</span>    <span class="comment">// Format the date as MM/DD/YYYY and store it in a string</span></div>
-<div class="line"><span class="lineno">  158</span>    stringstream ss;</div>
-<div class="line"><span class="lineno">  159</span>    ss &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; setw(2) &lt;&lt; (tm-&gt;tm_mon + 1) &lt;&lt; <span class="stringliteral">&quot;/&quot;</span>  <span class="comment">// Month</span></div>
-<div class="line"><span class="lineno">  160</span>       &lt;&lt; setw(2) &lt;&lt; tm-&gt;tm_mday &lt;&lt; <span class="stringliteral">&quot;/&quot;</span>                       <span class="comment">// Day</span></div>
-<div class="line"><span class="lineno">  161</span>       &lt;&lt; (tm-&gt;tm_year + 1900);                               <span class="comment">// Year</span></div>
-<div class="line"><span class="lineno">  162</span> </div>
-<div class="line"><span class="lineno">  163</span>    <span class="comment">// Copy the formatted date to a std::string</span></div>
-<div class="line"><span class="lineno">  164</span>    <span class="keywordtype">string</span> currentDate = ss.str();  <span class="comment">// Now `currentDate` holds the date as a string</span></div>
-<div class="line"><span class="lineno">  165</span> </div>
-<div class="line"><span class="lineno">  166</span>    <span class="comment">// Print the string (date)</span></div>
-<div class="line"><span class="lineno">  167</span>    cout &lt;&lt; <span class="stringliteral">&quot;Current date: &quot;</span> &lt;&lt; currentDate &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  168</span> </div>
-<div class="line"><span class="lineno">  169</span>    <span class="comment">// You can use currentDate as a string now</span></div>
-<div class="line"><span class="lineno">  170</span>    <span class="comment">// Example: Copy to another string variable</span></div>
-<div class="line"><span class="lineno">  171</span>    <span class="keywordtype">string</span> copiedDate = currentDate;</div>
-<div class="line"><span class="lineno">  172</span> </div>
-<div class="line"><span class="lineno">  173</span>    <span class="keywordflow">return</span> copiedDate;</div>
-<div class="line"><span class="lineno">  174</span> </div>
-<div class="line"><span class="lineno">  175</span>}</div>
+<p class="definition">Definition at line <a class="el" href="cashier_8cpp_source.html#l00283">283</a> of file <a class="el" href="cashier_8cpp_source.html">cashier.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  284</span>{</div>
+<div class="line"><span class="lineno">  285</span>    time_t t = time(<span class="keyword">nullptr</span>);  </div>
+<div class="line"><span class="lineno">  286</span>   tm* tm = localtime(&amp;t); <span class="comment">// Convert to local time</span></div>
+<div class="line"><span class="lineno">  287</span> </div>
+<div class="line"><span class="lineno">  288</span>    <span class="comment">// Format the date as MM/DD/YYYY and store it in a string</span></div>
+<div class="line"><span class="lineno">  289</span>    stringstream ss;</div>
+<div class="line"><span class="lineno">  290</span>    ss &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; setw(2) &lt;&lt; (tm-&gt;tm_mon + 1) &lt;&lt; <span class="stringliteral">&quot;/&quot;</span>  <span class="comment">// Month</span></div>
+<div class="line"><span class="lineno">  291</span>       &lt;&lt; setw(2) &lt;&lt; tm-&gt;tm_mday &lt;&lt; <span class="stringliteral">&quot;/&quot;</span>                       <span class="comment">// Day</span></div>
+<div class="line"><span class="lineno">  292</span>       &lt;&lt; (tm-&gt;tm_year + 1900);                               <span class="comment">// Year</span></div>
+<div class="line"><span class="lineno">  293</span> </div>
+<div class="line"><span class="lineno">  294</span>    <span class="comment">// Copy the formatted date to a std::string</span></div>
+<div class="line"><span class="lineno">  295</span>    <span class="keywordtype">string</span> currentDate = ss.str();  <span class="comment">// Now `currentDate` holds the date as a string</span></div>
+<div class="line"><span class="lineno">  296</span> </div>
+<div class="line"><span class="lineno">  297</span>    <span class="comment">// Print the string (date)</span></div>
+<div class="line"><span class="lineno">  298</span>    cout &lt;&lt; <span class="stringliteral">&quot;Current date: &quot;</span> &lt;&lt; currentDate &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  299</span> </div>
+<div class="line"><span class="lineno">  300</span>    <span class="comment">// You can use currentDate as a string now</span></div>
+<div class="line"><span class="lineno">  301</span>    <span class="comment">// Example: Copy to another string variable</span></div>
+<div class="line"><span class="lineno">  302</span>    <span class="keywordtype">string</span> copiedDate = currentDate;</div>
+<div class="line"><span class="lineno">  303</span> </div>
+<div class="line"><span class="lineno">  304</span>    <span class="keywordflow">return</span> copiedDate;</div>
+<div class="line"><span class="lineno">  305</span> </div>
+<div class="line"><span class="lineno">  306</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -344,112 +479,206 @@ Functions</h2></td></tr>
 <p>mainCashier handles the process of printing a receipt for a cashier transaction This function manages the main cashier operations, including: 1- Clearing the screen. 2- Prompting the cashier for transaction data. 3- Generating and formatting the receipt report. 4- Asking if the cashier wants to proceed with another transaction</p>
 <p>The function does not take any parameters and does not return any values. </p>
 
-<p class="definition">Definition at line <a class="el" href="cashier_8cpp_source.html#l00054">54</a> of file <a class="el" href="cashier_8cpp_source.html">cashier.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   54</span>                                  {</div>
-<div class="line"><span class="lineno">   55</span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a> [20];</div>
-<div class="line"><span class="lineno">   56</span>    <span class="keywordtype">string</span> toPurchase;</div>
-<div class="line"><span class="lineno">   57</span>    <span class="keywordtype">int</span> indexToPurchase;</div>
-<div class="line"><span class="lineno">   58</span>    <span class="keywordtype">char</span> choice;</div>
-<div class="line"><span class="lineno">   59</span>    <span class="keywordtype">char</span> confirmPurchase;</div>
-<div class="line"><span class="lineno">   60</span>    <span class="keywordtype">char</span> repeat;</div>
-<div class="line"><span class="lineno">   61</span>    <span class="keywordtype">string</span> date;</div>
-<div class="line"><span class="lineno">   62</span>    <span class="keywordtype">bool</span> hasBooksInCart;</div>
-<div class="line"><span class="lineno">   63</span> </div>
-<div class="line"><span class="lineno">   64</span> </div>
-<div class="line"><span class="lineno">   65</span><span class="keywordflow">do</span> {</div>
-<div class="line"><span class="lineno">   66</span>    choice = <span class="charliteral">&#39;N&#39;</span>;</div>
-<div class="line"><span class="lineno">   67</span>    repeat = <span class="charliteral">&#39;N&#39;</span>;</div>
-<div class="line"><span class="lineno">   68</span>    hasBooksInCart = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   69</span>    toPurchase = <a class="code hl_function" href="lookUp_8h.html#acf7cae378d5f2bef18b6e4bbdc270c43">validateAndAsk</a> (<a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>());</div>
-<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">if</span> (toPurchase != <span class="stringliteral">&quot;&quot;</span>) {</div>
-<div class="line"><span class="lineno">   71</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 20 ; i++){</div>
-<div class="line"><span class="lineno">   72</span>                <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i]=0;</div>
-<div class="line"><span class="lineno">   73</span>            }</div>
-<div class="line"><span class="lineno">   74</span> </div>
-<div class="line"><span class="lineno">   75</span>                <span class="keywordflow">do</span> {    </div>
-<div class="line"><span class="lineno">   76</span>                    indexToPurchase = <a class="code hl_function" href="lookUp_8h.html#afa3875315ce7e454544a9edafdf27f45">findString</a> (toPurchase, books, <a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>() );</div>
-<div class="line"><span class="lineno">   77</span>                    <span class="keywordflow">if</span> (indexToPurchase != -1){</div>
-<div class="line"><span class="lineno">   78</span>                        system(<span class="stringliteral">&quot;clear&quot;</span>);</div>
-<div class="line"><span class="lineno">   79</span>                        <a class="code hl_function" href="cashier_8cpp.html#a55c9d925a001cb9f330bb9697a2785ad">purchaseBook</a> ( books, indexToPurchase, <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>);</div>
-<div class="line"><span class="lineno">   80</span>                        <a class="code hl_function" href="cashier_8cpp.html#aef0b7e4f36dfdc9630fe9c17d9d8baeb">showCart</a> (books, <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>);</div>
-<div class="line"><span class="lineno">   81</span>                    }</div>
-<div class="line"><span class="lineno">   82</span> </div>
-<div class="line"><span class="lineno">   83</span>                    <span class="comment">//Check if theres book in cart</span></div>
-<div class="line"><span class="lineno">   84</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 20; i++) {</div>
-<div class="line"><span class="lineno">   85</span>                            <span class="keywordflow">if</span> (<a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i] &gt; 0) {</div>
-<div class="line"><span class="lineno">   86</span>                            hasBooksInCart = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   87</span>                            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   88</span>                            }</div>
-<div class="line"><span class="lineno">   89</span>                    }</div>
-<div class="line"><span class="lineno">   90</span>                    <span class="keywordflow">if</span> (hasBooksInCart){</div>
-<div class="line"><span class="lineno">   91</span>                    cout &lt;&lt; <span class="stringliteral">&quot;Do you want to proceed another book purchase on the same receipt? (Y/N)?\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   92</span>                    cin.get (choice);</div>
-<div class="line"><span class="lineno">   93</span>                    cin.ignore (100, <span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><span class="lineno">   94</span>                    <span class="keywordflow">while</span> (toupper(choice) != <span class="charliteral">&#39;N&#39;</span> &amp;&amp; toupper(choice) != <span class="charliteral">&#39;Y&#39;</span>) {</div>
-<div class="line"><span class="lineno">   95</span>                        cout &lt;&lt; choice &lt;&lt; <span class="stringliteral">&quot; is invalid choice.. Only enter Y or N.\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   96</span>                        cin.get (choice);</div>
-<div class="line"><span class="lineno">   97</span>                        cin.ignore(100, <span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><span class="lineno">   98</span>                    }</div>
-<div class="line"><span class="lineno">   99</span>                    <span class="keywordflow">if</span> (toupper(choice) == <span class="charliteral">&#39;Y&#39;</span> ){</div>
-<div class="line"><span class="lineno">  100</span>                    toPurchase = <a class="code hl_function" href="lookUp_8h.html#acf7cae378d5f2bef18b6e4bbdc270c43">validateAndAsk</a> (<a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>()); </div>
-<div class="line"><span class="lineno">  101</span>                    }</div>
-<div class="line"><span class="lineno">  102</span>                }</div>
-<div class="line"><span class="lineno">  103</span>                }   <span class="keywordflow">while</span> (toupper (choice) != <span class="charliteral">&#39;N&#39;</span>);</div>
-<div class="line"><span class="lineno">  104</span> </div>
-<div class="line"><span class="lineno">  105</span>            <span class="keywordflow">if</span> (hasBooksInCart){</div>
-<div class="line"><span class="lineno">  106</span>            <a class="code hl_function" href="cashier_8cpp.html#aef0b7e4f36dfdc9630fe9c17d9d8baeb">showCart</a> (books, <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>);</div>
-<div class="line"><span class="lineno">  107</span>            cout &lt;&lt; <span class="stringliteral">&quot;Confirm Purchase and view the receipt ? (Y/N)\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  108</span>            cin.get(confirmPurchase);</div>
-<div class="line"><span class="lineno">  109</span>            cin.ignore (100,<span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><span class="lineno">  110</span>            <span class="keywordflow">while</span> (toupper(confirmPurchase) != <span class="charliteral">&#39;N&#39;</span> &amp;&amp; toupper(confirmPurchase) != <span class="charliteral">&#39;Y&#39;</span>)</div>
-<div class="line"><span class="lineno">  111</span>                {</div>
-<div class="line"><span class="lineno">  112</span>                    cout &lt;&lt; choice &lt;&lt; <span class="stringliteral">&quot; is invalid choice.. Only enter Y or N.\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  113</span>                    cin.get (confirmPurchase);</div>
-<div class="line"><span class="lineno">  114</span>                    cin.ignore(100, <span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><span class="lineno">  115</span>                }</div>
-<div class="line"><span class="lineno">  116</span> </div>
-<div class="line"><span class="lineno">  117</span>            <span class="keywordflow">if</span> (toupper(confirmPurchase) == <span class="charliteral">&#39;Y&#39;</span>)    </div>
-<div class="line"><span class="lineno">  118</span>            {   </div>
-<div class="line"><span class="lineno">  119</span>                date = <a class="code hl_function" href="cashier_8cpp.html#a8937a595b36a8ed5c35062e8d8b03dda">generateDate</a>();</div>
-<div class="line"><span class="lineno">  120</span>                system(<span class="stringliteral">&quot;clear&quot;</span>);</div>
-<div class="line"><span class="lineno">  121</span>                <a class="code hl_function" href="cashier_8cpp.html#ad7e7d558ede8fc08bdf988885c460a34">FormatReport</a> (books,<a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>, date );</div>
+<p class="definition">Definition at line <a class="el" href="cashier_8cpp_source.html#l00055">55</a> of file <a class="el" href="cashier_8cpp_source.html">cashier.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>{</div>
+<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>() == 0)</div>
+<div class="line"><span class="lineno">   58</span>            {</div>
+<div class="line"><span class="lineno">   59</span>            <span class="comment">// immediately exit program</span></div>
+<div class="line"><span class="lineno">   60</span>            system (<span class="stringliteral">&quot;clear&quot;</span>);</div>
+<div class="line"><span class="lineno">   61</span>            cout &lt;&lt; <span class="stringliteral">&quot;╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   62</span>            cout &lt;&lt; <span class="stringliteral">&quot;║ &quot;</span> &lt;&lt; setw (98) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;The book list is empty. No books available for cashier registration.&quot;</span> &lt;&lt; <span class="stringliteral">&quot; ║ \n&quot;</span> ;</div>
+<div class="line"><span class="lineno">   63</span>        cout &lt;&lt; <span class="stringliteral">&quot;║ &quot;</span> &lt;&lt; setw (98) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;Press any key to continue &quot;</span> &lt;&lt; <span class="stringliteral">&quot; ║ \n&quot;</span> ;</div>
+<div class="line"><span class="lineno">   64</span>        cout &lt;&lt; <span class="stringliteral">&quot;╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n&quot;</span>; </div>
+<div class="line"><span class="lineno">   65</span>            cin.ignore(numeric_limits&lt;streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">   66</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   67</span>            }</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[20];</div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordtype">char</span> choice;</div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordtype">string</span> keyword;</div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordtype">int</span> indexOfBook;</div>
+<div class="line"><span class="lineno">   74</span>    <span class="keywordtype">bool</span> cartFilled;</div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordtype">char</span> confirm;</div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordtype">char</span> repeat;</div>
+<div class="line"><span class="lineno">   77</span>    <span class="keywordtype">string</span> date;</div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordtype">char</span> exit;</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span><span class="comment">// initialize cart with 0s before entering loop</span></div>
+<div class="line"><span class="lineno">   81</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 20 ; i++){</div>
+<div class="line"><span class="lineno">   82</span>                <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i] = 0;</div>
+<div class="line"><span class="lineno">   83</span>            }</div>
+<div class="line"><span class="lineno">   84</span>    cartFilled = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span><span class="keywordflow">do</span> {</div>
+<div class="line"><span class="lineno">   88</span>        <span class="comment">//  Before entering inner loop, always check if cart is filled</span></div>
+<div class="line"><span class="lineno">   89</span>        cartFilled = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 20; i++) {</div>
+<div class="line"><span class="lineno">   91</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i] &gt; 0) {</div>
+<div class="line"><span class="lineno">   92</span>                cartFilled = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   93</span>                    <span class="keywordflow">break</span>;  }   }</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>        <span class="comment">// show menu</span></div>
+<div class="line"><span class="lineno">   96</span>        choice = <a class="code hl_function" href="cashier_8cpp.html#ac1691320d0e13ff1eb39e4121c3a34e8">showCashierMenu</a> ();</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>        <span class="keywordflow">switch</span>(choice)</div>
+<div class="line"><span class="lineno">   99</span>        {</div>
+<div class="line"><span class="lineno">  100</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;1&#39;</span> :</div>
+<div class="line"><span class="lineno">  101</span>            keyword = <a class="code hl_function" href="lookUp_8h.html#ad03651902aa14f3cd4d15385f2a8a5b6">AskKeyword</a> (<a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>());</div>
+<div class="line"><span class="lineno">  102</span>            indexOfBook = <a class="code hl_function" href="lookUp_8h.html#afa3875315ce7e454544a9edafdf27f45">findString</a> (keyword, books, <a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>());</div>
+<div class="line"><span class="lineno">  103</span>            <span class="keywordflow">if</span> (indexOfBook == -1){</div>
+<div class="line"><span class="lineno">  104</span>            cout &lt;&lt; <span class="stringliteral">&quot;Press enter to continue...\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  105</span>            cin.ignore(numeric_limits&lt;streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);}</div>
+<div class="line"><span class="lineno">  106</span>            <span class="keywordflow">else</span>    {</div>
+<div class="line"><span class="lineno">  107</span>                <a class="code hl_function" href="cashier_8cpp.html#a32a015c18396175be8c3efe898da07cc">addBook</a> ( books, indexOfBook, <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>);</div>
+<div class="line"><span class="lineno">  108</span>            }</div>
+<div class="line"><span class="lineno">  109</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;2&#39;</span> :</div>
+<div class="line"><span class="lineno">  112</span>            <span class="keywordflow">if</span> (cartFilled)</div>
+<div class="line"><span class="lineno">  113</span>            {</div>
+<div class="line"><span class="lineno">  114</span>                    keyword = <a class="code hl_function" href="lookUp_8h.html#ad03651902aa14f3cd4d15385f2a8a5b6">AskKeyword</a> (<a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>());</div>
+<div class="line"><span class="lineno">  115</span>                    indexOfBook = <a class="code hl_function" href="lookUp_8h.html#a1898c0545d6342f653f0db2999876564">findStringInCart</a> (keyword, books, <a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>(), <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>);</div>
+<div class="line"><span class="lineno">  116</span>                    <span class="keywordflow">if</span> (indexOfBook == -1){</div>
+<div class="line"><span class="lineno">  117</span>                    cout &lt;&lt; <span class="stringliteral">&quot;Press enter to continue...\n&quot;</span>; </div>
+<div class="line"><span class="lineno">  118</span>                    cin.ignore(numeric_limits&lt;streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);}</div>
+<div class="line"><span class="lineno">  119</span>                    <span class="keywordflow">else</span>    {</div>
+<div class="line"><span class="lineno">  120</span>                                <a class="code hl_function" href="cashier_8cpp.html#af5c6fe67a68bf74d321d11303c66d4c3">removeBook</a> ( books, indexOfBook, <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>);</div>
+<div class="line"><span class="lineno">  121</span>                            }</div>
 <div class="line"><span class="lineno">  122</span>            }</div>
-<div class="line"><span class="lineno">  123</span>            }</div>
-<div class="line"><span class="lineno">  124</span> </div>
-<div class="line"><span class="lineno">  125</span> </div>
-<div class="line"><span class="lineno">  126</span>            <span class="comment">// Showed receipt, therefore ask if they want to repeat menu</span></div>
-<div class="line"><span class="lineno">  127</span>            cout &lt;&lt; <span class="stringliteral">&quot;Do you want to make another transaction ? (Y/N)\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  128</span>            cin.get (repeat);</div>
-<div class="line"><span class="lineno">  129</span>            cin.ignore (100, <span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><span class="lineno">  130</span>            <span class="keywordflow">while</span> (toupper(repeat) != <span class="charliteral">&#39;N&#39;</span> &amp;&amp; toupper(repeat) != <span class="charliteral">&#39;Y&#39;</span> ){</div>
-<div class="line"><span class="lineno">  131</span>                    cout &lt;&lt; repeat &lt;&lt; <span class="stringliteral">&quot; is invalid choice.. Only enter Y or N.\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  132</span>                    cin.get (repeat);</div>
-<div class="line"><span class="lineno">  133</span>                    cin.ignore (100, <span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><span class="lineno">  134</span>                }</div>
-<div class="line"><span class="lineno">  135</span>        }</div>
-<div class="line"><span class="lineno">  136</span>}</div>
-<div class="line"><span class="lineno">  137</span><span class="keywordflow">while</span> (<a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>() != 0 &amp;&amp; toupper(repeat) != <span class="charliteral">&#39;N&#39;</span>);</div>
-<div class="line"><span class="lineno">  138</span> </div>
-<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">return</span> 0;       </div>
-<div class="line"><span class="lineno">  140</span>}</div>
-<div class="ttc" id="acashier_8cpp_html_a55c9d925a001cb9f330bb9697a2785ad"><div class="ttname"><a href="cashier_8cpp.html#a55c9d925a001cb9f330bb9697a2785ad">purchaseBook</a></div><div class="ttdeci">void purchaseBook(BookType books[], int index, int cart[])</div><div class="ttdef"><b>Definition:</b> <a href="cashier_8cpp_source.html#l00189">cashier.cpp:189</a></div></div>
-<div class="ttc" id="acashier_8cpp_html_a8937a595b36a8ed5c35062e8d8b03dda"><div class="ttname"><a href="cashier_8cpp.html#a8937a595b36a8ed5c35062e8d8b03dda">generateDate</a></div><div class="ttdeci">string generateDate()</div><div class="ttdef"><b>Definition:</b> <a href="cashier_8cpp_source.html#l00152">cashier.cpp:152</a></div></div>
-<div class="ttc" id="acashier_8cpp_html_ad7e7d558ede8fc08bdf988885c460a34"><div class="ttname"><a href="cashier_8cpp.html#ad7e7d558ede8fc08bdf988885c460a34">FormatReport</a></div><div class="ttdeci">void FormatReport(BookType books[], int cart[], string date)</div><div class="ttdef"><b>Definition:</b> <a href="cashier_8cpp_source.html#l00352">cashier.cpp:352</a></div></div>
-<div class="ttc" id="acashier_8cpp_html_aef0b7e4f36dfdc9630fe9c17d9d8baeb"><div class="ttname"><a href="cashier_8cpp.html#aef0b7e4f36dfdc9630fe9c17d9d8baeb">showCart</a></div><div class="ttdeci">void showCart(BookType books[], int cart[])</div><div class="ttdef"><b>Definition:</b> <a href="cashier_8cpp_source.html#l00279">cashier.cpp:279</a></div></div>
+<div class="line"><span class="lineno">  123</span>            <span class="comment">// if not filled</span></div>
+<div class="line"><span class="lineno">  124</span>            <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  125</span>            <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (96);</div>
+<div class="line"><span class="lineno">  126</span>            cout &lt;&lt; <span class="stringliteral">&quot;                ┌──────────────────────────────────────────────────────────────────┐\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  127</span>            cout &lt;&lt; <span class="stringliteral">&quot;                │   The cart is currently empty, so there are no books to remove.  │\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  128</span>            cout &lt;&lt; <span class="stringliteral">&quot;                └──────────────────────────────────────────────────────────────────┘\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  129</span>            <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
+<div class="line"><span class="lineno">  130</span>            cout &lt;&lt; <span class="stringliteral">&quot;Press enter to continue\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  131</span>            cin.ignore(numeric_limits&lt;streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">  132</span>                }</div>
+<div class="line"><span class="lineno">  133</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  134</span>  </div>
+<div class="line"><span class="lineno">  135</span>            </div>
+<div class="line"><span class="lineno">  136</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;3&#39;</span>:</div>
+<div class="line"><span class="lineno">  137</span>            <span class="comment">// show cart </span></div>
+<div class="line"><span class="lineno">  138</span>            <span class="keywordflow">if</span> (cartFilled){</div>
+<div class="line"><span class="lineno">  139</span>            <a class="code hl_function" href="cashier_8cpp.html#aef0b7e4f36dfdc9630fe9c17d9d8baeb">showCart</a>(books, <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>);</div>
+<div class="line"><span class="lineno">  140</span>            cout &lt;&lt; <span class="stringliteral">&quot;Press any key to continue...\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  141</span>            cin.ignore(numeric_limits&lt;streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">  142</span>            }</div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>            <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  145</span>            <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (96);</div>
+<div class="line"><span class="lineno">  146</span>            cout &lt;&lt; <span class="stringliteral">&quot;                ┌──────────────────────────────────────────────────────────────────┐\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  147</span>            cout &lt;&lt; <span class="stringliteral">&quot;                │   The cart is currently empty, so there are no books to show.    │\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  148</span>            cout &lt;&lt; <span class="stringliteral">&quot;                └──────────────────────────────────────────────────────────────────┘\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  149</span>            <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
+<div class="line"><span class="lineno">  150</span>            cout &lt;&lt; <span class="stringliteral">&quot;Press enter to continue\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  151</span>            cin.ignore(numeric_limits&lt;streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">  152</span>            }</div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  155</span>            </div>
+<div class="line"><span class="lineno">  156</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;4&#39;</span>:</div>
+<div class="line"><span class="lineno">  157</span>            <span class="keywordflow">if</span> (cartFilled)</div>
+<div class="line"><span class="lineno">  158</span>                {</div>
+<div class="line"><span class="lineno">  159</span>                    system (<span class="stringliteral">&quot;Clear&quot;</span>);</div>
+<div class="line"><span class="lineno">  160</span>                    <a class="code hl_function" href="cashier_8cpp.html#aef0b7e4f36dfdc9630fe9c17d9d8baeb">showCart</a> (books, <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>);</div>
+<div class="line"><span class="lineno">  161</span>                    cout &lt;&lt; <span class="stringliteral">&quot;Confirm Purchase ? (Y/N)\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  162</span>                    cin.get (confirm);</div>
+<div class="line"><span class="lineno">  163</span>                    cin.ignore (100, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">  164</span> </div>
+<div class="line"><span class="lineno">  165</span>                    <span class="keywordflow">while</span> (toupper(confirm) != <span class="charliteral">&#39;N&#39;</span> &amp;&amp; toupper(confirm) != <span class="charliteral">&#39;Y&#39;</span> ){</div>
+<div class="line"><span class="lineno">  166</span>                    cout &lt;&lt; confirm &lt;&lt; <span class="stringliteral">&quot; is invalid choice.. Only enter Y or N.\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  167</span>                    cin.get (confirm);</div>
+<div class="line"><span class="lineno">  168</span>                    cin.ignore (100, <span class="charliteral">&#39;\n&#39;</span>);}</div>
+<div class="line"><span class="lineno">  169</span> </div>
+<div class="line"><span class="lineno">  170</span>                    <span class="keywordflow">if</span> (toupper(confirm) == <span class="charliteral">&#39;Y&#39;</span>)</div>
+<div class="line"><span class="lineno">  171</span>                        {</div>
+<div class="line"><span class="lineno">  172</span> </div>
+<div class="line"><span class="lineno">  173</span>                            date = <a class="code hl_function" href="cashier_8cpp.html#a8937a595b36a8ed5c35062e8d8b03dda">generateDate</a> ();</div>
+<div class="line"><span class="lineno">  174</span>                            <a class="code hl_function" href="cashier_8cpp.html#ad7e7d558ede8fc08bdf988885c460a34">FormatReport</a> (books, <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>, date);</div>
+<div class="line"><span class="lineno">  175</span>                            cout &lt;&lt; <span class="stringliteral">&quot;      ┌──────────────────────────────────────────────────────────────────┐\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  176</span>                            cout &lt;&lt; <span class="stringliteral">&quot;      │                       TRANSACTION COMPLETED !                    │\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  177</span>                            cout &lt;&lt; <span class="stringliteral">&quot;      ├──────────────────────────────────────────────────────────────────┤\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  178</span>                            cout &lt;&lt; <span class="stringliteral">&quot;      │            Would you like to make another transaction? (Y/N)     │\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  179</span>                            cout &lt;&lt; <span class="stringliteral">&quot;      └──────────────────────────────────────────────────────────────────┘\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  180</span>                            cout &lt;&lt; right &lt;&lt; setw(35)&lt;&lt; <span class="stringliteral">&quot;→  &quot;</span>;</div>
+<div class="line"><span class="lineno">  181</span>                            cin.get (repeat);</div>
+<div class="line"><span class="lineno">  182</span>                            cin.ignore (100, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">  183</span> </div>
+<div class="line"><span class="lineno">  184</span>                            <span class="keywordflow">while</span> (toupper(repeat) != <span class="charliteral">&#39;N&#39;</span> &amp;&amp; toupper(repeat) != <span class="charliteral">&#39;Y&#39;</span> ){</div>
+<div class="line"><span class="lineno">  185</span>                            cout &lt;&lt; right &lt;&lt; setw(35)&lt;&lt; <span class="stringliteral">&quot;→  &quot;</span>;</div>
+<div class="line"><span class="lineno">  186</span>                            cout &lt;&lt; repeat &lt;&lt; <span class="stringliteral">&quot; is invalid choice.. Only enter Y or N.\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  187</span>                            cin.get (repeat);</div>
+<div class="line"><span class="lineno">  188</span>                            cin.ignore (100, <span class="charliteral">&#39;\n&#39;</span>);}</div>
+<div class="line"><span class="lineno">  189</span>                                     <span class="keywordflow">if</span> (toupper(repeat) == <span class="charliteral">&#39;Y&#39;</span>)</div>
+<div class="line"><span class="lineno">  190</span>                                            {   <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 20 ; i++){</div>
+<div class="line"><span class="lineno">  191</span>                                            <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i] = 0;</div>
+<div class="line"><span class="lineno">  192</span>                                            cartFilled = <span class="keyword">false</span>;} }</div>
+<div class="line"><span class="lineno">  193</span>                                    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  194</span>                                    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  195</span>                        }</div>
+<div class="line"><span class="lineno">  196</span>                }</div>
+<div class="line"><span class="lineno">  197</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  198</span>                    {</div>
+<div class="line"><span class="lineno">  199</span>                        <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (96);</div>
+<div class="line"><span class="lineno">  200</span>                        cout &lt;&lt; <span class="stringliteral">&quot;                ┌──────────────────────────────────────────────────────────────────┐\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  201</span>                        cout &lt;&lt; <span class="stringliteral">&quot;                │Your cart is empty, and checkout cannot be completed at this time.│\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  202</span>                        cout &lt;&lt; <span class="stringliteral">&quot;                └──────────────────────────────────────────────────────────────────┘\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  203</span>                        <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
+<div class="line"><span class="lineno">  204</span>                        cout &lt;&lt; <span class="stringliteral">&quot;Press enter to continue\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  205</span>                        cin.ignore(numeric_limits&lt;streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">  206</span>                    }</div>
+<div class="line"><span class="lineno">  207</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  208</span> </div>
+<div class="line"><span class="lineno">  209</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;5&#39;</span>:</div>
+<div class="line"><span class="lineno">  210</span>            <span class="keywordflow">if</span> (cartFilled){</div>
+<div class="line"><span class="lineno">  211</span>            cout &lt;&lt; <span class="stringliteral">&quot;  ┌─────────────────────────────────────────────────────────────────────────────────────┐\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  212</span>            cout &lt;&lt; <span class="stringliteral">&quot;  │                Exit the Cashier? (Y/N) Your current cart will be lost.              │\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  213</span>            cout &lt;&lt; <span class="stringliteral">&quot;  └─────────────────────────────────────────────────────────────────────────────────────┘\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  214</span>            cin.get (exit);</div>
+<div class="line"><span class="lineno">  215</span>            cin.ignore (100, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">  216</span> </div>
+<div class="line"><span class="lineno">  217</span>                    <span class="keywordflow">while</span> (toupper(exit) != <span class="charliteral">&#39;N&#39;</span> &amp;&amp; toupper(exit) != <span class="charliteral">&#39;Y&#39;</span> ){</div>
+<div class="line"><span class="lineno">  218</span>                    cout &lt;&lt; exit &lt;&lt; <span class="stringliteral">&quot; is invalid choice.. Only enter Y or N.\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  219</span>                    cin.get (exit);</div>
+<div class="line"><span class="lineno">  220</span>                    cin.ignore (100, <span class="charliteral">&#39;\n&#39;</span>);}</div>
+<div class="line"><span class="lineno">  221</span>            <span class="keywordflow">if</span> (toupper(exit) == <span class="charliteral">&#39;Y&#39;</span>)</div>
+<div class="line"><span class="lineno">  222</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  223</span>            }</div>
+<div class="line"><span class="lineno">  224</span>            </div>
+<div class="line"><span class="lineno">  225</span>            <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  226</span>                <span class="keywordflow">return</span> 0; }</div>
+<div class="line"><span class="lineno">  227</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  228</span>        };</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span>    }   <span class="keywordflow">while</span> (<a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>() !=0);</div>
+<div class="line"><span class="lineno">  231</span> </div>
+<div class="line"><span class="lineno">  232</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  233</span>}</div>
+<div class="ttc" id="acashier_8cpp_html_a32a015c18396175be8c3efe898da07cc"><div class="ttname"><a href="cashier_8cpp.html#a32a015c18396175be8c3efe898da07cc">addBook</a></div><div class="ttdeci">void addBook(BookType books[], int index, int cart[])</div><div class="ttdef"><b>Definition:</b> <a href="cashier_8cpp_source.html#l00320">cashier.cpp:320</a></div></div>
+<div class="ttc" id="acashier_8cpp_html_a8937a595b36a8ed5c35062e8d8b03dda"><div class="ttname"><a href="cashier_8cpp.html#a8937a595b36a8ed5c35062e8d8b03dda">generateDate</a></div><div class="ttdeci">string generateDate()</div><div class="ttdef"><b>Definition:</b> <a href="cashier_8cpp_source.html#l00283">cashier.cpp:283</a></div></div>
+<div class="ttc" id="acashier_8cpp_html_ac1691320d0e13ff1eb39e4121c3a34e8"><div class="ttname"><a href="cashier_8cpp.html#ac1691320d0e13ff1eb39e4121c3a34e8">showCashierMenu</a></div><div class="ttdeci">char showCashierMenu()</div><div class="ttdef"><b>Definition:</b> <a href="cashier_8cpp_source.html#l00241">cashier.cpp:241</a></div></div>
+<div class="ttc" id="acashier_8cpp_html_ad7e7d558ede8fc08bdf988885c460a34"><div class="ttname"><a href="cashier_8cpp.html#ad7e7d558ede8fc08bdf988885c460a34">FormatReport</a></div><div class="ttdeci">void FormatReport(BookType books[], int cart[], string date)</div><div class="ttdef"><b>Definition:</b> <a href="cashier_8cpp_source.html#l00577">cashier.cpp:577</a></div></div>
+<div class="ttc" id="acashier_8cpp_html_aef0b7e4f36dfdc9630fe9c17d9d8baeb"><div class="ttname"><a href="cashier_8cpp.html#aef0b7e4f36dfdc9630fe9c17d9d8baeb">showCart</a></div><div class="ttdeci">void showCart(BookType books[], int cart[])</div><div class="ttdef"><b>Definition:</b> <a href="cashier_8cpp_source.html#l00502">cashier.cpp:502</a></div></div>
+<div class="ttc" id="acashier_8cpp_html_af5c6fe67a68bf74d321d11303c66d4c3"><div class="ttname"><a href="cashier_8cpp.html#af5c6fe67a68bf74d321d11303c66d4c3">removeBook</a></div><div class="ttdeci">void removeBook(BookType books[], int index, int cart[])</div><div class="ttdef"><b>Definition:</b> <a href="cashier_8cpp_source.html#l00422">cashier.cpp:422</a></div></div>
 <div class="ttc" id="aclassBookType_html_ab3d149c73829ea6b2a676795a485b70c"><div class="ttname"><a href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a></div><div class="ttdeci">static int getBookCount()</div><div class="ttdoc">Gets the count of all book types.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00036">bookType.h:36</a></div></div>
-<div class="ttc" id="alookUp_8h_html_acf7cae378d5f2bef18b6e4bbdc270c43"><div class="ttname"><a href="lookUp_8h.html#acf7cae378d5f2bef18b6e4bbdc270c43">validateAndAsk</a></div><div class="ttdeci">string validateAndAsk(const int &amp;bookCount)</div><div class="ttdef"><b>Definition:</b> <a href="lookUp_8cpp_source.html#l00188">lookUp.cpp:188</a></div></div>
+<div class="ttc" id="alookUp_8h_html_a1898c0545d6342f653f0db2999876564"><div class="ttname"><a href="lookUp_8h.html#a1898c0545d6342f653f0db2999876564">findStringInCart</a></div><div class="ttdeci">int findStringInCart(const std::string toSearch, const BookType array[], const int size, int cart[])</div></div>
+<div class="ttc" id="alookUp_8h_html_ad03651902aa14f3cd4d15385f2a8a5b6"><div class="ttname"><a href="lookUp_8h.html#ad03651902aa14f3cd4d15385f2a8a5b6">AskKeyword</a></div><div class="ttdeci">string AskKeyword(const int &amp;bookCount)</div><div class="ttdef"><b>Definition:</b> <a href="lookUp_8cpp_source.html#l00295">lookUp.cpp:295</a></div></div>
 <div class="ttc" id="alookUp_8h_html_afa3875315ce7e454544a9edafdf27f45"><div class="ttname"><a href="lookUp_8h.html#afa3875315ce7e454544a9edafdf27f45">findString</a></div><div class="ttdeci">int findString(const std::string toSearch, const BookType array[], const int size)</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a55c9d925a001cb9f330bb9697a2785ad" name="a55c9d925a001cb9f330bb9697a2785ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55c9d925a001cb9f330bb9697a2785ad">&#9670;&#160;</a></span>purchaseBook()</h2>
+<a id="af5c6fe67a68bf74d321d11303c66d4c3" name="af5c6fe67a68bf74d321d11303c66d4c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5c6fe67a68bf74d321d11303c66d4c3">&#9670;&#160;</a></span>removeBook()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void purchaseBook </td>
+          <td class="memname">void removeBook </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classBookType.html">BookType</a>&#160;</td>
           <td class="paramname"><em>books</em>[], </td>
@@ -473,90 +702,79 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>purchaseBook allows a user to purchase a book and adds it to their cart.</p>
-<p>This function displays the selected book's information, checks availability, and prompts the user to confirm adding it to their cart. If the stock is insufficient, the function automatically adjusts the purchase quantity to the maximum available stock. The user's cart is then updated accordingly.</p>
-<p>first parameter is books Array of <code><a class="el" href="classBookType.html">BookType</a></code> objects containing book information. second parameter is index of the book being purchased in the <code>books</code> array. third array is cart Array representing the user's cart, tracking quantities of books added. </p>
+<p>removeBook allows user to remove a book from their cart</p>
+<p>This function displays the selected book's information, checks if the book is currently in cart, and prompts the user to confirm delete it from their cart.</p>
+<p>first parameter is books Array of <code><a class="el" href="classBookType.html">BookType</a></code> objects containing book information. second parameter is index of the book being deleted in the <code>books</code> array. third array is cart Array representing the user's cart, tracking quantities of books deleted </p>
 
-<p class="definition">Definition at line <a class="el" href="cashier_8cpp_source.html#l00189">189</a> of file <a class="el" href="cashier_8cpp_source.html">cashier.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  190</span>{</div>
-<div class="line"><span class="lineno">  191</span>    <span class="comment">// show the book info to user to confirm purchase</span></div>
-<div class="line"><span class="lineno">  192</span>    <span class="keywordtype">char</span> decision;</div>
-<div class="line"><span class="lineno">  193</span>    <span class="keywordtype">int</span> numToPurchase;</div>
-<div class="line"><span class="lineno">  194</span>    <span class="keywordtype">int</span> numAvailable;</div>
-<div class="line"><span class="lineno">  195</span> </div>
-<div class="line"><span class="lineno">  196</span>    numAvailable = books[index].<a class="code hl_function" href="classBookType.html#a8429f87cac6b7d70ef56f6821cdccfba">getQtyOnHand</a>() - <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[index];</div>
-<div class="line"><span class="lineno">  197</span>    <a class="code hl_function" href="bookInfo_8cpp.html#a27663e6052e5acc659c7ac700bd99053">mainbookInfo</a>(books, index);</div>
-<div class="line"><span class="lineno">  198</span> </div>
-<div class="line"><span class="lineno">  199</span>    <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (97);</div>
-<div class="line"><span class="lineno">  200</span>    cout &lt;&lt; <span class="stringliteral">&quot;                           ┌────────────────────────────────────────┐\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  201</span>    cout &lt;&lt; <span class="stringliteral">&quot;                                 Stock available : &quot;</span> &lt;&lt; books[index].<a class="code hl_function" href="classBookType.html#a8429f87cac6b7d70ef56f6821cdccfba">getQtyOnHand</a>() &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  202</span>    cout &lt;&lt; <span class="stringliteral">&quot;                                 In Your Cart    : &quot;</span> &lt;&lt; <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[index] &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  203</span>    cout &lt;&lt; <span class="stringliteral">&quot;                           └────────────────────────────────────────┘\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  204</span> </div>
-<div class="line"><span class="lineno">  205</span>    <span class="keywordflow">if</span> (numAvailable == 0)</div>
-<div class="line"><span class="lineno">  206</span>            {</div>
-<div class="line"><span class="lineno">  207</span>                cout &lt;&lt; setw (15) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Sorry, we are out of stock of this book\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  208</span>                cout &lt;&lt; setw (30) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;Press enter to continue...\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  209</span>                cin.ignore(numeric_limits&lt;streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><span class="lineno">  210</span> </div>
-<div class="line"><span class="lineno">  211</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  212</span>            }</div>
-<div class="line"><span class="lineno">  213</span> </div>
-<div class="line"><span class="lineno">  214</span>    <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (33);</div>
-<div class="line"><span class="lineno">  215</span>    cout &lt;&lt; <span class="stringliteral">&quot;                ┌──────────────────────────────────────────────────────────────────┐\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  216</span>    cout &lt;&lt; <span class="stringliteral">&quot;                │     Would you like to add this book to your cart? (Y/N)          │\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  217</span>    cout &lt;&lt; <span class="stringliteral">&quot;                └──────────────────────────────────────────────────────────────────┘\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  218</span>    <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
-<div class="line"><span class="lineno">  219</span>    cout &lt;&lt; right &lt;&lt; setw(50)&lt;&lt; <span class="stringliteral">&quot;→  &quot;</span>;</div>
-<div class="line"><span class="lineno">  220</span>    cin.get (decision);</div>
-<div class="line"><span class="lineno">  221</span>    cin.ignore (100, <span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><span class="lineno">  222</span>    </div>
-<div class="line"><span class="lineno">  223</span>    <span class="keywordflow">while</span> (toupper(decision) != <span class="charliteral">&#39;N&#39;</span> &amp;&amp; toupper(decision) != <span class="charliteral">&#39;Y&#39;</span> )</div>
-<div class="line"><span class="lineno">  224</span>            {</div>
-<div class="line"><span class="lineno">  225</span>                cout &lt;&lt; decision &lt;&lt; <span class="stringliteral">&quot; is invalid choice.. Only enter Y or N.\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  226</span>                cout &lt;&lt; right &lt;&lt; setw(50)&lt;&lt; <span class="stringliteral">&quot;→  &quot;</span>;</div>
-<div class="line"><span class="lineno">  227</span>                cin.get (decision);</div>
-<div class="line"><span class="lineno">  228</span>                cin.ignore (100, <span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><span class="lineno">  229</span>            }</div>
-<div class="line"><span class="lineno">  230</span>    <span class="keywordflow">if</span> (toupper(decision) == <span class="charliteral">&#39;Y&#39;</span>)</div>
-<div class="line"><span class="lineno">  231</span>    {</div>
-<div class="line"><span class="lineno">  232</span>        <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (93);</div>
-<div class="line"><span class="lineno">  233</span>        cout &lt;&lt; setw (40) &lt;&lt; right &lt;&lt; <span class="stringliteral">&quot;You can add up to &quot;</span> &lt;&lt; numAvailable &lt;&lt; <span class="stringliteral">&quot; books. Please enter quantity below.\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  234</span>        <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
-<div class="line"><span class="lineno">  235</span>        cout &lt;&lt; right &lt;&lt; setw(50)&lt;&lt; <span class="stringliteral">&quot;→  &quot;</span>;</div>
-<div class="line"><span class="lineno">  236</span>        cin &gt;&gt; numToPurchase;</div>
-<div class="line"><span class="lineno">  237</span>        cin.ignore();</div>
-<div class="line"><span class="lineno">  238</span>            <span class="keywordflow">while</span> (numToPurchase &lt; 0)</div>
-<div class="line"><span class="lineno">  239</span>            {</div>
-<div class="line"><span class="lineno">  240</span>                cout &lt;&lt; setw (40) &lt;&lt; right &lt;&lt;<span class="stringliteral">&quot;Invalid quantity entered..Enter quantity again..\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  241</span>                cout &lt;&lt; right &lt;&lt; setw(50)&lt;&lt; <span class="stringliteral">&quot;→  &quot;</span>;</div>
-<div class="line"><span class="lineno">  242</span>                cin &gt;&gt; numToPurchase;</div>
-<div class="line"><span class="lineno">  243</span>                cin.ignore();</div>
-<div class="line"><span class="lineno">  244</span>            }</div>
-<div class="line"><span class="lineno">  245</span> </div>
-<div class="line"><span class="lineno">  246</span>            <span class="keywordflow">if</span> (numToPurchase &gt; numAvailable)</div>
-<div class="line"><span class="lineno">  247</span>            {</div>
-<div class="line"><span class="lineno">  248</span>                <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (96);</div>
-<div class="line"><span class="lineno">  249</span>                cout &lt;&lt; <span class="stringliteral">&quot;    The requested quantity exceeds stock, so we&#39;ve added the maximum available to your cart..\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  250</span>                <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
-<div class="line"><span class="lineno">  251</span>                numToPurchase = numAvailable ;</div>
-<div class="line"><span class="lineno">  252</span>            }</div>
-<div class="line"><span class="lineno">  253</span>            <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a>(32);</div>
-<div class="line"><span class="lineno">  254</span>            cout &lt;&lt; <span class="stringliteral">&quot;                ┌──────────────────────────────────────────────────────────────────┐\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  255</span>            cout &lt;&lt; <span class="stringliteral">&quot;                │            &quot;</span> &lt;&lt; setw (3) &lt;&lt; right &lt;&lt; numToPurchase &lt;&lt; <span class="stringliteral">&quot; books added to your cart successfully!            │\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  256</span>            cout &lt;&lt; <span class="stringliteral">&quot;                └──────────────────────────────────────────────────────────────────┘\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  257</span>            <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
-<div class="line"><span class="lineno">  258</span>            cout &lt;&lt; setw (30) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;Press enter to continue...\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  259</span>            cin.ignore(numeric_limits&lt;streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><span class="lineno">  260</span>            <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[index] += numToPurchase;</div>
-<div class="line"><span class="lineno">  261</span>            </div>
-<div class="line"><span class="lineno">  262</span>    }</div>
-<div class="line"><span class="lineno">  263</span> </div>
-<div class="line"><span class="lineno">  264</span> </div>
-<div class="line"><span class="lineno">  265</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  266</span>}</div>
-<div class="ttc" id="abookInfo_8cpp_html_a27663e6052e5acc659c7ac700bd99053"><div class="ttname"><a href="bookInfo_8cpp.html#a27663e6052e5acc659c7ac700bd99053">mainbookInfo</a></div><div class="ttdeci">int mainbookInfo(const BookType array[], const int &amp;bookIndex)</div><div class="ttdef"><b>Definition:</b> <a href="bookInfo_8cpp_source.html#l00034">bookInfo.cpp:34</a></div></div>
-<div class="ttc" id="aclassBookType_html_a8429f87cac6b7d70ef56f6821cdccfba"><div class="ttname"><a href="classBookType.html#a8429f87cac6b7d70ef56f6821cdccfba">BookType::getQtyOnHand</a></div><div class="ttdeci">int getQtyOnHand() const</div><div class="ttdoc">Gets the quantity of books available.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00033">bookType.h:33</a></div></div>
+<p class="definition">Definition at line <a class="el" href="cashier_8cpp_source.html#l00422">422</a> of file <a class="el" href="cashier_8cpp_source.html">cashier.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  423</span>{</div>
+<div class="line"><span class="lineno">  424</span>    <span class="keywordtype">char</span> decision;</div>
+<div class="line"><span class="lineno">  425</span>    <span class="keywordtype">int</span> numToDelete;</div>
+<div class="line"><span class="lineno">  426</span>    <span class="keywordtype">int</span> numAvailable = <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[index];</div>
+<div class="line"><span class="lineno">  427</span>    system (<span class="stringliteral">&quot;clear&quot;</span>);</div>
+<div class="line"><span class="lineno">  428</span>    <span class="comment">//mainbookInfo(books, index);</span></div>
+<div class="line"><span class="lineno">  429</span>    books[index].<a class="code hl_function" href="classBookType.html#af5eadc6e768e9a8213696355f8f25481">printBookInfo</a>();</div>
+<div class="line"><span class="lineno">  430</span>    cout &lt;&lt; <span class="stringliteral">&quot;                           ┌────────────────────────────────────────┐\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  431</span>    cout &lt;&lt; <span class="stringliteral">&quot;                                 Stock available : &quot;</span> &lt;&lt; books[index].<a class="code hl_function" href="classBookType.html#a8429f87cac6b7d70ef56f6821cdccfba">getQtyOnHand</a>() &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  432</span>    cout &lt;&lt; <span class="stringliteral">&quot;                                 In Your Cart    : &quot;</span> &lt;&lt; <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[index] &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  433</span>    cout &lt;&lt; <span class="stringliteral">&quot;                           └────────────────────────────────────────┘\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  434</span>    <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (33);</div>
+<div class="line"><span class="lineno">  435</span>    cout &lt;&lt; <span class="stringliteral">&quot;                ┌──────────────────────────────────────────────────────────────────┐\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  436</span>    cout &lt;&lt; <span class="stringliteral">&quot;                │     Would you like to remove this book from your cart (Y/N)      │\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  437</span>    cout &lt;&lt; <span class="stringliteral">&quot;                └──────────────────────────────────────────────────────────────────┘\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  438</span>    <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
+<div class="line"><span class="lineno">  439</span>    cout &lt;&lt; right &lt;&lt; setw(50)&lt;&lt; <span class="stringliteral">&quot;→  &quot;</span>;</div>
+<div class="line"><span class="lineno">  440</span>    cin.get (decision);</div>
+<div class="line"><span class="lineno">  441</span>    cin.ignore (100, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">  442</span>    </div>
+<div class="line"><span class="lineno">  443</span>    <span class="keywordflow">while</span> (toupper(decision) != <span class="charliteral">&#39;N&#39;</span> &amp;&amp; toupper(decision) != <span class="charliteral">&#39;Y&#39;</span> )</div>
+<div class="line"><span class="lineno">  444</span>            {</div>
+<div class="line"><span class="lineno">  445</span>                cout &lt;&lt; decision &lt;&lt; <span class="stringliteral">&quot; is invalid choice.. Only enter Y or N.\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  446</span>                cout &lt;&lt; right &lt;&lt; setw(50)&lt;&lt; <span class="stringliteral">&quot;→  &quot;</span>;</div>
+<div class="line"><span class="lineno">  447</span>                cin.get (decision);</div>
+<div class="line"><span class="lineno">  448</span>                cin.ignore (100, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">  449</span>            }</div>
+<div class="line"><span class="lineno">  450</span> </div>
+<div class="line"><span class="lineno">  451</span> </div>
+<div class="line"><span class="lineno">  452</span>    <span class="keywordflow">if</span> (toupper(decision) == <span class="charliteral">&#39;Y&#39;</span>)</div>
+<div class="line"><span class="lineno">  453</span>    {</div>
+<div class="line"><span class="lineno">  454</span>        <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (93);</div>
+<div class="line"><span class="lineno">  455</span>        cout &lt;&lt; setw (40) &lt;&lt; right &lt;&lt; <span class="stringliteral">&quot;You can delete up to &quot;</span> &lt;&lt; numAvailable &lt;&lt; <span class="stringliteral">&quot; book(s). Please enter quantity below.\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  456</span>        <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
+<div class="line"><span class="lineno">  457</span>        cout &lt;&lt; right &lt;&lt; setw(50)&lt;&lt; <span class="stringliteral">&quot;→  &quot;</span>;</div>
+<div class="line"><span class="lineno">  458</span>        cin &gt;&gt; numToDelete;</div>
+<div class="line"><span class="lineno">  459</span>        cin.ignore();</div>
+<div class="line"><span class="lineno">  460</span>            <span class="keywordflow">while</span> (numToDelete &lt; 0 || numToDelete &gt; numAvailable)</div>
+<div class="line"><span class="lineno">  461</span>            {</div>
+<div class="line"><span class="lineno">  462</span>                cout &lt;&lt; setw(50) &lt;&lt; right &lt;&lt; <span class="stringliteral">&quot;Invalid quantity entered. Only enter quantity within 0 - &quot;</span> &lt;&lt; numAvailable &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  463</span>                cout &lt;&lt; right &lt;&lt; setw(50)&lt;&lt; <span class="stringliteral">&quot;→  &quot;</span>;</div>
+<div class="line"><span class="lineno">  464</span>                cin &gt;&gt; numToDelete;</div>
+<div class="line"><span class="lineno">  465</span>                cin.ignore();</div>
+<div class="line"><span class="lineno">  466</span>            }</div>
+<div class="line"><span class="lineno">  467</span>            </div>
+<div class="line"><span class="lineno">  468</span>            <span class="keywordflow">if</span> (numToDelete &gt; 0){</div>
+<div class="line"><span class="lineno">  469</span>            <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a>(32);</div>
+<div class="line"><span class="lineno">  470</span>            cout &lt;&lt; <span class="stringliteral">&quot;                ┌──────────────────────────────────────────────────────────────────┐\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  471</span>            cout &lt;&lt; <span class="stringliteral">&quot;                │        &quot;</span> &lt;&lt; setw (3) &lt;&lt; right &lt;&lt; numToDelete &lt;&lt; <span class="stringliteral">&quot; books removed from your cart successfully!            │\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  472</span>            cout &lt;&lt; <span class="stringliteral">&quot;                └──────────────────────────────────────────────────────────────────┘\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  473</span>            <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
+<div class="line"><span class="lineno">  474</span>            }</div>
+<div class="line"><span class="lineno">  475</span>            <span class="keywordflow">else</span>        {</div>
+<div class="line"><span class="lineno">  476</span>            <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a>(32);</div>
+<div class="line"><span class="lineno">  477</span>            cout &lt;&lt; <span class="stringliteral">&quot;                ┌──────────────────────────────────────────────────────────────────┐\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  478</span>            cout &lt;&lt; <span class="stringliteral">&quot;                │         Quantity of the book remains the same in your cart       │\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  479</span>            cout &lt;&lt; <span class="stringliteral">&quot;                └──────────────────────────────────────────────────────────────────┘\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  480</span>            <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();}</div>
+<div class="line"><span class="lineno">  481</span>            </div>
+<div class="line"><span class="lineno">  482</span>            cout &lt;&lt; setw (30) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;Press enter to continue...\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  483</span>            cin.ignore(numeric_limits&lt;streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">  484</span>            <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[index] -= numToDelete;</div>
+<div class="line"><span class="lineno">  485</span> </div>
+<div class="line"><span class="lineno">  486</span>            </div>
+<div class="line"><span class="lineno">  487</span>    }</div>
+<div class="line"><span class="lineno">  488</span> </div>
+<div class="line"><span class="lineno">  489</span><span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  490</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -589,66 +807,119 @@ Functions</h2></td></tr>
 <p>This function iterates through the <code>cart</code> array and prints a formatted table displaying the books that have been added to the cart along with their quantities. It also calculates and displays the total cost before tax.</p>
 <p>first paramter is books Array of <code><a class="el" href="classBookType.html">BookType</a></code> objects containing book information. second paramater is cart Array representing the user's cart, tracking quantities of books added. </p>
 
-<p class="definition">Definition at line <a class="el" href="cashier_8cpp_source.html#l00279">279</a> of file <a class="el" href="cashier_8cpp_source.html">cashier.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  280</span>{   <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (96);</div>
-<div class="line"><span class="lineno">  281</span>    <span class="keywordtype">char</span> choice;</div>
-<div class="line"><span class="lineno">  282</span>    <span class="keywordtype">bool</span> cartPrinted = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  283</span>    <span class="keywordtype">string</span> substring;</div>
-<div class="line"><span class="lineno">  284</span>    <span class="keywordtype">double</span> totalBeforeTax = 0;</div>
-<div class="line"><span class="lineno">  285</span>    cout &lt;&lt; fixed &lt;&lt; setprecision(2);</div>
-<div class="line"><span class="lineno">  286</span>    <span class="keywordtype">int</span> bookAddedCount = 1;</div>
-<div class="line"><span class="lineno">  287</span>    <span class="keywordtype">string</span> tempTitle;</div>
-<div class="line"><span class="lineno">  288</span>    system(<span class="stringliteral">&quot;clear&quot;</span>);</div>
-<div class="line"><span class="lineno">  289</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 20; i++)</div>
-<div class="line"><span class="lineno">  290</span>     {</div>
-<div class="line"><span class="lineno">  291</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i] &gt; 0 &amp;&amp; !cartPrinted) </div>
-<div class="line"><span class="lineno">  292</span>            {  <span class="comment">// If any positive number found and &quot;cart&quot; not printed yet</span></div>
-<div class="line"><span class="lineno">  293</span>        cout &lt;&lt; <span class="stringliteral">&quot;┌─────────────────────────────────────────────────────────────────────────┐\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  294</span>    cout &lt;&lt; <span class="stringliteral">&quot;│  SERENDIPITY BOOK SELLERS                            YOUR SHOPPING CART │\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  295</span>    cout &lt;&lt; <span class="stringliteral">&quot;│                                                                         │\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  296</span>    cout &lt;&lt; <span class="stringliteral">&quot;│ No. Title                                                           Qty │\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  297</span>    cout &lt;&lt; <span class="stringliteral">&quot;├─────────────────────────────────────────────────────────────────────────┤\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  298</span>            cartPrinted = <span class="keyword">true</span>;            <span class="comment">// Mark &quot;cart&quot; as printed</span></div>
-<div class="line"><span class="lineno">  299</span>            <span class="keywordflow">break</span>;                         <span class="comment">// Exit the loop after printing &quot;cart&quot;</span></div>
-<div class="line"><span class="lineno">  300</span>        }</div>
-<div class="line"><span class="lineno">  301</span>    }</div>
-<div class="line"><span class="lineno">  302</span>    </div>
-<div class="line"><span class="lineno">  303</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 20; i++)</div>
-<div class="line"><span class="lineno">  304</span>    {</div>
-<div class="line"><span class="lineno">  305</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i] &gt; 0)</div>
-<div class="line"><span class="lineno">  306</span>            {</div>
-<div class="line"><span class="lineno">  307</span>                cout &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; setw (2) &lt;&lt; right &lt;&lt; bookAddedCount &lt;&lt; <span class="stringliteral">&quot;. &quot;</span>;</div>
-<div class="line"><span class="lineno">  308</span>                <span class="comment">// For placement of the title</span></div>
-<div class="line"><span class="lineno">  309</span>                <span class="keywordflow">if</span> (books[i].getTitle().length() &lt;= 60 )</div>
-<div class="line"><span class="lineno">  310</span>                    {</div>
-<div class="line"><span class="lineno">  311</span>                        cout &lt;&lt; setw (62) &lt;&lt; left &lt;&lt; books[i].<a class="code hl_function" href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">getTitle</a>();</div>
-<div class="line"><span class="lineno">  312</span>                    }</div>
-<div class="line"><span class="lineno">  313</span>                    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  314</span>                    {</div>
-<div class="line"><span class="lineno">  315</span>                        tempTitle = books[i].<a class="code hl_function" href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">getTitle</a>().substr(0, 59);</div>
-<div class="line"><span class="lineno">  316</span>                        cout &lt;&lt; setw (58) &lt;&lt; left &lt;&lt; tempTitle &lt;&lt; <span class="stringliteral">&quot;...&quot;</span>;</div>
-<div class="line"><span class="lineno">  317</span>                    }</div>
-<div class="line"><span class="lineno">  318</span>                cout &lt;&lt; setw (4) &lt;&lt; right &lt;&lt; <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i] &lt;&lt; <span class="stringliteral">&quot;  │\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  319</span>                totalBeforeTax += books[i].<a class="code hl_function" href="classBookType.html#a60e45a826a946b465b222849477c9b41">getRetail</a>() * <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i];</div>
-<div class="line"><span class="lineno">  320</span>                bookAddedCount++;</div>
-<div class="line"><span class="lineno">  321</span>            }</div>
-<div class="line"><span class="lineno">  322</span>    }</div>
-<div class="line"><span class="lineno">  323</span>    cartPrinted = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  324</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i =0; i &lt; 20; i++)</div>
-<div class="line"><span class="lineno">  325</span>    {</div>
-<div class="line"><span class="lineno">  326</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i] &gt; 0 &amp;&amp; !cartPrinted)</div>
-<div class="line"><span class="lineno">  327</span>        {</div>
-<div class="line"><span class="lineno">  328</span>            cout &lt;&lt; <span class="stringliteral">&quot;│                                                                         │\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  329</span>            cout &lt;&lt; <span class="stringliteral">&quot;│                                                                         │\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  330</span>            cout &lt;&lt; <span class="stringliteral">&quot;│   &quot;</span> &lt;&lt; setw (58) &lt;&lt; right &lt;&lt; <span class="stringliteral">&quot;Total Before Tax  : &quot;</span> &lt;&lt; <span class="stringliteral">&quot; $ &quot;</span> &lt;&lt; right &lt;&lt; setw (8) &lt;&lt; totalBeforeTax &lt;&lt; <span class="stringliteral">&quot; │ \n&quot;</span>;</div>
-<div class="line"><span class="lineno">  331</span>            cout &lt;&lt; <span class="stringliteral">&quot;└─────────────────────────────────────────────────────────────────────────┘\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  332</span>            cartPrinted = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  333</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  334</span>        }</div>
-<div class="line"><span class="lineno">  335</span>    }</div>
-<div class="line"><span class="lineno">  336</span>    <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
-<div class="line"><span class="lineno">  337</span> </div>
-<div class="line"><span class="lineno">  338</span>}</div>
+<p class="definition">Definition at line <a class="el" href="cashier_8cpp_source.html#l00502">502</a> of file <a class="el" href="cashier_8cpp_source.html">cashier.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  503</span>{   <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (96);</div>
+<div class="line"><span class="lineno">  504</span>    <span class="keywordtype">bool</span> cartFilled;</div>
+<div class="line"><span class="lineno">  505</span>    <span class="keywordtype">double</span> totalBeforeTax = 0;</div>
+<div class="line"><span class="lineno">  506</span>    <span class="keywordtype">int</span> bookAddedCount = 1;</div>
+<div class="line"><span class="lineno">  507</span>    <span class="keywordtype">string</span> tempTitle;</div>
+<div class="line"><span class="lineno">  508</span> </div>
+<div class="line"><span class="lineno">  509</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 20; i++)</div>
+<div class="line"><span class="lineno">  510</span>     {</div>
+<div class="line"><span class="lineno">  511</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i] &gt; 0) </div>
+<div class="line"><span class="lineno">  512</span>          {</div>
+<div class="line"><span class="lineno">  513</span>                cartFilled = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  514</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  515</span>        }</div>
+<div class="line"><span class="lineno">  516</span>    }</div>
+<div class="line"><span class="lineno">  517</span>    </div>
+<div class="line"><span class="lineno">  518</span>    <span class="keywordflow">if</span> (cartFilled == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">  519</span>    {</div>
+<div class="line"><span class="lineno">  520</span>    cout &lt;&lt; <span class="stringliteral">&quot;                ┌──────────────────────────────────────────────────────────────────┐\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  521</span>    cout &lt;&lt; <span class="stringliteral">&quot;                │        Cart is currently empty, Add book to view the cart.       │\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  522</span>    cout &lt;&lt; <span class="stringliteral">&quot;                └──────────────────────────────────────────────────────────────────┘\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  523</span>    <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
+<div class="line"><span class="lineno">  524</span>    cout &lt;&lt; <span class="stringliteral">&quot;Press any key to continue..\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  525</span>    cin.ignore(numeric_limits&lt;streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">  526</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  527</span> </div>
+<div class="line"><span class="lineno">  528</span>    }</div>
+<div class="line"><span class="lineno">  529</span>    cout &lt;&lt; fixed &lt;&lt; setprecision(2);</div>
+<div class="line"><span class="lineno">  530</span>    system (<span class="stringliteral">&quot;clear&quot;</span>);</div>
+<div class="line"><span class="lineno">  531</span>    cout &lt;&lt; <span class="stringliteral">&quot;┌─────────────────────────────────────────────────────────────────────────┐\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  532</span>    cout &lt;&lt; <span class="stringliteral">&quot;│  SERENDIPITY BOOK SELLERS                            YOUR SHOPPING CART │\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  533</span>    cout &lt;&lt; <span class="stringliteral">&quot;│                                                                         │\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  534</span>    cout &lt;&lt; <span class="stringliteral">&quot;│ No. Title                                                           Qty │\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  535</span>    cout &lt;&lt; <span class="stringliteral">&quot;├─────────────────────────────────────────────────────────────────────────┤\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  536</span>    </div>
+<div class="line"><span class="lineno">  537</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 20; i++)</div>
+<div class="line"><span class="lineno">  538</span>    {</div>
+<div class="line"><span class="lineno">  539</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i] &gt; 0)</div>
+<div class="line"><span class="lineno">  540</span>            {</div>
+<div class="line"><span class="lineno">  541</span>                cout &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; setw (2) &lt;&lt; right &lt;&lt; bookAddedCount &lt;&lt; <span class="stringliteral">&quot;. &quot;</span>;</div>
+<div class="line"><span class="lineno">  542</span>                <span class="comment">// For placement of the title</span></div>
+<div class="line"><span class="lineno">  543</span>                <span class="keywordflow">if</span> (books[i].getTitle().length() &lt;= 60 )</div>
+<div class="line"><span class="lineno">  544</span>                    {</div>
+<div class="line"><span class="lineno">  545</span>                        cout &lt;&lt; setw (62) &lt;&lt; left &lt;&lt; books[i].<a class="code hl_function" href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">getTitle</a>();</div>
+<div class="line"><span class="lineno">  546</span>                    }</div>
+<div class="line"><span class="lineno">  547</span>                    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  548</span>                    {</div>
+<div class="line"><span class="lineno">  549</span>                        tempTitle = books[i].<a class="code hl_function" href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">getTitle</a>().substr(0, 59);</div>
+<div class="line"><span class="lineno">  550</span>                        cout &lt;&lt; setw (58) &lt;&lt; left &lt;&lt; tempTitle &lt;&lt; <span class="stringliteral">&quot;...&quot;</span>;</div>
+<div class="line"><span class="lineno">  551</span>                    }</div>
+<div class="line"><span class="lineno">  552</span>                cout &lt;&lt; setw (4) &lt;&lt; right &lt;&lt; <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i] &lt;&lt; <span class="stringliteral">&quot;  │\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  553</span>                totalBeforeTax += books[i].<a class="code hl_function" href="classBookType.html#a60e45a826a946b465b222849477c9b41">getRetail</a>() * <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i];</div>
+<div class="line"><span class="lineno">  554</span>                bookAddedCount++;</div>
+<div class="line"><span class="lineno">  555</span>            }</div>
+<div class="line"><span class="lineno">  556</span>    }</div>
+<div class="line"><span class="lineno">  557</span>    </div>
+<div class="line"><span class="lineno">  558</span>        cout &lt;&lt; <span class="stringliteral">&quot;│                                                                         │\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  559</span>        cout &lt;&lt; <span class="stringliteral">&quot;│                                                                         │\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  560</span>        cout &lt;&lt; <span class="stringliteral">&quot;│   &quot;</span> &lt;&lt; setw (58) &lt;&lt; right &lt;&lt; <span class="stringliteral">&quot;Total Before Tax  : &quot;</span> &lt;&lt; <span class="stringliteral">&quot; $ &quot;</span> &lt;&lt; right &lt;&lt; setw (8) &lt;&lt; totalBeforeTax &lt;&lt; <span class="stringliteral">&quot; │ \n&quot;</span>;</div>
+<div class="line"><span class="lineno">  561</span>        cout &lt;&lt; <span class="stringliteral">&quot;└─────────────────────────────────────────────────────────────────────────┘\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  562</span>        <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
+<div class="line"><span class="lineno">  563</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac1691320d0e13ff1eb39e4121c3a34e8" name="ac1691320d0e13ff1eb39e4121c3a34e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1691320d0e13ff1eb39e4121c3a34e8">&#9670;&#160;</a></span>showCashierMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char showCashierMenu </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>showCashierMenu displays the cashier menu and prompts the user for a choice.</p>
+<p>returns a char representing the user choice for the menu. </p>
+
+<p class="definition">Definition at line <a class="el" href="cashier_8cpp_source.html#l00241">241</a> of file <a class="el" href="cashier_8cpp_source.html">cashier.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  242</span>{</div>
+<div class="line"><span class="lineno">  243</span>    <span class="keywordtype">char</span> choice;</div>
+<div class="line"><span class="lineno">  244</span>    system (<span class="stringliteral">&quot;clear&quot;</span>);</div>
+<div class="line"><span class="lineno">  245</span>    <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a>(96);</div>
+<div class="line"><span class="lineno">  246</span>    cout &lt;&lt; <span class="stringliteral">&quot;                ┌──────────────────────────────────────────────────────────────────┐\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  247</span>    cout &lt;&lt; <span class="stringliteral">&quot;                │                 Welcome to Serendipity Cash Register             │\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  248</span>    cout &lt;&lt; <span class="stringliteral">&quot;                │                                                                  │\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  249</span>    cout &lt;&lt; <span class="stringliteral">&quot;                │     (1) -   Add a Book to Your Cart                              │\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  250</span>    cout &lt;&lt; <span class="stringliteral">&quot;                │     (2) -   Remove a Book from Your Cart                         │\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  251</span>    cout &lt;&lt; <span class="stringliteral">&quot;                │     (3) -   View Your Cart                                       │\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  252</span>    cout &lt;&lt; <span class="stringliteral">&quot;                │     (4) -   CheckOut Your Cart                                   │\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  253</span>    cout &lt;&lt; <span class="stringliteral">&quot;                ├──────────────────────────────────────────────────────────────────┤\n&quot;</span>;   </div>
+<div class="line"><span class="lineno">  254</span>    cout &lt;&lt; <span class="stringliteral">&quot;                │     (5) -   Exit the Cashier AND Cancel the Current Transaction  │\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  255</span>    cout &lt;&lt; <span class="stringliteral">&quot;                └──────────────────────────────────────────────────────────────────┘\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  256</span>    <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
+<div class="line"><span class="lineno">  257</span>    cout &lt;&lt; <span class="stringliteral">&quot;                                    Enter your choice ( 1 - 5 )\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  258</span>    cout &lt;&lt; right &lt;&lt; setw(50)&lt;&lt; <span class="stringliteral">&quot;→  &quot;</span>;</div>
+<div class="line"><span class="lineno">  259</span>    cin.get (choice);</div>
+<div class="line"><span class="lineno">  260</span>    cin.ignore (100, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">  261</span> </div>
+<div class="line"><span class="lineno">  262</span>    <span class="keywordflow">while</span> (choice &lt; <span class="charliteral">&#39;1&#39;</span> || choice &gt; <span class="charliteral">&#39;5&#39;</span> )</div>
+<div class="line"><span class="lineno">  263</span>    {</div>
+<div class="line"><span class="lineno">  264</span>        cout &lt;&lt; choice &lt;&lt; <span class="stringliteral">&quot; is not a valid option. Please enter a number between 1 and 5 based on the menu.\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  265</span>        cout &lt;&lt; right &lt;&lt; setw(50)&lt;&lt; <span class="stringliteral">&quot;→  &quot;</span>;</div>
+<div class="line"><span class="lineno">  266</span>        cin.get (choice);</div>
+<div class="line"><span class="lineno">  267</span>        cin.ignore (100, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">  268</span>    }</div>
+<div class="line"><span class="lineno">  269</span> </div>
+<div class="line"><span class="lineno">  270</span>    <span class="keywordflow">return</span> choice;</div>
+<div class="line"><span class="lineno">  271</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

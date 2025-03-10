@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['validateandask_0',['validateAndAsk',['../lookUp_8h.html#acf7cae378d5f2bef18b6e4bbdc270c43',1,'validateAndAsk(const int &amp;bookCount):&#160;lookUp.cpp'],['../lookUp_8cpp.html#acf7cae378d5f2bef18b6e4bbdc270c43',1,'validateAndAsk(const int &amp;bookCount):&#160;lookUp.cpp']]]
+  ['_7ebooktype_0',['~BookType',['../classBookType.html#ad5ea3963913b4d953b368f6c61a478d7',1,'BookType']]]
 ];
