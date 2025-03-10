@@ -91,7 +91,7 @@ bool BookType::equalData (const BookType anotherBook) const
  * @return true If the search keyword is found in the title or ISBN.
  * @return false If the search keyword is not found in either the title or ISBN.
  */
-bool BookType::foundKeyword (string toSearch)
+/*bool BookType::foundKeyword (string toSearch)
 {
 	string tempTitle;
 	string searchUpper;
@@ -106,4 +106,4 @@ bool BookType::foundKeyword (string toSearch)
 
 	// Search for title or isbn match
 	return (tempTitle.find(searchUpper) != string::npos || isbn.find(searchUpper) != string::npos);
-}
+}*/

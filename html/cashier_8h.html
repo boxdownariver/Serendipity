@@ -90,8 +90,7 @@ $(document).ready(function(){initNavTree('cashier_8h.html',''); initResizable();
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">cashier.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -123,11 +122,6 @@ This graph shows which files directly or indirectly include this file:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a6b4b7cc79a4e1a3bfc5abedb6e81bafd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cashier_8h.html#a6b4b7cc79a4e1a3bfc5abedb6e81bafd">mainCashier</a> (<a class="el" href="classBookType.html">BookType</a> books[])</td></tr>
 <tr class="separator:a6b4b7cc79a4e1a3bfc5abedb6e81bafd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a2d308849667e1bd97090c1c472986c7a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a> [20]</td></tr>
-<tr class="separator:a2d308849667e1bd97090c1c472986c7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a6b4b7cc79a4e1a3bfc5abedb6e81bafd" name="a6b4b7cc79a4e1a3bfc5abedb6e81bafd"></a>
@@ -163,7 +157,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">   67</span>            }</div>
 <div class="line"><span class="lineno">   68</span> </div>
 <div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   70</span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[20];</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordtype">int</span> cart[20];</div>
 <div class="line"><span class="lineno">   71</span>    <span class="keywordtype">char</span> choice;</div>
 <div class="line"><span class="lineno">   72</span>    <span class="keywordtype">string</span> keyword;</div>
 <div class="line"><span class="lineno">   73</span>    <span class="keywordtype">int</span> indexOfBook;</div>
@@ -175,7 +169,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">   79</span> </div>
 <div class="line"><span class="lineno">   80</span><span class="comment">// initialize cart with 0s before entering loop</span></div>
 <div class="line"><span class="lineno">   81</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 20 ; i++){</div>
-<div class="line"><span class="lineno">   82</span>                <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i] = 0;</div>
+<div class="line"><span class="lineno">   82</span>                cart[i] = 0;</div>
 <div class="line"><span class="lineno">   83</span>            }</div>
 <div class="line"><span class="lineno">   84</span>    cartFilled = <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">   85</span> </div>
@@ -184,7 +178,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">   88</span>        <span class="comment">//  Before entering inner loop, always check if cart is filled</span></div>
 <div class="line"><span class="lineno">   89</span>        cartFilled = <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">   90</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 20; i++) {</div>
-<div class="line"><span class="lineno">   91</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i] &gt; 0) {</div>
+<div class="line"><span class="lineno">   91</span>            <span class="keywordflow">if</span> (cart[i] &gt; 0) {</div>
 <div class="line"><span class="lineno">   92</span>                cartFilled = <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">   93</span>                    <span class="keywordflow">break</span>;  }   }</div>
 <div class="line"><span class="lineno">   94</span> </div>
@@ -200,7 +194,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  104</span>            cout &lt;&lt; <span class="stringliteral">&quot;Press enter to continue...\n&quot;</span>;</div>
 <div class="line"><span class="lineno">  105</span>            cin.ignore(numeric_limits&lt;streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);}</div>
 <div class="line"><span class="lineno">  106</span>            <span class="keywordflow">else</span>    {</div>
-<div class="line"><span class="lineno">  107</span>                <a class="code hl_function" href="cashier_8cpp.html#a32a015c18396175be8c3efe898da07cc">addBook</a> ( books, indexOfBook, <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>);</div>
+<div class="line"><span class="lineno">  107</span>                <a class="code hl_function" href="cashier_8cpp.html#a32a015c18396175be8c3efe898da07cc">addBook</a> ( books, indexOfBook, cart);</div>
 <div class="line"><span class="lineno">  108</span>            }</div>
 <div class="line"><span class="lineno">  109</span>            <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">  110</span> </div>
@@ -208,12 +202,12 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  112</span>            <span class="keywordflow">if</span> (cartFilled)</div>
 <div class="line"><span class="lineno">  113</span>            {</div>
 <div class="line"><span class="lineno">  114</span>                    keyword = <a class="code hl_function" href="lookUp_8h.html#ad03651902aa14f3cd4d15385f2a8a5b6">AskKeyword</a> (<a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>());</div>
-<div class="line"><span class="lineno">  115</span>                    indexOfBook = <a class="code hl_function" href="lookUp_8h.html#a1898c0545d6342f653f0db2999876564">findStringInCart</a> (keyword, books, <a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>(), <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>);</div>
+<div class="line"><span class="lineno">  115</span>                    indexOfBook = <a class="code hl_function" href="lookUp_8h.html#a1898c0545d6342f653f0db2999876564">findStringInCart</a> (keyword, books, <a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>(), cart);</div>
 <div class="line"><span class="lineno">  116</span>                    <span class="keywordflow">if</span> (indexOfBook == -1){</div>
 <div class="line"><span class="lineno">  117</span>                    cout &lt;&lt; <span class="stringliteral">&quot;Press enter to continue...\n&quot;</span>; </div>
 <div class="line"><span class="lineno">  118</span>                    cin.ignore(numeric_limits&lt;streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);}</div>
 <div class="line"><span class="lineno">  119</span>                    <span class="keywordflow">else</span>    {</div>
-<div class="line"><span class="lineno">  120</span>                                <a class="code hl_function" href="cashier_8cpp.html#af5c6fe67a68bf74d321d11303c66d4c3">removeBook</a> ( books, indexOfBook, <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>);</div>
+<div class="line"><span class="lineno">  120</span>                                <a class="code hl_function" href="cashier_8cpp.html#af5c6fe67a68bf74d321d11303c66d4c3">removeBook</a> ( books, indexOfBook, cart);</div>
 <div class="line"><span class="lineno">  121</span>                            }</div>
 <div class="line"><span class="lineno">  122</span>            }</div>
 <div class="line"><span class="lineno">  123</span>            <span class="comment">// if not filled</span></div>
@@ -232,7 +226,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  136</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;3&#39;</span>:</div>
 <div class="line"><span class="lineno">  137</span>            <span class="comment">// show cart </span></div>
 <div class="line"><span class="lineno">  138</span>            <span class="keywordflow">if</span> (cartFilled){</div>
-<div class="line"><span class="lineno">  139</span>            <a class="code hl_function" href="cashier_8cpp.html#aef0b7e4f36dfdc9630fe9c17d9d8baeb">showCart</a>(books, <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>);</div>
+<div class="line"><span class="lineno">  139</span>            <a class="code hl_function" href="cashier_8cpp.html#aef0b7e4f36dfdc9630fe9c17d9d8baeb">showCart</a>(books, cart);</div>
 <div class="line"><span class="lineno">  140</span>            cout &lt;&lt; <span class="stringliteral">&quot;Press any key to continue...\n&quot;</span>;</div>
 <div class="line"><span class="lineno">  141</span>            cin.ignore(numeric_limits&lt;streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
 <div class="line"><span class="lineno">  142</span>            }</div>
@@ -253,7 +247,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  157</span>            <span class="keywordflow">if</span> (cartFilled)</div>
 <div class="line"><span class="lineno">  158</span>                {</div>
 <div class="line"><span class="lineno">  159</span>                    system (<span class="stringliteral">&quot;Clear&quot;</span>);</div>
-<div class="line"><span class="lineno">  160</span>                    <a class="code hl_function" href="cashier_8cpp.html#aef0b7e4f36dfdc9630fe9c17d9d8baeb">showCart</a> (books, <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>);</div>
+<div class="line"><span class="lineno">  160</span>                    <a class="code hl_function" href="cashier_8cpp.html#aef0b7e4f36dfdc9630fe9c17d9d8baeb">showCart</a> (books, cart);</div>
 <div class="line"><span class="lineno">  161</span>                    cout &lt;&lt; <span class="stringliteral">&quot;Confirm Purchase ? (Y/N)\n&quot;</span>;</div>
 <div class="line"><span class="lineno">  162</span>                    cin.get (confirm);</div>
 <div class="line"><span class="lineno">  163</span>                    cin.ignore (100, <span class="charliteral">&#39;\n&#39;</span>);</div>
@@ -267,7 +261,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  171</span>                        {</div>
 <div class="line"><span class="lineno">  172</span> </div>
 <div class="line"><span class="lineno">  173</span>                            date = <a class="code hl_function" href="cashier_8cpp.html#a8937a595b36a8ed5c35062e8d8b03dda">generateDate</a> ();</div>
-<div class="line"><span class="lineno">  174</span>                            <a class="code hl_function" href="cashier_8cpp.html#ad7e7d558ede8fc08bdf988885c460a34">FormatReport</a> (books, <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>, date);</div>
+<div class="line"><span class="lineno">  174</span>                            <a class="code hl_function" href="cashier_8cpp.html#ad7e7d558ede8fc08bdf988885c460a34">FormatReport</a> (books, cart, date);</div>
 <div class="line"><span class="lineno">  175</span>                            cout &lt;&lt; <span class="stringliteral">&quot;      ┌──────────────────────────────────────────────────────────────────┐\n&quot;</span>;</div>
 <div class="line"><span class="lineno">  176</span>                            cout &lt;&lt; <span class="stringliteral">&quot;      │                       TRANSACTION COMPLETED !                    │\n&quot;</span>;</div>
 <div class="line"><span class="lineno">  177</span>                            cout &lt;&lt; <span class="stringliteral">&quot;      ├──────────────────────────────────────────────────────────────────┤\n&quot;</span>;</div>
@@ -284,7 +278,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  188</span>                            cin.ignore (100, <span class="charliteral">&#39;\n&#39;</span>);}</div>
 <div class="line"><span class="lineno">  189</span>                                     <span class="keywordflow">if</span> (toupper(repeat) == <span class="charliteral">&#39;Y&#39;</span>)</div>
 <div class="line"><span class="lineno">  190</span>                                            {   <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 20 ; i++){</div>
-<div class="line"><span class="lineno">  191</span>                                            <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[i] = 0;</div>
+<div class="line"><span class="lineno">  191</span>                                            cart[i] = 0;</div>
 <div class="line"><span class="lineno">  192</span>                                            cartFilled = <span class="keyword">false</span>;} }</div>
 <div class="line"><span class="lineno">  193</span>                                    <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">  194</span>                                    <span class="keywordflow">return</span> 0;</div>
@@ -333,7 +327,6 @@ Variables</h2></td></tr>
 <div class="ttc" id="acashier_8cpp_html_ad7e7d558ede8fc08bdf988885c460a34"><div class="ttname"><a href="cashier_8cpp.html#ad7e7d558ede8fc08bdf988885c460a34">FormatReport</a></div><div class="ttdeci">void FormatReport(BookType books[], int cart[], string date)</div><div class="ttdef"><b>Definition:</b> <a href="cashier_8cpp_source.html#l00577">cashier.cpp:577</a></div></div>
 <div class="ttc" id="acashier_8cpp_html_aef0b7e4f36dfdc9630fe9c17d9d8baeb"><div class="ttname"><a href="cashier_8cpp.html#aef0b7e4f36dfdc9630fe9c17d9d8baeb">showCart</a></div><div class="ttdeci">void showCart(BookType books[], int cart[])</div><div class="ttdef"><b>Definition:</b> <a href="cashier_8cpp_source.html#l00502">cashier.cpp:502</a></div></div>
 <div class="ttc" id="acashier_8cpp_html_af5c6fe67a68bf74d321d11303c66d4c3"><div class="ttname"><a href="cashier_8cpp.html#af5c6fe67a68bf74d321d11303c66d4c3">removeBook</a></div><div class="ttdeci">void removeBook(BookType books[], int index, int cart[])</div><div class="ttdef"><b>Definition:</b> <a href="cashier_8cpp_source.html#l00422">cashier.cpp:422</a></div></div>
-<div class="ttc" id="acashier_8h_html_a2d308849667e1bd97090c1c472986c7a"><div class="ttname"><a href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a></div><div class="ttdeci">int cart[20]</div><div class="ttdef"><b>Definition:</b> <a href="cashier_8h_source.html#l00008">cashier.h:8</a></div></div>
 <div class="ttc" id="aclassBookType_html_ab3d149c73829ea6b2a676795a485b70c"><div class="ttname"><a href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a></div><div class="ttdeci">static int getBookCount()</div><div class="ttdoc">Gets the count of all book types.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00036">bookType.h:36</a></div></div>
 <div class="ttc" id="alookUp_8h_html_a1898c0545d6342f653f0db2999876564"><div class="ttname"><a href="lookUp_8h.html#a1898c0545d6342f653f0db2999876564">findStringInCart</a></div><div class="ttdeci">int findStringInCart(const std::string toSearch, const BookType array[], const int size, int cart[])</div></div>
 <div class="ttc" id="alookUp_8h_html_ad03651902aa14f3cd4d15385f2a8a5b6"><div class="ttname"><a href="lookUp_8h.html#ad03651902aa14f3cd4d15385f2a8a5b6">AskKeyword</a></div><div class="ttdeci">string AskKeyword(const int &amp;bookCount)</div><div class="ttdef"><b>Definition:</b> <a href="lookUp_8cpp_source.html#l00295">lookUp.cpp:295</a></div></div>
@@ -341,23 +334,6 @@ Variables</h2></td></tr>
 <div class="ttc" id="asetColour_8h_html_a682d98f55e0091ceaff7e01e243fd8e5"><div class="ttname"><a href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a></div><div class="ttdeci">void setColour(int colourCode)</div><div class="ttdef"><b>Definition:</b> <a href="setColour_8cpp_source.html#l00013">setColour.cpp:13</a></div></div>
 <div class="ttc" id="asetColour_8h_html_a92d2d8b4856c8fada2acd3e38538f493"><div class="ttname"><a href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a></div><div class="ttdeci">void resetColour()</div><div class="ttdef"><b>Definition:</b> <a href="setColour_8cpp_source.html#l00024">setColour.cpp:24</a></div></div>
 </div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a2d308849667e1bd97090c1c472986c7a" name="a2d308849667e1bd97090c1c472986c7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d308849667e1bd97090c1c472986c7a">&#9670;&#160;</a></span>cart</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int cart[20]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="cashier_8h_source.html#l00008">8</a> of file <a class="el" href="cashier_8h_source.html">cashier.h</a>.</p>
-
 </div>
 </div>
 </div><!-- contents -->

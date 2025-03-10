@@ -4,7 +4,6 @@ var classBookType =
     [ "BookType", "classBookType.html#a0e84ed89ce6269d0f01c6e0e2a06f8c7", null ],
     [ "~BookType", "classBookType.html#ad5ea3963913b4d953b368f6c61a478d7", null ],
     [ "equalData", "classBookType.html#ab8ab9090a63f2bed4638e338a4ff1b04", null ],
-    [ "foundKeyword", "classBookType.html#a33c2f57d798c7fe4d930981c1be53b35", null ],
     [ "getAuthor", "classBookType.html#a0326e55232a94efb1c6fa29ec5e99e34", null ],
     [ "getDateAdded", "classBookType.html#ae3f36bb2025322d0a8982887a12e818e", null ],
     [ "getISBN", "classBookType.html#ac1e5aab4bc4f18eaad0ebe14f3046b7b", null ],

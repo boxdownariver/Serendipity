@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dateadded_0',['dateAdded',['../classBookType.html#abb415630cf04610b537caacaf4300fd2',1,'BookType']]]
+  ['isbn_0',['isbn',['../classBookType.html#ac8c9d760a3bfc507db65330b1175cb32',1,'BookType']]]
 ];

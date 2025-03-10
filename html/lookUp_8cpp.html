@@ -136,7 +136,7 @@ Functions</h2></td></tr>
 <tr class="separator:a3ca48ee5bc21de7f2eab6e5102b84239"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9deb98279f3670a90d5116acecf2cbae"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lookUp_8cpp.html#a9deb98279f3670a90d5116acecf2cbae">findString</a> (const string toSearch, const <a class="el" href="classBookType.html">BookType</a> array[], const int size)</td></tr>
 <tr class="separator:a9deb98279f3670a90d5116acecf2cbae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7919db6721d14274efc9123b684910c2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lookUp_8cpp.html#a7919db6721d14274efc9123b684910c2">findStringInCart</a> (const string toSearch, const <a class="el" href="classBookType.html">BookType</a> array[], const int size, int <a class="el" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[])</td></tr>
+<tr class="memitem:a7919db6721d14274efc9123b684910c2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lookUp_8cpp.html#a7919db6721d14274efc9123b684910c2">findStringInCart</a> (const string toSearch, const <a class="el" href="classBookType.html">BookType</a> array[], const int size, int cart[])</td></tr>
 <tr class="separator:a7919db6721d14274efc9123b684910c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad03651902aa14f3cd4d15385f2a8a5b6"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lookUp_8cpp.html#ad03651902aa14f3cd4d15385f2a8a5b6">AskKeyword</a> (const int &amp;bookCount)</td></tr>
 <tr class="separator:ad03651902aa14f3cd4d15385f2a8a5b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -380,7 +380,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  217</span>    </div>
 <div class="line"><span class="lineno">  218</span>     <span class="keywordflow">while</span> (index &lt; size)</div>
 <div class="line"><span class="lineno">  219</span>         {</div>
-<div class="line"><span class="lineno">  220</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[index] &gt; 0) </div>
+<div class="line"><span class="lineno">  220</span>            <span class="keywordflow">if</span> (cart[index] &gt; 0) </div>
 <div class="line"><span class="lineno">  221</span>                    {</div>
 <div class="line"><span class="lineno">  222</span>                <span class="comment">// Convert book title to uppercase for case-insensitive search</span></div>
 <div class="line"><span class="lineno">  223</span>             tempTitle = array[index].<a class="code hl_function" href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">getTitle</a>();</div>
@@ -397,7 +397,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  234</span>        <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
 <div class="line"><span class="lineno">  235</span>        cout &lt;&lt; <span class="stringliteral">&quot; ║ \n║ &quot;</span>;</div>
 <div class="line"><span class="lineno">  236</span>        <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a>(32); <span class="comment">// Yellow text</span></div>
-<div class="line"><span class="lineno">  237</span>        cout &lt;&lt; <span class="stringliteral">&quot;Quantity -&gt; : In your cart - [&quot;</span> &lt;&lt; setw (2) &lt;&lt; right &lt;&lt; <a class="code hl_variable" href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a>[index] &lt;&lt; setw(66) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>; </div>
+<div class="line"><span class="lineno">  237</span>        cout &lt;&lt; <span class="stringliteral">&quot;Quantity -&gt; : In your cart - [&quot;</span> &lt;&lt; setw (2) &lt;&lt; right &lt;&lt; cart[index] &lt;&lt; setw(66) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>; </div>
 <div class="line"><span class="lineno">  238</span>        <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
 <div class="line"><span class="lineno">  239</span>        cout &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
 <div class="line"><span class="lineno">  240</span>                cout &lt;&lt; <span class="stringliteral">&quot;║ &quot;</span> &lt;&lt; setw (98) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;Is this the book you intended to search for? (Y/N) : &quot;</span> &lt;&lt; <span class="stringliteral">&quot; ║ &quot;</span> ;</div>
@@ -443,7 +443,6 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  280</span> </div>
 <div class="line"><span class="lineno">  281</span>    <span class="keywordflow">return</span> -1;  <span class="comment">// Return -1 if no book was found</span></div>
 <div class="line"><span class="lineno">  282</span>}</div>
-<div class="ttc" id="acashier_8h_html_a2d308849667e1bd97090c1c472986c7a"><div class="ttname"><a href="cashier_8h.html#a2d308849667e1bd97090c1c472986c7a">cart</a></div><div class="ttdeci">int cart[20]</div><div class="ttdef"><b>Definition:</b> <a href="cashier_8h_source.html#l00008">cashier.h:8</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

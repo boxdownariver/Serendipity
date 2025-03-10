@@ -105,7 +105,7 @@ Collaboration diagram for BookType:</div>
 <div class="dyncontent">
 <div class="center"><img src="classBookType__coll__graph.png" border="0" usemap="#aBookType_coll__map" alt="Collaboration graph"/></div>
 <map name="aBookType_coll__map" id="aBookType_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,284,615"/>
+<area shape="rect" title=" " alt="" coords="5,5,284,599"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -162,9 +162,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af5eadc6e768e9a8213696355f8f25481"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#af5eadc6e768e9a8213696355f8f25481">printBookInfo</a> () const</td></tr>
 <tr class="memdesc:af5eadc6e768e9a8213696355f8f25481"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="bookInfo_8h.html#ac065ee917cbbe636bc746dba91e6405a">bookInfo()</a> replacement  <br /></td></tr>
 <tr class="separator:af5eadc6e768e9a8213696355f8f25481"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33c2f57d798c7fe4d930981c1be53b35"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a33c2f57d798c7fe4d930981c1be53b35">foundKeyword</a> (string toSearch)</td></tr>
-<tr class="memdesc:a33c2f57d798c7fe4d930981c1be53b35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for substring within book name.  <br /></td></tr>
-<tr class="separator:a33c2f57d798c7fe4d930981c1be53b35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8ab9090a63f2bed4638e338a4ff1b04"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#ab8ab9090a63f2bed4638e338a4ff1b04">equalData</a> (const <a class="el" href="classBookType.html">BookType</a>) const</td></tr>
 <tr class="memdesc:ab8ab9090a63f2bed4638e338a4ff1b04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether two books are equivalent.  <br /></td></tr>
 <tr class="separator:ab8ab9090a63f2bed4638e338a4ff1b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -447,49 +444,6 @@ false if any attribute of the two books differs. </dd></dl>
 <div class="line"><span class="lineno">   80</span>        }</div>
 <div class="line"><span class="lineno">   81</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">   82</span>}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a33c2f57d798c7fe4d930981c1be53b35" name="a33c2f57d798c7fe4d930981c1be53b35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33c2f57d798c7fe4d930981c1be53b35">&#9670;&#160;</a></span>foundKeyword()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool BookType::foundKeyword </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>toSearch</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Searches for substring within book name. </p>
-<p>foundKeyword function searches for a keyword in the book's title or ISBN.</p>
-<p>This function checks if the <code>toSearch</code> string is found within the book's title or ISBN. The comparison is case-insensitive, and the search is performed after converting both the title and the search keyword to uppercase.</p>
-<p>parameter toSearch is the keyword to search for in the book's title or ISBN. </p><dl class="section return"><dt>Returns</dt><dd>true If the search keyword is found in the title or ISBN. </dd>
-<dd>
-false If the search keyword is not found in either the title or ISBN. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="bookType_8cpp_source.html#l00094">94</a> of file <a class="el" href="bookType_8cpp_source.html">bookType.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   95</span>{</div>
-<div class="line"><span class="lineno">   96</span>    <span class="keywordtype">string</span> tempTitle;</div>
-<div class="line"><span class="lineno">   97</span>    <span class="keywordtype">string</span> searchUpper;</div>
-<div class="line"><span class="lineno">   98</span> </div>
-<div class="line"><span class="lineno">   99</span>    <span class="comment">// Copy the title and search word</span></div>
-<div class="line"><span class="lineno">  100</span>    tempTitle = <a class="code hl_function" href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">getTitle</a> ();</div>
-<div class="line"><span class="lineno">  101</span>    searchUpper = toSearch;</div>
-<div class="line"><span class="lineno">  102</span> </div>
-<div class="line"><span class="lineno">  103</span>    <span class="comment">//Transform title and search word to uppercase</span></div>
-<div class="line"><span class="lineno">  104</span>    transform(tempTitle.begin(), tempTitle.end(), tempTitle.begin(), ::toupper);</div>
-<div class="line"><span class="lineno">  105</span>    transform(searchUpper.begin(), searchUpper.end(), searchUpper.begin(), ::toupper);</div>
-<div class="line"><span class="lineno">  106</span> </div>
-<div class="line"><span class="lineno">  107</span>    <span class="comment">// Search for title or isbn match</span></div>
-<div class="line"><span class="lineno">  108</span>    <span class="keywordflow">return</span> (tempTitle.find(searchUpper) != string::npos || <a class="code hl_variable" href="classBookType.html#ac8c9d760a3bfc507db65330b1175cb32">isbn</a>.find(searchUpper) != string::npos);</div>
-<div class="line"><span class="lineno">  109</span>}</div>
-<div class="ttc" id="aclassBookType_html_a369dfce6a37730fd0d9b4b2b4586707b"><div class="ttname"><a href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">BookType::getTitle</a></div><div class="ttdeci">string getTitle() const</div><div class="ttdoc">Gets the book title.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00028">bookType.h:28</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -820,6 +774,7 @@ false If the search keyword is not found in either the title or ISBN. </dd></dl>
 <div class="line"><span class="lineno">   63</span>    cout &lt;&lt;         <span class="stringliteral">&quot;╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n&quot;</span>;</div>
 <div class="line"><span class="lineno">   64</span>}</div>
 <div class="ttc" id="aclassBookType_html_a0326e55232a94efb1c6fa29ec5e99e34"><div class="ttname"><a href="classBookType.html#a0326e55232a94efb1c6fa29ec5e99e34">BookType::getAuthor</a></div><div class="ttdeci">string getAuthor() const</div><div class="ttdoc">Gets the book author.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00030">bookType.h:30</a></div></div>
+<div class="ttc" id="aclassBookType_html_a369dfce6a37730fd0d9b4b2b4586707b"><div class="ttname"><a href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">BookType::getTitle</a></div><div class="ttdeci">string getTitle() const</div><div class="ttdoc">Gets the book title.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00028">bookType.h:28</a></div></div>
 <div class="ttc" id="aclassBookType_html_a60e45a826a946b465b222849477c9b41"><div class="ttname"><a href="classBookType.html#a60e45a826a946b465b222849477c9b41">BookType::getRetail</a></div><div class="ttdeci">double getRetail() const</div><div class="ttdoc">Gets the retail value of book.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00035">bookType.h:35</a></div></div>
 <div class="ttc" id="aclassBookType_html_a8429f87cac6b7d70ef56f6821cdccfba"><div class="ttname"><a href="classBookType.html#a8429f87cac6b7d70ef56f6821cdccfba">BookType::getQtyOnHand</a></div><div class="ttdeci">int getQtyOnHand() const</div><div class="ttdoc">Gets the quantity of books available.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00033">bookType.h:33</a></div></div>
 <div class="ttc" id="aclassBookType_html_a8684b5b66f7c5c56d457642edfafaba7"><div class="ttname"><a href="classBookType.html#a8684b5b66f7c5c56d457642edfafaba7">BookType::getPub</a></div><div class="ttdeci">string getPub() const</div><div class="ttdoc">Gets the book publisher.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00031">bookType.h:31</a></div></div>
