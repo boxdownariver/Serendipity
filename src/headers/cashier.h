@@ -5,7 +5,6 @@
 #include "invmenu.h"
 #endif
 
-int cart[20];
 // make an array of max size for shopping cart, parallel array with BookType class
 
 int mainCashier (BookType books[]);
