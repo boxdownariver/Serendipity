@@ -10,6 +10,7 @@ using namespace std;
 
 int mainLookUp( const BookType booklist[20] );
 int findString (const std::string toSearch,const BookType array[], const int size);
-string validateAndAsk (const int &bookCount );
+int findStringInCart (const std::string toSearch,const BookType array[], const int size, int cart[]);
+string AskKeyword (const int &bookCount );
 
 #endif

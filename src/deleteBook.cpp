@@ -22,6 +22,7 @@
 #include <iomanip>
 #include <iostream>
 #include <cctype>
+#include <limits>
 #include "headers/invmenu.h"
 #ifndef LOOKUP_H
 #include "headers/lookUp.h"
@@ -48,20 +49,34 @@ using namespace std;
  * Returns:
  * - This function does not return any values. It updates the `bookCount` by decrementing it after a successful deletion.
  */
+
+
 void mainDelete (BookType books[])
 {
+
+	
+	// immidiately let user exit if the bookcount is 0
+	if (BookType::getBookCount() == 0)
+			{
+			// immediately exit program
+			system ("clear");
+			cout << "╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n";
+			cout << "║ " << setw (98) << left << "The book list is empty, no books available for deletion.. " << " ║ \n" ;
+	   	cout << "║ " << setw (98) << left << "Press any key to continue " << " ║ \n" ;
+	   	cout << "╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n"; 
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			return;
+	}
 	string toDelete;
 	char choice;
 	int indexToDelete;
 
+ 
 	do {
 		// Prompt user for a search term, ensuring bookCount is valid
-    		toDelete = validateAndAsk ( BookType::getBookCount() );
-		
-		// Proceed with finding string only if the book count is > 1
-		if (toDelete != "" )
-			{
-			// Function to find the string
+    		toDelete = AskKeyword ( BookType::getBookCount() );
+	
+		// Function to find the string
     			indexToDelete = findString (toDelete, books, BookType::getBookCount() );
 				
 				if (indexToDelete != -1)
@@ -82,7 +97,6 @@ void mainDelete (BookType books[])
 						cin.get (choice);
 						cin.ignore (100, '\n');
 					}
-			}		
 	}
 	while (toupper(choice) != 'N' && BookType::getBookCount() != 0);
 
