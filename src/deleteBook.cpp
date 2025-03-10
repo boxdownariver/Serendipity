@@ -121,7 +121,8 @@ void discardBook (BookType books[], int index)
 	char decision;
 	int curBookCount;
 
-	mainbookInfo(books, index);
+	//mainbookInfo(books, index);
+	books[index].printBookInfo();
 	setColour (33);
 	cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
 	cout << "                │  Are you sure you want to delete this book? (Y/N).Think Wisely   │\n";

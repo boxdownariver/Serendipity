@@ -72,7 +72,8 @@ if (BookType::getBookCount() == 0)
         				//show the book details to user
 					system("clear");
 					// Pass the array to show the bookInfo
-        				mainbookInfo ( booklist, bookIndex );       
+        				//mainbookInfo ( booklist, bookIndex );       
+					booklist[bookIndex].printBookInfo();
     				}
 				// Prompt user for another lookup attempt
 				cout << "Do you want to proceed another look up(Y/N)?\n";

@@ -326,7 +326,8 @@ void addBook (BookType books[], int index, int cart[])
 
 	numAvailable = books[index].getQtyOnHand() - cart[index];
 	system ("clear");
-	mainbookInfo(books, index);
+	//mainbookInfo(books, index);
+	books[index].printBookInfo();
 
 	setColour (97);
 	cout << "                           ┌────────────────────────────────────────┐\n";
@@ -424,7 +425,8 @@ void removeBook (BookType books[], int index, int cart[])
 	int numToDelete;
 	int numAvailable = cart[index];
 	system ("clear");
-	mainbookInfo(books, index);
+	//mainbookInfo(books, index);
+	books[index].printBookInfo();
 	cout << "                           ┌────────────────────────────────────────┐\n";
 	cout << "                                 Stock available : " << books[index].getQtyOnHand() << endl;
 	cout << "                                 In Your Cart    : " << cart[index] << endl;
