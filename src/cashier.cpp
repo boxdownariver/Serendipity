@@ -503,6 +503,8 @@ void showCart (BookType books[], int cart[])
 {	setColour (96);
 	bool cartFilled;
 	double totalBeforeTax = 0;
+	double tax_amt;
+	double tax_pct = 0.06;
 	int bookAddedCount = 1;
 	string tempTitle;
 
@@ -554,10 +556,14 @@ void showCart (BookType books[], int cart[])
 				bookAddedCount++;
 			}
 	}
+		tax_amt = tax_pct * totalBeforeTax;
 	
 		cout << "│                                                                         │\n";
 		cout << "│                                                                         │\n";
 		cout << "│   " << setw (58) << right << "Total Before Tax  : " << " $ " << right << setw (8) << totalBeforeTax << " │ \n";
+		cout << "│   " << setw (58) << right << "Amount of Tax     : " << " $ " << right << setw (8) << tax_amt << " │ \n";
+		cout << "├─────────────────────────────────────────────────────────────────────────┤\n";
+		cout << "│   " << setw (58) << right << "Grand Total       : " << " $ " << right << setw (8) << totalBeforeTax + tax_amt << " │ \n";
 		cout << "└─────────────────────────────────────────────────────────────────────────┘\n";
 		resetColour();
 }
