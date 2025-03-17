@@ -125,38 +125,32 @@ int findString (const string toSearch, const BookType array[], const int size)
 	
      while (index < size)
          {
-             // Convert book title to uppercase for case-insensitive search
-             tempTitle = array[index].getTitle();
-             transform (tempTitle.begin (), tempTitle.end(), tempTitle.begin (), ::
-             toupper);
-
-             // Search for title or ISBN match
-             if (tempTitle.find(searchUpper) != string::npos || array[index].getISBN().find (toSearch)!= string::npos)
+             // Search foundKeyword function
+             if (array[index].foundKeyword(toSearch) == true )
              {
-		cout << "║ [" << setw (2) << right << bookFoundCount <<"]" << setw (100) << right << " ║ \n";
-        	cout << "║ ";
-		setColour(32); // Yellow text  
-		cout << "RESULT -> : Title - " << setw (78) << left << array[index].getTitle();
-		resetColour();
-
-		cout << " ║\n";
-                cout << "║ " << setw (98) << left << "Is this the book you intended to search for? (Y/N) : " << " ║ " ;
-                cin.get (choice);
-	        cin.ignore (100, '\n');
-		cout << "║                                                                                                    ║\n";
+					cout << "║ [" << setw (2) << right << bookFoundCount <<"]" << setw (100) << right << " ║ \n";
+        			cout << "║ ";
+					setColour(32); // Yellow text  
+					cout << "RESULT -> : Title - " << setw (78) << left << array[index].getTitle();
+					resetColour();
+					cout << " ║\n";
+               cout << "║ " << setw (98) << left << "Is this the book you intended to search for? (Y/N) : " << " ║ " ;
+               cin.get (choice);
+	        		cin.ignore (100, '\n');
+					cout << "║                                                                                                    ║\n";
 		     
 		// Validate user input
-                while (toupper(choice) != 'N' && toupper(choice) != 'Y' )
-			{
+         	   while (toupper(choice) != 'N' && toupper(choice) != 'Y' )
+					{
 				cout << "║ " << choice << setw (97) << " is invalid choice.. Only enter Y or N " << " ║ ";
 				cin.get (choice);
-			        cin.ignore (100, '\n');
+			   cin.ignore (100, '\n');
  			  	cout << "║                                                                                                    ║\n";
 		        }    
 		     
                 if (toupper (choice) == 'Y' )
                 return index;        // Return the index if user confirms
-		bookFoundCount++;
+					bookFoundCount++;
 
              }
              
@@ -219,41 +213,36 @@ int findStringInCart (const string toSearch, const BookType array[], const int s
          {
             if (cart[index] > 0) 
 					{
-				// Convert book title to uppercase for case-insensitive search
-             tempTitle = array[index].getTitle();
-             transform (tempTitle.begin (), tempTitle.end(), tempTitle.begin (), ::
-             toupper);
-
-             // Search for title or ISBN match
-             if (tempTitle.find(searchUpper) != string::npos || array[index].getISBN().find (toSearch)!= string::npos)
+             // Search for title or ISBN match in cart using foundKeyword
+             if (array[index].foundKeyword(toSearch) == true)
              {
-		cout << "║ [" << setw (2) << right << bookFoundCount <<"]" << setw (100) << right << " ║ \n";
-        	cout << "║ ";
-		setColour(32); // Yellow text  
-		cout << "RESULT -> : Title - " << setw (78) << left << array[index].getTitle();
-		resetColour();
-		cout << " ║ \n║ ";
-		setColour(32); // Yellow text
-		cout << "Quantity -> : In your cart - [" << setw (2) << right << cart[index] << setw(66) << left << "]"; 
-		resetColour();
-		cout << " ║\n";
-                cout << "║ " << setw (98) << left << "Is this the book you intended to search for? (Y/N) : " << " ║ " ;
-                cin.get (choice);
-	        cin.ignore (100, '\n');
-		cout << "║                                                                                                    ║\n";
+				cout << "║ [" << setw (2) << right << bookFoundCount <<"]" << setw (100) << right << " ║ \n";
+        		cout << "║ ";
+				setColour(32); // Yellow text  
+				cout << "RESULT -> : Title - " << setw (78) << left << array[index].getTitle();
+				resetColour();
+				cout << " ║ \n║ ";
+				setColour(32); // Yellow text
+				cout << "Quantity -> : In your cart - [" << setw (2) << right << cart[index] << setw(66) << left << "]"; 
+				resetColour();
+				cout << " ║\n";
+            cout << "║ " << setw (98) << left << "Is this the book you intended to search for? (Y/N) : " << " ║ " ;
+            cin.get (choice);
+	        	cin.ignore (100, '\n');
+				cout << "║                                                                                                    ║\n";
 		     
 		// Validate user input
                 while (toupper(choice) != 'N' && toupper(choice) != 'Y' )
-			{
-				cout << "║ " << choice << setw (97) << " is invalid choice.. Only enter Y or N " << " ║ ";
-				cin.get (choice);
-			        cin.ignore (100, '\n');
- 			  	cout << "║                                                                                                    ║\n";
+					{
+						cout << "║ " << choice << setw (97) << " is invalid choice.. Only enter Y or N " << " ║ ";
+						cin.get (choice);
+			        	cin.ignore (100, '\n');
+ 			  			cout << "║                                                                                                    ║\n";
 		        }    
 		     
                 if (toupper (choice) == 'Y' )
                 return index;        // Return the index if user confirms
-		bookFoundCount++;
+						bookFoundCount++;
 
              }
 			}

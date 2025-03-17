@@ -604,7 +604,7 @@ void FormatReport ( BookType books[], int cart[], string date)
 	setColour (96);   // Receipt generally using cyan colour
 	cout << fixed << setprecision(2);
 	system ("clear");
-	cout << "╔═════════════════════════════════════════════~════════════════════════════════╗\n";
+	cout << "╔══════════════════════════════════════════════════════════════════════════════╗\n";
 	cout << "║                                                                              ║\n";
 	cout << "║"; 
 	// Set cyan colour for shop name

@@ -81,8 +81,7 @@ bool BookType::equalData (const BookType anotherBook) const
 	return false;
 }
 
-/**
- * foundKeyword function searches for a keyword in the book's title or ISBN.
+/** foundKeyword function searches for a keyword in the book's title or ISBN.
  * 
  * This function checks if the `toSearch` string is found within the book's title or ISBN. The comparison is
  * case-insensitive, and the search is performed after converting both the title and the search keyword to uppercase.
@@ -91,7 +90,7 @@ bool BookType::equalData (const BookType anotherBook) const
  * @return true If the search keyword is found in the title or ISBN.
  * @return false If the search keyword is not found in either the title or ISBN.
  */
-/*bool BookType::foundKeyword (string toSearch)
+bool BookType::foundKeyword (const string toSearch) const
 {
 	string tempTitle;
 	string searchUpper;
@@ -106,4 +105,4 @@ bool BookType::equalData (const BookType anotherBook) const
 
 	// Search for title or isbn match
 	return (tempTitle.find(searchUpper) != string::npos || isbn.find(searchUpper) != string::npos);
-}*/
+}

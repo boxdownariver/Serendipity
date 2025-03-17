@@ -37,9 +37,8 @@ class BookType
 
 	void printBookInfo () const ; ///< bookInfo() replacement
 
-	//bool foundKeyword (string toSearch); ///< Searches for substring within book name
-	bool equalData (const BookType) const ; ///< Checks whether two books are equivalent
-
+	bool foundKeyword (const string toSearch) const; ///< Searches for substring within book name
+	bool equalData (const BookType) const ; ///< Checks whether two books are equivalent	
 	BookType(); ///< Constructor with no arguments
 	BookType (string, string, string, string, string, int, double, double); ///< Constructor with all possible values for book
 
