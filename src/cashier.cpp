@@ -34,7 +34,7 @@
 #include "headers/lookUp.h"
 
 using namespace std;
-char showCashierMenu ();
+char showCashierMenu (int cart[]);
 void addBook (BookType books[], int index, int cart[] );
 void removeBook (BookType books[], int index, int cart[]);
 void showCart (BookType books[], int cart[]);
@@ -93,7 +93,7 @@ do {
 					break;	}	}
 
 		// show menu
-		choice = showCashierMenu ();
+		choice = showCashierMenu (cart);
 
 		switch(choice)
 		{
@@ -109,65 +109,36 @@ do {
 			break;
 
 			case '2' :
-			if (cartFilled)
-			{
-					keyword = AskKeyword (BookType::getBookCount());
-					indexOfBook = findStringInCart (keyword, books, BookType::getBookCount(), cart);
-					if (indexOfBook == -1){
-					cout << "Press enter to continue...\n"; 
-					cin.ignore(numeric_limits<streamsize>::max(), '\n');}
-					else 	{
-								removeBook ( books, indexOfBook, cart);
-							}
-			}
-			// if not filled
-			else{
-			setColour (96);
-			cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
-			cout << "                │   The cart is currently empty, so there are no books to remove.  │\n";
-			cout << "                └──────────────────────────────────────────────────────────────────┘\n";
-			resetColour();
-			cout << "Press enter to continue\n";
-			cin.ignore(numeric_limits<streamsize>::max(), '\n');
-	        	}
+			keyword = AskKeyword (BookType::getBookCount());
+			indexOfBook = findStringInCart (keyword, books, BookType::getBookCount(), cart);
+			if (indexOfBook == -1){
+			cout << "Press enter to continue...\n"; 
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');}
+			else 	{
+						removeBook ( books, indexOfBook, cart);
+					}
 			break;
   
 			
 			case '3':
-			// show cart 
-			if (cartFilled){
 			showCart(books, cart);
 			cout << "Press any key to continue...\n";
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
-			}
-
-			else{
-			setColour (96);
-			cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
-			cout << "                │   The cart is currently empty, so there are no books to show.    │\n";
-			cout << "                └──────────────────────────────────────────────────────────────────┘\n";
-			resetColour();
-			cout << "Press enter to continue\n";
-			cin.ignore(numeric_limits<streamsize>::max(), '\n');
-			}
-
 			break;
 			
 			case '4':
-			if (cartFilled)
-				{
-					system ("Clear");
-					showCart (books, cart);
-					cout << "Confirm Purchase ? (Y/N)\n";
-					cin.get (confirm);
-					cin.ignore (100, '\n');
+				system ("Clear");
+				showCart (books, cart);
+				cout << "Confirm Purchase ? (Y/N)\n";
+				cin.get (confirm);
+				cin.ignore (100, '\n');
 
-					while (toupper(confirm) != 'N' && toupper(confirm) != 'Y' ){
-					cout << confirm << " is invalid choice.. Only enter Y or N.\n";
-					cin.get (confirm);
-					cin.ignore (100, '\n');}
+				while (toupper(confirm) != 'N' && toupper(confirm) != 'Y' ){
+				cout << confirm << " is invalid choice.. Only enter Y or N.\n";
+				cin.get (confirm);
+				cin.ignore (100, '\n');}
 
-					if (toupper(confirm) == 'Y')
+				if (toupper(confirm) == 'Y')
 						{
 
 							date = generateDate ();
@@ -193,20 +164,9 @@ do {
 									else
 									return 0;
 						}
-				}
-				else
-					{
-						setColour (96);
-						cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
-						cout << "                │Your cart is empty, and checkout cannot be completed at this time.│\n";
-						cout << "                └──────────────────────────────────────────────────────────────────┘\n";
-						resetColour();
-						cout << "Press enter to continue\n";
-						cin.ignore(numeric_limits<streamsize>::max(), '\n');
-					}
 			break;
 
-			case '5':
+			case '0':
 			if (cartFilled){
 			cout << "  ┌─────────────────────────────────────────────────────────────────────────────────────┐\n";
 			cout << "  │                Exit the Cashier? (Y/N) Your current cart will be lost.              │\n";
@@ -238,8 +198,15 @@ do {
 *
 * returns a char representing the user choice for the menu.
 */
-char showCashierMenu ()
+char showCashierMenu (int cart[])
 {
+		
+		bool cartFilled = false;
+		for (int i = 0; i < 20; i++) {
+    		if (cart[i] > 0) {
+      			cartFilled = true;
+					break;	}	}
+
 	char choice;
 	system ("clear");
 	setColour(96);
@@ -247,24 +214,45 @@ char showCashierMenu ()
 	cout << "                │                 Welcome to Serendipity Cash Register             │\n";
  	cout << "                │                                                                  │\n";
 	cout << "                │     (1) -   Add a Book to Your Cart                              │\n";
+	if (cartFilled){
 	cout << "                │     (2) -   Remove a Book from Your Cart                         │\n";
 	cout << "                │     (3) -   View Your Cart                                       │\n";
 	cout << "                │     (4) -   CheckOut Your Cart                                   │\n";
+	}
 	cout << "                ├──────────────────────────────────────────────────────────────────┤\n";	
-	cout << "                │     (5) -   Exit the Cashier AND Cancel the Current Transaction  │\n";
+	cout << "                │     (0) -   Exit the Cashier AND Cancel the Current Transaction  │\n";
 	cout << "                └──────────────────────────────────────────────────────────────────┘\n";
 	resetColour();
-	cout << "                                    Enter your choice ( 1 - 5 )\n";
+
+	if (cartFilled == false ){
+	cout << "                                    Enter your choice ( 1 or 0 )\n";
 	cout << right << setw(50)<< "→  ";
 	cin.get (choice);
 	cin.ignore (100, '\n');
 
-	while (choice < '1' || choice > '5' )
+		while (choice < '0' || choice > '1' )
+		{
+			cout << choice << " is not a valid option. Please enter a number between 1 and 0.\n";
+			cout << right << setw(50)<< "→  ";
+			cin.get (choice);
+			cin.ignore (100, '\n');
+		}
+	}
+
+	else
 	{
-		cout << choice << " is not a valid option. Please enter a number between 1 and 5 based on the menu.\n";
+	cout << "                           Enter your choice ( 1 - 5 or 0 to exit )\n";
+	cout << right << setw(50)<< "→  ";
+	cin.get (choice);
+	cin.ignore (100, '\n');
+
+		while (choice < '0' || choice > '4' )
+		{
+		cout << choice << " is not a valid option. Please enter a number between 1 and 4 (or 0) based on the menu.\n";
 		cout << right << setw(50)<< "→  ";
 		cin.get (choice);
 		cin.ignore (100, '\n');
+		}
 	}
 
 	return choice;
