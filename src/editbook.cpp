@@ -56,7 +56,7 @@ volatile sig_atomic_t bstateProvider = 0;
  * Generates menu for book editing, following a quick search for the book
  * in question.
  */
-void mainEditBook(BookType bookList[20]) {
+void mainEditBook(BookType *bookList[20]) {
 	std::string searchTerm;
 	int bookIndex;
 
@@ -117,7 +117,7 @@ const char* atrim(const std::string operandString, WINDOW * window) {
  * mutate. Then offers the option to overwrite the current book in-place,
  * and an option to exit. Warns before writing or exiting without writing.
  */
-void editBook(BookType bookList[20], int bookIndex) {
+void editBook(BookType *bookList[20], int bookIndex) {
 	WINDOW *mainWindow;
 	WINDOW *bookDisplayWindow;
 	WINDOW *notification;
@@ -195,7 +195,7 @@ void editBook(BookType bookList[20], int bookIndex) {
 			derwin(notification, getmaxy(notification),
 					getmaxx(notification), 0, 0));
 
-	bookBuffer = bookList[bookIndex];
+	bookBuffer = *bookList[bookIndex];
 
 	bookWritten = 1;
 
@@ -354,7 +354,7 @@ void editBook(BookType bookList[20], int bookIndex) {
 							"Are you sure you want to write to book? [Y/N]");
 					exitChar = wgetch(notification);
 					if (tolower(exitChar) == 'y') {
-						bookList[bookIndex] = bookBuffer;
+						*bookList[bookIndex] = bookBuffer;
 						bookWritten = 1;
 					}
 					wclear(notification);

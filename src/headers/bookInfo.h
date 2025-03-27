@@ -4,4 +4,4 @@
 #include "invmenu.h"
 #endif
 
-int mainbookInfo ( const BookType array[], const int &bookIndex );
+int mainbookInfo ( const BookType *array[], const int &bookIndex );

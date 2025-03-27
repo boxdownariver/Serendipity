@@ -18,7 +18,7 @@
 
 using namespace std;
 // Funk prototype
-void bookInfoWindow(const BookType array[], const int bookIndex );
+void bookInfoWindow(const BookType *array[], const int bookIndex );
 
 
 /** \deprecated
@@ -31,7 +31,7 @@ void bookInfoWindow(const BookType array[], const int bookIndex );
  * 
  * The function does not return any usable value. It uses `bookInfoWindow` to output the details of the selected book.
  */
-int mainbookInfo ( const BookType array[], const int &bookIndex )
+int mainbookInfo ( const BookType *array[], const int &bookIndex )
 {
 	bookInfoWindow(array, bookIndex);
 	return 0;
@@ -47,20 +47,20 @@ int mainbookInfo ( const BookType array[], const int &bookIndex )
  * 
  * The function does not return any value. It is used to display the book's information in a user-friendly format.
  */
-void bookInfoWindow(const BookType array[], const int bookIndex )
+void bookInfoWindow(const BookType *array[], const int bookIndex )
 {
 	cout << left << "╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n";
 	cout <<         "║                                       Serendipity Booksellers                                      ║\n";
 	cout <<         "║                                           Book Information                                         ║\n";
 	cout <<         "║                                                                                                    ║\n";
-	cout <<         "║  ISBN             : " << setw (78) << left << array[bookIndex].getTitle() << " ║\n";
-	cout <<         "║  Title            : " << setw(78) << left << array[bookIndex].getISBN() << " ║\n";
-	cout <<         "║  Author           : " << setw (78) << left << array[bookIndex].getAuthor() << " ║\n";
-	cout <<         "║  Publisher        : " << setw (78) << left << array[bookIndex].getPub() << " ║\n";
-	cout <<         "║  Date Added       : " << setw (78) << left << array[bookIndex].getDateAdded() << " ║\n";
-	cout <<         "║  Quantity-On-Hand : " << setw (78) << left << array[bookIndex].getQtyOnHand() << " ║\n";
-	cout <<         "║  Wholesale Cost   : " << setw (78) << left << array[bookIndex].getWholesale() << " ║\n";
-	cout <<         "║  Retail Price     : " << setw(78) << left << array[bookIndex].getRetail() << " ║\n";
+	cout <<         "║  ISBN             : " << setw (78) << left << array[bookIndex]->getTitle() << " ║\n";
+	cout <<         "║  Title            : " << setw(78) << left << array[bookIndex]->getISBN() << " ║\n";
+	cout <<         "║  Author           : " << setw (78) << left << array[bookIndex]->getAuthor() << " ║\n";
+	cout <<         "║  Publisher        : " << setw (78) << left << array[bookIndex]->getPub() << " ║\n";
+	cout <<         "║  Date Added       : " << setw (78) << left << array[bookIndex]->getDateAdded() << " ║\n";
+	cout <<         "║  Quantity-On-Hand : " << setw (78) << left << array[bookIndex]->getQtyOnHand() << " ║\n";
+	cout <<         "║  Wholesale Cost   : " << setw (78) << left << array[bookIndex]->getWholesale() << " ║\n";
+	cout <<         "║  Retail Price     : " << setw(78) << left << array[bookIndex]->getRetail() << " ║\n";
 	cout <<         "║                                                                                                    ║\n";
 	cout <<         "╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n";
 }

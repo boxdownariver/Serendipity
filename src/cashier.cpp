@@ -35,10 +35,10 @@
 
 using namespace std;
 char showCashierMenu (int cart[]);
-void addBook (BookType books[], int index, int cart[] );
-void removeBook (BookType books[], int index, int cart[]);
-void showCart (BookType books[], int cart[]);
-void FormatReport ( BookType books[], int cart[], string date);
+void addBook (BookType *books[], int index, int cart[] );
+void removeBook (BookType *books[], int index, int cart[]);
+void showCart (BookType *books[], int cart[]);
+void FormatReport ( BookType *books[], int cart[], string date);
 string generateDate ();
 
 /**
@@ -52,7 +52,7 @@ string generateDate ();
  * 
  * The function does not take any parameters and does not return any values.
  */
-int mainCashier (BookType books[])
+int mainCashier (BookType *books[])
 {
 		if (BookType::getBookCount() == 0)
 			{
@@ -305,25 +305,25 @@ string generateDate ()
  * second parameter is index of the book being purchased in the `books` array.
  * third array is cart Array representing the user's cart, tracking quantities of books added.
  */
-void addBook (BookType books[], int index, int cart[])
+void addBook (BookType *books[], int index, int cart[])
 {
 	// show the book info to user to confirm purchase
 	char decision;
 	int numToPurchase;
 	int numAvailable;
 
-	numAvailable = books[index].getQtyOnHand() - cart[index];
+	numAvailable = books[index]->getQtyOnHand() - cart[index];
 	system ("clear");
 	//mainbookInfo(books, index);
-	books[index].printBookInfo();
+	books[index]->printBookInfo();
 
 	setColour (97);
 	cout << "                           ┌────────────────────────────────────────┐\n";
-	cout << "                                 Stock available : " << books[index].getQtyOnHand() << endl;
+	cout << "                                 Stock available : " << books[index]->getQtyOnHand() << endl;
 	cout << "                                 In Your Cart    : " << cart[index] << endl;
 	cout << "                           └────────────────────────────────────────┘\n";
 
-	if ( books[index].getQtyOnHand() == 0 && cart[index] == 0 )
+	if ( books[index]->getQtyOnHand() == 0 && cart[index] == 0 )
 			{	setColour (33);
 				cout << setw(70) << right << "Sorry, we are out of stock for this book.\n";
 				resetColour();
@@ -333,7 +333,7 @@ void addBook (BookType books[], int index, int cart[])
 				return;
 			}
 
-	if (numAvailable == 0 && books[index].getQtyOnHand() == cart[index] )
+	if (numAvailable == 0 && books[index]->getQtyOnHand() == cart[index] )
 			{	setColour (33);
 				cout << "          Can't add more of this book. Your cart has the maximum quantity of this book. \n";
 				resetColour();
@@ -407,16 +407,16 @@ void addBook (BookType books[], int index, int cart[])
  * second parameter is index of the book being deleted in the `books` array.
  * third array is cart Array representing the user's cart, tracking quantities of books deleted
  */
-void removeBook (BookType books[], int index, int cart[])
+void removeBook (BookType *books[], int index, int cart[])
 {
 	char decision;
 	int numToDelete;
 	int numAvailable = cart[index];
 	system ("clear");
 	//mainbookInfo(books, index);
-	books[index].printBookInfo();
+	books[index]->printBookInfo();
 	cout << "                           ┌────────────────────────────────────────┐\n";
-	cout << "                                 Stock available : " << books[index].getQtyOnHand() << endl;
+	cout << "                                 Stock available : " << books[index]->getQtyOnHand() << endl;
 	cout << "                                 In Your Cart    : " << cart[index] << endl;
 	cout << "                           └────────────────────────────────────────┘\n";
 	setColour (33);
@@ -487,7 +487,7 @@ return;
  * first paramter is books Array of `BookType` objects containing book information.
  * second paramater is cart Array representing the user's cart, tracking quantities of books added.
  */
-void showCart (BookType books[], int cart[])
+void showCart (BookType *books[], int cart[])
 {	setColour (96);
 	bool cartFilled;
 	double totalBeforeTax = 0;
@@ -530,17 +530,17 @@ void showCart (BookType books[], int cart[])
 			{
 				cout << "│ " << setw (2) << right << bookAddedCount << ". ";
 				// For placement of the title
-				if (books[i].getTitle().length() <= 60 )
+				if (books[i]->getTitle().length() <= 60 )
 					{
-						cout << setw (62) << left << books[i].getTitle();
+						cout << setw (62) << left << books[i]->getTitle();
 					}
 					else
 					{
-						tempTitle = books[i].getTitle().substr(0, 59);
+						tempTitle = books[i]->getTitle().substr(0, 59);
 						cout << setw (58) << left << tempTitle << "...";
 					}
 				cout << setw (4) << right << cart[i] << "  │\n";
-				totalBeforeTax += books[i].getRetail() * cart[i];
+				totalBeforeTax += books[i]->getRetail() * cart[i];
 				bookAddedCount++;
 			}
 	}
@@ -568,7 +568,7 @@ void showCart (BookType books[], int cart[])
  * second parameter cart Array representing the user's shopping cart with quantities of books purchased.
  * third parameter is a date as a string to be displayed on the receipt.
  */
-void FormatReport ( BookType books[], int cart[], string date)
+void FormatReport ( BookType *books[], int cart[], string date)
 {
 	float subtotal = 0;
 	float tax_amt;
@@ -581,8 +581,8 @@ void FormatReport ( BookType books[], int cart[], string date)
 	{
 		if (cart[i] > 0)
 			{
-				books[i].setQtyOnHand(books[i].getQtyOnHand() - cart[i]);
-				subtotal += books[i].getRetail() * cart[i];
+				books[i]->setQtyOnHand(books[i]->getQtyOnHand() - cart[i]);
+				subtotal += books[i]->getRetail() * cart[i];
 			}
 	}
 	tax_amt = TAX_PCT * subtotal;
@@ -611,20 +611,20 @@ for (int i = 0; i < 20 ; i++)
 {
 	if (cart[i] > 0)
 	{
-			cout << "║" << setw(3) << right << cart[i] << "  " << setw (14) << left << books[i].getISBN();
+			cout << "║" << setw(3) << right << cart[i] << "  " << setw (14) << left << books[i]->getISBN();
 	
 			// placement of the book title
-			if (books[i].getTitle().length() <= 34 )
+			if (books[i]->getTitle().length() <= 34 )
 			{
-				cout << setw (36) << left << books[i].getTitle();
+				cout << setw (36) << left << books[i]->getTitle();
 			}
 			else
 			{
-				tempTitle = books[i].getTitle().substr(0, 33);
+				tempTitle = books[i]->getTitle().substr(0, 33);
 				cout << setw (32) << left << tempTitle << "...";
 			}
 
-			cout << setw (3) << right << "$" << setw (7) << right << books[i].getRetail() << setw (5) << right << "$" << setw(7) << right << books[i].getRetail() * cart[i] << " ║\n";
+			cout << setw (3) << right << "$" << setw (7) << right << books[i]->getRetail() << setw (5) << right << "$" << setw(7) << right << books[i]->getRetail() * cart[i] << " ║\n";
 	}
 }	
 	cout << "║                                                                              ║\n";
