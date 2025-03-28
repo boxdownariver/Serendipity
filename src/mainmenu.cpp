@@ -53,7 +53,7 @@ int main() {
 			main_invmenu(books);
 			break;
 		case 2:
-			main_reports();
+			main_reports(books);
 			break;
 		default:
 			continueMenu = 0;
