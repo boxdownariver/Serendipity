@@ -109,7 +109,7 @@ int makeMenu(MenuLines &mainMenuInfo, std::string startInfo) {
 					&& (mainMenuInfo.menuName == "Main Menu"
 							|| (mainMenuInfo.menuName
 									== "Inventory Database"
-									&& (breakOut <= 3 && breakOut != -1))
+									&& (breakOut <= 3 && breakOut != -1)) || (mainMenuInfo.menuName == "Reports" && (breakOut == 0))
 							|| breakOut == menuLineSize - 1)) {
 				dontExit = 0;
 			}
