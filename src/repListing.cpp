@@ -55,8 +55,10 @@ int mainRepListing (BookType *books[])
 		 */
 		string hello = "hello world";
 		mvwprintw(repWindow, 16, 16, trimToSize(hello, 5).c_str());
+
 		//You can also use this like printf!
 		mvwprintw(repWindow, 17, 16, "%sThis string puts spaces in!",trimToSize(hello, 15).c_str());
+
 		/**
 		 * This portion gets the user input and matches it to certain keys.
 		 * If you need to match to a letter, just use "case '[your char]':"
