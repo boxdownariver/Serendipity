@@ -53,8 +53,10 @@ int mainRepListing (BookType *books[])
 		 * however this function only accepts cstrings, so convert the
 		 * result using the c_str() method.
 		 */
-		mvwprintw(repWindow, 16, 16, trimToSize("Hello World", 5).c_str());
-
+		string hello = "hello world";
+		mvwprintw(repWindow, 16, 16, trimToSize(hello, 5).c_str());
+		//You can also use this like printf!
+		mvwprintw(repWindow, 17, 16, "%sThis string puts spaces in!",trimToSize(hello, 15).c_str());
 		/**
 		 * This portion gets the user input and matches it to certain keys.
 		 * If you need to match to a letter, just use "case '[your char]':"
@@ -123,6 +125,12 @@ void refWindow(WINDOW *&repWindow) {
 	makeWindow(repWindow);
 }
 
+/**
+ * Trims a string to proper size if the size is between 0 and the origin
+ * string's size.
+ */
 string trimToSize(string origin, size_t size) {
-	return (size > 0 && size < origin.size())? origin.substr(0, size):origin;
+	origin.resize(size, ' ');
+	origin.shrink_to_fit();
+	return origin;
 }
