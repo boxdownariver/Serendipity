@@ -34,11 +34,13 @@ int mainRepListing (BookType *books[])
 //	cout << "Press Enter to Continue..\n";
 //	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-	makeWindow(repWindow);
 	dontExit = 1;
+	int startIndex=0;
+	int PAGE_SIZE = 10;
 
 	//Rendering loop
-	while (dontExit) {
+	do {
+		makeWindow(repWindow);
 		/**
 		 * Sample output.
 		 *
@@ -53,11 +55,21 @@ int mainRepListing (BookType *books[])
 		 * however this function only accepts cstrings, so convert the
 		 * result using the c_str() method.
 		 */
-		string hello = "hello world";
-		mvwprintw(repWindow, 16, 16, trimToSize(hello, 5).c_str());
-
+		mvwprintw(repWindow, 1, 50, "SERENDIPITY BOOKSELLERS");
+		mvwprintw(repWindow, 2, 53, "REPORTS LISTING");
+		
+		// Print book details for the current page
+		mvwprintw(repWindow, 3, 30, "PAGE : %d", (startIndex / PAGE_SIZE) + 1);
+		mvwprintw(repWindow, 3, 39, " of");
+		mvwprintw(repWindow, 3, 43, " %d", (20 + PAGE_SIZE - 1) / PAGE_SIZE);
+		int row = 5;
+		for (int i = startIndex; i < startIndex + PAGE_SIZE && i < 20; ++i) {
+				
+            mvwprintw(repWindow, row + 3, 3, "BookNumber %d", i + 1);
+				row++;
+        }
 		//You can also use this like printf!
-		mvwprintw(repWindow, 17, 16, "%sThis string puts spaces in!",trimToSize(hello, 15).c_str());
+		// mvwprintw(repWindow, 17, 16, "%sThis string puts spaces in!",trimToSize(hello, 15).c_str());
 
 		/**
 		 * This portion gets the user input and matches it to certain keys.
@@ -66,21 +78,42 @@ int mainRepListing (BookType *books[])
 		 * number, look for the name of the key in
 		 * https://linux.die.net/man/3/getch.
 		 */
+
+		mvwprintw(repWindow, 20, 53, "Press < > to navigate. Press ENTER to exit");
 		userInput = wgetch(repWindow);
 		userInputChar = static_cast<char>(userInput);
 
 		//KEY_UP will go straight to KEY_LEFT. KEY_DOWN will go straight
 		//to KEY_RIGHT. Any logic you need for either can go in the
 		//KEY_LEFT or KEY_RIGHT blocks respectively.
+
+		if (userInput != KEY_LEFT && userInput != KEY_RIGHT && userInput != 27 && userInput != 10)
+		{
+			mvwprintw(repWindow, 22, 30, "Other keys are invalid. Only Press < > to navigate. Press ENTER to exit");
+			userInput = wgetch(repWindow);
+			userInputChar = static_cast<char>(userInput);
+		}
+
 		switch (userInput) {
-		case KEY_UP: ;
-		case KEY_LEFT: break;
-		case KEY_DOWN: ;
-		case KEY_RIGHT: break;
+		case KEY_LEFT:
+		if (startIndex - PAGE_SIZE >= 0) {
+     	startIndex -= PAGE_SIZE;  // Move backward
+      }
+		break;
+
+		case KEY_RIGHT:
+		if (startIndex + PAGE_SIZE < 20) {
+     	startIndex += PAGE_SIZE;
+		}
+		break;
 		case 27: ;    //This is ESCAPE key. It's glitchy, I don't know why.
 		case 10: dontExit = 0; //This is ENTER key.
 		}
+
+	refresh();
 	}
+
+	while (dontExit != 0);
 
 	//This has to be called at the end for memory and to pass back to the
 	//window preceding it.
