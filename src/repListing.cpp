@@ -15,6 +15,7 @@
 #include "headers/invmenu.h"
 #include "headers/repListing.h"
 #include "headers/reports.h"
+#include "headers/cashier.h"
 
 void makeWindow(WINDOW *&repWindow);
 void delWindow(WINDOW *&repWindow);
@@ -23,6 +24,19 @@ string trimToSize(string origin, size_t size);
 
 int mainRepListing (BookType *books[])
 {
+
+	if (BookType::getBookCount() == 0)
+			{
+			// immediately exit program
+			system ("clear");
+			cout << "╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n";
+			cout << "║ " << setw (98) << left << "The book list is empty. No books available for reports listing." << " ║ \n" ;
+	   	cout << "║ " << setw (98) << left << "Press any key to continue " << " ║ \n" ;
+	   	cout << "╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n"; 
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			return 0;
+			}
+
 	WINDOW * repWindow = NULL;
 	struct sigaction sa;
 	int userInput;
@@ -59,14 +73,59 @@ int mainRepListing (BookType *books[])
 		mvwprintw(repWindow, 2, 53, "REPORTS LISTING");
 		
 		// Print book details for the current page
-		mvwprintw(repWindow, 3, 30, "PAGE : %d", (startIndex / PAGE_SIZE) + 1);
-		mvwprintw(repWindow, 3, 39, " of");
-		mvwprintw(repWindow, 3, 43, " %d", (20 + PAGE_SIZE - 1) / PAGE_SIZE);
-		int row = 5;
-		for (int i = startIndex; i < startIndex + PAGE_SIZE && i < 20; ++i) {
+		setColour(96); 
+		mvwprintw(repWindow, 4, 10, "DATE : %s", generateDate().c_str()); mvwprintw(repWindow, 4, 30, "PAGE : %d", 
+		(startIndex / PAGE_SIZE) + 1); mvwprintw(repWindow, 4, 39, " of"); mvwprintw(repWindow, 4, 43, " %d", 
+		(BookType::getBookCount() + PAGE_SIZE - 1) / PAGE_SIZE); mvwprintw(repWindow, 4, 50, "DATABASE SIZE : %d", 20); 
+		mvwprintw(repWindow, 4, 85, "CURRENT BOOK COUNT : %d", BookType::getBookCount());
+		resetColour();
+
+
+		mvwprintw(repWindow, 6, 2, "TITLE");
+		mvwprintw(repWindow, 6, 31, "ISBN");
+		mvwprintw(repWindow, 6, 45, "AUTHOR");
+		mvwprintw(repWindow, 6, 61, "PUBLISHER");
+		mvwprintw(repWindow, 6, 75, "DATE ADDED");
+		mvwprintw(repWindow, 6, 87, "QTY ON");
+		mvwprintw(repWindow, 6, 95, "WHOLESALE");
+		mvwprintw(repWindow, 6, 109, "RETAIL");
+
+		mvwprintw(repWindow, 7, 89, "HAND");
+		mvwprintw(repWindow, 7, 100, "COST");
+		mvwprintw(repWindow, 7, 110, "PRICE");
+		mvwprintw(repWindow, 8, 2, "***************************");
+		mvwprintw(repWindow, 8, 31, "*************");
+		mvwprintw(repWindow, 8, 45, "**************");
+		mvwprintw(repWindow, 8, 61, "***********");
+		mvwprintw(repWindow, 8, 75, "**********");
+		mvwprintw(repWindow, 8, 87, "******");
+		mvwprintw(repWindow, 8, 96, "********");
+		mvwprintw(repWindow, 8, 107, "********");
+
+		int row = 9;
+		char quantity[10];
+		char wholesale[20];
+		char retail[20];
+		for (int i = startIndex; i < startIndex + PAGE_SIZE && i < BookType::getBookCount(); ++i) {
+				mvwprintw(repWindow, row, 2, trimToSize(books[i]->getTitle(), 27).c_str());
+				mvwprintw(repWindow, row, 31, "%s", books[i]->getISBN().c_str());
+				mvwprintw(repWindow, row, 45, trimToSize(books[i]->getAuthor(), 14).c_str());
+				mvwprintw(repWindow, row, 61, trimToSize(books[i]->getPub(), 11).c_str());
+				mvwprintw(repWindow, row, 75, trimToSize(books[i]->getDateAdded(), 10).c_str());
+				sprintf(quantity, "%2d", books[i]->getQtyOnHand());  // Format `int` as string
+				mvwprintw(repWindow, row, 91, "%s", quantity);
+
+				// Wholesale Price
+				mvwprintw(repWindow, row, 96, "$");
+				sprintf(wholesale, "%*.*f", 7, 2, books[i]->getWholesale());
+				mvwprintw(repWindow, row, 97, "%s", wholesale);
+
+				// Retail price
+				mvwprintw(repWindow, row, 107, "$");
+				sprintf(retail, "%*.*f", 7, 2, books[i]->getRetail());
+				mvwprintw(repWindow, row, 108, "%s", retail);
 				
-            mvwprintw(repWindow, row + 3, 3, "BookNumber %d", i + 1);
-				row++;
+				row ++;
         }
 		//You can also use this like printf!
 		// mvwprintw(repWindow, 17, 16, "%sThis string puts spaces in!",trimToSize(hello, 15).c_str());
@@ -79,7 +138,7 @@ int mainRepListing (BookType *books[])
 		 * https://linux.die.net/man/3/getch.
 		 */
 
-		mvwprintw(repWindow, 20, 53, "Press < > to navigate. Press ENTER to exit");
+		mvwprintw(repWindow, 20, 40, "Press < > to navigate. Press ENTER to exit");
 		userInput = wgetch(repWindow);
 		userInputChar = static_cast<char>(userInput);
 
@@ -89,7 +148,7 @@ int mainRepListing (BookType *books[])
 
 		if (userInput != KEY_LEFT && userInput != KEY_RIGHT && userInput != 27 && userInput != 10)
 		{
-			mvwprintw(repWindow, 22, 30, "Other keys are invalid. Only Press < > to navigate. Press ENTER to exit");
+			mvwprintw(repWindow, 22, 25, "Other keys are invalid. Only Press < > to navigate. Press ENTER to exit");
 			userInput = wgetch(repWindow);
 			userInputChar = static_cast<char>(userInput);
 		}
@@ -102,7 +161,7 @@ int mainRepListing (BookType *books[])
 		break;
 
 		case KEY_RIGHT:
-		if (startIndex + PAGE_SIZE < 20) {
+		if (startIndex + PAGE_SIZE < BookType::getBookCount()) {
      	startIndex += PAGE_SIZE;
 		}
 		break;
