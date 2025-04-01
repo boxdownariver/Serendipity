@@ -32,14 +32,8 @@
 #include "headers/invmenu.h"
 #include "headers/bookInfo.h"
 #include "headers/lookUp.h"
-
+#include "headers/cashier.h"
 using namespace std;
-char showCashierMenu (int cart[]);
-void addBook (BookType *books[], int index, int cart[] );
-void removeBook (BookType *books[], int index, int cart[]);
-void showCart (BookType *books[], int cart[]);
-void FormatReport ( BookType *books[], int cart[], string date);
-string generateDate ();
 
 /**
  * mainCashier handles the process of printing a receipt for a 
@@ -258,40 +252,6 @@ char showCashierMenu (int cart[])
 	return choice;
 }
 
-
-/**
- * generateDate Generates the current date in MM/DD/YYYY format.
- *
- * This function retrieves the system's current date using the `time` library,
- * converts it to local time, and formats it into a string representation.
- * The generated date is returned as a string.
- *
- * returns a string representing the current date in MM/DD/YYYY format.
- */
-string generateDate ()
-{
-	time_t t = time(nullptr);  
-   tm* tm = localtime(&t); // Convert to local time
-
-    // Format the date as MM/DD/YYYY and store it in a string
-    stringstream ss;
-    ss << setfill('0') << setw(2) << (tm->tm_mon + 1) << "/"  // Month
-       << setw(2) << tm->tm_mday << "/"                       // Day
-       << (tm->tm_year + 1900);                               // Year
-
-    // Copy the formatted date to a std::string
-    string currentDate = ss.str();  // Now `currentDate` holds the date as a string
-
-    // Print the string (date)
-    cout << "Current date: " << currentDate << "\n";
-
-    // You can use currentDate as a string now
-    // Example: Copy to another string variable
-    string copiedDate = currentDate;
-
-	return copiedDate;
-
-}
 
 /**
  * purchaseBook allows a user to purchase a book and adds it to their cart.
