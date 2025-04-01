@@ -73,12 +73,20 @@ int mainRepListing (BookType *books[])
 		mvwprintw(repWindow, 2, 53, "REPORTS LISTING");
 		
 		// Print book details for the current page
-		setColour(96); 
-		mvwprintw(repWindow, 4, 10, "DATE : %s", generateDate().c_str()); mvwprintw(repWindow, 4, 30, "PAGE : %d", 
-		(startIndex / PAGE_SIZE) + 1); mvwprintw(repWindow, 4, 39, " of"); mvwprintw(repWindow, 4, 43, " %d", 
-		(BookType::getBookCount() + PAGE_SIZE - 1) / PAGE_SIZE); mvwprintw(repWindow, 4, 50, "DATABASE SIZE : %d", 20); 
+		wattron(repWindow, COLOR_PAIR(2)); // Green color
+		mvwprintw(repWindow, 4, 10, "DATE : %s", generateDate().c_str());
+		wattroff(repWindow, COLOR_PAIR(2)); // Green turned off
+		
+		wattron(repWindow, COLOR_PAIR(5)); // Cyan color
+		mvwprintw(repWindow, 4, 30, "PAGE : %d", (startIndex / PAGE_SIZE) + 1);
+		mvwprintw(repWindow, 4, 39, " of");
+		mvwprintw(repWindow, 4, 43, " %d",(BookType::getBookCount() + PAGE_SIZE - 1) / PAGE_SIZE);
+		wattroff(repWindow, COLOR_PAIR(5)); // Cyan turned off
+
+		wattron(repWindow, COLOR_PAIR(2)); // Green color
+		mvwprintw(repWindow, 4, 50, "DATABASE SIZE : %d", 20);
 		mvwprintw(repWindow, 4, 85, "CURRENT BOOK COUNT : %d", BookType::getBookCount());
-		resetColour();
+		wattroff(repWindow, COLOR_PAIR(2)); // Green turned off
 
 
 		mvwprintw(repWindow, 6, 2, "TITLE");
@@ -106,7 +114,13 @@ int mainRepListing (BookType *books[])
 		char quantity[10];
 		char wholesale[20];
 		char retail[20];
+		int colorPair;
 		for (int i = startIndex; i < startIndex + PAGE_SIZE && i < BookType::getBookCount(); ++i) {
+				if (i % 3 == 0)	{colorPair = 2;}
+				else if (i % 3 == 1) {colorPair = 5; }
+				else {colorPair = 3;}
+
+				wattron(repWindow, COLOR_PAIR(colorPair));
 				mvwprintw(repWindow, row, 2, trimToSize(books[i]->getTitle(), 27).c_str());
 				mvwprintw(repWindow, row, 31, "%s", books[i]->getISBN().c_str());
 				mvwprintw(repWindow, row, 45, trimToSize(books[i]->getAuthor(), 14).c_str());
@@ -124,7 +138,7 @@ int mainRepListing (BookType *books[])
 				mvwprintw(repWindow, row, 107, "$");
 				sprintf(retail, "%*.*f", 7, 2, books[i]->getRetail());
 				mvwprintw(repWindow, row, 108, "%s", retail);
-				
+				wattroff(repWindow, COLOR_PAIR(colorPair));
 				row ++;
         }
 		//You can also use this like printf!
@@ -138,7 +152,7 @@ int mainRepListing (BookType *books[])
 		 * https://linux.die.net/man/3/getch.
 		 */
 
-		mvwprintw(repWindow, 20, 40, "Press < > to navigate. Press ENTER to exit");
+		mvwprintw(repWindow, 22 , 40, "Press < > to navigate. Press ENTER to exit");
 		userInput = wgetch(repWindow);
 		userInputChar = static_cast<char>(userInput);
 
@@ -148,7 +162,7 @@ int mainRepListing (BookType *books[])
 
 		if (userInput != KEY_LEFT && userInput != KEY_RIGHT && userInput != 27 && userInput != 10)
 		{
-			mvwprintw(repWindow, 22, 25, "Other keys are invalid. Only Press < > to navigate. Press ENTER to exit");
+			mvwprintw(repWindow,24 , 30, "Other keys are invalid. Only Press < > to navigate. Press ENTER to exit");
 			userInput = wgetch(repWindow);
 			userInputChar = static_cast<char>(userInput);
 		}
@@ -192,6 +206,21 @@ void makeWindow(WINDOW *&repWindow) {
 	raw();
 	noecho();
 	curs_set(0);
+
+	// Enable color mode
+    if (has_colors()) {
+        start_color();
+        use_default_colors(); // Allows transparency with terminal's background
+        
+        // Define color pairs (Foreground, Background)
+        init_pair(1, COLOR_RED, -1);        // Red text
+        init_pair(2, COLOR_GREEN, -1);      // Green text
+        init_pair(3, COLOR_YELLOW, -1);     // Yellow text
+        init_pair(4, COLOR_BLUE, -1);       // Blue text
+        init_pair(5, COLOR_CYAN, -1);       // Cyan text
+        init_pair(6, COLOR_WHITE, -1);      // Default White text
+    }
+
 
 	//Init window in screen, allow arrow keys, box window
 	repWindow = newwin(max(LINES - 6, 0), max(COLS - 6, 0), 3, 3);
