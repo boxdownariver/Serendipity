@@ -17,6 +17,9 @@
 #include "headers/reports.h"
 #include "headers/cashier.h"
 
+volatile sig_atomic_t sigHandler = 0;
+
+void handleSig(int sig);
 void makeWindow(WINDOW *&repWindow);
 void delWindow(WINDOW *&repWindow);
 void refWindow(WINDOW *&repWindow);
@@ -25,28 +28,28 @@ string trimToSize(string origin, size_t size);
 int mainRepListing (BookType *books[])
 {
 
-	if (BookType::getBookCount() == 0)
-			{
-			// immediately exit program
-			system ("clear");
-			cout << "╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n";
-			cout << "║ " << setw (98) << left << "The book list is empty. No books available for reports listing." << " ║ \n" ;
-	   	cout << "║ " << setw (98) << left << "Press any key to continue " << " ║ \n" ;
-	   	cout << "╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n"; 
-			cin.ignore(numeric_limits<streamsize>::max(), '\n');
-			return 0;
-			}
-
 	WINDOW * repWindow = NULL;
 	struct sigaction sa;
 	int userInput;
 	char userInputChar;
 	bool dontExit;
 
-//	cout << "Inside Reports Listing\n";
-//
-//	cout << "Press Enter to Continue..\n";
-//	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	//Handle system signals
+	sa.sa_flags = 0;
+	sa.sa_handler = handleSig;
+	sigaction(SIGWINCH, &sa, NULL);
+
+	if (BookType::getBookCount() == 0)
+	{
+		// immediately exit program
+		system ("clear");
+		cout << "╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n";
+		cout << "║ " << setw (98) << left << "The book list is empty. No books available for reports listing." << " ║ \n" ;
+	   	cout << "║ " << setw (98) << left << "Press any key to continue " << " ║ \n" ;
+	   	cout << "╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n"; 
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		return 0;
+	}
 
 	dontExit = 1;
 	int startIndex=0;
@@ -228,6 +231,7 @@ void makeWindow(WINDOW *&repWindow) {
 	clear();
 	box(repWindow, 0, 0);
 	wrefresh(repWindow);
+	return;
 }
 
 /**
@@ -238,6 +242,7 @@ void delWindow(WINDOW *&repWindow) {
 	delwin(repWindow);
 	refresh();
 	endwin();
+	return;
 }
 
 /**
@@ -246,6 +251,7 @@ void delWindow(WINDOW *&repWindow) {
 void refWindow(WINDOW *&repWindow) {
 	delWindow(repWindow);
 	makeWindow(repWindow);
+	return;
 }
 
 /**
@@ -256,4 +262,9 @@ string trimToSize(string origin, size_t size) {
 	origin.resize(size, ' ');
 	origin.shrink_to_fit();
 	return origin;
+}
+
+void handleSig(int sig) {
+	sigHandler = sig;
+	return;
 }
