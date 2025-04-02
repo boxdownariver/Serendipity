@@ -51,7 +51,7 @@ using namespace std;
  */
 
 
-void mainDelete (BookType books[])
+void mainDelete (BookType *books[])
 {
 
 	
@@ -116,13 +116,13 @@ void mainDelete (BookType books[])
  * Returns:
  * - This function does not return any value. It updates the `bookCount` by decrementing it after a successful deletion.
  */
-void discardBook (BookType books[], int index)
+void discardBook (BookType *books[], int index)
 {
 	char decision;
 	int curBookCount;
 
 	//mainbookInfo(books, index);
-	books[index].printBookInfo();
+	books[index]->printBookInfo();
 	setColour (33);
 	cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
 	cout << "                │  Are you sure you want to delete this book? (Y/N).Think Wisely   │\n";
@@ -150,17 +150,17 @@ void discardBook (BookType books[], int index)
 				// Bring the last index data to current index
 				// !!! Could make a new constructor for this
 				// !!! Also try aggregate set
-				books[index].setTitle(books[curBookCount].getTitle());
-				books[index].setISBN(books[curBookCount].getISBN());
-				books[index].setAuthor(books[curBookCount].getAuthor());
-				books[index].setPub(books[curBookCount].getPub());
-				books[index].setDateAdded(books[curBookCount].getDateAdded());
-				books[index].setQtyOnHand(books[curBookCount].getQtyOnHand());
-				books[index].setWholesale(books[curBookCount].getWholesale());
-				books[index].setRetail(books[curBookCount].getRetail());
+				books[index]->setTitle(books[curBookCount]->getTitle());
+				books[index]->setISBN(books[curBookCount]->getISBN());
+				books[index]->setAuthor(books[curBookCount]->getAuthor());
+				books[index]->setPub(books[curBookCount]->getPub());
+				books[index]->setDateAdded(books[curBookCount]->getDateAdded());
+				books[index]->setQtyOnHand(books[curBookCount]->getQtyOnHand());
+				books[index]->setWholesale(books[curBookCount]->getWholesale());
+				books[index]->setRetail(books[curBookCount]->getRetail());
 				
 				// set the last index to default values
-				books[curBookCount].setTitle("EMPTY");
+				/*books[curBookCount].setTitle("EMPTY");
 				books[curBookCount].setISBN("EMPTY");
 				books[curBookCount].setAuthor("EMPTY");
 				books[curBookCount].setPub("EMPTY");
@@ -168,6 +168,8 @@ void discardBook (BookType books[], int index)
 				books[curBookCount].setQtyOnHand(0);
 				books[curBookCount].setWholesale(0);
 				books[curBookCount].setRetail(0);
+				*/
+				delete books[curBookCount];
 				setColour (96);
 				cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
 				cout << "                │                     DELETED BOOK SUCCESSFULLY                    │\n";

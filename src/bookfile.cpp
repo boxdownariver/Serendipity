@@ -15,7 +15,7 @@
 #include <fstream>
 
 ///readFile(BookType[20], int) -> Stores file entries as members of books.
-void readFile(BookType books[20]) {
+void readFile(BookType *books[20]) {
 	BookType bookBuffer;
 	std::ifstream file;
 	std::string numbers;
@@ -38,7 +38,7 @@ void readFile(BookType books[20]) {
 		retail = stod(numbers);
 		bookBuffer = BookType(bookTitle, isbn, author, publisher,
 				dateAdded, qtyOnHand, wholesale, retail);
-		books[BookType::getBookCount()] = bookBuffer;
+		*books[BookType::getBookCount()] = bookBuffer;
 		BookType::incBookCount();
 	}
 	file.close();

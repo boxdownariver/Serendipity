@@ -40,7 +40,7 @@ using namespace std;
  * - This function does not return any value. It is used for searching and displaying book details.
  */
 
-int mainLookUp( const BookType booklist[]) {
+int mainLookUp( BookType * const booklist[]) {
 	string toSearch;
 	char choice;
 	int bookIndex;
@@ -73,7 +73,7 @@ if (BookType::getBookCount() == 0)
 					system("clear");
 					// Pass the array to show the bookInfo
         				//mainbookInfo ( booklist, bookIndex );       
-					booklist[bookIndex].printBookInfo();
+					booklist[bookIndex]->printBookInfo();
     				}
 				// Prompt user for another lookup attempt
 				cout << "Do you want to proceed another look up(Y/N)?\n";
@@ -108,7 +108,7 @@ if (BookType::getBookCount() == 0)
  * - The index of the first matching book if found and confirmed by the user.
  * - -1 if no matching book is found in the array.
  */
-int findString (const string toSearch, const BookType array[], const int size)
+int findString (const string toSearch, BookType * const array[], const int size)
 {
 	int index = 0;
 	int bookFoundCount = 1;
@@ -126,12 +126,12 @@ int findString (const string toSearch, const BookType array[], const int size)
      while (index < size)
          {
              // Search foundKeyword function
-             if (array[index].foundKeyword(toSearch) == true )
+             if (array[index]->foundKeyword(toSearch) == true )
              {
 					cout << "║ [" << setw (2) << right << bookFoundCount <<"]" << setw (100) << right << " ║ \n";
         			cout << "║ ";
 					setColour(32); // Yellow text  
-					cout << "RESULT -> : Title - " << setw (78) << left << array[index].getTitle();
+					cout << "RESULT -> : Title - " << setw (78) << left << array[index]->getTitle();
 					resetColour();
 					cout << " ║\n";
                cout << "║ " << setw (98) << left << "Is this the book you intended to search for? (Y/N) : " << " ║ " ;
@@ -194,7 +194,7 @@ int findString (const string toSearch, const BookType array[], const int size)
  * - The index of the first matching book if found and confirmed by the user.
  * - -1 if no matching book is found in the array.
  */
-int findStringInCart (const string toSearch, const BookType array[], const int size, int cart[])
+int findStringInCart (const string toSearch, BookType * const array[], const int size, int cart[])
 {
 	int index = 0;
 	int bookFoundCount = 1;
@@ -214,12 +214,12 @@ int findStringInCart (const string toSearch, const BookType array[], const int s
             if (cart[index] > 0) 
 					{
              // Search for title or ISBN match in cart using foundKeyword
-             if (array[index].foundKeyword(toSearch) == true)
+             if (array[index]->foundKeyword(toSearch) == true)
              {
 				cout << "║ [" << setw (2) << right << bookFoundCount <<"]" << setw (100) << right << " ║ \n";
         		cout << "║ ";
 				setColour(32); // Yellow text  
-				cout << "RESULT -> : Title - " << setw (78) << left << array[index].getTitle();
+				cout << "RESULT -> : Title - " << setw (78) << left << array[index]->getTitle();
 				resetColour();
 				cout << " ║ \n║ ";
 				setColour(32); // Yellow text

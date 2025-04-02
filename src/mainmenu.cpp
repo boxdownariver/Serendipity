@@ -30,12 +30,9 @@ int main() {
 	std::vector<std::string> menuListing = { "Cashier Module",
 			"Inventory Database Module", "Report Module", "Exit" };
 	std::string menuName = "Main Menu";
-	BookType books[20];
-	int bookCount;
+	BookType *books[20];
 	int menuResult;
 	bool continueMenu;
-
-	bookCount = 0;
 
 	mainMenuInfo.menuName = menuName;
 	mainMenuInfo.menuLines = menuListing;
@@ -56,7 +53,7 @@ int main() {
 			main_invmenu(books);
 			break;
 		case 2:
-			main_reports();
+			main_reports(books);
 			break;
 		default:
 			continueMenu = 0;
@@ -64,5 +61,10 @@ int main() {
 		}
 	} while (continueMenu);
 
+	if (BookType::getBookCount()) {
+		for (int i = 0; i < BookType::getBookCount(); i++) {
+			delete books[i];
+		}
+	}
 	return 0;
 }
