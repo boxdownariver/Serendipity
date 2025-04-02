@@ -340,5 +340,23 @@ Pearson
 8
 200
 9
-y0
+
+//Tainted Sword
+
 1
+The Tainted Sword
+2
+1-5607-6395-7
+3
+Watry, D.J.
+4
+Wizards of the Coast
+5
+11/16/2017
+6
+10
+7
+29.75
+8
+35.50
+9
