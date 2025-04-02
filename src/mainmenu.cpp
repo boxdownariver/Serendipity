@@ -19,6 +19,9 @@
 #include "headers/invmenu.h"
 #include "headers/cashier.h"
 #include "headers/lookUp.h"
+#include "headers/signals.hpp"
+
+volatile sig_atomic_t sigcatch = 0;
 
 /**
  * main() ->
@@ -26,6 +29,8 @@
  * subprograms in the program.
  */
 int main() {
+	struct sigaction sa; 
+	void * sigHandler = NULL;
 	MenuLines mainMenuInfo;
 	std::vector<std::string> menuListing = { "Cashier Module",
 			"Inventory Database Module", "Report Module", "Exit" };
@@ -38,11 +43,17 @@ int main() {
 	mainMenuInfo.menuLines = menuListing;
 	mainMenuInfo.longestMenuLength = sizeof("Inventory Database Module")
 			/ sizeof(char);
+		
+	//Handle system signals
+	sigcatch = 0;
+	sa.sa_flags = 0;
+	sa.sa_handler = NULL;
+	sigaction(SIGWINCH, &sa, NULL);
 
 	system("clear");
 	do {
 		continueMenu = 1;
-		menuResult = makeMenu(mainMenuInfo, "");
+		menuResult = makeMenu(mainMenuInfo, "", sa.sa_handler);
 
 		switch (menuResult) {
 		case 0:
@@ -50,10 +61,10 @@ int main() {
 			system("clear");
 			break;
 		case 1:
-			main_invmenu(books);
+			main_invmenu(books, sa.sa_handler);
 			break;
 		case 2:
-			main_reports(books);
+			main_reports(books, sa.sa_handler);
 			break;
 		default:
 			continueMenu = 0;

@@ -16,7 +16,6 @@
  *************************************************************************/
 #define menu_utils
 #include <curses.h>
-#include <signal.h>
 #include <menu.h>
 #include <chrono>
 #include <thread>
@@ -25,6 +24,7 @@
 #include <string.h>
 #endif
 #include "headers/menuDipity.h"
+#include "headers/signals.hpp"
 
 void createMenu(MENU *&mainMenu, WINDOW *mainWindow,
 		const MenuLines &mainMenuInfo, ITEM **&items);
@@ -35,7 +35,7 @@ void handleSignal(const int signal);
 void refreshWindow(MENU *&mainMenu, WINDOW *&mainWindow,
 		WINDOW *&notification, const MenuLines &mainMenuInfo);
 
-volatile sig_atomic_t stateProvider = 0;
+//volatile sig_atomic_t stateProvider = 0;
 
 /**
  * makeMenu(MenuLines, string) ->
@@ -44,7 +44,7 @@ volatile sig_atomic_t stateProvider = 0;
  * options, as well as a string holding the information potentially
  * required for initial notification of the user.
  */
-int makeMenu(MenuLines &mainMenuInfo, std::string startInfo) {
+int makeMenu(MenuLines &mainMenuInfo, std::string startInfo, __sighandler_t &sigHandler) {
 	ITEM **items;		  //OUTPUT- Menu items
 	MENU *mainMenu;		  //OUTPUT- Complete menu
 	WINDOW *mainWindow;	  //OUTPUT- Window to hold menu
@@ -63,9 +63,12 @@ int makeMenu(MenuLines &mainMenuInfo, std::string startInfo) {
 	menuLineSize = mainMenuInfo.menuLines.size();
 
 	//Handle system signals
+	/*
 	sa.sa_flags = 0;
 	sa.sa_handler = handleSignal;
 	sigaction(SIGWINCH, &sa, NULL);
+	*/
+	sigHandler = handleSignal;
 
 	//Init window, items, menu
 	startWindow(mainWindow);
@@ -93,10 +96,10 @@ int makeMenu(MenuLines &mainMenuInfo, std::string startInfo) {
 	dontExit = 1;
 	breakOut = -1;
 	do {
-		if (stateProvider) {
+		if (sigcatch/*stateProvider*/) {
 			refreshWindow(mainMenu, mainWindow, notification,
 					mainMenuInfo);
-			stateProvider = 0;
+			/*stateProvider*/ sigcatch = 0;
 		}
 		userInput = wgetch(mainWindow);
 		userInputChar = userInput - 1;
@@ -337,5 +340,5 @@ void refreshWindowMiddleSplit(MENU *&mainMenu, WINDOW *&mainWindow,
 
 ///This passes signals to the state provider; normally means recalculating the interface.
 void handleSignal(const int signal) {
-	stateProvider = signal;
+	/*stateProvider*/sigcatch = signal;
 }

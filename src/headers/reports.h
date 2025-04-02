@@ -5,6 +5,6 @@
 #include "invmenu.h"
 #endif
 
-int main_reports(BookType *(&bookList)[20]);
+int main_reports(BookType *(&bookList)[20], __sighandler_t &);
 
 #endif

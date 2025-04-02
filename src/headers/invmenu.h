@@ -6,7 +6,7 @@
 #ifndef BOOKTYPE_H
 #include "bookType.h"
 #endif
-
+#include <signal.h>
 
 /*
  * BookType\n
@@ -25,5 +25,5 @@
 	double retail;         ///< Retail value of book
 };*/
 
-int main_invmenu(BookType *(&books)[20]);
+int main_invmenu(BookType *(&books)[20], __sighandler_t &);
 #endif

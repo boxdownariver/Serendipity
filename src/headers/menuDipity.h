@@ -5,6 +5,7 @@
 #include <string>
 #endif
 #include <vector>
+#include <signal.h>
 
 #ifndef menu_lines_struct
 #define menu_lines_struct
@@ -22,7 +23,7 @@ struct MenuLines {
 
 #ifndef make_menu
 #define make_menu
-int makeMenu(MenuLines &, std::string);
+int makeMenu(MenuLines &, std::string, __sighandler_t &sigHandler);
 #endif
 
 #ifndef menu_utils

@@ -23,7 +23,7 @@
 #endif
 
 ///Generates reports menu interface
-int main_reports(BookType *(&bookList)[20]) {
+int main_reports(BookType *(&bookList)[20], __sighandler_t &sigHandler) {
 	std::string menuName = "Reports";
 	std::vector<std::string> menuListing = { "Inventory Listing", "Inventory Wholesale Value",
 					"Inventory Retail Value", "Listing by Quantity",
@@ -47,7 +47,7 @@ int main_reports(BookType *(&bookList)[20]) {
 			startNotif = "--NOTICE-- Book list full! Can no longer add book";
 		}
 		system("clear");
-		choice = makeMenu(mainMenuInfo, startNotif);
+		choice = makeMenu(mainMenuInfo, startNotif, sigHandler);
 		switch (choice) {
 		case 0:
 			mainRepListing(bookList);
