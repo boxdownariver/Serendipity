@@ -175,11 +175,19 @@ int mainRepListing (BookType *books[])
 		if (startIndex - PAGE_SIZE >= 0) {
      	startIndex -= PAGE_SIZE;  // Move backward
       }
+
+		else {
+		startIndex = ((BookType::getBookCount() -1 )/ PAGE_SIZE) * PAGE_SIZE; // goes to the last page
+		}
 		break;
 
 		case KEY_RIGHT:
 		if (startIndex + PAGE_SIZE < BookType::getBookCount()) {
-     	startIndex += PAGE_SIZE;
+     	startIndex += PAGE_SIZE;   //Move forward
+		}
+
+		else {
+		startIndex = 0; // Back to first page
 		}
 		break;
 		case 27: ;    //This is ESCAPE key. It's glitchy, I don't know why.
