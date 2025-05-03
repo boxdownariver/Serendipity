@@ -231,6 +231,7 @@ void deleteMenu(MENU *&menu, ITEM **&items, size_t menuLineSize) {
 	for (i = 0; i < menuLineSize; i++) {
 		free_item(items[i]);
 	}
+	free(items);
 }
 
 ///Start window with default esettings
@@ -255,6 +256,7 @@ void endWindow(WINDOW *&mainWindow) {
 	delwin(mainWindow);
 	refresh();
 	endwin();
+	exit_curses(0);
 }
 
 ///Recalculate the window, but keep the menu the same.
