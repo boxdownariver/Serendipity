@@ -13,19 +13,20 @@
  * 		int menuResult -> User menu decision for branching into
  * 			subprograms.
  *************************************************************************/
-#define menu_utils
 #include "headers/menuDipity.h"
 #include "headers/reports.h"
 #include "headers/invmenu.h"
 #include "headers/cashier.h"
 #include "headers/lookUp.h"
+#include <iostream>
 
 /**
  * main() ->
  * Generates main menu interface, allowing for branching into all
  * subprograms in the program.
  */
-int main() {
+int main() { {
+	initscr();
 	MenuLines mainMenuInfo;
 	std::vector<std::string> menuListing = { "Cashier Module",
 			"Inventory Database Module", "Report Module", "Exit" };
@@ -66,5 +67,7 @@ int main() {
 			delete books[i];
 		}
 	}
+}
+	exit_curses(0);
 	return 0;
 }
