@@ -40,11 +40,12 @@
 #ifndef _LIBCPP_IOSTREAM
 #include <iostream>
 #endif
+#include "headers/signal.hpp"
 
 ///Signal handler for window change
-void ahandleSignal(const int signal);
+//void ahandleSignal(const int signal);
 
-volatile sig_atomic_t astateProvider = 0;
+//volatile sig_atomic_t astateProvider = 0;
 
 /**
  * trim(string, WINDOW *) ->
@@ -93,12 +94,13 @@ void addBook(BookType *bookList[20]) {
 	MenuLines mainMenuInfo;
 	BookType bookBuffer;
 	std::deque<int> fieldQueue;
-	struct sigaction sa;
+//	struct sigaction sa;
 	std::string dummyString;
 	size_t input;
 	int choice;
 	int formch;
 	char inputChar;
+	char inputArr[2];
 	char *fieldBuffer;
 	bool continueMenu;
 	int exitChar;
@@ -115,15 +117,17 @@ void addBook(BookType *bookList[20]) {
 	mainMenuInfo.menuLines = menuListing;
 	mainMenuInfo.longestMenuLength =
 			sizeof("Enter Date Added (mm/dd/yyyy)") / sizeof(char);
-
+/*
 	sa.sa_flags = 0;
 	sa.sa_handler = ahandleSignal;
 	sigaction(SIGWINCH, &sa, NULL);
-
+*/
 	startWindow(mainWindow);
 	createMenuMiddleSplit(mainMenu, mainWindow, mainMenuInfo, items);
 
 	inputChar = '1';
+	inputArr[0] = '1';
+	inputArr[1] = '\0';
 	input = 0;
 	continueMenu = 1;
 	choice = -1;
@@ -174,7 +178,7 @@ void addBook(BookType *bookList[20]) {
 
 	//Main program loop
 	while (BookType::getBookCount() < 20 && continueMenu) {
-		if (astateProvider) {
+		if (stateProvider) {
 			delwin(bookDisplayWindow);
 			refreshWindowMiddleSplit(mainMenu, mainWindow, notification,
 					mainMenuInfo);
@@ -209,7 +213,7 @@ void addBook(BookType *bookList[20]) {
 							getmaxx(notification), 0, 0));
 			wrefresh(notification);
 
-			astateProvider = 0;
+			stateProvider = 0;
 		}
 
 		mvwprintw(notification, 2, 1, "%d books used out of 20 available",
@@ -374,7 +378,8 @@ void addBook(BookType *bookList[20]) {
 		default:
 			if (input >= '0' && input <= menuListing.size() + 47) {
 				wclear(notification);
-				set_current_item(mainMenu, items[atoi(&inputChar)]);
+				inputArr[0] = inputChar;
+				set_current_item(mainMenu, items[atoi(inputArr)]);
 				wrefresh(notification);
 			} else {
 				wclear(notification);
@@ -402,8 +407,9 @@ void addBook(BookType *bookList[20]) {
 	}
 	return;
 }
-
+/*
 void ahandleSignal(const int signal) {
 	astateProvider = signal;
 	return;
 }
+*/

@@ -45,11 +45,12 @@
 #include "headers/lookUp.h"
 #endif
 #include <iostream>
+#include "headers/signal.hpp"
 
 ///Signal handler for window size change
-void bhandleSignal(const int signal);
+//void bhandleSignal(const int signal);
 
-volatile sig_atomic_t bstateProvider = 0;
+//volatile sig_atomic_t bstateProvider = 0;
 
 /**
  * mainEditBook(BookType, int) ->
@@ -128,11 +129,12 @@ void editBook(BookType *bookList[20], int bookIndex) {
 	MenuLines mainMenuInfo;
 	BookType bookBuffer;
 	std::deque<int> fieldQueue;
-	struct sigaction sa;
+//	struct sigaction sa;
 	size_t input;
 	int choice;
 	int formch;
 	char inputChar;
+	char inputArr[2];
 	char *fieldBuffer;
 	bool continueMenu;
 	int exitChar;
@@ -149,15 +151,17 @@ void editBook(BookType *bookList[20], int bookIndex) {
 	mainMenuInfo.menuLines = menuListing;
 	mainMenuInfo.longestMenuLength =
 			sizeof("Enter Date Added (mm/dd/yyyy)") / sizeof(char);
-
+/*
 	sa.sa_flags = 0;
 	sa.sa_handler = bhandleSignal;
 	sigaction(SIGWINCH, &sa, NULL);
-
+*/
 	startWindow(mainWindow);
 	createMenuMiddleSplit(mainMenu, mainWindow, mainMenuInfo, items);
 
 	inputChar = '1';
+	inputArr[0] = '1';
+	inputArr[1] = '\0';
 	input = 0;
 	continueMenu = 1;
 	choice = -1;
@@ -201,7 +205,7 @@ void editBook(BookType *bookList[20], int bookIndex) {
 
 	//Main program loop
 	while (continueMenu) {
-		if (bstateProvider) {
+		if (stateProvider) {
 			delwin(bookDisplayWindow);
 			refreshWindowMiddleSplit(mainMenu, mainWindow, notification,
 					mainMenuInfo);
@@ -231,7 +235,7 @@ void editBook(BookType *bookList[20], int bookIndex) {
 							getmaxx(notification), 0, 0));
 			wrefresh(notification);
 
-			bstateProvider = 0;
+			stateProvider = 0;
 		}
 
 		mvwprintw(notification, 2, 1, "Currently editing index %d",
@@ -388,7 +392,8 @@ void editBook(BookType *bookList[20], int bookIndex) {
 		default:
 			if (input >= '0' && input <= menuListing.size() + 47) {
 				wclear(notification);
-				set_current_item(mainMenu, items[atoi(&inputChar)]);
+				inputArr[0] = inputChar;
+				set_current_item(mainMenu, items[atoi(inputArr)]);
 				wrefresh(notification);
 			} else {
 				wclear(notification);
@@ -407,8 +412,9 @@ void editBook(BookType *bookList[20], int bookIndex) {
 	endWindow(mainWindow);
 	return;
 }
-
+/*
 void bhandleSignal(const int signal) {
 	bstateProvider = signal;
 	return;
 }
+*/

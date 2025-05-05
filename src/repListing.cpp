@@ -16,10 +16,11 @@
 #include "headers/repListing.h"
 #include "headers/reports.h"
 #include "headers/cashier.h"
+#include "headers/signal.hpp"
 
-volatile sig_atomic_t sigHandler = 0;
+//volatile sig_atomic_t sigHandler = 0;
 
-void handleSig(int sig);
+//void handleSig(int sig);
 void makeWindow(WINDOW *&repWindow);
 void delWindow(WINDOW *&repWindow);
 void refWindow(WINDOW *&repWindow);
@@ -29,15 +30,17 @@ int mainRepListing (BookType *books[])
 {
 
 	WINDOW * repWindow = NULL;
-	struct sigaction sa;
+	//struct sigaction sa;
 	int userInput;
 	char userInputChar;
 	bool dontExit;
 
+	/*
 	//Handle system signals
 	sa.sa_flags = 0;
 	sa.sa_handler = handleSig;
 	sigaction(SIGWINCH, &sa, NULL);
+	*/
 
 	if (BookType::getBookCount() == 0)
 	{
@@ -213,7 +216,7 @@ int mainRepListing (BookType *books[])
  */
 void makeWindow(WINDOW *&repWindow) {
 	//Init screen
-	initscr();
+	//initscr();
 	raw();
 	noecho();
 	curs_set(0);
@@ -271,8 +274,8 @@ string trimToSize(string origin, size_t size) {
 	origin.shrink_to_fit();
 	return origin;
 }
-
+/*
 void handleSig(int sig) {
 	sigHandler = sig;
 	return;
-}
+}*/

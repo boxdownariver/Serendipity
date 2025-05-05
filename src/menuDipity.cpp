@@ -17,6 +17,7 @@
 #define menu_utils
 #include <curses.h>
 #include <signal.h>
+#include "headers/signal.hpp"
 #include <menu.h>
 #include <chrono>
 #include <thread>
@@ -31,7 +32,7 @@ void createMenu(MENU *&mainMenu, WINDOW *mainWindow,
 void deleteMenu(MENU *&mainMenu, ITEM **&items, size_t menuLineSize);
 void startWindow(WINDOW *&mainWindow);
 void endWindow(WINDOW *&mainWindow);
-void handleSignal(const int signal);
+//void handleSignal(const int signal);
 void refreshWindow(MENU *&mainMenu, WINDOW *&mainWindow,
 		WINDOW *&notification, const MenuLines &mainMenuInfo);
 
@@ -49,23 +50,28 @@ int makeMenu(MenuLines &mainMenuInfo, std::string startInfo) {
 	MENU *mainMenu;		  //OUTPUT- Complete menu
 	WINDOW *mainWindow;	  //OUTPUT- Window to hold menu
 	WINDOW *notification; //OUTPUT- Notification at bottom of screen
-	struct sigaction sa;  //OUTPUT- Signal action handler
+	//struct sigaction sa;  //OUTPUT- Signal action handler
 	int breakOut;		  //OUTPUT- Return of menu (for when it breaks out)
 	int menuLineSize;     //INPUT-  Size of the list of menu lines
 	int userInput;		  //INPUT-  User key input
 	char userInputChar;	  //INPUT-  User input (hard- coded as char)
+	char userInputArr[2];		//INPUT- User input (String)
 	char *currentItemName;//INPUT-  Name of item currently selected
 	bool dontExit;		  //INPUT-  Prevent exiting until need is met
 
 	//Init menuLineSize and userInputChar
 	userInputChar = '1';
+	userInputArr[0] = '1';
+	userInputArr[1] = '\0';
 
 	menuLineSize = mainMenuInfo.menuLines.size();
 
+	/*
 	//Handle system signals
 	sa.sa_flags = 0;
 	sa.sa_handler = handleSignal;
 	sigaction(SIGWINCH, &sa, NULL);
+	*/
 
 	//Init window, items, menu
 	startWindow(mainWindow);
@@ -131,7 +137,8 @@ int makeMenu(MenuLines &mainMenuInfo, std::string startInfo) {
 		default:
 			if (userInput >= '1' && userInput <= menuLineSize + 48) {
 				wclear(notification);
-				set_current_item(mainMenu, items[atoi(&userInputChar)]);
+				userInputArr[0] = userInputChar;
+				set_current_item(mainMenu, items[atoi(userInputArr)]);
 				wrefresh(notification);
 			} else {
 				wclear(notification);
@@ -340,4 +347,5 @@ void refreshWindowMiddleSplit(MENU *&mainMenu, WINDOW *&mainWindow,
 ///This passes signals to the state provider; normally means recalculating the interface.
 void handleSignal(const int signal) {
 	stateProvider = signal;
+	return;
 }

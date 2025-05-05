@@ -1,0 +1,8 @@
+#include "headers/signal.hpp"
+
+volatile sig_atomic_t stateProvider = 0;
+
+void handleSignal(const int sig) {
+	stateProvider = sig;
+	return;
+}
