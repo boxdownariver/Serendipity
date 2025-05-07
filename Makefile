@@ -1,5 +1,7 @@
 all: serendipity
 
+getterminfo: ~/.terminfo/x/xterm-256color
+
 serendipity: src/mainmenu.cpp ./out/cashier.o out/menuDriver.o out/invmenu.o out/reports.o out/lookUp.o out/bookfile.o out/addbook.o out/editbook.o out/deleteBook.o out/setColour.o out/bookType.o out/getwinsize.o out/repListing.o out/  
 	g++ --std=c++20 -o "serendipity" src/mainmenu.cpp out/menuDriver.o out/invmenu.o out/lookUp.o out/reports.o out/cashier.o out/bookfile.o out/addbook.o out/editbook.o out/deleteBook.o out/setColour.o out/bookType.o out/getwinsize.o out/repListing.o -L ./ncurses-fix/lib -l:libmenu.a -l:libform.a -l:libncurses.a
 
@@ -50,6 +52,8 @@ out/:
 
 booklist.dat:
 	touch booklist.dat
+~/.terminfo/x/xterm-256color:
+	cp /usr/share/terminfo/x/xterm-256color ~/.terminfo/x
 
 clean:
 	rm out/*.o
