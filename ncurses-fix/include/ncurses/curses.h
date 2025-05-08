@@ -108,7 +108,7 @@
  * User-definable tweak to disable the include of <stdbool.h>.
  */
 #ifndef NCURSES_ENABLE_STDBOOL_H
-#define NCURSES_ENABLE_STDBOOL_H 1
+#define NCURSES_ENABLE_STDBOOL_H 0
 #endif
 
 /*
@@ -269,9 +269,9 @@ typedef uint32_t mmask_t;
 #undef FALSE
 #define FALSE   0
 
-typedef unsigned char NCURSES_BOOL;
+typedef int NCURSES_BOOL;
 
-#if defined(__cplusplus)	/* __cplusplus, etc. */
+#if 0	/* __cplusplus, etc. */
 
 /* use the C++ compiler's bool type */
 #define NCURSES_BOOL bool

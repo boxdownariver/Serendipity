@@ -36,7 +36,7 @@ LANGUAGE=C;	export LANGUAGE
 LC_ALL=C;	export LC_ALL
 LC_CTYPE=C;	export LC_CTYPE
 
-prefix="/home/Todd/eclipse-workspace/serendipity/ncurses-fix"
+prefix="/home/mkrosby0/Documents/CS1B/Serendipity/ncurses-fix"
 exec_prefix="${prefix}"
 
 bindir="${exec_prefix}/bin"
@@ -120,13 +120,13 @@ do
 		lib_check=`echo "x$opt" | sed -e 's/^.-L//'`
 		[ -d "$lib_check" ] || continue
 		case "$lib_check" in
-		/usr/lib|/usr/local/lib) # skip standard libdir
+		/usr/lib64|/usr/local/lib64|/lib64|/usr/local/lib|/lib|/usr/lib) # skip standard libdir
 			if [ "$lib_check" = "$libdir" ]
 			then
 				lib_first=yes
 				IFS_save="$IFS"
 				IFS='|'
-				LIBDIRS="/usr/lib|/usr/local/lib"
+				LIBDIRS="/usr/lib64|/usr/local/lib64|/lib64|/usr/local/lib|/lib|/usr/lib"
 				for lib_check in $LIBDIRS
 				do
 					if [ -d "$lib_check" ]
@@ -280,10 +280,10 @@ ENDECHO
 		echo "${mandir}"
 		;;
 	--terminfo)
-		echo "/usr/lib/kitty/terminfo"
+		echo "/home/mkrosby0/Documents/CS1B/Serendipity/ncurses-fix/share/terminfo"
 		;;
 	--terminfo-dirs)
-		echo "/home/Todd/eclipse-workspace/serendipity/ncurses-fix/share/terminfo"
+		echo "/home/mkrosby0/Documents/CS1B/Serendipity/ncurses-fix/share/terminfo"
 		;;
 	--termpath)
 		echo ""
