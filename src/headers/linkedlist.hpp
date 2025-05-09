@@ -94,7 +94,7 @@ public:
 		}
 		return;
 	}
-	inline ~LinkedListType() ///Deletes all entries of linked list upon deletion of list
+	inline void delete_all() ///< Deletes all entries of linked list
 	{
 		NodeType<T> * newHead = head;
 		///< Until the end is reached, delete the head and appoint a new head.
@@ -103,6 +103,11 @@ public:
 			delete head;
 			head = newHead;
 		}
+		return;
+	}
+	inline ~LinkedListType() ///< Sets off delete_all upon list deletion
+	{
+		delete_all();
 		return;
 	}
 	inline void delete_head() ///< Deletes entry at head of linked list
