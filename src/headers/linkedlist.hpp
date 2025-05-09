@@ -2,6 +2,7 @@
 #define linkedlist_hpp
 
 #include <stddef.h>
+#include <iostream>
 
 template <class T>
 class LinkedListIterator;
@@ -174,6 +175,7 @@ public:
 		index = 0;
 		return;
 	}
+	inline ~LinkedListIterator() { return; }
 	inline void operator++() {
 		if (current != nullptr) {
 			current = current->next;
@@ -191,6 +193,9 @@ public:
 			index++;
 		}
 		return;
+	}
+	inline void setHead(NodeType<T> * newHead) {
+		head = newHead;
 	}
 	inline T getHead() {
 		T value;
@@ -211,20 +216,28 @@ public:
 			value = current->data;
 		return value;
 	}
+	inline void indexOf(size_t myIndex) {
+		current = head;
+		for (size_t i = 0; i < myIndex && current != nullptr; i++) {
+			current = current->next;
+			index++;
+		}
+		return;
+	}
 	inline T get(size_t myIndex) {
 		T value;
-		if (current != nullptr) {
-			for (size_t i = 0; i < myIndex && current != nullptr; i++) {
-				(*this)++;
-			}
-			if (current != nullptr)
-				value = current->data;
-		}
+		indexOf(myIndex);
+		if (current != nullptr)
+			value = current->data;
 		return value;
 	}
 	inline void set(T myData) {
 		current->data = myData;
 		return;
+	}
+	inline T& operator[](size_t myIndex) {
+		indexOf(myIndex);
+		return current->data;
 	}
 	inline size_t getIndex() {
 		return index;

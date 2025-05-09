@@ -17,16 +17,18 @@ using namespace std;
 
 int main() {
 	LinkedListType<int> ints;
-	LinkedListIterator myInts = LinkedListIterator(ints);
+	LinkedListIterator<int> myInts;
 	ints.insert_end(1);
 	ints.insert_end(2);
 	ints.insert_head(3);
 	ints.insert_head(4);
 	ints.delete_end();
 	ints[2] = 8;
-	for (int i = 0; i < ints.size(); i++) {
-		std::cout << ints[i] << std::endl;
-	}
+	myInts = LinkedListIterator(ints);
+	//std::cout << &myInts[1] << std::endl;
+	//for (int i = 0; i < ints.size(); i++) {
+	//	std::cout << ints[i] << std::endl;
+	//}
 
 	return 0;
 }
