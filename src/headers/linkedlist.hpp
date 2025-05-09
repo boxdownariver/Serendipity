@@ -4,9 +4,17 @@
 #include <stddef.h>
 
 template <class T>
-struct NodeType {
+class NodeType {
+public:
 	NodeType * next;
 	T data;
+	inline NodeType() {
+		next = nullptr;
+	}
+	inline NodeType(T myData) {
+		next = nullptr;
+		data = myData;
+	}
 };
 
 template <class T>
@@ -19,12 +27,12 @@ public:
 	{ head = nullptr; return; }
 	inline LinkedListType(T data) ///< Generates single-entry linked list
 	{
-		head = new NodeType<T>;
-		head->data = data;
-		head->next = nullptr;
+		head = new NodeType<T>(data);
+		//head->data = data;
+		//head->next = nullptr;
 		return;
 	}
-	inline NodeType<T> find_end() ///< Finds last entry of linked list
+	inline NodeType<T> * find_end() ///< Finds last entry of linked list
 	{
 		NodeType<T> * end = head;
 		///< Find whatever item is directly before the nullptr at the end of the linked list
@@ -34,7 +42,7 @@ public:
 			}
 		return end;
 	}
-	inline NodeType<T> find_index(size_t index) ///< Finds entry at index of linked list
+	inline NodeType<T> * find_index(size_t index) ///< Finds entry at index of linked list
 	{
 		NodeType<T> * node = head;
 		///< Iterate to item; if any items till then are null, return nullptr.
@@ -50,23 +58,23 @@ public:
 		NodeType<T> * end = find_end();
 		///< Find the end of the list. If end exists, add a new node on top and make it the end.
 		if (end != nullptr) {
-			end->next = new NodeType<T>;
+			end->next = new NodeType<T>(data);
 			end = end->next;
-			end->next = nullptr;
-			end->data = data;
+			//end->next = nullptr;
+			//end->data = data;
 		} else if (head == nullptr){
-			head = new NodeType<T>;
-			head->next = nullptr;
-			head->data = data;
+			head = new NodeType<T>(data);
+			//head->next = nullptr;
+			//head->data = data;
 		}
 		return;
 	}
 	inline void insert_head(T data) ///< Inserts entry at head of linked list
 	{
 		NodeType<T> * oldHead = head;
-		head = new NodeType<T>;
+		head = new NodeType<T>(data);
 		head->next = oldHead;
-		head->data = data;
+		//head->data = data;
 		return;
 	}
 	inline void delete_index(size_t index) ///< Deletes entry at index of linked list
@@ -131,6 +139,15 @@ public:
 	inline T operator[](size_t index) ///< Finds data of entry at index
 	{
 		return find_index(index)->data;
+	}
+	inline size_t size() {
+		NodeType<T> * node = head;
+		size_t i = 0;
+		while (node != nullptr) {
+			node = node->next;
+			i++;
+		}
+		return i;
 	}
 };
 

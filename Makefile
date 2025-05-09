@@ -47,6 +47,9 @@ out/getwinsize.o: src/getwinsize.cpp out/
 out/repListing.o: src/repListing.cpp out/
 	g++ --std=c++20 -c -o "out/repListing.o" src/repListing.cpp
 
+listtest: src/testlinkedlist.cpp src/headers/linkedlist.hpp
+	g++ --std=c++20 -o listtest src/testlinkedlist.cpp
+
 out/:
 	mkdir out
 
