@@ -1,6 +1,8 @@
 #ifndef linkedlist_hpp
 #define linkedlist_hpp
 
+#include <stddef.h>
+
 template <class T>
 struct NodeType {
 	NodeType * next;
@@ -13,23 +15,29 @@ private:
 	NodeType<T> * head;
 
 public:
-	inline LinkedListType() { head = nullptr; return; }
-	inline LinkedListType(T data) {
+	inline LinkedListType() ///< Generates empty linked list
+	{ head = nullptr; return; }
+	inline LinkedListType(T data) ///< Generates single-entry linked list
+	{
 		head = new NodeType<T>;
 		head->data = data;
 		head->next = nullptr;
 		return;
 	}
-	inline NodeType<T> find_end() {
+	inline NodeType<T> find_end() ///< Finds last entry of linked list
+	{
 		NodeType<T> * end = head;
+		///< Find whatever item is directly before the nullptr at the end of the linked list
 		if (end != nullptr)
 			while (end->next != nullptr) {
 				end = end->next;
 			}
 		return end;
 	}
-	inline NodeType<T> find_index(size_t index) {
+	inline NodeType<T> find_index(size_t index) ///< Finds entry at index of linked list
+	{
 		NodeType<T> * node = head;
+		///< Iterate to item; if any items till then are null, return nullptr.
 		if (node != nullptr) {
 			for (size_t i = 0; i < index && node != nullptr; i++) {
 				node = node->next;
@@ -37,26 +45,35 @@ public:
 		}
 		return node;
 	}
-	inline void insert_end(T data) {
+	inline void insert_end(T data) ///< Inserts entry at end of linked list
+	{
 		NodeType<T> * end = find_end();
+		///< Find the end of the list. If end exists, add a new node on top and make it the end.
 		if (end != nullptr) {
 			end->next = new NodeType<T>;
 			end = end->next;
 			end->next = nullptr;
 			end->data = data;
+		} else if (head == nullptr){
+			head = new NodeType<T>;
+			head->next = nullptr;
+			head->data = data;
 		}
 		return;
 	}
-	inline void insert_head(T data) {
+	inline void insert_head(T data) ///< Inserts entry at head of linked list
+	{
 		NodeType<T> * oldHead = head;
 		head = new NodeType<T>;
 		head->next = oldHead;
 		head->data = data;
 		return;
 	}
-	inline void delete_index(size_t index) {
+	inline void delete_index(size_t index) ///< Deletes entry at index of linked list
+	{
 		NodeType<T> * before = nullptr;
 		NodeType<T> * after = nullptr;
+		///< Find entry just before index, then entry just after. Delete entry at index, then patch up the hole.
 		if (index != 0) {
 			before = find_index(index - 1);
 			if (before != nullptr && before->next != nullptr) {
@@ -71,18 +88,21 @@ public:
 		}
 		return;
 	}
-	inline ~LinkedListType() {
-		NodeType<T> * oldHead = nullptr;
+	inline ~LinkedListType() ///Deletes all entries of linked list upon deletion of list
+	{
 		NodeType<T> * newHead = head;
+		///< Until the end is reached, delete the head and appoint a new head.
 		while (newHead != nullptr) {
-			oldHead = newHead;
 			newHead = newHead->next;
-			delete oldHead;
+			delete head;
+			head = newHead;
 		}
 		return;
 	}
-	inline void delete_head() {
+	inline void delete_head() ///< Deletes entry at head of linked list
+	{
 		NodeType<T> * after = nullptr;
+		///< Delete head and set it to next in line.
 		if (head != nullptr) {
 			after = head->next;
 			delete head;
@@ -90,16 +110,28 @@ public:
 		}
 		return;
 	}
-	inline void delete_end() {
+	inline void delete_end() ///< Deletes entry at end of linked list
+	{
 		NodeType<T> * before = head;
-		while (before != nullptr && before->next != nullptr && before->next->next != nullptr) {
+		///< Find the node just before last, then delete the last and set next of the new last node to nullptr.
+		while (before != nullptr
+				&& before->next != nullptr
+				&& before->next->next != nullptr) {
 			before = before->next;
 		}
-		delete before->next;
-		before->next = nullptr;
+		if (before != nullptr) if (before->next != nullptr) {
+			delete before->next;
+			before->next = nullptr;
+		} else {
+			delete before;
+			before = nullptr;
+		}
 		return;
 	}
-
+	inline T operator[](size_t index) ///< Finds data of entry at index
+	{
+		return find_index(index)->data;
+	}
 };
 
 #endif
