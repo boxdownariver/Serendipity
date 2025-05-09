@@ -25,10 +25,10 @@ int main() {
 	ints.delete_end();
 	ints[2] = 8;
 	myInts = LinkedListIterator(ints);
-	//std::cout << &myInts[1] << std::endl;
-	//for (int i = 0; i < ints.size(); i++) {
-	//	std::cout << ints[i] << std::endl;
-	//}
+	myInts[1] = 80;
+	for (int i = 0; i < ints.size(); i++) {
+		std::cout << ints[i] << std::endl;
+	}
 
 	return 0;
 }

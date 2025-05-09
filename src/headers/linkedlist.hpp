@@ -2,10 +2,11 @@
 #define linkedlist_hpp
 
 #include <stddef.h>
-#include <iostream>
 
 template <class T>
 class LinkedListIterator;
+template <class T>
+class LinkedListType;
 
 template <class T>
 class NodeType {
@@ -32,8 +33,6 @@ public:
 	inline LinkedListType(T data) ///< Generates single-entry linked list
 	{
 		head = new NodeType<T>(data);
-		//head->data = data;
-		//head->next = nullptr;
 		return;
 	}
 	inline NodeType<T> * find_end() ///< Finds last entry of linked list
@@ -64,12 +63,8 @@ public:
 		if (end != nullptr) {
 			end->next = new NodeType<T>(data);
 			end = end->next;
-			//end->next = nullptr;
-			//end->data = data;
 		} else if (head == nullptr){
 			head = new NodeType<T>(data);
-			//head->next = nullptr;
-			//head->data = data;
 		}
 		return;
 	}
@@ -78,7 +73,6 @@ public:
 		NodeType<T> * oldHead = head;
 		head = new NodeType<T>(data);
 		head->next = oldHead;
-		//head->data = data;
 		return;
 	}
 	inline void delete_index(size_t index) ///< Deletes entry at index of linked list
@@ -153,7 +147,7 @@ public:
 		}
 		return i;
 	}
-	friend LinkedListIterator<T>::LinkedListIterator(LinkedListType<T>);
+	friend LinkedListIterator<T>::LinkedListIterator(LinkedListType<T> &);
 };
 
 template <class T>
@@ -169,7 +163,7 @@ public:
 		index = 0;
 		return;
 	}
-	inline LinkedListIterator(LinkedListType<T> list) {
+	inline LinkedListIterator(LinkedListType<T>& list) {
 		head = list.head;
 		current = head;
 		index = 0;
