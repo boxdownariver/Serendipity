@@ -4,6 +4,9 @@
 #include <stddef.h>
 
 template <class T>
+class LinkedListIterator;
+
+template <class T>
 class NodeType {
 public:
 	NodeType * next;
@@ -136,7 +139,7 @@ public:
 		}
 		return;
 	}
-	inline T operator[](size_t index) ///< Finds data of entry at index
+	inline T& operator[](size_t index) ///< Finds data of entry at index
 	{
 		return find_index(index)->data;
 	}
@@ -148,6 +151,83 @@ public:
 			i++;
 		}
 		return i;
+	}
+	friend LinkedListIterator<T>::LinkedListIterator(LinkedListType<T>);
+};
+
+template <class T>
+class LinkedListIterator {
+private:
+	NodeType<T> * head;
+	NodeType<T> * current;
+	size_t index;
+public:
+	inline LinkedListIterator() {
+		head = nullptr;
+		current = nullptr;
+		index = 0;
+		return;
+	}
+	inline LinkedListIterator(LinkedListType<T> list) {
+		head = list.head;
+		current = head;
+		index = 0;
+		return;
+	}
+	inline void operator++() {
+		if (current != nullptr) {
+			current = current->next;
+			index++;
+		}
+		return;
+	}
+	inline void begin() {
+		current = head;
+		return;
+	}
+	inline void end() {
+		if (current != nullptr) while (current->next != nullptr) {
+			current = current->next;
+			index++;
+		}
+		return;
+	}
+	inline T getHead() {
+		T value;
+		current = head;
+
+		if (head != nullptr) value = head->data;
+		return value;
+	}
+	inline T getEnd() {
+		T value;
+		end();
+		if (current != nullptr) value = current->data;
+		return value;
+	}
+	inline T get() {
+		T value;
+		if (current != nullptr)
+			value = current->data;
+		return value;
+	}
+	inline T get(size_t myIndex) {
+		T value;
+		if (current != nullptr) {
+			for (size_t i = 0; i < myIndex && current != nullptr; i++) {
+				(*this)++;
+			}
+			if (current != nullptr)
+				value = current->data;
+		}
+		return value;
+	}
+	inline void set(T myData) {
+		current->data = myData;
+		return;
+	}
+	inline size_t getIndex() {
+		return index;
 	}
 };
 
