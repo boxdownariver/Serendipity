@@ -24,6 +24,7 @@ class BookType
 	void setRetail (double retailPrice)			{	retail = retailPrice;		} ///< Sets the retail value of book
 	static void incBookCount () 				{	bookCount++; 				} ///< Increments the count of all book types
 	static void decBookCount () 				{ bookCount--; 					} ///< Decrements the count of all book types
+	static void setFlag(int value)					{	sortFlag = value;	}	///< Sets the value of flag in
 
 	string getTitle () const		{	return bookTitle;	} ///< Gets the book title
 	string getISBN () const			{	return isbn;		} ///< Gets the book ISBN
@@ -34,14 +35,14 @@ class BookType
 	double getWholesale () const	{	return wholesale;	} ///< Gets the wholesale price of book
 	double getRetail () const		{	return retail;		} ///< Gets the retail value of book
 	static int getBookCount () 		{	return bookCount;	} ///< Gets the count of all book types
-
+	static int getFlag()					{	return sortFlag;	}	///< Gets the current type of sorting
 	void printBookInfo () const ; ///< bookInfo() replacement
 
 	bool foundKeyword (const string toSearch) const; ///< Searches for substring within book name
 	bool equalData (const BookType) const ; ///< Checks whether two books are equivalent	
 	BookType(); ///< Constructor with no arguments
 	BookType (string, string, string, string, string, int, double, double); ///< Constructor with all possible values for book
-
+	bool operator< (const BookType &book) const;  ///< Operator Overload for sorting
 	~BookType() {} ///< Destructor
 
 	private:
@@ -54,5 +55,10 @@ class BookType
 	double wholesale;      ///< Wholesale price of book
 	double retail;         ///< Retail value of book
 	static int bookCount;  ///< Holds the current book count in array
+	static int sortFlag;	  ///< Indicates the current type of sorting
+										///< 5 - Sort By Age (Date Added)  
+										///< 6 - Sort By Quantity On Hand 
+										///< 8 - Sort By Retail Price
+
 };
 #endif

@@ -8,6 +8,7 @@
 using namespace std;
 
 int BookType::bookCount = 0;
+int BookType::sortFlag = 0;
 
 /**
 * Default constructor for bookType class. Initializes member variables with default values.
@@ -105,4 +106,19 @@ bool BookType::foundKeyword (const string toSearch) const
 
 	// Search for title or isbn match
 	return (tempTitle.find(searchUpper) != string::npos || isbn.find(searchUpper) != string::npos);
+}
+
+
+bool BookType:: operator< (const BookType &obj) const
+{
+	if (sortFlag == 5)
+	return (dateAdded < obj.dateAdded);
+
+	if (sortFlag == 6)
+	return (qtyOnHand < obj.qtyOnHand);
+	
+	if (sortFlag == 8)
+	return (retail < obj.retail);
+
+	return false;
 }
