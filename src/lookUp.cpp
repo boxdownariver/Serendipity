@@ -196,6 +196,7 @@ int findString (const string toSearch, LinkedListType< BookType *>& array, const
  */
 int findStringInCart (const string toSearch, LinkedListType< BookType *>& array, const int size, int cart[])
 {
+	LinkedListIterator<BookType *> iterator(array);
 	int index = 0;
 	int bookFoundCount = 1;
 	string tempTitle;
@@ -209,17 +210,18 @@ int findStringInCart (const string toSearch, LinkedListType< BookType *>& array,
     cout << "╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n"; 
     cout << "║                                                                                                    ║\n";
 	
+    iterator.begin();
      while (index < size)
          {
             if (cart[index] > 0) 
 					{
              // Search for title or ISBN match in cart using foundKeyword
-             if (array[index]->foundKeyword(toSearch) == true)
+             if (iterator.get()->foundKeyword(toSearch) == true) 
              {
 				cout << "║ [" << setw (2) << right << bookFoundCount <<"]" << setw (100) << right << " ║ \n";
         		cout << "║ ";
 				setColour(32); // Yellow text  
-				cout << "RESULT -> : Title - " << setw (78) << left << array[index]->getTitle();
+				cout << "RESULT -> : Title - " << setw (78) << left << iterator.get()->getTitle();
 				resetColour();
 				cout << " ║ \n║ ";
 				setColour(32); // Yellow text
@@ -246,7 +248,7 @@ int findStringInCart (const string toSearch, LinkedListType< BookType *>& array,
 
              }
 			}
-             
+             ++iterator;
              index++;
          }
 

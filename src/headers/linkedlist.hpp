@@ -175,15 +175,16 @@ public:
 		return;
 	}
 	inline ~LinkedListIterator() { return; }
-	inline void operator++() {
+	inline LinkedListIterator& operator++() {
 		if (current != nullptr) {
 			current = current->next;
 			index++;
 		}
-		return;
+		return (*this);
 	}
 	inline void begin() {
 		current = head;
+		index = 0;
 		return;
 	}
 	inline void end() {
@@ -240,6 +241,11 @@ public:
 	}
 	inline size_t getIndex() {
 		return index;
+	}
+	inline LinkedListIterator& operator++ (int) {
+		static LinkedListIterator old(*this);
+		++(*this);
+		return old;
 	}
 };
 
