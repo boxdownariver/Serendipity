@@ -29,18 +29,11 @@ string trimToSize(string origin, size_t size);
 int mainRepListing (LinkedListType<BookType *>& books)
 {
 
+	LinkedListIterator<BookType *> iterator(books);
 	WINDOW * repWindow = NULL;
-	//struct sigaction sa;
 	int userInput;
 	char userInputChar;
 	bool dontExit;
-
-	/*
-	//Handle system signals
-	sa.sa_flags = 0;
-	sa.sa_handler = handleSig;
-	sigaction(SIGWINCH, &sa, NULL);
-	*/
 
 	if (BookType::getBookCount() == 0)
 	{
@@ -121,31 +114,33 @@ int mainRepListing (LinkedListType<BookType *>& books)
 		char wholesale[20];
 		char retail[20];
 		int colorPair;
+		iterator.indexOf(startIndex);
 		for (int i = startIndex; i < startIndex + PAGE_SIZE && i < BookType::getBookCount(); ++i) {
 				if (i % 3 == 0)	{colorPair = 2;}
 				else if (i % 3 == 1) {colorPair = 5; }
 				else {colorPair = 3;}
 
 				wattron(repWindow, COLOR_PAIR(colorPair));
-				mvwprintw(repWindow, row, 2, trimToSize(books[i]->getTitle(), 27).c_str());
-				mvwprintw(repWindow, row, 31, "%s", books[i]->getISBN().c_str());
-				mvwprintw(repWindow, row, 45, trimToSize(books[i]->getAuthor(), 14).c_str());
-				mvwprintw(repWindow, row, 61, trimToSize(books[i]->getPub(), 11).c_str());
-				mvwprintw(repWindow, row, 75, trimToSize(books[i]->getDateAdded(), 10).c_str());
-				sprintf(quantity, "%2d", books[i]->getQtyOnHand());  // Format `int` as string
+				mvwprintw(repWindow, row, 2, trimToSize(iterator.get()->getTitle(), 27).c_str());
+				mvwprintw(repWindow, row, 31, "%s", iterator.get()->getISBN().c_str());
+				mvwprintw(repWindow, row, 45, trimToSize(iterator.get()->getAuthor(), 14).c_str());
+				mvwprintw(repWindow, row, 61, trimToSize(iterator.get()->getPub(), 11).c_str());
+				mvwprintw(repWindow, row, 75, trimToSize(iterator.get()->getDateAdded(), 10).c_str());
+				sprintf(quantity, "%2d", iterator.get()->getQtyOnHand());  // Format `int` as string
 				mvwprintw(repWindow, row, 91, "%s", quantity);
 
 				// Wholesale Price
 				mvwprintw(repWindow, row, 96, "$");
-				sprintf(wholesale, "%*.*f", 7, 2, books[i]->getWholesale());
+				sprintf(wholesale, "%*.*f", 7, 2, iterator.get()->getWholesale());
 				mvwprintw(repWindow, row, 97, "%s", wholesale);
 
 				// Retail price
 				mvwprintw(repWindow, row, 107, "$");
-				sprintf(retail, "%*.*f", 7, 2, books[i]->getRetail());
+				sprintf(retail, "%*.*f", 7, 2, iterator.get()->getRetail());
 				mvwprintw(repWindow, row, 108, "%s", retail);
 				wattroff(repWindow, COLOR_PAIR(colorPair));
 				row ++;
+				++iterator;
         }
 		//You can also use this like printf!
 		// mvwprintw(repWindow, 17, 16, "%sThis string puts spaces in!",trimToSize(hello, 15).c_str());

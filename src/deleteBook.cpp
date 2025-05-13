@@ -146,7 +146,11 @@ void discardBook (LinkedListType<BookType *>& books, int index) //NEEDS FULL REW
 				// reduce the book count by one
 				BookType::decBookCount();
 				curBookCount = BookType::getBookCount();
+				
+				delete books[index];
+				books.delete_index(index);
 
+				/*
 				// Bring the last index data to current index
 				// !!! Could make a new constructor for this
 				// !!! Also try aggregate set
@@ -160,16 +164,16 @@ void discardBook (LinkedListType<BookType *>& books, int index) //NEEDS FULL REW
 				books[index]->setRetail(books[curBookCount]->getRetail());
 				
 				// set the last index to default values
-				/*books[curBookCount].setTitle("EMPTY");
-				books[curBookCount].setISBN("EMPTY");
-				books[curBookCount].setAuthor("EMPTY");
-				books[curBookCount].setPub("EMPTY");
-				books[curBookCount].setDateAdded("EMPTY");
-				books[curBookCount].setQtyOnHand(0);
-				books[curBookCount].setWholesale(0);
-				books[curBookCount].setRetail(0);
-				*/
-				delete books[curBookCount];
+				//books[curBookCount].setTitle("EMPTY");
+				//books[curBookCount].setISBN("EMPTY");
+				//books[curBookCount].setAuthor("EMPTY");
+				//books[curBookCount].setPub("EMPTY");
+				//books[curBookCount].setDateAdded("EMPTY");
+				//books[curBookCount].setQtyOnHand(0);
+				//books[curBookCount].setWholesale(0);
+				//books[curBookCount].setRetail(0);
+				
+				delete books[curBookCount];*/
 				setColour (96);
 				cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
 				cout << "                │                     DELETED BOOK SUCCESSFULLY                    │\n";

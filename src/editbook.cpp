@@ -412,9 +412,3 @@ void editBook(LinkedListType<BookType *>& bookList, int bookIndex) {
 	endWindow(mainWindow);
 	return;
 }
-/*
-void bhandleSignal(const int signal) {
-	bstateProvider = signal;
-	return;
-}
-*/

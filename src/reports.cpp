@@ -35,7 +35,6 @@ int main_reports(LinkedListType<BookType *>& bookList) {
 	int choice;
 	bool keepGoing;
 
-	readFile(bookList);
 	mainMenuInfo.menuName = menuName;
 	mainMenuInfo.menuLines = menuListing;
 	mainMenuInfo.longestMenuLength = sizeof("Inventory Wholesale Value") / sizeof(char);
@@ -43,9 +42,6 @@ int main_reports(LinkedListType<BookType *>& bookList) {
 	keepGoing = 1;
 		do {
 		startNotif = "";
-		if (BookType::getBookCount() >= 20) {
-			startNotif = "--NOTICE-- Book list full! Can no longer add book";
-		}
 		system("clear");
 		choice = makeMenu(mainMenuInfo, startNotif);
 		switch (choice) {

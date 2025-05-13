@@ -177,7 +177,7 @@ void addBook(LinkedListType<BookType *>& bookList) {
 	bookWritten = 1;
 
 	//Main program loop
-	while (BookType::getBookCount() < 20 && continueMenu) {
+	while (continueMenu) {
 		if (stateProvider) {
 			delwin(bookDisplayWindow);
 			refreshWindowMiddleSplit(mainMenu, mainWindow, notification,
@@ -335,8 +335,9 @@ void addBook(LinkedListType<BookType *>& bookList) {
 							"Are you sure you want to write to book list? [Y/N]");
 					exitChar = wgetch(notification);
 					if (tolower(exitChar) == 'y') {
-						//OUCHIES goodluck
-						bookList[BookType::getBookCount()] = new BookType(bookBuffer);
+						//bookList[BookType::getBookCount()] = new BookType(bookBuffer);
+						bookList.insert_head(new BookType(bookBuffer));
+
 						BookType::incBookCount();
 						bookBuffer.setTitle("UNSET");
 						bookBuffer.setISBN("UNSET");
@@ -398,14 +399,14 @@ void addBook(LinkedListType<BookType *>& bookList) {
 	deleteMenu(mainMenu, items, menuListing.size());
 	endWindow(mainWindow);
 
-	if (BookType::getBookCount() >= 20) {
+	/*if (BookType::getBookCount() >= 20) {
 		std::cout << "╔══════════════════════════════════════════╗" <<
 		std::endl;
 		std::cout << "║Book list full! Cannot add any more books.║" <<
 		std::endl << "╚══════════════════════════════════════════╝" <<
 	    std::endl << "Press enter to continue..." << std::endl;
 		getline(std::cin, dummyString);
-	}
+	}*/
 	return;
 }
 /*

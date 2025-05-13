@@ -16,7 +16,7 @@
 
 ///readFile(BookType[20], int) -> Stores file entries as members of books.
 void readFile(LinkedListType<BookType *>& books) {
-	BookType bookBuffer;
+	BookType * bookBuffer = nullptr;
 	std::ifstream file;
 	std::string numbers;
 	std::string bookTitle, isbn, author, publisher, dateAdded;
@@ -25,7 +25,7 @@ void readFile(LinkedListType<BookType *>& books) {
 
 	file.open("booklist.dat");
 
-	while (BookType::getBookCount() < 20 && getline(file, bookTitle, ',')) {
+	while (getline(file, bookTitle, ',')) {
 		getline(file, isbn, ',');
 		getline(file, author, ',');
 		getline(file, publisher, ',');
@@ -36,9 +36,9 @@ void readFile(LinkedListType<BookType *>& books) {
 		wholesale = stod(numbers);
 		getline(file, numbers, ',');
 		retail = stod(numbers);
-		bookBuffer = BookType(bookTitle, isbn, author, publisher,
+		bookBuffer = new BookType(bookTitle, isbn, author, publisher,
 				dateAdded, qtyOnHand, wholesale, retail);
-		*books[BookType::getBookCount()] = bookBuffer;
+		books.insert_head(bookBuffer);
 		BookType::incBookCount();
 	}
 	file.close();
