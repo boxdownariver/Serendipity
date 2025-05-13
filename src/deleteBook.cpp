@@ -51,7 +51,7 @@ using namespace std;
  */
 
 
-void mainDelete (BookType *books[])
+void mainDelete (LinkedListType<BookType *>& books)
 {
 
 	
@@ -116,7 +116,7 @@ void mainDelete (BookType *books[])
  * Returns:
  * - This function does not return any value. It updates the `bookCount` by decrementing it after a successful deletion.
  */
-void discardBook (BookType *books[], int index)
+void discardBook (LinkedListType<BookType *>& books, int index) //NEEDS FULL REWORK
 {
 	char decision;
 	int curBookCount;

@@ -1,5 +1,6 @@
 #ifndef invmenu
 #include "invmenu.h"
 #endif
+#include "linkedlist.hpp"
 
-void readFile(BookType *books[20]);
+void readFile(LinkedListType<BookType *>& books);

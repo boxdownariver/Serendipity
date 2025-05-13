@@ -46,7 +46,7 @@ using namespace std;
  * 
  * The function does not take any parameters and does not return any values.
  */
-int mainCashier (BookType *books[])
+int mainCashier (LinkedListType<BookType *>& books)
 {
 		if (BookType::getBookCount() == 0)
 			{
@@ -265,7 +265,7 @@ char showCashierMenu (int cart[])
  * second parameter is index of the book being purchased in the `books` array.
  * third array is cart Array representing the user's cart, tracking quantities of books added.
  */
-void addBook (BookType *books[], int index, int cart[])
+void addBook (LinkedListType<BookType *>& books, int index, int cart[])
 {
 	// show the book info to user to confirm purchase
 	char decision;
@@ -367,7 +367,7 @@ void addBook (BookType *books[], int index, int cart[])
  * second parameter is index of the book being deleted in the `books` array.
  * third array is cart Array representing the user's cart, tracking quantities of books deleted
  */
-void removeBook (BookType *books[], int index, int cart[])
+void removeBook (LinkedListType<BookType *>& books, int index, int cart[])
 {
 	char decision;
 	int numToDelete;
@@ -447,7 +447,7 @@ return;
  * first paramter is books Array of `BookType` objects containing book information.
  * second paramater is cart Array representing the user's cart, tracking quantities of books added.
  */
-void showCart (BookType *books[], int cart[])
+void showCart (LinkedListType<BookType *>& books, int cart[])
 {	setColour (96);
 	bool cartFilled;
 	double totalBeforeTax = 0;
@@ -528,7 +528,7 @@ void showCart (BookType *books[], int cart[])
  * second parameter cart Array representing the user's shopping cart with quantities of books purchased.
  * third parameter is a date as a string to be displayed on the receipt.
  */
-void FormatReport ( BookType *books[], int cart[], string date)
+void FormatReport ( LinkedListType<BookType *>& books, int cart[], string date)
 {
 	float subtotal = 0;
 	float tax_amt;

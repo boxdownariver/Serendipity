@@ -7,8 +7,9 @@
 
 #include "bookInfo.h"
 #include <string>
+#include "linkedlist.hpp"
 
-void mainDelete (BookType *books []);
-void discardBook (BookType *books [], int index);
+void mainDelete (LinkedListType<BookType *>& books );
+void discardBook (LinkedListType<BookType *>& books , int index);
 
 #endif

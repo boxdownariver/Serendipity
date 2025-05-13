@@ -3,5 +3,6 @@
 #ifndef invmenu
 #include "invmenu.h"
 #endif
+#include "linkedlist.hpp"
 
-int mainbookInfo ( const BookType *array[], const int &bookIndex );
+int mainbookInfo ( const LinkedListType<BookType *>& array, const int &bookIndex );

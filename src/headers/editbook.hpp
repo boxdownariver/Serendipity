@@ -5,7 +5,8 @@
 #include "invmenu.h"
 #endif
 #include "bookType.h"
+#include "linkedlist.hpp"
 
-void mainEditBook(BookType *books[20]);
-void editBook(BookType *books[20], int bookIndex);
+void mainEditBook(LinkedListType<BookType *>& books);
+void editBook(LinkedListType<BookType *>& books, int bookIndex);
 #endif

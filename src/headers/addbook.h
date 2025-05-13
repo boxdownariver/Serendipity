@@ -4,6 +4,7 @@
 #ifndef invmenu
 #include "invmenu.h"
 #endif
+#include "linkedlist.hpp"
 
-void addBook(BookType *books[20]);
+void addBook(LinkedListType<BookType *>& books);
 #endif

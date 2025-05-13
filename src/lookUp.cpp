@@ -40,7 +40,7 @@ using namespace std;
  * - This function does not return any value. It is used for searching and displaying book details.
  */
 
-int mainLookUp( BookType * const booklist[]) {
+int mainLookUp( LinkedListType< BookType *>& booklist) {
 	string toSearch;
 	char choice;
 	int bookIndex;
@@ -108,7 +108,7 @@ if (BookType::getBookCount() == 0)
  * - The index of the first matching book if found and confirmed by the user.
  * - -1 if no matching book is found in the array.
  */
-int findString (const string toSearch, BookType * const array[], const int size)
+int findString (const string toSearch, LinkedListType< BookType *>& array, const int size)
 {
 	int index = 0;
 	int bookFoundCount = 1;
@@ -194,7 +194,7 @@ int findString (const string toSearch, BookType * const array[], const int size)
  * - The index of the first matching book if found and confirmed by the user.
  * - -1 if no matching book is found in the array.
  */
-int findStringInCart (const string toSearch, BookType * const array[], const int size, int cart[])
+int findStringInCart (const string toSearch, LinkedListType< BookType *>& array, const int size, int cart[])
 {
 	int index = 0;
 	int bookFoundCount = 1;

@@ -57,7 +57,7 @@
  * Generates menu for book editing, following a quick search for the book
  * in question.
  */
-void mainEditBook(BookType *bookList[20]) {
+void mainEditBook(LinkedListType<BookType *>& bookList) {
 	std::string searchTerm;
 	int bookIndex;
 
@@ -118,7 +118,7 @@ const char* atrim(const std::string operandString, WINDOW * window) {
  * mutate. Then offers the option to overwrite the current book in-place,
  * and an option to exit. Warns before writing or exiting without writing.
  */
-void editBook(BookType *bookList[20], int bookIndex) {
+void editBook(LinkedListType<BookType *>& bookList, int bookIndex) {
 	WINDOW *mainWindow;
 	WINDOW *bookDisplayWindow;
 	WINDOW *notification;

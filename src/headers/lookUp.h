@@ -4,13 +4,14 @@
 #ifndef invmenu
 #include "invmenu.h"
 #endif
+#include "linkedlist.hpp"
 
 #include <string>
 using namespace std;
 
-int mainLookUp( BookType * const booklist[20] );
-int findString (const std::string toSearch, BookType * const array[], const int size);
-int findStringInCart (const std::string toSearch, BookType * const array[], const int size, int cart[]);
+int mainLookUp( LinkedListType< BookType *>& booklist );
+int findString (const std::string toSearch, LinkedListType< BookType *>& array, const int size);
+int findStringInCart (const std::string toSearch, LinkedListType< BookType *>& array, const int size, int cart[]);
 string AskKeyword (const int &bookCount );
 
 #endif

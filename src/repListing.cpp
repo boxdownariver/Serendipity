@@ -26,7 +26,7 @@ void delWindow(WINDOW *&repWindow);
 void refWindow(WINDOW *&repWindow);
 string trimToSize(string origin, size_t size);
 
-int mainRepListing (BookType *books[])
+int mainRepListing (LinkedListType<BookType *>& books)
 {
 
 	WINDOW * repWindow = NULL;

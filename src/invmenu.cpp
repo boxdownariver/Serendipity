@@ -35,7 +35,7 @@
  * Runs inventory menu interface, then either branches into next menu or
  * moves backward into the previous menu.
  */
-int main_invmenu(BookType *(&bookList)[20]) {
+int main_invmenu(LinkedListType<BookType *>& bookList) {
 	std::string menuName = "Inventory Database";
 	std::vector<std::string> menuListing = { "Look Up a Book", "Add a Book",
 			"Edit a Book's Record", "Delete a Book", "Return to the Main Menu" };

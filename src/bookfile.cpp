@@ -15,7 +15,7 @@
 #include <fstream>
 
 ///readFile(BookType[20], int) -> Stores file entries as members of books.
-void readFile(BookType *books[20]) {
+void readFile(LinkedListType<BookType *>& books) {
 	BookType bookBuffer;
 	std::ifstream file;
 	std::string numbers;

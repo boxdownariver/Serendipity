@@ -83,7 +83,7 @@ const char* trim(const std::string operandString, WINDOW *window) {
  * Displays stub view of book members, and allows saving and leaving with
  * confirmation.
  */
-void addBook(BookType *bookList[20]) {
+void addBook(LinkedListType<BookType *>& bookList) {
 	WINDOW *mainWindow;
 	WINDOW *bookDisplayWindow;
 	WINDOW *notification;
@@ -335,6 +335,7 @@ void addBook(BookType *bookList[20]) {
 							"Are you sure you want to write to book list? [Y/N]");
 					exitChar = wgetch(notification);
 					if (tolower(exitChar) == 'y') {
+						//OUCHIES goodluck
 						bookList[BookType::getBookCount()] = new BookType(bookBuffer);
 						BookType::incBookCount();
 						bookBuffer.setTitle("UNSET");

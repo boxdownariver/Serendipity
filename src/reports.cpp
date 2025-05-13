@@ -23,7 +23,7 @@
 #endif
 
 ///Generates reports menu interface
-int main_reports(BookType *(&bookList)[20]) {
+int main_reports(LinkedListType<BookType *>& bookList) {
 	std::string menuName = "Reports";
 	std::vector<std::string> menuListing = { "Inventory Listing", "Inventory Wholesale Value",
 					"Inventory Retail Value", "Listing by Quantity",
