@@ -152,6 +152,51 @@ public:
 		}
 		return i;
 	}
+
+	// Function to shallow copy data
+	LinkedListType<T> shallowCopy()
+	{
+			LinkedListType<T> copy;
+			NodeType<T> *current = head;
+
+			while (current!= nullptr){
+				copy.insert_end(current->data);
+				current = current->next;
+			}
+			return copy;
+	}
+
+	// Function to sort the linkedlist type
+	inline void selectionSort() {
+		NodeType<T> *i = head;
+		while ( i != nullptr)	{				// Outer iteration
+				NodeType<T> *minNode= i;
+				NodeType<T> *j = i->next;
+
+				while (j!= nullptr)	{
+					if (*(j->data) < *(minNode->data))	{
+							minNode = j;
+					}
+						j = j->next;				// Inner iteration
+				}
+				if (minNode!= i)	{
+					T temp = i->data;
+					i->data = minNode ->data;
+					minNode->data = temp;
+				}
+					i = i->next;				// Outer iteration
+			}
+	}
+	
+	// Function to nullify data before the copied linkedlisttype goes out of scope
+	inline void nullifyData()	{
+			NodeType<T> *current = head;
+
+			while (current != nullptr)
+			{		current->data = nullptr;
+					current = current->next;
+			}
+		}
 	friend LinkedListIterator<T>::LinkedListIterator(LinkedListType<T> &);
 };
 
