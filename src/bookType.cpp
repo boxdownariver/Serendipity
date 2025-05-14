@@ -117,8 +117,12 @@ bool BookType:: operator< (const BookType &obj) const
 	if (sortFlag == 6)
 	return (qtyOnHand < obj.qtyOnHand);
 	
-	if (sortFlag == 8)
+	if (sortFlag == 8){
+		if (retail == obj.retail){
+        return wholesale < obj.wholesale;			// So that it doesnt look weird
+			}
 	return (retail < obj.retail);
+	}
 
 	return false;
 }

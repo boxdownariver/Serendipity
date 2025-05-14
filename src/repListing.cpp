@@ -112,8 +112,22 @@ int mainRepListing (LinkedListType<BookType *>& books)
 		 * result using the c_str() method.
 		 */
 		mvwprintw(repWindow, 1, 50, "SERENDIPITY BOOKSELLERS");
-		mvwprintw(repWindow, 2, 53, "REPORTS LISTING");
-		
+
+		if (BookType::getFlag() == 5){
+			mvwprintw(repWindow, 2, 44, "REPORTS SORTED BY AGE / DATE ADDED");
+		}
+
+		else if (BookType::getFlag() == 6){
+			mvwprintw(repWindow, 2, 45, "REPORTS SORTED BY QUANTITY ON HAND");
+		}
+
+		else if (BookType::getFlag() == 8){
+			mvwprintw(repWindow, 2, 47, "REPORTS SORTED BY RETAIL PRICE");
+		}
+
+		else {
+				mvwprintw(repWindow, 2, 53, "REPORTS LISTING");
+		}
 		// Print book details for the current page
 		wattron(repWindow, COLOR_PAIR(2)); // Green color
 		mvwprintw(repWindow, 4, 10, "DATE : %s", generateDate().c_str());

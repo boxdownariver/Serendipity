@@ -59,6 +59,7 @@ class BookType
 										///< 5 - Sort By Age (Date Added)  
 										///< 6 - Sort By Quantity On Hand 
 										///< 8 - Sort By Retail Price
+										///< 0 - Default Value
 
 };
 #endif

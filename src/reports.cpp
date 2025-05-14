@@ -45,9 +45,12 @@ int main_reports(LinkedListType<BookType *>& bookList) {
 		system("clear");
 		choice = makeMenu(mainMenuInfo, startNotif);
 		switch (choice) {
-		//case 0:
-		//mainRepListing(bookList);
-		//break;
+
+		// Main
+		case 0:
+		BookType::setFlag(0);
+		mainRepListing(bookList);
+		break;
 
 		// Wholesale Price
 		case 1:
@@ -72,7 +75,7 @@ int main_reports(LinkedListType<BookType *>& bookList) {
 		break;
 
 		// Sort By Age or Date Added
-		case 0:											// Just to check, I make it case 0
+		case 5:
 		BookType::setFlag(5);
 		mainSorting(bookList);
 		break;
