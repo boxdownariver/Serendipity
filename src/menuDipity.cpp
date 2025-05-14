@@ -112,11 +112,12 @@ int makeMenu(MenuLines &mainMenuInfo, std::string startInfo) {
 			//Activate current user selection
 			breakOut = item_index(current_item(mainMenu));
 			if (breakOut < menuLineSize && breakOut != -1
-					&& (mainMenuInfo.menuName == "Main Menu"
+					/*&& (mainMenuInfo.menuName == "Main Menu"
 							|| (mainMenuInfo.menuName
 									== "Inventory Database"
 									&& (breakOut <= 3 && breakOut != -1)) || (mainMenuInfo.menuName == "Reports" && (breakOut == 0))
-							|| breakOut == menuLineSize - 1)) {
+									|| breakOut == menuLineSize - 1)*/
+			) {
 				dontExit = 0;
 			}
 			wclear(notification);

@@ -130,13 +130,13 @@ public:
 				&& before->next->next != nullptr) {
 			before = before->next;
 		}
-		if (before != nullptr) if (before->next != nullptr) {
+		if (before != nullptr) {if (before->next != nullptr) {
 			delete before->next;
 			before->next = nullptr;
 		} else {
 			delete before;
 			before = nullptr;
-		}
+		}}
 		return;
 	}
 	inline T& operator[](size_t index) ///< Finds data of entry at index
@@ -187,7 +187,7 @@ public:
 					i = i->next;				// Outer iteration
 			}
 	}
-	
+
 	// Function to nullify data before the copied linkedlisttype goes out of scope
 	inline void nullifyData()	{
 			NodeType<T> *current = head;
@@ -197,7 +197,7 @@ public:
 					current = current->next;
 			}
 		}
-	friend LinkedListIterator<T>::LinkedListIterator(LinkedListType<T> &);
+	friend LinkedListIterator<T>;//::LinkedListIterator(LinkedListType<T> &); //Changed to work on different versions of GCC
 };
 
 template <class T>
