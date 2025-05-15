@@ -82,6 +82,6 @@ int main() { {
 		}
 	}
 }
-	//exit_curses(0);
+	exit_curses(0);
 	return 0;
 }
