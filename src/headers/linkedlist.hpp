@@ -153,8 +153,8 @@ public:
 		return i;
 	}
 
-	// Function to shallow copy data
-	LinkedListType<T> shallowCopy()
+	
+	LinkedListType<T> shallowCopy() ///< Shallow copy data
 	{
 			LinkedListType<T> copy;
 			NodeType<T> *current = head;
@@ -166,8 +166,8 @@ public:
 			return copy;
 	}
 
-	// Function to sort the linkedlist type
-	inline void selectionSort() {
+	inline void selectionSort()  ///< Sort the linkedlist type using selection sort
+	{
 		NodeType<T> *i = head;
 		while ( i != nullptr)	{				// Outer iteration
 				NodeType<T> *minNode= i;
@@ -188,8 +188,8 @@ public:
 			}
 	}
 
-	// Function to nullify data before the copied linkedlisttype goes out of scope
-	inline void nullifyData()	{
+	inline void nullifyData()	///< nullify data before the copied linkedlistType goes out of scope
+		{
 			NodeType<T> *current = head;
 
 			while (current != nullptr)
