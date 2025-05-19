@@ -1,0 +1,15 @@
+<map id="MyMenu" name="MyMenu">
+<area shape="rect" id="node1" title=" " alt="" coords="382,2431,553,2624"/>
+<area shape="rect" id="node2" href="$classNCursesMenu.html" title=" " alt="" coords="280,1933,455,2367"/>
+<area shape="rect" id="node3" href="$classNCursesPanel.html" title=" " alt="" coords="5,1516,181,1869"/>
+<area shape="rect" id="node4" href="$classNCursesWindow.html" title=" " alt="" coords="108,955,256,1452"/>
+<area shape="rect" id="node5" href="$struct__win__st.html" title=" " alt="" coords="134,231,239,472"/>
+<area shape="rect" id="node8" href="$structpanel.html" title=" " alt="" coords="37,849,96,931"/>
+<area shape="rect" id="node9" href="$structtagMENU.html" title=" " alt="" coords="323,584,428,825"/>
+<area shape="rect" id="node6" href="$structldat.html" title=" " alt="" coords="87,21,168,151"/>
+<area shape="rect" id="node7" href="$struct__win__st_1_1pdat.html" title=" " alt="" coords="192,5,300,167"/>
+<area shape="rect" id="node10" href="$structtagITEM.html" title=" " alt="" coords="459,1123,532,1284"/>
+<area shape="rect" id="node12" href="$classNCursesMenuItem.html" title=" " alt="" coords="410,1532,584,1853"/>
+<area shape="rect" id="node11" href="$structTEXT.html" title=" " alt="" coords="546,656,614,753"/>
+<area shape="rect" id="node13" href="$classUserData.html" title=" " alt="" coords="539,2101,636,2199"/>
+</map>

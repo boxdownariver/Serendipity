@@ -1,0 +1,7 @@
+<map id="NCursesMenu" name="NCursesMenu">
+<area shape="rect" id="node1" title=" " alt="" coords="100,1048,274,1529"/>
+<area shape="rect" id="node4" href="$classMyMenu.html" title=" " alt="" coords="5,1577,177,1803"/>
+<area shape="rect" id="node5" href="$classNCursesUserMenu.html" title=" " alt="" coords="201,1609,365,1771"/>
+<area shape="rect" id="node2" href="$classNCursesPanel.html" title=" " alt="" coords="99,615,275,1000"/>
+<area shape="rect" id="node3" href="$classNCursesWindow.html" title=" " alt="" coords="113,5,261,567"/>
+</map>

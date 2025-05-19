@@ -1,0 +1,25 @@
+var knight_8c =
+[
+    [ "HISTORY", "structHISTORY.html", "structHISTORY" ],
+    [ "BOARDX", "knight_8c.html#af52a074bd849247c5838c26c49eca5c1", null ],
+    [ "BOARDY", "knight_8c.html#a2013bae1cc6609e9c990000b2cf30164", null ],
+    [ "cellmove", "knight_8c.html#a10c317478487d2d4ede3a161121faecc", null ],
+    [ "CX", "knight_8c.html#ad0c5c290939f1055f0a3ad04a542b2a6", null ],
+    [ "CXINV", "knight_8c.html#ab392e47d264d90a6b008864d876417ee", null ],
+    [ "CY", "knight_8c.html#aa3ad237bf38d5c4209d3e839c0edbdfe", null ],
+    [ "CYINV", "knight_8c.html#af6eaca8dbb870cdfaee371be1632c3a4", null ],
+    [ "INSTRX", "knight_8c.html#a34b1582c1f78168a2ccae1d5a03a0bb2", null ],
+    [ "INSTRY", "knight_8c.html#a50b976efe32b9a529da59154d5afbe5e", null ],
+    [ "MAX_OFFSET", "knight_8c.html#a31a6872795fec3b57775c7e0059fee83", null ],
+    [ "MAXMOVES", "knight_8c.html#ab3d81ecae7a2a9f797bb3fe0173d98c2", null ],
+    [ "MINUS_COLOR", "knight_8c.html#aa21c5121d948f849f0e6b8aa330fac09", null ],
+    [ "NOTIFYY", "knight_8c.html#a8fc8f109f78cb01a592ec9507081d19a", null ],
+    [ "PLUS_COLOR", "knight_8c.html#a21049240f46c1b8d589dc2797a04ea13", null ],
+    [ "TRAIL_COLOR", "knight_8c.html#a1def6ca619a4e5074fc6cf196eb1c2b6", null ],
+    [ "XLIMIT", "knight_8c.html#a189c317a705e3d2c26f797ac351e5c5e", null ],
+    [ "YLIMIT", "knight_8c.html#a72b79694555aef69a20ac664cb4ff617", null ],
+    [ "SQUARES", "knight_8c.html#a62abd45db806740e68ce45a2385cbea3", null ],
+    [ "main", "knight_8c.html#a0ddf1224851353fc92bfbff6f499fa97", null ],
+    [ "x", "knight_8c.html#a6150e0515f7202e2fb518f7206ed97dc", null ],
+    [ "y", "knight_8c.html#a0a2f84ed7838f07779ae24c5a9086d33", null ]
+];

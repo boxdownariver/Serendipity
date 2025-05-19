@@ -46,7 +46,7 @@ using namespace std;
  * 
  * The function does not take any parameters and does not return any values.
  */
-int mainCashier (BookType *books[])
+int mainCashier (LinkedListType<BookType *>& books)
 {
 		if (BookType::getBookCount() == 0)
 			{
@@ -60,8 +60,8 @@ int mainCashier (BookType *books[])
 			return 0;
 			}
 
-
-	int cart[20];
+	int *cart;
+	cart = new int [BookType::getBookCount()];
 	char choice;
 	string keyword;
 	int indexOfBook;
@@ -72,7 +72,7 @@ int mainCashier (BookType *books[])
 	char exit;
 
 // initialize cart with 0s before entering loop
-	for (int i = 0; i < 20 ; i++){
+	for (int i = 0; i < BookType::getBookCount() ; i++){
 				cart[i] = 0;
 			}
 	cartFilled = false;
@@ -81,7 +81,7 @@ int mainCashier (BookType *books[])
 do {
 		//	Before entering inner loop, always check if cart is filled
 		cartFilled = false;
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < BookType::getBookCount(); i++) {
     		if (cart[i] > 0) {
       			cartFilled = true;
 					break;	}	}
@@ -152,11 +152,14 @@ do {
 							cin.get (repeat);
 							cin.ignore (100, '\n');}
 									 if (toupper(repeat) == 'Y')
-											{	for (int i = 0; i < 20 ; i++){
+											{	for (int i = 0; i < BookType::getBookCount() ; i++){
 											cart[i] = 0;
 											cartFilled = false;} }
-									else
-									return 0;
+
+									else	{
+										delete [] cart;			// delete cart if the user dont wanna make another transaction
+										return 0;
+									}
 						}
 			break;
 
@@ -172,17 +175,22 @@ do {
 					cout << exit << " is invalid choice.. Only enter Y or N.\n";
 					cin.get (exit);
 					cin.ignore (100, '\n');}
-			if (toupper(exit) == 'Y')
-			return 0;
+
+			if (toupper(exit) == 'Y'){
+					delete [] cart;		// delete cart when user wanna exit with cart filled
+					return 0;	}
 			}
 			
 			else {
+				delete [] cart;	// delete cart when user wanna exit with cart empty
 				return 0; }
+
 			break;
 		};
 
 	}	while (BookType::getBookCount() !=0);
 
+	delete [] cart;   // delete cart at the end
 	return 0;
 }
 
@@ -196,7 +204,7 @@ char showCashierMenu (int cart[])
 {
 		
 		bool cartFilled = false;
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < BookType::getBookCount(); i++) {
     		if (cart[i] > 0) {
       			cartFilled = true;
 					break;	}	}
@@ -265,7 +273,7 @@ char showCashierMenu (int cart[])
  * second parameter is index of the book being purchased in the `books` array.
  * third array is cart Array representing the user's cart, tracking quantities of books added.
  */
-void addBook (BookType *books[], int index, int cart[])
+void addBook (LinkedListType<BookType *>& books, int index, int cart[])
 {
 	// show the book info to user to confirm purchase
 	char decision;
@@ -367,7 +375,7 @@ void addBook (BookType *books[], int index, int cart[])
  * second parameter is index of the book being deleted in the `books` array.
  * third array is cart Array representing the user's cart, tracking quantities of books deleted
  */
-void removeBook (BookType *books[], int index, int cart[])
+void removeBook (LinkedListType<BookType *>& books, int index, int cart[])
 {
 	char decision;
 	int numToDelete;
@@ -447,7 +455,7 @@ return;
  * first paramter is books Array of `BookType` objects containing book information.
  * second paramater is cart Array representing the user's cart, tracking quantities of books added.
  */
-void showCart (BookType *books[], int cart[])
+void showCart (LinkedListType<BookType *>& books, int cart[])
 {	setColour (96);
 	bool cartFilled;
 	double totalBeforeTax = 0;
@@ -456,7 +464,7 @@ void showCart (BookType *books[], int cart[])
 	int bookAddedCount = 1;
 	string tempTitle;
 
-	for (int i = 0; i < 20; i++)
+	for (int i = 0; i < BookType::getBookCount(); i++)
 	 {
         if (cart[i] > 0) 
 		  {
@@ -484,7 +492,7 @@ void showCart (BookType *books[], int cart[])
 	cout << "│ No. Title                                                           Qty │\n";
 	cout << "├─────────────────────────────────────────────────────────────────────────┤\n";
     
-	for (int i = 0; i < 20; i++)
+	for (int i = 0; i < BookType::getBookCount(); i++)
 	{
 		if (cart[i] > 0)
 			{
@@ -528,7 +536,7 @@ void showCart (BookType *books[], int cart[])
  * second parameter cart Array representing the user's shopping cart with quantities of books purchased.
  * third parameter is a date as a string to be displayed on the receipt.
  */
-void FormatReport ( BookType *books[], int cart[], string date)
+void FormatReport ( LinkedListType<BookType *>& books, int cart[], string date)
 {
 	float subtotal = 0;
 	float tax_amt;
@@ -537,7 +545,7 @@ void FormatReport ( BookType *books[], int cart[], string date)
 	string tempTitle;
 	
 	// making calculations adn reduce the quantity on database
-	for (int i = 0; i < 20 ; i++)
+	for (int i = 0; i < BookType::getBookCount() ; i++)
 	{
 		if (cart[i] > 0)
 			{
@@ -567,7 +575,7 @@ void FormatReport ( BookType *books[], int cart[], string date)
 	cout << setw (12) << left << "Price" << setw (9) << left << "Total" << "║\n";
 	cout << "╠══════════════════════════════════════════════════════════════════════════════╣\n";
 
-for (int i = 0; i < 20 ; i++)
+for (int i = 0; i < BookType::getBookCount() ; i++)
 {
 	if (cart[i] > 0)
 	{

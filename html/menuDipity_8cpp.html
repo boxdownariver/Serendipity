@@ -16,6 +16,11 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -28,6 +33,18 @@
    <div id="projectname">Group 1 Serendipity Project
    </div>
   </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -39,17 +56,6 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -98,6 +104,7 @@ $(document).ready(function(){initNavTree('menuDipity_8cpp.html',''); initResizab
 <div class="contents">
 <div class="textblock"><code>#include &lt;curses.h&gt;</code><br />
 <code>#include &lt;signal.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="signal_8hpp_source.html">headers/signal.hpp</a>&quot;</code><br />
 <code>#include &lt;menu.h&gt;</code><br />
 <code>#include &lt;chrono&gt;</code><br />
 <code>#include &lt;thread&gt;</code><br />
@@ -109,17 +116,18 @@ Include dependency graph for menuDipity.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="menuDipity_8cpp__incl.png" border="0" usemap="#amenuDipity_8cpp" alt=""/></div>
 <map name="amenuDipity_8cpp" id="amenuDipity_8cpp">
-<area shape="rect" title=" " alt="" coords="331,5,442,32"/>
+<area shape="rect" title=" " alt="" coords="424,5,535,32"/>
 <area shape="rect" title=" " alt="" coords="5,155,77,181"/>
-<area shape="rect" title=" " alt="" coords="309,80,376,107"/>
+<area shape="rect" title=" " alt="" coords="397,155,464,181"/>
+<area shape="rect" href="signal_8hpp.html" title=" " alt="" coords="312,80,442,107"/>
 <area shape="rect" title=" " alt="" coords="101,155,165,181"/>
-<area shape="rect" title=" " alt="" coords="400,80,460,107"/>
-<area shape="rect" title=" " alt="" coords="484,80,542,107"/>
-<area shape="rect" title=" " alt="" coords="566,80,625,107"/>
-<area shape="rect" title=" " alt="" coords="649,80,713,107"/>
-<area shape="rect" href="menuDipity_8h.html" title=" " alt="" coords="138,80,285,107"/>
-<area shape="rect" title=" " alt="" coords="189,155,242,181"/>
-<area shape="rect" title=" " alt="" coords="267,155,324,181"/>
+<area shape="rect" title=" " alt="" coords="518,80,578,107"/>
+<area shape="rect" title=" " alt="" coords="602,80,659,107"/>
+<area shape="rect" title=" " alt="" coords="683,80,743,107"/>
+<area shape="rect" title=" " alt="" coords="766,80,830,107"/>
+<area shape="rect" href="menuDipity_8h.html" title=" " alt="" coords="141,80,288,107"/>
+<area shape="rect" title=" " alt="" coords="272,155,325,181"/>
+<area shape="rect" title=" " alt="" coords="190,155,247,181"/>
 </map>
 </div>
 </div>
@@ -132,30 +140,30 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad42ebdb9d84d8ef7cd1cfd8eff824a64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menuDipity_8cpp.html#ad42ebdb9d84d8ef7cd1cfd8eff824a64">createMenu</a> (MENU *&amp;mainMenu, WINDOW *mainWindow, const <a class="el" href="structMenuLines.html">MenuLines</a> &amp;mainMenuInfo, ITEM **&amp;items)</td></tr>
+<tr class="memitem:ad42ebdb9d84d8ef7cd1cfd8eff824a64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menuDipity_8cpp.html#ad42ebdb9d84d8ef7cd1cfd8eff824a64">createMenu</a> (<a class="el" href="include_2ncurses_2menu_8h.html#a4d43d5efc74fa9d26f2c04e9d796d08f">MENU</a> *&amp;mainMenu, <a class="el" href="include_2ncurses_2curses_8h.html#aa64cc90e7a4df667d6c7249b77890d39">WINDOW</a> *mainWindow, <a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> <a class="el" href="structMenuLines.html">MenuLines</a> &amp;mainMenuInfo, <a class="el" href="include_2ncurses_2menu_8h.html#a4e7bfddf7bbe2ec3b63691ccb9383fb5">ITEM</a> **&amp;items)</td></tr>
 <tr class="memdesc:ad42ebdb9d84d8ef7cd1cfd8eff824a64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create menu &amp; menu items.  <br /></td></tr>
 <tr class="separator:ad42ebdb9d84d8ef7cd1cfd8eff824a64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa97131051248907bd151577849b30fb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menuDipity_8cpp.html#aa97131051248907bd151577849b30fb7">deleteMenu</a> (MENU *&amp;menu, ITEM **&amp;items, size_t menuLineSize)</td></tr>
+<tr class="memitem:aa97131051248907bd151577849b30fb7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menuDipity_8cpp.html#aa97131051248907bd151577849b30fb7">deleteMenu</a> (<a class="el" href="include_2ncurses_2menu_8h.html#a4d43d5efc74fa9d26f2c04e9d796d08f">MENU</a> *&amp;menu, <a class="el" href="include_2ncurses_2menu_8h.html#a4e7bfddf7bbe2ec3b63691ccb9383fb5">ITEM</a> **&amp;items, <a class="el" href="nc__alloc_8h.html#ae43e1afb4123c6ddee091cf03ec10266">size_t</a> menuLineSize)</td></tr>
 <tr class="memdesc:aa97131051248907bd151577849b30fb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safely kill menu &amp; menu items.  <br /></td></tr>
 <tr class="separator:aa97131051248907bd151577849b30fb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7fa97802caf4dbaf3d16339f1f977ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menuDipity_8cpp.html#ae7fa97802caf4dbaf3d16339f1f977ca">startWindow</a> (WINDOW *&amp;mainWindow)</td></tr>
+<tr class="memitem:ae7fa97802caf4dbaf3d16339f1f977ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menuDipity_8cpp.html#ae7fa97802caf4dbaf3d16339f1f977ca">startWindow</a> (<a class="el" href="include_2ncurses_2curses_8h.html#aa64cc90e7a4df667d6c7249b77890d39">WINDOW</a> *&amp;mainWindow)</td></tr>
 <tr class="memdesc:ae7fa97802caf4dbaf3d16339f1f977ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start window with default esettings.  <br /></td></tr>
 <tr class="separator:ae7fa97802caf4dbaf3d16339f1f977ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b2b10e5786fcbe1575da3ed5893c1f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menuDipity_8cpp.html#a4b2b10e5786fcbe1575da3ed5893c1f7">endWindow</a> (WINDOW *&amp;mainWindow)</td></tr>
+<tr class="memitem:a4b2b10e5786fcbe1575da3ed5893c1f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menuDipity_8cpp.html#a4b2b10e5786fcbe1575da3ed5893c1f7">endWindow</a> (<a class="el" href="include_2ncurses_2curses_8h.html#aa64cc90e7a4df667d6c7249b77890d39">WINDOW</a> *&amp;mainWindow)</td></tr>
 <tr class="memdesc:a4b2b10e5786fcbe1575da3ed5893c1f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safely kill the window.  <br /></td></tr>
 <tr class="separator:a4b2b10e5786fcbe1575da3ed5893c1f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca3781895a5a9953a90535af3b94a1fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menuDipity_8cpp.html#aca3781895a5a9953a90535af3b94a1fe">handleSignal</a> (const int signal)</td></tr>
-<tr class="memdesc:aca3781895a5a9953a90535af3b94a1fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">This passes signals to the state provider; normally means recalculating the interface.  <br /></td></tr>
-<tr class="separator:aca3781895a5a9953a90535af3b94a1fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a605c5257dc24aab4ef869164de121d5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menuDipity_8cpp.html#a605c5257dc24aab4ef869164de121d5b">refreshWindow</a> (MENU *&amp;mainMenu, WINDOW *&amp;mainWindow, WINDOW *&amp;notification, const <a class="el" href="structMenuLines.html">MenuLines</a> &amp;mainMenuInfo)</td></tr>
+<tr class="memitem:a605c5257dc24aab4ef869164de121d5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menuDipity_8cpp.html#a605c5257dc24aab4ef869164de121d5b">refreshWindow</a> (<a class="el" href="include_2ncurses_2menu_8h.html#a4d43d5efc74fa9d26f2c04e9d796d08f">MENU</a> *&amp;mainMenu, <a class="el" href="include_2ncurses_2curses_8h.html#aa64cc90e7a4df667d6c7249b77890d39">WINDOW</a> *&amp;mainWindow, <a class="el" href="include_2ncurses_2curses_8h.html#aa64cc90e7a4df667d6c7249b77890d39">WINDOW</a> *&amp;notification, <a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> <a class="el" href="structMenuLines.html">MenuLines</a> &amp;mainMenuInfo)</td></tr>
 <tr class="memdesc:a605c5257dc24aab4ef869164de121d5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recalculate the window, but keep the menu the same.  <br /></td></tr>
 <tr class="separator:a605c5257dc24aab4ef869164de121d5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2eeb789d35c10e0f78dfbe0dda4f49aa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menuDipity_8cpp.html#a2eeb789d35c10e0f78dfbe0dda4f49aa">makeMenu</a> (<a class="el" href="structMenuLines.html">MenuLines</a> &amp;mainMenuInfo, std::string startInfo)</td></tr>
+<tr class="memitem:a2eeb789d35c10e0f78dfbe0dda4f49aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menuDipity_8cpp.html#a2eeb789d35c10e0f78dfbe0dda4f49aa">makeMenu</a> (<a class="el" href="structMenuLines.html">MenuLines</a> &amp;mainMenuInfo, std::string startInfo)</td></tr>
 <tr class="separator:a2eeb789d35c10e0f78dfbe0dda4f49aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7fe3a009bc40f5396d70336304bf60b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menuDipity_8cpp.html#ad7fe3a009bc40f5396d70336304bf60b">createMenuMiddleSplit</a> (MENU *&amp;mainMenu, WINDOW *mainWindow, const <a class="el" href="structMenuLines.html">MenuLines</a> &amp;mainMenuInfo, ITEM **&amp;items)</td></tr>
+<tr class="memitem:ad7fe3a009bc40f5396d70336304bf60b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menuDipity_8cpp.html#ad7fe3a009bc40f5396d70336304bf60b">createMenuMiddleSplit</a> (<a class="el" href="include_2ncurses_2menu_8h.html#a4d43d5efc74fa9d26f2c04e9d796d08f">MENU</a> *&amp;mainMenu, <a class="el" href="include_2ncurses_2curses_8h.html#aa64cc90e7a4df667d6c7249b77890d39">WINDOW</a> *mainWindow, <a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> <a class="el" href="structMenuLines.html">MenuLines</a> &amp;mainMenuInfo, <a class="el" href="include_2ncurses_2menu_8h.html#a4e7bfddf7bbe2ec3b63691ccb9383fb5">ITEM</a> **&amp;items)</td></tr>
 <tr class="separator:ad7fe3a009bc40f5396d70336304bf60b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a20c1da3d8e216c4aac8cd40d648d43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menuDipity_8cpp.html#a2a20c1da3d8e216c4aac8cd40d648d43">refreshWindowMiddleSplit</a> (MENU *&amp;mainMenu, WINDOW *&amp;mainWindow, WINDOW *&amp;notification, const <a class="el" href="structMenuLines.html">MenuLines</a> &amp;mainMenuInfo)</td></tr>
+<tr class="memitem:a2a20c1da3d8e216c4aac8cd40d648d43"><td class="memItemLeft" align="right" valign="top"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menuDipity_8cpp.html#a2a20c1da3d8e216c4aac8cd40d648d43">refreshWindowMiddleSplit</a> (<a class="el" href="include_2ncurses_2menu_8h.html#a4d43d5efc74fa9d26f2c04e9d796d08f">MENU</a> *&amp;mainMenu, <a class="el" href="include_2ncurses_2curses_8h.html#aa64cc90e7a4df667d6c7249b77890d39">WINDOW</a> *&amp;mainWindow, <a class="el" href="include_2ncurses_2curses_8h.html#aa64cc90e7a4df667d6c7249b77890d39">WINDOW</a> *&amp;notification, <a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> <a class="el" href="structMenuLines.html">MenuLines</a> &amp;mainMenuInfo)</td></tr>
 <tr class="separator:a2a20c1da3d8e216c4aac8cd40d648d43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca3781895a5a9953a90535af3b94a1fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menuDipity_8cpp.html#aca3781895a5a9953a90535af3b94a1fe">handleSignal</a> (<a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> <a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a> signal)</td></tr>
+<tr class="memdesc:aca3781895a5a9953a90535af3b94a1fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">This passes signals to the state provider; normally means recalculating the interface.  <br /></td></tr>
+<tr class="separator:aca3781895a5a9953a90535af3b94a1fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -200,27 +208,27 @@ OUTPUTS-
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void createMenu </td>
+          <td class="memname"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a> createMenu </td>
           <td>(</td>
-          <td class="paramtype">MENU *&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2menu_8h.html#a4d43d5efc74fa9d26f2c04e9d796d08f">MENU</a> *&amp;&#160;</td>
           <td class="paramname"><em>mainMenu</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">WINDOW *&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2curses_8h.html#aa64cc90e7a4df667d6c7249b77890d39">WINDOW</a> *&#160;</td>
           <td class="paramname"><em>mainWindow</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structMenuLines.html">MenuLines</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> <a class="el" href="structMenuLines.html">MenuLines</a> &amp;&#160;</td>
           <td class="paramname"><em>mainMenuInfo</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ITEM **&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2menu_8h.html#a4e7bfddf7bbe2ec3b63691ccb9383fb5">ITEM</a> **&amp;&#160;</td>
           <td class="paramname"><em>items</em>&#160;</td>
         </tr>
         <tr>
@@ -233,35 +241,45 @@ OUTPUTS-
 
 <p>Create menu &amp; menu items. </p>
 
-<p class="definition">Definition at line <a class="el" href="menuDipity_8cpp_source.html#l00163">163</a> of file <a class="el" href="menuDipity_8cpp_source.html">menuDipity.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  164</span>                                                      {</div>
-<div class="line"><span class="lineno">  165</span>    <span class="keywordtype">size_t</span> menuLineSize, i;     <span class="comment">//INPUT- Menu size, iterator</span></div>
-<div class="line"><span class="lineno">  166</span>    <span class="keywordtype">int</span> cols;           <span class="comment">//OUTPUT- Columns of current window</span></div>
-<div class="line"><span class="lineno">  167</span> </div>
-<div class="line"><span class="lineno">  168</span>    <span class="comment">//Init cols, menuLineSize &amp; items</span></div>
-<div class="line"><span class="lineno">  169</span>    cols = getmaxx(mainWindow);</div>
-<div class="line"><span class="lineno">  170</span>    menuLineSize = mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a>.size();</div>
-<div class="line"><span class="lineno">  171</span>    items = (ITEM**) calloc(menuLineSize + 1, <span class="keyword">sizeof</span>(ITEM*));</div>
-<div class="line"><span class="lineno">  172</span> </div>
-<div class="line"><span class="lineno">  173</span>    <span class="comment">//Items must be initialized to menu line items</span></div>
-<div class="line"><span class="lineno">  174</span>    <span class="keywordflow">for</span> (i = 0; i &lt; menuLineSize; i++) {</div>
-<div class="line"><span class="lineno">  175</span>        items[i] = new_item(mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a>[i].c_str(),</div>
-<div class="line"><span class="lineno">  176</span>                mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a>[i].c_str());</div>
-<div class="line"><span class="lineno">  177</span>    }</div>
-<div class="line"><span class="lineno">  178</span>    items[menuLineSize] = new_item((<span class="keywordtype">char</span>*) NULL, (<span class="keywordtype">char</span>*) NULL);</div>
-<div class="line"><span class="lineno">  179</span> </div>
-<div class="line"><span class="lineno">  180</span>    <span class="comment">//Initialize menu, apply settings</span></div>
-<div class="line"><span class="lineno">  181</span>    mainMenu = new_menu((ITEM**) items);</div>
-<div class="line"><span class="lineno">  182</span>    set_menu_win(mainMenu, mainWindow);</div>
-<div class="line"><span class="lineno">  183</span>    set_menu_sub(mainMenu,</div>
-<div class="line"><span class="lineno">  184</span>            derwin(mainWindow, menuLineSize,</div>
-<div class="line"><span class="lineno">  185</span>                    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a15b8a52d1b8c366a0af2f56761c411c6">longestMenuLength</a>, 4,</div>
-<div class="line"><span class="lineno">  186</span>                    (cols - mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a15b8a52d1b8c366a0af2f56761c411c6">longestMenuLength</a>) / 2));</div>
-<div class="line"><span class="lineno">  187</span>    set_menu_mark(mainMenu, <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
-<div class="line"><span class="lineno">  188</span>    post_menu(mainMenu);</div>
-<div class="line"><span class="lineno">  189</span>}</div>
+<p class="definition">Definition at line <a class="el" href="menuDipity_8cpp_source.html#l00171">171</a> of file <a class="el" href="menuDipity_8cpp_source.html">menuDipity.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  172</span>                                                      {</div>
+<div class="line"><span class="lineno">  173</span>    <span class="keywordtype">size_t</span> menuLineSize, i;     <span class="comment">//INPUT- Menu size, iterator</span></div>
+<div class="line"><span class="lineno">  174</span>    <span class="keywordtype">int</span> cols;           <span class="comment">//OUTPUT- Columns of current window</span></div>
+<div class="line"><span class="lineno">  175</span> </div>
+<div class="line"><span class="lineno">  176</span>    <span class="comment">//Init cols, menuLineSize &amp; items</span></div>
+<div class="line"><span class="lineno">  177</span>    cols = <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(mainWindow);</div>
+<div class="line"><span class="lineno">  178</span>    menuLineSize = mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a>.size();</div>
+<div class="line"><span class="lineno">  179</span>    items = (<a class="code hl_struct" href="structtagITEM.html">ITEM</a>**) calloc(menuLineSize + 1, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structtagITEM.html">ITEM</a>*));</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>    <span class="comment">//Items must be initialized to menu line items</span></div>
+<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">for</span> (i = 0; i &lt; menuLineSize; i++) {</div>
+<div class="line"><span class="lineno">  183</span>        items[i] = <a class="code hl_function" href="m__item__new_8c.html#abdd8a4551483bb0294ee905bd5b483ba">new_item</a>(mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a>[i].c_str(),</div>
+<div class="line"><span class="lineno">  184</span>                mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a>[i].c_str());</div>
+<div class="line"><span class="lineno">  185</span>    }</div>
+<div class="line"><span class="lineno">  186</span>    items[menuLineSize] = <a class="code hl_function" href="m__item__new_8c.html#abdd8a4551483bb0294ee905bd5b483ba">new_item</a>((<span class="keywordtype">char</span>*) <a class="code hl_define" href="internal_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, (<span class="keywordtype">char</span>*) <a class="code hl_define" href="internal_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>    <span class="comment">//Initialize menu, apply settings</span></div>
+<div class="line"><span class="lineno">  189</span>    mainMenu = <a class="code hl_function" href="m__new_8c.html#a5b2e34d7a8531345a16c633857366e39">new_menu</a>((<a class="code hl_struct" href="structtagITEM.html">ITEM</a>**) items);</div>
+<div class="line"><span class="lineno">  190</span>    <a class="code hl_function" href="m__win_8c.html#a62be5bdd852b1917b7e76ca843d8f2fa">set_menu_win</a>(mainMenu, mainWindow);</div>
+<div class="line"><span class="lineno">  191</span>    <a class="code hl_function" href="m__sub_8c.html#af237706f2ad79e553fb6d1549cb2b391">set_menu_sub</a>(mainMenu,</div>
+<div class="line"><span class="lineno">  192</span>            <a class="code hl_function" href="lib__newwin_8c.html#ac46deef3b21d35f9fcc92df0c6a3438b">derwin</a>(mainWindow, menuLineSize,</div>
+<div class="line"><span class="lineno">  193</span>                    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a15b8a52d1b8c366a0af2f56761c411c6">longestMenuLength</a>, 4,</div>
+<div class="line"><span class="lineno">  194</span>                    (cols - mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a15b8a52d1b8c366a0af2f56761c411c6">longestMenuLength</a>) / 2));</div>
+<div class="line"><span class="lineno">  195</span>    <a class="code hl_function" href="m__item__new_8c.html#af9ea4832ba49674dbb0fb88bda1a4d6d">set_menu_mark</a>(mainMenu, <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
+<div class="line"><span class="lineno">  196</span>    <a class="code hl_function" href="m__post_8c.html#ae52447ff63bebef88885956896f80479">post_menu</a>(mainMenu);</div>
+<div class="line"><span class="lineno">  197</span>}</div>
+<div class="ttc" id="ainclude_2ncurses_2curses_8h_html_a1d8c9ff191a674e92b3c9dd8650e10c0"><div class="ttname"><a href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a></div><div class="ttdeci">#define getmaxx(win)</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2curses_8h_source.html#l01188">include/ncurses/curses.h:1188</a></div></div>
+<div class="ttc" id="ainternal_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="internal_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="internal_8h_source.html#l00067">internal.h:67</a></div></div>
+<div class="ttc" id="alib__newwin_8c_html_ac46deef3b21d35f9fcc92df0c6a3438b"><div class="ttname"><a href="lib__newwin_8c.html#ac46deef3b21d35f9fcc92df0c6a3438b">derwin</a></div><div class="ttdeci">derwin(WINDOW *orig, int num_lines, int num_columns, int begy, int begx)</div><div class="ttdef"><b>Definition:</b> <a href="lib__newwin_8c_source.html#l00195">lib_newwin.c:195</a></div></div>
+<div class="ttc" id="am__item__new_8c_html_abdd8a4551483bb0294ee905bd5b483ba"><div class="ttname"><a href="m__item__new_8c.html#abdd8a4551483bb0294ee905bd5b483ba">new_item</a></div><div class="ttdeci">new_item(const char *name, const char *description)</div><div class="ttdef"><b>Definition:</b> <a href="m__item__new_8c_source.html#l00111">m_item_new.c:111</a></div></div>
+<div class="ttc" id="am__item__new_8c_html_af9ea4832ba49674dbb0fb88bda1a4d6d"><div class="ttname"><a href="m__item__new_8c.html#af9ea4832ba49674dbb0fb88bda1a4d6d">set_menu_mark</a></div><div class="ttdeci">set_menu_mark(MENU *menu, const char *mark)</div><div class="ttdef"><b>Definition:</b> <a href="m__item__new_8c_source.html#l00199">m_item_new.c:199</a></div></div>
+<div class="ttc" id="am__new_8c_html_a5b2e34d7a8531345a16c633857366e39"><div class="ttname"><a href="m__new_8c.html#a5b2e34d7a8531345a16c633857366e39">new_menu</a></div><div class="ttdeci">NCURSES_SP_NAME() new_menu(NCURSES_SP_DCLx ITEM **items)</div><div class="ttdef"><b>Definition:</b> <a href="m__new_8c_source.html#l00055">m_new.c:55</a></div></div>
+<div class="ttc" id="am__post_8c_html_ae52447ff63bebef88885956896f80479"><div class="ttname"><a href="m__post_8c.html#ae52447ff63bebef88885956896f80479">post_menu</a></div><div class="ttdeci">post_menu(MENU *menu)</div><div class="ttdef"><b>Definition:</b> <a href="m__post_8c_source.html#l00277">m_post.c:277</a></div></div>
+<div class="ttc" id="am__sub_8c_html_af237706f2ad79e553fb6d1549cb2b391"><div class="ttname"><a href="m__sub_8c.html#af237706f2ad79e553fb6d1549cb2b391">set_menu_sub</a></div><div class="ttdeci">set_menu_sub(MENU *menu, WINDOW *win)</div><div class="ttdef"><b>Definition:</b> <a href="m__sub_8c_source.html#l00053">m_sub.c:53</a></div></div>
+<div class="ttc" id="am__win_8c_html_a62be5bdd852b1917b7e76ca843d8f2fa"><div class="ttname"><a href="m__win_8c.html#a62be5bdd852b1917b7e76ca843d8f2fa">set_menu_win</a></div><div class="ttdeci">set_menu_win(MENU *menu, WINDOW *win)</div><div class="ttdef"><b>Definition:</b> <a href="m__win_8c_source.html#l00053">m_win.c:53</a></div></div>
 <div class="ttc" id="astructMenuLines_html_a15b8a52d1b8c366a0af2f56761c411c6"><div class="ttname"><a href="structMenuLines.html#a15b8a52d1b8c366a0af2f56761c411c6">MenuLines::longestMenuLength</a></div><div class="ttdeci">int longestMenuLength</div><div class="ttdoc">Longest Line Length.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8h_source.html#l00018">menuDipity.h:18</a></div></div>
 <div class="ttc" id="astructMenuLines_html_acd2f1bc6dacb8c9f4ba60cf0afc459df"><div class="ttname"><a href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">MenuLines::menuLines</a></div><div class="ttdeci">std::vector&lt; std::string &gt; menuLines</div><div class="ttdoc">Menu Options.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8h_source.html#l00017">menuDipity.h:17</a></div></div>
+<div class="ttc" id="astructtagITEM_html"><div class="ttname"><a href="structtagITEM.html">tagITEM</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2menu_8h_source.html#l00088">include/ncurses/menu.h:90</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -272,27 +290,27 @@ OUTPUTS-
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void createMenuMiddleSplit </td>
+          <td class="memname"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a> createMenuMiddleSplit </td>
           <td>(</td>
-          <td class="paramtype">MENU *&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2menu_8h.html#a4d43d5efc74fa9d26f2c04e9d796d08f">MENU</a> *&amp;&#160;</td>
           <td class="paramname"><em>mainMenu</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">WINDOW *&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2curses_8h.html#aa64cc90e7a4df667d6c7249b77890d39">WINDOW</a> *&#160;</td>
           <td class="paramname"><em>mainWindow</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structMenuLines.html">MenuLines</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> <a class="el" href="structMenuLines.html">MenuLines</a> &amp;&#160;</td>
           <td class="paramname"><em>mainMenuInfo</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ITEM **&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2menu_8h.html#a4e7bfddf7bbe2ec3b63691ccb9383fb5">ITEM</a> **&amp;&#160;</td>
           <td class="paramname"><em>items</em>&#160;</td>
         </tr>
         <tr>
@@ -304,33 +322,33 @@ OUTPUTS-
 </div><div class="memdoc">
 <p>Create menu &amp; menu items WITH a middle split for printing on the right side of the screen. </p>
 
-<p class="definition">Definition at line <a class="el" href="menuDipity_8cpp_source.html#l00194">194</a> of file <a class="el" href="menuDipity_8cpp_source.html">menuDipity.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  195</span>                                                      {</div>
-<div class="line"><span class="lineno">  196</span>    <span class="keywordtype">size_t</span> menuLineSize, i;     <span class="comment">//INPUT- Menu size, iterator</span></div>
-<div class="line"><span class="lineno">  197</span>    <span class="keywordtype">int</span> cols;           <span class="comment">//OUTPUT- Columns of current window</span></div>
-<div class="line"><span class="lineno">  198</span> </div>
-<div class="line"><span class="lineno">  199</span>    <span class="comment">//Init cols, menuLineSize &amp; items</span></div>
-<div class="line"><span class="lineno">  200</span>    cols = getmaxx(mainWindow);</div>
-<div class="line"><span class="lineno">  201</span>    menuLineSize = mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a>.size();</div>
-<div class="line"><span class="lineno">  202</span>    items = (ITEM**) calloc(menuLineSize + 1, <span class="keyword">sizeof</span>(ITEM*));</div>
-<div class="line"><span class="lineno">  203</span> </div>
-<div class="line"><span class="lineno">  204</span>    <span class="comment">//Items must be initialized to menu line items</span></div>
-<div class="line"><span class="lineno">  205</span>    <span class="keywordflow">for</span> (i = 0; i &lt; menuLineSize; i++) {</div>
-<div class="line"><span class="lineno">  206</span>        items[i] = new_item(mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a>[i].c_str(),</div>
-<div class="line"><span class="lineno">  207</span>                mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a>[i].c_str());</div>
-<div class="line"><span class="lineno">  208</span>    }</div>
-<div class="line"><span class="lineno">  209</span>    items[menuLineSize] = new_item((<span class="keywordtype">char</span>*) NULL, (<span class="keywordtype">char</span>*) NULL);</div>
-<div class="line"><span class="lineno">  210</span> </div>
-<div class="line"><span class="lineno">  211</span>    <span class="comment">//Initialize menu, apply settings</span></div>
-<div class="line"><span class="lineno">  212</span>    mainMenu = new_menu((ITEM**) items);</div>
-<div class="line"><span class="lineno">  213</span>    set_menu_win(mainMenu, mainWindow);</div>
-<div class="line"><span class="lineno">  214</span>    set_menu_sub(mainMenu,</div>
-<div class="line"><span class="lineno">  215</span>            derwin(mainWindow, menuLineSize,</div>
-<div class="line"><span class="lineno">  216</span>                    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a15b8a52d1b8c366a0af2f56761c411c6">longestMenuLength</a>, 4,</div>
-<div class="line"><span class="lineno">  217</span>                    1));</div>
-<div class="line"><span class="lineno">  218</span>    set_menu_mark(mainMenu, <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
-<div class="line"><span class="lineno">  219</span>    post_menu(mainMenu);</div>
-<div class="line"><span class="lineno">  220</span>}</div>
+<p class="definition">Definition at line <a class="el" href="menuDipity_8cpp_source.html#l00202">202</a> of file <a class="el" href="menuDipity_8cpp_source.html">menuDipity.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  203</span>                                                      {</div>
+<div class="line"><span class="lineno">  204</span>    <span class="keywordtype">size_t</span> menuLineSize, i;     <span class="comment">//INPUT- Menu size, iterator</span></div>
+<div class="line"><span class="lineno">  205</span>    <span class="keywordtype">int</span> cols;           <span class="comment">//OUTPUT- Columns of current window</span></div>
+<div class="line"><span class="lineno">  206</span> </div>
+<div class="line"><span class="lineno">  207</span>    <span class="comment">//Init cols, menuLineSize &amp; items</span></div>
+<div class="line"><span class="lineno">  208</span>    cols = <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(mainWindow);</div>
+<div class="line"><span class="lineno">  209</span>    menuLineSize = mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a>.size();</div>
+<div class="line"><span class="lineno">  210</span>    items = (<a class="code hl_struct" href="structtagITEM.html">ITEM</a>**) calloc(menuLineSize + 1, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structtagITEM.html">ITEM</a>*));</div>
+<div class="line"><span class="lineno">  211</span> </div>
+<div class="line"><span class="lineno">  212</span>    <span class="comment">//Items must be initialized to menu line items</span></div>
+<div class="line"><span class="lineno">  213</span>    <span class="keywordflow">for</span> (i = 0; i &lt; menuLineSize; i++) {</div>
+<div class="line"><span class="lineno">  214</span>        items[i] = <a class="code hl_function" href="m__item__new_8c.html#abdd8a4551483bb0294ee905bd5b483ba">new_item</a>(mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a>[i].c_str(),</div>
+<div class="line"><span class="lineno">  215</span>                mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a>[i].c_str());</div>
+<div class="line"><span class="lineno">  216</span>    }</div>
+<div class="line"><span class="lineno">  217</span>    items[menuLineSize] = <a class="code hl_function" href="m__item__new_8c.html#abdd8a4551483bb0294ee905bd5b483ba">new_item</a>((<span class="keywordtype">char</span>*) <a class="code hl_define" href="internal_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, (<span class="keywordtype">char</span>*) <a class="code hl_define" href="internal_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><span class="lineno">  218</span> </div>
+<div class="line"><span class="lineno">  219</span>    <span class="comment">//Initialize menu, apply settings</span></div>
+<div class="line"><span class="lineno">  220</span>    mainMenu = <a class="code hl_function" href="m__new_8c.html#a5b2e34d7a8531345a16c633857366e39">new_menu</a>((<a class="code hl_struct" href="structtagITEM.html">ITEM</a>**) items);</div>
+<div class="line"><span class="lineno">  221</span>    <a class="code hl_function" href="m__win_8c.html#a62be5bdd852b1917b7e76ca843d8f2fa">set_menu_win</a>(mainMenu, mainWindow);</div>
+<div class="line"><span class="lineno">  222</span>    <a class="code hl_function" href="m__sub_8c.html#af237706f2ad79e553fb6d1549cb2b391">set_menu_sub</a>(mainMenu,</div>
+<div class="line"><span class="lineno">  223</span>            <a class="code hl_function" href="lib__newwin_8c.html#ac46deef3b21d35f9fcc92df0c6a3438b">derwin</a>(mainWindow, menuLineSize,</div>
+<div class="line"><span class="lineno">  224</span>                    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a15b8a52d1b8c366a0af2f56761c411c6">longestMenuLength</a>, 4,</div>
+<div class="line"><span class="lineno">  225</span>                    1));</div>
+<div class="line"><span class="lineno">  226</span>    <a class="code hl_function" href="m__item__new_8c.html#af9ea4832ba49674dbb0fb88bda1a4d6d">set_menu_mark</a>(mainMenu, <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
+<div class="line"><span class="lineno">  227</span>    <a class="code hl_function" href="m__post_8c.html#ae52447ff63bebef88885956896f80479">post_menu</a>(mainMenu);</div>
+<div class="line"><span class="lineno">  228</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -341,21 +359,21 @@ OUTPUTS-
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void deleteMenu </td>
+          <td class="memname"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a> deleteMenu </td>
           <td>(</td>
-          <td class="paramtype">MENU *&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2menu_8h.html#a4d43d5efc74fa9d26f2c04e9d796d08f">MENU</a> *&amp;&#160;</td>
           <td class="paramname"><em>mainMenu</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ITEM **&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2menu_8h.html#a4e7bfddf7bbe2ec3b63691ccb9383fb5">ITEM</a> **&amp;&#160;</td>
           <td class="paramname"><em>items</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="nc__alloc_8h.html#ae43e1afb4123c6ddee091cf03ec10266">size_t</a>&#160;</td>
           <td class="paramname"><em>menuLineSize</em>&#160;</td>
         </tr>
         <tr>
@@ -368,19 +386,23 @@ OUTPUTS-
 
 <p>Safely kill menu &amp; menu items. </p>
 
-<p class="definition">Definition at line <a class="el" href="menuDipity_8cpp_source.html#l00223">223</a> of file <a class="el" href="menuDipity_8cpp_source.html">menuDipity.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  223</span>                                                                 {</div>
-<div class="line"><span class="lineno">  224</span>    <span class="keywordtype">size_t</span> i;   <span class="comment">//PROCESS- Iterator for item deletion</span></div>
-<div class="line"><span class="lineno">  225</span> </div>
-<div class="line"><span class="lineno">  226</span>    <span class="comment">//Free up and delete menu</span></div>
-<div class="line"><span class="lineno">  227</span>    unpost_menu(menu);</div>
-<div class="line"><span class="lineno">  228</span>    free_menu(menu);</div>
-<div class="line"><span class="lineno">  229</span> </div>
-<div class="line"><span class="lineno">  230</span>    <span class="comment">//Free up menu item memory</span></div>
-<div class="line"><span class="lineno">  231</span>    <span class="keywordflow">for</span> (i = 0; i &lt; menuLineSize; i++) {</div>
-<div class="line"><span class="lineno">  232</span>        free_item(items[i]);</div>
-<div class="line"><span class="lineno">  233</span>    }</div>
-<div class="line"><span class="lineno">  234</span>}</div>
+<p class="definition">Definition at line <a class="el" href="menuDipity_8cpp_source.html#l00231">231</a> of file <a class="el" href="menuDipity_8cpp_source.html">menuDipity.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  231</span>                                                                 {</div>
+<div class="line"><span class="lineno">  232</span>    <span class="keywordtype">size_t</span> i;   <span class="comment">//PROCESS- Iterator for item deletion</span></div>
+<div class="line"><span class="lineno">  233</span> </div>
+<div class="line"><span class="lineno">  234</span>    <span class="comment">//Free up and delete menu</span></div>
+<div class="line"><span class="lineno">  235</span>    <a class="code hl_function" href="m__post_8c.html#a6628aafa24ddc5df5ed560b51d80c222">unpost_menu</a>(menu);</div>
+<div class="line"><span class="lineno">  236</span>    <a class="code hl_function" href="m__new_8c.html#ae7e8bdd4ca0c3a60f33c04d00f6a5781">free_menu</a>(menu);</div>
+<div class="line"><span class="lineno">  237</span> </div>
+<div class="line"><span class="lineno">  238</span>    <span class="comment">//Free up menu item memory</span></div>
+<div class="line"><span class="lineno">  239</span>    <span class="keywordflow">for</span> (i = 0; i &lt; menuLineSize; i++) {</div>
+<div class="line"><span class="lineno">  240</span>        <a class="code hl_function" href="m__item__new_8c.html#ac27695e746c0cdceca4e0fefe2b43864">free_item</a>(items[i]);</div>
+<div class="line"><span class="lineno">  241</span>    }</div>
+<div class="line"><span class="lineno">  242</span>    free(items);</div>
+<div class="line"><span class="lineno">  243</span>}</div>
+<div class="ttc" id="am__item__new_8c_html_ac27695e746c0cdceca4e0fefe2b43864"><div class="ttname"><a href="m__item__new_8c.html#ac27695e746c0cdceca4e0fefe2b43864">free_item</a></div><div class="ttdeci">free_item(ITEM *item)</div><div class="ttdef"><b>Definition:</b> <a href="m__item__new_8c_source.html#l00166">m_item_new.c:166</a></div></div>
+<div class="ttc" id="am__new_8c_html_ae7e8bdd4ca0c3a60f33c04d00f6a5781"><div class="ttname"><a href="m__new_8c.html#ae7e8bdd4ca0c3a60f33c04d00f6a5781">free_menu</a></div><div class="ttdeci">free_menu(MENU *menu)</div><div class="ttdef"><b>Definition:</b> <a href="m__new_8c_source.html#l00125">m_new.c:125</a></div></div>
+<div class="ttc" id="am__post_8c_html_a6628aafa24ddc5df5ed560b51d80c222"><div class="ttname"><a href="m__post_8c.html#a6628aafa24ddc5df5ed560b51d80c222">unpost_menu</a></div><div class="ttdeci">unpost_menu(MENU *menu)</div><div class="ttdef"><b>Definition:</b> <a href="m__post_8c_source.html#l00349">m_post.c:349</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -391,9 +413,9 @@ OUTPUTS-
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void endWindow </td>
+          <td class="memname"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a> endWindow </td>
           <td>(</td>
-          <td class="paramtype">WINDOW *&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2curses_8h.html#aa64cc90e7a4df667d6c7249b77890d39">WINDOW</a> *&amp;&#160;</td>
           <td class="paramname"><em>mainWindow</em></td><td>)</td>
           <td></td>
         </tr>
@@ -402,14 +424,19 @@ OUTPUTS-
 
 <p>Safely kill the window. </p>
 
-<p class="definition">Definition at line <a class="el" href="menuDipity_8cpp_source.html#l00252">252</a> of file <a class="el" href="menuDipity_8cpp_source.html">menuDipity.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  252</span>                                    {</div>
-<div class="line"><span class="lineno">  253</span>    <span class="comment">//Delete main window, refresh, and delete screen</span></div>
-<div class="line"><span class="lineno">  254</span>    clear();</div>
-<div class="line"><span class="lineno">  255</span>    delwin(mainWindow);</div>
-<div class="line"><span class="lineno">  256</span>    refresh();</div>
-<div class="line"><span class="lineno">  257</span>    endwin();</div>
-<div class="line"><span class="lineno">  258</span>}</div>
+<p class="definition">Definition at line <a class="el" href="menuDipity_8cpp_source.html#l00261">261</a> of file <a class="el" href="menuDipity_8cpp_source.html">menuDipity.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  261</span>                                    {</div>
+<div class="line"><span class="lineno">  262</span>    <span class="comment">//Delete main window, refresh, and delete screen</span></div>
+<div class="line"><span class="lineno">  263</span>    <a class="code hl_define" href="include_2ncurses_2curses_8h.html#aff606fb64ff89d5982673319bab86b19">clear</a>();</div>
+<div class="line"><span class="lineno">  264</span>    <a class="code hl_function" href="lib__delwin_8c.html#afdc5e9dacc5587a4c47333d0e040ffe7">delwin</a>(mainWindow);</div>
+<div class="line"><span class="lineno">  265</span>    <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a79af28443525d4cccad45d58d60911ad">refresh</a>();</div>
+<div class="line"><span class="lineno">  266</span>    <a class="code hl_function" href="lib__endwin_8c.html#ac99f9c71095d311dea005450112a90c3">endwin</a>();</div>
+<div class="line"><span class="lineno">  267</span>    <span class="comment">//exit_curses(0);</span></div>
+<div class="line"><span class="lineno">  268</span>}</div>
+<div class="ttc" id="ainclude_2ncurses_2curses_8h_html_a79af28443525d4cccad45d58d60911ad"><div class="ttname"><a href="include_2ncurses_2curses_8h.html#a79af28443525d4cccad45d58d60911ad">refresh</a></div><div class="ttdeci">#define refresh()</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2curses_8h_source.html#l01287">include/ncurses/curses.h:1287</a></div></div>
+<div class="ttc" id="ainclude_2ncurses_2curses_8h_html_aff606fb64ff89d5982673319bab86b19"><div class="ttname"><a href="include_2ncurses_2curses_8h.html#aff606fb64ff89d5982673319bab86b19">clear</a></div><div class="ttdeci">#define clear()</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2curses_8h_source.html#l01266">include/ncurses/curses.h:1266</a></div></div>
+<div class="ttc" id="alib__delwin_8c_html_afdc5e9dacc5587a4c47333d0e040ffe7"><div class="ttname"><a href="lib__delwin_8c.html#afdc5e9dacc5587a4c47333d0e040ffe7">delwin</a></div><div class="ttdeci">delwin(WINDOW *win)</div><div class="ttdef"><b>Definition:</b> <a href="lib__delwin_8c_source.html#l00075">lib_delwin.c:75</a></div></div>
+<div class="ttc" id="alib__endwin_8c_html_ac99f9c71095d311dea005450112a90c3"><div class="ttname"><a href="lib__endwin_8c.html#ac99f9c71095d311dea005450112a90c3">endwin</a></div><div class="ttdeci">NCURSES_SP_NAME() endwin(NCURSES_SP_DCL0)</div><div class="ttdef"><b>Definition:</b> <a href="lib__endwin_8c_source.html#l00049">lib_endwin.c:49</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -420,9 +447,9 @@ OUTPUTS-
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void handleSignal </td>
+          <td class="memname"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a> handleSignal </td>
           <td>(</td>
-          <td class="paramtype">const int&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> <a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a>&#160;</td>
           <td class="paramname"><em>signal</em></td><td>)</td>
           <td></td>
         </tr>
@@ -431,11 +458,12 @@ OUTPUTS-
 
 <p>This passes signals to the state provider; normally means recalculating the interface. </p>
 
-<p class="definition">Definition at line <a class="el" href="menuDipity_8cpp_source.html#l00339">339</a> of file <a class="el" href="menuDipity_8cpp_source.html">menuDipity.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  339</span>                                    {</div>
-<div class="line"><span class="lineno">  340</span>    <a class="code hl_variable" href="menuDipity_8cpp.html#a8a2651374b4c745171073b8aee20eee3">stateProvider</a> = signal;</div>
-<div class="line"><span class="lineno">  341</span>}</div>
-<div class="ttc" id="amenuDipity_8cpp_html_a8a2651374b4c745171073b8aee20eee3"><div class="ttname"><a href="menuDipity_8cpp.html#a8a2651374b4c745171073b8aee20eee3">stateProvider</a></div><div class="ttdeci">volatile sig_atomic_t stateProvider</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00038">menuDipity.cpp:38</a></div></div>
+<p class="definition">Definition at line <a class="el" href="menuDipity_8cpp_source.html#l00349">349</a> of file <a class="el" href="menuDipity_8cpp_source.html">menuDipity.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  349</span>                                    {</div>
+<div class="line"><span class="lineno">  350</span>    <a class="code hl_variable" href="menuDipity_8cpp.html#a8a2651374b4c745171073b8aee20eee3">stateProvider</a> = signal;</div>
+<div class="line"><span class="lineno">  351</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  352</span>}</div>
+<div class="ttc" id="amenuDipity_8cpp_html_a8a2651374b4c745171073b8aee20eee3"><div class="ttname"><a href="menuDipity_8cpp.html#a8a2651374b4c745171073b8aee20eee3">stateProvider</a></div><div class="ttdeci">volatile sig_atomic_t stateProvider</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00039">menuDipity.cpp:39</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -446,7 +474,7 @@ OUTPUTS-
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int makeMenu </td>
+          <td class="memname"><a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a> makeMenu </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structMenuLines.html">MenuLines</a> &amp;&#160;</td>
           <td class="paramname"><em>mainMenuInfo</em>, </td>
@@ -466,129 +494,154 @@ OUTPUTS-
 </div><div class="memdoc">
 <p>makeMenu(MenuLines, string) -&gt; Makes a basic menu interface, using a <a class="el" href="structMenuLines.html">MenuLines</a> object holding the title of the program, the title of the menu, and the titles of the options, as well as a string holding the information potentially required for initial notification of the user. </p>
 
-<p class="definition">Definition at line <a class="el" href="menuDipity_8cpp_source.html#l00047">47</a> of file <a class="el" href="menuDipity_8cpp_source.html">menuDipity.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   47</span>                                                           {</div>
-<div class="line"><span class="lineno">   48</span>    ITEM **items;         <span class="comment">//OUTPUT- Menu items</span></div>
-<div class="line"><span class="lineno">   49</span>    MENU *mainMenu;       <span class="comment">//OUTPUT- Complete menu</span></div>
-<div class="line"><span class="lineno">   50</span>    WINDOW *mainWindow;   <span class="comment">//OUTPUT- Window to hold menu</span></div>
-<div class="line"><span class="lineno">   51</span>    WINDOW *notification; <span class="comment">//OUTPUT- Notification at bottom of screen</span></div>
-<div class="line"><span class="lineno">   52</span>    <span class="keyword">struct </span>sigaction sa;  <span class="comment">//OUTPUT- Signal action handler</span></div>
-<div class="line"><span class="lineno">   53</span>    <span class="keywordtype">int</span> breakOut;         <span class="comment">//OUTPUT- Return of menu (for when it breaks out)</span></div>
-<div class="line"><span class="lineno">   54</span>    <span class="keywordtype">int</span> menuLineSize;     <span class="comment">//INPUT-  Size of the list of menu lines</span></div>
-<div class="line"><span class="lineno">   55</span>    <span class="keywordtype">int</span> userInput;        <span class="comment">//INPUT-  User key input</span></div>
-<div class="line"><span class="lineno">   56</span>    <span class="keywordtype">char</span> userInputChar;   <span class="comment">//INPUT-  User input (hard- coded as char)</span></div>
-<div class="line"><span class="lineno">   57</span>    <span class="keywordtype">char</span> *currentItemName;<span class="comment">//INPUT-  Name of item currently selected</span></div>
-<div class="line"><span class="lineno">   58</span>    <span class="keywordtype">bool</span> dontExit;        <span class="comment">//INPUT-  Prevent exiting until need is met</span></div>
-<div class="line"><span class="lineno">   59</span> </div>
-<div class="line"><span class="lineno">   60</span>    <span class="comment">//Init menuLineSize and userInputChar</span></div>
-<div class="line"><span class="lineno">   61</span>    userInputChar = <span class="charliteral">&#39;1&#39;</span>;</div>
-<div class="line"><span class="lineno">   62</span> </div>
-<div class="line"><span class="lineno">   63</span>    menuLineSize = mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a>.size();</div>
-<div class="line"><span class="lineno">   64</span> </div>
-<div class="line"><span class="lineno">   65</span>    <span class="comment">//Handle system signals</span></div>
-<div class="line"><span class="lineno">   66</span>    sa.sa_flags = 0;</div>
-<div class="line"><span class="lineno">   67</span>    sa.sa_handler = <a class="code hl_function" href="menuDipity_8cpp.html#aca3781895a5a9953a90535af3b94a1fe">handleSignal</a>;</div>
-<div class="line"><span class="lineno">   68</span>    sigaction(SIGWINCH, &amp;sa, NULL);</div>
-<div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   70</span>    <span class="comment">//Init window, items, menu</span></div>
-<div class="line"><span class="lineno">   71</span>    <a class="code hl_function" href="menuDipity_8cpp.html#ae7fa97802caf4dbaf3d16339f1f977ca">startWindow</a>(mainWindow);</div>
-<div class="line"><span class="lineno">   72</span>    <a class="code hl_function" href="menuDipity_8cpp.html#ad42ebdb9d84d8ef7cd1cfd8eff824a64">createMenu</a>(mainMenu, mainWindow, mainMenuInfo, items);</div>
-<div class="line"><span class="lineno">   73</span> </div>
-<div class="line"><span class="lineno">   74</span>    <span class="comment">//Print menu dialog</span></div>
-<div class="line"><span class="lineno">   75</span>    box(mainWindow, 0, 0);</div>
-<div class="line"><span class="lineno">   76</span>    mvwprintw(mainWindow, 1,</div>
-<div class="line"><span class="lineno">   77</span>            (getmaxx(mainWindow) - mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a0af95e4dcce7da30088989156d66ffaf">storeName</a>.length()) / 2,</div>
-<div class="line"><span class="lineno">   78</span>            mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a0af95e4dcce7da30088989156d66ffaf">storeName</a>.c_str());</div>
-<div class="line"><span class="lineno">   79</span>    mvwprintw(mainWindow, 2,</div>
-<div class="line"><span class="lineno">   80</span>            (getmaxx(mainWindow) - mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">menuName</a>.length()) / 2,</div>
-<div class="line"><span class="lineno">   81</span>            mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">menuName</a>.c_str());</div>
-<div class="line"><span class="lineno">   82</span>    post_menu(mainMenu);</div>
-<div class="line"><span class="lineno">   83</span>    mvwprintw(mainWindow, getmaxy(mainWindow) - 2,</div>
-<div class="line"><span class="lineno">   84</span>            (getmaxx(mainWindow) - 38) / 2,</div>
-<div class="line"><span class="lineno">   85</span>            <span class="stringliteral">&quot;Select [1-%d] or navigate to module...&quot;</span>, menuLineSize);</div>
-<div class="line"><span class="lineno">   86</span>    wrefresh(mainWindow);</div>
-<div class="line"><span class="lineno">   87</span> </div>
-<div class="line"><span class="lineno">   88</span>    notification = newwin(1, 3 * COLS / 5, 9 * LINES / 10, COLS / 5);</div>
-<div class="line"><span class="lineno">   89</span>    wprintw(notification, startInfo.c_str());</div>
-<div class="line"><span class="lineno">   90</span>    wrefresh(notification);</div>
-<div class="line"><span class="lineno">   91</span> </div>
-<div class="line"><span class="lineno">   92</span>    <span class="comment">//Main program loop</span></div>
-<div class="line"><span class="lineno">   93</span>    dontExit = 1;</div>
-<div class="line"><span class="lineno">   94</span>    breakOut = -1;</div>
-<div class="line"><span class="lineno">   95</span>    <span class="keywordflow">do</span> {</div>
-<div class="line"><span class="lineno">   96</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="menuDipity_8cpp.html#a8a2651374b4c745171073b8aee20eee3">stateProvider</a>) {</div>
-<div class="line"><span class="lineno">   97</span>            <a class="code hl_function" href="menuDipity_8cpp.html#a605c5257dc24aab4ef869164de121d5b">refreshWindow</a>(mainMenu, mainWindow, notification,</div>
-<div class="line"><span class="lineno">   98</span>                    mainMenuInfo);</div>
-<div class="line"><span class="lineno">   99</span>            <a class="code hl_variable" href="menuDipity_8cpp.html#a8a2651374b4c745171073b8aee20eee3">stateProvider</a> = 0;</div>
-<div class="line"><span class="lineno">  100</span>        }</div>
-<div class="line"><span class="lineno">  101</span>        userInput = wgetch(mainWindow);</div>
-<div class="line"><span class="lineno">  102</span>        userInputChar = userInput - 1;</div>
-<div class="line"><span class="lineno">  103</span>        <span class="comment">//Navigate the menu with input</span></div>
-<div class="line"><span class="lineno">  104</span>        <span class="keywordflow">switch</span> (userInput) {</div>
-<div class="line"><span class="lineno">  105</span>        <span class="keywordflow">case</span> 10:</div>
-<div class="line"><span class="lineno">  106</span>            <span class="comment">//Activate current user selection</span></div>
-<div class="line"><span class="lineno">  107</span>            breakOut = item_index(current_item(mainMenu));</div>
-<div class="line"><span class="lineno">  108</span>            <span class="keywordflow">if</span> (breakOut &lt; menuLineSize &amp;&amp; breakOut != -1</div>
-<div class="line"><span class="lineno">  109</span>                    &amp;&amp; (mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">menuName</a> == <span class="stringliteral">&quot;Main Menu&quot;</span></div>
-<div class="line"><span class="lineno">  110</span>                            || (mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">menuName</a></div>
-<div class="line"><span class="lineno">  111</span>                                    == <span class="stringliteral">&quot;Inventory Database&quot;</span></div>
-<div class="line"><span class="lineno">  112</span>                                    &amp;&amp; (breakOut &lt;= 3 &amp;&amp; breakOut != -1))</div>
-<div class="line"><span class="lineno">  113</span>                            || breakOut == menuLineSize - 1)) {</div>
-<div class="line"><span class="lineno">  114</span>                dontExit = 0;</div>
-<div class="line"><span class="lineno">  115</span>            }</div>
-<div class="line"><span class="lineno">  116</span>            wclear(notification);</div>
-<div class="line"><span class="lineno">  117</span>            currentItemName = (<span class="keywordtype">char</span>*) item_name(current_item(mainMenu));</div>
-<div class="line"><span class="lineno">  118</span>            wprintw(notification, <span class="stringliteral">&quot;Selected %s&quot;</span>, currentItemName);</div>
-<div class="line"><span class="lineno">  119</span>            wrefresh(notification);</div>
-<div class="line"><span class="lineno">  120</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  121</span>        <span class="keywordflow">case</span> KEY_UP:</div>
-<div class="line"><span class="lineno">  122</span>            wclear(notification);</div>
-<div class="line"><span class="lineno">  123</span>            wrefresh(notification);</div>
-<div class="line"><span class="lineno">  124</span>            menu_driver(mainMenu, REQ_PREV_ITEM);</div>
-<div class="line"><span class="lineno">  125</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  126</span>        <span class="keywordflow">case</span> KEY_DOWN:</div>
-<div class="line"><span class="lineno">  127</span>            wclear(notification);</div>
-<div class="line"><span class="lineno">  128</span>            wrefresh(notification);</div>
-<div class="line"><span class="lineno">  129</span>            menu_driver(mainMenu, REQ_NEXT_ITEM);</div>
-<div class="line"><span class="lineno">  130</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  131</span>        <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">  132</span>            <span class="keywordflow">if</span> (userInput &gt;= <span class="charliteral">&#39;1&#39;</span> &amp;&amp; userInput &lt;= menuLineSize + 48) {</div>
-<div class="line"><span class="lineno">  133</span>                wclear(notification);</div>
-<div class="line"><span class="lineno">  134</span>                set_current_item(mainMenu, items[atoi(&amp;userInputChar)]);</div>
-<div class="line"><span class="lineno">  135</span>                wrefresh(notification);</div>
-<div class="line"><span class="lineno">  136</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  137</span>                wclear(notification);</div>
-<div class="line"><span class="lineno">  138</span>                wprintw(notification, <span class="stringliteral">&quot;Invalid Input&quot;</span>);</div>
-<div class="line"><span class="lineno">  139</span>                wrefresh(notification);</div>
-<div class="line"><span class="lineno">  140</span>            }</div>
-<div class="line"><span class="lineno">  141</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  142</span>        }</div>
-<div class="line"><span class="lineno">  143</span>    } <span class="keywordflow">while</span> (dontExit);</div>
-<div class="line"><span class="lineno">  144</span> </div>
-<div class="line"><span class="lineno">  145</span>    clear();</div>
-<div class="line"><span class="lineno">  146</span>    <span class="keywordflow">if</span> (strcmp(item_name(current_item(mainMenu)), <span class="stringliteral">&quot;Exit&quot;</span>) == 0) {</div>
-<div class="line"><span class="lineno">  147</span>        mvwprintw(mainWindow, getmaxy(mainWindow) / 2,</div>
-<div class="line"><span class="lineno">  148</span>                getmaxx(mainWindow) / 2 - 5, <span class="stringliteral">&quot;Goodbye!&quot;</span>);</div>
-<div class="line"><span class="lineno">  149</span>        wrefresh(mainWindow);</div>
-<div class="line"><span class="lineno">  150</span>        std::this_thread::sleep_for(std::chrono::seconds(1));</div>
-<div class="line"><span class="lineno">  151</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="menuDipity_8cpp_source.html#l00048">48</a> of file <a class="el" href="menuDipity_8cpp_source.html">menuDipity.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>                                                           {</div>
+<div class="line"><span class="lineno">   49</span>    <a class="code hl_struct" href="structtagITEM.html">ITEM</a> **items;         <span class="comment">//OUTPUT- Menu items</span></div>
+<div class="line"><span class="lineno">   50</span>    <a class="code hl_struct" href="structtagMENU.html">MENU</a> *mainMenu;       <span class="comment">//OUTPUT- Complete menu</span></div>
+<div class="line"><span class="lineno">   51</span>    <a class="code hl_struct" href="struct__win__st.html">WINDOW</a> *mainWindow;   <span class="comment">//OUTPUT- Window to hold menu</span></div>
+<div class="line"><span class="lineno">   52</span>    <a class="code hl_struct" href="struct__win__st.html">WINDOW</a> *notification; <span class="comment">//OUTPUT- Notification at bottom of screen</span></div>
+<div class="line"><span class="lineno">   53</span>    <span class="comment">//struct sigaction sa;  //OUTPUT- Signal action handler</span></div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordtype">int</span> breakOut;         <span class="comment">//OUTPUT- Return of menu (for when it breaks out)</span></div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordtype">int</span> menuLineSize;     <span class="comment">//INPUT-  Size of the list of menu lines</span></div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordtype">int</span> userInput;        <span class="comment">//INPUT-  User key input</span></div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordtype">char</span> userInputChar;   <span class="comment">//INPUT-  User input (hard- coded as char)</span></div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordtype">char</span> userInputArr[2];       <span class="comment">//INPUT- User input (String)</span></div>
+<div class="line"><span class="lineno">   59</span>    <span class="keywordtype">char</span> *currentItemName;<span class="comment">//INPUT-  Name of item currently selected</span></div>
+<div class="line"><span class="lineno">   60</span>    <span class="keywordtype">bool</span> dontExit;        <span class="comment">//INPUT-  Prevent exiting until need is met</span></div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>    <span class="comment">//Init menuLineSize and userInputChar</span></div>
+<div class="line"><span class="lineno">   63</span>    userInputChar = <span class="charliteral">&#39;1&#39;</span>;</div>
+<div class="line"><span class="lineno">   64</span>    userInputArr[0] = <span class="charliteral">&#39;1&#39;</span>;</div>
+<div class="line"><span class="lineno">   65</span>    userInputArr[1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>    menuLineSize = mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a>.size();</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>    <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">   70</span><span class="comment">    //Handle system signals</span></div>
+<div class="line"><span class="lineno">   71</span><span class="comment">    sa.sa_flags = 0;</span></div>
+<div class="line"><span class="lineno">   72</span><span class="comment">    sa.sa_handler = handleSignal;</span></div>
+<div class="line"><span class="lineno">   73</span><span class="comment">    sigaction(SIGWINCH, &amp;sa, NULL);</span></div>
+<div class="line"><span class="lineno">   74</span><span class="comment">    */</span></div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>    <span class="comment">//Init window, items, menu</span></div>
+<div class="line"><span class="lineno">   77</span>    <a class="code hl_function" href="menuDipity_8cpp.html#ae7fa97802caf4dbaf3d16339f1f977ca">startWindow</a>(mainWindow);</div>
+<div class="line"><span class="lineno">   78</span>    <a class="code hl_function" href="menuDipity_8cpp.html#ad42ebdb9d84d8ef7cd1cfd8eff824a64">createMenu</a>(mainMenu, mainWindow, mainMenuInfo, items);</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>    <span class="comment">//Print menu dialog</span></div>
+<div class="line"><span class="lineno">   81</span>    <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a69402876ce6099a41bc3a3ce2b5690de">box</a>(mainWindow, 0, 0);</div>
+<div class="line"><span class="lineno">   82</span>    <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(mainWindow, 1,</div>
+<div class="line"><span class="lineno">   83</span>            (<a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(mainWindow) - mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a0af95e4dcce7da30088989156d66ffaf">storeName</a>.length()) / 2,</div>
+<div class="line"><span class="lineno">   84</span>            mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a0af95e4dcce7da30088989156d66ffaf">storeName</a>.c_str());</div>
+<div class="line"><span class="lineno">   85</span>    <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(mainWindow, 2,</div>
+<div class="line"><span class="lineno">   86</span>            (<a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(mainWindow) - mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">menuName</a>.length()) / 2,</div>
+<div class="line"><span class="lineno">   87</span>            mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">menuName</a>.c_str());</div>
+<div class="line"><span class="lineno">   88</span>    <a class="code hl_function" href="m__post_8c.html#ae52447ff63bebef88885956896f80479">post_menu</a>(mainMenu);</div>
+<div class="line"><span class="lineno">   89</span>    <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(mainWindow, <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a02249c5271d4d349a93f545ed2e846c8">getmaxy</a>(mainWindow) - 2,</div>
+<div class="line"><span class="lineno">   90</span>            (<a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(mainWindow) - 38) / 2,</div>
+<div class="line"><span class="lineno">   91</span>            <span class="stringliteral">&quot;Select [1-%d] or navigate to module...&quot;</span>, menuLineSize);</div>
+<div class="line"><span class="lineno">   92</span>    <a class="code hl_function" href="lib__refresh_8c.html#ae612fb9d9b8a757492cf3b78f0d4f50f">wrefresh</a>(mainWindow);</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>    notification = <a class="code hl_function" href="lib__newwin_8c.html#ae036daec0c3e1eb2d84df98afcbae4ee">newwin</a>(1, 3 * COLS / 5, 9 * LINES / 10, COLS / 5);</div>
+<div class="line"><span class="lineno">   95</span>    <a class="code hl_function" href="lib__printw_8c.html#a32452367ae7de3f83f02cf08f245d21c">wprintw</a>(notification, startInfo.c_str());</div>
+<div class="line"><span class="lineno">   96</span>    <a class="code hl_function" href="lib__refresh_8c.html#ae612fb9d9b8a757492cf3b78f0d4f50f">wrefresh</a>(notification);</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    <span class="comment">//Main program loop</span></div>
+<div class="line"><span class="lineno">   99</span>    dontExit = 1;</div>
+<div class="line"><span class="lineno">  100</span>    breakOut = -1;</div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">do</span> {</div>
+<div class="line"><span class="lineno">  102</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="menuDipity_8cpp.html#a8a2651374b4c745171073b8aee20eee3">stateProvider</a>) {</div>
+<div class="line"><span class="lineno">  103</span>            <a class="code hl_function" href="menuDipity_8cpp.html#a605c5257dc24aab4ef869164de121d5b">refreshWindow</a>(mainMenu, mainWindow, notification,</div>
+<div class="line"><span class="lineno">  104</span>                    mainMenuInfo);</div>
+<div class="line"><span class="lineno">  105</span>            <a class="code hl_variable" href="menuDipity_8cpp.html#a8a2651374b4c745171073b8aee20eee3">stateProvider</a> = 0;</div>
+<div class="line"><span class="lineno">  106</span>        }</div>
+<div class="line"><span class="lineno">  107</span>        userInput = <a class="code hl_function" href="lib__getch_8c.html#a959890dd627818ba206efa50c247f0dd">wgetch</a>(mainWindow);</div>
+<div class="line"><span class="lineno">  108</span>        userInputChar = userInput - 1;</div>
+<div class="line"><span class="lineno">  109</span>        <span class="comment">//Navigate the menu with input</span></div>
+<div class="line"><span class="lineno">  110</span>        <span class="keywordflow">switch</span> (userInput) {</div>
+<div class="line"><span class="lineno">  111</span>        <span class="keywordflow">case</span> 10:</div>
+<div class="line"><span class="lineno">  112</span>            <span class="comment">//Activate current user selection</span></div>
+<div class="line"><span class="lineno">  113</span>            breakOut = <a class="code hl_function" href="m__item__cur_8c.html#a28d2708f6efb7f63cd4e1885db42f396">item_index</a>(<a class="code hl_function" href="m__item__cur_8c.html#aec26c84285802a5837630f1d79bc8567">current_item</a>(mainMenu));</div>
+<div class="line"><span class="lineno">  114</span>            <span class="keywordflow">if</span> (breakOut &lt; menuLineSize &amp;&amp; breakOut != -1</div>
+<div class="line"><span class="lineno">  115</span>                    <span class="comment">/*&amp;&amp; (mainMenuInfo.menuName == &quot;Main Menu&quot;</span></div>
+<div class="line"><span class="lineno">  116</span><span class="comment">                            || (mainMenuInfo.menuName</span></div>
+<div class="line"><span class="lineno">  117</span><span class="comment">                                    == &quot;Inventory Database&quot;</span></div>
+<div class="line"><span class="lineno">  118</span><span class="comment">                                    &amp;&amp; (breakOut &lt;= 3 &amp;&amp; breakOut != -1)) || (mainMenuInfo.menuName == &quot;Reports&quot; &amp;&amp; (breakOut == 0))</span></div>
+<div class="line"><span class="lineno">  119</span><span class="comment">                                    || breakOut == menuLineSize - 1)*/</span></div>
+<div class="line"><span class="lineno">  120</span>            ) {</div>
+<div class="line"><span class="lineno">  121</span>                dontExit = 0;</div>
+<div class="line"><span class="lineno">  122</span>            }</div>
+<div class="line"><span class="lineno">  123</span>            <a class="code hl_function" href="lib__clear_8c.html#ac4e0e71291aa948012aea0fad2ff57e5">wclear</a>(notification);</div>
+<div class="line"><span class="lineno">  124</span>            currentItemName = (<span class="keywordtype">char</span>*) <a class="code hl_function" href="m__item__nam_8c.html#a86055cd2fcfd880d85c9c704cd493a20">item_name</a>(<a class="code hl_function" href="m__item__cur_8c.html#aec26c84285802a5837630f1d79bc8567">current_item</a>(mainMenu));</div>
+<div class="line"><span class="lineno">  125</span>            <a class="code hl_function" href="lib__printw_8c.html#a32452367ae7de3f83f02cf08f245d21c">wprintw</a>(notification, <span class="stringliteral">&quot;Selected %s&quot;</span>, currentItemName);</div>
+<div class="line"><span class="lineno">  126</span>            <a class="code hl_function" href="lib__refresh_8c.html#ae612fb9d9b8a757492cf3b78f0d4f50f">wrefresh</a>(notification);</div>
+<div class="line"><span class="lineno">  127</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  128</span>        <span class="keywordflow">case</span> <a class="code hl_define" href="include_2ncurses_2curses_8h.html#afa086fc916a81e7fd348ec00cf786916">KEY_UP</a>:</div>
+<div class="line"><span class="lineno">  129</span>            <a class="code hl_function" href="lib__clear_8c.html#ac4e0e71291aa948012aea0fad2ff57e5">wclear</a>(notification);</div>
+<div class="line"><span class="lineno">  130</span>            <a class="code hl_function" href="lib__refresh_8c.html#ae612fb9d9b8a757492cf3b78f0d4f50f">wrefresh</a>(notification);</div>
+<div class="line"><span class="lineno">  131</span>            <a class="code hl_function" href="m__driver_8c.html#a64bbdb0ae67cfd3f349a29105d13ab13">menu_driver</a>(mainMenu, <a class="code hl_define" href="include_2ncurses_2menu_8h.html#afda595b6297879081689d4c9302b946d">REQ_PREV_ITEM</a>);</div>
+<div class="line"><span class="lineno">  132</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  133</span>        <span class="keywordflow">case</span> <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a203163bc0189184a1de6ca8d1e53c6bf">KEY_DOWN</a>:</div>
+<div class="line"><span class="lineno">  134</span>            <a class="code hl_function" href="lib__clear_8c.html#ac4e0e71291aa948012aea0fad2ff57e5">wclear</a>(notification);</div>
+<div class="line"><span class="lineno">  135</span>            <a class="code hl_function" href="lib__refresh_8c.html#ae612fb9d9b8a757492cf3b78f0d4f50f">wrefresh</a>(notification);</div>
+<div class="line"><span class="lineno">  136</span>            <a class="code hl_function" href="m__driver_8c.html#a64bbdb0ae67cfd3f349a29105d13ab13">menu_driver</a>(mainMenu, <a class="code hl_define" href="include_2ncurses_2menu_8h.html#abd50b6ec1c4a53d290cc3d06642bf83f">REQ_NEXT_ITEM</a>);</div>
+<div class="line"><span class="lineno">  137</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  138</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  139</span>            <span class="keywordflow">if</span> (userInput &gt;= <span class="charliteral">&#39;1&#39;</span> &amp;&amp; userInput &lt;= menuLineSize + 48) {</div>
+<div class="line"><span class="lineno">  140</span>                <a class="code hl_function" href="lib__clear_8c.html#ac4e0e71291aa948012aea0fad2ff57e5">wclear</a>(notification);</div>
+<div class="line"><span class="lineno">  141</span>                userInputArr[0] = userInputChar;</div>
+<div class="line"><span class="lineno">  142</span>                <a class="code hl_function" href="m__item__cur_8c.html#aa416dc34374eeb599ac50a894e91552c">set_current_item</a>(mainMenu, items[atoi(userInputArr)]);</div>
+<div class="line"><span class="lineno">  143</span>                <a class="code hl_function" href="lib__refresh_8c.html#ae612fb9d9b8a757492cf3b78f0d4f50f">wrefresh</a>(notification);</div>
+<div class="line"><span class="lineno">  144</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  145</span>                <a class="code hl_function" href="lib__clear_8c.html#ac4e0e71291aa948012aea0fad2ff57e5">wclear</a>(notification);</div>
+<div class="line"><span class="lineno">  146</span>                <a class="code hl_function" href="lib__printw_8c.html#a32452367ae7de3f83f02cf08f245d21c">wprintw</a>(notification, <span class="stringliteral">&quot;Invalid Input&quot;</span>);</div>
+<div class="line"><span class="lineno">  147</span>                <a class="code hl_function" href="lib__refresh_8c.html#ae612fb9d9b8a757492cf3b78f0d4f50f">wrefresh</a>(notification);</div>
+<div class="line"><span class="lineno">  148</span>            }</div>
+<div class="line"><span class="lineno">  149</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  150</span>        }</div>
+<div class="line"><span class="lineno">  151</span>    } <span class="keywordflow">while</span> (dontExit);</div>
 <div class="line"><span class="lineno">  152</span> </div>
-<div class="line"><span class="lineno">  153</span>    <span class="comment">//End program</span></div>
-<div class="line"><span class="lineno">  154</span>    wclear(notification);</div>
-<div class="line"><span class="lineno">  155</span>    delwin(notification);</div>
-<div class="line"><span class="lineno">  156</span>    <a class="code hl_function" href="menuDipity_8cpp.html#aa97131051248907bd151577849b30fb7">deleteMenu</a>(mainMenu, items, mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a>.size());</div>
-<div class="line"><span class="lineno">  157</span>    <a class="code hl_function" href="menuDipity_8cpp.html#a4b2b10e5786fcbe1575da3ed5893c1f7">endWindow</a>(mainWindow);</div>
-<div class="line"><span class="lineno">  158</span> </div>
-<div class="line"><span class="lineno">  159</span>    <span class="keywordflow">return</span> breakOut;</div>
-<div class="line"><span class="lineno">  160</span>}</div>
-<div class="ttc" id="amenuDipity_8cpp_html_a4b2b10e5786fcbe1575da3ed5893c1f7"><div class="ttname"><a href="menuDipity_8cpp.html#a4b2b10e5786fcbe1575da3ed5893c1f7">endWindow</a></div><div class="ttdeci">void endWindow(WINDOW *&amp;mainWindow)</div><div class="ttdoc">Safely kill the window.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00252">menuDipity.cpp:252</a></div></div>
-<div class="ttc" id="amenuDipity_8cpp_html_a605c5257dc24aab4ef869164de121d5b"><div class="ttname"><a href="menuDipity_8cpp.html#a605c5257dc24aab4ef869164de121d5b">refreshWindow</a></div><div class="ttdeci">void refreshWindow(MENU *&amp;mainMenu, WINDOW *&amp;mainWindow, WINDOW *&amp;notification, const MenuLines &amp;mainMenuInfo)</div><div class="ttdoc">Recalculate the window, but keep the menu the same.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00261">menuDipity.cpp:261</a></div></div>
-<div class="ttc" id="amenuDipity_8cpp_html_aa97131051248907bd151577849b30fb7"><div class="ttname"><a href="menuDipity_8cpp.html#aa97131051248907bd151577849b30fb7">deleteMenu</a></div><div class="ttdeci">void deleteMenu(MENU *&amp;mainMenu, ITEM **&amp;items, size_t menuLineSize)</div><div class="ttdoc">Safely kill menu &amp; menu items.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00223">menuDipity.cpp:223</a></div></div>
-<div class="ttc" id="amenuDipity_8cpp_html_aca3781895a5a9953a90535af3b94a1fe"><div class="ttname"><a href="menuDipity_8cpp.html#aca3781895a5a9953a90535af3b94a1fe">handleSignal</a></div><div class="ttdeci">void handleSignal(const int signal)</div><div class="ttdoc">This passes signals to the state provider; normally means recalculating the interface.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00339">menuDipity.cpp:339</a></div></div>
-<div class="ttc" id="amenuDipity_8cpp_html_ad42ebdb9d84d8ef7cd1cfd8eff824a64"><div class="ttname"><a href="menuDipity_8cpp.html#ad42ebdb9d84d8ef7cd1cfd8eff824a64">createMenu</a></div><div class="ttdeci">void createMenu(MENU *&amp;mainMenu, WINDOW *mainWindow, const MenuLines &amp;mainMenuInfo, ITEM **&amp;items)</div><div class="ttdoc">Create menu &amp; menu items.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00163">menuDipity.cpp:163</a></div></div>
-<div class="ttc" id="amenuDipity_8cpp_html_ae7fa97802caf4dbaf3d16339f1f977ca"><div class="ttname"><a href="menuDipity_8cpp.html#ae7fa97802caf4dbaf3d16339f1f977ca">startWindow</a></div><div class="ttdeci">void startWindow(WINDOW *&amp;mainWindow)</div><div class="ttdoc">Start window with default esettings.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00237">menuDipity.cpp:237</a></div></div>
+<div class="line"><span class="lineno">  153</span>    <a class="code hl_define" href="include_2ncurses_2curses_8h.html#aff606fb64ff89d5982673319bab86b19">clear</a>();</div>
+<div class="line"><span class="lineno">  154</span>    <span class="keywordflow">if</span> (strcmp(<a class="code hl_function" href="m__item__nam_8c.html#a86055cd2fcfd880d85c9c704cd493a20">item_name</a>(<a class="code hl_function" href="m__item__cur_8c.html#aec26c84285802a5837630f1d79bc8567">current_item</a>(mainMenu)), <span class="stringliteral">&quot;Exit&quot;</span>) == 0) {</div>
+<div class="line"><span class="lineno">  155</span>        <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(mainWindow, <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a02249c5271d4d349a93f545ed2e846c8">getmaxy</a>(mainWindow) / 2,</div>
+<div class="line"><span class="lineno">  156</span>                <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(mainWindow) / 2 - 5, <span class="stringliteral">&quot;Goodbye!&quot;</span>);</div>
+<div class="line"><span class="lineno">  157</span>        <a class="code hl_function" href="lib__refresh_8c.html#ae612fb9d9b8a757492cf3b78f0d4f50f">wrefresh</a>(mainWindow);</div>
+<div class="line"><span class="lineno">  158</span>        std::this_thread::sleep_for(std::chrono::seconds(1));</div>
+<div class="line"><span class="lineno">  159</span>    }</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>    <span class="comment">//End program</span></div>
+<div class="line"><span class="lineno">  162</span>    <a class="code hl_function" href="lib__clear_8c.html#ac4e0e71291aa948012aea0fad2ff57e5">wclear</a>(notification);</div>
+<div class="line"><span class="lineno">  163</span>    <a class="code hl_function" href="lib__delwin_8c.html#afdc5e9dacc5587a4c47333d0e040ffe7">delwin</a>(notification);</div>
+<div class="line"><span class="lineno">  164</span>    <a class="code hl_function" href="menuDipity_8cpp.html#aa97131051248907bd151577849b30fb7">deleteMenu</a>(mainMenu, items, mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a>.size());</div>
+<div class="line"><span class="lineno">  165</span>    <a class="code hl_function" href="menuDipity_8cpp.html#a4b2b10e5786fcbe1575da3ed5893c1f7">endWindow</a>(mainWindow);</div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>    <span class="keywordflow">return</span> breakOut;</div>
+<div class="line"><span class="lineno">  168</span>}</div>
+<div class="ttc" id="ainclude_2ncurses_2curses_8h_html_a02249c5271d4d349a93f545ed2e846c8"><div class="ttname"><a href="include_2ncurses_2curses_8h.html#a02249c5271d4d349a93f545ed2e846c8">getmaxy</a></div><div class="ttdeci">#define getmaxy(win)</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2curses_8h_source.html#l01189">include/ncurses/curses.h:1189</a></div></div>
+<div class="ttc" id="ainclude_2ncurses_2curses_8h_html_a203163bc0189184a1de6ca8d1e53c6bf"><div class="ttname"><a href="include_2ncurses_2curses_8h.html#a203163bc0189184a1de6ca8d1e53c6bf">KEY_DOWN</a></div><div class="ttdeci">#define KEY_DOWN</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2curses_8h_source.html#l01510">include/ncurses/curses.h:1510</a></div></div>
+<div class="ttc" id="ainclude_2ncurses_2curses_8h_html_a69402876ce6099a41bc3a3ce2b5690de"><div class="ttname"><a href="include_2ncurses_2curses_8h.html#a69402876ce6099a41bc3a3ce2b5690de">box</a></div><div class="ttdeci">#define box(win, v, h)</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2curses_8h_source.html#l01225">include/ncurses/curses.h:1225</a></div></div>
+<div class="ttc" id="ainclude_2ncurses_2curses_8h_html_afa086fc916a81e7fd348ec00cf786916"><div class="ttname"><a href="include_2ncurses_2curses_8h.html#afa086fc916a81e7fd348ec00cf786916">KEY_UP</a></div><div class="ttdeci">#define KEY_UP</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2curses_8h_source.html#l01511">include/ncurses/curses.h:1511</a></div></div>
+<div class="ttc" id="ainclude_2ncurses_2menu_8h_html_abd50b6ec1c4a53d290cc3d06642bf83f"><div class="ttname"><a href="include_2ncurses_2menu_8h.html#abd50b6ec1c4a53d290cc3d06642bf83f">REQ_NEXT_ITEM</a></div><div class="ttdeci">#define REQ_NEXT_ITEM</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2menu_8h_source.html#l00170">include/ncurses/menu.h:170</a></div></div>
+<div class="ttc" id="ainclude_2ncurses_2menu_8h_html_afda595b6297879081689d4c9302b946d"><div class="ttname"><a href="include_2ncurses_2menu_8h.html#afda595b6297879081689d4c9302b946d">REQ_PREV_ITEM</a></div><div class="ttdeci">#define REQ_PREV_ITEM</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2menu_8h_source.html#l00171">include/ncurses/menu.h:171</a></div></div>
+<div class="ttc" id="alib__clear_8c_html_ac4e0e71291aa948012aea0fad2ff57e5"><div class="ttname"><a href="lib__clear_8c.html#ac4e0e71291aa948012aea0fad2ff57e5">wclear</a></div><div class="ttdeci">wclear(WINDOW *win)</div><div class="ttdef"><b>Definition:</b> <a href="lib__clear_8c_source.html#l00047">lib_clear.c:47</a></div></div>
+<div class="ttc" id="alib__getch_8c_html_a959890dd627818ba206efa50c247f0dd"><div class="ttname"><a href="lib__getch_8c.html#a959890dd627818ba206efa50c247f0dd">wgetch</a></div><div class="ttdeci">wgetch(WINDOW *win)</div><div class="ttdef"><b>Definition:</b> <a href="lib__getch_8c_source.html#l00687">lib_getch.c:687</a></div></div>
+<div class="ttc" id="alib__newwin_8c_html_ae036daec0c3e1eb2d84df98afcbae4ee"><div class="ttname"><a href="lib__newwin_8c.html#ae036daec0c3e1eb2d84df98afcbae4ee">newwin</a></div><div class="ttdeci">NCURSES_SP_NAME() newwin(NCURSES_SP_DCLx int num_lines, int num_columns, int begy, int begx)</div><div class="ttdef"><b>Definition:</b> <a href="lib__newwin_8c_source.html#l00139">lib_newwin.c:139</a></div></div>
+<div class="ttc" id="alib__printw_8c_html_a32452367ae7de3f83f02cf08f245d21c"><div class="ttname"><a href="lib__printw_8c.html#a32452367ae7de3f83f02cf08f245d21c">wprintw</a></div><div class="ttdeci">wprintw(WINDOW *win, const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="lib__printw_8c_source.html#l00067">lib_printw.c:67</a></div></div>
+<div class="ttc" id="alib__printw_8c_html_aa732ca61f7e6b4d4c54ade67b388bbfd"><div class="ttname"><a href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a></div><div class="ttdeci">mvwprintw(WINDOW *win, int y, int x, const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="lib__printw_8c_source.html#l00111">lib_printw.c:111</a></div></div>
+<div class="ttc" id="alib__refresh_8c_html_ae612fb9d9b8a757492cf3b78f0d4f50f"><div class="ttname"><a href="lib__refresh_8c.html#ae612fb9d9b8a757492cf3b78f0d4f50f">wrefresh</a></div><div class="ttdeci">wrefresh(WINDOW *win)</div><div class="ttdef"><b>Definition:</b> <a href="lib__refresh_8c_source.html#l00049">lib_refresh.c:49</a></div></div>
+<div class="ttc" id="am__driver_8c_html_a64bbdb0ae67cfd3f349a29105d13ab13"><div class="ttname"><a href="m__driver_8c.html#a64bbdb0ae67cfd3f349a29105d13ab13">menu_driver</a></div><div class="ttdeci">menu_driver(MENU *menu, int c)</div><div class="ttdef"><b>Definition:</b> <a href="m__driver_8c_source.html#l00213">m_driver.c:213</a></div></div>
+<div class="ttc" id="am__item__cur_8c_html_a28d2708f6efb7f63cd4e1885db42f396"><div class="ttname"><a href="m__item__cur_8c.html#a28d2708f6efb7f63cd4e1885db42f396">item_index</a></div><div class="ttdeci">item_index(const ITEM *item)</div><div class="ttdef"><b>Definition:</b> <a href="m__item__cur_8c_source.html#l00108">m_item_cur.c:108</a></div></div>
+<div class="ttc" id="am__item__cur_8c_html_aa416dc34374eeb599ac50a894e91552c"><div class="ttname"><a href="m__item__cur_8c.html#aa416dc34374eeb599ac50a894e91552c">set_current_item</a></div><div class="ttdeci">set_current_item(MENU *menu, ITEM *item)</div><div class="ttdef"><b>Definition:</b> <a href="m__item__cur_8c_source.html#l00052">m_item_cur.c:52</a></div></div>
+<div class="ttc" id="am__item__cur_8c_html_aec26c84285802a5837630f1d79bc8567"><div class="ttname"><a href="m__item__cur_8c.html#aec26c84285802a5837630f1d79bc8567">current_item</a></div><div class="ttdeci">current_item(const MENU *menu)</div><div class="ttdef"><b>Definition:</b> <a href="m__item__cur_8c_source.html#l00093">m_item_cur.c:93</a></div></div>
+<div class="ttc" id="am__item__nam_8c_html_a86055cd2fcfd880d85c9c704cd493a20"><div class="ttname"><a href="m__item__nam_8c.html#a86055cd2fcfd880d85c9c704cd493a20">item_name</a></div><div class="ttdeci">item_name(const ITEM *item)</div><div class="ttdef"><b>Definition:</b> <a href="m__item__nam_8c_source.html#l00052">m_item_nam.c:52</a></div></div>
+<div class="ttc" id="amenuDipity_8cpp_html_a4b2b10e5786fcbe1575da3ed5893c1f7"><div class="ttname"><a href="menuDipity_8cpp.html#a4b2b10e5786fcbe1575da3ed5893c1f7">endWindow</a></div><div class="ttdeci">void endWindow(WINDOW *&amp;mainWindow)</div><div class="ttdoc">Safely kill the window.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00261">menuDipity.cpp:261</a></div></div>
+<div class="ttc" id="amenuDipity_8cpp_html_a605c5257dc24aab4ef869164de121d5b"><div class="ttname"><a href="menuDipity_8cpp.html#a605c5257dc24aab4ef869164de121d5b">refreshWindow</a></div><div class="ttdeci">void refreshWindow(MENU *&amp;mainMenu, WINDOW *&amp;mainWindow, WINDOW *&amp;notification, const MenuLines &amp;mainMenuInfo)</div><div class="ttdoc">Recalculate the window, but keep the menu the same.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00271">menuDipity.cpp:271</a></div></div>
+<div class="ttc" id="amenuDipity_8cpp_html_aa97131051248907bd151577849b30fb7"><div class="ttname"><a href="menuDipity_8cpp.html#aa97131051248907bd151577849b30fb7">deleteMenu</a></div><div class="ttdeci">void deleteMenu(MENU *&amp;mainMenu, ITEM **&amp;items, size_t menuLineSize)</div><div class="ttdoc">Safely kill menu &amp; menu items.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00231">menuDipity.cpp:231</a></div></div>
+<div class="ttc" id="amenuDipity_8cpp_html_ad42ebdb9d84d8ef7cd1cfd8eff824a64"><div class="ttname"><a href="menuDipity_8cpp.html#ad42ebdb9d84d8ef7cd1cfd8eff824a64">createMenu</a></div><div class="ttdeci">void createMenu(MENU *&amp;mainMenu, WINDOW *mainWindow, const MenuLines &amp;mainMenuInfo, ITEM **&amp;items)</div><div class="ttdoc">Create menu &amp; menu items.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00171">menuDipity.cpp:171</a></div></div>
+<div class="ttc" id="amenuDipity_8cpp_html_ae7fa97802caf4dbaf3d16339f1f977ca"><div class="ttname"><a href="menuDipity_8cpp.html#ae7fa97802caf4dbaf3d16339f1f977ca">startWindow</a></div><div class="ttdeci">void startWindow(WINDOW *&amp;mainWindow)</div><div class="ttdoc">Start window with default esettings.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00246">menuDipity.cpp:246</a></div></div>
 <div class="ttc" id="astructMenuLines_html_a0af95e4dcce7da30088989156d66ffaf"><div class="ttname"><a href="structMenuLines.html#a0af95e4dcce7da30088989156d66ffaf">MenuLines::storeName</a></div><div class="ttdeci">std::string storeName</div><div class="ttdoc">Name of Store.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8h_source.html#l00019">menuDipity.h:19</a></div></div>
 <div class="ttc" id="astructMenuLines_html_a4a30d31a41fa0757a8c1173384e81721"><div class="ttname"><a href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">MenuLines::menuName</a></div><div class="ttdeci">std::string menuName</div><div class="ttdoc">Menu Name.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8h_source.html#l00016">menuDipity.h:16</a></div></div>
+<div class="ttc" id="astruct__win__st_html"><div class="ttname"><a href="struct__win__st.html">_win_st</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2curses_8h_source.html#l00491">include/ncurses/curses.h:492</a></div></div>
+<div class="ttc" id="astructtagMENU_html"><div class="ttname"><a href="structtagMENU.html">tagMENU</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2menu_8h_source.html#l00112">include/ncurses/menu.h:114</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -599,27 +652,27 @@ OUTPUTS-
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void refreshWindow </td>
+          <td class="memname"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a> refreshWindow </td>
           <td>(</td>
-          <td class="paramtype">MENU *&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2menu_8h.html#a4d43d5efc74fa9d26f2c04e9d796d08f">MENU</a> *&amp;&#160;</td>
           <td class="paramname"><em>mainMenu</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">WINDOW *&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2curses_8h.html#aa64cc90e7a4df667d6c7249b77890d39">WINDOW</a> *&amp;&#160;</td>
           <td class="paramname"><em>mainWindow</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">WINDOW *&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2curses_8h.html#aa64cc90e7a4df667d6c7249b77890d39">WINDOW</a> *&amp;&#160;</td>
           <td class="paramname"><em>notification</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structMenuLines.html">MenuLines</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> <a class="el" href="structMenuLines.html">MenuLines</a> &amp;&#160;</td>
           <td class="paramname"><em>mainMenuInfo</em>&#160;</td>
         </tr>
         <tr>
@@ -632,42 +685,42 @@ OUTPUTS-
 
 <p>Recalculate the window, but keep the menu the same. </p>
 
-<p class="definition">Definition at line <a class="el" href="menuDipity_8cpp_source.html#l00261">261</a> of file <a class="el" href="menuDipity_8cpp_source.html">menuDipity.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  262</span>                                                              {</div>
-<div class="line"><span class="lineno">  263</span>    <span class="keywordtype">size_t</span> menuLineSize;        <span class="comment">//INPUT- Size of menu lines for alignment</span></div>
-<div class="line"><span class="lineno">  264</span>    <span class="keywordtype">size_t</span> cols;            <span class="comment">//INPUT- Column count of inner window</span></div>
-<div class="line"><span class="lineno">  265</span> </div>
-<div class="line"><span class="lineno">  266</span>    <span class="comment">//Initialize menuLineSize</span></div>
-<div class="line"><span class="lineno">  267</span>    menuLineSize = mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a>.size();</div>
-<div class="line"><span class="lineno">  268</span> </div>
-<div class="line"><span class="lineno">  269</span>    <span class="comment">//Get rid of the window before restarting it</span></div>
-<div class="line"><span class="lineno">  270</span>    unpost_menu(mainMenu);</div>
-<div class="line"><span class="lineno">  271</span>    <a class="code hl_function" href="menuDipity_8cpp.html#a4b2b10e5786fcbe1575da3ed5893c1f7">endWindow</a>(mainWindow);</div>
-<div class="line"><span class="lineno">  272</span>    wclear(notification);</div>
-<div class="line"><span class="lineno">  273</span>    delwin(notification);</div>
-<div class="line"><span class="lineno">  274</span>    refresh();          <span class="comment">//Load bearing refresh</span></div>
+<p class="definition">Definition at line <a class="el" href="menuDipity_8cpp_source.html#l00271">271</a> of file <a class="el" href="menuDipity_8cpp_source.html">menuDipity.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  272</span>                                                              {</div>
+<div class="line"><span class="lineno">  273</span>    <span class="keywordtype">size_t</span> menuLineSize;        <span class="comment">//INPUT- Size of menu lines for alignment</span></div>
+<div class="line"><span class="lineno">  274</span>    <span class="keywordtype">size_t</span> cols;            <span class="comment">//INPUT- Column count of inner window</span></div>
 <div class="line"><span class="lineno">  275</span> </div>
-<div class="line"><span class="lineno">  276</span>    <span class="comment">//Start a new window: put the menu in it, draw old data to it</span></div>
-<div class="line"><span class="lineno">  277</span>    notification = newwin(1, 3 * COLS / 5, 9 * LINES / 10, COLS / 5);</div>
-<div class="line"><span class="lineno">  278</span>    <a class="code hl_function" href="menuDipity_8cpp.html#ae7fa97802caf4dbaf3d16339f1f977ca">startWindow</a>(mainWindow);</div>
-<div class="line"><span class="lineno">  279</span>    cols = getmaxx(mainWindow);</div>
-<div class="line"><span class="lineno">  280</span>    set_menu_win(mainMenu, mainWindow);</div>
-<div class="line"><span class="lineno">  281</span>    set_menu_sub(mainMenu,</div>
-<div class="line"><span class="lineno">  282</span>            derwin(mainWindow, menuLineSize,</div>
-<div class="line"><span class="lineno">  283</span>                    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a15b8a52d1b8c366a0af2f56761c411c6">longestMenuLength</a>, 4,</div>
-<div class="line"><span class="lineno">  284</span>                    (cols - mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a15b8a52d1b8c366a0af2f56761c411c6">longestMenuLength</a>) / 2));</div>
-<div class="line"><span class="lineno">  285</span>    box(mainWindow, 0, 0);</div>
-<div class="line"><span class="lineno">  286</span>    mvwprintw(mainWindow, 1,</div>
-<div class="line"><span class="lineno">  287</span>            ((getmaxx(mainWindow) - mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a0af95e4dcce7da30088989156d66ffaf">storeName</a>.length()) / 2),</div>
-<div class="line"><span class="lineno">  288</span>            mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a0af95e4dcce7da30088989156d66ffaf">storeName</a>.c_str());</div>
-<div class="line"><span class="lineno">  289</span>    mvwprintw(mainWindow, 2,</div>
-<div class="line"><span class="lineno">  290</span>            ((getmaxx(mainWindow) - mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">menuName</a>.length()) / 2),</div>
-<div class="line"><span class="lineno">  291</span>            mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">menuName</a>.c_str());</div>
-<div class="line"><span class="lineno">  292</span>    post_menu(mainMenu);</div>
-<div class="line"><span class="lineno">  293</span>    mvwprintw(mainWindow, getmaxy(mainWindow) - 2,</div>
-<div class="line"><span class="lineno">  294</span>            (getmaxx(mainWindow) - 38) / 2,</div>
-<div class="line"><span class="lineno">  295</span>            <span class="stringliteral">&quot;Select [1-%d] or navigate to module...&quot;</span>, menuLineSize);</div>
-<div class="line"><span class="lineno">  296</span>}</div>
+<div class="line"><span class="lineno">  276</span>    <span class="comment">//Initialize menuLineSize</span></div>
+<div class="line"><span class="lineno">  277</span>    menuLineSize = mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a>.size();</div>
+<div class="line"><span class="lineno">  278</span> </div>
+<div class="line"><span class="lineno">  279</span>    <span class="comment">//Get rid of the window before restarting it</span></div>
+<div class="line"><span class="lineno">  280</span>    <a class="code hl_function" href="m__post_8c.html#a6628aafa24ddc5df5ed560b51d80c222">unpost_menu</a>(mainMenu);</div>
+<div class="line"><span class="lineno">  281</span>    <a class="code hl_function" href="menuDipity_8cpp.html#a4b2b10e5786fcbe1575da3ed5893c1f7">endWindow</a>(mainWindow);</div>
+<div class="line"><span class="lineno">  282</span>    <a class="code hl_function" href="lib__clear_8c.html#ac4e0e71291aa948012aea0fad2ff57e5">wclear</a>(notification);</div>
+<div class="line"><span class="lineno">  283</span>    <a class="code hl_function" href="lib__delwin_8c.html#afdc5e9dacc5587a4c47333d0e040ffe7">delwin</a>(notification);</div>
+<div class="line"><span class="lineno">  284</span>    <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a79af28443525d4cccad45d58d60911ad">refresh</a>();          <span class="comment">//Load bearing refresh</span></div>
+<div class="line"><span class="lineno">  285</span> </div>
+<div class="line"><span class="lineno">  286</span>    <span class="comment">//Start a new window: put the menu in it, draw old data to it</span></div>
+<div class="line"><span class="lineno">  287</span>    notification = <a class="code hl_function" href="lib__newwin_8c.html#ae036daec0c3e1eb2d84df98afcbae4ee">newwin</a>(1, 3 * COLS / 5, 9 * LINES / 10, COLS / 5);</div>
+<div class="line"><span class="lineno">  288</span>    <a class="code hl_function" href="menuDipity_8cpp.html#ae7fa97802caf4dbaf3d16339f1f977ca">startWindow</a>(mainWindow);</div>
+<div class="line"><span class="lineno">  289</span>    cols = <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(mainWindow);</div>
+<div class="line"><span class="lineno">  290</span>    <a class="code hl_function" href="m__win_8c.html#a62be5bdd852b1917b7e76ca843d8f2fa">set_menu_win</a>(mainMenu, mainWindow);</div>
+<div class="line"><span class="lineno">  291</span>    <a class="code hl_function" href="m__sub_8c.html#af237706f2ad79e553fb6d1549cb2b391">set_menu_sub</a>(mainMenu,</div>
+<div class="line"><span class="lineno">  292</span>            <a class="code hl_function" href="lib__newwin_8c.html#ac46deef3b21d35f9fcc92df0c6a3438b">derwin</a>(mainWindow, menuLineSize,</div>
+<div class="line"><span class="lineno">  293</span>                    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a15b8a52d1b8c366a0af2f56761c411c6">longestMenuLength</a>, 4,</div>
+<div class="line"><span class="lineno">  294</span>                    (cols - mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a15b8a52d1b8c366a0af2f56761c411c6">longestMenuLength</a>) / 2));</div>
+<div class="line"><span class="lineno">  295</span>    <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a69402876ce6099a41bc3a3ce2b5690de">box</a>(mainWindow, 0, 0);</div>
+<div class="line"><span class="lineno">  296</span>    <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(mainWindow, 1,</div>
+<div class="line"><span class="lineno">  297</span>            ((<a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(mainWindow) - mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a0af95e4dcce7da30088989156d66ffaf">storeName</a>.length()) / 2),</div>
+<div class="line"><span class="lineno">  298</span>            mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a0af95e4dcce7da30088989156d66ffaf">storeName</a>.c_str());</div>
+<div class="line"><span class="lineno">  299</span>    <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(mainWindow, 2,</div>
+<div class="line"><span class="lineno">  300</span>            ((<a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(mainWindow) - mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">menuName</a>.length()) / 2),</div>
+<div class="line"><span class="lineno">  301</span>            mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">menuName</a>.c_str());</div>
+<div class="line"><span class="lineno">  302</span>    <a class="code hl_function" href="m__post_8c.html#ae52447ff63bebef88885956896f80479">post_menu</a>(mainMenu);</div>
+<div class="line"><span class="lineno">  303</span>    <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(mainWindow, <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a02249c5271d4d349a93f545ed2e846c8">getmaxy</a>(mainWindow) - 2,</div>
+<div class="line"><span class="lineno">  304</span>            (<a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(mainWindow) - 38) / 2,</div>
+<div class="line"><span class="lineno">  305</span>            <span class="stringliteral">&quot;Select [1-%d] or navigate to module...&quot;</span>, menuLineSize);</div>
+<div class="line"><span class="lineno">  306</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -678,27 +731,27 @@ OUTPUTS-
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void refreshWindowMiddleSplit </td>
+          <td class="memname"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a> refreshWindowMiddleSplit </td>
           <td>(</td>
-          <td class="paramtype">MENU *&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2menu_8h.html#a4d43d5efc74fa9d26f2c04e9d796d08f">MENU</a> *&amp;&#160;</td>
           <td class="paramname"><em>mainMenu</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">WINDOW *&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2curses_8h.html#aa64cc90e7a4df667d6c7249b77890d39">WINDOW</a> *&amp;&#160;</td>
           <td class="paramname"><em>mainWindow</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">WINDOW *&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2curses_8h.html#aa64cc90e7a4df667d6c7249b77890d39">WINDOW</a> *&amp;&#160;</td>
           <td class="paramname"><em>notification</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structMenuLines.html">MenuLines</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> <a class="el" href="structMenuLines.html">MenuLines</a> &amp;&#160;</td>
           <td class="paramname"><em>mainMenuInfo</em>&#160;</td>
         </tr>
         <tr>
@@ -710,42 +763,42 @@ OUTPUTS-
 </div><div class="memdoc">
 <p>Recalculate the window WITH a middle split, but keep the menu the same. Refer to refreshWindow for original implementation </p>
 
-<p class="definition">Definition at line <a class="el" href="menuDipity_8cpp_source.html#l00301">301</a> of file <a class="el" href="menuDipity_8cpp_source.html">menuDipity.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  302</span>                                                              {</div>
-<div class="line"><span class="lineno">  303</span>    <span class="keywordtype">size_t</span> menuLineSize;        <span class="comment">//INPUT- Size of menu lines for alignment</span></div>
-<div class="line"><span class="lineno">  304</span>    <span class="keywordtype">size_t</span> cols;            <span class="comment">//INPUT- Column count of inner window</span></div>
-<div class="line"><span class="lineno">  305</span> </div>
-<div class="line"><span class="lineno">  306</span>    <span class="comment">//Initialize menuLineSize</span></div>
-<div class="line"><span class="lineno">  307</span>    menuLineSize = mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a>.size();</div>
-<div class="line"><span class="lineno">  308</span> </div>
-<div class="line"><span class="lineno">  309</span>    <span class="comment">//Get rid of the window before restarting it</span></div>
-<div class="line"><span class="lineno">  310</span>    unpost_menu(mainMenu);</div>
-<div class="line"><span class="lineno">  311</span>    <a class="code hl_function" href="menuDipity_8cpp.html#a4b2b10e5786fcbe1575da3ed5893c1f7">endWindow</a>(mainWindow);</div>
-<div class="line"><span class="lineno">  312</span>    wclear(notification);</div>
-<div class="line"><span class="lineno">  313</span>    delwin(notification);</div>
-<div class="line"><span class="lineno">  314</span>    refresh();          <span class="comment">//Load bearing refresh</span></div>
+<p class="definition">Definition at line <a class="el" href="menuDipity_8cpp_source.html#l00311">311</a> of file <a class="el" href="menuDipity_8cpp_source.html">menuDipity.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  312</span>                                                              {</div>
+<div class="line"><span class="lineno">  313</span>    <span class="keywordtype">size_t</span> menuLineSize;        <span class="comment">//INPUT- Size of menu lines for alignment</span></div>
+<div class="line"><span class="lineno">  314</span>    <span class="keywordtype">size_t</span> cols;            <span class="comment">//INPUT- Column count of inner window</span></div>
 <div class="line"><span class="lineno">  315</span> </div>
-<div class="line"><span class="lineno">  316</span>    <span class="comment">//Start a new window: put the menu in it, draw old data to it</span></div>
-<div class="line"><span class="lineno">  317</span>    notification = newwin(1, 3 * COLS / 5, 9 * LINES / 10, COLS / 5);</div>
-<div class="line"><span class="lineno">  318</span>    <a class="code hl_function" href="menuDipity_8cpp.html#ae7fa97802caf4dbaf3d16339f1f977ca">startWindow</a>(mainWindow);</div>
-<div class="line"><span class="lineno">  319</span>    box(mainWindow, 0, 0);</div>
-<div class="line"><span class="lineno">  320</span>    cols = getmaxx(mainWindow);</div>
-<div class="line"><span class="lineno">  321</span>    set_menu_win(mainMenu, mainWindow);</div>
-<div class="line"><span class="lineno">  322</span>    set_menu_sub(mainMenu,</div>
-<div class="line"><span class="lineno">  323</span>            derwin(mainWindow, menuLineSize,</div>
-<div class="line"><span class="lineno">  324</span>                    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a15b8a52d1b8c366a0af2f56761c411c6">longestMenuLength</a>, 4,</div>
-<div class="line"><span class="lineno">  325</span>                    1));</div>
-<div class="line"><span class="lineno">  326</span>    mvwprintw(mainWindow, 1,</div>
-<div class="line"><span class="lineno">  327</span>            ((getmaxx(mainWindow) - mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a0af95e4dcce7da30088989156d66ffaf">storeName</a>.length()) / 2),</div>
-<div class="line"><span class="lineno">  328</span>            mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a0af95e4dcce7da30088989156d66ffaf">storeName</a>.c_str());</div>
-<div class="line"><span class="lineno">  329</span>    mvwprintw(mainWindow, 2,</div>
-<div class="line"><span class="lineno">  330</span>            ((getmaxx(mainWindow) - mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">menuName</a>.length()) / 2),</div>
-<div class="line"><span class="lineno">  331</span>            mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">menuName</a>.c_str());</div>
-<div class="line"><span class="lineno">  332</span>    post_menu(mainMenu);</div>
-<div class="line"><span class="lineno">  333</span>    mvwprintw(mainWindow, getmaxy(mainWindow) - 2,</div>
-<div class="line"><span class="lineno">  334</span>            (getmaxx(mainWindow) - 38) / 2,</div>
-<div class="line"><span class="lineno">  335</span>            <span class="stringliteral">&quot;Select [1-%d] or navigate to module...&quot;</span>, menuLineSize);</div>
-<div class="line"><span class="lineno">  336</span>}</div>
+<div class="line"><span class="lineno">  316</span>    <span class="comment">//Initialize menuLineSize</span></div>
+<div class="line"><span class="lineno">  317</span>    menuLineSize = mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a>.size();</div>
+<div class="line"><span class="lineno">  318</span> </div>
+<div class="line"><span class="lineno">  319</span>    <span class="comment">//Get rid of the window before restarting it</span></div>
+<div class="line"><span class="lineno">  320</span>    <a class="code hl_function" href="m__post_8c.html#a6628aafa24ddc5df5ed560b51d80c222">unpost_menu</a>(mainMenu);</div>
+<div class="line"><span class="lineno">  321</span>    <a class="code hl_function" href="menuDipity_8cpp.html#a4b2b10e5786fcbe1575da3ed5893c1f7">endWindow</a>(mainWindow);</div>
+<div class="line"><span class="lineno">  322</span>    <a class="code hl_function" href="lib__clear_8c.html#ac4e0e71291aa948012aea0fad2ff57e5">wclear</a>(notification);</div>
+<div class="line"><span class="lineno">  323</span>    <a class="code hl_function" href="lib__delwin_8c.html#afdc5e9dacc5587a4c47333d0e040ffe7">delwin</a>(notification);</div>
+<div class="line"><span class="lineno">  324</span>    <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a79af28443525d4cccad45d58d60911ad">refresh</a>();          <span class="comment">//Load bearing refresh</span></div>
+<div class="line"><span class="lineno">  325</span> </div>
+<div class="line"><span class="lineno">  326</span>    <span class="comment">//Start a new window: put the menu in it, draw old data to it</span></div>
+<div class="line"><span class="lineno">  327</span>    notification = <a class="code hl_function" href="lib__newwin_8c.html#ae036daec0c3e1eb2d84df98afcbae4ee">newwin</a>(1, 3 * COLS / 5, 9 * LINES / 10, COLS / 5);</div>
+<div class="line"><span class="lineno">  328</span>    <a class="code hl_function" href="menuDipity_8cpp.html#ae7fa97802caf4dbaf3d16339f1f977ca">startWindow</a>(mainWindow);</div>
+<div class="line"><span class="lineno">  329</span>    <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a69402876ce6099a41bc3a3ce2b5690de">box</a>(mainWindow, 0, 0);</div>
+<div class="line"><span class="lineno">  330</span>    cols = <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(mainWindow);</div>
+<div class="line"><span class="lineno">  331</span>    <a class="code hl_function" href="m__win_8c.html#a62be5bdd852b1917b7e76ca843d8f2fa">set_menu_win</a>(mainMenu, mainWindow);</div>
+<div class="line"><span class="lineno">  332</span>    <a class="code hl_function" href="m__sub_8c.html#af237706f2ad79e553fb6d1549cb2b391">set_menu_sub</a>(mainMenu,</div>
+<div class="line"><span class="lineno">  333</span>            <a class="code hl_function" href="lib__newwin_8c.html#ac46deef3b21d35f9fcc92df0c6a3438b">derwin</a>(mainWindow, menuLineSize,</div>
+<div class="line"><span class="lineno">  334</span>                    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a15b8a52d1b8c366a0af2f56761c411c6">longestMenuLength</a>, 4,</div>
+<div class="line"><span class="lineno">  335</span>                    1));</div>
+<div class="line"><span class="lineno">  336</span>    <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(mainWindow, 1,</div>
+<div class="line"><span class="lineno">  337</span>            ((<a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(mainWindow) - mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a0af95e4dcce7da30088989156d66ffaf">storeName</a>.length()) / 2),</div>
+<div class="line"><span class="lineno">  338</span>            mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a0af95e4dcce7da30088989156d66ffaf">storeName</a>.c_str());</div>
+<div class="line"><span class="lineno">  339</span>    <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(mainWindow, 2,</div>
+<div class="line"><span class="lineno">  340</span>            ((<a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(mainWindow) - mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">menuName</a>.length()) / 2),</div>
+<div class="line"><span class="lineno">  341</span>            mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">menuName</a>.c_str());</div>
+<div class="line"><span class="lineno">  342</span>    <a class="code hl_function" href="m__post_8c.html#ae52447ff63bebef88885956896f80479">post_menu</a>(mainMenu);</div>
+<div class="line"><span class="lineno">  343</span>    <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(mainWindow, <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a02249c5271d4d349a93f545ed2e846c8">getmaxy</a>(mainWindow) - 2,</div>
+<div class="line"><span class="lineno">  344</span>            (<a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(mainWindow) - 38) / 2,</div>
+<div class="line"><span class="lineno">  345</span>            <span class="stringliteral">&quot;Select [1-%d] or navigate to module...&quot;</span>, menuLineSize);</div>
+<div class="line"><span class="lineno">  346</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -756,9 +809,9 @@ OUTPUTS-
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void startWindow </td>
+          <td class="memname"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a> startWindow </td>
           <td>(</td>
-          <td class="paramtype">WINDOW *&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2curses_8h.html#aa64cc90e7a4df667d6c7249b77890d39">WINDOW</a> *&amp;&#160;</td>
           <td class="paramname"><em>mainWindow</em></td><td>)</td>
           <td></td>
         </tr>
@@ -767,20 +820,25 @@ OUTPUTS-
 
 <p>Start window with default esettings. </p>
 
-<p class="definition">Definition at line <a class="el" href="menuDipity_8cpp_source.html#l00237">237</a> of file <a class="el" href="menuDipity_8cpp_source.html">menuDipity.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  237</span>                                      {</div>
-<div class="line"><span class="lineno">  238</span>    <span class="comment">//Initialize screen and add settings</span></div>
-<div class="line"><span class="lineno">  239</span>    initscr();</div>
-<div class="line"><span class="lineno">  240</span>    raw();</div>
-<div class="line"><span class="lineno">  241</span>    noecho();</div>
-<div class="line"><span class="lineno">  242</span>    curs_set(0);</div>
-<div class="line"><span class="lineno">  243</span> </div>
-<div class="line"><span class="lineno">  244</span>    <span class="comment">//Initialize main window and add settings</span></div>
-<div class="line"><span class="lineno">  245</span>    mainWindow = newwin((3 * LINES / 5), (3 * COLS / 5), (LINES / 5),</div>
-<div class="line"><span class="lineno">  246</span>            (COLS / 5));</div>
-<div class="line"><span class="lineno">  247</span>    keypad(mainWindow, TRUE);</div>
-<div class="line"><span class="lineno">  248</span>    clear();</div>
-<div class="line"><span class="lineno">  249</span>}</div>
+<p class="definition">Definition at line <a class="el" href="menuDipity_8cpp_source.html#l00246">246</a> of file <a class="el" href="menuDipity_8cpp_source.html">menuDipity.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  246</span>                                      {</div>
+<div class="line"><span class="lineno">  247</span>    <span class="comment">//Initialize screen and add settings</span></div>
+<div class="line"><span class="lineno">  248</span>    <span class="comment">//initscr();</span></div>
+<div class="line"><span class="lineno">  249</span>    <a class="code hl_function" href="lib__raw_8c.html#aec1785912625b14bf0c5956a2314db67">raw</a>();</div>
+<div class="line"><span class="lineno">  250</span>    <a class="code hl_function" href="lib__echo_8c.html#a403229fe31d28b7ca82f4ce9f200faf5">noecho</a>();</div>
+<div class="line"><span class="lineno">  251</span>    <a class="code hl_function" href="lib__options_8c.html#a2a5e3736710d619e619f43f7af3f1f42">curs_set</a>(0);</div>
+<div class="line"><span class="lineno">  252</span> </div>
+<div class="line"><span class="lineno">  253</span>    <span class="comment">//Initialize main window and add settings</span></div>
+<div class="line"><span class="lineno">  254</span>    mainWindow = <a class="code hl_function" href="lib__newwin_8c.html#ae036daec0c3e1eb2d84df98afcbae4ee">newwin</a>((3 * LINES / 5), (3 * COLS / 5), (LINES / 5),</div>
+<div class="line"><span class="lineno">  255</span>            (COLS / 5));</div>
+<div class="line"><span class="lineno">  256</span>    <a class="code hl_function" href="lib__options_8c.html#aa5acd0b59b12061b68c6c58051cc6662">keypad</a>(mainWindow, <a class="code hl_define" href="include_2ncurses_2curses_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>);</div>
+<div class="line"><span class="lineno">  257</span>    <a class="code hl_define" href="include_2ncurses_2curses_8h.html#aff606fb64ff89d5982673319bab86b19">clear</a>();</div>
+<div class="line"><span class="lineno">  258</span>}</div>
+<div class="ttc" id="ainclude_2ncurses_2curses_8h_html_aa8cecfc5c5c054d2875c03e77b7be15d"><div class="ttname"><a href="include_2ncurses_2curses_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></div><div class="ttdeci">#define TRUE</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2curses_8h_source.html#l00267">include/ncurses/curses.h:267</a></div></div>
+<div class="ttc" id="alib__echo_8c_html_a403229fe31d28b7ca82f4ce9f200faf5"><div class="ttname"><a href="lib__echo_8c.html#a403229fe31d28b7ca82f4ce9f200faf5">noecho</a></div><div class="ttdeci">NCURSES_SP_NAME() noecho(NCURSES_SP_DCL0)</div><div class="ttdef"><b>Definition:</b> <a href="lib__echo_8c_source.html#l00069">lib_echo.c:69</a></div></div>
+<div class="ttc" id="alib__options_8c_html_a2a5e3736710d619e619f43f7af3f1f42"><div class="ttname"><a href="lib__options_8c.html#a2a5e3736710d619e619f43f7af3f1f42">curs_set</a></div><div class="ttdeci">NCURSES_SP_NAME() curs_set(NCURSES_SP_DCLx int vis)</div><div class="ttdef"><b>Definition:</b> <a href="lib__options_8c_source.html#l00193">lib_options.c:193</a></div></div>
+<div class="ttc" id="alib__options_8c_html_aa5acd0b59b12061b68c6c58051cc6662"><div class="ttname"><a href="lib__options_8c.html#aa5acd0b59b12061b68c6c58051cc6662">keypad</a></div><div class="ttdeci">keypad(WINDOW *win, bool flag)</div><div class="ttdef"><b>Definition:</b> <a href="lib__options_8c_source.html#l00146">lib_options.c:146</a></div></div>
+<div class="ttc" id="alib__raw_8c_html_aec1785912625b14bf0c5956a2314db67"><div class="ttname"><a href="lib__raw_8c.html#aec1785912625b14bf0c5956a2314db67">raw</a></div><div class="ttdeci">NCURSES_SP_NAME() raw(NCURSES_SP_DCL0)</div><div class="ttdef"><b>Definition:</b> <a href="lib__raw_8c_source.html#l00082">lib_raw.c:82</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -797,7 +855,7 @@ OUTPUTS-
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="menuDipity_8cpp_source.html#l00038">38</a> of file <a class="el" href="menuDipity_8cpp_source.html">menuDipity.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="menuDipity_8cpp_source.html#l00039">39</a> of file <a class="el" href="menuDipity_8cpp_source.html">menuDipity.cpp</a>.</p>
 
 </div>
 </div>

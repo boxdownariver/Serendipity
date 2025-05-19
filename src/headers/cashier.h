@@ -4,14 +4,15 @@
 #ifndef invmenu
 #include "invmenu.h"
 #endif
+#include "linkedlist.hpp"
 
 // make an array of max size for shopping cart, parallel array with BookType class
 
-int mainCashier (BookType *books[]);
+int mainCashier (LinkedListType<BookType *>& books);
 char showCashierMenu (int cart[]);
-void addBook (BookType *books[], int index, int cart[] );
-void removeBook (BookType *books[], int index, int cart[]);
-void showCart (BookType *books[], int cart[]);
-void FormatReport ( BookType *books[], int cart[], string date);
+void addBook (LinkedListType<BookType *>& books, int index, int cart[] );
+void removeBook (LinkedListType<BookType *>& books, int index, int cart[]);
+void showCart (LinkedListType<BookType *>& books, int cart[]);
+void FormatReport ( LinkedListType<BookType *>& books, int cart[], string date);
 
 #endif

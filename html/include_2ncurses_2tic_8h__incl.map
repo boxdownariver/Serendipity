@@ -1,0 +1,11 @@
+<map id="tic.h" name="tic.h">
+<area shape="rect" id="node1" title=" " alt="" coords="218,5,264,32"/>
+<area shape="rect" id="node2" href="$ncurses__cfg_8h.html" title=" " alt="" coords="121,80,225,107"/>
+<area shape="rect" id="node4" href="$include_2ncurses_2curses_8h.html" title=" " alt="" coords="363,80,484,107"/>
+<area shape="rect" id="node3" href="$ncurses__def_8h.html" title=" " alt="" coords="5,155,109,181"/>
+<area shape="rect" id="node5" href="$include_2ncurses_2ncurses__dll_8h.html" title=" " alt="" coords="132,155,280,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="305,155,369,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="394,155,454,181"/>
+<area shape="rect" id="node8" title=" " alt="" coords="478,155,546,181"/>
+<area shape="rect" id="node9" href="$include_2ncurses_2unctrl_8h.html" title=" " alt="" coords="570,155,685,181"/>
+</map>

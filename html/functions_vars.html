@@ -16,6 +16,11 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -28,6 +33,18 @@
    <div id="projectname">Group 1 Serendipity Project
    </div>
   </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -39,17 +56,6 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -89,20 +95,158 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 </div>
 
 <div class="contents">
-&#160;<ul>
-<li>author&#160;:&#160;<a class="el" href="classBookType.html#a22649907037470da13c38f7bc9de4fdf">BookType</a></li>
-<li>bookCount&#160;:&#160;<a class="el" href="classBookType.html#ad19245d5b153ca8eb89cf07ae720ae8b">BookType</a></li>
-<li>bookTitle&#160;:&#160;<a class="el" href="classBookType.html#aa07b2adf58679e64d53ace4e3a089a7e">BookType</a></li>
-<li>dateAdded&#160;:&#160;<a class="el" href="classBookType.html#abb415630cf04610b537caacaf4300fd2">BookType</a></li>
-<li>isbn&#160;:&#160;<a class="el" href="classBookType.html#ac8c9d760a3bfc507db65330b1175cb32">BookType</a></li>
-<li>longestMenuLength&#160;:&#160;<a class="el" href="structMenuLines.html#a15b8a52d1b8c366a0af2f56761c411c6">MenuLines</a></li>
-<li>menuLines&#160;:&#160;<a class="el" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">MenuLines</a></li>
-<li>menuName&#160;:&#160;<a class="el" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">MenuLines</a></li>
-<li>publisher&#160;:&#160;<a class="el" href="classBookType.html#ac79aafce505dab215f898ef6de138fa8">BookType</a></li>
-<li>qtyOnHand&#160;:&#160;<a class="el" href="classBookType.html#a5ed3ab7a7b9932d912ebf73d23d111c5">BookType</a></li>
-<li>retail&#160;:&#160;<a class="el" href="classBookType.html#a865c993f2d1a82d53cb5f64a042d93e5">BookType</a></li>
-<li>storeName&#160;:&#160;<a class="el" href="structMenuLines.html#a0af95e4dcce7da30088989156d66ffaf">MenuLines</a></li>
-<li>wholesale&#160;:&#160;<a class="el" href="classBookType.html#a174ba396ffb39483a57e3bc077cd4f83">BookType</a></li>
+&#160;
+
+<h3><a id="index__5F" name="index__5F"></a>- _ -</h3><ul>
+<li>_acs_map&#160;:&#160;<a class="el" href="structscreen.html#a0304cb5935007bd733b008b1410592d6">screen</a></li>
+<li>_address_cursor&#160;:&#160;<a class="el" href="structscreen.html#a5f738e9f7649d812cb1f76fa59950f4a">screen</a></li>
+<li>_attrs&#160;:&#160;<a class="el" href="struct__win__st.html#a498435ff52e07f3771ebd51328fef61a">_win_st</a></li>
+<li>_baudrate&#160;:&#160;<a class="el" href="structterm.html#a19379d046dca4a4867f3e78c7fe1f140">term</a></li>
+<li>_begx&#160;:&#160;<a class="el" href="struct__win__st.html#a8b520ae9add8d858d79af7ca52546eae">_win_st</a></li>
+<li>_begy&#160;:&#160;<a class="el" href="struct__win__st.html#a78c5fa1fe70597de9791f677d9885248">_win_st</a></li>
+<li>_bkgd&#160;:&#160;<a class="el" href="struct__win__st.html#a79ad9bd482eb4ce3a3d952575db681ee">_win_st</a></li>
+<li>_called_wgetch&#160;:&#160;<a class="el" href="structscreen.html#a80b8c8d054d2021e92be62b3f286f386">screen</a></li>
+<li>_cbreak&#160;:&#160;<a class="el" href="structscreen.html#abebbf63cf8e003136ed94153cdb1124b">screen</a></li>
+<li>_char_padding&#160;:&#160;<a class="el" href="structscreen.html#a7cc8924c09e2105fa6c1a1d7a4b7782c">screen</a></li>
+<li>_checkfd&#160;:&#160;<a class="el" href="structscreen.html#a8e1f19e450b0d545e70542060b6b308b">screen</a></li>
+<li>_clear&#160;:&#160;<a class="el" href="struct__win__st.html#a2f3a1f909c73925b16c8be1df7554d5b">_win_st</a></li>
+<li>_color_count&#160;:&#160;<a class="el" href="structscreen.html#af5883644fe4ad215b83fe3f08a6b584d">screen</a></li>
+<li>_color_defs&#160;:&#160;<a class="el" href="structscreen.html#af3925034bc756323d22145534d1a1a03">screen</a></li>
+<li>_color_pairs&#160;:&#160;<a class="el" href="structscreen.html#a2ae9909f0f6f115332b15c5d17f84c5c">screen</a></li>
+<li>_color_table&#160;:&#160;<a class="el" href="structscreen.html#a8d84f430da346c8564437519372607bf">screen</a></li>
+<li>_coloron&#160;:&#160;<a class="el" href="structscreen.html#a0d9328b760aa3ec1848a5839b81c805c">screen</a></li>
+<li>_columns&#160;:&#160;<a class="el" href="structscreen.html#a62f70e1373b1c841f57e38d8b09e9d92">screen</a></li>
+<li>_cr_cost&#160;:&#160;<a class="el" href="structscreen.html#a4636f8376b2d87c88f276c6e622aa8f4">screen</a></li>
+<li>_cub1_cost&#160;:&#160;<a class="el" href="structscreen.html#aa1870f0a7f4b5d0d7ca6905f7248cf60">screen</a></li>
+<li>_cub_cost&#160;:&#160;<a class="el" href="structscreen.html#abdcf372b3b9d7368273ce4bf4f754636">screen</a></li>
+<li>_cud1_cost&#160;:&#160;<a class="el" href="structscreen.html#ab2c717009ec92a41326f662f73f705f5">screen</a></li>
+<li>_cud_cost&#160;:&#160;<a class="el" href="structscreen.html#aaf0b1b4a5652f981c0efcdf604e5eb9e">screen</a></li>
+<li>_cuf1_cost&#160;:&#160;<a class="el" href="structscreen.html#a48b91d632bf5bb2089f38ac6dba667f0">screen</a></li>
+<li>_cuf_ch_cost&#160;:&#160;<a class="el" href="structscreen.html#a636fb3a316fbcfeae0445a21b3803448">screen</a></li>
+<li>_cuf_cost&#160;:&#160;<a class="el" href="structscreen.html#a0912d53f13e00ea37b2a243f4c48e3f6">screen</a></li>
+<li>_cup_ch_cost&#160;:&#160;<a class="el" href="structscreen.html#a908bb4650ba3463c4dde34d84924792a">screen</a></li>
+<li>_cup_cost&#160;:&#160;<a class="el" href="structscreen.html#a53b3fe6383578daa928aee2e71e8cf44">screen</a></li>
+<li>_current_attr&#160;:&#160;<a class="el" href="structscreen.html#ac8bba49772e912af627be1064eac50a6">screen</a></li>
+<li>_curscol&#160;:&#160;<a class="el" href="structscreen.html#ab77752b181526e9d9afe948ae5fc3c37">screen</a></li>
+<li>_curscr&#160;:&#160;<a class="el" href="structscreen.html#aa89fe23a8c7bee0f95d97b7936ddba59">screen</a></li>
+<li>_cursor&#160;:&#160;<a class="el" href="structscreen.html#ab27c918a2eb6523ff1f73b5b9477a90f">screen</a></li>
+<li>_cursrow&#160;:&#160;<a class="el" href="structscreen.html#ad4e9c06403ae549f600e37d0689135a0">screen</a></li>
+<li>_curx&#160;:&#160;<a class="el" href="struct__win__st.html#a5f084bdc6524c347654d1c95b5760737">_win_st</a></li>
+<li>_cury&#160;:&#160;<a class="el" href="struct__win__st.html#ae23c4ffedcab3ae9f46a981e8fd13ca9">_win_st</a></li>
+<li>_cuu1_cost&#160;:&#160;<a class="el" href="structscreen.html#aec89a09de94b37e72323faef89c6049b">screen</a></li>
+<li>_cuu_cost&#160;:&#160;<a class="el" href="structscreen.html#aa494e0bca0f1bf03dc859d4ebbaeaf06">screen</a></li>
+<li>_dch1_cost&#160;:&#160;<a class="el" href="structscreen.html#a29fb3cfae180c816cf93a6bf84ff80e6">screen</a></li>
+<li>_dch_cost&#160;:&#160;<a class="el" href="structscreen.html#ae4aac896755617236c1a60d990f146af">screen</a></li>
+<li>_delay&#160;:&#160;<a class="el" href="struct__win__st.html#af4a3fba34fa1e899f3e67ec1c258179c">_win_st</a></li>
+<li>_direct_color&#160;:&#160;<a class="el" href="structscreen.html#ac02be1c576e79b14614a28eb72635c72">screen</a></li>
+<li>_ech_cost&#160;:&#160;<a class="el" href="structscreen.html#a36bbde4fcf3d657c58736b5796a0906d">screen</a></li>
+<li>_echo&#160;:&#160;<a class="el" href="structscreen.html#adaf7ccac00273bbd6a17cf5ba44810c8">screen</a></li>
+<li>_ed_cost&#160;:&#160;<a class="el" href="structscreen.html#af810f72fa5b7d29af05b5cfb32604663">screen</a></li>
+<li>_el1_cost&#160;:&#160;<a class="el" href="structscreen.html#a10d218d23ecc4a151ba42f40ac48c652">screen</a></li>
+<li>_el_cost&#160;:&#160;<a class="el" href="structscreen.html#ad73224086f042e0f2fb22013a8e7bc2f">screen</a></li>
+<li>_endwin&#160;:&#160;<a class="el" href="structscreen.html#a3a9cfc64e129ad5729789290f73584e8">screen</a></li>
+<li>_fifo&#160;:&#160;<a class="el" href="structscreen.html#ac08705c6eaeed932efd49cae5ac51407">screen</a></li>
+<li>_fifohead&#160;:&#160;<a class="el" href="structscreen.html#afcb025c47ae5562c93230f58e695eec8">screen</a></li>
+<li>_fifohold&#160;:&#160;<a class="el" href="structscreen.html#ab488d2983dd63c44bad96f40b927d3f6">screen</a></li>
+<li>_fifopeek&#160;:&#160;<a class="el" href="structscreen.html#a5567e471071d376926b712fec28ee86c">screen</a></li>
+<li>_fifotail&#160;:&#160;<a class="el" href="structscreen.html#a21cbafc2f83fedc19c1026f91cd3ccb8">screen</a></li>
+<li>_filtered&#160;:&#160;<a class="el" href="structscreen.html#a1d7a73abb413ab29e337a6599cd495b5">screen</a></li>
+<li>_flags&#160;:&#160;<a class="el" href="struct__win__st.html#ab7b1c8bcaea02e10a5589c29344d0007">_win_st</a></li>
+<li>_home_cost&#160;:&#160;<a class="el" href="structscreen.html#aacc9c23f78b56b0c9ad2005156a9bd13">screen</a></li>
+<li>_hpa_ch_cost&#160;:&#160;<a class="el" href="structscreen.html#a9f0f4e4d2f3029d294a796cdbbd91925">screen</a></li>
+<li>_hpa_cost&#160;:&#160;<a class="el" href="structscreen.html#a5512278a1264242a3704834038004aa8">screen</a></li>
+<li>_ich1_cost&#160;:&#160;<a class="el" href="structscreen.html#a285878fb0588634b8f3f6c5819e391e3">screen</a></li>
+<li>_ich_cost&#160;:&#160;<a class="el" href="structscreen.html#af1dc89adcff9b98f5113e55aa0174b2f">screen</a></li>
+<li>_idcok&#160;:&#160;<a class="el" href="struct__win__st.html#ad8d218de9515c05248ee0e6aa33d6e31">_win_st</a></li>
+<li>_idlok&#160;:&#160;<a class="el" href="struct__win__st.html#a8809cbdfb6be5e5fce503acfe2b8c1c5">_win_st</a></li>
+<li>_ifd&#160;:&#160;<a class="el" href="structscreen.html#a4791ead31bf7c67b878a7cb8372560bf">screen</a></li>
+<li>_immed&#160;:&#160;<a class="el" href="struct__win__st.html#a4b29eeca06dc132fcfeeb5cff2f8fcdc">_win_st</a></li>
+<li>_inline_cost&#160;:&#160;<a class="el" href="structscreen.html#a0bb9dcdfe387db2d7c494f03a467aa8b">screen</a></li>
+<li>_ip_cost&#160;:&#160;<a class="el" href="structscreen.html#a2bd2d92f90393691fbc94f3f637c89ed">screen</a></li>
+<li>_key_ok&#160;:&#160;<a class="el" href="structscreen.html#a0247571cbe76283d8a7afa3958a5c3a0">screen</a></li>
+<li>_keypad_on&#160;:&#160;<a class="el" href="structscreen.html#acdede6e1f4e9e3f59189a553c8f25dd0">screen</a></li>
+<li>_keytry&#160;:&#160;<a class="el" href="structscreen.html#a51df3b371db89025db43f83719930cab">screen</a></li>
+<li>_leaveok&#160;:&#160;<a class="el" href="struct__win__st.html#a49dc49a62c6699ad480c69b77137e598">_win_st</a></li>
+<li>_legacy_coding&#160;:&#160;<a class="el" href="structscreen.html#aaa5341194e597bfe9db176184883304c">screen</a></li>
+<li>_line&#160;:&#160;<a class="el" href="struct__win__st.html#a9c211a254ceb8e0120e37f0eee68bbb5">_win_st</a></li>
+<li>_lines&#160;:&#160;<a class="el" href="structscreen.html#ae5ffcd55c09b5c90f351c2c736a51eef">screen</a></li>
+<li>_lines_avail&#160;:&#160;<a class="el" href="structscreen.html#a31812f0717b4b6fa79b4273ceee21e4e">screen</a></li>
+<li>_ll_cost&#160;:&#160;<a class="el" href="structscreen.html#afc87093de4a7ba0086851695d7f5c2cb">screen</a></li>
+<li>_maxclick&#160;:&#160;<a class="el" href="structscreen.html#a9f6cd1b52860c3386335f780ecf8ce5b">screen</a></li>
+<li>_maxx&#160;:&#160;<a class="el" href="struct__win__st.html#a7bbf1b1b8ed95172f8e4a699c08d69d1">_win_st</a></li>
+<li>_maxy&#160;:&#160;<a class="el" href="struct__win__st.html#afa87ea93e21b42d2f5f56f7891dabeb2">_win_st</a></li>
+<li>_mouse_active&#160;:&#160;<a class="el" href="structscreen.html#a156c3f480cf678088d6de82fed62cf91">screen</a></li>
+<li>_mouse_bstate&#160;:&#160;<a class="el" href="structscreen.html#a4c20b53c0fed27c64361ca9995799562">screen</a></li>
+<li>_mouse_event&#160;:&#160;<a class="el" href="structscreen.html#adadc892c2dc5d6c0f743139a5fea9cd2">screen</a></li>
+<li>_mouse_eventp&#160;:&#160;<a class="el" href="structscreen.html#a2b5b9ce80042052957b0584ea97ffb78">screen</a></li>
+<li>_mouse_events&#160;:&#160;<a class="el" href="structscreen.html#a800a83e200034a7803bec13e1d382e7a">screen</a></li>
+<li>_mouse_fd&#160;:&#160;<a class="el" href="structscreen.html#a1fa2fee5a4611ef255875a48c9cfde7c">screen</a></li>
+<li>_mouse_format&#160;:&#160;<a class="el" href="structscreen.html#aae28128032241f2d1db6ec21354af46c">screen</a></li>
+<li>_mouse_initialized&#160;:&#160;<a class="el" href="structscreen.html#a703c607e489cd984249df49d68cc55df">screen</a></li>
+<li>_mouse_inline&#160;:&#160;<a class="el" href="structscreen.html#a4a14d9fbf304ff83fa6ec4b535ed1a6f">screen</a></li>
+<li>_mouse_mask&#160;:&#160;<a class="el" href="structscreen.html#ac5f35129912f4053072ac7af517b9548">screen</a></li>
+<li>_mouse_mask2&#160;:&#160;<a class="el" href="structscreen.html#aeb83d9914926cc1a2beaea4c9a56ed8d">screen</a></li>
+<li>_mouse_parse&#160;:&#160;<a class="el" href="structscreen.html#a5ab89e746be5596c1f7968272022cef0">screen</a></li>
+<li>_mouse_resume&#160;:&#160;<a class="el" href="structscreen.html#a72728096846226e8040cd970716d008a">screen</a></li>
+<li>_mouse_type&#160;:&#160;<a class="el" href="structscreen.html#aa4333a18a4deaf956b6c7b89601ed3dc">screen</a></li>
+<li>_mouse_wrap&#160;:&#160;<a class="el" href="structscreen.html#ac3d21a5a4d668383f512dad686369687">screen</a></li>
+<li>_mouse_xtermcap&#160;:&#160;<a class="el" href="structscreen.html#ade184a9c8426fea2004500d841f3c447">screen</a></li>
+<li>_nc_sp_idcok&#160;:&#160;<a class="el" href="structscreen.html#a87446f745d08c7c40e3e476848942551">screen</a></li>
+<li>_nc_sp_idlok&#160;:&#160;<a class="el" href="structscreen.html#a218ab02fba29e0b5477e5cb12eb9bc42">screen</a></li>
+<li>_nc_windowlist&#160;:&#160;<a class="el" href="structNCURSES__GLOBALS.html#a6a458f0fe0f5bc0181dd14ce8d510a7e">NCURSES_GLOBALS</a></li>
+<li>_newscr&#160;:&#160;<a class="el" href="structscreen.html#af1d27499ca7f4b4cec4583db004a8c93">screen</a></li>
+<li>_next_screen&#160;:&#160;<a class="el" href="structscreen.html#a423c99588492b6c224e5eedc65d76af0">screen</a></li>
+<li>_nl&#160;:&#160;<a class="el" href="structscreen.html#a2bf5615f0feba9d56e78e470697b25df">screen</a></li>
+<li>_notimeout&#160;:&#160;<a class="el" href="struct__win__st.html#a7409a833fd1de32bb9cdd94f76324c80">_win_st</a></li>
+<li>_notty&#160;:&#160;<a class="el" href="structscreen.html#af64cd783110a274e9ed7edcaf0b52f60">screen</a></li>
+<li>_ofd&#160;:&#160;<a class="el" href="structscreen.html#a1b6595b19a7042f8f9ed0d020abeba95">screen</a></li>
+<li>_ofp&#160;:&#160;<a class="el" href="structscreen.html#accd371de79c3df86d7f0f086bcbd5828">screen</a></li>
+<li>_ok_attributes&#160;:&#160;<a class="el" href="structscreen.html#aae21f59258a674bf6a8d8f666083b956">screen</a></li>
+<li>_oldnum_list&#160;:&#160;<a class="el" href="structscreen.html#a8cdc2747c9f5e59409d92f4da9d94462">screen</a></li>
+<li>_oldnum_size&#160;:&#160;<a class="el" href="structscreen.html#aa5eefd6c7f208d484b263e48c6e6f02b">screen</a></li>
+<li>_outch&#160;:&#160;<a class="el" href="structNCURSES__PRESCREEN.html#a9c0e41058ec793884951d54c65593bf4">NCURSES_PRESCREEN</a>, <a class="el" href="structscreen.html#acd88273b7e404ccae7ae592e05a98a55">screen</a></li>
+<li>_pad&#160;:&#160;<a class="el" href="struct__win__st.html#af04b3e2a9abbef36805fe0959d8983be">_win_st</a></li>
+<li>_pad_bottom&#160;:&#160;<a class="el" href="struct__win__st_1_1pdat.html#a6a95d828cd0caf833a946f4768cb5ff6">_win_st::pdat</a></li>
+<li>_pad_left&#160;:&#160;<a class="el" href="struct__win__st_1_1pdat.html#a4e1bc93a5e52aef852d4be6ff9b33c27">_win_st::pdat</a></li>
+<li>_pad_right&#160;:&#160;<a class="el" href="struct__win__st_1_1pdat.html#ab32abb6ee49469fefe12f656eab1187e">_win_st::pdat</a></li>
+<li>_pad_top&#160;:&#160;<a class="el" href="struct__win__st_1_1pdat.html#a35deef371797e4e0387c29231f858edd">_win_st::pdat</a></li>
+<li>_pad_x&#160;:&#160;<a class="el" href="struct__win__st_1_1pdat.html#ab00baf7d2e241bf989e7ff0dd6645f38">_win_st::pdat</a></li>
+<li>_pad_y&#160;:&#160;<a class="el" href="struct__win__st_1_1pdat.html#ace2392910d5dd520c398196801b7d3d1">_win_st::pdat</a></li>
+<li>_pair_alloc&#160;:&#160;<a class="el" href="structscreen.html#abf107e1a81aa7ffa5d602f4b18403b8e">screen</a></li>
+<li>_pair_count&#160;:&#160;<a class="el" href="structscreen.html#a4cd1801ec95417c589e8fb435ea5cbc3">screen</a></li>
+<li>_pair_limit&#160;:&#160;<a class="el" href="structscreen.html#a1785f3d9719f8cf2ad00b7ea4e2f6eb3">screen</a></li>
+<li>_panelHook&#160;:&#160;<a class="el" href="structscreen.html#acb8e0243a5e9fe3a2db7dff51fa20de3">screen</a></li>
+<li>_parent&#160;:&#160;<a class="el" href="struct__win__st.html#a1ab4e82003c29db034bf994df8c44e61">_win_st</a></li>
+<li>_parx&#160;:&#160;<a class="el" href="struct__win__st.html#ada32760ddaac283e376b454feb03ac41">_win_st</a></li>
+<li>_pary&#160;:&#160;<a class="el" href="struct__win__st.html#a10f80a107f02455fdbdf7a59a5065460">_win_st</a></li>
+<li>_prescreen&#160;:&#160;<a class="el" href="structscreen.html#a6501ad160004783ccdf51bdfc548e86e">screen</a></li>
+<li>_raw&#160;:&#160;<a class="el" href="structscreen.html#ac1b4b6953c2df7c388af4672449a03fd">screen</a></li>
+<li>_regbottom&#160;:&#160;<a class="el" href="struct__win__st.html#a726f7e13c1e2557fb8576a785af9a2bd">_win_st</a></li>
+<li>_regtop&#160;:&#160;<a class="el" href="struct__win__st.html#a551da509cb47b8ded72c656176236e5e">_win_st</a></li>
+<li>_rep_cost&#160;:&#160;<a class="el" href="structscreen.html#a924085b60dec982fdeac0432f5ae364f">screen</a></li>
+<li>_rmir_cost&#160;:&#160;<a class="el" href="structscreen.html#aa9d47d31e59405018000dc3f86b54e53">screen</a></li>
+<li>_saved_tty&#160;:&#160;<a class="el" href="structscreen.html#a1abcfac9f58041523970d54f845d2ec7">screen</a></li>
+<li>_screen_acs_map&#160;:&#160;<a class="el" href="structscreen.html#a30fbe70d423d2e690c7f1a445bd2c02e">screen</a></li>
+<li>_scroll&#160;:&#160;<a class="el" href="struct__win__st.html#ae079acc4752884e6125c6bbbca906f7e">_win_st</a></li>
+<li>_scrolling&#160;:&#160;<a class="el" href="structscreen.html#a9d78419175e6250ec30c2d7f0e995019">screen</a></li>
+<li>_sig_winch&#160;:&#160;<a class="el" href="structscreen.html#ab9d79227c9307a00a8fad204bc24c0fb">screen</a></li>
+<li>_slk&#160;:&#160;<a class="el" href="structscreen.html#a336d9b0af19a706cc568c025c4b420d1">screen</a></li>
+<li>_smir_cost&#160;:&#160;<a class="el" href="structscreen.html#ae678d52ad754e45578d30b509af05a45">screen</a></li>
+<li>_stdscr&#160;:&#160;<a class="el" href="structscreen.html#a6390bf8e4e9ad37a79aa1c9ead40726e">screen</a></li>
+<li>_sync&#160;:&#160;<a class="el" href="struct__win__st.html#af0a53ae963f8fab4ab321ba360a53a91">_win_st</a></li>
+<li>_term&#160;:&#160;<a class="el" href="structscreen.html#af5a8664a3f4cd718ab41f652a9e16982">screen</a></li>
+<li>_termname&#160;:&#160;<a class="el" href="structterm.html#aa57ca35ab188dbadee1c65899ad2a3b4">term</a></li>
+<li>_topstolen&#160;:&#160;<a class="el" href="structscreen.html#a16718bc21f2b8988d43a45f44e688e26">screen</a></li>
+<li>_tried&#160;:&#160;<a class="el" href="structscreen.html#a1da96d4833f835308d531e3aae1a9f6b">screen</a></li>
+<li>_use_env&#160;:&#160;<a class="el" href="structscreen.html#ab3d264d67173168c34ff3c47e5e54d3b">screen</a></li>
+<li>_use_keypad&#160;:&#160;<a class="el" href="struct__win__st.html#a3c86cad5ccbae59fc484d00e6f1ff9c1">_win_st</a></li>
+<li>_use_meta&#160;:&#160;<a class="el" href="structscreen.html#a5a943ad8162a59f6f565b13606e55a7d">screen</a></li>
+<li>_use_rmso&#160;:&#160;<a class="el" href="structscreen.html#a1e21aef9b18a4684a1bff4849d69dc9d">screen</a></li>
+<li>_use_rmul&#160;:&#160;<a class="el" href="structscreen.html#a852b9ab77875602817d0efa57b676b8e">screen</a></li>
+<li>_vpa_cost&#160;:&#160;<a class="el" href="structscreen.html#af9ed42ac209bd919987faa9956fade86">screen</a></li>
+<li>_xmc_suppress&#160;:&#160;<a class="el" href="structscreen.html#ad468a5a36e5a33de3c81287daa6f6160">screen</a></li>
+<li>_xmc_triggers&#160;:&#160;<a class="el" href="structscreen.html#a0b64261227c91450ad3806fff2b1b1f0">screen</a></li>
+<li>_yoffset&#160;:&#160;<a class="el" href="struct__win__st.html#afe905b935d351a4473668d422744523c">_win_st</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

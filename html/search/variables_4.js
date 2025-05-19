@@ -1,4 +1,24 @@
 var searchData=
 [
-  ['longestmenulength_0',['longestMenuLength',['../structMenuLines.html#a15b8a52d1b8c366a0af2f56761c411c6',1,'MenuLines']]]
+  ['data_0',['data',['../structHOW__MUCH.html#af4c2389af1857257453c645e16f10353',1,'HOW_MUCH::data()'],['../classNodeType.html#a57108b6197b480897e6f02625aa78646',1,'NodeType::data()'],['../structSTACK__FRAME.html#a253aebd3ff59876fcc789b361a5c01ce',1,'STACK_FRAME::data()']]],
+  ['dateadded_1',['dateAdded',['../classBookType.html#abb415630cf04610b537caacaf4300fd2',1,'BookType']]],
+  ['db_5findex_2',['db_index',['../structTERMDATA.html#a996406a0d2c7161c71242a7a93ebf4b2',1,'TERMDATA']]],
+  ['dbd_5fblob_3',['dbd_blob',['../structNCURSES__GLOBALS.html#af61fdbdce5329e30f2bab864c6c5a134',1,'NCURSES_GLOBALS']]],
+  ['dbd_5flist_4',['dbd_list',['../structNCURSES__GLOBALS.html#aa1be5e9c03d181d73e54a0c231e0a379',1,'NCURSES_GLOBALS']]],
+  ['dbd_5fsize_5',['dbd_size',['../structNCURSES__GLOBALS.html#a46f70e567a7e9237b032040679a97d71',1,'NCURSES_GLOBALS']]],
+  ['dbd_5ftime_6',['dbd_time',['../structNCURSES__GLOBALS.html#a01f20e04818c65c6b141432d26895959',1,'NCURSES_GLOBALS']]],
+  ['dbd_5fvars_7',['dbd_vars',['../structNCURSES__GLOBALS.html#a5e041d52090c395af4e2cf22d6ecc89d',1,'NCURSES_GLOBALS']]],
+  ['dbi_5flist_8',['dbi_list',['../structNCURSES__GLOBALS.html#a679284da6b2883d10818d01e4f73b646',1,'NCURSES_GLOBALS']]],
+  ['dbi_5fsize_9',['dbi_size',['../structNCURSES__GLOBALS.html#a6a1a50cfa65486187bc0e7d9f5ad450c',1,'NCURSES_GLOBALS']]],
+  ['dcols_10',['dcols',['../structfieldnode.html#a5d374aae7f5c8dcf10a759c3b464cf59',1,'fieldnode']]],
+  ['desclen_11',['desclen',['../structtagMENU.html#a3c17e5a85e90d6d5718525833c4a3241',1,'tagMENU']]],
+  ['description_12',['description',['../structtagITEM.html#a3cf6f57dc6b00760dd2620a6159539f2',1,'tagITEM::description()'],['../structTERMDATA.html#a8e6deb75a416809c2862f486e31f7909',1,'TERMDATA::description()']]],
+  ['dir_13',['dir',['../structship__t.html#ac582989bff288c384569e4b3d2bab774',1,'ship_t::dir()'],['../structMARK.html#adf2be86bf4e2afe2c9ae005a1f07b6c8',1,'MARK::dir()']]],
+  ['dirty_14',['dirty',['../structslk__ent.html#add425867e81f2b0b9b73d23e74aa6fa2',1,'slk_ent::dirty()'],['../struct__SLK.html#ace7f1360b4c1d1304e7a4aa6df2150e9',1,'_SLK::dirty()']]],
+  ['do_5fkeypad_15',['do_keypad',['../ncurses_8c.html#ab84799c9c2ae9af1cb41cd7c4c54f9ed',1,'ncurses.c']]],
+  ['do_5fscroll_16',['do_scroll',['../ncurses_8c.html#a515f87ae7e44f137907b06b3c2325d31',1,'ncurses.c']]],
+  ['down_17',['down',['../structtagITEM.html#a9911f6443470db36e0f1dfde195f610f',1,'tagITEM']]],
+  ['driver_18',['driver',['../structDriverEntry.html#aba771882a2482149070e484e6d7c3461',1,'DriverEntry']]],
+  ['drows_19',['drows',['../structfieldnode.html#a861cf3bbd7e0b4faa5327fcd0f5cbeb9',1,'fieldnode']]],
+  ['dummy_20',['dummy',['../classNCursesPanel.html#af82a2ec27c94688386ddbc5db780dfbd',1,'NCursesPanel']]]
 ];

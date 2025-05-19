@@ -16,6 +16,11 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -28,6 +33,18 @@
    <div id="projectname">Group 1 Serendipity Project
    </div>
   </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -39,17 +56,6 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -90,8 +96,7 @@ $(document).ready(function(){initNavTree('addbook_8cpp.html',''); initResizable(
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">addbook.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -102,25 +107,29 @@ $(document).ready(function(){initNavTree('addbook_8cpp.html',''); initResizable(
 <code>#include &lt;cstring&gt;</code><br />
 <code>#include &lt;deque&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
+<code>#include &quot;<a class="el" href="signal_8hpp_source.html">headers/signal.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for addbook.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="addbook_8cpp__incl.png" border="0" usemap="#aaddbook_8cpp" alt=""/></div>
 <map name="aaddbook_8cpp" id="aaddbook_8cpp">
-<area shape="rect" title=" " alt="" coords="400,5,496,32"/>
+<area shape="rect" title=" " alt="" coords="418,5,513,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,64,107"/>
 <area shape="rect" href="addbook_8h.html" title=" " alt="" coords="88,80,219,107"/>
-<area shape="rect" href="menuDipity_8h.html" title=" " alt="" coords="244,80,391,107"/>
-<area shape="rect" title=" " alt="" coords="415,80,481,107"/>
-<area shape="rect" title=" " alt="" coords="506,80,566,107"/>
-<area shape="rect" title=" " alt="" coords="590,80,647,107"/>
-<area shape="rect" title=" " alt="" coords="671,80,742,107"/>
-<area shape="rect" href="invmenu_8h.html" title=" " alt="" coords="112,155,194,181"/>
-<area shape="rect" title=" " alt="" coords="134,304,188,331"/>
-<area shape="rect" href="bookType_8h.html" title=" " alt="" coords="117,229,205,256"/>
-<area shape="rect" title=" " alt="" coords="280,155,338,181"/>
-<area shape="rect" title=" " alt="" coords="362,155,427,181"/>
-<area shape="rect" title=" " alt="" coords="451,155,522,181"/>
+<area shape="rect" href="menuDipity_8h.html" title=" " alt="" coords="248,80,395,107"/>
+<area shape="rect" title=" " alt="" coords="648,155,714,181"/>
+<area shape="rect" title=" " alt="" coords="470,80,530,107"/>
+<area shape="rect" title=" " alt="" coords="554,80,611,107"/>
+<area shape="rect" title=" " alt="" coords="635,80,706,107"/>
+<area shape="rect" href="signal_8hpp.html" title=" " alt="" coords="731,80,861,107"/>
+<area shape="rect" href="invmenu_8h.html" title=" " alt="" coords="110,155,191,181"/>
+<area shape="rect" href="linkedlist_8hpp.html" title=" " alt="" coords="23,229,120,256"/>
+<area shape="rect" title=" " alt="" coords="213,304,266,331"/>
+<area shape="rect" href="bookType_8h.html" title=" " alt="" coords="196,229,284,256"/>
+<area shape="rect" title=" " alt="" coords="38,304,106,331"/>
+<area shape="rect" title=" " alt="" coords="362,155,419,181"/>
+<area shape="rect" title=" " alt="" coords="444,155,508,181"/>
+<area shape="rect" title=" " alt="" coords="215,155,286,181"/>
 </map>
 </div>
 </div>
@@ -128,18 +137,11 @@ Include dependency graph for addbook.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a51f8e425a5322b08c0e6aba68de209de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addbook_8cpp.html#a51f8e425a5322b08c0e6aba68de209de">ahandleSignal</a> (const int signal)</td></tr>
-<tr class="memdesc:a51f8e425a5322b08c0e6aba68de209de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal handler for window change.  <br /></td></tr>
-<tr class="separator:a51f8e425a5322b08c0e6aba68de209de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8407e7ef1980758751d575bc253fbea"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea">trim</a> (const std::string operandString, WINDOW *window)</td></tr>
+<tr class="memitem:ab8407e7ef1980758751d575bc253fbea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea">trim</a> (<a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> std::string operandString, <a class="el" href="include_2ncurses_2curses_8h.html#aa64cc90e7a4df667d6c7249b77890d39">WINDOW</a> *window)</td></tr>
+<tr class="memdesc:ab8407e7ef1980758751d575bc253fbea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal handler for window change.  <br /></td></tr>
 <tr class="separator:ab8407e7ef1980758751d575bc253fbea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad230f8fc036e07793bb8e2b49f398814"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addbook_8cpp.html#ad230f8fc036e07793bb8e2b49f398814">addBook</a> (<a class="el" href="classBookType.html">BookType</a> bookList[20])</td></tr>
-<tr class="separator:ad230f8fc036e07793bb8e2b49f398814"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a6280ed7ee6637077042b2499fc9c4656"><td class="memItemLeft" align="right" valign="top">volatile sig_atomic_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addbook_8cpp.html#a6280ed7ee6637077042b2499fc9c4656">astateProvider</a> = 0</td></tr>
-<tr class="separator:a6280ed7ee6637077042b2499fc9c4656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e07f94b15c51101b06bde3785d59cb7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="addbook_8cpp.html#a1e07f94b15c51101b06bde3785d59cb7">addBook</a> (<a class="el" href="classLinkedListType.html">LinkedListType</a>&lt; <a class="el" href="classBookType.html">BookType</a> * &gt; &amp;bookList)</td></tr>
+<tr class="separator:a1e07f94b15c51101b06bde3785d59cb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>ADDBOOK MENU IMPLEMENTATION </p><hr  />
@@ -149,402 +151,428 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition in file <a class="el" href="addbook_8cpp_source.html">addbook.cpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ad230f8fc036e07793bb8e2b49f398814" name="ad230f8fc036e07793bb8e2b49f398814"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad230f8fc036e07793bb8e2b49f398814">&#9670;&#160;</a></span>addBook()</h2>
+<a id="a1e07f94b15c51101b06bde3785d59cb7" name="a1e07f94b15c51101b06bde3785d59cb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e07f94b15c51101b06bde3785d59cb7">&#9670;&#160;</a></span>addBook()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void addBook </td>
+          <td class="memname"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a> addBook </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classBookType.html">BookType</a>&#160;</td>
-          <td class="paramname"><em>bookList</em>[20]</td><td>)</td>
+          <td class="paramtype"><a class="el" href="classLinkedListType.html">LinkedListType</a>&lt; <a class="el" href="classBookType.html">BookType</a> * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>bookList</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>addBook(BookType[20], int) -&gt; Generates menu interface for adding books. Displays stub view of book members, and allows saving and leaving with confirmation. </p>
 
-<p class="definition">Definition at line <a class="el" href="addbook_8cpp_source.html#l00085">85</a> of file <a class="el" href="addbook_8cpp_source.html">addbook.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   85</span>                                    {</div>
-<div class="line"><span class="lineno">   86</span>    WINDOW *mainWindow;</div>
-<div class="line"><span class="lineno">   87</span>    WINDOW *bookDisplayWindow;</div>
-<div class="line"><span class="lineno">   88</span>    WINDOW *notification;</div>
-<div class="line"><span class="lineno">   89</span>    ITEM **items;</div>
-<div class="line"><span class="lineno">   90</span>    MENU *mainMenu;</div>
-<div class="line"><span class="lineno">   91</span>    FIELD *userInputField;</div>
-<div class="line"><span class="lineno">   92</span>    FORM *userInputForm;</div>
-<div class="line"><span class="lineno">   93</span>    <a class="code hl_struct" href="structMenuLines.html">MenuLines</a> mainMenuInfo;</div>
-<div class="line"><span class="lineno">   94</span>    <a class="code hl_class" href="classBookType.html">BookType</a> bookBuffer;</div>
-<div class="line"><span class="lineno">   95</span>    std::deque&lt;int&gt; fieldQueue;</div>
-<div class="line"><span class="lineno">   96</span>    <span class="keyword">struct </span>sigaction sa;</div>
-<div class="line"><span class="lineno">   97</span>    std::string dummyString;</div>
-<div class="line"><span class="lineno">   98</span>    <span class="keywordtype">size_t</span> input;</div>
-<div class="line"><span class="lineno">   99</span>    <span class="keywordtype">int</span> choice;</div>
-<div class="line"><span class="lineno">  100</span>    <span class="keywordtype">int</span> formch;</div>
-<div class="line"><span class="lineno">  101</span>    <span class="keywordtype">char</span> inputChar;</div>
-<div class="line"><span class="lineno">  102</span>    <span class="keywordtype">char</span> *fieldBuffer;</div>
-<div class="line"><span class="lineno">  103</span>    <span class="keywordtype">bool</span> continueMenu;</div>
-<div class="line"><span class="lineno">  104</span>    <span class="keywordtype">int</span> exitChar;</div>
-<div class="line"><span class="lineno">  105</span>    <span class="keywordtype">int</span> QueueSize;</div>
-<div class="line"><span class="lineno">  106</span>    <span class="keywordtype">bool</span> bookWritten;</div>
-<div class="line"><span class="lineno">  107</span> </div>
-<div class="line"><span class="lineno">  108</span>    std::vector&lt;std::string&gt; menuListing = { <span class="stringliteral">&quot;Enter Book Title&quot;</span>,</div>
-<div class="line"><span class="lineno">  109</span>            <span class="stringliteral">&quot;Enter ISBN&quot;</span>, <span class="stringliteral">&quot;Enter Author&quot;</span>, <span class="stringliteral">&quot;Enter Publisher&quot;</span>,</div>
-<div class="line"><span class="lineno">  110</span>            <span class="stringliteral">&quot;Enter Date Added (mm/dd/yyyy)&quot;</span>, <span class="stringliteral">&quot;Enter Quantity on Hand&quot;</span>,</div>
-<div class="line"><span class="lineno">  111</span>            <span class="stringliteral">&quot;Enter Wholesale Value&quot;</span>, <span class="stringliteral">&quot;Enter Retail Price&quot;</span>,</div>
-<div class="line"><span class="lineno">  112</span>            <span class="stringliteral">&quot;Save Book to Database&quot;</span>, <span class="stringliteral">&quot;Exit&quot;</span> };</div>
-<div class="line"><span class="lineno">  113</span> </div>
-<div class="line"><span class="lineno">  114</span>    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">menuName</a> = <span class="stringliteral">&quot;Add a Book&quot;</span>;</div>
-<div class="line"><span class="lineno">  115</span>    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a> = menuListing;</div>
-<div class="line"><span class="lineno">  116</span>    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a15b8a52d1b8c366a0af2f56761c411c6">longestMenuLength</a> =</div>
-<div class="line"><span class="lineno">  117</span>            <span class="keyword">sizeof</span>(<span class="stringliteral">&quot;Enter Date Added (mm/dd/yyyy)&quot;</span>) / <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>);</div>
-<div class="line"><span class="lineno">  118</span> </div>
-<div class="line"><span class="lineno">  119</span>    sa.sa_flags = 0;</div>
-<div class="line"><span class="lineno">  120</span>    sa.sa_handler = <a class="code hl_function" href="addbook_8cpp.html#a51f8e425a5322b08c0e6aba68de209de">ahandleSignal</a>;</div>
-<div class="line"><span class="lineno">  121</span>    sigaction(SIGWINCH, &amp;sa, NULL);</div>
-<div class="line"><span class="lineno">  122</span> </div>
-<div class="line"><span class="lineno">  123</span>    <a class="code hl_function" href="menuDipity_8h.html#ae7fa97802caf4dbaf3d16339f1f977ca">startWindow</a>(mainWindow);</div>
-<div class="line"><span class="lineno">  124</span>    <a class="code hl_function" href="menuDipity_8h.html#ad7fe3a009bc40f5396d70336304bf60b">createMenuMiddleSplit</a>(mainMenu, mainWindow, mainMenuInfo, items);</div>
-<div class="line"><span class="lineno">  125</span> </div>
-<div class="line"><span class="lineno">  126</span>    inputChar = <span class="charliteral">&#39;1&#39;</span>;</div>
-<div class="line"><span class="lineno">  127</span>    input = 0;</div>
-<div class="line"><span class="lineno">  128</span>    continueMenu = 1;</div>
-<div class="line"><span class="lineno">  129</span>    choice = -1;</div>
-<div class="line"><span class="lineno">  130</span> </div>
-<div class="line"><span class="lineno">  131</span>    <span class="comment">//Print menu dialog</span></div>
-<div class="line"><span class="lineno">  132</span>    box(mainWindow, 0, 0);</div>
-<div class="line"><span class="lineno">  133</span>    mvwprintw(mainWindow, 1,</div>
-<div class="line"><span class="lineno">  134</span>            (getmaxx(mainWindow) - mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a0af95e4dcce7da30088989156d66ffaf">storeName</a>.length()) / 2,</div>
-<div class="line"><span class="lineno">  135</span>            mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a0af95e4dcce7da30088989156d66ffaf">storeName</a>.c_str());</div>
-<div class="line"><span class="lineno">  136</span>    mvwprintw(mainWindow, 2,</div>
-<div class="line"><span class="lineno">  137</span>            (getmaxx(mainWindow) - mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">menuName</a>.length()) / 2,</div>
-<div class="line"><span class="lineno">  138</span>            mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">menuName</a>.c_str());</div>
-<div class="line"><span class="lineno">  139</span>    post_menu(mainMenu);</div>
-<div class="line"><span class="lineno">  140</span>    mvwprintw(mainWindow, getmaxy(mainWindow) - 2,</div>
-<div class="line"><span class="lineno">  141</span>            (getmaxx(mainWindow) - 38) / 2,</div>
-<div class="line"><span class="lineno">  142</span>            <span class="stringliteral">&quot;Select [0-%d] or navigate to choice...&quot;</span>,</div>
-<div class="line"><span class="lineno">  143</span>            (<span class="keywordtype">int</span>)menuListing.size() - 1);</div>
-<div class="line"><span class="lineno">  144</span>    wrefresh(mainWindow);</div>
-<div class="line"><span class="lineno">  145</span> </div>
-<div class="line"><span class="lineno">  146</span>    notification = newwin(3, 3 * COLS / 5, 9 * LINES / 10, COLS / 5);</div>
-<div class="line"><span class="lineno">  147</span>    keypad(notification, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  148</span>    bookDisplayWindow = derwin(mainWindow, menuListing.size(),</div>
-<div class="line"><span class="lineno">  149</span>            getmaxx(mainWindow) / 2 - 1, 3, getmaxx(mainWindow) / 2);</div>
-<div class="line"><span class="lineno">  150</span>    box(bookDisplayWindow, 0, 0);</div>
-<div class="line"><span class="lineno">  151</span>    wrefresh(bookDisplayWindow);</div>
-<div class="line"><span class="lineno">  152</span> </div>
-<div class="line"><span class="lineno">  153</span>    userInputField = new_field(1, getmaxx(notification) - 1, 0, 1, 0, 0);</div>
-<div class="line"><span class="lineno">  154</span>    set_field_back(userInputField, A_UNDERLINE);</div>
-<div class="line"><span class="lineno">  155</span>    field_opts_off(userInputField, O_AUTOSKIP);</div>
+<p class="definition">Definition at line <a class="el" href="addbook_8cpp_source.html#l00086">86</a> of file <a class="el" href="addbook_8cpp_source.html">addbook.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   86</span>                                                   {</div>
+<div class="line"><span class="lineno">   87</span>    <a class="code hl_struct" href="struct__win__st.html">WINDOW</a> *mainWindow;</div>
+<div class="line"><span class="lineno">   88</span>    <a class="code hl_struct" href="struct__win__st.html">WINDOW</a> *bookDisplayWindow;</div>
+<div class="line"><span class="lineno">   89</span>    <a class="code hl_struct" href="struct__win__st.html">WINDOW</a> *notification;</div>
+<div class="line"><span class="lineno">   90</span>    <a class="code hl_struct" href="structtagITEM.html">ITEM</a> **items;</div>
+<div class="line"><span class="lineno">   91</span>    <a class="code hl_struct" href="structtagMENU.html">MENU</a> *mainMenu;</div>
+<div class="line"><span class="lineno">   92</span>    <a class="code hl_struct" href="structfieldnode.html">FIELD</a> *userInputField;</div>
+<div class="line"><span class="lineno">   93</span>    <a class="code hl_struct" href="structformnode.html">FORM</a> *userInputForm;</div>
+<div class="line"><span class="lineno">   94</span>    <a class="code hl_struct" href="structMenuLines.html">MenuLines</a> mainMenuInfo;</div>
+<div class="line"><span class="lineno">   95</span>    <a class="code hl_class" href="classBookType.html">BookType</a> bookBuffer;</div>
+<div class="line"><span class="lineno">   96</span>    std::deque&lt;int&gt; fieldQueue;</div>
+<div class="line"><span class="lineno">   97</span><span class="comment">//  struct sigaction sa;</span></div>
+<div class="line"><span class="lineno">   98</span>    std::string dummyString;</div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordtype">size_t</span> input;</div>
+<div class="line"><span class="lineno">  100</span>    <span class="keywordtype">int</span> choice;</div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordtype">int</span> formch;</div>
+<div class="line"><span class="lineno">  102</span>    <span class="keywordtype">char</span> inputChar;</div>
+<div class="line"><span class="lineno">  103</span>    <span class="keywordtype">char</span> inputArr[2];</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordtype">char</span> *fieldBuffer;</div>
+<div class="line"><span class="lineno">  105</span>    <span class="keywordtype">bool</span> continueMenu;</div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordtype">int</span> exitChar;</div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordtype">int</span> QueueSize;</div>
+<div class="line"><span class="lineno">  108</span>    <span class="keywordtype">bool</span> bookWritten;</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>    std::vector&lt;std::string&gt; menuListing = { <span class="stringliteral">&quot;Enter Book Title&quot;</span>,</div>
+<div class="line"><span class="lineno">  111</span>            <span class="stringliteral">&quot;Enter ISBN&quot;</span>, <span class="stringliteral">&quot;Enter Author&quot;</span>, <span class="stringliteral">&quot;Enter Publisher&quot;</span>,</div>
+<div class="line"><span class="lineno">  112</span>            <span class="stringliteral">&quot;Enter Date Added (mm/dd/yyyy)&quot;</span>, <span class="stringliteral">&quot;Enter Quantity on Hand&quot;</span>,</div>
+<div class="line"><span class="lineno">  113</span>            <span class="stringliteral">&quot;Enter Wholesale Value&quot;</span>, <span class="stringliteral">&quot;Enter Retail Price&quot;</span>,</div>
+<div class="line"><span class="lineno">  114</span>            <span class="stringliteral">&quot;Save Book to Database&quot;</span>, <span class="stringliteral">&quot;Exit&quot;</span> };</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">menuName</a> = <span class="stringliteral">&quot;Add a Book&quot;</span>;</div>
+<div class="line"><span class="lineno">  117</span>    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a> = menuListing;</div>
+<div class="line"><span class="lineno">  118</span>    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a15b8a52d1b8c366a0af2f56761c411c6">longestMenuLength</a> =</div>
+<div class="line"><span class="lineno">  119</span>            <span class="keyword">sizeof</span>(<span class="stringliteral">&quot;Enter Date Added (mm/dd/yyyy)&quot;</span>) / <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>);</div>
+<div class="line"><span class="lineno">  120</span><span class="comment">/*</span></div>
+<div class="line"><span class="lineno">  121</span><span class="comment">    sa.sa_flags = 0;</span></div>
+<div class="line"><span class="lineno">  122</span><span class="comment">    sa.sa_handler = ahandleSignal;</span></div>
+<div class="line"><span class="lineno">  123</span><span class="comment">    sigaction(SIGWINCH, &amp;sa, NULL);</span></div>
+<div class="line"><span class="lineno">  124</span><span class="comment">*/</span></div>
+<div class="line"><span class="lineno">  125</span>    <a class="code hl_function" href="menuDipity_8h.html#ae7fa97802caf4dbaf3d16339f1f977ca">startWindow</a>(mainWindow);</div>
+<div class="line"><span class="lineno">  126</span>    <a class="code hl_function" href="menuDipity_8h.html#ad7fe3a009bc40f5396d70336304bf60b">createMenuMiddleSplit</a>(mainMenu, mainWindow, mainMenuInfo, items);</div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>    inputChar = <span class="charliteral">&#39;1&#39;</span>;</div>
+<div class="line"><span class="lineno">  129</span>    inputArr[0] = <span class="charliteral">&#39;1&#39;</span>;</div>
+<div class="line"><span class="lineno">  130</span>    inputArr[1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">  131</span>    input = 0;</div>
+<div class="line"><span class="lineno">  132</span>    continueMenu = 1;</div>
+<div class="line"><span class="lineno">  133</span>    choice = -1;</div>
+<div class="line"><span class="lineno">  134</span> </div>
+<div class="line"><span class="lineno">  135</span>    <span class="comment">//Print menu dialog</span></div>
+<div class="line"><span class="lineno">  136</span>    <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a69402876ce6099a41bc3a3ce2b5690de">box</a>(mainWindow, 0, 0);</div>
+<div class="line"><span class="lineno">  137</span>    <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(mainWindow, 1,</div>
+<div class="line"><span class="lineno">  138</span>            (<a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(mainWindow) - mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a0af95e4dcce7da30088989156d66ffaf">storeName</a>.length()) / 2,</div>
+<div class="line"><span class="lineno">  139</span>            mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a0af95e4dcce7da30088989156d66ffaf">storeName</a>.c_str());</div>
+<div class="line"><span class="lineno">  140</span>    <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(mainWindow, 2,</div>
+<div class="line"><span class="lineno">  141</span>            (<a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(mainWindow) - mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">menuName</a>.length()) / 2,</div>
+<div class="line"><span class="lineno">  142</span>            mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">menuName</a>.c_str());</div>
+<div class="line"><span class="lineno">  143</span>    <a class="code hl_function" href="m__post_8c.html#ae52447ff63bebef88885956896f80479">post_menu</a>(mainMenu);</div>
+<div class="line"><span class="lineno">  144</span>    <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(mainWindow, <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a02249c5271d4d349a93f545ed2e846c8">getmaxy</a>(mainWindow) - 2,</div>
+<div class="line"><span class="lineno">  145</span>            (<a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(mainWindow) - 38) / 2,</div>
+<div class="line"><span class="lineno">  146</span>            <span class="stringliteral">&quot;Select [0-%d] or navigate to choice...&quot;</span>,</div>
+<div class="line"><span class="lineno">  147</span>            (<span class="keywordtype">int</span>)menuListing.size() - 1);</div>
+<div class="line"><span class="lineno">  148</span>    <a class="code hl_function" href="lib__refresh_8c.html#ae612fb9d9b8a757492cf3b78f0d4f50f">wrefresh</a>(mainWindow);</div>
+<div class="line"><span class="lineno">  149</span> </div>
+<div class="line"><span class="lineno">  150</span>    notification = <a class="code hl_function" href="lib__newwin_8c.html#ae036daec0c3e1eb2d84df98afcbae4ee">newwin</a>(3, 3 * COLS / 5, 9 * LINES / 10, COLS / 5);</div>
+<div class="line"><span class="lineno">  151</span>    <a class="code hl_function" href="lib__options_8c.html#aa5acd0b59b12061b68c6c58051cc6662">keypad</a>(notification, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  152</span>    bookDisplayWindow = <a class="code hl_function" href="lib__newwin_8c.html#ac46deef3b21d35f9fcc92df0c6a3438b">derwin</a>(mainWindow, menuListing.size(),</div>
+<div class="line"><span class="lineno">  153</span>            <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(mainWindow) / 2 - 1, 3, <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(mainWindow) / 2);</div>
+<div class="line"><span class="lineno">  154</span>    <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a69402876ce6099a41bc3a3ce2b5690de">box</a>(bookDisplayWindow, 0, 0);</div>
+<div class="line"><span class="lineno">  155</span>    <a class="code hl_function" href="lib__refresh_8c.html#ae612fb9d9b8a757492cf3b78f0d4f50f">wrefresh</a>(bookDisplayWindow);</div>
 <div class="line"><span class="lineno">  156</span> </div>
-<div class="line"><span class="lineno">  157</span>    FIELD *fields[2] { userInputField, <span class="keyword">nullptr</span> };</div>
-<div class="line"><span class="lineno">  158</span>    userInputForm = new_form(fields);</div>
-<div class="line"><span class="lineno">  159</span>    set_form_win(userInputForm, notification);</div>
-<div class="line"><span class="lineno">  160</span>    set_form_sub(userInputForm,</div>
-<div class="line"><span class="lineno">  161</span>            derwin(notification, getmaxy(notification),</div>
-<div class="line"><span class="lineno">  162</span>                    getmaxx(notification), 0, 0));</div>
-<div class="line"><span class="lineno">  163</span> </div>
-<div class="line"><span class="lineno">  164</span>    <span class="comment">//Replaced with Constructor</span></div>
-<div class="line"><span class="lineno">  165</span>    <span class="comment">/*bookBuffer.bookTitle = &quot;UNSET&quot;;</span></div>
-<div class="line"><span class="lineno">  166</span><span class="comment">    bookBuffer.isbn = &quot;UNSET&quot;;</span></div>
-<div class="line"><span class="lineno">  167</span><span class="comment">    bookBuffer.author = &quot;UNSET&quot;;</span></div>
-<div class="line"><span class="lineno">  168</span><span class="comment">    bookBuffer.publisher = &quot;UNSET&quot;;</span></div>
-<div class="line"><span class="lineno">  169</span><span class="comment">    bookBuffer.dateAdded = &quot;UNSET&quot;;</span></div>
-<div class="line"><span class="lineno">  170</span><span class="comment">    bookBuffer.qtyOnHand = 0;</span></div>
-<div class="line"><span class="lineno">  171</span><span class="comment">    bookBuffer.wholesale = 0;</span></div>
-<div class="line"><span class="lineno">  172</span><span class="comment">    bookBuffer.retail = 0;*/</span></div>
-<div class="line"><span class="lineno">  173</span>    bookWritten = 1;</div>
-<div class="line"><span class="lineno">  174</span> </div>
-<div class="line"><span class="lineno">  175</span>    <span class="comment">//Main program loop</span></div>
-<div class="line"><span class="lineno">  176</span>    <span class="keywordflow">while</span> (<a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>() &lt; 20 &amp;&amp; continueMenu) {</div>
-<div class="line"><span class="lineno">  177</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="addbook_8cpp.html#a6280ed7ee6637077042b2499fc9c4656">astateProvider</a>) {</div>
-<div class="line"><span class="lineno">  178</span>            delwin(bookDisplayWindow);</div>
-<div class="line"><span class="lineno">  179</span>            <a class="code hl_function" href="menuDipity_8h.html#a2a20c1da3d8e216c4aac8cd40d648d43">refreshWindowMiddleSplit</a>(mainMenu, mainWindow, notification,</div>
-<div class="line"><span class="lineno">  180</span>                    mainMenuInfo);</div>
-<div class="line"><span class="lineno">  181</span>            mvwprintw(mainWindow, getmaxy(mainWindow) - 2,</div>
-<div class="line"><span class="lineno">  182</span>                    (getmaxx(mainWindow) - 38) / 2,</div>
-<div class="line"><span class="lineno">  183</span>                    <span class="stringliteral">&quot;Select [0-%d] or navigate to choice...&quot;</span>,</div>
-<div class="line"><span class="lineno">  184</span>                    (<span class="keywordtype">int</span>)menuListing.size() - 1);</div>
-<div class="line"><span class="lineno">  185</span>            bookDisplayWindow = derwin(mainWindow, menuListing.size(),</div>
-<div class="line"><span class="lineno">  186</span>                    getmaxx(mainWindow) / 2 - 1, 3,</div>
-<div class="line"><span class="lineno">  187</span>                    getmaxx(mainWindow) / 2);</div>
-<div class="line"><span class="lineno">  188</span>            box(bookDisplayWindow, 0, 0);</div>
-<div class="line"><span class="lineno">  189</span>            mvwprintw(bookDisplayWindow, 1, 1,</div>
-<div class="line"><span class="lineno">  190</span>                    <a class="code hl_function" href="addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea">trim</a>(bookBuffer.<a class="code hl_function" href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">getTitle</a>(), bookDisplayWindow));</div>
-<div class="line"><span class="lineno">  191</span>            mvwprintw(bookDisplayWindow, 2, 1,</div>
-<div class="line"><span class="lineno">  192</span>                    <a class="code hl_function" href="addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea">trim</a>(bookBuffer.<a class="code hl_function" href="classBookType.html#ac1e5aab4bc4f18eaad0ebe14f3046b7b">getISBN</a>(), bookDisplayWindow));</div>
-<div class="line"><span class="lineno">  193</span>            mvwprintw(bookDisplayWindow, 3, 1,</div>
-<div class="line"><span class="lineno">  194</span>                    <a class="code hl_function" href="addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea">trim</a>(bookBuffer.<a class="code hl_function" href="classBookType.html#a0326e55232a94efb1c6fa29ec5e99e34">getAuthor</a>(), bookDisplayWindow));</div>
-<div class="line"><span class="lineno">  195</span>            mvwprintw(bookDisplayWindow, 4, 1,</div>
-<div class="line"><span class="lineno">  196</span>                    <a class="code hl_function" href="addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea">trim</a>(bookBuffer.<a class="code hl_function" href="classBookType.html#a8684b5b66f7c5c56d457642edfafaba7">getPub</a>(), bookDisplayWindow));</div>
-<div class="line"><span class="lineno">  197</span>            mvwprintw(bookDisplayWindow, 5, 1,</div>
-<div class="line"><span class="lineno">  198</span>                    <a class="code hl_function" href="addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea">trim</a>(bookBuffer.<a class="code hl_function" href="classBookType.html#ae3f36bb2025322d0a8982887a12e818e">getDateAdded</a>(), bookDisplayWindow));</div>
-<div class="line"><span class="lineno">  199</span>            mvwprintw(bookDisplayWindow, 6, 1, <span class="stringliteral">&quot;%d&quot;</span>, bookBuffer.<a class="code hl_function" href="classBookType.html#a8429f87cac6b7d70ef56f6821cdccfba">getQtyOnHand</a>());</div>
-<div class="line"><span class="lineno">  200</span>            mvwprintw(bookDisplayWindow, 7, 1, <span class="stringliteral">&quot;%.2f&quot;</span>,</div>
-<div class="line"><span class="lineno">  201</span>                    bookBuffer.<a class="code hl_function" href="classBookType.html#a9a5b1c3a4fa50b9983095d2a75a11f73">getWholesale</a>());</div>
-<div class="line"><span class="lineno">  202</span>            mvwprintw(bookDisplayWindow, 8, 1, <span class="stringliteral">&quot;%.2f&quot;</span>, bookBuffer.<a class="code hl_function" href="classBookType.html#a60e45a826a946b465b222849477c9b41">getRetail</a>());</div>
-<div class="line"><span class="lineno">  203</span>            wrefresh(bookDisplayWindow);</div>
-<div class="line"><span class="lineno">  204</span>            mvwprintw(notification, 2, 1,</div>
-<div class="line"><span class="lineno">  205</span>                    <span class="stringliteral">&quot;%d books used out of 20 available&quot;</span>, <a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>());</div>
-<div class="line"><span class="lineno">  206</span>            set_form_win(userInputForm, notification);</div>
-<div class="line"><span class="lineno">  207</span>            set_form_sub(userInputForm,</div>
-<div class="line"><span class="lineno">  208</span>                    derwin(notification, getmaxy(notification),</div>
-<div class="line"><span class="lineno">  209</span>                            getmaxx(notification), 0, 0));</div>
-<div class="line"><span class="lineno">  210</span>            wrefresh(notification);</div>
-<div class="line"><span class="lineno">  211</span> </div>
-<div class="line"><span class="lineno">  212</span>            <a class="code hl_variable" href="addbook_8cpp.html#a6280ed7ee6637077042b2499fc9c4656">astateProvider</a> = 0;</div>
-<div class="line"><span class="lineno">  213</span>        }</div>
-<div class="line"><span class="lineno">  214</span> </div>
-<div class="line"><span class="lineno">  215</span>        mvwprintw(notification, 2, 1, <span class="stringliteral">&quot;%d books used out of 20 available&quot;</span>,</div>
-<div class="line"><span class="lineno">  216</span>                <a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>());</div>
-<div class="line"><span class="lineno">  217</span>        wrefresh(notification);</div>
-<div class="line"><span class="lineno">  218</span>        wclear(bookDisplayWindow);</div>
-<div class="line"><span class="lineno">  219</span>        box(bookDisplayWindow, 0, 0);</div>
-<div class="line"><span class="lineno">  220</span>        mvwprintw(bookDisplayWindow, 1, 1, <span class="stringliteral">&quot;Title            : %s&quot;</span>,</div>
-<div class="line"><span class="lineno">  221</span>                <a class="code hl_function" href="addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea">trim</a>(bookBuffer.<a class="code hl_function" href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">getTitle</a>(), bookDisplayWindow));</div>
-<div class="line"><span class="lineno">  222</span>        mvwprintw(bookDisplayWindow, 2, 1, <span class="stringliteral">&quot;ISBN             : %s&quot;</span>,</div>
-<div class="line"><span class="lineno">  223</span>                <a class="code hl_function" href="addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea">trim</a>(bookBuffer.<a class="code hl_function" href="classBookType.html#ac1e5aab4bc4f18eaad0ebe14f3046b7b">getISBN</a>(), bookDisplayWindow));</div>
-<div class="line"><span class="lineno">  224</span>        mvwprintw(bookDisplayWindow, 3, 1, <span class="stringliteral">&quot;Author           : %s&quot;</span>,</div>
-<div class="line"><span class="lineno">  225</span>                <a class="code hl_function" href="addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea">trim</a>(bookBuffer.<a class="code hl_function" href="classBookType.html#a0326e55232a94efb1c6fa29ec5e99e34">getAuthor</a>(), bookDisplayWindow));</div>
-<div class="line"><span class="lineno">  226</span>        mvwprintw(bookDisplayWindow, 4, 1, <span class="stringliteral">&quot;Publisher        : %s&quot;</span>,</div>
-<div class="line"><span class="lineno">  227</span>                <a class="code hl_function" href="addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea">trim</a>(bookBuffer.<a class="code hl_function" href="classBookType.html#a8684b5b66f7c5c56d457642edfafaba7">getPub</a>(), bookDisplayWindow));</div>
-<div class="line"><span class="lineno">  228</span>        mvwprintw(bookDisplayWindow, 5, 1, <span class="stringliteral">&quot;Date Added       : %s&quot;</span>,</div>
-<div class="line"><span class="lineno">  229</span>                <a class="code hl_function" href="addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea">trim</a>(bookBuffer.<a class="code hl_function" href="classBookType.html#ae3f36bb2025322d0a8982887a12e818e">getDateAdded</a>(), bookDisplayWindow));</div>
-<div class="line"><span class="lineno">  230</span>        mvwprintw(bookDisplayWindow, 6, 1, <span class="stringliteral">&quot;QoH              : %d&quot;</span>,</div>
-<div class="line"><span class="lineno">  231</span>                bookBuffer.<a class="code hl_function" href="classBookType.html#a8429f87cac6b7d70ef56f6821cdccfba">getQtyOnHand</a>());</div>
-<div class="line"><span class="lineno">  232</span>        mvwprintw(bookDisplayWindow, 7, 1, <span class="stringliteral">&quot;Wholesale Value  : %.2f&quot;</span>,</div>
-<div class="line"><span class="lineno">  233</span>                bookBuffer.<a class="code hl_function" href="classBookType.html#a9a5b1c3a4fa50b9983095d2a75a11f73">getWholesale</a>());</div>
-<div class="line"><span class="lineno">  234</span>        mvwprintw(bookDisplayWindow, 8, 1, <span class="stringliteral">&quot;Retail Value     : %.2f&quot;</span>,</div>
-<div class="line"><span class="lineno">  235</span>                bookBuffer.<a class="code hl_function" href="classBookType.html#a60e45a826a946b465b222849477c9b41">getRetail</a>());</div>
-<div class="line"><span class="lineno">  236</span>        wrefresh(bookDisplayWindow);</div>
-<div class="line"><span class="lineno">  237</span> </div>
-<div class="line"><span class="lineno">  238</span>        input = wgetch(mainWindow);</div>
-<div class="line"><span class="lineno">  239</span>        inputChar = ((input == <span class="charliteral">&#39;0&#39;</span>) ? <span class="charliteral">&#39;9&#39;</span> : input - 1);</div>
-<div class="line"><span class="lineno">  240</span> </div>
-<div class="line"><span class="lineno">  241</span>        <span class="keywordflow">switch</span> (input) {</div>
-<div class="line"><span class="lineno">  242</span>        <span class="keywordflow">case</span> 10:</div>
-<div class="line"><span class="lineno">  243</span>            choice = item_index(current_item(mainMenu));</div>
-<div class="line"><span class="lineno">  244</span>            <span class="keywordflow">if</span> (choice &lt; (<span class="keywordtype">int</span>)menuListing.size() &amp;&amp; choice != -1) {</div>
-<div class="line"><span class="lineno">  245</span>                <span class="keywordflow">if</span> (choice &lt; 8) {</div>
-<div class="line"><span class="lineno">  246</span>                    <span class="keywordflow">if</span> (choice &gt; 4) {</div>
-<div class="line"><span class="lineno">  247</span>                        set_field_type(userInputField, TYPE_NUMERIC);</div>
-<div class="line"><span class="lineno">  248</span>                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  249</span>                        set_field_type(userInputField, NULL);</div>
-<div class="line"><span class="lineno">  250</span>                    }</div>
-<div class="line"><span class="lineno">  251</span>                    post_form(userInputForm);</div>
-<div class="line"><span class="lineno">  252</span>                    wrefresh(notification);</div>
-<div class="line"><span class="lineno">  253</span>                    <span class="keywordflow">while</span> ((formch = wgetch(notification)) != 10) {</div>
-<div class="line"><span class="lineno">  254</span>                        <span class="keywordflow">switch</span> (formch) {</div>
-<div class="line"><span class="lineno">  255</span>                        <span class="keywordflow">case</span> KEY_LEFT:</div>
-<div class="line"><span class="lineno">  256</span>                            form_driver(userInputForm, REQ_PREV_CHAR);</div>
-<div class="line"><span class="lineno">  257</span>                            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  258</span>                        <span class="keywordflow">case</span> KEY_RIGHT:</div>
-<div class="line"><span class="lineno">  259</span>                            form_driver(userInputForm, REQ_NEXT_CHAR);</div>
-<div class="line"><span class="lineno">  260</span>                            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  261</span>                        <span class="keywordflow">case</span> KEY_BACKSPACE:</div>
-<div class="line"><span class="lineno">  262</span>                            form_driver(userInputForm, REQ_PREV_CHAR);</div>
-<div class="line"><span class="lineno">  263</span>                            form_driver(userInputForm, REQ_DEL_CHAR);</div>
-<div class="line"><span class="lineno">  264</span>                            fieldQueue.pop_back();</div>
-<div class="line"><span class="lineno">  265</span>                            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  266</span>                        <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">  267</span>                            <span class="keywordflow">if</span> ((formch &gt;= <span class="charliteral">&#39;!&#39;</span> &amp;&amp; formch &lt;= <span class="charliteral">&#39;~&#39;</span>)</div>
-<div class="line"><span class="lineno">  268</span>                                    || formch == <span class="charliteral">&#39; &#39;</span>) {</div>
-<div class="line"><span class="lineno">  269</span>                                form_driver(userInputForm, formch);</div>
-<div class="line"><span class="lineno">  270</span>                                fieldQueue.push_back(formch);</div>
-<div class="line"><span class="lineno">  271</span>                            }</div>
-<div class="line"><span class="lineno">  272</span>                            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  273</span>                        }</div>
-<div class="line"><span class="lineno">  274</span>                        wrefresh(notification);</div>
-<div class="line"><span class="lineno">  275</span>                    }</div>
-<div class="line"><span class="lineno">  276</span>                    QueueSize = fieldQueue.size();</div>
-<div class="line"><span class="lineno">  277</span>                    fieldBuffer = <span class="keyword">new</span> <span class="keywordtype">char</span>[QueueSize + 1];</div>
-<div class="line"><span class="lineno">  278</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; QueueSize; i++) {</div>
-<div class="line"><span class="lineno">  279</span>                        fieldBuffer[i] = fieldQueue.at(i);</div>
-<div class="line"><span class="lineno">  280</span>                    }</div>
-<div class="line"><span class="lineno">  281</span>                    fieldQueue.clear();</div>
-<div class="line"><span class="lineno">  282</span>                    fieldBuffer[QueueSize] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><span class="lineno">  283</span>                    <span class="keywordflow">switch</span> (choice) {</div>
-<div class="line"><span class="lineno">  284</span>                    <span class="keywordflow">case</span> 0:</div>
-<div class="line"><span class="lineno">  285</span>                        <span class="comment">//Get book title</span></div>
-<div class="line"><span class="lineno">  286</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#a48aa8e4eb23818c086ed84bc22d25269">setTitle</a>(fieldBuffer);</div>
-<div class="line"><span class="lineno">  287</span>                        <span class="comment">//bookBuffer.bookTitle.resize(QueueSize);</span></div>
-<div class="line"><span class="lineno">  288</span>                        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  289</span>                    <span class="keywordflow">case</span> 1:</div>
-<div class="line"><span class="lineno">  290</span>                        <span class="comment">//Get isbn</span></div>
-<div class="line"><span class="lineno">  291</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#a036299b2d6e0080d14ea1de1add11c3f">setISBN</a>(fieldBuffer);</div>
-<div class="line"><span class="lineno">  292</span>                        <span class="comment">//bookBuffer.isbn.resize(QueueSize);</span></div>
-<div class="line"><span class="lineno">  293</span>                        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  294</span>                    <span class="keywordflow">case</span> 2:</div>
-<div class="line"><span class="lineno">  295</span>                        <span class="comment">//Get author</span></div>
-<div class="line"><span class="lineno">  296</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#a042fb4df42f4e1716d0decc754fed952">setAuthor</a>(fieldBuffer);</div>
-<div class="line"><span class="lineno">  297</span>                        <span class="comment">//bookBuffer.author.resize(QueueSize);</span></div>
-<div class="line"><span class="lineno">  298</span>                        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  299</span>                    <span class="keywordflow">case</span> 3:</div>
-<div class="line"><span class="lineno">  300</span>                        <span class="comment">//Get publisher</span></div>
-<div class="line"><span class="lineno">  301</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#a585f49b44845ab3cdd758fe89323c5c1">setPub</a>(fieldBuffer);</div>
-<div class="line"><span class="lineno">  302</span>                        <span class="comment">//bookBuffer.publisher.resize(QueueSize);</span></div>
-<div class="line"><span class="lineno">  303</span>                        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  304</span>                    <span class="keywordflow">case</span> 4:</div>
-<div class="line"><span class="lineno">  305</span>                        <span class="comment">//Get date added</span></div>
-<div class="line"><span class="lineno">  306</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#a039707661327becb322fbbc51e98bbff">setDateAdded</a>(fieldBuffer);</div>
-<div class="line"><span class="lineno">  307</span>                        <span class="comment">//bookBuffer.dateAdded.resize(QueueSize);</span></div>
-<div class="line"><span class="lineno">  308</span>                        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  309</span>                    <span class="keywordflow">case</span> 5:</div>
-<div class="line"><span class="lineno">  310</span>                        <span class="comment">//Get quantity on hand</span></div>
-<div class="line"><span class="lineno">  311</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#a7c092faa1707219b63aa2e9e6f61eb4b">setQtyOnHand</a>(atoi(fieldBuffer));</div>
+<div class="line"><span class="lineno">  157</span>    userInputField = <a class="code hl_function" href="fld__def_8c.html#a73778715cd85b3af2a4b84ccc80ea726">new_field</a>(1, <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(notification) - 1, 0, 1, 0, 0);</div>
+<div class="line"><span class="lineno">  158</span>    set_field_back(userInputField, <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a7c32820200083024fe4557ddef897936">A_UNDERLINE</a>);</div>
+<div class="line"><span class="lineno">  159</span>    <a class="code hl_function" href="fld__opts_8c.html#af92e9868a75b36869f82492f68576354">field_opts_off</a>(userInputField, <a class="code hl_define" href="include_2ncurses_2form_8h.html#a33e2e3d0b9aa88aef0689bf1942bc3d5">O_AUTOSKIP</a>);</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>    <a class="code hl_struct" href="structfieldnode.html">FIELD</a> *fields[2] { userInputField, <span class="keyword">nullptr</span> };</div>
+<div class="line"><span class="lineno">  162</span>    userInputForm = <a class="code hl_function" href="frm__def_8c.html#aad18e4418ca560ac2dcd783fd3975c52">new_form</a>(fields);</div>
+<div class="line"><span class="lineno">  163</span>    <a class="code hl_function" href="frm__win_8c.html#ae1d0c6fba25bd6e78e21e0de1aa37b7e">set_form_win</a>(userInputForm, notification);</div>
+<div class="line"><span class="lineno">  164</span>    <a class="code hl_function" href="frm__sub_8c.html#a11357879a17811c6de511727215e0211">set_form_sub</a>(userInputForm,</div>
+<div class="line"><span class="lineno">  165</span>            <a class="code hl_function" href="lib__newwin_8c.html#ac46deef3b21d35f9fcc92df0c6a3438b">derwin</a>(notification, <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a02249c5271d4d349a93f545ed2e846c8">getmaxy</a>(notification),</div>
+<div class="line"><span class="lineno">  166</span>                    <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(notification), 0, 0));</div>
+<div class="line"><span class="lineno">  167</span> </div>
+<div class="line"><span class="lineno">  168</span>    <span class="comment">//Replaced with Constructor</span></div>
+<div class="line"><span class="lineno">  169</span>    <span class="comment">/*bookBuffer.bookTitle = &quot;UNSET&quot;;</span></div>
+<div class="line"><span class="lineno">  170</span><span class="comment">    bookBuffer.isbn = &quot;UNSET&quot;;</span></div>
+<div class="line"><span class="lineno">  171</span><span class="comment">    bookBuffer.author = &quot;UNSET&quot;;</span></div>
+<div class="line"><span class="lineno">  172</span><span class="comment">    bookBuffer.publisher = &quot;UNSET&quot;;</span></div>
+<div class="line"><span class="lineno">  173</span><span class="comment">    bookBuffer.dateAdded = &quot;UNSET&quot;;</span></div>
+<div class="line"><span class="lineno">  174</span><span class="comment">    bookBuffer.qtyOnHand = 0;</span></div>
+<div class="line"><span class="lineno">  175</span><span class="comment">    bookBuffer.wholesale = 0;</span></div>
+<div class="line"><span class="lineno">  176</span><span class="comment">    bookBuffer.retail = 0;*/</span></div>
+<div class="line"><span class="lineno">  177</span>    bookWritten = 1;</div>
+<div class="line"><span class="lineno">  178</span> </div>
+<div class="line"><span class="lineno">  179</span>    <span class="comment">//Main program loop</span></div>
+<div class="line"><span class="lineno">  180</span>    <span class="keywordflow">while</span> (continueMenu) {</div>
+<div class="line"><span class="lineno">  181</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="signal_8hpp.html#a8a2651374b4c745171073b8aee20eee3">stateProvider</a>) {</div>
+<div class="line"><span class="lineno">  182</span>            <a class="code hl_function" href="lib__delwin_8c.html#afdc5e9dacc5587a4c47333d0e040ffe7">delwin</a>(bookDisplayWindow);</div>
+<div class="line"><span class="lineno">  183</span>            <a class="code hl_function" href="menuDipity_8h.html#a2a20c1da3d8e216c4aac8cd40d648d43">refreshWindowMiddleSplit</a>(mainMenu, mainWindow, notification,</div>
+<div class="line"><span class="lineno">  184</span>                    mainMenuInfo);</div>
+<div class="line"><span class="lineno">  185</span>            <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(mainWindow, <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a02249c5271d4d349a93f545ed2e846c8">getmaxy</a>(mainWindow) - 2,</div>
+<div class="line"><span class="lineno">  186</span>                    (<a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(mainWindow) - 38) / 2,</div>
+<div class="line"><span class="lineno">  187</span>                    <span class="stringliteral">&quot;Select [0-%d] or navigate to choice...&quot;</span>,</div>
+<div class="line"><span class="lineno">  188</span>                    (<span class="keywordtype">int</span>)menuListing.size() - 1);</div>
+<div class="line"><span class="lineno">  189</span>            bookDisplayWindow = <a class="code hl_function" href="lib__newwin_8c.html#ac46deef3b21d35f9fcc92df0c6a3438b">derwin</a>(mainWindow, menuListing.size(),</div>
+<div class="line"><span class="lineno">  190</span>                    <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(mainWindow) / 2 - 1, 3,</div>
+<div class="line"><span class="lineno">  191</span>                    <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(mainWindow) / 2);</div>
+<div class="line"><span class="lineno">  192</span>            <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a69402876ce6099a41bc3a3ce2b5690de">box</a>(bookDisplayWindow, 0, 0);</div>
+<div class="line"><span class="lineno">  193</span>            <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(bookDisplayWindow, 1, 1,</div>
+<div class="line"><span class="lineno">  194</span>                    <a class="code hl_function" href="addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea">trim</a>(bookBuffer.<a class="code hl_function" href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">getTitle</a>(), bookDisplayWindow));</div>
+<div class="line"><span class="lineno">  195</span>            <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(bookDisplayWindow, 2, 1,</div>
+<div class="line"><span class="lineno">  196</span>                    <a class="code hl_function" href="addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea">trim</a>(bookBuffer.<a class="code hl_function" href="classBookType.html#ac1e5aab4bc4f18eaad0ebe14f3046b7b">getISBN</a>(), bookDisplayWindow));</div>
+<div class="line"><span class="lineno">  197</span>            <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(bookDisplayWindow, 3, 1,</div>
+<div class="line"><span class="lineno">  198</span>                    <a class="code hl_function" href="addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea">trim</a>(bookBuffer.<a class="code hl_function" href="classBookType.html#a0326e55232a94efb1c6fa29ec5e99e34">getAuthor</a>(), bookDisplayWindow));</div>
+<div class="line"><span class="lineno">  199</span>            <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(bookDisplayWindow, 4, 1,</div>
+<div class="line"><span class="lineno">  200</span>                    <a class="code hl_function" href="addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea">trim</a>(bookBuffer.<a class="code hl_function" href="classBookType.html#a8684b5b66f7c5c56d457642edfafaba7">getPub</a>(), bookDisplayWindow));</div>
+<div class="line"><span class="lineno">  201</span>            <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(bookDisplayWindow, 5, 1,</div>
+<div class="line"><span class="lineno">  202</span>                    <a class="code hl_function" href="addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea">trim</a>(bookBuffer.<a class="code hl_function" href="classBookType.html#ae3f36bb2025322d0a8982887a12e818e">getDateAdded</a>(), bookDisplayWindow));</div>
+<div class="line"><span class="lineno">  203</span>            <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(bookDisplayWindow, 6, 1, <span class="stringliteral">&quot;%d&quot;</span>, bookBuffer.<a class="code hl_function" href="classBookType.html#a8429f87cac6b7d70ef56f6821cdccfba">getQtyOnHand</a>());</div>
+<div class="line"><span class="lineno">  204</span>            <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(bookDisplayWindow, 7, 1, <span class="stringliteral">&quot;%.2f&quot;</span>,</div>
+<div class="line"><span class="lineno">  205</span>                    bookBuffer.<a class="code hl_function" href="classBookType.html#a9a5b1c3a4fa50b9983095d2a75a11f73">getWholesale</a>());</div>
+<div class="line"><span class="lineno">  206</span>            <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(bookDisplayWindow, 8, 1, <span class="stringliteral">&quot;%.2f&quot;</span>, bookBuffer.<a class="code hl_function" href="classBookType.html#a60e45a826a946b465b222849477c9b41">getRetail</a>());</div>
+<div class="line"><span class="lineno">  207</span>            <a class="code hl_function" href="lib__refresh_8c.html#ae612fb9d9b8a757492cf3b78f0d4f50f">wrefresh</a>(bookDisplayWindow);</div>
+<div class="line"><span class="lineno">  208</span>            <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(notification, 2, 1,</div>
+<div class="line"><span class="lineno">  209</span>                    <span class="stringliteral">&quot;%d books used out of 20 available&quot;</span>, <a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>());</div>
+<div class="line"><span class="lineno">  210</span>            <a class="code hl_function" href="frm__win_8c.html#ae1d0c6fba25bd6e78e21e0de1aa37b7e">set_form_win</a>(userInputForm, notification);</div>
+<div class="line"><span class="lineno">  211</span>            <a class="code hl_function" href="frm__sub_8c.html#a11357879a17811c6de511727215e0211">set_form_sub</a>(userInputForm,</div>
+<div class="line"><span class="lineno">  212</span>                    <a class="code hl_function" href="lib__newwin_8c.html#ac46deef3b21d35f9fcc92df0c6a3438b">derwin</a>(notification, <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a02249c5271d4d349a93f545ed2e846c8">getmaxy</a>(notification),</div>
+<div class="line"><span class="lineno">  213</span>                            <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(notification), 0, 0));</div>
+<div class="line"><span class="lineno">  214</span>            <a class="code hl_function" href="lib__refresh_8c.html#ae612fb9d9b8a757492cf3b78f0d4f50f">wrefresh</a>(notification);</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>            <a class="code hl_variable" href="signal_8hpp.html#a8a2651374b4c745171073b8aee20eee3">stateProvider</a> = 0;</div>
+<div class="line"><span class="lineno">  217</span>        }</div>
+<div class="line"><span class="lineno">  218</span> </div>
+<div class="line"><span class="lineno">  219</span>        <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(notification, 2, 1, <span class="stringliteral">&quot;%d books used out of 20 available&quot;</span>,</div>
+<div class="line"><span class="lineno">  220</span>                <a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>());</div>
+<div class="line"><span class="lineno">  221</span>        <a class="code hl_function" href="lib__refresh_8c.html#ae612fb9d9b8a757492cf3b78f0d4f50f">wrefresh</a>(notification);</div>
+<div class="line"><span class="lineno">  222</span>        <a class="code hl_function" href="lib__clear_8c.html#ac4e0e71291aa948012aea0fad2ff57e5">wclear</a>(bookDisplayWindow);</div>
+<div class="line"><span class="lineno">  223</span>        <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a69402876ce6099a41bc3a3ce2b5690de">box</a>(bookDisplayWindow, 0, 0);</div>
+<div class="line"><span class="lineno">  224</span>        <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(bookDisplayWindow, 1, 1, <span class="stringliteral">&quot;Title            : %s&quot;</span>,</div>
+<div class="line"><span class="lineno">  225</span>                <a class="code hl_function" href="addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea">trim</a>(bookBuffer.<a class="code hl_function" href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">getTitle</a>(), bookDisplayWindow));</div>
+<div class="line"><span class="lineno">  226</span>        <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(bookDisplayWindow, 2, 1, <span class="stringliteral">&quot;ISBN             : %s&quot;</span>,</div>
+<div class="line"><span class="lineno">  227</span>                <a class="code hl_function" href="addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea">trim</a>(bookBuffer.<a class="code hl_function" href="classBookType.html#ac1e5aab4bc4f18eaad0ebe14f3046b7b">getISBN</a>(), bookDisplayWindow));</div>
+<div class="line"><span class="lineno">  228</span>        <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(bookDisplayWindow, 3, 1, <span class="stringliteral">&quot;Author           : %s&quot;</span>,</div>
+<div class="line"><span class="lineno">  229</span>                <a class="code hl_function" href="addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea">trim</a>(bookBuffer.<a class="code hl_function" href="classBookType.html#a0326e55232a94efb1c6fa29ec5e99e34">getAuthor</a>(), bookDisplayWindow));</div>
+<div class="line"><span class="lineno">  230</span>        <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(bookDisplayWindow, 4, 1, <span class="stringliteral">&quot;Publisher        : %s&quot;</span>,</div>
+<div class="line"><span class="lineno">  231</span>                <a class="code hl_function" href="addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea">trim</a>(bookBuffer.<a class="code hl_function" href="classBookType.html#a8684b5b66f7c5c56d457642edfafaba7">getPub</a>(), bookDisplayWindow));</div>
+<div class="line"><span class="lineno">  232</span>        <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(bookDisplayWindow, 5, 1, <span class="stringliteral">&quot;Date Added       : %s&quot;</span>,</div>
+<div class="line"><span class="lineno">  233</span>                <a class="code hl_function" href="addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea">trim</a>(bookBuffer.<a class="code hl_function" href="classBookType.html#ae3f36bb2025322d0a8982887a12e818e">getDateAdded</a>(), bookDisplayWindow));</div>
+<div class="line"><span class="lineno">  234</span>        <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(bookDisplayWindow, 6, 1, <span class="stringliteral">&quot;QoH              : %d&quot;</span>,</div>
+<div class="line"><span class="lineno">  235</span>                bookBuffer.<a class="code hl_function" href="classBookType.html#a8429f87cac6b7d70ef56f6821cdccfba">getQtyOnHand</a>());</div>
+<div class="line"><span class="lineno">  236</span>        <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(bookDisplayWindow, 7, 1, <span class="stringliteral">&quot;Wholesale Value  : %.2f&quot;</span>,</div>
+<div class="line"><span class="lineno">  237</span>                bookBuffer.<a class="code hl_function" href="classBookType.html#a9a5b1c3a4fa50b9983095d2a75a11f73">getWholesale</a>());</div>
+<div class="line"><span class="lineno">  238</span>        <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(bookDisplayWindow, 8, 1, <span class="stringliteral">&quot;Retail Value     : %.2f&quot;</span>,</div>
+<div class="line"><span class="lineno">  239</span>                bookBuffer.<a class="code hl_function" href="classBookType.html#a60e45a826a946b465b222849477c9b41">getRetail</a>());</div>
+<div class="line"><span class="lineno">  240</span>        <a class="code hl_function" href="lib__refresh_8c.html#ae612fb9d9b8a757492cf3b78f0d4f50f">wrefresh</a>(bookDisplayWindow);</div>
+<div class="line"><span class="lineno">  241</span> </div>
+<div class="line"><span class="lineno">  242</span>        input = <a class="code hl_function" href="lib__getch_8c.html#a959890dd627818ba206efa50c247f0dd">wgetch</a>(mainWindow);</div>
+<div class="line"><span class="lineno">  243</span>        inputChar = ((input == <span class="charliteral">&#39;0&#39;</span>) ? <span class="charliteral">&#39;9&#39;</span> : input - 1);</div>
+<div class="line"><span class="lineno">  244</span> </div>
+<div class="line"><span class="lineno">  245</span>        <span class="keywordflow">switch</span> (input) {</div>
+<div class="line"><span class="lineno">  246</span>        <span class="keywordflow">case</span> 10:</div>
+<div class="line"><span class="lineno">  247</span>            choice = <a class="code hl_function" href="m__item__cur_8c.html#a28d2708f6efb7f63cd4e1885db42f396">item_index</a>(<a class="code hl_function" href="m__item__cur_8c.html#aec26c84285802a5837630f1d79bc8567">current_item</a>(mainMenu));</div>
+<div class="line"><span class="lineno">  248</span>            <span class="keywordflow">if</span> (choice &lt; (<span class="keywordtype">int</span>)menuListing.size() &amp;&amp; choice != -1) {</div>
+<div class="line"><span class="lineno">  249</span>                <span class="keywordflow">if</span> (choice &lt; 8) {</div>
+<div class="line"><span class="lineno">  250</span>                    <span class="keywordflow">if</span> (choice &gt; 4) {</div>
+<div class="line"><span class="lineno">  251</span>                        <a class="code hl_function" href="fld__type_8c.html#a6502badfd57e748565ae7bc5044fa6af">set_field_type</a>(userInputField, TYPE_NUMERIC);</div>
+<div class="line"><span class="lineno">  252</span>                    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  253</span>                        <a class="code hl_function" href="fld__type_8c.html#a6502badfd57e748565ae7bc5044fa6af">set_field_type</a>(userInputField, <a class="code hl_define" href="internal_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><span class="lineno">  254</span>                    }</div>
+<div class="line"><span class="lineno">  255</span>                    <a class="code hl_function" href="frm__post_8c.html#ae7413e4458cf2b3008a605097673bc8c">post_form</a>(userInputForm);</div>
+<div class="line"><span class="lineno">  256</span>                    <a class="code hl_function" href="lib__refresh_8c.html#ae612fb9d9b8a757492cf3b78f0d4f50f">wrefresh</a>(notification);</div>
+<div class="line"><span class="lineno">  257</span>                    <span class="keywordflow">while</span> ((formch = <a class="code hl_function" href="lib__getch_8c.html#a959890dd627818ba206efa50c247f0dd">wgetch</a>(notification)) != 10) {</div>
+<div class="line"><span class="lineno">  258</span>                        <span class="keywordflow">switch</span> (formch) {</div>
+<div class="line"><span class="lineno">  259</span>                        <span class="keywordflow">case</span> <a class="code hl_define" href="include_2ncurses_2curses_8h.html#af4d1b8a2912354646c74cf36c69f8223">KEY_LEFT</a>:</div>
+<div class="line"><span class="lineno">  260</span>                            <a class="code hl_function" href="frm__driver_8c.html#aa9013311e02f3f427d793286f65ac4f1">form_driver</a>(userInputForm, <a class="code hl_define" href="include_2ncurses_2form_8h.html#af6396a27b001d1f3e1fdda1413bf3984">REQ_PREV_CHAR</a>);</div>
+<div class="line"><span class="lineno">  261</span>                            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  262</span>                        <span class="keywordflow">case</span> <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a004194639b9ad76cea01d9e93716d4d6">KEY_RIGHT</a>:</div>
+<div class="line"><span class="lineno">  263</span>                            <a class="code hl_function" href="frm__driver_8c.html#aa9013311e02f3f427d793286f65ac4f1">form_driver</a>(userInputForm, <a class="code hl_define" href="include_2ncurses_2form_8h.html#acabaacaa77d730c1cdbb2ef627bdcdbb">REQ_NEXT_CHAR</a>);</div>
+<div class="line"><span class="lineno">  264</span>                            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  265</span>                        <span class="keywordflow">case</span> <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1e9a449dee19c686a2af4edcdc1a1042">KEY_BACKSPACE</a>:</div>
+<div class="line"><span class="lineno">  266</span>                            <a class="code hl_function" href="frm__driver_8c.html#aa9013311e02f3f427d793286f65ac4f1">form_driver</a>(userInputForm, <a class="code hl_define" href="include_2ncurses_2form_8h.html#af6396a27b001d1f3e1fdda1413bf3984">REQ_PREV_CHAR</a>);</div>
+<div class="line"><span class="lineno">  267</span>                            <a class="code hl_function" href="frm__driver_8c.html#aa9013311e02f3f427d793286f65ac4f1">form_driver</a>(userInputForm, <a class="code hl_define" href="include_2ncurses_2form_8h.html#a2e3542e6bcade7dea1be709cddbfdb88">REQ_DEL_CHAR</a>);</div>
+<div class="line"><span class="lineno">  268</span>                            fieldQueue.pop_back();</div>
+<div class="line"><span class="lineno">  269</span>                            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  270</span>                        <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  271</span>                            <span class="keywordflow">if</span> ((formch &gt;= <span class="charliteral">&#39;!&#39;</span> &amp;&amp; formch &lt;= <span class="charliteral">&#39;~&#39;</span>)</div>
+<div class="line"><span class="lineno">  272</span>                                    || formch == <span class="charliteral">&#39; &#39;</span>) {</div>
+<div class="line"><span class="lineno">  273</span>                                <a class="code hl_function" href="frm__driver_8c.html#aa9013311e02f3f427d793286f65ac4f1">form_driver</a>(userInputForm, formch);</div>
+<div class="line"><span class="lineno">  274</span>                                fieldQueue.push_back(formch);</div>
+<div class="line"><span class="lineno">  275</span>                            }</div>
+<div class="line"><span class="lineno">  276</span>                            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  277</span>                        }</div>
+<div class="line"><span class="lineno">  278</span>                        <a class="code hl_function" href="lib__refresh_8c.html#ae612fb9d9b8a757492cf3b78f0d4f50f">wrefresh</a>(notification);</div>
+<div class="line"><span class="lineno">  279</span>                    }</div>
+<div class="line"><span class="lineno">  280</span>                    QueueSize = fieldQueue.size();</div>
+<div class="line"><span class="lineno">  281</span>                    fieldBuffer = <span class="keyword">new</span> <span class="keywordtype">char</span>[QueueSize + 1];</div>
+<div class="line"><span class="lineno">  282</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; QueueSize; i++) {</div>
+<div class="line"><span class="lineno">  283</span>                        fieldBuffer[i] = fieldQueue.at(i);</div>
+<div class="line"><span class="lineno">  284</span>                    }</div>
+<div class="line"><span class="lineno">  285</span>                    fieldQueue.clear();</div>
+<div class="line"><span class="lineno">  286</span>                    fieldBuffer[QueueSize] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">  287</span>                    <span class="keywordflow">switch</span> (choice) {</div>
+<div class="line"><span class="lineno">  288</span>                    <span class="keywordflow">case</span> 0:</div>
+<div class="line"><span class="lineno">  289</span>                        <span class="comment">//Get book title</span></div>
+<div class="line"><span class="lineno">  290</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#a48aa8e4eb23818c086ed84bc22d25269">setTitle</a>(fieldBuffer);</div>
+<div class="line"><span class="lineno">  291</span>                        <span class="comment">//bookBuffer.bookTitle.resize(QueueSize);</span></div>
+<div class="line"><span class="lineno">  292</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  293</span>                    <span class="keywordflow">case</span> 1:</div>
+<div class="line"><span class="lineno">  294</span>                        <span class="comment">//Get isbn</span></div>
+<div class="line"><span class="lineno">  295</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#a036299b2d6e0080d14ea1de1add11c3f">setISBN</a>(fieldBuffer);</div>
+<div class="line"><span class="lineno">  296</span>                        <span class="comment">//bookBuffer.isbn.resize(QueueSize);</span></div>
+<div class="line"><span class="lineno">  297</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  298</span>                    <span class="keywordflow">case</span> 2:</div>
+<div class="line"><span class="lineno">  299</span>                        <span class="comment">//Get author</span></div>
+<div class="line"><span class="lineno">  300</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#a042fb4df42f4e1716d0decc754fed952">setAuthor</a>(fieldBuffer);</div>
+<div class="line"><span class="lineno">  301</span>                        <span class="comment">//bookBuffer.author.resize(QueueSize);</span></div>
+<div class="line"><span class="lineno">  302</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  303</span>                    <span class="keywordflow">case</span> 3:</div>
+<div class="line"><span class="lineno">  304</span>                        <span class="comment">//Get publisher</span></div>
+<div class="line"><span class="lineno">  305</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#a585f49b44845ab3cdd758fe89323c5c1">setPub</a>(fieldBuffer);</div>
+<div class="line"><span class="lineno">  306</span>                        <span class="comment">//bookBuffer.publisher.resize(QueueSize);</span></div>
+<div class="line"><span class="lineno">  307</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  308</span>                    <span class="keywordflow">case</span> 4:</div>
+<div class="line"><span class="lineno">  309</span>                        <span class="comment">//Get date added</span></div>
+<div class="line"><span class="lineno">  310</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#a039707661327becb322fbbc51e98bbff">setDateAdded</a>(fieldBuffer);</div>
+<div class="line"><span class="lineno">  311</span>                        <span class="comment">//bookBuffer.dateAdded.resize(QueueSize);</span></div>
 <div class="line"><span class="lineno">  312</span>                        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  313</span>                    <span class="keywordflow">case</span> 6:</div>
-<div class="line"><span class="lineno">  314</span>                        <span class="comment">//Get wholesale value</span></div>
-<div class="line"><span class="lineno">  315</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#ab7c836e9b1307497b34ae6fe5d0734f1">setWholesale</a>(atof(fieldBuffer));</div>
+<div class="line"><span class="lineno">  313</span>                    <span class="keywordflow">case</span> 5:</div>
+<div class="line"><span class="lineno">  314</span>                        <span class="comment">//Get quantity on hand</span></div>
+<div class="line"><span class="lineno">  315</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#a7c092faa1707219b63aa2e9e6f61eb4b">setQtyOnHand</a>(atoi(fieldBuffer));</div>
 <div class="line"><span class="lineno">  316</span>                        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  317</span>                    <span class="keywordflow">case</span> 7:</div>
-<div class="line"><span class="lineno">  318</span>                        <span class="comment">//Get retail value</span></div>
-<div class="line"><span class="lineno">  319</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#af8d8ac9fba586d1de2c739c89e25d50b">setRetail</a>(atof(fieldBuffer));</div>
+<div class="line"><span class="lineno">  317</span>                    <span class="keywordflow">case</span> 6:</div>
+<div class="line"><span class="lineno">  318</span>                        <span class="comment">//Get wholesale value</span></div>
+<div class="line"><span class="lineno">  319</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#ab7c836e9b1307497b34ae6fe5d0734f1">setWholesale</a>(atof(fieldBuffer));</div>
 <div class="line"><span class="lineno">  320</span>                        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  321</span>                    <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">  322</span> </div>
-<div class="line"><span class="lineno">  323</span>                        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  324</span>                    }</div>
-<div class="line"><span class="lineno">  325</span>                    unpost_form(userInputForm);</div>
-<div class="line"><span class="lineno">  326</span>                    wrefresh(notification);</div>
-<div class="line"><span class="lineno">  327</span>                    <span class="keyword">delete</span>[] fieldBuffer;</div>
-<div class="line"><span class="lineno">  328</span>                }</div>
-<div class="line"><span class="lineno">  329</span>                <span class="keywordflow">if</span> (choice == 8) {</div>
-<div class="line"><span class="lineno">  330</span>                    mvwprintw(notification, 2, 1,</div>
-<div class="line"><span class="lineno">  331</span>                            <span class="stringliteral">&quot;Are you sure you want to write to book list? [Y/N]&quot;</span>);</div>
-<div class="line"><span class="lineno">  332</span>                    exitChar = wgetch(notification);</div>
-<div class="line"><span class="lineno">  333</span>                    <span class="keywordflow">if</span> (tolower(exitChar) == <span class="charliteral">&#39;y&#39;</span>) {</div>
-<div class="line"><span class="lineno">  334</span>                        bookList[<a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>()] = bookBuffer;</div>
-<div class="line"><span class="lineno">  335</span>                        <a class="code hl_function" href="classBookType.html#ae60f135ad862ad44c3a5a175b6e2e875">BookType::incBookCount</a>();</div>
-<div class="line"><span class="lineno">  336</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#a48aa8e4eb23818c086ed84bc22d25269">setTitle</a>(<span class="stringliteral">&quot;UNSET&quot;</span>);</div>
-<div class="line"><span class="lineno">  337</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#a036299b2d6e0080d14ea1de1add11c3f">setISBN</a>(<span class="stringliteral">&quot;UNSET&quot;</span>);</div>
-<div class="line"><span class="lineno">  338</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#a042fb4df42f4e1716d0decc754fed952">setAuthor</a>(<span class="stringliteral">&quot;UNSET&quot;</span>);</div>
-<div class="line"><span class="lineno">  339</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#a585f49b44845ab3cdd758fe89323c5c1">setPub</a>(<span class="stringliteral">&quot;UNSET&quot;</span>);</div>
-<div class="line"><span class="lineno">  340</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#a039707661327becb322fbbc51e98bbff">setDateAdded</a>(<span class="stringliteral">&quot;UNSET&quot;</span>);</div>
-<div class="line"><span class="lineno">  341</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#a7c092faa1707219b63aa2e9e6f61eb4b">setQtyOnHand</a>(0);</div>
-<div class="line"><span class="lineno">  342</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#ab7c836e9b1307497b34ae6fe5d0734f1">setWholesale</a>(0);</div>
-<div class="line"><span class="lineno">  343</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#af8d8ac9fba586d1de2c739c89e25d50b">setRetail</a>(0);</div>
-<div class="line"><span class="lineno">  344</span>                        bookWritten = 1;</div>
-<div class="line"><span class="lineno">  345</span>                    }</div>
-<div class="line"><span class="lineno">  346</span>                    wclear(notification);</div>
-<div class="line"><span class="lineno">  347</span>                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (choice == 9) {</div>
-<div class="line"><span class="lineno">  348</span>                    <span class="keywordflow">if</span> (bookWritten == 1) {</div>
-<div class="line"><span class="lineno">  349</span>                        bookWritten = 0;</div>
-<div class="line"><span class="lineno">  350</span>                        continueMenu = 0;</div>
-<div class="line"><span class="lineno">  351</span>                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  352</span>                        mvwprintw(notification, 2, 1,</div>
-<div class="line"><span class="lineno">  353</span>                                <span class="stringliteral">&quot;Book not saved. Really leave? [Y/N]&quot;</span>);</div>
-<div class="line"><span class="lineno">  354</span>                        exitChar = wgetch(notification);</div>
-<div class="line"><span class="lineno">  355</span>                        <span class="keywordflow">if</span> (tolower(exitChar) == <span class="charliteral">&#39;y&#39;</span>)</div>
-<div class="line"><span class="lineno">  356</span>                            continueMenu = 0;</div>
-<div class="line"><span class="lineno">  357</span>                        wclear(notification);</div>
-<div class="line"><span class="lineno">  358</span>                    }</div>
-<div class="line"><span class="lineno">  359</span>                } <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  360</span>                    bookWritten = 0;</div>
-<div class="line"><span class="lineno">  361</span> </div>
-<div class="line"><span class="lineno">  362</span>            }</div>
-<div class="line"><span class="lineno">  363</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  364</span>        <span class="keywordflow">case</span> KEY_UP:</div>
-<div class="line"><span class="lineno">  365</span>            wclear(notification);</div>
-<div class="line"><span class="lineno">  366</span>            wrefresh(notification);</div>
-<div class="line"><span class="lineno">  367</span>            menu_driver(mainMenu, REQ_PREV_ITEM);</div>
-<div class="line"><span class="lineno">  368</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  369</span>        <span class="keywordflow">case</span> KEY_DOWN:</div>
-<div class="line"><span class="lineno">  370</span>            wclear(notification);</div>
-<div class="line"><span class="lineno">  371</span>            wrefresh(notification);</div>
-<div class="line"><span class="lineno">  372</span>            menu_driver(mainMenu, REQ_NEXT_ITEM);</div>
-<div class="line"><span class="lineno">  373</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  374</span>        <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">  375</span>            <span class="keywordflow">if</span> (input &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; input &lt;= menuListing.size() + 47) {</div>
-<div class="line"><span class="lineno">  376</span>                wclear(notification);</div>
-<div class="line"><span class="lineno">  377</span>                set_current_item(mainMenu, items[atoi(&amp;inputChar)]);</div>
-<div class="line"><span class="lineno">  378</span>                wrefresh(notification);</div>
-<div class="line"><span class="lineno">  379</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  380</span>                wclear(notification);</div>
-<div class="line"><span class="lineno">  381</span>                wprintw(notification, <span class="stringliteral">&quot;Invalid Input&quot;</span>);</div>
-<div class="line"><span class="lineno">  382</span>                wrefresh(notification);</div>
-<div class="line"><span class="lineno">  383</span>            }</div>
-<div class="line"><span class="lineno">  384</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  385</span>        }</div>
-<div class="line"><span class="lineno">  386</span>    }</div>
-<div class="line"><span class="lineno">  387</span>    free_form(userInputForm);</div>
-<div class="line"><span class="lineno">  388</span>    free_field(userInputField);</div>
-<div class="line"><span class="lineno">  389</span>    wclear(notification);</div>
-<div class="line"><span class="lineno">  390</span>    delwin(notification);</div>
-<div class="line"><span class="lineno">  391</span>    delwin(bookDisplayWindow);</div>
-<div class="line"><span class="lineno">  392</span>    <a class="code hl_function" href="menuDipity_8h.html#a22b5c4019f9dc8b6d9f5c761cb3405e3">deleteMenu</a>(mainMenu, items, menuListing.size());</div>
-<div class="line"><span class="lineno">  393</span>    <a class="code hl_function" href="menuDipity_8h.html#a4b2b10e5786fcbe1575da3ed5893c1f7">endWindow</a>(mainWindow);</div>
-<div class="line"><span class="lineno">  394</span> </div>
-<div class="line"><span class="lineno">  395</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>() &gt;= 20) {</div>
-<div class="line"><span class="lineno">  396</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;╔══════════════════════════════════════════╗&quot;</span> &lt;&lt;</div>
-<div class="line"><span class="lineno">  397</span>        std::endl;</div>
-<div class="line"><span class="lineno">  398</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;║Book list full! Cannot add any more books.║&quot;</span> &lt;&lt;</div>
-<div class="line"><span class="lineno">  399</span>        std::endl &lt;&lt; <span class="stringliteral">&quot;╚══════════════════════════════════════════╝&quot;</span> &lt;&lt;</div>
-<div class="line"><span class="lineno">  400</span>        std::endl &lt;&lt; <span class="stringliteral">&quot;Press enter to continue...&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  401</span>        getline(std::cin, dummyString);</div>
-<div class="line"><span class="lineno">  402</span>    }</div>
-<div class="line"><span class="lineno">  403</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  404</span>}</div>
-<div class="ttc" id="aaddbook_8cpp_html_a51f8e425a5322b08c0e6aba68de209de"><div class="ttname"><a href="addbook_8cpp.html#a51f8e425a5322b08c0e6aba68de209de">ahandleSignal</a></div><div class="ttdeci">void ahandleSignal(const int signal)</div><div class="ttdoc">Signal handler for window change.</div><div class="ttdef"><b>Definition:</b> <a href="addbook_8cpp_source.html#l00406">addbook.cpp:406</a></div></div>
-<div class="ttc" id="aaddbook_8cpp_html_a6280ed7ee6637077042b2499fc9c4656"><div class="ttname"><a href="addbook_8cpp.html#a6280ed7ee6637077042b2499fc9c4656">astateProvider</a></div><div class="ttdeci">volatile sig_atomic_t astateProvider</div><div class="ttdef"><b>Definition:</b> <a href="addbook_8cpp_source.html#l00047">addbook.cpp:47</a></div></div>
-<div class="ttc" id="aaddbook_8cpp_html_ab8407e7ef1980758751d575bc253fbea"><div class="ttname"><a href="addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea">trim</a></div><div class="ttdeci">const char * trim(const std::string operandString, WINDOW *window)</div><div class="ttdef"><b>Definition:</b> <a href="addbook_8cpp_source.html#l00054">addbook.cpp:54</a></div></div>
+<div class="line"><span class="lineno">  321</span>                    <span class="keywordflow">case</span> 7:</div>
+<div class="line"><span class="lineno">  322</span>                        <span class="comment">//Get retail value</span></div>
+<div class="line"><span class="lineno">  323</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#af8d8ac9fba586d1de2c739c89e25d50b">setRetail</a>(atof(fieldBuffer));</div>
+<div class="line"><span class="lineno">  324</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  325</span>                    <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  326</span> </div>
+<div class="line"><span class="lineno">  327</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  328</span>                    }</div>
+<div class="line"><span class="lineno">  329</span>                    <a class="code hl_function" href="frm__post_8c.html#a3572d11365a8f2b3418c075ff1c1724d">unpost_form</a>(userInputForm);</div>
+<div class="line"><span class="lineno">  330</span>                    <a class="code hl_function" href="lib__refresh_8c.html#ae612fb9d9b8a757492cf3b78f0d4f50f">wrefresh</a>(notification);</div>
+<div class="line"><span class="lineno">  331</span>                    <span class="keyword">delete</span>[] fieldBuffer;</div>
+<div class="line"><span class="lineno">  332</span>                }</div>
+<div class="line"><span class="lineno">  333</span>                <span class="keywordflow">if</span> (choice == 8) {</div>
+<div class="line"><span class="lineno">  334</span>                    <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(notification, 2, 1,</div>
+<div class="line"><span class="lineno">  335</span>                            <span class="stringliteral">&quot;Are you sure you want to write to book list? [Y/N]&quot;</span>);</div>
+<div class="line"><span class="lineno">  336</span>                    exitChar = <a class="code hl_function" href="lib__getch_8c.html#a959890dd627818ba206efa50c247f0dd">wgetch</a>(notification);</div>
+<div class="line"><span class="lineno">  337</span>                    <span class="keywordflow">if</span> (tolower(exitChar) == <span class="charliteral">&#39;y&#39;</span>) {</div>
+<div class="line"><span class="lineno">  338</span>                        <span class="comment">//bookList[BookType::getBookCount()] = new BookType(bookBuffer);</span></div>
+<div class="line"><span class="lineno">  339</span>                        bookList.<a class="code hl_function" href="classLinkedListType.html#a17017c57931cff584743f972f6d34168">insert_head</a>(<span class="keyword">new</span> <a class="code hl_class" href="classBookType.html">BookType</a>(bookBuffer));</div>
+<div class="line"><span class="lineno">  340</span> </div>
+<div class="line"><span class="lineno">  341</span>                        <a class="code hl_function" href="classBookType.html#ae60f135ad862ad44c3a5a175b6e2e875">BookType::incBookCount</a>();</div>
+<div class="line"><span class="lineno">  342</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#a48aa8e4eb23818c086ed84bc22d25269">setTitle</a>(<span class="stringliteral">&quot;UNSET&quot;</span>);</div>
+<div class="line"><span class="lineno">  343</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#a036299b2d6e0080d14ea1de1add11c3f">setISBN</a>(<span class="stringliteral">&quot;UNSET&quot;</span>);</div>
+<div class="line"><span class="lineno">  344</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#a042fb4df42f4e1716d0decc754fed952">setAuthor</a>(<span class="stringliteral">&quot;UNSET&quot;</span>);</div>
+<div class="line"><span class="lineno">  345</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#a585f49b44845ab3cdd758fe89323c5c1">setPub</a>(<span class="stringliteral">&quot;UNSET&quot;</span>);</div>
+<div class="line"><span class="lineno">  346</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#a039707661327becb322fbbc51e98bbff">setDateAdded</a>(<span class="stringliteral">&quot;UNSET&quot;</span>);</div>
+<div class="line"><span class="lineno">  347</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#a7c092faa1707219b63aa2e9e6f61eb4b">setQtyOnHand</a>(0);</div>
+<div class="line"><span class="lineno">  348</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#ab7c836e9b1307497b34ae6fe5d0734f1">setWholesale</a>(0);</div>
+<div class="line"><span class="lineno">  349</span>                        bookBuffer.<a class="code hl_function" href="classBookType.html#af8d8ac9fba586d1de2c739c89e25d50b">setRetail</a>(0);</div>
+<div class="line"><span class="lineno">  350</span>                        bookWritten = 1;</div>
+<div class="line"><span class="lineno">  351</span>                    }</div>
+<div class="line"><span class="lineno">  352</span>                    <a class="code hl_function" href="lib__clear_8c.html#ac4e0e71291aa948012aea0fad2ff57e5">wclear</a>(notification);</div>
+<div class="line"><span class="lineno">  353</span>                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (choice == 9) {</div>
+<div class="line"><span class="lineno">  354</span>                    <span class="keywordflow">if</span> (bookWritten == 1) {</div>
+<div class="line"><span class="lineno">  355</span>                        bookWritten = 0;</div>
+<div class="line"><span class="lineno">  356</span>                        continueMenu = 0;</div>
+<div class="line"><span class="lineno">  357</span>                    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  358</span>                        <a class="code hl_function" href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a>(notification, 2, 1,</div>
+<div class="line"><span class="lineno">  359</span>                                <span class="stringliteral">&quot;Book not saved. Really leave? [Y/N]&quot;</span>);</div>
+<div class="line"><span class="lineno">  360</span>                        exitChar = <a class="code hl_function" href="lib__getch_8c.html#a959890dd627818ba206efa50c247f0dd">wgetch</a>(notification);</div>
+<div class="line"><span class="lineno">  361</span>                        <span class="keywordflow">if</span> (tolower(exitChar) == <span class="charliteral">&#39;y&#39;</span>)</div>
+<div class="line"><span class="lineno">  362</span>                            continueMenu = 0;</div>
+<div class="line"><span class="lineno">  363</span>                        <a class="code hl_function" href="lib__clear_8c.html#ac4e0e71291aa948012aea0fad2ff57e5">wclear</a>(notification);</div>
+<div class="line"><span class="lineno">  364</span>                    }</div>
+<div class="line"><span class="lineno">  365</span>                } <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  366</span>                    bookWritten = 0;</div>
+<div class="line"><span class="lineno">  367</span> </div>
+<div class="line"><span class="lineno">  368</span>            }</div>
+<div class="line"><span class="lineno">  369</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  370</span>        <span class="keywordflow">case</span> <a class="code hl_define" href="include_2ncurses_2curses_8h.html#afa086fc916a81e7fd348ec00cf786916">KEY_UP</a>:</div>
+<div class="line"><span class="lineno">  371</span>            <a class="code hl_function" href="lib__clear_8c.html#ac4e0e71291aa948012aea0fad2ff57e5">wclear</a>(notification);</div>
+<div class="line"><span class="lineno">  372</span>            <a class="code hl_function" href="lib__refresh_8c.html#ae612fb9d9b8a757492cf3b78f0d4f50f">wrefresh</a>(notification);</div>
+<div class="line"><span class="lineno">  373</span>            <a class="code hl_function" href="m__driver_8c.html#a64bbdb0ae67cfd3f349a29105d13ab13">menu_driver</a>(mainMenu, <a class="code hl_define" href="include_2ncurses_2menu_8h.html#afda595b6297879081689d4c9302b946d">REQ_PREV_ITEM</a>);</div>
+<div class="line"><span class="lineno">  374</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  375</span>        <span class="keywordflow">case</span> <a class="code hl_define" href="include_2ncurses_2curses_8h.html#a203163bc0189184a1de6ca8d1e53c6bf">KEY_DOWN</a>:</div>
+<div class="line"><span class="lineno">  376</span>            <a class="code hl_function" href="lib__clear_8c.html#ac4e0e71291aa948012aea0fad2ff57e5">wclear</a>(notification);</div>
+<div class="line"><span class="lineno">  377</span>            <a class="code hl_function" href="lib__refresh_8c.html#ae612fb9d9b8a757492cf3b78f0d4f50f">wrefresh</a>(notification);</div>
+<div class="line"><span class="lineno">  378</span>            <a class="code hl_function" href="m__driver_8c.html#a64bbdb0ae67cfd3f349a29105d13ab13">menu_driver</a>(mainMenu, <a class="code hl_define" href="include_2ncurses_2menu_8h.html#abd50b6ec1c4a53d290cc3d06642bf83f">REQ_NEXT_ITEM</a>);</div>
+<div class="line"><span class="lineno">  379</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  380</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  381</span>            <span class="keywordflow">if</span> (input &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; input &lt;= menuListing.size() + 47) {</div>
+<div class="line"><span class="lineno">  382</span>                <a class="code hl_function" href="lib__clear_8c.html#ac4e0e71291aa948012aea0fad2ff57e5">wclear</a>(notification);</div>
+<div class="line"><span class="lineno">  383</span>                inputArr[0] = inputChar;</div>
+<div class="line"><span class="lineno">  384</span>                <a class="code hl_function" href="m__item__cur_8c.html#aa416dc34374eeb599ac50a894e91552c">set_current_item</a>(mainMenu, items[atoi(inputArr)]);</div>
+<div class="line"><span class="lineno">  385</span>                <a class="code hl_function" href="lib__refresh_8c.html#ae612fb9d9b8a757492cf3b78f0d4f50f">wrefresh</a>(notification);</div>
+<div class="line"><span class="lineno">  386</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  387</span>                <a class="code hl_function" href="lib__clear_8c.html#ac4e0e71291aa948012aea0fad2ff57e5">wclear</a>(notification);</div>
+<div class="line"><span class="lineno">  388</span>                <a class="code hl_function" href="lib__printw_8c.html#a32452367ae7de3f83f02cf08f245d21c">wprintw</a>(notification, <span class="stringliteral">&quot;Invalid Input&quot;</span>);</div>
+<div class="line"><span class="lineno">  389</span>                <a class="code hl_function" href="lib__refresh_8c.html#ae612fb9d9b8a757492cf3b78f0d4f50f">wrefresh</a>(notification);</div>
+<div class="line"><span class="lineno">  390</span>            }</div>
+<div class="line"><span class="lineno">  391</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  392</span>        }</div>
+<div class="line"><span class="lineno">  393</span>    }</div>
+<div class="line"><span class="lineno">  394</span>    <a class="code hl_function" href="frm__def_8c.html#a0ad2d188bda0b3b607aea596304d6f0a">free_form</a>(userInputForm);</div>
+<div class="line"><span class="lineno">  395</span>    <a class="code hl_function" href="fld__def_8c.html#a05e7e57b7a0e19c512e292ac99aed666">free_field</a>(userInputField);</div>
+<div class="line"><span class="lineno">  396</span>    <a class="code hl_function" href="lib__clear_8c.html#ac4e0e71291aa948012aea0fad2ff57e5">wclear</a>(notification);</div>
+<div class="line"><span class="lineno">  397</span>    <a class="code hl_function" href="lib__delwin_8c.html#afdc5e9dacc5587a4c47333d0e040ffe7">delwin</a>(notification);</div>
+<div class="line"><span class="lineno">  398</span>    <a class="code hl_function" href="lib__delwin_8c.html#afdc5e9dacc5587a4c47333d0e040ffe7">delwin</a>(bookDisplayWindow);</div>
+<div class="line"><span class="lineno">  399</span>    <a class="code hl_function" href="menuDipity_8h.html#a22b5c4019f9dc8b6d9f5c761cb3405e3">deleteMenu</a>(mainMenu, items, menuListing.size());</div>
+<div class="line"><span class="lineno">  400</span>    <a class="code hl_function" href="menuDipity_8h.html#a4b2b10e5786fcbe1575da3ed5893c1f7">endWindow</a>(mainWindow);</div>
+<div class="line"><span class="lineno">  401</span> </div>
+<div class="line"><span class="lineno">  402</span>    <span class="comment">/*if (BookType::getBookCount() &gt;= 20) {</span></div>
+<div class="line"><span class="lineno">  403</span><span class="comment">        std::cout &lt;&lt; &quot;╔══════════════════════════════════════════╗&quot; &lt;&lt;</span></div>
+<div class="line"><span class="lineno">  404</span><span class="comment">        std::endl;</span></div>
+<div class="line"><span class="lineno">  405</span><span class="comment">        std::cout &lt;&lt; &quot;║Book list full! Cannot add any more books.║&quot; &lt;&lt;</span></div>
+<div class="line"><span class="lineno">  406</span><span class="comment">        std::endl &lt;&lt; &quot;╚══════════════════════════════════════════╝&quot; &lt;&lt;</span></div>
+<div class="line"><span class="lineno">  407</span><span class="comment">        std::endl &lt;&lt; &quot;Press enter to continue...&quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><span class="lineno">  408</span><span class="comment">        getline(std::cin, dummyString);</span></div>
+<div class="line"><span class="lineno">  409</span><span class="comment">    }*/</span></div>
+<div class="line"><span class="lineno">  410</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  411</span>}</div>
+<div class="ttc" id="aaddbook_8cpp_html_ab8407e7ef1980758751d575bc253fbea"><div class="ttname"><a href="addbook_8cpp.html#ab8407e7ef1980758751d575bc253fbea">trim</a></div><div class="ttdeci">const char * trim(const std::string operandString, WINDOW *window)</div><div class="ttdoc">Signal handler for window change.</div><div class="ttdef"><b>Definition:</b> <a href="addbook_8cpp_source.html#l00055">addbook.cpp:55</a></div></div>
 <div class="ttc" id="aclassBookType_html"><div class="ttname"><a href="classBookType.html">BookType</a></div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00014">bookType.h:15</a></div></div>
-<div class="ttc" id="aclassBookType_html_a0326e55232a94efb1c6fa29ec5e99e34"><div class="ttname"><a href="classBookType.html#a0326e55232a94efb1c6fa29ec5e99e34">BookType::getAuthor</a></div><div class="ttdeci">string getAuthor() const</div><div class="ttdoc">Gets the book author.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00030">bookType.h:30</a></div></div>
+<div class="ttc" id="aclassBookType_html_a0326e55232a94efb1c6fa29ec5e99e34"><div class="ttname"><a href="classBookType.html#a0326e55232a94efb1c6fa29ec5e99e34">BookType::getAuthor</a></div><div class="ttdeci">string getAuthor() const</div><div class="ttdoc">Gets the book author.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00031">bookType.h:31</a></div></div>
 <div class="ttc" id="aclassBookType_html_a036299b2d6e0080d14ea1de1add11c3f"><div class="ttname"><a href="classBookType.html#a036299b2d6e0080d14ea1de1add11c3f">BookType::setISBN</a></div><div class="ttdeci">void setISBN(string bookisbn)</div><div class="ttdoc">Sets the book ISBN.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00018">bookType.h:18</a></div></div>
 <div class="ttc" id="aclassBookType_html_a039707661327becb322fbbc51e98bbff"><div class="ttname"><a href="classBookType.html#a039707661327becb322fbbc51e98bbff">BookType::setDateAdded</a></div><div class="ttdeci">void setDateAdded(string date)</div><div class="ttdoc">Sets the date at which the book was added.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00021">bookType.h:21</a></div></div>
 <div class="ttc" id="aclassBookType_html_a042fb4df42f4e1716d0decc754fed952"><div class="ttname"><a href="classBookType.html#a042fb4df42f4e1716d0decc754fed952">BookType::setAuthor</a></div><div class="ttdeci">void setAuthor(string bookAuthor)</div><div class="ttdoc">Sets the book author.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00019">bookType.h:19</a></div></div>
-<div class="ttc" id="aclassBookType_html_a369dfce6a37730fd0d9b4b2b4586707b"><div class="ttname"><a href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">BookType::getTitle</a></div><div class="ttdeci">string getTitle() const</div><div class="ttdoc">Gets the book title.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00028">bookType.h:28</a></div></div>
+<div class="ttc" id="aclassBookType_html_a369dfce6a37730fd0d9b4b2b4586707b"><div class="ttname"><a href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">BookType::getTitle</a></div><div class="ttdeci">string getTitle() const</div><div class="ttdoc">Gets the book title.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00029">bookType.h:29</a></div></div>
 <div class="ttc" id="aclassBookType_html_a48aa8e4eb23818c086ed84bc22d25269"><div class="ttname"><a href="classBookType.html#a48aa8e4eb23818c086ed84bc22d25269">BookType::setTitle</a></div><div class="ttdeci">void setTitle(string title)</div><div class="ttdoc">Sets the book title.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00017">bookType.h:17</a></div></div>
 <div class="ttc" id="aclassBookType_html_a585f49b44845ab3cdd758fe89323c5c1"><div class="ttname"><a href="classBookType.html#a585f49b44845ab3cdd758fe89323c5c1">BookType::setPub</a></div><div class="ttdeci">void setPub(string bookPublisher)</div><div class="ttdoc">Sets the book publisher.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00020">bookType.h:20</a></div></div>
-<div class="ttc" id="aclassBookType_html_a60e45a826a946b465b222849477c9b41"><div class="ttname"><a href="classBookType.html#a60e45a826a946b465b222849477c9b41">BookType::getRetail</a></div><div class="ttdeci">double getRetail() const</div><div class="ttdoc">Gets the retail value of book.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00035">bookType.h:35</a></div></div>
+<div class="ttc" id="aclassBookType_html_a60e45a826a946b465b222849477c9b41"><div class="ttname"><a href="classBookType.html#a60e45a826a946b465b222849477c9b41">BookType::getRetail</a></div><div class="ttdeci">double getRetail() const</div><div class="ttdoc">Gets the retail value of book.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00036">bookType.h:36</a></div></div>
 <div class="ttc" id="aclassBookType_html_a7c092faa1707219b63aa2e9e6f61eb4b"><div class="ttname"><a href="classBookType.html#a7c092faa1707219b63aa2e9e6f61eb4b">BookType::setQtyOnHand</a></div><div class="ttdeci">void setQtyOnHand(int quantity)</div><div class="ttdoc">Sets the quantity of books available.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00022">bookType.h:22</a></div></div>
-<div class="ttc" id="aclassBookType_html_a8429f87cac6b7d70ef56f6821cdccfba"><div class="ttname"><a href="classBookType.html#a8429f87cac6b7d70ef56f6821cdccfba">BookType::getQtyOnHand</a></div><div class="ttdeci">int getQtyOnHand() const</div><div class="ttdoc">Gets the quantity of books available.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00033">bookType.h:33</a></div></div>
-<div class="ttc" id="aclassBookType_html_a8684b5b66f7c5c56d457642edfafaba7"><div class="ttname"><a href="classBookType.html#a8684b5b66f7c5c56d457642edfafaba7">BookType::getPub</a></div><div class="ttdeci">string getPub() const</div><div class="ttdoc">Gets the book publisher.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00031">bookType.h:31</a></div></div>
-<div class="ttc" id="aclassBookType_html_a9a5b1c3a4fa50b9983095d2a75a11f73"><div class="ttname"><a href="classBookType.html#a9a5b1c3a4fa50b9983095d2a75a11f73">BookType::getWholesale</a></div><div class="ttdeci">double getWholesale() const</div><div class="ttdoc">Gets the wholesale price of book.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00034">bookType.h:34</a></div></div>
-<div class="ttc" id="aclassBookType_html_ab3d149c73829ea6b2a676795a485b70c"><div class="ttname"><a href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a></div><div class="ttdeci">static int getBookCount()</div><div class="ttdoc">Gets the count of all book types.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00036">bookType.h:36</a></div></div>
+<div class="ttc" id="aclassBookType_html_a8429f87cac6b7d70ef56f6821cdccfba"><div class="ttname"><a href="classBookType.html#a8429f87cac6b7d70ef56f6821cdccfba">BookType::getQtyOnHand</a></div><div class="ttdeci">int getQtyOnHand() const</div><div class="ttdoc">Gets the quantity of books available.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00034">bookType.h:34</a></div></div>
+<div class="ttc" id="aclassBookType_html_a8684b5b66f7c5c56d457642edfafaba7"><div class="ttname"><a href="classBookType.html#a8684b5b66f7c5c56d457642edfafaba7">BookType::getPub</a></div><div class="ttdeci">string getPub() const</div><div class="ttdoc">Gets the book publisher.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00032">bookType.h:32</a></div></div>
+<div class="ttc" id="aclassBookType_html_a9a5b1c3a4fa50b9983095d2a75a11f73"><div class="ttname"><a href="classBookType.html#a9a5b1c3a4fa50b9983095d2a75a11f73">BookType::getWholesale</a></div><div class="ttdeci">double getWholesale() const</div><div class="ttdoc">Gets the wholesale price of book.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00035">bookType.h:35</a></div></div>
+<div class="ttc" id="aclassBookType_html_ab3d149c73829ea6b2a676795a485b70c"><div class="ttname"><a href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a></div><div class="ttdeci">static int getBookCount()</div><div class="ttdoc">Gets the count of all book types.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00037">bookType.h:37</a></div></div>
 <div class="ttc" id="aclassBookType_html_ab7c836e9b1307497b34ae6fe5d0734f1"><div class="ttname"><a href="classBookType.html#ab7c836e9b1307497b34ae6fe5d0734f1">BookType::setWholesale</a></div><div class="ttdeci">void setWholesale(double wholesalePrice)</div><div class="ttdoc">Sets the wholesale price of book.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00023">bookType.h:23</a></div></div>
-<div class="ttc" id="aclassBookType_html_ac1e5aab4bc4f18eaad0ebe14f3046b7b"><div class="ttname"><a href="classBookType.html#ac1e5aab4bc4f18eaad0ebe14f3046b7b">BookType::getISBN</a></div><div class="ttdeci">string getISBN() const</div><div class="ttdoc">Gets the book ISBN.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00029">bookType.h:29</a></div></div>
-<div class="ttc" id="aclassBookType_html_ae3f36bb2025322d0a8982887a12e818e"><div class="ttname"><a href="classBookType.html#ae3f36bb2025322d0a8982887a12e818e">BookType::getDateAdded</a></div><div class="ttdeci">string getDateAdded() const</div><div class="ttdoc">Gets the date at which the book was added.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00032">bookType.h:32</a></div></div>
+<div class="ttc" id="aclassBookType_html_ac1e5aab4bc4f18eaad0ebe14f3046b7b"><div class="ttname"><a href="classBookType.html#ac1e5aab4bc4f18eaad0ebe14f3046b7b">BookType::getISBN</a></div><div class="ttdeci">string getISBN() const</div><div class="ttdoc">Gets the book ISBN.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00030">bookType.h:30</a></div></div>
+<div class="ttc" id="aclassBookType_html_ae3f36bb2025322d0a8982887a12e818e"><div class="ttname"><a href="classBookType.html#ae3f36bb2025322d0a8982887a12e818e">BookType::getDateAdded</a></div><div class="ttdeci">string getDateAdded() const</div><div class="ttdoc">Gets the date at which the book was added.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00033">bookType.h:33</a></div></div>
 <div class="ttc" id="aclassBookType_html_ae60f135ad862ad44c3a5a175b6e2e875"><div class="ttname"><a href="classBookType.html#ae60f135ad862ad44c3a5a175b6e2e875">BookType::incBookCount</a></div><div class="ttdeci">static void incBookCount()</div><div class="ttdoc">Increments the count of all book types.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00025">bookType.h:25</a></div></div>
 <div class="ttc" id="aclassBookType_html_af8d8ac9fba586d1de2c739c89e25d50b"><div class="ttname"><a href="classBookType.html#af8d8ac9fba586d1de2c739c89e25d50b">BookType::setRetail</a></div><div class="ttdeci">void setRetail(double retailPrice)</div><div class="ttdoc">Sets the retail value of book.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00024">bookType.h:24</a></div></div>
-<div class="ttc" id="amenuDipity_8h_html_a22b5c4019f9dc8b6d9f5c761cb3405e3"><div class="ttname"><a href="menuDipity_8h.html#a22b5c4019f9dc8b6d9f5c761cb3405e3">deleteMenu</a></div><div class="ttdeci">void deleteMenu(MENU *&amp;mainMenu, ITEM **&amp;items, size_t menuLineSize)</div><div class="ttdoc">Safely kill menu &amp; menu items.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00223">menuDipity.cpp:223</a></div></div>
-<div class="ttc" id="amenuDipity_8h_html_a2a20c1da3d8e216c4aac8cd40d648d43"><div class="ttname"><a href="menuDipity_8h.html#a2a20c1da3d8e216c4aac8cd40d648d43">refreshWindowMiddleSplit</a></div><div class="ttdeci">void refreshWindowMiddleSplit(MENU *&amp;mainMenu, WINDOW *&amp;mainWindow, WINDOW *&amp;notification, const MenuLines &amp;mainMenuInfo)</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00301">menuDipity.cpp:301</a></div></div>
-<div class="ttc" id="amenuDipity_8h_html_a4b2b10e5786fcbe1575da3ed5893c1f7"><div class="ttname"><a href="menuDipity_8h.html#a4b2b10e5786fcbe1575da3ed5893c1f7">endWindow</a></div><div class="ttdeci">void endWindow(WINDOW *&amp;mainWindow)</div><div class="ttdoc">Safely kill the window.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00252">menuDipity.cpp:252</a></div></div>
-<div class="ttc" id="amenuDipity_8h_html_ad7fe3a009bc40f5396d70336304bf60b"><div class="ttname"><a href="menuDipity_8h.html#ad7fe3a009bc40f5396d70336304bf60b">createMenuMiddleSplit</a></div><div class="ttdeci">void createMenuMiddleSplit(MENU *&amp;mainMenu, WINDOW *mainWindow, const MenuLines &amp;mainMenuInfo, ITEM **&amp;items)</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00194">menuDipity.cpp:194</a></div></div>
-<div class="ttc" id="amenuDipity_8h_html_ae7fa97802caf4dbaf3d16339f1f977ca"><div class="ttname"><a href="menuDipity_8h.html#ae7fa97802caf4dbaf3d16339f1f977ca">startWindow</a></div><div class="ttdeci">void startWindow(WINDOW *&amp;mainWindow)</div><div class="ttdoc">Start window with default esettings.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00237">menuDipity.cpp:237</a></div></div>
+<div class="ttc" id="aclassLinkedListType_html_a17017c57931cff584743f972f6d34168"><div class="ttname"><a href="classLinkedListType.html#a17017c57931cff584743f972f6d34168">LinkedListType::insert_head</a></div><div class="ttdeci">void insert_head(T data)</div><div class="ttdef"><b>Definition:</b> <a href="linkedlist_8hpp_source.html#l00071">linkedlist.hpp:71</a></div></div>
+<div class="ttc" id="afld__def_8c_html_a05e7e57b7a0e19c512e292ac99aed666"><div class="ttname"><a href="fld__def_8c.html#a05e7e57b7a0e19c512e292ac99aed666">free_field</a></div><div class="ttdeci">free_field(FIELD *field)</div><div class="ttdef"><b>Definition:</b> <a href="fld__def_8c_source.html#l00356">fld_def.c:356</a></div></div>
+<div class="ttc" id="afld__def_8c_html_a73778715cd85b3af2a4b84ccc80ea726"><div class="ttname"><a href="fld__def_8c.html#a73778715cd85b3af2a4b84ccc80ea726">new_field</a></div><div class="ttdeci">new_field(int rows, int cols, int frow, int fcol, int nrow, int nbuf)</div><div class="ttdef"><b>Definition:</b> <a href="fld__def_8c_source.html#l00276">fld_def.c:276</a></div></div>
+<div class="ttc" id="afld__opts_8c_html_af92e9868a75b36869f82492f68576354"><div class="ttname"><a href="fld__opts_8c.html#af92e9868a75b36869f82492f68576354">field_opts_off</a></div><div class="ttdeci">field_opts_off(FIELD *field, Field_Options opts)</div><div class="ttdef"><b>Definition:</b> <a href="fld__opts_8c_source.html#l00124">fld_opts.c:124</a></div></div>
+<div class="ttc" id="afld__type_8c_html_a6502badfd57e748565ae7bc5044fa6af"><div class="ttname"><a href="fld__type_8c.html#a6502badfd57e748565ae7bc5044fa6af">set_field_type</a></div><div class="ttdeci">set_field_type(FIELD *field, FIELDTYPE *type,...)</div><div class="ttdef"><b>Definition:</b> <a href="fld__type_8c_source.html#l00050">fld_type.c:50</a></div></div>
+<div class="ttc" id="afrm__def_8c_html_a0ad2d188bda0b3b607aea596304d6f0a"><div class="ttname"><a href="frm__def_8c.html#a0ad2d188bda0b3b607aea596304d6f0a">free_form</a></div><div class="ttdeci">free_form(FORM *form)</div><div class="ttdef"><b>Definition:</b> <a href="frm__def_8c_source.html#l00367">frm_def.c:367</a></div></div>
+<div class="ttc" id="afrm__def_8c_html_aad18e4418ca560ac2dcd783fd3975c52"><div class="ttname"><a href="frm__def_8c.html#aad18e4418ca560ac2dcd783fd3975c52">new_form</a></div><div class="ttdeci">NCURSES_SP_NAME() new_form(NCURSES_SP_DCLx FIELD **fields)</div><div class="ttdef"><b>Definition:</b> <a href="frm__def_8c_source.html#l00301">frm_def.c:301</a></div></div>
+<div class="ttc" id="afrm__driver_8c_html_aa9013311e02f3f427d793286f65ac4f1"><div class="ttname"><a href="frm__driver_8c.html#aa9013311e02f3f427d793286f65ac4f1">form_driver</a></div><div class="ttdeci">form_driver(FORM *form, int c)</div><div class="ttdef"><b>Definition:</b> <a href="frm__driver_8c_source.html#l04363">frm_driver.c:4363</a></div></div>
+<div class="ttc" id="afrm__post_8c_html_a3572d11365a8f2b3418c075ff1c1724d"><div class="ttname"><a href="frm__post_8c.html#a3572d11365a8f2b3418c075ff1c1724d">unpost_form</a></div><div class="ttdeci">unpost_form(FORM *form)</div><div class="ttdef"><b>Definition:</b> <a href="frm__post_8c_source.html#l00102">frm_post.c:102</a></div></div>
+<div class="ttc" id="afrm__post_8c_html_ae7413e4458cf2b3008a605097673bc8c"><div class="ttname"><a href="frm__post_8c.html#ae7413e4458cf2b3008a605097673bc8c">post_form</a></div><div class="ttdeci">post_form(FORM *form)</div><div class="ttdef"><b>Definition:</b> <a href="frm__post_8c_source.html#l00052">frm_post.c:52</a></div></div>
+<div class="ttc" id="afrm__sub_8c_html_a11357879a17811c6de511727215e0211"><div class="ttname"><a href="frm__sub_8c.html#a11357879a17811c6de511727215e0211">set_form_sub</a></div><div class="ttdeci">set_form_sub(FORM *form, WINDOW *win)</div><div class="ttdef"><b>Definition:</b> <a href="frm__sub_8c_source.html#l00048">frm_sub.c:48</a></div></div>
+<div class="ttc" id="afrm__win_8c_html_ae1d0c6fba25bd6e78e21e0de1aa37b7e"><div class="ttname"><a href="frm__win_8c.html#ae1d0c6fba25bd6e78e21e0de1aa37b7e">set_form_win</a></div><div class="ttdeci">set_form_win(FORM *form, WINDOW *win)</div><div class="ttdef"><b>Definition:</b> <a href="frm__win_8c_source.html#l00048">frm_win.c:48</a></div></div>
+<div class="ttc" id="ainclude_2ncurses_2curses_8h_html_a004194639b9ad76cea01d9e93716d4d6"><div class="ttname"><a href="include_2ncurses_2curses_8h.html#a004194639b9ad76cea01d9e93716d4d6">KEY_RIGHT</a></div><div class="ttdeci">#define KEY_RIGHT</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2curses_8h_source.html#l01513">include/ncurses/curses.h:1513</a></div></div>
+<div class="ttc" id="ainclude_2ncurses_2curses_8h_html_a02249c5271d4d349a93f545ed2e846c8"><div class="ttname"><a href="include_2ncurses_2curses_8h.html#a02249c5271d4d349a93f545ed2e846c8">getmaxy</a></div><div class="ttdeci">#define getmaxy(win)</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2curses_8h_source.html#l01189">include/ncurses/curses.h:1189</a></div></div>
+<div class="ttc" id="ainclude_2ncurses_2curses_8h_html_a1d8c9ff191a674e92b3c9dd8650e10c0"><div class="ttname"><a href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a></div><div class="ttdeci">#define getmaxx(win)</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2curses_8h_source.html#l01188">include/ncurses/curses.h:1188</a></div></div>
+<div class="ttc" id="ainclude_2ncurses_2curses_8h_html_a1e9a449dee19c686a2af4edcdc1a1042"><div class="ttname"><a href="include_2ncurses_2curses_8h.html#a1e9a449dee19c686a2af4edcdc1a1042">KEY_BACKSPACE</a></div><div class="ttdeci">#define KEY_BACKSPACE</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2curses_8h_source.html#l01515">include/ncurses/curses.h:1515</a></div></div>
+<div class="ttc" id="ainclude_2ncurses_2curses_8h_html_a203163bc0189184a1de6ca8d1e53c6bf"><div class="ttname"><a href="include_2ncurses_2curses_8h.html#a203163bc0189184a1de6ca8d1e53c6bf">KEY_DOWN</a></div><div class="ttdeci">#define KEY_DOWN</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2curses_8h_source.html#l01510">include/ncurses/curses.h:1510</a></div></div>
+<div class="ttc" id="ainclude_2ncurses_2curses_8h_html_a69402876ce6099a41bc3a3ce2b5690de"><div class="ttname"><a href="include_2ncurses_2curses_8h.html#a69402876ce6099a41bc3a3ce2b5690de">box</a></div><div class="ttdeci">#define box(win, v, h)</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2curses_8h_source.html#l01225">include/ncurses/curses.h:1225</a></div></div>
+<div class="ttc" id="ainclude_2ncurses_2curses_8h_html_a7c32820200083024fe4557ddef897936"><div class="ttname"><a href="include_2ncurses_2curses_8h.html#a7c32820200083024fe4557ddef897936">A_UNDERLINE</a></div><div class="ttdeci">#define A_UNDERLINE</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2curses_8h_source.html#l01111">include/ncurses/curses.h:1111</a></div></div>
+<div class="ttc" id="ainclude_2ncurses_2curses_8h_html_af4d1b8a2912354646c74cf36c69f8223"><div class="ttname"><a href="include_2ncurses_2curses_8h.html#af4d1b8a2912354646c74cf36c69f8223">KEY_LEFT</a></div><div class="ttdeci">#define KEY_LEFT</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2curses_8h_source.html#l01512">include/ncurses/curses.h:1512</a></div></div>
+<div class="ttc" id="ainclude_2ncurses_2curses_8h_html_afa086fc916a81e7fd348ec00cf786916"><div class="ttname"><a href="include_2ncurses_2curses_8h.html#afa086fc916a81e7fd348ec00cf786916">KEY_UP</a></div><div class="ttdeci">#define KEY_UP</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2curses_8h_source.html#l01511">include/ncurses/curses.h:1511</a></div></div>
+<div class="ttc" id="ainclude_2ncurses_2form_8h_html_a2e3542e6bcade7dea1be709cddbfdb88"><div class="ttname"><a href="include_2ncurses_2form_8h.html#a2e3542e6bcade7dea1be709cddbfdb88">REQ_DEL_CHAR</a></div><div class="ttdeci">#define REQ_DEL_CHAR</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2form_8h_source.html#l00281">include/ncurses/form.h:281</a></div></div>
+<div class="ttc" id="ainclude_2ncurses_2form_8h_html_a33e2e3d0b9aa88aef0689bf1942bc3d5"><div class="ttname"><a href="include_2ncurses_2form_8h.html#a33e2e3d0b9aa88aef0689bf1942bc3d5">O_AUTOSKIP</a></div><div class="ttdeci">#define O_AUTOSKIP</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2form_8h_source.html#l00231">include/ncurses/form.h:231</a></div></div>
+<div class="ttc" id="ainclude_2ncurses_2form_8h_html_acabaacaa77d730c1cdbb2ef627bdcdbb"><div class="ttname"><a href="include_2ncurses_2form_8h.html#acabaacaa77d730c1cdbb2ef627bdcdbb">REQ_NEXT_CHAR</a></div><div class="ttdeci">#define REQ_NEXT_CHAR</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2form_8h_source.html#l00263">include/ncurses/form.h:263</a></div></div>
+<div class="ttc" id="ainclude_2ncurses_2form_8h_html_af6396a27b001d1f3e1fdda1413bf3984"><div class="ttname"><a href="include_2ncurses_2form_8h.html#af6396a27b001d1f3e1fdda1413bf3984">REQ_PREV_CHAR</a></div><div class="ttdeci">#define REQ_PREV_CHAR</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2form_8h_source.html#l00264">include/ncurses/form.h:264</a></div></div>
+<div class="ttc" id="ainclude_2ncurses_2menu_8h_html_abd50b6ec1c4a53d290cc3d06642bf83f"><div class="ttname"><a href="include_2ncurses_2menu_8h.html#abd50b6ec1c4a53d290cc3d06642bf83f">REQ_NEXT_ITEM</a></div><div class="ttdeci">#define REQ_NEXT_ITEM</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2menu_8h_source.html#l00170">include/ncurses/menu.h:170</a></div></div>
+<div class="ttc" id="ainclude_2ncurses_2menu_8h_html_afda595b6297879081689d4c9302b946d"><div class="ttname"><a href="include_2ncurses_2menu_8h.html#afda595b6297879081689d4c9302b946d">REQ_PREV_ITEM</a></div><div class="ttdeci">#define REQ_PREV_ITEM</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2menu_8h_source.html#l00171">include/ncurses/menu.h:171</a></div></div>
+<div class="ttc" id="ainternal_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="internal_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="internal_8h_source.html#l00067">internal.h:67</a></div></div>
+<div class="ttc" id="alib__clear_8c_html_ac4e0e71291aa948012aea0fad2ff57e5"><div class="ttname"><a href="lib__clear_8c.html#ac4e0e71291aa948012aea0fad2ff57e5">wclear</a></div><div class="ttdeci">wclear(WINDOW *win)</div><div class="ttdef"><b>Definition:</b> <a href="lib__clear_8c_source.html#l00047">lib_clear.c:47</a></div></div>
+<div class="ttc" id="alib__delwin_8c_html_afdc5e9dacc5587a4c47333d0e040ffe7"><div class="ttname"><a href="lib__delwin_8c.html#afdc5e9dacc5587a4c47333d0e040ffe7">delwin</a></div><div class="ttdeci">delwin(WINDOW *win)</div><div class="ttdef"><b>Definition:</b> <a href="lib__delwin_8c_source.html#l00075">lib_delwin.c:75</a></div></div>
+<div class="ttc" id="alib__getch_8c_html_a959890dd627818ba206efa50c247f0dd"><div class="ttname"><a href="lib__getch_8c.html#a959890dd627818ba206efa50c247f0dd">wgetch</a></div><div class="ttdeci">wgetch(WINDOW *win)</div><div class="ttdef"><b>Definition:</b> <a href="lib__getch_8c_source.html#l00687">lib_getch.c:687</a></div></div>
+<div class="ttc" id="alib__newwin_8c_html_ac46deef3b21d35f9fcc92df0c6a3438b"><div class="ttname"><a href="lib__newwin_8c.html#ac46deef3b21d35f9fcc92df0c6a3438b">derwin</a></div><div class="ttdeci">derwin(WINDOW *orig, int num_lines, int num_columns, int begy, int begx)</div><div class="ttdef"><b>Definition:</b> <a href="lib__newwin_8c_source.html#l00195">lib_newwin.c:195</a></div></div>
+<div class="ttc" id="alib__newwin_8c_html_ae036daec0c3e1eb2d84df98afcbae4ee"><div class="ttname"><a href="lib__newwin_8c.html#ae036daec0c3e1eb2d84df98afcbae4ee">newwin</a></div><div class="ttdeci">NCURSES_SP_NAME() newwin(NCURSES_SP_DCLx int num_lines, int num_columns, int begy, int begx)</div><div class="ttdef"><b>Definition:</b> <a href="lib__newwin_8c_source.html#l00139">lib_newwin.c:139</a></div></div>
+<div class="ttc" id="alib__options_8c_html_aa5acd0b59b12061b68c6c58051cc6662"><div class="ttname"><a href="lib__options_8c.html#aa5acd0b59b12061b68c6c58051cc6662">keypad</a></div><div class="ttdeci">keypad(WINDOW *win, bool flag)</div><div class="ttdef"><b>Definition:</b> <a href="lib__options_8c_source.html#l00146">lib_options.c:146</a></div></div>
+<div class="ttc" id="alib__printw_8c_html_a32452367ae7de3f83f02cf08f245d21c"><div class="ttname"><a href="lib__printw_8c.html#a32452367ae7de3f83f02cf08f245d21c">wprintw</a></div><div class="ttdeci">wprintw(WINDOW *win, const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="lib__printw_8c_source.html#l00067">lib_printw.c:67</a></div></div>
+<div class="ttc" id="alib__printw_8c_html_aa732ca61f7e6b4d4c54ade67b388bbfd"><div class="ttname"><a href="lib__printw_8c.html#aa732ca61f7e6b4d4c54ade67b388bbfd">mvwprintw</a></div><div class="ttdeci">mvwprintw(WINDOW *win, int y, int x, const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="lib__printw_8c_source.html#l00111">lib_printw.c:111</a></div></div>
+<div class="ttc" id="alib__refresh_8c_html_ae612fb9d9b8a757492cf3b78f0d4f50f"><div class="ttname"><a href="lib__refresh_8c.html#ae612fb9d9b8a757492cf3b78f0d4f50f">wrefresh</a></div><div class="ttdeci">wrefresh(WINDOW *win)</div><div class="ttdef"><b>Definition:</b> <a href="lib__refresh_8c_source.html#l00049">lib_refresh.c:49</a></div></div>
+<div class="ttc" id="am__driver_8c_html_a64bbdb0ae67cfd3f349a29105d13ab13"><div class="ttname"><a href="m__driver_8c.html#a64bbdb0ae67cfd3f349a29105d13ab13">menu_driver</a></div><div class="ttdeci">menu_driver(MENU *menu, int c)</div><div class="ttdef"><b>Definition:</b> <a href="m__driver_8c_source.html#l00213">m_driver.c:213</a></div></div>
+<div class="ttc" id="am__item__cur_8c_html_a28d2708f6efb7f63cd4e1885db42f396"><div class="ttname"><a href="m__item__cur_8c.html#a28d2708f6efb7f63cd4e1885db42f396">item_index</a></div><div class="ttdeci">item_index(const ITEM *item)</div><div class="ttdef"><b>Definition:</b> <a href="m__item__cur_8c_source.html#l00108">m_item_cur.c:108</a></div></div>
+<div class="ttc" id="am__item__cur_8c_html_aa416dc34374eeb599ac50a894e91552c"><div class="ttname"><a href="m__item__cur_8c.html#aa416dc34374eeb599ac50a894e91552c">set_current_item</a></div><div class="ttdeci">set_current_item(MENU *menu, ITEM *item)</div><div class="ttdef"><b>Definition:</b> <a href="m__item__cur_8c_source.html#l00052">m_item_cur.c:52</a></div></div>
+<div class="ttc" id="am__item__cur_8c_html_aec26c84285802a5837630f1d79bc8567"><div class="ttname"><a href="m__item__cur_8c.html#aec26c84285802a5837630f1d79bc8567">current_item</a></div><div class="ttdeci">current_item(const MENU *menu)</div><div class="ttdef"><b>Definition:</b> <a href="m__item__cur_8c_source.html#l00093">m_item_cur.c:93</a></div></div>
+<div class="ttc" id="am__post_8c_html_ae52447ff63bebef88885956896f80479"><div class="ttname"><a href="m__post_8c.html#ae52447ff63bebef88885956896f80479">post_menu</a></div><div class="ttdeci">post_menu(MENU *menu)</div><div class="ttdef"><b>Definition:</b> <a href="m__post_8c_source.html#l00277">m_post.c:277</a></div></div>
+<div class="ttc" id="amenuDipity_8h_html_a22b5c4019f9dc8b6d9f5c761cb3405e3"><div class="ttname"><a href="menuDipity_8h.html#a22b5c4019f9dc8b6d9f5c761cb3405e3">deleteMenu</a></div><div class="ttdeci">void deleteMenu(MENU *&amp;mainMenu, ITEM **&amp;items, size_t menuLineSize)</div><div class="ttdoc">Safely kill menu &amp; menu items.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00231">menuDipity.cpp:231</a></div></div>
+<div class="ttc" id="amenuDipity_8h_html_a2a20c1da3d8e216c4aac8cd40d648d43"><div class="ttname"><a href="menuDipity_8h.html#a2a20c1da3d8e216c4aac8cd40d648d43">refreshWindowMiddleSplit</a></div><div class="ttdeci">void refreshWindowMiddleSplit(MENU *&amp;mainMenu, WINDOW *&amp;mainWindow, WINDOW *&amp;notification, const MenuLines &amp;mainMenuInfo)</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00311">menuDipity.cpp:311</a></div></div>
+<div class="ttc" id="amenuDipity_8h_html_a4b2b10e5786fcbe1575da3ed5893c1f7"><div class="ttname"><a href="menuDipity_8h.html#a4b2b10e5786fcbe1575da3ed5893c1f7">endWindow</a></div><div class="ttdeci">void endWindow(WINDOW *&amp;mainWindow)</div><div class="ttdoc">Safely kill the window.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00261">menuDipity.cpp:261</a></div></div>
+<div class="ttc" id="amenuDipity_8h_html_ad7fe3a009bc40f5396d70336304bf60b"><div class="ttname"><a href="menuDipity_8h.html#ad7fe3a009bc40f5396d70336304bf60b">createMenuMiddleSplit</a></div><div class="ttdeci">void createMenuMiddleSplit(MENU *&amp;mainMenu, WINDOW *mainWindow, const MenuLines &amp;mainMenuInfo, ITEM **&amp;items)</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00202">menuDipity.cpp:202</a></div></div>
+<div class="ttc" id="amenuDipity_8h_html_ae7fa97802caf4dbaf3d16339f1f977ca"><div class="ttname"><a href="menuDipity_8h.html#ae7fa97802caf4dbaf3d16339f1f977ca">startWindow</a></div><div class="ttdeci">void startWindow(WINDOW *&amp;mainWindow)</div><div class="ttdoc">Start window with default esettings.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00246">menuDipity.cpp:246</a></div></div>
+<div class="ttc" id="asignal_8hpp_html_a8a2651374b4c745171073b8aee20eee3"><div class="ttname"><a href="signal_8hpp.html#a8a2651374b4c745171073b8aee20eee3">stateProvider</a></div><div class="ttdeci">volatile sig_atomic_t stateProvider</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8cpp_source.html#l00039">menuDipity.cpp:39</a></div></div>
 <div class="ttc" id="astructMenuLines_html"><div class="ttname"><a href="structMenuLines.html">MenuLines</a></div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8h_source.html#l00015">menuDipity.h:15</a></div></div>
 <div class="ttc" id="astructMenuLines_html_a0af95e4dcce7da30088989156d66ffaf"><div class="ttname"><a href="structMenuLines.html#a0af95e4dcce7da30088989156d66ffaf">MenuLines::storeName</a></div><div class="ttdeci">std::string storeName</div><div class="ttdoc">Name of Store.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8h_source.html#l00019">menuDipity.h:19</a></div></div>
 <div class="ttc" id="astructMenuLines_html_a15b8a52d1b8c366a0af2f56761c411c6"><div class="ttname"><a href="structMenuLines.html#a15b8a52d1b8c366a0af2f56761c411c6">MenuLines::longestMenuLength</a></div><div class="ttdeci">int longestMenuLength</div><div class="ttdoc">Longest Line Length.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8h_source.html#l00018">menuDipity.h:18</a></div></div>
 <div class="ttc" id="astructMenuLines_html_a4a30d31a41fa0757a8c1173384e81721"><div class="ttname"><a href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">MenuLines::menuName</a></div><div class="ttdeci">std::string menuName</div><div class="ttdoc">Menu Name.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8h_source.html#l00016">menuDipity.h:16</a></div></div>
 <div class="ttc" id="astructMenuLines_html_acd2f1bc6dacb8c9f4ba60cf0afc459df"><div class="ttname"><a href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">MenuLines::menuLines</a></div><div class="ttdeci">std::vector&lt; std::string &gt; menuLines</div><div class="ttdoc">Menu Options.</div><div class="ttdef"><b>Definition:</b> <a href="menuDipity_8h_source.html#l00017">menuDipity.h:17</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a51f8e425a5322b08c0e6aba68de209de" name="a51f8e425a5322b08c0e6aba68de209de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51f8e425a5322b08c0e6aba68de209de">&#9670;&#160;</a></span>ahandleSignal()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ahandleSignal </td>
-          <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>signal</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Signal handler for window change. </p>
-
-<p class="definition">Definition at line <a class="el" href="addbook_8cpp_source.html#l00406">406</a> of file <a class="el" href="addbook_8cpp_source.html">addbook.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  406</span>                                     {</div>
-<div class="line"><span class="lineno">  407</span>    <a class="code hl_variable" href="addbook_8cpp.html#a6280ed7ee6637077042b2499fc9c4656">astateProvider</a> = signal;</div>
-<div class="line"><span class="lineno">  408</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  409</span>}</div>
+<div class="ttc" id="astruct__win__st_html"><div class="ttname"><a href="struct__win__st.html">_win_st</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2curses_8h_source.html#l00491">include/ncurses/curses.h:492</a></div></div>
+<div class="ttc" id="astructfieldnode_html"><div class="ttname"><a href="structfieldnode.html">fieldnode</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2form_8h_source.html#l00088">include/ncurses/form.h:90</a></div></div>
+<div class="ttc" id="astructformnode_html"><div class="ttname"><a href="structformnode.html">formnode</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2form_8h_source.html#l00134">include/ncurses/form.h:136</a></div></div>
+<div class="ttc" id="astructtagITEM_html"><div class="ttname"><a href="structtagITEM.html">tagITEM</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2menu_8h_source.html#l00088">include/ncurses/menu.h:90</a></div></div>
+<div class="ttc" id="astructtagMENU_html"><div class="ttname"><a href="structtagMENU.html">tagMENU</a></div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2menu_8h_source.html#l00112">include/ncurses/menu.h:114</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -555,15 +583,15 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char * trim </td>
+          <td class="memname"><a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> char * trim </td>
           <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> std::string&#160;</td>
           <td class="paramname"><em>operandString</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">WINDOW *&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2curses_8h.html#aa64cc90e7a4df667d6c7249b77890d39">WINDOW</a> *&#160;</td>
           <td class="paramname"><em>window</em>&#160;</td>
         </tr>
         <tr>
@@ -573,52 +601,38 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Signal handler for window change. </p>
 <p>trim(string, WINDOW *) -&gt; Trims string to appropriate size depending on whitespaces and window size. </p>
 
-<p class="definition">Definition at line <a class="el" href="addbook_8cpp_source.html#l00054">54</a> of file <a class="el" href="addbook_8cpp_source.html">addbook.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   54</span>                                                                {</div>
-<div class="line"><span class="lineno">   55</span>    <span class="keyword">static</span> std::string returnString;</div>
-<div class="line"><span class="lineno">   56</span>    <span class="keywordtype">size_t</span> iter;</div>
-<div class="line"><span class="lineno">   57</span>    <span class="keywordtype">int</span> maxSize;</div>
-<div class="line"><span class="lineno">   58</span> </div>
-<div class="line"><span class="lineno">   59</span>    returnString = std::string(operandString);</div>
-<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">for</span> (iter = 0;</div>
-<div class="line"><span class="lineno">   61</span>            iter &lt; returnString.length()</div>
-<div class="line"><span class="lineno">   62</span>                    &amp;&amp; returnString.c_str()[iter] == <span class="charliteral">&#39; &#39;</span>; iter++)</div>
-<div class="line"><span class="lineno">   63</span>        ;</div>
-<div class="line"><span class="lineno">   64</span>    returnString.erase(0, iter);</div>
-<div class="line"><span class="lineno">   65</span>    returnString.shrink_to_fit();</div>
-<div class="line"><span class="lineno">   66</span> </div>
-<div class="line"><span class="lineno">   67</span>    maxSize =  (getmaxx(window) - (int)<span class="keyword">sizeof</span>(<span class="stringliteral">&quot;Title            : &quot;</span>) - 2);</div>
-<div class="line"><span class="lineno">   68</span>    <span class="comment">//maxSize = 15;</span></div>
-<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">if</span> ((<span class="keywordtype">int</span>)returnString.length()</div>
-<div class="line"><span class="lineno">   70</span>            &gt; maxSize) {</div>
-<div class="line"><span class="lineno">   71</span>        returnString.erase(</div>
-<div class="line"><span class="lineno">   72</span>                returnString.begin() + maxSize - 3,</div>
-<div class="line"><span class="lineno">   73</span>            returnString.end());</div>
-<div class="line"><span class="lineno">   74</span>        returnString.append(<span class="stringliteral">&quot;...&quot;</span>);</div>
-<div class="line"><span class="lineno">   75</span>    }</div>
-<div class="line"><span class="lineno">   76</span>    returnString.shrink_to_fit();</div>
-<div class="line"><span class="lineno">   77</span>    <span class="keywordflow">return</span> returnString.c_str();</div>
-<div class="line"><span class="lineno">   78</span>}</div>
+<p class="definition">Definition at line <a class="el" href="addbook_8cpp_source.html#l00055">55</a> of file <a class="el" href="addbook_8cpp_source.html">addbook.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>                                                                {</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keyword">static</span> std::string returnString;</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordtype">size_t</span> iter;</div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordtype">int</span> maxSize;</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>    returnString = std::string(operandString);</div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">for</span> (iter = 0;</div>
+<div class="line"><span class="lineno">   62</span>            iter &lt; returnString.length()</div>
+<div class="line"><span class="lineno">   63</span>                    &amp;&amp; returnString.c_str()[iter] == <span class="charliteral">&#39; &#39;</span>; iter++)</div>
+<div class="line"><span class="lineno">   64</span>        ;</div>
+<div class="line"><span class="lineno">   65</span>    returnString.erase(0, iter);</div>
+<div class="line"><span class="lineno">   66</span>    returnString.shrink_to_fit();</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>    maxSize =  (<a class="code hl_define" href="include_2ncurses_2curses_8h.html#a1d8c9ff191a674e92b3c9dd8650e10c0">getmaxx</a>(window) - (<a class="code hl_variable" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a>)<span class="keyword">sizeof</span>(<span class="stringliteral">&quot;Title            : &quot;</span>) - 2);</div>
+<div class="line"><span class="lineno">   69</span>    <span class="comment">//maxSize = 15;</span></div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">if</span> ((<span class="keywordtype">int</span>)returnString.length()</div>
+<div class="line"><span class="lineno">   71</span>            &gt; maxSize) {</div>
+<div class="line"><span class="lineno">   72</span>        returnString.erase(</div>
+<div class="line"><span class="lineno">   73</span>                returnString.begin() + maxSize - 3,</div>
+<div class="line"><span class="lineno">   74</span>            returnString.end());</div>
+<div class="line"><span class="lineno">   75</span>        returnString.append(<span class="stringliteral">&quot;...&quot;</span>);</div>
+<div class="line"><span class="lineno">   76</span>    }</div>
+<div class="line"><span class="lineno">   77</span>    returnString.shrink_to_fit();</div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">return</span> returnString.c_str();</div>
+<div class="line"><span class="lineno">   79</span>}</div>
+<div class="ttc" id="ainclude_2ncurses_2curses_8h_html_a14887a23e4dddb6ee073667457809932"><div class="ttname"><a href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a></div><div class="ttdeci">int</div><div class="ttdef"><b>Definition:</b> <a href="include_2ncurses_2curses_8h_source.html#l00607">include/ncurses/curses.h:607</a></div></div>
 </div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a6280ed7ee6637077042b2499fc9c4656" name="a6280ed7ee6637077042b2499fc9c4656"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6280ed7ee6637077042b2499fc9c4656">&#9670;&#160;</a></span>astateProvider</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile sig_atomic_t astateProvider = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="addbook_8cpp_source.html#l00047">47</a> of file <a class="el" href="addbook_8cpp_source.html">addbook.cpp</a>.</p>
-
 </div>
 </div>
 </div><!-- contents -->

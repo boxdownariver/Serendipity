@@ -16,6 +16,11 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -28,6 +33,18 @@
    <div id="projectname">Group 1 Serendipity Project
    </div>
   </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -39,17 +56,6 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -105,87 +111,99 @@ Collaboration diagram for BookType:</div>
 <div class="dyncontent">
 <div class="center"><img src="classBookType__coll__graph.png" border="0" usemap="#aBookType_coll__map" alt="Collaboration graph"/></div>
 <map name="aBookType_coll__map" id="aBookType_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,284,599"/>
+<area shape="rect" title=" " alt="" coords="5,5,134,471"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a48aa8e4eb23818c086ed84bc22d25269"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a48aa8e4eb23818c086ed84bc22d25269">setTitle</a> (string title)</td></tr>
+<tr class="memitem:a48aa8e4eb23818c086ed84bc22d25269"><td class="memItemLeft" align="right" valign="top"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a48aa8e4eb23818c086ed84bc22d25269">setTitle</a> (string title)</td></tr>
 <tr class="memdesc:a48aa8e4eb23818c086ed84bc22d25269"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the book title.  <br /></td></tr>
 <tr class="separator:a48aa8e4eb23818c086ed84bc22d25269"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a036299b2d6e0080d14ea1de1add11c3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a036299b2d6e0080d14ea1de1add11c3f">setISBN</a> (string bookisbn)</td></tr>
+<tr class="memitem:a036299b2d6e0080d14ea1de1add11c3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a036299b2d6e0080d14ea1de1add11c3f">setISBN</a> (string bookisbn)</td></tr>
 <tr class="memdesc:a036299b2d6e0080d14ea1de1add11c3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the book ISBN.  <br /></td></tr>
 <tr class="separator:a036299b2d6e0080d14ea1de1add11c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a042fb4df42f4e1716d0decc754fed952"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a042fb4df42f4e1716d0decc754fed952">setAuthor</a> (string bookAuthor)</td></tr>
+<tr class="memitem:a042fb4df42f4e1716d0decc754fed952"><td class="memItemLeft" align="right" valign="top"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a042fb4df42f4e1716d0decc754fed952">setAuthor</a> (string bookAuthor)</td></tr>
 <tr class="memdesc:a042fb4df42f4e1716d0decc754fed952"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the book author.  <br /></td></tr>
 <tr class="separator:a042fb4df42f4e1716d0decc754fed952"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a585f49b44845ab3cdd758fe89323c5c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a585f49b44845ab3cdd758fe89323c5c1">setPub</a> (string bookPublisher)</td></tr>
+<tr class="memitem:a585f49b44845ab3cdd758fe89323c5c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a585f49b44845ab3cdd758fe89323c5c1">setPub</a> (string bookPublisher)</td></tr>
 <tr class="memdesc:a585f49b44845ab3cdd758fe89323c5c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the book publisher.  <br /></td></tr>
 <tr class="separator:a585f49b44845ab3cdd758fe89323c5c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a039707661327becb322fbbc51e98bbff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a039707661327becb322fbbc51e98bbff">setDateAdded</a> (string date)</td></tr>
+<tr class="memitem:a039707661327becb322fbbc51e98bbff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a039707661327becb322fbbc51e98bbff">setDateAdded</a> (string date)</td></tr>
 <tr class="memdesc:a039707661327becb322fbbc51e98bbff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the date at which the book was added.  <br /></td></tr>
 <tr class="separator:a039707661327becb322fbbc51e98bbff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c092faa1707219b63aa2e9e6f61eb4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a7c092faa1707219b63aa2e9e6f61eb4b">setQtyOnHand</a> (int quantity)</td></tr>
+<tr class="memitem:a7c092faa1707219b63aa2e9e6f61eb4b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a7c092faa1707219b63aa2e9e6f61eb4b">setQtyOnHand</a> (<a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a> quantity)</td></tr>
 <tr class="memdesc:a7c092faa1707219b63aa2e9e6f61eb4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the quantity of books available.  <br /></td></tr>
 <tr class="separator:a7c092faa1707219b63aa2e9e6f61eb4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7c836e9b1307497b34ae6fe5d0734f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#ab7c836e9b1307497b34ae6fe5d0734f1">setWholesale</a> (double wholesalePrice)</td></tr>
+<tr class="memitem:ab7c836e9b1307497b34ae6fe5d0734f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#ab7c836e9b1307497b34ae6fe5d0734f1">setWholesale</a> (double wholesalePrice)</td></tr>
 <tr class="memdesc:ab7c836e9b1307497b34ae6fe5d0734f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the wholesale price of book.  <br /></td></tr>
 <tr class="separator:ab7c836e9b1307497b34ae6fe5d0734f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8d8ac9fba586d1de2c739c89e25d50b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#af8d8ac9fba586d1de2c739c89e25d50b">setRetail</a> (double retailPrice)</td></tr>
+<tr class="memitem:af8d8ac9fba586d1de2c739c89e25d50b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#af8d8ac9fba586d1de2c739c89e25d50b">setRetail</a> (double retailPrice)</td></tr>
 <tr class="memdesc:af8d8ac9fba586d1de2c739c89e25d50b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the retail value of book.  <br /></td></tr>
 <tr class="separator:af8d8ac9fba586d1de2c739c89e25d50b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a369dfce6a37730fd0d9b4b2b4586707b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">getTitle</a> () const</td></tr>
+<tr class="memitem:a369dfce6a37730fd0d9b4b2b4586707b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">getTitle</a> () <a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a></td></tr>
 <tr class="memdesc:a369dfce6a37730fd0d9b4b2b4586707b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the book title.  <br /></td></tr>
 <tr class="separator:a369dfce6a37730fd0d9b4b2b4586707b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1e5aab4bc4f18eaad0ebe14f3046b7b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#ac1e5aab4bc4f18eaad0ebe14f3046b7b">getISBN</a> () const</td></tr>
+<tr class="memitem:ac1e5aab4bc4f18eaad0ebe14f3046b7b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#ac1e5aab4bc4f18eaad0ebe14f3046b7b">getISBN</a> () <a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a></td></tr>
 <tr class="memdesc:ac1e5aab4bc4f18eaad0ebe14f3046b7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the book ISBN.  <br /></td></tr>
 <tr class="separator:ac1e5aab4bc4f18eaad0ebe14f3046b7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0326e55232a94efb1c6fa29ec5e99e34"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a0326e55232a94efb1c6fa29ec5e99e34">getAuthor</a> () const</td></tr>
+<tr class="memitem:a0326e55232a94efb1c6fa29ec5e99e34"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a0326e55232a94efb1c6fa29ec5e99e34">getAuthor</a> () <a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a></td></tr>
 <tr class="memdesc:a0326e55232a94efb1c6fa29ec5e99e34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the book author.  <br /></td></tr>
 <tr class="separator:a0326e55232a94efb1c6fa29ec5e99e34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8684b5b66f7c5c56d457642edfafaba7"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a8684b5b66f7c5c56d457642edfafaba7">getPub</a> () const</td></tr>
+<tr class="memitem:a8684b5b66f7c5c56d457642edfafaba7"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a8684b5b66f7c5c56d457642edfafaba7">getPub</a> () <a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a></td></tr>
 <tr class="memdesc:a8684b5b66f7c5c56d457642edfafaba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the book publisher.  <br /></td></tr>
 <tr class="separator:a8684b5b66f7c5c56d457642edfafaba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3f36bb2025322d0a8982887a12e818e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#ae3f36bb2025322d0a8982887a12e818e">getDateAdded</a> () const</td></tr>
+<tr class="memitem:ae3f36bb2025322d0a8982887a12e818e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#ae3f36bb2025322d0a8982887a12e818e">getDateAdded</a> () <a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a></td></tr>
 <tr class="memdesc:ae3f36bb2025322d0a8982887a12e818e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the date at which the book was added.  <br /></td></tr>
 <tr class="separator:ae3f36bb2025322d0a8982887a12e818e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8429f87cac6b7d70ef56f6821cdccfba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a8429f87cac6b7d70ef56f6821cdccfba">getQtyOnHand</a> () const</td></tr>
+<tr class="memitem:a8429f87cac6b7d70ef56f6821cdccfba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a8429f87cac6b7d70ef56f6821cdccfba">getQtyOnHand</a> () <a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a></td></tr>
 <tr class="memdesc:a8429f87cac6b7d70ef56f6821cdccfba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the quantity of books available.  <br /></td></tr>
 <tr class="separator:a8429f87cac6b7d70ef56f6821cdccfba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a5b1c3a4fa50b9983095d2a75a11f73"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a9a5b1c3a4fa50b9983095d2a75a11f73">getWholesale</a> () const</td></tr>
+<tr class="memitem:a9a5b1c3a4fa50b9983095d2a75a11f73"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a9a5b1c3a4fa50b9983095d2a75a11f73">getWholesale</a> () <a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a></td></tr>
 <tr class="memdesc:a9a5b1c3a4fa50b9983095d2a75a11f73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the wholesale price of book.  <br /></td></tr>
 <tr class="separator:a9a5b1c3a4fa50b9983095d2a75a11f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60e45a826a946b465b222849477c9b41"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a60e45a826a946b465b222849477c9b41">getRetail</a> () const</td></tr>
+<tr class="memitem:a60e45a826a946b465b222849477c9b41"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a60e45a826a946b465b222849477c9b41">getRetail</a> () <a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a></td></tr>
 <tr class="memdesc:a60e45a826a946b465b222849477c9b41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the retail value of book.  <br /></td></tr>
 <tr class="separator:a60e45a826a946b465b222849477c9b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5eadc6e768e9a8213696355f8f25481"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#af5eadc6e768e9a8213696355f8f25481">printBookInfo</a> () const</td></tr>
+<tr class="memitem:af5eadc6e768e9a8213696355f8f25481"><td class="memItemLeft" align="right" valign="top"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#af5eadc6e768e9a8213696355f8f25481">printBookInfo</a> () <a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a></td></tr>
 <tr class="memdesc:af5eadc6e768e9a8213696355f8f25481"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="bookInfo_8h.html#ac065ee917cbbe636bc746dba91e6405a">bookInfo()</a> replacement  <br /></td></tr>
 <tr class="separator:af5eadc6e768e9a8213696355f8f25481"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8ab9090a63f2bed4638e338a4ff1b04"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#ab8ab9090a63f2bed4638e338a4ff1b04">equalData</a> (const <a class="el" href="classBookType.html">BookType</a>) const</td></tr>
+<tr class="memitem:abd22a5feb89dfa6ad5c8eebeb27b78ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2ncurses_2curses_8h.html#a7752a2f77b459e7a851ed0254645356f">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#abd22a5feb89dfa6ad5c8eebeb27b78ec">foundKeyword</a> (<a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> string toSearch) <a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a></td></tr>
+<tr class="memdesc:abd22a5feb89dfa6ad5c8eebeb27b78ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for substring within book name.  <br /></td></tr>
+<tr class="separator:abd22a5feb89dfa6ad5c8eebeb27b78ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8ab9090a63f2bed4638e338a4ff1b04"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2ncurses_2curses_8h.html#a7752a2f77b459e7a851ed0254645356f">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#ab8ab9090a63f2bed4638e338a4ff1b04">equalData</a> (<a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> <a class="el" href="classBookType.html">BookType</a>) <a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a></td></tr>
 <tr class="memdesc:ab8ab9090a63f2bed4638e338a4ff1b04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether two books are equivalent.  <br /></td></tr>
 <tr class="separator:ab8ab9090a63f2bed4638e338a4ff1b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f9fbd9838fa641fa841fc33216f510a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a6f9fbd9838fa641fa841fc33216f510a">BookType</a> ()</td></tr>
 <tr class="memdesc:a6f9fbd9838fa641fa841fc33216f510a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with no arguments.  <br /></td></tr>
 <tr class="separator:a6f9fbd9838fa641fa841fc33216f510a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e84ed89ce6269d0f01c6e0e2a06f8c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a0e84ed89ce6269d0f01c6e0e2a06f8c7">BookType</a> (string, string, string, string, string, int, double, double)</td></tr>
+<tr class="memitem:a0e84ed89ce6269d0f01c6e0e2a06f8c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a0e84ed89ce6269d0f01c6e0e2a06f8c7">BookType</a> (string, string, string, string, string, <a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a>, double, double)</td></tr>
 <tr class="memdesc:a0e84ed89ce6269d0f01c6e0e2a06f8c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with all possible values for book.  <br /></td></tr>
 <tr class="separator:a0e84ed89ce6269d0f01c6e0e2a06f8c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12d4ddc5a193554a0c0ad575da8f28ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2ncurses_2curses_8h.html#a7752a2f77b459e7a851ed0254645356f">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a12d4ddc5a193554a0c0ad575da8f28ca">operator&lt;</a> (<a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> <a class="el" href="classBookType.html">BookType</a> &amp;book) <a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a></td></tr>
+<tr class="memdesc:a12d4ddc5a193554a0c0ad575da8f28ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator Overload for sorting.  <br /></td></tr>
+<tr class="separator:a12d4ddc5a193554a0c0ad575da8f28ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5ea3963913b4d953b368f6c61a478d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#ad5ea3963913b4d953b368f6c61a478d7">~BookType</a> ()</td></tr>
 <tr class="memdesc:ad5ea3963913b4d953b368f6c61a478d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <br /></td></tr>
 <tr class="separator:ad5ea3963913b4d953b368f6c61a478d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ae60f135ad862ad44c3a5a175b6e2e875"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#ae60f135ad862ad44c3a5a175b6e2e875">incBookCount</a> ()</td></tr>
+<tr class="memitem:ae60f135ad862ad44c3a5a175b6e2e875"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#ae60f135ad862ad44c3a5a175b6e2e875">incBookCount</a> ()</td></tr>
 <tr class="memdesc:ae60f135ad862ad44c3a5a175b6e2e875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments the count of all book types.  <br /></td></tr>
 <tr class="separator:ae60f135ad862ad44c3a5a175b6e2e875"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7d82f6828c064365c849158b00b4c0b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#ac7d82f6828c064365c849158b00b4c0b">decBookCount</a> ()</td></tr>
+<tr class="memitem:ac7d82f6828c064365c849158b00b4c0b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#ac7d82f6828c064365c849158b00b4c0b">decBookCount</a> ()</td></tr>
 <tr class="memdesc:ac7d82f6828c064365c849158b00b4c0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrements the count of all book types.  <br /></td></tr>
 <tr class="separator:ac7d82f6828c064365c849158b00b4c0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3d149c73829ea6b2a676795a485b70c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">getBookCount</a> ()</td></tr>
+<tr class="memitem:a989f429d9065259dccd172c431b5910d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a989f429d9065259dccd172c431b5910d">setFlag</a> (<a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a> <a class="el" href="curses_8priv_8h.html#a3772851912abe3ccbff5c659ff71f2ff">value</a>)</td></tr>
+<tr class="memdesc:a989f429d9065259dccd172c431b5910d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the value of flag in.  <br /></td></tr>
+<tr class="separator:a989f429d9065259dccd172c431b5910d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3d149c73829ea6b2a676795a485b70c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">getBookCount</a> ()</td></tr>
 <tr class="memdesc:ab3d149c73829ea6b2a676795a485b70c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the count of all book types.  <br /></td></tr>
 <tr class="separator:ab3d149c73829ea6b2a676795a485b70c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0ffc40e0cdf1ac18356d80ab6c0232a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#aa0ffc40e0cdf1ac18356d80ab6c0232a">getFlag</a> ()</td></tr>
+<tr class="memdesc:aa0ffc40e0cdf1ac18356d80ab6c0232a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current type of sorting.  <br /></td></tr>
+<tr class="separator:aa0ffc40e0cdf1ac18356d80ab6c0232a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -204,7 +222,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:abb415630cf04610b537caacaf4300fd2"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#abb415630cf04610b537caacaf4300fd2">dateAdded</a></td></tr>
 <tr class="memdesc:abb415630cf04610b537caacaf4300fd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The date at which the book was added.  <br /></td></tr>
 <tr class="separator:abb415630cf04610b537caacaf4300fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ed3ab7a7b9932d912ebf73d23d111c5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a5ed3ab7a7b9932d912ebf73d23d111c5">qtyOnHand</a></td></tr>
+<tr class="memitem:a5ed3ab7a7b9932d912ebf73d23d111c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a5ed3ab7a7b9932d912ebf73d23d111c5">qtyOnHand</a></td></tr>
 <tr class="memdesc:a5ed3ab7a7b9932d912ebf73d23d111c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current book count for this book.  <br /></td></tr>
 <tr class="separator:a5ed3ab7a7b9932d912ebf73d23d111c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a174ba396ffb39483a57e3bc077cd4f83"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#a174ba396ffb39483a57e3bc077cd4f83">wholesale</a></td></tr>
@@ -216,9 +234,11 @@ Private Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:ad19245d5b153ca8eb89cf07ae720ae8b"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#ad19245d5b153ca8eb89cf07ae720ae8b">bookCount</a> = 0</td></tr>
+<tr class="memitem:ad19245d5b153ca8eb89cf07ae720ae8b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#ad19245d5b153ca8eb89cf07ae720ae8b">bookCount</a> = 0</td></tr>
 <tr class="memdesc:ad19245d5b153ca8eb89cf07ae720ae8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds the current book count in array.  <br /></td></tr>
 <tr class="separator:ad19245d5b153ca8eb89cf07ae720ae8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad683ab8590e266eaef4e3f018a2fa485"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBookType.html#ad683ab8590e266eaef4e3f018a2fa485">sortFlag</a> = 0</td></tr>
+<tr class="separator:ad683ab8590e266eaef4e3f018a2fa485"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>bookType class represents a book with various attributes such as title, ISBN, author, etc.</p>
@@ -244,17 +264,17 @@ Static Private Attributes</h2></td></tr>
 <p>Constructor with no arguments. </p>
 <p>Default constructor for bookType class. Initializes member variables with default values. </p>
 
-<p class="definition">Definition at line <a class="el" href="bookType_8cpp_source.html#l00015">15</a> of file <a class="el" href="bookType_8cpp_source.html">bookType.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   16</span>{</div>
-<div class="line"><span class="lineno">   17</span>    <a class="code hl_variable" href="classBookType.html#aa07b2adf58679e64d53ace4e3a089a7e">bookTitle</a> = <span class="stringliteral">&quot;UNSET&quot;</span>;</div>
-<div class="line"><span class="lineno">   18</span>    <a class="code hl_variable" href="classBookType.html#ac8c9d760a3bfc507db65330b1175cb32">isbn</a> = <span class="stringliteral">&quot;UNSET&quot;</span>;</div>
-<div class="line"><span class="lineno">   19</span>    <a class="code hl_variable" href="classBookType.html#a22649907037470da13c38f7bc9de4fdf">author</a> = <span class="stringliteral">&quot;UNSET&quot;</span>;</div>
-<div class="line"><span class="lineno">   20</span>    <a class="code hl_variable" href="classBookType.html#ac79aafce505dab215f898ef6de138fa8">publisher</a> = <span class="stringliteral">&quot;UNSET&quot;</span>;</div>
-<div class="line"><span class="lineno">   21</span>    <a class="code hl_variable" href="classBookType.html#abb415630cf04610b537caacaf4300fd2">dateAdded</a> = <span class="stringliteral">&quot;UNSET&quot;</span>;</div>
-<div class="line"><span class="lineno">   22</span>    <a class="code hl_variable" href="classBookType.html#a5ed3ab7a7b9932d912ebf73d23d111c5">qtyOnHand</a> = 0;</div>
-<div class="line"><span class="lineno">   23</span>    <a class="code hl_variable" href="classBookType.html#a174ba396ffb39483a57e3bc077cd4f83">wholesale</a> = 0.0;</div>
-<div class="line"><span class="lineno">   24</span>    <a class="code hl_variable" href="classBookType.html#a865c993f2d1a82d53cb5f64a042d93e5">retail</a> = 0.0;</div>
-<div class="line"><span class="lineno">   25</span>}</div>
+<p class="definition">Definition at line <a class="el" href="bookType_8cpp_source.html#l00016">16</a> of file <a class="el" href="bookType_8cpp_source.html">bookType.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>{</div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_variable" href="classBookType.html#aa07b2adf58679e64d53ace4e3a089a7e">bookTitle</a> = <span class="stringliteral">&quot;UNSET&quot;</span>;</div>
+<div class="line"><span class="lineno">   19</span>    <a class="code hl_variable" href="classBookType.html#ac8c9d760a3bfc507db65330b1175cb32">isbn</a> = <span class="stringliteral">&quot;UNSET&quot;</span>;</div>
+<div class="line"><span class="lineno">   20</span>    <a class="code hl_variable" href="classBookType.html#a22649907037470da13c38f7bc9de4fdf">author</a> = <span class="stringliteral">&quot;UNSET&quot;</span>;</div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_variable" href="classBookType.html#ac79aafce505dab215f898ef6de138fa8">publisher</a> = <span class="stringliteral">&quot;UNSET&quot;</span>;</div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_variable" href="classBookType.html#abb415630cf04610b537caacaf4300fd2">dateAdded</a> = <span class="stringliteral">&quot;UNSET&quot;</span>;</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_variable" href="classBookType.html#a5ed3ab7a7b9932d912ebf73d23d111c5">qtyOnHand</a> = 0;</div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_variable" href="classBookType.html#a174ba396ffb39483a57e3bc077cd4f83">wholesale</a> = 0.0;</div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_variable" href="classBookType.html#a865c993f2d1a82d53cb5f64a042d93e5">retail</a> = 0.0;</div>
+<div class="line"><span class="lineno">   26</span>}</div>
 <div class="ttc" id="aclassBookType_html_a174ba396ffb39483a57e3bc077cd4f83"><div class="ttname"><a href="classBookType.html#a174ba396ffb39483a57e3bc077cd4f83">BookType::wholesale</a></div><div class="ttdeci">double wholesale</div><div class="ttdoc">Wholesale price of book.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00055">bookType.h:55</a></div></div>
 <div class="ttc" id="aclassBookType_html_a22649907037470da13c38f7bc9de4fdf"><div class="ttname"><a href="classBookType.html#a22649907037470da13c38f7bc9de4fdf">BookType::author</a></div><div class="ttdeci">string author</div><div class="ttdoc">Book Author.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00051">bookType.h:51</a></div></div>
 <div class="ttc" id="aclassBookType_html_a5ed3ab7a7b9932d912ebf73d23d111c5"><div class="ttname"><a href="classBookType.html#a5ed3ab7a7b9932d912ebf73d23d111c5">BookType::qtyOnHand</a></div><div class="ttdeci">int qtyOnHand</div><div class="ttdoc">Current book count for this book.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00054">bookType.h:54</a></div></div>
@@ -305,7 +325,7 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a>&#160;</td>
           <td class="paramname"><em>qty</em>, </td>
         </tr>
         <tr>
@@ -331,17 +351,17 @@ Static Private Attributes</h2></td></tr>
 <p>Constructor with all possible values for book. </p>
 <p>Constructor with parameters for bookType class. Initializes member variables with given values. </p>
 
-<p class="definition">Definition at line <a class="el" href="bookType_8cpp_source.html#l00030">30</a> of file <a class="el" href="bookType_8cpp_source.html">bookType.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span>{</div>
-<div class="line"><span class="lineno">   32</span>    <a class="code hl_function" href="classBookType.html#a48aa8e4eb23818c086ed84bc22d25269">setTitle</a> (title);</div>
-<div class="line"><span class="lineno">   33</span>    <a class="code hl_function" href="classBookType.html#a036299b2d6e0080d14ea1de1add11c3f">setISBN</a> (<a class="code hl_variable" href="classBookType.html#ac8c9d760a3bfc507db65330b1175cb32">isbn</a>);</div>
-<div class="line"><span class="lineno">   34</span>    <a class="code hl_function" href="classBookType.html#a042fb4df42f4e1716d0decc754fed952">setAuthor</a> (auth);</div>
-<div class="line"><span class="lineno">   35</span>    <a class="code hl_function" href="classBookType.html#a585f49b44845ab3cdd758fe89323c5c1">setPub</a> (pub);</div>
-<div class="line"><span class="lineno">   36</span>    <a class="code hl_function" href="classBookType.html#a039707661327becb322fbbc51e98bbff">setDateAdded</a> (date);</div>
-<div class="line"><span class="lineno">   37</span>    <a class="code hl_function" href="classBookType.html#a7c092faa1707219b63aa2e9e6f61eb4b">setQtyOnHand</a> (qty);</div>
-<div class="line"><span class="lineno">   38</span>    <a class="code hl_function" href="classBookType.html#ab7c836e9b1307497b34ae6fe5d0734f1">setWholesale</a> (ws);</div>
-<div class="line"><span class="lineno">   39</span>    <a class="code hl_function" href="classBookType.html#af8d8ac9fba586d1de2c739c89e25d50b">setRetail</a> (ret);</div>
-<div class="line"><span class="lineno">   40</span>}</div>
+<p class="definition">Definition at line <a class="el" href="bookType_8cpp_source.html#l00031">31</a> of file <a class="el" href="bookType_8cpp_source.html">bookType.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>{</div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_function" href="classBookType.html#a48aa8e4eb23818c086ed84bc22d25269">setTitle</a> (title);</div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_function" href="classBookType.html#a036299b2d6e0080d14ea1de1add11c3f">setISBN</a> (<a class="code hl_variable" href="classBookType.html#ac8c9d760a3bfc507db65330b1175cb32">isbn</a>);</div>
+<div class="line"><span class="lineno">   35</span>    <a class="code hl_function" href="classBookType.html#a042fb4df42f4e1716d0decc754fed952">setAuthor</a> (auth);</div>
+<div class="line"><span class="lineno">   36</span>    <a class="code hl_function" href="classBookType.html#a585f49b44845ab3cdd758fe89323c5c1">setPub</a> (pub);</div>
+<div class="line"><span class="lineno">   37</span>    <a class="code hl_function" href="classBookType.html#a039707661327becb322fbbc51e98bbff">setDateAdded</a> (date);</div>
+<div class="line"><span class="lineno">   38</span>    <a class="code hl_function" href="classBookType.html#a7c092faa1707219b63aa2e9e6f61eb4b">setQtyOnHand</a> (qty);</div>
+<div class="line"><span class="lineno">   39</span>    <a class="code hl_function" href="classBookType.html#ab7c836e9b1307497b34ae6fe5d0734f1">setWholesale</a> (ws);</div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_function" href="classBookType.html#af8d8ac9fba586d1de2c739c89e25d50b">setRetail</a> (ret);</div>
+<div class="line"><span class="lineno">   41</span>}</div>
 <div class="ttc" id="aclassBookType_html_a036299b2d6e0080d14ea1de1add11c3f"><div class="ttname"><a href="classBookType.html#a036299b2d6e0080d14ea1de1add11c3f">BookType::setISBN</a></div><div class="ttdeci">void setISBN(string bookisbn)</div><div class="ttdoc">Sets the book ISBN.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00018">bookType.h:18</a></div></div>
 <div class="ttc" id="aclassBookType_html_a039707661327becb322fbbc51e98bbff"><div class="ttname"><a href="classBookType.html#a039707661327becb322fbbc51e98bbff">BookType::setDateAdded</a></div><div class="ttdeci">void setDateAdded(string date)</div><div class="ttdoc">Sets the date at which the book was added.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00021">bookType.h:21</a></div></div>
 <div class="ttc" id="aclassBookType_html_a042fb4df42f4e1716d0decc754fed952"><div class="ttname"><a href="classBookType.html#a042fb4df42f4e1716d0decc754fed952">BookType::setAuthor</a></div><div class="ttdeci">void setAuthor(string bookAuthor)</div><div class="ttdoc">Sets the book author.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00019">bookType.h:19</a></div></div>
@@ -393,7 +413,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void BookType::decBookCount </td>
+          <td class="memname">static <a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a> BookType::decBookCount </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -419,9 +439,9 @@ Static Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool BookType::equalData </td>
+          <td class="memname"><a class="el" href="include_2ncurses_2curses_8h.html#a7752a2f77b459e7a851ed0254645356f">bool</a> BookType::equalData </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classBookType.html">BookType</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> <a class="el" href="classBookType.html">BookType</a>&#160;</td>
           <td class="paramname"><em>anotherBook</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -434,16 +454,59 @@ Static Private Attributes</h2></td></tr>
 <dd>
 false if any attribute of the two books differs. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="bookType_8cpp_source.html#l00073">73</a> of file <a class="el" href="bookType_8cpp_source.html">bookType.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   74</span>{</div>
-<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classBookType.html#aa07b2adf58679e64d53ace4e3a089a7e">bookTitle</a> == anotherBook.<a class="code hl_variable" href="classBookType.html#aa07b2adf58679e64d53ace4e3a089a7e">bookTitle</a> &amp;&amp; <a class="code hl_variable" href="classBookType.html#ac8c9d760a3bfc507db65330b1175cb32">isbn</a> == anotherBook.<a class="code hl_variable" href="classBookType.html#ac8c9d760a3bfc507db65330b1175cb32">isbn</a> &amp;&amp; <a class="code hl_variable" href="classBookType.html#a22649907037470da13c38f7bc9de4fdf">author</a> == anotherBook.<a class="code hl_variable" href="classBookType.html#a22649907037470da13c38f7bc9de4fdf">author</a> &amp;&amp;</div>
-<div class="line"><span class="lineno">   76</span>        <a class="code hl_variable" href="classBookType.html#ac79aafce505dab215f898ef6de138fa8">publisher</a> == anotherBook.<a class="code hl_variable" href="classBookType.html#ac79aafce505dab215f898ef6de138fa8">publisher</a> &amp;&amp; <a class="code hl_variable" href="classBookType.html#abb415630cf04610b537caacaf4300fd2">dateAdded</a> == anotherBook.<a class="code hl_variable" href="classBookType.html#abb415630cf04610b537caacaf4300fd2">dateAdded</a> &amp;&amp; <a class="code hl_variable" href="classBookType.html#a5ed3ab7a7b9932d912ebf73d23d111c5">qtyOnHand</a> == anotherBook.<a class="code hl_variable" href="classBookType.html#a5ed3ab7a7b9932d912ebf73d23d111c5">qtyOnHand</a> &amp;&amp;</div>
-<div class="line"><span class="lineno">   77</span>        <a class="code hl_variable" href="classBookType.html#a174ba396ffb39483a57e3bc077cd4f83">wholesale</a> == anotherBook.<a class="code hl_variable" href="classBookType.html#a174ba396ffb39483a57e3bc077cd4f83">wholesale</a> &amp;&amp; <a class="code hl_variable" href="classBookType.html#a865c993f2d1a82d53cb5f64a042d93e5">retail</a> == anotherBook.<a class="code hl_variable" href="classBookType.html#a865c993f2d1a82d53cb5f64a042d93e5">retail</a>)</div>
-<div class="line"><span class="lineno">   78</span>        {</div>
-<div class="line"><span class="lineno">   79</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   80</span>        }</div>
-<div class="line"><span class="lineno">   81</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   82</span>}</div>
+<p class="definition">Definition at line <a class="el" href="bookType_8cpp_source.html#l00074">74</a> of file <a class="el" href="bookType_8cpp_source.html">bookType.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>{</div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classBookType.html#aa07b2adf58679e64d53ace4e3a089a7e">bookTitle</a> == anotherBook.<a class="code hl_variable" href="classBookType.html#aa07b2adf58679e64d53ace4e3a089a7e">bookTitle</a> &amp;&amp; <a class="code hl_variable" href="classBookType.html#ac8c9d760a3bfc507db65330b1175cb32">isbn</a> == anotherBook.<a class="code hl_variable" href="classBookType.html#ac8c9d760a3bfc507db65330b1175cb32">isbn</a> &amp;&amp; <a class="code hl_variable" href="classBookType.html#a22649907037470da13c38f7bc9de4fdf">author</a> == anotherBook.<a class="code hl_variable" href="classBookType.html#a22649907037470da13c38f7bc9de4fdf">author</a> &amp;&amp;</div>
+<div class="line"><span class="lineno">   77</span>        <a class="code hl_variable" href="classBookType.html#ac79aafce505dab215f898ef6de138fa8">publisher</a> == anotherBook.<a class="code hl_variable" href="classBookType.html#ac79aafce505dab215f898ef6de138fa8">publisher</a> &amp;&amp; <a class="code hl_variable" href="classBookType.html#abb415630cf04610b537caacaf4300fd2">dateAdded</a> == anotherBook.<a class="code hl_variable" href="classBookType.html#abb415630cf04610b537caacaf4300fd2">dateAdded</a> &amp;&amp; <a class="code hl_variable" href="classBookType.html#a5ed3ab7a7b9932d912ebf73d23d111c5">qtyOnHand</a> == anotherBook.<a class="code hl_variable" href="classBookType.html#a5ed3ab7a7b9932d912ebf73d23d111c5">qtyOnHand</a> &amp;&amp;</div>
+<div class="line"><span class="lineno">   78</span>        <a class="code hl_variable" href="classBookType.html#a174ba396ffb39483a57e3bc077cd4f83">wholesale</a> == anotherBook.<a class="code hl_variable" href="classBookType.html#a174ba396ffb39483a57e3bc077cd4f83">wholesale</a> &amp;&amp; <a class="code hl_variable" href="classBookType.html#a865c993f2d1a82d53cb5f64a042d93e5">retail</a> == anotherBook.<a class="code hl_variable" href="classBookType.html#a865c993f2d1a82d53cb5f64a042d93e5">retail</a>)</div>
+<div class="line"><span class="lineno">   79</span>        {</div>
+<div class="line"><span class="lineno">   80</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   81</span>        }</div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   83</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abd22a5feb89dfa6ad5c8eebeb27b78ec" name="abd22a5feb89dfa6ad5c8eebeb27b78ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd22a5feb89dfa6ad5c8eebeb27b78ec">&#9670;&#160;</a></span>foundKeyword()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2ncurses_2curses_8h.html#a7752a2f77b459e7a851ed0254645356f">bool</a> BookType::foundKeyword </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> string&#160;</td>
+          <td class="paramname"><em>toSearch</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Searches for substring within book name. </p>
+<p>foundKeyword function searches for a keyword in the book's title or ISBN.</p>
+<p>This function checks if the <code>toSearch</code> string is found within the book's title or ISBN. The comparison is case-insensitive, and the search is performed after converting both the title and the search keyword to uppercase.</p>
+<p>parameter toSearch is the keyword to search for in the book's title or ISBN. </p><dl class="section return"><dt>Returns</dt><dd>true If the search keyword is found in the title or ISBN. </dd>
+<dd>
+false If the search keyword is not found in either the title or ISBN. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="bookType_8cpp_source.html#l00094">94</a> of file <a class="el" href="bookType_8cpp_source.html">bookType.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   95</span>{</div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordtype">string</span> tempTitle;</div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordtype">string</span> searchUpper;</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>    <span class="comment">// Copy the title and search word</span></div>
+<div class="line"><span class="lineno">  100</span>    tempTitle = <a class="code hl_function" href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">getTitle</a> ();</div>
+<div class="line"><span class="lineno">  101</span>    searchUpper = toSearch;</div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>    <span class="comment">//Transform title and search word to uppercase</span></div>
+<div class="line"><span class="lineno">  104</span>    transform(tempTitle.begin(), tempTitle.end(), tempTitle.begin(), ::toupper);</div>
+<div class="line"><span class="lineno">  105</span>    transform(searchUpper.begin(), searchUpper.end(), searchUpper.begin(), ::toupper);</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>    <span class="comment">// Search for title or isbn match</span></div>
+<div class="line"><span class="lineno">  108</span>    <span class="keywordflow">return</span> (tempTitle.find(searchUpper) != string::npos || <a class="code hl_variable" href="classBookType.html#ac8c9d760a3bfc507db65330b1175cb32">isbn</a>.find(searchUpper) != string::npos);</div>
+<div class="line"><span class="lineno">  109</span>}</div>
+<div class="ttc" id="aclassBookType_html_a369dfce6a37730fd0d9b4b2b4586707b"><div class="ttname"><a href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">BookType::getTitle</a></div><div class="ttdeci">string getTitle() const</div><div class="ttdoc">Gets the book title.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00029">bookType.h:29</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -472,7 +535,7 @@ false if any attribute of the two books differs. </dd></dl>
 
 <p>Gets the book author. </p>
 
-<p class="definition">Definition at line <a class="el" href="bookType_8h_source.html#l00030">30</a> of file <a class="el" href="bookType_8h_source.html">bookType.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bookType_8h_source.html#l00031">31</a> of file <a class="el" href="bookType_8h_source.html">bookType.h</a>.</p>
 
 </div>
 </div>
@@ -486,7 +549,7 @@ false if any attribute of the two books differs. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static int BookType::getBookCount </td>
+          <td class="memname">static <a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a> BookType::getBookCount </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -501,7 +564,7 @@ false if any attribute of the two books differs. </dd></dl>
 
 <p>Gets the count of all book types. </p>
 
-<p class="definition">Definition at line <a class="el" href="bookType_8h_source.html#l00036">36</a> of file <a class="el" href="bookType_8h_source.html">bookType.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bookType_8h_source.html#l00037">37</a> of file <a class="el" href="bookType_8h_source.html">bookType.h</a>.</p>
 
 </div>
 </div>
@@ -530,7 +593,36 @@ false if any attribute of the two books differs. </dd></dl>
 
 <p>Gets the date at which the book was added. </p>
 
-<p class="definition">Definition at line <a class="el" href="bookType_8h_source.html#l00032">32</a> of file <a class="el" href="bookType_8h_source.html">bookType.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bookType_8h_source.html#l00033">33</a> of file <a class="el" href="bookType_8h_source.html">bookType.h</a>.</p>
+
+</div>
+</div>
+<a id="aa0ffc40e0cdf1ac18356d80ab6c0232a" name="aa0ffc40e0cdf1ac18356d80ab6c0232a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0ffc40e0cdf1ac18356d80ab6c0232a">&#9670;&#160;</a></span>getFlag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a> BookType::getFlag </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the current type of sorting. </p>
+
+<p class="definition">Definition at line <a class="el" href="bookType_8h_source.html#l00038">38</a> of file <a class="el" href="bookType_8h_source.html">bookType.h</a>.</p>
 
 </div>
 </div>
@@ -559,7 +651,7 @@ false if any attribute of the two books differs. </dd></dl>
 
 <p>Gets the book ISBN. </p>
 
-<p class="definition">Definition at line <a class="el" href="bookType_8h_source.html#l00029">29</a> of file <a class="el" href="bookType_8h_source.html">bookType.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bookType_8h_source.html#l00030">30</a> of file <a class="el" href="bookType_8h_source.html">bookType.h</a>.</p>
 
 </div>
 </div>
@@ -588,7 +680,7 @@ false if any attribute of the two books differs. </dd></dl>
 
 <p>Gets the book publisher. </p>
 
-<p class="definition">Definition at line <a class="el" href="bookType_8h_source.html#l00031">31</a> of file <a class="el" href="bookType_8h_source.html">bookType.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bookType_8h_source.html#l00032">32</a> of file <a class="el" href="bookType_8h_source.html">bookType.h</a>.</p>
 
 </div>
 </div>
@@ -602,7 +694,7 @@ false if any attribute of the two books differs. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int BookType::getQtyOnHand </td>
+          <td class="memname"><a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a> BookType::getQtyOnHand </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -617,7 +709,7 @@ false if any attribute of the two books differs. </dd></dl>
 
 <p>Gets the quantity of books available. </p>
 
-<p class="definition">Definition at line <a class="el" href="bookType_8h_source.html#l00033">33</a> of file <a class="el" href="bookType_8h_source.html">bookType.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bookType_8h_source.html#l00034">34</a> of file <a class="el" href="bookType_8h_source.html">bookType.h</a>.</p>
 
 </div>
 </div>
@@ -646,7 +738,7 @@ false if any attribute of the two books differs. </dd></dl>
 
 <p>Gets the retail value of book. </p>
 
-<p class="definition">Definition at line <a class="el" href="bookType_8h_source.html#l00035">35</a> of file <a class="el" href="bookType_8h_source.html">bookType.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bookType_8h_source.html#l00036">36</a> of file <a class="el" href="bookType_8h_source.html">bookType.h</a>.</p>
 
 </div>
 </div>
@@ -675,7 +767,7 @@ false if any attribute of the two books differs. </dd></dl>
 
 <p>Gets the book title. </p>
 
-<p class="definition">Definition at line <a class="el" href="bookType_8h_source.html#l00028">28</a> of file <a class="el" href="bookType_8h_source.html">bookType.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bookType_8h_source.html#l00029">29</a> of file <a class="el" href="bookType_8h_source.html">bookType.h</a>.</p>
 
 </div>
 </div>
@@ -704,7 +796,7 @@ false if any attribute of the two books differs. </dd></dl>
 
 <p>Gets the wholesale price of book. </p>
 
-<p class="definition">Definition at line <a class="el" href="bookType_8h_source.html#l00034">34</a> of file <a class="el" href="bookType_8h_source.html">bookType.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bookType_8h_source.html#l00035">35</a> of file <a class="el" href="bookType_8h_source.html">bookType.h</a>.</p>
 
 </div>
 </div>
@@ -718,7 +810,7 @@ false if any attribute of the two books differs. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void BookType::incBookCount </td>
+          <td class="memname">static <a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a> BookType::incBookCount </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -737,6 +829,45 @@ false if any attribute of the two books differs. </dd></dl>
 
 </div>
 </div>
+<a id="a12d4ddc5a193554a0c0ad575da8f28ca" name="a12d4ddc5a193554a0c0ad575da8f28ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12d4ddc5a193554a0c0ad575da8f28ca">&#9670;&#160;</a></span>operator&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2ncurses_2curses_8h.html#a7752a2f77b459e7a851ed0254645356f">bool</a> BookType::operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> <a class="el" href="classBookType.html">BookType</a> &amp;&#160;</td>
+          <td class="paramname"><em>book</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Operator Overload for sorting. </p>
+
+<p class="definition">Definition at line <a class="el" href="bookType_8cpp_source.html#l00112">112</a> of file <a class="el" href="bookType_8cpp_source.html">bookType.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  113</span>{</div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classBookType.html#ad683ab8590e266eaef4e3f018a2fa485">sortFlag</a> == 5)</div>
+<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">return</span> (<a class="code hl_variable" href="classBookType.html#abb415630cf04610b537caacaf4300fd2">dateAdded</a> &lt; obj.dateAdded);</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classBookType.html#ad683ab8590e266eaef4e3f018a2fa485">sortFlag</a> == 6)</div>
+<div class="line"><span class="lineno">  118</span>    <span class="keywordflow">return</span> (<a class="code hl_variable" href="classBookType.html#a5ed3ab7a7b9932d912ebf73d23d111c5">qtyOnHand</a> &lt; obj.qtyOnHand);</div>
+<div class="line"><span class="lineno">  119</span>    </div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classBookType.html#ad683ab8590e266eaef4e3f018a2fa485">sortFlag</a> == 8){</div>
+<div class="line"><span class="lineno">  121</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classBookType.html#a865c993f2d1a82d53cb5f64a042d93e5">retail</a> == obj.retail){</div>
+<div class="line"><span class="lineno">  122</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classBookType.html#a174ba396ffb39483a57e3bc077cd4f83">wholesale</a> &lt; obj.wholesale;           <span class="comment">// So that it doesnt look weird</span></div>
+<div class="line"><span class="lineno">  123</span>            }</div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">return</span> (<a class="code hl_variable" href="classBookType.html#a865c993f2d1a82d53cb5f64a042d93e5">retail</a> &lt; obj.retail);</div>
+<div class="line"><span class="lineno">  125</span>    }</div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  128</span>}</div>
+<div class="ttc" id="aclassBookType_html_ad683ab8590e266eaef4e3f018a2fa485"><div class="ttname"><a href="classBookType.html#ad683ab8590e266eaef4e3f018a2fa485">BookType::sortFlag</a></div><div class="ttdeci">static int sortFlag</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00058">bookType.h:58</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="af5eadc6e768e9a8213696355f8f25481" name="af5eadc6e768e9a8213696355f8f25481"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af5eadc6e768e9a8213696355f8f25481">&#9670;&#160;</a></span>printBookInfo()</h2>
 
@@ -744,7 +875,7 @@ false if any attribute of the two books differs. </dd></dl>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void BookType::printBookInfo </td>
+          <td class="memname"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a> BookType::printBookInfo </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -756,31 +887,30 @@ false if any attribute of the two books differs. </dd></dl>
 <p>printBookInfo function prints the information of the book in a formatted manner.</p>
 <p>The function prints details like ISBN, title, author, publisher, date added, quantity on hand, wholesale cost, and retail price in a well-organized table. </p>
 
-<p class="definition">Definition at line <a class="el" href="bookType_8cpp_source.html#l00048">48</a> of file <a class="el" href="bookType_8cpp_source.html">bookType.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>{</div>
-<div class="line"><span class="lineno">   50</span>    cout &lt;&lt;         <span class="stringliteral">&quot;╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   51</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║                                       Serendipity Booksellers                                      ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   52</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║                                           Book Information                                         ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   53</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║                                                                                                    ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   54</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  ISBN             : &quot;</span> &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; <a class="code hl_function" href="classBookType.html#ac1e5aab4bc4f18eaad0ebe14f3046b7b">getISBN</a>() &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   55</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Title            : &quot;</span> &lt;&lt; setw(78) &lt;&lt; left &lt;&lt; <a class="code hl_function" href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">getTitle</a>() &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   56</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Author           : &quot;</span> &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; <a class="code hl_function" href="classBookType.html#a0326e55232a94efb1c6fa29ec5e99e34">getAuthor</a>() &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   57</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Publisher        : &quot;</span> &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; <a class="code hl_function" href="classBookType.html#a8684b5b66f7c5c56d457642edfafaba7">getPub</a>() &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   58</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Date Added       : &quot;</span> &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; <a class="code hl_function" href="classBookType.html#ae3f36bb2025322d0a8982887a12e818e">getDateAdded</a>() &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   59</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Quantity-On-Hand : &quot;</span> &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; <a class="code hl_function" href="classBookType.html#a8429f87cac6b7d70ef56f6821cdccfba">getQtyOnHand</a>() &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   60</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Wholesale Cost   : &quot;</span> &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; <a class="code hl_function" href="classBookType.html#a9a5b1c3a4fa50b9983095d2a75a11f73">getWholesale</a>() &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   61</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Retail Price     : &quot;</span> &lt;&lt; setw(78) &lt;&lt; left &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; <a class="code hl_function" href="classBookType.html#a60e45a826a946b465b222849477c9b41">getRetail</a>() &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   62</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║                                                                                                    ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   63</span>    cout &lt;&lt;         <span class="stringliteral">&quot;╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   64</span>}</div>
-<div class="ttc" id="aclassBookType_html_a0326e55232a94efb1c6fa29ec5e99e34"><div class="ttname"><a href="classBookType.html#a0326e55232a94efb1c6fa29ec5e99e34">BookType::getAuthor</a></div><div class="ttdeci">string getAuthor() const</div><div class="ttdoc">Gets the book author.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00030">bookType.h:30</a></div></div>
-<div class="ttc" id="aclassBookType_html_a369dfce6a37730fd0d9b4b2b4586707b"><div class="ttname"><a href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">BookType::getTitle</a></div><div class="ttdeci">string getTitle() const</div><div class="ttdoc">Gets the book title.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00028">bookType.h:28</a></div></div>
-<div class="ttc" id="aclassBookType_html_a60e45a826a946b465b222849477c9b41"><div class="ttname"><a href="classBookType.html#a60e45a826a946b465b222849477c9b41">BookType::getRetail</a></div><div class="ttdeci">double getRetail() const</div><div class="ttdoc">Gets the retail value of book.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00035">bookType.h:35</a></div></div>
-<div class="ttc" id="aclassBookType_html_a8429f87cac6b7d70ef56f6821cdccfba"><div class="ttname"><a href="classBookType.html#a8429f87cac6b7d70ef56f6821cdccfba">BookType::getQtyOnHand</a></div><div class="ttdeci">int getQtyOnHand() const</div><div class="ttdoc">Gets the quantity of books available.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00033">bookType.h:33</a></div></div>
-<div class="ttc" id="aclassBookType_html_a8684b5b66f7c5c56d457642edfafaba7"><div class="ttname"><a href="classBookType.html#a8684b5b66f7c5c56d457642edfafaba7">BookType::getPub</a></div><div class="ttdeci">string getPub() const</div><div class="ttdoc">Gets the book publisher.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00031">bookType.h:31</a></div></div>
-<div class="ttc" id="aclassBookType_html_a9a5b1c3a4fa50b9983095d2a75a11f73"><div class="ttname"><a href="classBookType.html#a9a5b1c3a4fa50b9983095d2a75a11f73">BookType::getWholesale</a></div><div class="ttdeci">double getWholesale() const</div><div class="ttdoc">Gets the wholesale price of book.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00034">bookType.h:34</a></div></div>
-<div class="ttc" id="aclassBookType_html_ac1e5aab4bc4f18eaad0ebe14f3046b7b"><div class="ttname"><a href="classBookType.html#ac1e5aab4bc4f18eaad0ebe14f3046b7b">BookType::getISBN</a></div><div class="ttdeci">string getISBN() const</div><div class="ttdoc">Gets the book ISBN.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00029">bookType.h:29</a></div></div>
-<div class="ttc" id="aclassBookType_html_ae3f36bb2025322d0a8982887a12e818e"><div class="ttname"><a href="classBookType.html#ae3f36bb2025322d0a8982887a12e818e">BookType::getDateAdded</a></div><div class="ttdeci">string getDateAdded() const</div><div class="ttdoc">Gets the date at which the book was added.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00032">bookType.h:32</a></div></div>
+<p class="definition">Definition at line <a class="el" href="bookType_8cpp_source.html#l00049">49</a> of file <a class="el" href="bookType_8cpp_source.html">bookType.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>{</div>
+<div class="line"><span class="lineno">   51</span>    cout &lt;&lt;         <span class="stringliteral">&quot;╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   52</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║                                       Serendipity Booksellers                                      ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   53</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║                                           Book Information                                         ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   54</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║                                                                                                    ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   55</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  ISBN             : &quot;</span> &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; <a class="code hl_function" href="classBookType.html#ac1e5aab4bc4f18eaad0ebe14f3046b7b">getISBN</a>() &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   56</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Title            : &quot;</span> &lt;&lt; setw(78) &lt;&lt; left &lt;&lt; <a class="code hl_function" href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">getTitle</a>() &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   57</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Author           : &quot;</span> &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; <a class="code hl_function" href="classBookType.html#a0326e55232a94efb1c6fa29ec5e99e34">getAuthor</a>() &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   58</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Publisher        : &quot;</span> &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; <a class="code hl_function" href="classBookType.html#a8684b5b66f7c5c56d457642edfafaba7">getPub</a>() &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   59</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Date Added       : &quot;</span> &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; <a class="code hl_function" href="classBookType.html#ae3f36bb2025322d0a8982887a12e818e">getDateAdded</a>() &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   60</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Quantity-On-Hand : &quot;</span> &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; <a class="code hl_function" href="classBookType.html#a8429f87cac6b7d70ef56f6821cdccfba">getQtyOnHand</a>() &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   61</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Wholesale Cost   : &quot;</span> &lt;&lt; setw (78) &lt;&lt; left &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; <a class="code hl_function" href="classBookType.html#a9a5b1c3a4fa50b9983095d2a75a11f73">getWholesale</a>() &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   62</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║  Retail Price     : &quot;</span> &lt;&lt; setw(78) &lt;&lt; left &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; <a class="code hl_function" href="classBookType.html#a60e45a826a946b465b222849477c9b41">getRetail</a>() &lt;&lt; <span class="stringliteral">&quot; ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   63</span>    cout &lt;&lt;         <span class="stringliteral">&quot;║                                                                                                    ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   64</span>    cout &lt;&lt;         <span class="stringliteral">&quot;╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   65</span>}</div>
+<div class="ttc" id="aclassBookType_html_a0326e55232a94efb1c6fa29ec5e99e34"><div class="ttname"><a href="classBookType.html#a0326e55232a94efb1c6fa29ec5e99e34">BookType::getAuthor</a></div><div class="ttdeci">string getAuthor() const</div><div class="ttdoc">Gets the book author.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00031">bookType.h:31</a></div></div>
+<div class="ttc" id="aclassBookType_html_a60e45a826a946b465b222849477c9b41"><div class="ttname"><a href="classBookType.html#a60e45a826a946b465b222849477c9b41">BookType::getRetail</a></div><div class="ttdeci">double getRetail() const</div><div class="ttdoc">Gets the retail value of book.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00036">bookType.h:36</a></div></div>
+<div class="ttc" id="aclassBookType_html_a8429f87cac6b7d70ef56f6821cdccfba"><div class="ttname"><a href="classBookType.html#a8429f87cac6b7d70ef56f6821cdccfba">BookType::getQtyOnHand</a></div><div class="ttdeci">int getQtyOnHand() const</div><div class="ttdoc">Gets the quantity of books available.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00034">bookType.h:34</a></div></div>
+<div class="ttc" id="aclassBookType_html_a8684b5b66f7c5c56d457642edfafaba7"><div class="ttname"><a href="classBookType.html#a8684b5b66f7c5c56d457642edfafaba7">BookType::getPub</a></div><div class="ttdeci">string getPub() const</div><div class="ttdoc">Gets the book publisher.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00032">bookType.h:32</a></div></div>
+<div class="ttc" id="aclassBookType_html_a9a5b1c3a4fa50b9983095d2a75a11f73"><div class="ttname"><a href="classBookType.html#a9a5b1c3a4fa50b9983095d2a75a11f73">BookType::getWholesale</a></div><div class="ttdeci">double getWholesale() const</div><div class="ttdoc">Gets the wholesale price of book.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00035">bookType.h:35</a></div></div>
+<div class="ttc" id="aclassBookType_html_ac1e5aab4bc4f18eaad0ebe14f3046b7b"><div class="ttname"><a href="classBookType.html#ac1e5aab4bc4f18eaad0ebe14f3046b7b">BookType::getISBN</a></div><div class="ttdeci">string getISBN() const</div><div class="ttdoc">Gets the book ISBN.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00030">bookType.h:30</a></div></div>
+<div class="ttc" id="aclassBookType_html_ae3f36bb2025322d0a8982887a12e818e"><div class="ttname"><a href="classBookType.html#ae3f36bb2025322d0a8982887a12e818e">BookType::getDateAdded</a></div><div class="ttdeci">string getDateAdded() const</div><div class="ttdoc">Gets the date at which the book was added.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00033">bookType.h:33</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -794,7 +924,7 @@ false if any attribute of the two books differs. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void BookType::setAuthor </td>
+          <td class="memname"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a> BookType::setAuthor </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>bookAuthor</em></td><td>)</td>
@@ -824,7 +954,7 @@ false if any attribute of the two books differs. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void BookType::setDateAdded </td>
+          <td class="memname"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a> BookType::setDateAdded </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>date</em></td><td>)</td>
@@ -844,6 +974,36 @@ false if any attribute of the two books differs. </dd></dl>
 
 </div>
 </div>
+<a id="a989f429d9065259dccd172c431b5910d" name="a989f429d9065259dccd172c431b5910d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a989f429d9065259dccd172c431b5910d">&#9670;&#160;</a></span>setFlag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a> BookType::setFlag </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the value of flag in. </p>
+
+<p class="definition">Definition at line <a class="el" href="bookType_8h_source.html#l00027">27</a> of file <a class="el" href="bookType_8h_source.html">bookType.h</a>.</p>
+
+</div>
+</div>
 <a id="a036299b2d6e0080d14ea1de1add11c3f" name="a036299b2d6e0080d14ea1de1add11c3f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a036299b2d6e0080d14ea1de1add11c3f">&#9670;&#160;</a></span>setISBN()</h2>
 
@@ -854,7 +1014,7 @@ false if any attribute of the two books differs. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void BookType::setISBN </td>
+          <td class="memname"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a> BookType::setISBN </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>bookisbn</em></td><td>)</td>
@@ -884,7 +1044,7 @@ false if any attribute of the two books differs. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void BookType::setPub </td>
+          <td class="memname"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a> BookType::setPub </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>bookPublisher</em></td><td>)</td>
@@ -914,9 +1074,9 @@ false if any attribute of the two books differs. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void BookType::setQtyOnHand </td>
+          <td class="memname"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a> BookType::setQtyOnHand </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a>&#160;</td>
           <td class="paramname"><em>quantity</em></td><td>)</td>
           <td></td>
         </tr>
@@ -944,7 +1104,7 @@ false if any attribute of the two books differs. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void BookType::setRetail </td>
+          <td class="memname"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a> BookType::setRetail </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>retailPrice</em></td><td>)</td>
@@ -974,7 +1134,7 @@ false if any attribute of the two books differs. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void BookType::setTitle </td>
+          <td class="memname"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a> BookType::setTitle </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>title</em></td><td>)</td>
@@ -1004,7 +1164,7 @@ false if any attribute of the two books differs. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void BookType::setWholesale </td>
+          <td class="memname"><a class="el" href="comp__parse_8c.html#afc0ab997dc16d799168325d36b4cb94b">void</a> BookType::setWholesale </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>wholesalePrice</em></td><td>)</td>
@@ -1061,7 +1221,7 @@ false if any attribute of the two books differs. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int BookType::bookCount = 0</td>
+          <td class="memname"><a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a> BookType::bookCount = 0</td>
         </tr>
       </table>
   </td>
@@ -1191,7 +1351,7 @@ false if any attribute of the two books differs. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int BookType::qtyOnHand</td>
+          <td class="memname"><a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a> BookType::qtyOnHand</td>
         </tr>
       </table>
   </td>
@@ -1230,6 +1390,32 @@ false if any attribute of the two books differs. </dd></dl>
 <p>Retail value of book. </p>
 
 <p class="definition">Definition at line <a class="el" href="bookType_8h_source.html#l00056">56</a> of file <a class="el" href="bookType_8h_source.html">bookType.h</a>.</p>
+
+</div>
+</div>
+<a id="ad683ab8590e266eaef4e3f018a2fa485" name="ad683ab8590e266eaef4e3f018a2fa485"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad683ab8590e266eaef4e3f018a2fa485">&#9670;&#160;</a></span>sortFlag</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a> BookType::sortFlag = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Indicates the current type of sorting 5 - Sort By Age (Date Added) <br  />
+ 6 - Sort By Quantity On Hand 8 - Sort By Retail Price 0 - Default Value </p>
+
+<p class="definition">Definition at line <a class="el" href="bookType_8h_source.html#l00058">58</a> of file <a class="el" href="bookType_8h_source.html">bookType.h</a>.</p>
 
 </div>
 </div>

@@ -4,7 +4,8 @@
 #ifndef invmenu
 #include "invmenu.h"
 #endif
+#include "linkedlist.hpp"
 
-int main_reports(BookType *(&bookList)[20]);
+int main_reports(LinkedListType<BookType *>&bookList);
 
 #endif

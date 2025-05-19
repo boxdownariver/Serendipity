@@ -1,0 +1,28 @@
+var classNCursesPad =
+[
+    [ "NCursesPad", "classNCursesPad.html#ac4bdfeec38dd3cbd6d09ab8c69e33520", null ],
+    [ "NCursesPad", "classNCursesPad.html#a75511e015313923be78e99c21830b954", null ],
+    [ "~NCursesPad", "classNCursesPad.html#a3087ad0c39b2b9fd7167b6eabeca3c54", null ],
+    [ "driver", "classNCursesPad.html#a247118a999c70126981a84c8e33f287b", null ],
+    [ "echochar", "classNCursesPad.html#a7e00fbd33f22b33f17e409313f5aaff9", null ],
+    [ "getSubWindow", "classNCursesPad.html#a75c5c5b0ad47066e5d13f617f519be63", null ],
+    [ "getWindow", "classNCursesPad.html#a7e9b50276d2f0400f5405764c5960082", null ],
+    [ "noutrefresh", "classNCursesPad.html#a727fa9ccfff1e0895dbae9e0786a91f7", null ],
+    [ "noutrefresh", "classNCursesPad.html#a57e8e632c1087434e43bbb82258f9887", null ],
+    [ "OnNavigationError", "classNCursesPad.html#a39db8a92c230519452d46b91af8e7056", null ],
+    [ "OnOperation", "classNCursesPad.html#a8da76a70ce153214c275c0741ea7cdfb", null ],
+    [ "OnUnknownOperation", "classNCursesPad.html#aaef29fce270aa0a7d64fe8ea22b47fe0", null ],
+    [ "operator()", "classNCursesPad.html#a17cf11058c9f16691bf24c8ef1b2a967", null ],
+    [ "operator=", "classNCursesPad.html#ad100a57c6d08ae7c78593fd5e39d74db", null ],
+    [ "refresh", "classNCursesPad.html#a5020d25d7d01cf3c4df598a95f1f6b93", null ],
+    [ "refresh", "classNCursesPad.html#a4857cf3756c7b12b56de3aebe83b1c7c", null ],
+    [ "setSubWindow", "classNCursesPad.html#a44d4a32281d0cf486e7297e4c45223d1", null ],
+    [ "setWindow", "classNCursesPad.html#a935b5db1539eef107e54412904cfe7af", null ],
+    [ "Win", "classNCursesPad.html#a65a7d45e1f394b11e4821359e8cbfce4", null ],
+    [ "h_gridsize", "classNCursesPad.html#a26359a145790070a12772dfd5b414f4d", null ],
+    [ "min_col", "classNCursesPad.html#ac636d841416a8a7357d050818be1f609", null ],
+    [ "min_row", "classNCursesPad.html#a6115be549d8b7bfdb24dcf8a740faf97", null ],
+    [ "v_gridsize", "classNCursesPad.html#ae39f7df3a7cd332d0c162f40808bbe64", null ],
+    [ "viewSub", "classNCursesPad.html#a4ebd737147a80d958bbb6ab2a4733b77", null ],
+    [ "viewWin", "classNCursesPad.html#a214f06599c547efc3d945911361cc71b", null ]
+];

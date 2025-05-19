@@ -6,6 +6,7 @@
 #ifndef BOOKTYPE_H
 #include "bookType.h"
 #endif
+#include "linkedlist.hpp"
 
 
 /*
@@ -25,5 +26,5 @@
 	double retail;         ///< Retail value of book
 };*/
 
-int main_invmenu(BookType *(&books)[20]);
+int main_invmenu(LinkedListType<BookType *>& books);
 #endif

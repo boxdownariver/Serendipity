@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['printbookinfo_0',['printBookInfo',['../classBookType.html#af5eadc6e768e9a8213696355f8f25481',1,'BookType']]]
+  ['justification_0',['justification',['../classNCursesFormField.html#aa7d653e9a3701dad53241e428c19f248',1,'NCursesFormField']]]
 ];

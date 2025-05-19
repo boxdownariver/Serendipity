@@ -20,6 +20,7 @@
 #include "headers/lookUp.h"
 #include "headers/signal.hpp"
 #include <iostream>
+#include "headers/linkedlist.hpp"
 
 /**
  * main() ->
@@ -34,7 +35,8 @@ int main() { {
 	std::string menuName = "Main Menu";
 	struct sigaction sa;
 	sigset_t block_mask;
-	BookType *books[20];
+	//BookType *books[20];
+	LinkedListType<BookType *> books;
 	int menuResult;
 	bool continueMenu;
 
@@ -74,6 +76,7 @@ int main() { {
 	} while (continueMenu);
 
 	if (BookType::getBookCount()) {
+		//Delete using iterator in the future. For now -- This is fine.
 		for (int i = 0; i < BookType::getBookCount(); i++) {
 			delete books[i];
 		}

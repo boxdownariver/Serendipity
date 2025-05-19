@@ -40,7 +40,7 @@ using namespace std;
  * - This function does not return any value. It is used for searching and displaying book details.
  */
 
-int mainLookUp( BookType * const booklist[]) {
+int mainLookUp( LinkedListType< BookType *>& booklist) {
 	string toSearch;
 	char choice;
 	int bookIndex;
@@ -108,7 +108,7 @@ if (BookType::getBookCount() == 0)
  * - The index of the first matching book if found and confirmed by the user.
  * - -1 if no matching book is found in the array.
  */
-int findString (const string toSearch, BookType * const array[], const int size)
+int findString (const string toSearch, LinkedListType< BookType *>& array, const int size)
 {
 	int index = 0;
 	int bookFoundCount = 1;
@@ -194,8 +194,9 @@ int findString (const string toSearch, BookType * const array[], const int size)
  * - The index of the first matching book if found and confirmed by the user.
  * - -1 if no matching book is found in the array.
  */
-int findStringInCart (const string toSearch, BookType * const array[], const int size, int cart[])
+int findStringInCart (const string toSearch, LinkedListType< BookType *>& array, const int size, int cart[])
 {
+	LinkedListIterator<BookType *> iterator(array);
 	int index = 0;
 	int bookFoundCount = 1;
 	string tempTitle;
@@ -209,17 +210,18 @@ int findStringInCart (const string toSearch, BookType * const array[], const int
     cout << "╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n"; 
     cout << "║                                                                                                    ║\n";
 	
+    iterator.begin();
      while (index < size)
          {
             if (cart[index] > 0) 
 					{
              // Search for title or ISBN match in cart using foundKeyword
-             if (array[index]->foundKeyword(toSearch) == true)
+             if (iterator.get()->foundKeyword(toSearch) == true) 
              {
 				cout << "║ [" << setw (2) << right << bookFoundCount <<"]" << setw (100) << right << " ║ \n";
         		cout << "║ ";
 				setColour(32); // Yellow text  
-				cout << "RESULT -> : Title - " << setw (78) << left << array[index]->getTitle();
+				cout << "RESULT -> : Title - " << setw (78) << left << iterator.get()->getTitle();
 				resetColour();
 				cout << " ║ \n║ ";
 				setColour(32); // Yellow text
@@ -246,7 +248,7 @@ int findStringInCart (const string toSearch, BookType * const array[], const int
 
              }
 			}
-             
+             ++iterator;
              index++;
          }
 

@@ -16,6 +16,11 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -28,6 +33,18 @@
    <div id="projectname">Group 1 Serendipity Project
    </div>
   </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -39,17 +56,6 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -92,14 +98,68 @@ $(document).ready(function(){initNavTree('classes.html',''); initResizable(); })
   <div class="headertitle"><div class="title">Class Index</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="qindex"><a class="qindex" href="#letter_B">B</a>&#160;|&#160;<a class="qindex" href="#letter_M">M</a></div>
+<div class="qindex"><a class="qindex" href="#letter_A">A</a>&#160;|&#160;<a class="qindex" href="#letter_B">B</a>&#160;|&#160;<a class="qindex" href="#letter_C">C</a>&#160;|&#160;<a class="qindex" href="#letter_D">D</a>&#160;|&#160;<a class="qindex" href="#letter_E">E</a>&#160;|&#160;<a class="qindex" href="#letter_F">F</a>&#160;|&#160;<a class="qindex" href="#letter_H">H</a>&#160;|&#160;<a class="qindex" href="#letter_I">I</a>&#160;|&#160;<a class="qindex" href="#letter_K">K</a>&#160;|&#160;<a class="qindex" href="#letter_L">L</a>&#160;|&#160;<a class="qindex" href="#letter_M">M</a>&#160;|&#160;<a class="qindex" href="#letter_N">N</a>&#160;|&#160;<a class="qindex" href="#letter_P">P</a>&#160;|&#160;<a class="qindex" href="#letter_Q">Q</a>&#160;|&#160;<a class="qindex" href="#letter_R">R</a>&#160;|&#160;<a class="qindex" href="#letter_S">S</a>&#160;|&#160;<a class="qindex" href="#letter_T">T</a>&#160;|&#160;<a class="qindex" href="#letter_U">U</a>&#160;|&#160;<a class="qindex" href="#letter_W">W</a>&#160;|&#160;<a class="qindex" href="#letter__">_</a></div>
 <div class="classindex">
 <dl class="classindex even">
-<dt class="alphachar"><a id="letter_B" name="letter_B">B</a></dt>
-<dd><a class="el" href="classBookType.html">BookType</a></dd></dl>
+<dt class="alphachar"><a id="letter_A" name="letter_A">A</a></dt>
+<dd><a class="el" href="structalias.html">alias</a></dd><dd><a class="el" href="structalias__table__data.html">alias_table_data</a></dd><dd><a class="el" href="classAlpha__Field.html">Alpha_Field</a></dd><dd><a class="el" href="classAlphanumeric__Field.html">Alphanumeric_Field</a></dd><dd><a class="el" href="structassoc.html">assoc</a></dd><dd><a class="el" href="structATTR__TBL.html">ATTR_TBL</a></dd></dl>
 <dl class="classindex odd">
+<dt class="alphachar"><a id="letter_B" name="letter_B">B</a></dt>
+<dd><a class="el" href="structBinding__Info.html">Binding_Info</a></dd><dd><a class="el" href="classBookType.html">BookType</a></dd></dl>
+<dl class="classindex even">
+<dt class="alphachar"><a id="letter_C" name="letter_C">C</a></dt>
+<dd><a class="el" href="structcolor__t.html">color_t</a></dd><dd><a class="el" href="structcommands.html">commands</a></dd></dl>
+<dl class="classindex odd">
+<dt class="alphachar"><a id="letter_D" name="letter_D">D</a></dt>
+<dd><a class="el" href="structDATA.html">DATA</a></dd><dd><a class="el" href="structDriverEntry.html">DriverEntry</a></dd><dd><a class="el" href="structDYNBUF.html">DYNBUF</a></dd></dl>
+<dl class="classindex even">
+<dt class="alphachar"><a id="letter_E" name="letter_E">E</a></dt>
+<dd><a class="el" href="structenumARG.html">enumARG</a></dd><dd><a class="el" href="classEnumeration__Field.html">Enumeration_Field</a></dd><dd><a class="el" href="structenumParams.html">enumParams</a></dd></dl>
+<dl class="classindex odd">
+<dt class="alphachar"><a id="letter_F" name="letter_F">F</a></dt>
+<dd><a class="el" href="structFG__NODE.html">FG_NODE</a></dd><dd><a class="el" href="structFieldAttrs.html">FieldAttrs</a></dd><dd><a class="el" href="structfieldnode.html">fieldnode</a></dd><dd><a class="el" href="classFormAction.html">FormAction</a></dd><dd><a class="el" href="structformnode.html">formnode</a></dd></dl>
+<dl class="classindex even">
+<dt class="alphachar"><a id="letter_H" name="letter_H">H</a></dt>
+<dd><a class="el" href="structHashData.html">HashData</a></dd><dd><a class="el" href="structHASHMAP.html">HASHMAP</a></dd><dd><a class="el" href="structHISTORY.html">HISTORY</a></dd><dd><a class="el" href="structHOW__MUCH.html">HOW_MUCH</a></dd></dl>
+<dl class="classindex odd">
+<dt class="alphachar"><a id="letter_I" name="letter_I">I</a></dt>
+<dd><a class="el" href="classInteger__Field.html">Integer_Field</a></dd><dd><a class="el" href="structintegerPARM.html">integerPARM</a></dd><dd><a class="el" href="structinterval.html">interval</a></dd><dd><a class="el" href="classIPV4__Address__Field.html">IPV4_Address_Field</a></dd><dd><a class="el" href="structITERATOR__VARS.html">ITERATOR_VARS</a></dd></dl>
+<dl class="classindex even">
+<dt class="alphachar"><a id="letter_K" name="letter_K">K</a></dt>
+<dd><a class="el" href="structkn.html">kn</a></dd></dl>
+<dl class="classindex odd">
+<dt class="alphachar"><a id="letter_L" name="letter_L">L</a></dt>
+<dd><a class="el" href="classLabel.html">Label</a></dd><dd><a class="el" href="structldat.html">ldat</a></dd><dd><a class="el" href="classLinkedListIterator.html">LinkedListIterator</a></dd><dd><a class="el" href="classLinkedListType.html">LinkedListType</a></dd></dl>
+<dl class="classindex even">
 <dt class="alphachar"><a id="letter_M" name="letter_M">M</a></dt>
-<dd><a class="el" href="structMenuLines.html">MenuLines</a></dd></dl>
+<dd><a class="el" href="structmap.html">map</a></dd><dd><a class="el" href="structMARK.html">MARK</a></dd><dd><a class="el" href="structMenuLines.html">MenuLines</a></dd><dd><a class="el" href="structMEVENT.html">MEVENT</a></dd><dd><a class="el" href="classMyAction.html">MyAction</a></dd><dd><a class="el" href="structMYCOLOR.html">MYCOLOR</a></dd><dd><a class="el" href="classMyFieldType.html">MyFieldType</a></dd><dd><a class="el" href="classMyMenu.html">MyMenu</a></dd><dd><a class="el" href="structMYPAIR.html">MYPAIR</a></dd></dl>
+<dl class="classindex odd">
+<dt class="alphachar"><a id="letter_N" name="letter_N">N</a></dt>
+<dd><a class="el" href="structname__table__data.html">name_table_data</a></dd><dd><a class="el" href="structname__table__entry.html">name_table_entry</a></dd><dd><a class="el" href="structNAME__VALUE.html">NAME_VALUE</a></dd><dd><a class="el" href="structNCURSES__GLOBALS.html">NCURSES_GLOBALS</a></dd><dd><a class="el" href="structNCURSES__PRESCREEN.html">NCURSES_PRESCREEN</a></dd><dd><a class="el" href="classNCursesApplication.html">NCursesApplication</a></dd><dd><a class="el" href="classNCursesColorWindow.html">NCursesColorWindow</a></dd><dd><a class="el" href="classNCursesFieldType.html">NCursesFieldType</a></dd><dd><a class="el" href="classNCursesForm.html">NCursesForm</a></dd><dd><a class="el" href="classNCursesFormField.html">NCursesFormField</a></dd><dd><a class="el" href="classNCursesFramedPad.html">NCursesFramedPad</a></dd><dd><a class="el" href="classNCursesMenu.html">NCursesMenu</a></dd><dd><a class="el" href="classNCursesMenuCallbackItem.html">NCursesMenuCallbackItem</a></dd><dd><a class="el" href="classNCursesMenuItem.html">NCursesMenuItem</a></dd><dd><a class="el" href="classNCursesPad.html">NCursesPad</a></dd><dd><a class="el" href="classNCursesPanel.html">NCursesPanel</a></dd><dd><a class="el" href="classNCursesUserField.html">NCursesUserField</a></dd><dd><a class="el" href="classNCursesUserForm.html">NCursesUserForm</a></dd><dd><a class="el" href="classNCursesUserItem.html">NCursesUserItem</a></dd><dd><a class="el" href="classNCursesUserMenu.html">NCursesUserMenu</a></dd><dd><a class="el" href="classNCursesUserPanel.html">NCursesUserPanel</a></dd><dd><a class="el" href="classNCursesWindow.html">NCursesWindow</a></dd><dd><a class="el" href="classNodeType.html">NodeType</a></dd><dd><a class="el" href="classNumeric__Field.html">Numeric_Field</a></dd></dl>
+<dl class="classindex even">
+<dt class="alphachar"><a id="letter_P" name="letter_P">P</a></dt>
+<dd><a class="el" href="classPadAction.html">PadAction</a></dd><dd><a class="el" href="structpagenode.html">pagenode</a></dd><dd><a class="el" href="structpair.html">pair</a></dd><dd><a class="el" href="structpanel.html">panel</a></dd><dd><a class="el" href="structpanelhook.html">panelhook</a></dd><dd><a class="el" href="classPassiveItem.html">PassiveItem</a></dd><dd><a class="el" href="struct__win__st_1_1pdat.html">_win_st::pdat</a></dd><dd><a class="el" href="structPeg.html">Peg</a></dd><dd><a class="el" href="structPICS__CELL.html">PICS_CELL</a></dd><dd><a class="el" href="structPICS__HEAD.html">PICS_HEAD</a></dd></dl>
+<dl class="classindex odd">
+<dt class="alphachar"><a id="letter_Q" name="letter_Q">Q</a></dt>
+<dd><a class="el" href="classQuitItem.html">QuitItem</a></dd></dl>
+<dl class="classindex even">
+<dt class="alphachar"><a id="letter_R" name="letter_R">R</a></dt>
+<dd><a class="el" href="classRegular__Expression__Field.html">Regular_Expression_Field</a></dd><dd><a class="el" href="unionrgb__bits__t.html">rgb_bits_t</a></dd><dd><a class="el" href="structRGB__DATA.html">RGB_DATA</a></dd><dd><a class="el" href="structRGB__NAME.html">RGB_NAME</a></dd><dd><a class="el" href="structripoff__t.html">ripoff_t</a></dd></dl>
+<dl class="classindex odd">
+<dt class="alphachar"><a id="letter_S" name="letter_S">S</a></dt>
+<dd><a class="el" href="classScanAction.html">ScanAction</a></dd><dd><a class="el" href="structscreen.html">screen</a></dd><dd><a class="el" href="structSGR__DATA.html">SGR_DATA</a></dd><dd><a class="el" href="structship__t.html">ship_t</a></dd><dd><a class="el" href="classSillyDemo.html">SillyDemo</a></dd><dd><a class="el" href="structslk__ent.html">slk_ent</a></dd><dd><a class="el" href="classSoft__Label__Key__Set_1_1Soft__Label__Key.html">Soft_Label_Key_Set::Soft_Label_Key</a></dd><dd><a class="el" href="classSoft__Label__Key__Set.html">Soft_Label_Key_Set</a></dd><dd><a class="el" href="structspeed.html">speed</a></dd><dd><a class="el" href="structspeeds.html">speeds</a></dd><dd><a class="el" href="structSTACK__FRAME.html">STACK_FRAME</a></dd><dd><a class="el" href="structstring__desc.html">string_desc</a></dd></dl>
+<dl class="classindex even">
+<dt class="alphachar"><a id="letter_T" name="letter_T">T</a></dt>
+<dd><a class="el" href="structtagITEM.html">tagITEM</a></dd><dd><a class="el" href="structtagMENU.html">tagMENU</a></dd><dd><a class="el" href="structterm.html">term</a></dd><dd><a class="el" href="structTERMDATA.html">TERMDATA</a></dd><dd><a class="el" href="structtermtype.html">termtype</a></dd><dd><a class="el" href="classTestApplication.html">TestApplication</a></dd><dd><a class="el" href="classTestForm.html">TestForm</a></dd><dd><a class="el" href="structTEXT.html">TEXT</a></dd><dd><a class="el" href="structTGETENT__CACHE.html">TGETENT_CACHE</a></dd><dd><a class="el" href="structthisARG.html">thisARG</a></dd><dd><a class="el" href="structthisPARM.html">thisPARM</a></dd><dd><a class="el" href="structtinfo__fkeys.html">tinfo_fkeys</a></dd><dd><a class="el" href="structtoken.html">token</a></dd><dd><a class="el" href="structTPARM__STATE.html">TPARM_STATE</a></dd><dd><a class="el" href="structTRACEBUF.html">TRACEBUF</a></dd><dd><a class="el" href="structtypearg.html">typearg</a></dd><dd><a class="el" href="structtypenode.html">typenode</a></dd></dl>
+<dl class="classindex odd">
+<dt class="alphachar"><a id="letter_U" name="letter_U">U</a></dt>
+<dd><a class="el" href="classUDF__Init.html">UDF_Init</a></dd><dd><a class="el" href="structuser__table__data.html">user_table_data</a></dd><dd><a class="el" href="structuser__table__entry.html">user_table_entry</a></dd><dd><a class="el" href="classUserData.html">UserData</a></dd><dd><a class="el" href="classUserDefinedFieldType.html">UserDefinedFieldType</a></dd><dd><a class="el" href="classUserDefinedFieldType__With__Choice.html">UserDefinedFieldType_With_Choice</a></dd><dd><a class="el" href="structNCursesForm_1_1UserHook.html">NCursesForm::UserHook</a></dd><dd><a class="el" href="structNCursesMenu_1_1UserHook.html">NCursesMenu::UserHook</a></dd><dd><a class="el" href="structNCursesPanel_1_1UserHook.html">NCursesPanel::UserHook</a></dd></dl>
+<dl class="classindex even">
+<dt class="alphachar"><a id="letter_W" name="letter_W">W</a></dt>
+<dd><a class="el" href="structworm.html">worm</a></dd></dl>
+<dl class="classindex odd">
+<dt class="alphachar"><a id="letter__" name="letter__">_</a></dt>
+<dd><a class="el" href="struct__SLK.html">_SLK</a></dd><dd><a class="el" href="structNCursesApplication_1_1__slk__link.html">NCursesApplication::_slk_link</a></dd><dd><a class="el" href="struct__win__st.html">_win_st</a></dd></dl>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->

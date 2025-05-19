@@ -83,7 +83,7 @@ const char* trim(const std::string operandString, WINDOW *window) {
  * Displays stub view of book members, and allows saving and leaving with
  * confirmation.
  */
-void addBook(BookType *bookList[20]) {
+void addBook(LinkedListType<BookType *>& bookList) {
 	WINDOW *mainWindow;
 	WINDOW *bookDisplayWindow;
 	WINDOW *notification;
@@ -177,7 +177,7 @@ void addBook(BookType *bookList[20]) {
 	bookWritten = 1;
 
 	//Main program loop
-	while (BookType::getBookCount() < 20 && continueMenu) {
+	while (continueMenu) {
 		if (stateProvider) {
 			delwin(bookDisplayWindow);
 			refreshWindowMiddleSplit(mainMenu, mainWindow, notification,
@@ -206,7 +206,7 @@ void addBook(BookType *bookList[20]) {
 			mvwprintw(bookDisplayWindow, 8, 1, "%.2f", bookBuffer.getRetail());
 			wrefresh(bookDisplayWindow);
 			mvwprintw(notification, 2, 1,
-					"%d books used out of 20 available", BookType::getBookCount());
+					"%d books inserted", BookType::getBookCount());
 			set_form_win(userInputForm, notification);
 			set_form_sub(userInputForm,
 					derwin(notification, getmaxy(notification),
@@ -216,7 +216,7 @@ void addBook(BookType *bookList[20]) {
 			stateProvider = 0;
 		}
 
-		mvwprintw(notification, 2, 1, "%d books used out of 20 available",
+		mvwprintw(notification, 2, 1, "%d books inserted",
 				BookType::getBookCount());
 		wrefresh(notification);
 		wclear(bookDisplayWindow);
@@ -335,7 +335,9 @@ void addBook(BookType *bookList[20]) {
 							"Are you sure you want to write to book list? [Y/N]");
 					exitChar = wgetch(notification);
 					if (tolower(exitChar) == 'y') {
-						bookList[BookType::getBookCount()] = new BookType(bookBuffer);
+						//bookList[BookType::getBookCount()] = new BookType(bookBuffer);
+						bookList.insert_head(new BookType(bookBuffer));
+
 						BookType::incBookCount();
 						bookBuffer.setTitle("UNSET");
 						bookBuffer.setISBN("UNSET");
@@ -397,14 +399,14 @@ void addBook(BookType *bookList[20]) {
 	deleteMenu(mainMenu, items, menuListing.size());
 	endWindow(mainWindow);
 
-	if (BookType::getBookCount() >= 20) {
+	/*if (BookType::getBookCount() >= 20) {
 		std::cout << "╔══════════════════════════════════════════╗" <<
 		std::endl;
 		std::cout << "║Book list full! Cannot add any more books.║" <<
 		std::endl << "╚══════════════════════════════════════════╝" <<
 	    std::endl << "Press enter to continue..." << std::endl;
 		getline(std::cin, dummyString);
-	}
+	}*/
 	return;
 }
 /*

@@ -51,7 +51,7 @@ using namespace std;
  */
 
 
-void mainDelete (BookType *books[])
+void mainDelete (LinkedListType<BookType *>& books)
 {
 
 	
@@ -116,7 +116,7 @@ void mainDelete (BookType *books[])
  * Returns:
  * - This function does not return any value. It updates the `bookCount` by decrementing it after a successful deletion.
  */
-void discardBook (BookType *books[], int index)
+void discardBook (LinkedListType<BookType *>& books, int index) //NEEDS FULL REWORK
 {
 	char decision;
 	int curBookCount;
@@ -146,7 +146,11 @@ void discardBook (BookType *books[], int index)
 				// reduce the book count by one
 				BookType::decBookCount();
 				curBookCount = BookType::getBookCount();
+				
+				delete books[index];
+				books.delete_index(index);
 
+				/*
 				// Bring the last index data to current index
 				// !!! Could make a new constructor for this
 				// !!! Also try aggregate set
@@ -160,16 +164,16 @@ void discardBook (BookType *books[], int index)
 				books[index]->setRetail(books[curBookCount]->getRetail());
 				
 				// set the last index to default values
-				/*books[curBookCount].setTitle("EMPTY");
-				books[curBookCount].setISBN("EMPTY");
-				books[curBookCount].setAuthor("EMPTY");
-				books[curBookCount].setPub("EMPTY");
-				books[curBookCount].setDateAdded("EMPTY");
-				books[curBookCount].setQtyOnHand(0);
-				books[curBookCount].setWholesale(0);
-				books[curBookCount].setRetail(0);
-				*/
-				delete books[curBookCount];
+				//books[curBookCount].setTitle("EMPTY");
+				//books[curBookCount].setISBN("EMPTY");
+				//books[curBookCount].setAuthor("EMPTY");
+				//books[curBookCount].setPub("EMPTY");
+				//books[curBookCount].setDateAdded("EMPTY");
+				//books[curBookCount].setQtyOnHand(0);
+				//books[curBookCount].setWholesale(0);
+				//books[curBookCount].setRetail(0);
+				
+				delete books[curBookCount];*/
 				setColour (96);
 				cout << "                ┌──────────────────────────────────────────────────────────────────┐\n";
 				cout << "                │                     DELETED BOOK SUCCESSFULLY                    │\n";

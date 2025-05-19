@@ -16,6 +16,11 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -28,6 +33,18 @@
    <div id="projectname">Group 1 Serendipity Project
    </div>
   </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -39,17 +56,6 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -89,30 +95,23 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 </div>
 
 <div class="contents">
-&#160;<ul>
-<li>BookType()&#160;:&#160;<a class="el" href="classBookType.html#a6f9fbd9838fa641fa841fc33216f510a">BookType</a></li>
-<li>decBookCount()&#160;:&#160;<a class="el" href="classBookType.html#ac7d82f6828c064365c849158b00b4c0b">BookType</a></li>
-<li>equalData()&#160;:&#160;<a class="el" href="classBookType.html#ab8ab9090a63f2bed4638e338a4ff1b04">BookType</a></li>
-<li>getAuthor()&#160;:&#160;<a class="el" href="classBookType.html#a0326e55232a94efb1c6fa29ec5e99e34">BookType</a></li>
-<li>getBookCount()&#160;:&#160;<a class="el" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType</a></li>
-<li>getDateAdded()&#160;:&#160;<a class="el" href="classBookType.html#ae3f36bb2025322d0a8982887a12e818e">BookType</a></li>
-<li>getISBN()&#160;:&#160;<a class="el" href="classBookType.html#ac1e5aab4bc4f18eaad0ebe14f3046b7b">BookType</a></li>
-<li>getPub()&#160;:&#160;<a class="el" href="classBookType.html#a8684b5b66f7c5c56d457642edfafaba7">BookType</a></li>
-<li>getQtyOnHand()&#160;:&#160;<a class="el" href="classBookType.html#a8429f87cac6b7d70ef56f6821cdccfba">BookType</a></li>
-<li>getRetail()&#160;:&#160;<a class="el" href="classBookType.html#a60e45a826a946b465b222849477c9b41">BookType</a></li>
-<li>getTitle()&#160;:&#160;<a class="el" href="classBookType.html#a369dfce6a37730fd0d9b4b2b4586707b">BookType</a></li>
-<li>getWholesale()&#160;:&#160;<a class="el" href="classBookType.html#a9a5b1c3a4fa50b9983095d2a75a11f73">BookType</a></li>
-<li>incBookCount()&#160;:&#160;<a class="el" href="classBookType.html#ae60f135ad862ad44c3a5a175b6e2e875">BookType</a></li>
-<li>printBookInfo()&#160;:&#160;<a class="el" href="classBookType.html#af5eadc6e768e9a8213696355f8f25481">BookType</a></li>
-<li>setAuthor()&#160;:&#160;<a class="el" href="classBookType.html#a042fb4df42f4e1716d0decc754fed952">BookType</a></li>
-<li>setDateAdded()&#160;:&#160;<a class="el" href="classBookType.html#a039707661327becb322fbbc51e98bbff">BookType</a></li>
-<li>setISBN()&#160;:&#160;<a class="el" href="classBookType.html#a036299b2d6e0080d14ea1de1add11c3f">BookType</a></li>
-<li>setPub()&#160;:&#160;<a class="el" href="classBookType.html#a585f49b44845ab3cdd758fe89323c5c1">BookType</a></li>
-<li>setQtyOnHand()&#160;:&#160;<a class="el" href="classBookType.html#a7c092faa1707219b63aa2e9e6f61eb4b">BookType</a></li>
-<li>setRetail()&#160;:&#160;<a class="el" href="classBookType.html#af8d8ac9fba586d1de2c739c89e25d50b">BookType</a></li>
-<li>setTitle()&#160;:&#160;<a class="el" href="classBookType.html#a48aa8e4eb23818c086ed84bc22d25269">BookType</a></li>
-<li>setWholesale()&#160;:&#160;<a class="el" href="classBookType.html#ab7c836e9b1307497b34ae6fe5d0734f1">BookType</a></li>
-<li>~BookType()&#160;:&#160;<a class="el" href="classBookType.html#ad5ea3963913b4d953b368f6c61a478d7">BookType</a></li>
+&#160;
+
+<h3><a id="index_a" name="index_a"></a>- a -</h3><ul>
+<li>above()&#160;:&#160;<a class="el" href="classNCursesPanel.html#a630cccbffb37bf1f9d5726fa4e3f79d6">NCursesPanel</a></li>
+<li>action()&#160;:&#160;<a class="el" href="classFormAction.html#a34d13b35ed93bcafedf56b6e4fd29292">FormAction</a>, <a class="el" href="classMyAction.html#a68525ccf4d10b0cc45e3062999f75c3d">MyAction&lt; T &gt;</a>, <a class="el" href="classNCursesMenuCallbackItem.html#a082580a1aba9914c3145e677bc723437">NCursesMenuCallbackItem</a>, <a class="el" href="classNCursesMenuItem.html#a9f14cb3f53504e1156dcd54e8c565c5d">NCursesMenuItem</a>, <a class="el" href="classPadAction.html#a1dbd42ee51f9f69d9c86c5c4d98d2159">PadAction</a>, <a class="el" href="classQuitItem.html#afb16d26c30c1c579995e7a38ee620e32">QuitItem</a>, <a class="el" href="classScanAction.html#a6451f7062a90ae3e04e2a748cc044f23">ScanAction</a></li>
+<li>activate_label()&#160;:&#160;<a class="el" href="classSoft__Label__Key__Set.html#ab203a10e6169446671a2bc9bdde6e1e0">Soft_Label_Key_Set</a></li>
+<li>activate_labels()&#160;:&#160;<a class="el" href="classSoft__Label__Key__Set.html#a87fbd6b17349b455e9d194229fb21076">Soft_Label_Key_Set</a></li>
+<li>addch()&#160;:&#160;<a class="el" href="classNCursesWindow.html#a3849353ae77f0e1162a9230a5f03bdb8">NCursesWindow</a></li>
+<li>addchstr()&#160;:&#160;<a class="el" href="classNCursesWindow.html#a468ac9bfa1b6987b768bef9064db410a">NCursesWindow</a></li>
+<li>addstr()&#160;:&#160;<a class="el" href="classNCursesWindow.html#a51520fde5a7a78a881ccac4b8271cb1a">NCursesWindow</a></li>
+<li>Alpha_Field()&#160;:&#160;<a class="el" href="classAlpha__Field.html#a5934f345ce962e6131ec5aa20e69b7bd">Alpha_Field</a></li>
+<li>Alphanumeric_Field()&#160;:&#160;<a class="el" href="classAlphanumeric__Field.html#ab91b4671182aa46694a7237e5c737135">Alphanumeric_Field</a></li>
+<li>attr()&#160;:&#160;<a class="el" href="classSoft__Label__Key__Set.html#abbcbc06d9250d6e04e6d53fe2f497b38">Soft_Label_Key_Set</a></li>
+<li>attrget()&#160;:&#160;<a class="el" href="classNCursesWindow.html#ab47d267fef2e7debbcab4033a649bd76">NCursesWindow</a></li>
+<li>attroff()&#160;:&#160;<a class="el" href="classNCursesWindow.html#a94d6ef7df07c82cb087cc2c080fa5dae">NCursesWindow</a>, <a class="el" href="classSoft__Label__Key__Set.html#afbb70dd48ac96841786dd6578183b1a9">Soft_Label_Key_Set</a></li>
+<li>attron()&#160;:&#160;<a class="el" href="classNCursesWindow.html#ae7b89508eb065770c65e473a1e422a1c">NCursesWindow</a>, <a class="el" href="classSoft__Label__Key__Set.html#a06c339c7399cf7e0c912ef0f29bad98c">Soft_Label_Key_Set</a></li>
+<li>attrset()&#160;:&#160;<a class="el" href="classNCursesWindow.html#aa2cde0b20edcae2bbdef7decc71d878e">NCursesWindow</a>, <a class="el" href="classSoft__Label__Key__Set.html#ada71d80091b80a1be9d59785dbff2306">Soft_Label_Key_Set</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

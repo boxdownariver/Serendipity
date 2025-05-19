@@ -1,6 +1,27 @@
 var searchData=
 [
-  ['mainmenu_2ecpp_0',['mainmenu.cpp',['../mainmenu_8cpp.html',1,'']]],
-  ['menudipity_2ecpp_1',['menuDipity.cpp',['../menuDipity_8cpp.html',1,'']]],
-  ['menudipity_2eh_2',['menuDipity.h',['../menuDipity_8h.html',1,'']]]
+  ['curses_2eh_0',['curses.h',['../include_2ncurses_2curses_8h.html',1,'']]],
+  ['eti_2eh_1',['eti.h',['../include_2ncurses_2eti_8h.html',1,'']]],
+  ['form_2eh_2',['form.h',['../include_2ncurses_2form_8h.html',1,'']]],
+  ['inch_5fwide_2ec_3',['inch_wide.c',['../inch__wide_8c.html',1,'']]],
+  ['inchs_2ec_4',['inchs.c',['../inchs_8c.html',1,'']]],
+  ['infocmp_2ec_5',['infocmp.c',['../infocmp_8c.html',1,'']]],
+  ['init_5fkeytry_2ec_6',['init_keytry.c',['../init__keytry_8c.html',1,'']]],
+  ['init_5fkeytry_2eh_7',['init_keytry.h',['../init__keytry_8h.html',1,'']]],
+  ['ins_5fwide_2ec_8',['ins_wide.c',['../ins__wide_8c.html',1,'']]],
+  ['insdelln_2ec_9',['insdelln.c',['../insdelln_8c.html',1,'']]],
+  ['inserts_2ec_10',['inserts.c',['../inserts_8c.html',1,'']]],
+  ['internal_2eh_11',['internal.h',['../internal_8h.html',1,'']]],
+  ['invmenu_2ecpp_12',['invmenu.cpp',['../invmenu_8cpp.html',1,'']]],
+  ['invmenu_2eh_13',['invmenu.h',['../invmenu_8h.html',1,'']]],
+  ['menu_2eh_14',['menu.h',['../include_2ncurses_2menu_8h.html',1,'']]],
+  ['mf_5fcommon_2eh_15',['mf_common.h',['../include_2mf__common_8h.html',1,'']]],
+  ['nc_5ftparm_2eh_16',['nc_tparm.h',['../include_2ncurses_2nc__tparm_8h.html',1,'']]],
+  ['ncurses_5fdll_2eh_17',['ncurses_dll.h',['../include_2ncurses_2ncurses__dll_8h.html',1,'']]],
+  ['panel_2eh_18',['panel.h',['../include_2ncurses_2panel_8h.html',1,'']]],
+  ['term_2eh_19',['term.h',['../include_2ncurses_2term_8h.html',1,'']]],
+  ['term_5fentry_2eh_20',['term_entry.h',['../include_2ncurses_2term__entry_8h.html',1,'']]],
+  ['termcap_2eh_21',['termcap.h',['../include_2ncurses_2termcap_8h.html',1,'']]],
+  ['tic_2eh_22',['tic.h',['../include_2ncurses_2tic_8h.html',1,'']]],
+  ['unctrl_2eh_23',['unctrl.h',['../include_2ncurses_2unctrl_8h.html',1,'']]]
 ];
