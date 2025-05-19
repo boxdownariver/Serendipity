@@ -27,6 +27,16 @@ void delWindow(WINDOW *&repWindow);
 void refWindow(WINDOW *&repWindow);
 string trimToSize(string origin, size_t size);
 
+/**
+ * @brief Sorts and displays a copy of the book list using selection sort.
+ *
+ * This function creates a shallow copy of the original linked list of books,
+ * sorts the copied list using the selection sort algorithm, and then passes 
+ * the sorted list to the mainRepListing function to be displayed. 
+ * After displaying, it nullifies the data in the copied list to free memory.
+ *
+ * @param books A reference to a pointer to a LinkedListType containing BookType pointers.
+ */
 void mainSorting(LinkedListType<BookType *>& books)
 {
 	// First make a copy of existing books
@@ -42,6 +52,21 @@ void mainSorting(LinkedListType<BookType *>& books)
 		sortedList.nullifyData();
 }
 
+/**
+ * @brief Calculates and displays the total wholesale or retail cost of all books.
+ *
+ * This function iterates through the linked list of books and calculates either:
+ * - The total wholesale cost (`W` indicator), or
+ * - The total retail cost (`R` indicator),
+ * depending on the character `indicator` provided.
+ *
+ * The calculated total is passed to the `mainCostListing()` function for display.
+ *
+ * @param books A reference to a pointer to the linked list containing BookType objects.
+ * @param indicator A character ('W' or 'R') that determines which total to calculate:
+ *        - 'W' for wholesale
+ *        - 'R' for retail
+ */
 void mainCalculations(LinkedListType<BookType *>& books, char indicator)
 {
 	LinkedListIterator<BookType *> iterator(books);
@@ -68,7 +93,23 @@ void mainCalculations(LinkedListType<BookType *>& books, char indicator)
 
 }
 
-
+/**
+ * @brief Displays a paginated report of all books in the inventory using ncurses windows.
+ *
+ * This function creates a report window using ncurses to display detailed information
+ * about each book in a paginated format (10 books per page). It uses a custom iterator
+ * to traverse the linked list of BookType objects and prints the following fields:
+ * Title, ISBN, Author, Publisher, Date Added, Quantity On Hand, Wholesale Price, and Retail Price.
+ *
+ * Features:
+ * - Displays custom report headings depending on sorting flags.
+ * - Supports navigation using arrow keys: `<` (KEY_LEFT) and `>` (KEY_RIGHT).
+ * - Allows exiting using the ENTER key (10) or ESC (27).
+ * - Uses alternating color pairs for row highlighting.
+ *
+ * @param books A reference to the linked list of BookType pointers to be displayed.
+ * @return Returns 0 after the user exits the report view.
+ */
 int mainRepListing (LinkedListType<BookType *>& books)
 {
 
@@ -263,7 +304,27 @@ int mainRepListing (LinkedListType<BookType *>& books)
 	return 0;
 }
 
-
+/**
+ * @brief Displays a paginated cost report (wholesale or retail) of all books.
+ *
+ * This function generates a ncurses window report listing either the **wholesale**
+ * or **retail** cost of books in inventory. It displays 10 books per page and allows
+ * navigation between pages using the left and right arrow keys (`KEY_LEFT`, `KEY_RIGHT`).
+ *
+ * Each book entry shows:
+ * - Title
+ * - ISBN
+ * - Quantity on Hand
+ * - Wholesale or Retail Price (depending on `header`)
+ *
+ * The total cost for all displayed books is calculated outside and shown at the bottom.
+ *
+ * @param books A reference to the linked list of `BookType*` to be displayed.
+ * @param header A string label indicating the cost type: "Wholesale" or "Retail".
+ * @param totalPrice The pre-computed total cost to be displayed at the bottom.
+ *
+ * @return Returns 0 after exiting the report screen.
+ */
 int mainCostListing (LinkedListType<BookType *>& books, string header, double totalPrice)
 {
 
