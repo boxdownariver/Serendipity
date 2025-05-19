@@ -1,0 +1,11 @@
+<map id="NCursesMenuItem" name="NCursesMenuItem">
+<area shape="rect" id="node1" title=" " alt="" coords="518,5,692,343"/>
+<area shape="rect" id="node2" href="$classFormAction.html" title=" " alt="" coords="5,415,114,512"/>
+<area shape="rect" id="node3" href="$classNCursesMenuCallbackItem.html" title=" " alt="" coords="138,391,349,536"/>
+<area shape="rect" id="node4" href="$classNCursesUserItem.html" title=" " alt="" coords="372,399,531,528"/>
+<area shape="rect" id="node6" href="$classPadAction.html" title=" " alt="" coords="554,415,656,512"/>
+<area shape="rect" id="node7" href="$classPassiveItem.html" title=" " alt="" coords="680,423,794,504"/>
+<area shape="rect" id="node8" href="$classQuitItem.html" title=" " alt="" coords="818,415,909,512"/>
+<area shape="rect" id="node9" href="$classScanAction.html" title=" " alt="" coords="933,415,1042,512"/>
+<area shape="rect" id="node5" href="$classMyAction.html" title=" " alt="" coords="398,584,505,697"/>
+</map>

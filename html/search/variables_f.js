@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['offset_0',['offset',['../structkn.html#af416f2e95391d8337726dd640401f5b0',1,'kn::offset()'],['../structtinfo__fkeys.html#a0df395fe4aa272262c85852b8afc52ad',1,'tinfo_fkeys::offset()']]],
+  ['oldcount_1',['oldcount',['../structHASHMAP.html#aa0e9e33b062ab8695d16d149a35ea34b',1,'HASHMAP']]],
+  ['oldhash_2',['oldhash',['../structscreen.html#abfeeca57dac3463b0019d83338643c4e',1,'screen']]],
+  ['oldindex_3',['oldindex',['../structldat.html#a1e11ff63417ab82a3074860c79db74bb',1,'ldat::oldindex()'],['../structHASHMAP.html#ac469027596988cc84fd824707a28daf3',1,'HASHMAP::oldindex()']]],
+  ['opt_4',['opt',['../structtagITEM.html#a6517b3a98949d7e17b569a5d964f0223',1,'tagITEM::opt()'],['../structtagMENU.html#a6a1446ced36f38a07c28d20590f3c70b',1,'tagMENU::opt()']]],
+  ['optarg_5',['optarg',['../progs_8priv_8h.html#adb50a0eab9fed92fc3bfc7dfa4f2c410',1,'optarg():&#160;progs.priv.h'],['../test_8priv_8h.html#adb50a0eab9fed92fc3bfc7dfa4f2c410',1,'optarg():&#160;test.priv.h']]],
+  ['optind_6',['optind',['../test_8priv_8h.html#ad5e1c16213bbee2d5e8cc363309f418c',1,'optind():&#160;test.priv.h'],['../progs_8priv_8h.html#ad5e1c16213bbee2d5e8cc363309f418c',1,'optind():&#160;progs.priv.h']]],
+  ['opts_7',['opts',['../structformnode.html#aa600ee54d8ab4c19116b05c4e03ce6a2',1,'formnode::opts()'],['../structfieldnode.html#ad5c92137511d6a041319b7c18e388863',1,'fieldnode::opts()']]],
+  ['orientation_8',['orientation',['../structworm.html#a345ff395b0b1cf5eb59576b407712b27',1,'worm']]],
+  ['origin_9',['origin',['../win__driver_8c.html#a0fc2402a837d0fb7fe644330023b3e89',1,'win_driver.c']]],
+  ['ottyb_10',['Ottyb',['../structterm.html#a32e3f325f397bb160223ad8fc8d295af',1,'term']]],
+  ['out_11',['out',['../win__driver_8c.html#a645bacbb585ea039539764e6319b36a6',1,'win_driver.c']]],
+  ['out_5fbuff_12',['out_buff',['../structTPARM__STATE.html#aea33a69c1950186df846eef1d022e4ab',1,'TPARM_STATE']]],
+  ['out_5fbuffer_13',['out_buffer',['../structscreen.html#a5fb356db7d7ae2430c566bc0bc7d03e5',1,'screen']]],
+  ['out_5finuse_14',['out_inuse',['../structscreen.html#ab2c623385ed29c668c355def87c0496d',1,'screen']]],
+  ['out_5flimit_15',['out_limit',['../structscreen.html#a44fccdfd249b6f4070dcb219906d3bb2',1,'screen']]],
+  ['out_5fsize_16',['out_size',['../structTPARM__STATE.html#aa273fd16f98c975fe2596b3164461730',1,'TPARM_STATE']]],
+  ['out_5fused_17',['out_used',['../structTPARM__STATE.html#a66dbb32b3ca4a154877ee4f367856e2b',1,'TPARM_STATE']]]
+];

@@ -1,4 +1,26 @@
 var searchData=
 [
-  ['dateadded_0',['dateAdded',['../classBookType.html#abb415630cf04610b537caacaf4300fd2',1,'BookType']]]
+  ['b_0',['b',['../structMYCOLOR.html#a0354faccfdaaee4ad3026bb32a91e809',1,'MYCOLOR::b()'],['../structcolor__t.html#a476a355bbeeb39cea5662c5ee3c22e2e',1,'color_t::b()']]],
+  ['b_5fattrinit_1',['b_attrInit',['../classSoft__Label__Key__Set.html#a582d6451a1504991c2890cb6705d00f6',1,'Soft_Label_Key_Set']]],
+  ['b_5fautodelete_2',['b_autoDelete',['../classNCursesForm.html#a6d12bf42f3247e8bd35ed6286312e977',1,'NCursesForm::b_autoDelete()'],['../classNCursesMenu.html#a4146edd686c500a383fda5faf6a83b7e',1,'NCursesMenu::b_autoDelete()']]],
+  ['b_5fcolors_3',['b_Colors',['../classNCursesApplication.html#a2e435866a06c43c110e0a435e641c16d',1,'NCursesApplication']]],
+  ['b_5fframed_4',['b_framed',['../classNCursesForm.html#a63ebf06134af503cd1b87429864b12fd',1,'NCursesForm::b_framed()'],['../classNCursesMenu.html#aef3d90f69022ac9f6e1a129b415e8eff',1,'NCursesMenu::b_framed()']]],
+  ['b_5finitialized_5',['b_initialized',['../classNCursesWindow.html#a7b1b38d25d14ae5f08c2eea971e513a2',1,'NCursesWindow']]],
+  ['b_5fsub_5fowner_6',['b_sub_owner',['../classNCursesForm.html#ad6e9725d0f3d13b6af2a22cd162fa8d0',1,'NCursesForm::b_sub_owner()'],['../classNCursesMenu.html#a31671414c9fb592d6d733b1d19c0f2da',1,'NCursesMenu::b_sub_owner()']]],
+  ['back_7',['back',['../structfieldnode.html#a5d04199018862a603df49a2f4766ea97',1,'fieldnode::back()'],['../structtagMENU.html#a4549ddc3763f7a50e84c155f0a97e033',1,'tagMENU::back()']]],
+  ['background_8',['background',['../structFieldAttrs.html#a7bfaa9903a49b17e9f79ef53acceac0d',1,'FieldAttrs']]],
+  ['begincol_9',['begincol',['../structformnode.html#a2d700a0373c863c8604e143580aa9f46',1,'formnode']]],
+  ['below_10',['below',['../structpanel.html#a57ff6fed9e4bd49a45117a2bb828b853',1,'panel']]],
+  ['bg_11',['bg',['../structMYPAIR.html#abe398560bd7a440e557d055b7158110d',1,'MYPAIR']]],
+  ['bits_12',['bits',['../unionrgb__bits__t.html#a10946809e6017a6711003e034f1ee012',1,'rgb_bits_t']]],
+  ['blue_13',['blue',['../structRGB__DATA.html#aeabe5f7e05c48fa6e3a78bef4a459173',1,'RGB_DATA::blue()'],['../unionrgb__bits__t.html#a78ce376df99cc69667125d17c2d276fc',1,'rgb_bits_t::blue()'],['../structcolor__t.html#a2f33446414593cc8441eb5fcfac512ad',1,'color_t::blue()']]],
+  ['bookcount_14',['bookCount',['../classBookType.html#ad19245d5b153ca8eb89cf07ae720ae8b',1,'BookType']]],
+  ['booktitle_15',['bookTitle',['../classBookType.html#aa07b2adf58679e64d53ace4e3a089a7e',1,'BookType']]],
+  ['bool_16',['bool',['../include_2ncurses_2menu_8h.html#adb1c6e8f15ee9687c0d487f78d980014',1,'bool():&#160;menu.h'],['../comp__parse_8c.html#ad7887e2c7f7f22250d52b67a5d881ad1',1,'bool():&#160;comp_parse.c'],['../ncurses_2menu_2menu_8h.html#adb1c6e8f15ee9687c0d487f78d980014',1,'bool():&#160;menu.h'],['../ncurses_2include_2menu_8h.html#adb1c6e8f15ee9687c0d487f78d980014',1,'bool():&#160;menu.h'],['../ncurses_2include_2form_8h.html#a7752a2f77b459e7a851ed0254645356f',1,'bool():&#160;form.h'],['../ncurses_2include_2curses_8h.html#a21b6204baca644251163e0709b10e903',1,'bool():&#160;curses.h'],['../ncurses_2form_2form_8h.html#a7752a2f77b459e7a851ed0254645356f',1,'bool():&#160;form.h'],['../ncurses_8h.html#a21b6204baca644251163e0709b10e903',1,'bool():&#160;ncurses.h'],['../include_2ncurses_2form_8h.html#a7752a2f77b459e7a851ed0254645356f',1,'bool():&#160;form.h'],['../include_2ncurses_2curses_8h.html#a21b6204baca644251163e0709b10e903',1,'bool():&#160;curses.h']]],
+  ['booleans_17',['Booleans',['../structtermtype.html#a09a76f840289fb6a6dce24ffdb93ac2c',1,'termtype']]],
+  ['bot_18',['bot',['../curses_8priv_8h.html#a1e3fe105cd423869c22b0aa28ffec8d3',1,'curses.priv.h']]],
+  ['bottom_5fpanel_19',['bottom_panel',['../structpanelhook.html#a7035b957e21b3eaf750290edfaf634d7',1,'panelhook']]],
+  ['bstate_20',['bstate',['../structMEVENT.html#af9cbb432b2527c3a5659b0667682f1ea',1,'MEVENT']]],
+  ['buf_21',['buf',['../structfieldnode.html#a4265ebfbd1a03d6db5ed227ecded52fe',1,'fieldnode']]],
+  ['buffered_22',['buffered',['../win__driver_8c.html#a3b9f033752835da9641498fb5b9e72d9',1,'win_driver.c']]]
 ];

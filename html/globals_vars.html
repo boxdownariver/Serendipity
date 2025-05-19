@@ -16,6 +16,11 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -28,6 +33,18 @@
    <div id="projectname">Group 1 Serendipity Project
    </div>
   </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -39,17 +56,6 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -89,10 +95,175 @@ $(document).ready(function(){initNavTree('globals_vars.html',''); initResizable(
 </div>
 
 <div class="contents">
-&#160;<ul>
-<li>astateProvider&#160;:&#160;<a class="el" href="addbook_8cpp.html#a6280ed7ee6637077042b2499fc9c4656">addbook.cpp</a></li>
-<li>bstateProvider&#160;:&#160;<a class="el" href="editbook_8cpp.html#a1adbdcdeedd6a5eca276108b603dc9db">editbook.cpp</a></li>
-<li>stateProvider&#160;:&#160;<a class="el" href="menuDipity_8cpp.html#a8a2651374b4c745171073b8aee20eee3">menuDipity.cpp</a></li>
+&#160;
+
+<h3><a id="index__5F" name="index__5F"></a>- _ -</h3><ul>
+<li>_nc_Default_FieldType&#160;:&#160;<a class="el" href="fld__newftyp_8c.html#a4166471a49891564079a3b230fdfc8ef">fld_newftyp.c</a></li>
+<li>_nc_oldnums&#160;:&#160;<a class="el" href="hardscroll_8c.html#a3d371a582ac35f23b7d9527fcd58478b">hardscroll.c</a></li>
+<li>_nc_progname&#160;:&#160;<a class="el" href="clear_8c.html#aba82504156071f41e06b1c48ddd5114c">clear.c</a>, <a class="el" href="infocmp_8c.html#aba82504156071f41e06b1c48ddd5114c">infocmp.c</a>, <a class="el" href="reset__cmd_8h.html#aba82504156071f41e06b1c48ddd5114c">reset_cmd.h</a>, <a class="el" href="tabs_8c.html#aba82504156071f41e06b1c48ddd5114c">tabs.c</a>, <a class="el" href="tic_8c.html#aba82504156071f41e06b1c48ddd5114c">tic.c</a>, <a class="el" href="toe_8c.html#aba82504156071f41e06b1c48ddd5114c">toe.c</a>, <a class="el" href="tput_8c.html#aba82504156071f41e06b1c48ddd5114c">tput.c</a>, <a class="el" href="tset_8c.html#aba82504156071f41e06b1c48ddd5114c">tset.c</a></li>
+<li>_nc_tinfo_fkeys&#160;:&#160;<a class="el" href="init__keytry_8h.html#a58e2a7d55cf0bc3ca90e8e9e74c243a6">init_keytry.h</a></li>
+</ul>
+
+
+<h3><a id="index_a" name="index_a"></a>- a -</h3><ul>
+<li>ansi_map&#160;:&#160;<a class="el" href="win__driver_8c.html#aa0ae1d0a0554897e3d6dcc903dd4bb0a">win_driver.c</a></li>
+</ul>
+
+
+<h3><a id="index_b" name="index_b"></a>- b -</h3><ul>
+<li>bool&#160;:&#160;<a class="el" href="include_2ncurses_2curses_8h.html#a21b6204baca644251163e0709b10e903">include/ncurses/curses.h</a>, <a class="el" href="include_2ncurses_2form_8h.html#a7752a2f77b459e7a851ed0254645356f">include/ncurses/form.h</a>, <a class="el" href="include_2ncurses_2menu_8h.html#adb1c6e8f15ee9687c0d487f78d980014">include/ncurses/menu.h</a>, <a class="el" href="ncurses_8h.html#a21b6204baca644251163e0709b10e903">ncurses.h</a>, <a class="el" href="ncurses_2form_2form_8h.html#a7752a2f77b459e7a851ed0254645356f">ncurses/form/form.h</a>, <a class="el" href="ncurses_2include_2curses_8h.html#a21b6204baca644251163e0709b10e903">ncurses/include/curses.h</a>, <a class="el" href="ncurses_2include_2form_8h.html#a7752a2f77b459e7a851ed0254645356f">ncurses/include/form.h</a>, <a class="el" href="ncurses_2include_2menu_8h.html#adb1c6e8f15ee9687c0d487f78d980014">ncurses/include/menu.h</a>, <a class="el" href="ncurses_2menu_2menu_8h.html#adb1c6e8f15ee9687c0d487f78d980014">ncurses/menu/menu.h</a>, <a class="el" href="comp__parse_8c.html#ad7887e2c7f7f22250d52b67a5d881ad1">comp_parse.c</a></li>
+<li>bot&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a1e3fe105cd423869c22b0aa28ffec8d3">curses.priv.h</a></li>
+<li>buffered&#160;:&#160;<a class="el" href="win__driver_8c.html#a3b9f033752835da9641498fb5b9e72d9">win_driver.c</a></li>
+</ul>
+
+
+<h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
+<li>capval&#160;:&#160;<a class="el" href="capdefaults_8c.html#a522d7e8741a7e6880e64e41afaec6786">capdefaults.c</a></li>
+<li>ch&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a49725d2659c0161681c55e3763942f68">curses.priv.h</a></li>
+<li>char_check&#160;:&#160;<a class="el" href="include_2ncurses_2form_8h.html#a11d4d0f8a6006c6a00cc25fff16bf357">include/ncurses/form.h</a>, <a class="el" href="ncurses_2form_2form_8h.html#a11d4d0f8a6006c6a00cc25fff16bf357">ncurses/form/form.h</a>, <a class="el" href="ncurses_2include_2form_8h.html#a11d4d0f8a6006c6a00cc25fff16bf357">ncurses/include/form.h</a></li>
+<li>chtype&#160;:&#160;<a class="el" href="ncurses_2include_2menu_8h.html#ad21482314c581139d01159829e841e51">ncurses/include/menu.h</a>, <a class="el" href="curses_8priv_8h.html#ad21482314c581139d01159829e841e51">curses.priv.h</a>, <a class="el" href="ncurses_2menu_2menu_8h.html#ad21482314c581139d01159829e841e51">ncurses/menu/menu.h</a>, <a class="el" href="ncurses_2include_2unctrl_8h.html#ad21482314c581139d01159829e841e51">ncurses/include/unctrl.h</a>, <a class="el" href="ncurses_2include_2form_8h.html#ad21482314c581139d01159829e841e51">ncurses/include/form.h</a>, <a class="el" href="ncurses_2form_2form_8h.html#ad21482314c581139d01159829e841e51">ncurses/form/form.h</a>, <a class="el" href="include_2ncurses_2unctrl_8h.html#ad21482314c581139d01159829e841e51">include/ncurses/unctrl.h</a>, <a class="el" href="include_2ncurses_2menu_8h.html#ad21482314c581139d01159829e841e51">include/ncurses/menu.h</a>, <a class="el" href="include_2ncurses_2form_8h.html#ad21482314c581139d01159829e841e51">include/ncurses/form.h</a></li>
+<li>const&#160;:&#160;<a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">include/ncurses/term.h</a>, <a class="el" href="ncurses_2include_2term_8h.html#aefc5e7c680bd57efaa5dd99a5e66e97a">ncurses/include/term.h</a>, <a class="el" href="curses_8priv_8h.html#a7516f0621980ef2571e1cb8612882bfc">curses.priv.h</a></li>
+<li>copy_arg&#160;:&#160;<a class="el" href="include_2ncurses_2form_8h.html#ab51ee9e7b78a5a71936235aabe3cbccc">include/ncurses/form.h</a>, <a class="el" href="ncurses_2form_2form_8h.html#ab51ee9e7b78a5a71936235aabe3cbccc">ncurses/form/form.h</a>, <a class="el" href="ncurses_2include_2form_8h.html#ab51ee9e7b78a5a71936235aabe3cbccc">ncurses/include/form.h</a></li>
+</ul>
+
+
+<h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
+<li>do_keypad&#160;:&#160;<a class="el" href="ncurses_8c.html#ab84799c9c2ae9af1cb41cd7c4c54f9ed">ncurses.c</a></li>
+<li>do_scroll&#160;:&#160;<a class="el" href="ncurses_8c.html#a515f87ae7e44f137907b06b3c2325d31">ncurses.c</a></li>
+</ul>
+
+
+<h3><a id="index_e" name="index_e"></a>- e -</h3><ul>
+<li>environ&#160;:&#160;<a class="el" href="tset_8c.html#aa006daaf11f1e2e45a6ababaf463212b">tset.c</a></li>
+</ul>
+
+
+<h3><a id="index_f" name="index_f"></a>- f -</h3><ul>
+<li>Field_Options&#160;:&#160;<a class="el" href="form_8priv_8h.html#a5a15e90f25c03353cb8410f2e97c0b8a">form.priv.h</a></li>
+<li>FRAME&#160;:&#160;<a class="el" href="ncurses_8c.html#afcc1c5b5b9945e5e701bbd628c33c7ce">ncurses.c</a></li>
+<li>free_arg&#160;:&#160;<a class="el" href="include_2ncurses_2form_8h.html#a79ac0d32586548e3649d94dd3a50790e">include/ncurses/form.h</a>, <a class="el" href="ncurses_2form_2form_8h.html#a79ac0d32586548e3649d94dd3a50790e">ncurses/form/form.h</a>, <a class="el" href="ncurses_2include_2form_8h.html#a79ac0d32586548e3649d94dd3a50790e">ncurses/include/form.h</a></li>
+</ul>
+
+
+<h3><a id="index_h" name="index_h"></a>- h -</h3><ul>
+<li>hdl&#160;:&#160;<a class="el" href="win__driver_8c.html#a6da54de6945ef81ae1423f01e5c1c8c7">win_driver.c</a></li>
+</ul>
+
+
+<h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
+<li>initialized&#160;:&#160;<a class="el" href="win__driver_8c.html#ac3eb467e632e7bda8500fc927a61ab40">win_driver.c</a></li>
+<li>inp&#160;:&#160;<a class="el" href="win__driver_8c.html#a1c4f6574d069221865269169fb86455b">win_driver.c</a></li>
+<li>int&#160;:&#160;<a class="el" href="nc__access_8h.html#a2f81796204b7bbe80bac6d6599203024">nc_access.h</a>, <a class="el" href="ncurses_2panel_2panel_8h.html#a61569f2965b7a369eb10b6d75d410d11">ncurses/panel/panel.h</a>, <a class="el" href="curses_8priv_8h.html#a61569f2965b7a369eb10b6d75d410d11">curses.priv.h</a>, <a class="el" href="menu_8priv_8h.html#a61569f2965b7a369eb10b6d75d410d11">menu.priv.h</a>, <a class="el" href="ncurses_2menu_2menu_8h.html#a61569f2965b7a369eb10b6d75d410d11">ncurses/menu/menu.h</a>, <a class="el" href="ncurses_2include_2termcap_8h.html#a8026ecf4c0037136ea4c43426ed6930f">ncurses/include/termcap.h</a>, <a class="el" href="ncurses_2include_2term_8h.html#a013413b34131edbb1a7afa52254b1446">ncurses/include/term.h</a>, <a class="el" href="ncurses_2include_2panel_8h.html#a61569f2965b7a369eb10b6d75d410d11">ncurses/include/panel.h</a>, <a class="el" href="ncurses_2include_2menu_8h.html#a61569f2965b7a369eb10b6d75d410d11">ncurses/include/menu.h</a>, <a class="el" href="ncurses_2include_2form_8h.html#a61569f2965b7a369eb10b6d75d410d11">ncurses/include/form.h</a>, <a class="el" href="ncurses_2include_2curses_8h.html#ad65b480f8c8270356b45a9890f6499ae">ncurses/include/curses.h</a>, <a class="el" href="form_8priv_8h.html#a61569f2965b7a369eb10b6d75d410d11">form.priv.h</a>, <a class="el" href="ncurses_2form_2form_8h.html#a61569f2965b7a369eb10b6d75d410d11">ncurses/form/form.h</a>, <a class="el" href="include_2ncurses_2termcap_8h.html#a8026ecf4c0037136ea4c43426ed6930f">include/ncurses/termcap.h</a>, <a class="el" href="include_2ncurses_2term_8h.html#a013413b34131edbb1a7afa52254b1446">include/ncurses/term.h</a>, <a class="el" href="include_2ncurses_2panel_8h.html#a61569f2965b7a369eb10b6d75d410d11">include/ncurses/panel.h</a>, <a class="el" href="ncurses_8h.html#ad65b480f8c8270356b45a9890f6499ae">ncurses.h</a>, <a class="el" href="include_2ncurses_2menu_8h.html#a61569f2965b7a369eb10b6d75d410d11">include/ncurses/menu.h</a>, <a class="el" href="include_2ncurses_2form_8h.html#a61569f2965b7a369eb10b6d75d410d11">include/ncurses/form.h</a>, <a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">include/ncurses/curses.h</a></li>
+<li>isMinTTY&#160;:&#160;<a class="el" href="win__driver_8c.html#a1e71256bd5f1a2b292d0ad0be8bd8efa">win_driver.c</a></li>
+<li>isTermInfoConsole&#160;:&#160;<a class="el" href="win__driver_8c.html#a98ab2f02638716f42d597b1bd76eb102">win_driver.c</a></li>
+<li>item&#160;:&#160;<a class="el" href="include_2ncurses_2menu_8h.html#a7f5d2cbd2c89d612d5fe45189bf16f18">include/ncurses/menu.h</a>, <a class="el" href="ncurses_2include_2menu_8h.html#a7f5d2cbd2c89d612d5fe45189bf16f18">ncurses/include/menu.h</a>, <a class="el" href="ncurses_2menu_2menu_8h.html#a7f5d2cbd2c89d612d5fe45189bf16f18">ncurses/menu/menu.h</a>, <a class="el" href="menu_8priv_8h.html#a23ab49e02b23ec2b3574854e4dd7e052">menu.priv.h</a></li>
+</ul>
+
+
+<h3><a id="index_l" name="index_l"></a>- l -</h3><ul>
+<li>lastOut&#160;:&#160;<a class="el" href="win__driver_8c.html#a5c2e0df0d23eb5ecf926bef469e25500">win_driver.c</a></li>
+</ul>
+
+
+<h3><a id="index_m" name="index_m"></a>- m -</h3><ul>
+<li>make_arg&#160;:&#160;<a class="el" href="include_2ncurses_2form_8h.html#a6e5ba78a0a75df63e82aac819af6e5ea">include/ncurses/form.h</a>, <a class="el" href="ncurses_2form_2form_8h.html#a6e5ba78a0a75df63e82aac819af6e5ea">ncurses/form/form.h</a>, <a class="el" href="ncurses_2include_2form_8h.html#a6e5ba78a0a75df63e82aac819af6e5ea">ncurses/include/form.h</a></li>
+<li>map&#160;:&#160;<a class="el" href="win__driver_8c.html#a2771c56648d580e30a1abab2e0ec4e82">win_driver.c</a></li>
+<li>mmask_t&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a9c1f36ef87f96fc8d1040ffaeff3a930">curses.priv.h</a></li>
+<li>mode_t&#160;:&#160;<a class="el" href="nc__access_8h.html#a7c1e1b6ba689f7be2855b2029d993369">nc_access.h</a></li>
+</ul>
+
+
+<h3><a id="index_n" name="index_n"></a>- n -</h3><ul>
+<li>n&#160;:&#160;<a class="el" href="wcwidth_8h.html#a3d05cf6aa68b03e254d70afbe869e305">wcwidth.h</a></li>
+<li>NCURSES_CH_T&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a04df53f09b2555aa1f2cee78235c33cd">curses.priv.h</a></li>
+<li>NCURSES_COLOR_T&#160;:&#160;<a class="el" href="include_2ncurses_2curses_8h.html#a77f5db73c6fe6f1c47c1d56a81ab1941">include/ncurses/curses.h</a>, <a class="el" href="ncurses_8h.html#a77f5db73c6fe6f1c47c1d56a81ab1941">ncurses.h</a>, <a class="el" href="ncurses_2include_2curses_8h.html#a77f5db73c6fe6f1c47c1d56a81ab1941">ncurses/include/curses.h</a></li>
+<li>NCURSES_OUTC&#160;:&#160;<a class="el" href="curses_8priv_8h.html#af0cf69043490f867d6f782de5d4b0085">curses.priv.h</a></li>
+<li>NCURSES_PAIRS_T&#160;:&#160;<a class="el" href="ncurses_2include_2curses_8h.html#a2d703f164edd69104fdd92df75f446b1">ncurses/include/curses.h</a>, <a class="el" href="ncurses_8h.html#a2d703f164edd69104fdd92df75f446b1">ncurses.h</a>, <a class="el" href="include_2ncurses_2curses_8h.html#a2d703f164edd69104fdd92df75f446b1">include/ncurses/curses.h</a></li>
+<li>NCURSES_TACK_1_08&#160;:&#160;<a class="el" href="include_2ncurses_2term__entry_8h.html#ae0f7e370f102517e2915c14f829f98bb">include/ncurses/term_entry.h</a>, <a class="el" href="ncurses_2include_2term__entry_8h.html#ae0f7e370f102517e2915c14f829f98bb">ncurses/include/term_entry.h</a></li>
+<li>NCursesFormField&#160;:&#160;<a class="el" href="cursesf_8h.html#a589562183a79e774438b7d34e1f1a1d0">cursesf.h</a></li>
+<li>NCursesUserItem&lt; UserData &gt;&#160;:&#160;<a class="el" href="demo_8cc.html#a4b2bae5cb36736020989257fdec7e4fc">demo.cc</a></li>
+<li>next_choice&#160;:&#160;<a class="el" href="include_2ncurses_2form_8h.html#a7c3a8001deb61854be6d65157c56310d">include/ncurses/form.h</a>, <a class="el" href="ncurses_2form_2form_8h.html#a7c3a8001deb61854be6d65157c56310d">ncurses/form/form.h</a>, <a class="el" href="ncurses_2include_2form_8h.html#a7c3a8001deb61854be6d65157c56310d">ncurses/include/form.h</a></li>
+<li>numButtons&#160;:&#160;<a class="el" href="win__driver_8c.html#ac5f0c6fc9f7f23c3238d72413249c177">win_driver.c</a></li>
+</ul>
+
+
+<h3><a id="index_o" name="index_o"></a>- o -</h3><ul>
+<li>optarg&#160;:&#160;<a class="el" href="progs_8priv_8h.html#adb50a0eab9fed92fc3bfc7dfa4f2c410">progs.priv.h</a>, <a class="el" href="test_8priv_8h.html#adb50a0eab9fed92fc3bfc7dfa4f2c410">test.priv.h</a></li>
+<li>optind&#160;:&#160;<a class="el" href="progs_8priv_8h.html#ad5e1c16213bbee2d5e8cc363309f418c">progs.priv.h</a>, <a class="el" href="test_8priv_8h.html#ad5e1c16213bbee2d5e8cc363309f418c">test.priv.h</a></li>
+<li>origin&#160;:&#160;<a class="el" href="win__driver_8c.html#a0fc2402a837d0fb7fe644330023b3e89">win_driver.c</a></li>
+<li>out&#160;:&#160;<a class="el" href="win__driver_8c.html#a645bacbb585ea039539764e6319b36a6">win_driver.c</a></li>
+</ul>
+
+
+<h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
+<li>PAD_HIGH&#160;:&#160;<a class="el" href="cursesw_8h.html#a57d7cb90ce55d3f45759a8f18f7487ad">cursesw.h</a></li>
+<li>PAD_LOW&#160;:&#160;<a class="el" href="cursesw_8h.html#a9f961710f7ad6a303cdf1c54db507720">cursesw.h</a></li>
+<li>pairs&#160;:&#160;<a class="el" href="win__driver_8c.html#ae3d27b6ae07b383ebe744d7dd5e6c5d0">win_driver.c</a></li>
+<li>prev_choice&#160;:&#160;<a class="el" href="include_2ncurses_2form_8h.html#aec5f6eee6aed30e483214ce950499a3d">include/ncurses/form.h</a>, <a class="el" href="ncurses_2form_2form_8h.html#aec5f6eee6aed30e483214ce950499a3d">ncurses/form/form.h</a>, <a class="el" href="ncurses_2include_2form_8h.html#aec5f6eee6aed30e483214ce950499a3d">ncurses/include/form.h</a></li>
+<li>progMode&#160;:&#160;<a class="el" href="win__driver_8c.html#afc1edb5c77a5a11c9631f4e11cdb56a7">win_driver.c</a></li>
+<li>pX&#160;:&#160;<a class="el" href="menu_8priv_8h.html#a07a19f4087d7d36dd8403f55d71fb9b4">menu.priv.h</a></li>
+<li>pY&#160;:&#160;<a class="el" href="menu_8priv_8h.html#ac17e4ddf441b7f9e9e6b259cbcec8a95">menu.priv.h</a></li>
+</ul>
+
+
+<h3><a id="index_r" name="index_r"></a>- r -</h3><ul>
+<li>rmap&#160;:&#160;<a class="el" href="win__driver_8c.html#a9e25a245f2c72434f01c3c6533347607">win_driver.c</a></li>
+</ul>
+
+
+<h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
+<li>save_CI&#160;:&#160;<a class="el" href="win__driver_8c.html#a8b3d7a86bf67d1497dacb4189eaef3b0">win_driver.c</a></li>
+<li>save_region&#160;:&#160;<a class="el" href="win__driver_8c.html#a7000fc4b49c0c5df137df5917b340c55">win_driver.c</a></li>
+<li>save_SBI&#160;:&#160;<a class="el" href="win__driver_8c.html#a68d204269c39f0aa67a09e29adf401e2">win_driver.c</a></li>
+<li>save_screen&#160;:&#160;<a class="el" href="win__driver_8c.html#aef7c7abfa461696827a55b349446fb83">win_driver.c</a></li>
+<li>save_size&#160;:&#160;<a class="el" href="win__driver_8c.html#a1b208c5ad653e501ec1db0adbb9785c7">win_driver.c</a></li>
+<li>SBI&#160;:&#160;<a class="el" href="win__driver_8c.html#a7f7996c3e86795e573fb3b41682438e7">win_driver.c</a></li>
+<li>screen&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a80042e99779e2b8197f6357a125941a9">curses.priv.h</a></li>
+<li>SCREEN&#160;:&#160;<a class="el" href="new__pair_8h.html#a1f7978dcbd27a92e02c636df1b48eb07">new_pair.h</a></li>
+<li>sibling&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a2338a1d267a7944863545ce5b69f9977">curses.priv.h</a></li>
+<li>size_t&#160;:&#160;<a class="el" href="nc__alloc_8h.html#ae43e1afb4123c6ddee091cf03ec10266">nc_alloc.h</a>, <a class="el" href="curses_8priv_8h.html#a7b60c5629e55e8ec87a4547dd4abced4">curses.priv.h</a></li>
+<li>stateProvider&#160;:&#160;<a class="el" href="signal_8hpp.html#a8a2651374b4c745171073b8aee20eee3">signal.hpp</a>, <a class="el" href="menuDipity_8cpp.html#a8a2651374b4c745171073b8aee20eee3">menuDipity.cpp</a></li>
+</ul>
+
+
+<h3><a id="index_t" name="index_t"></a>- t -</h3><ul>
+<li>top&#160;:&#160;<a class="el" href="curses_8priv_8h.html#af93f4f37fc2ad9c37af4a715423b110c">curses.priv.h</a></li>
+<li>TPARM_DATA&#160;:&#160;<a class="el" href="lib__tparm_8c.html#a3ab7115a67eaf3cad3821e25ee921fcc">lib_tparm.c</a></li>
+<li>TRIES&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a5f6e9f82d8c0189204c13ad4ac5e1c2c">curses.priv.h</a></li>
+</ul>
+
+
+<h3><a id="index_u" name="index_u"></a>- u -</h3><ul>
+<li>unsigned&#160;:&#160;<a class="el" href="curses_8priv_8h.html#aca40206900cfc164654362fa8d4ad1e6">curses.priv.h</a></li>
+</ul>
+
+
+<h3><a id="index_v" name="index_v"></a>- v -</h3><ul>
+<li>va_list&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a9c8867ac8e6bd700b30cfdc05b3b5253">curses.priv.h</a></li>
+<li>value&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a3772851912abe3ccbff5c659ff71f2ff">curses.priv.h</a></li>
+</ul>
+
+
+<h3><a id="index_w" name="index_w"></a>- w -</h3><ul>
+<li>width&#160;:&#160;<a class="el" href="wcwidth_8h.html#a4b6b63c3667c2da837374545d8abba48">wcwidth.h</a></li>
+<li>win&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a0b0c0b1c72faffd03bc85d9d7498b69f">curses.priv.h</a></li>
+<li>wind&#160;:&#160;<a class="el" href="ncurses_8c.html#ab8c18a86364db4ec381c1e1dcf64bcf5">ncurses.c</a></li>
+<li>WINDOW&#160;:&#160;<a class="el" href="curses_8priv_8h.html#aa64cc90e7a4df667d6c7249b77890d39">curses.priv.h</a></li>
+<li>window_only&#160;:&#160;<a class="el" href="win__driver_8c.html#af81ebfc5221476abd8ed2831247b6ecc">win_driver.c</a></li>
+<li>WINDOWLIST&#160;:&#160;<a class="el" href="curses_8priv_8h.html#aa74493e95f086d7eb6a4f3591d5fc7f5">curses.priv.h</a></li>
+</ul>
+
+
+<h3><a id="index_x" name="index_x"></a>- x -</h3><ul>
+<li>x&#160;:&#160;<a class="el" href="knight_8c.html#a6150e0515f7202e2fb518f7206ed97dc">knight.c</a></li>
+<li>xnew&#160;:&#160;<a class="el" href="curses_8priv_8h.html#aec46329dcfabd4770d23c8a4cbbb14d0">curses.priv.h</a></li>
+<li>xold&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a0cd6352c8368df8616b1dccced930642">curses.priv.h</a></li>
+</ul>
+
+
+<h3><a id="index_y" name="index_y"></a>- y -</h3><ul>
+<li>y&#160;:&#160;<a class="el" href="knight_8c.html#a0a2f84ed7838f07779ae24c5a9086d33">knight.c</a></li>
+<li>ynew&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a48fef18bb4b89b07bc1b31735d485cb9">curses.priv.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

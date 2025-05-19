@@ -1,0 +1,10 @@
+<map id="menu.h" name="menu.h">
+<area shape="rect" id="node1" title=" " alt="" coords="375,5,440,32"/>
+<area shape="rect" id="node2" href="$include_2ncurses_2curses_8h.html" title=" " alt="" coords="280,80,402,107"/>
+<area shape="rect" id="node8" href="$include_2ncurses_2eti_8h.html" title=" " alt="" coords="426,80,522,107"/>
+<area shape="rect" id="node3" href="$include_2ncurses_2ncurses__dll_8h.html" title=" " alt="" coords="5,155,154,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="178,155,242,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="267,155,327,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="351,155,419,181"/>
+<area shape="rect" id="node7" href="$include_2ncurses_2unctrl_8h.html" title=" " alt="" coords="444,155,558,181"/>
+</map>

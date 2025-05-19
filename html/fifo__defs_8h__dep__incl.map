@@ -1,0 +1,5 @@
+<map id="fifo_defs.h" name="fifo_defs.h">
+<area shape="rect" id="node1" title=" " alt="" coords="64,5,146,32"/>
+<area shape="rect" id="node2" href="$lib__getch_8c.html" title=" " alt="" coords="5,80,90,107"/>
+<area shape="rect" id="node3" href="$lib__ungetch_8c.html" title=" " alt="" coords="114,80,213,107"/>
+</map>

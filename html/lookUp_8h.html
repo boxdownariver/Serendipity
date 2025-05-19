@@ -16,6 +16,11 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -28,6 +33,18 @@
    <div id="projectname">Group 1 Serendipity Project
    </div>
   </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -39,17 +56,6 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -95,16 +101,19 @@ $(document).ready(function(){initNavTree('lookUp_8h.html',''); initResizable(); 
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="invmenu_8h_source.html">invmenu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="linkedlist_8hpp_source.html">linkedlist.hpp</a>&quot;</code><br />
 <code>#include &lt;string&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for lookUp.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="lookUp_8h__incl.png" border="0" usemap="#alookUp_8h" alt=""/></div>
 <map name="alookUp_8h" id="alookUp_8h">
-<area shape="rect" title=" " alt="" coords="68,5,141,32"/>
-<area shape="rect" href="invmenu_8h.html" title=" " alt="" coords="24,80,105,107"/>
-<area shape="rect" title=" " alt="" coords="38,229,91,256"/>
-<area shape="rect" href="bookType_8h.html" title=" " alt="" coords="20,155,108,181"/>
+<area shape="rect" title=" " alt="" coords="77,5,150,32"/>
+<area shape="rect" href="invmenu_8h.html" title=" " alt="" coords="73,80,154,107"/>
+<area shape="rect" title=" " alt="" coords="5,229,59,256"/>
+<area shape="rect" href="linkedlist_8hpp.html" title=" " alt="" coords="182,155,279,181"/>
+<area shape="rect" href="bookType_8h.html" title=" " alt="" coords="69,155,158,181"/>
+<area shape="rect" title=" " alt="" coords="196,229,265,256"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -126,13 +135,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:abf04499e1c95fb90d331ebee6074d3b8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lookUp_8h.html#abf04499e1c95fb90d331ebee6074d3b8">mainLookUp</a> (const <a class="el" href="classBookType.html">BookType</a> booklist[20])</td></tr>
-<tr class="separator:abf04499e1c95fb90d331ebee6074d3b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa3875315ce7e454544a9edafdf27f45"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lookUp_8h.html#afa3875315ce7e454544a9edafdf27f45">findString</a> (const std::string toSearch, const <a class="el" href="classBookType.html">BookType</a> array[], const int size)</td></tr>
-<tr class="separator:afa3875315ce7e454544a9edafdf27f45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1898c0545d6342f653f0db2999876564"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lookUp_8h.html#a1898c0545d6342f653f0db2999876564">findStringInCart</a> (const std::string toSearch, const <a class="el" href="classBookType.html">BookType</a> array[], const int size, int cart[])</td></tr>
-<tr class="separator:a1898c0545d6342f653f0db2999876564"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad03651902aa14f3cd4d15385f2a8a5b6"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lookUp_8h.html#ad03651902aa14f3cd4d15385f2a8a5b6">AskKeyword</a> (const int &amp;bookCount)</td></tr>
+<tr class="memitem:af5352f55890bd8d8329a4b4599e1c3d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lookUp_8h.html#af5352f55890bd8d8329a4b4599e1c3d5">mainLookUp</a> (<a class="el" href="classLinkedListType.html">LinkedListType</a>&lt; <a class="el" href="classBookType.html">BookType</a> * &gt; &amp;booklist)</td></tr>
+<tr class="separator:af5352f55890bd8d8329a4b4599e1c3d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41ddc32b609b7be27808baf70dd11d77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lookUp_8h.html#a41ddc32b609b7be27808baf70dd11d77">findString</a> (<a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> std::string toSearch, <a class="el" href="classLinkedListType.html">LinkedListType</a>&lt; <a class="el" href="classBookType.html">BookType</a> * &gt; &amp;array, <a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> <a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a> size)</td></tr>
+<tr class="separator:a41ddc32b609b7be27808baf70dd11d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26308e6db29913b2176048fe372c6a8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lookUp_8h.html#a26308e6db29913b2176048fe372c6a8c">findStringInCart</a> (<a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> std::string toSearch, <a class="el" href="classLinkedListType.html">LinkedListType</a>&lt; <a class="el" href="classBookType.html">BookType</a> * &gt; &amp;array, <a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> <a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a> size, <a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a> cart[])</td></tr>
+<tr class="separator:a26308e6db29913b2176048fe372c6a8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad03651902aa14f3cd4d15385f2a8a5b6"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lookUp_8h.html#ad03651902aa14f3cd4d15385f2a8a5b6">AskKeyword</a> (<a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> <a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a> &amp;bookCount)</td></tr>
 <tr class="separator:ad03651902aa14f3cd4d15385f2a8a5b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -145,7 +154,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">string AskKeyword </td>
           <td>(</td>
-          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> <a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a> &amp;&#160;</td>
           <td class="paramname"><em>bookCount</em></td><td>)</td>
           <td></td>
         </tr>
@@ -159,48 +168,48 @@ Functions</h2></td></tr>
 <li>A string representing the user's search term if the book list is not empty. </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="lookUp_8cpp_source.html#l00295">295</a> of file <a class="el" href="lookUp_8cpp_source.html">lookUp.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  296</span>{</div>
-<div class="line"><span class="lineno">  297</span>    <span class="keywordtype">string</span> toSearch;</div>
-<div class="line"><span class="lineno">  298</span> </div>
-<div class="line"><span class="lineno">  299</span>    system (<span class="stringliteral">&quot;clear&quot;</span>);</div>
-<div class="line"><span class="lineno">  300</span>    <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (33);</div>
-<div class="line"><span class="lineno">  301</span>    cout &lt;&lt; <span class="stringliteral">&quot;╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n&quot;</span>; </div>
-<div class="line"><span class="lineno">  302</span>   cout &lt;&lt; <span class="stringliteral">&quot;║                                       &gt;&gt;&gt; BOOK LOOKUP &lt;&lt;&lt;                                          ║\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  303</span>    cout &lt;&lt; <span class="stringliteral">&quot;╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  304</span>   cout &lt;&lt; <span class="stringliteral">&quot;                                      Search → &quot;</span>;</div>
-<div class="line"><span class="lineno">  305</span>        </div>
-<div class="line"><span class="lineno">  306</span>   getline (cin, toSearch);</div>
-<div class="line"><span class="lineno">  307</span>    <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
-<div class="line"><span class="lineno">  308</span>    <span class="keywordflow">return</span> toSearch;</div>
-<div class="line"><span class="lineno">  309</span>}</div>
-<div class="ttc" id="asetColour_8h_html_a682d98f55e0091ceaff7e01e243fd8e5"><div class="ttname"><a href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a></div><div class="ttdeci">void setColour(int colourCode)</div><div class="ttdef"><b>Definition:</b> <a href="setColour_8cpp_source.html#l00013">setColour.cpp:13</a></div></div>
-<div class="ttc" id="asetColour_8h_html_a92d2d8b4856c8fada2acd3e38538f493"><div class="ttname"><a href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a></div><div class="ttdeci">void resetColour()</div><div class="ttdef"><b>Definition:</b> <a href="setColour_8cpp_source.html#l00024">setColour.cpp:24</a></div></div>
+<p class="definition">Definition at line <a class="el" href="lookUp_8cpp_source.html#l00286">286</a> of file <a class="el" href="lookUp_8cpp_source.html">lookUp.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  287</span>{</div>
+<div class="line"><span class="lineno">  288</span>    <span class="keywordtype">string</span> toSearch;</div>
+<div class="line"><span class="lineno">  289</span> </div>
+<div class="line"><span class="lineno">  290</span>    system (<span class="stringliteral">&quot;clear&quot;</span>);</div>
+<div class="line"><span class="lineno">  291</span>    <a class="code hl_function" href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a> (33);</div>
+<div class="line"><span class="lineno">  292</span>    cout &lt;&lt; <span class="stringliteral">&quot;╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n&quot;</span>; </div>
+<div class="line"><span class="lineno">  293</span>   cout &lt;&lt; <span class="stringliteral">&quot;║                                       &gt;&gt;&gt; BOOK LOOKUP &lt;&lt;&lt;                                          ║\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  294</span>    cout &lt;&lt; <span class="stringliteral">&quot;╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  295</span>   cout &lt;&lt; <span class="stringliteral">&quot;                                      Search → &quot;</span>;</div>
+<div class="line"><span class="lineno">  296</span>        </div>
+<div class="line"><span class="lineno">  297</span>   getline (cin, toSearch);</div>
+<div class="line"><span class="lineno">  298</span>    <a class="code hl_function" href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a>();</div>
+<div class="line"><span class="lineno">  299</span>    <span class="keywordflow">return</span> toSearch;</div>
+<div class="line"><span class="lineno">  300</span>}</div>
+<div class="ttc" id="asetColour_8h_html_a682d98f55e0091ceaff7e01e243fd8e5"><div class="ttname"><a href="setColour_8h.html#a682d98f55e0091ceaff7e01e243fd8e5">setColour</a></div><div class="ttdeci">void setColour(int colourCode)</div><div class="ttdef"><b>Definition:</b> <a href="setColour_8cpp_source.html#l00017">setColour.cpp:17</a></div></div>
+<div class="ttc" id="asetColour_8h_html_a92d2d8b4856c8fada2acd3e38538f493"><div class="ttname"><a href="setColour_8h.html#a92d2d8b4856c8fada2acd3e38538f493">resetColour</a></div><div class="ttdeci">void resetColour()</div><div class="ttdef"><b>Definition:</b> <a href="setColour_8cpp_source.html#l00028">setColour.cpp:28</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="afa3875315ce7e454544a9edafdf27f45" name="afa3875315ce7e454544a9edafdf27f45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa3875315ce7e454544a9edafdf27f45">&#9670;&#160;</a></span>findString()</h2>
+<a id="a41ddc32b609b7be27808baf70dd11d77" name="a41ddc32b609b7be27808baf70dd11d77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41ddc32b609b7be27808baf70dd11d77">&#9670;&#160;</a></span>findString()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int findString </td>
+          <td class="memname"><a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a> findString </td>
           <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> std::string&#160;</td>
           <td class="paramname"><em>toSearch</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classBookType.html">BookType</a>&#160;</td>
-          <td class="paramname"><em>array</em>[], </td>
+          <td class="paramtype"><a class="el" href="classLinkedListType.html">LinkedListType</a>&lt; <a class="el" href="classBookType.html">BookType</a> * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>array</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> <a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a>&#160;</td>
           <td class="paramname"><em>size</em>&#160;</td>
         </tr>
         <tr>
@@ -213,34 +222,34 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1898c0545d6342f653f0db2999876564" name="a1898c0545d6342f653f0db2999876564"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1898c0545d6342f653f0db2999876564">&#9670;&#160;</a></span>findStringInCart()</h2>
+<a id="a26308e6db29913b2176048fe372c6a8c" name="a26308e6db29913b2176048fe372c6a8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26308e6db29913b2176048fe372c6a8c">&#9670;&#160;</a></span>findStringInCart()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int findStringInCart </td>
+          <td class="memname"><a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a> findStringInCart </td>
           <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> std::string&#160;</td>
           <td class="paramname"><em>toSearch</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classBookType.html">BookType</a>&#160;</td>
-          <td class="paramname"><em>array</em>[], </td>
+          <td class="paramtype"><a class="el" href="classLinkedListType.html">LinkedListType</a>&lt; <a class="el" href="classBookType.html">BookType</a> * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>array</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2term_8h.html#a7516f0621980ef2571e1cb8612882bfc">const</a> <a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a>&#160;</td>
           <td class="paramname"><em>size</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a>&#160;</td>
           <td class="paramname"><em>cart</em>[]&#160;</td>
         </tr>
         <tr>
@@ -253,22 +262,87 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="abf04499e1c95fb90d331ebee6074d3b8" name="abf04499e1c95fb90d331ebee6074d3b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf04499e1c95fb90d331ebee6074d3b8">&#9670;&#160;</a></span>mainLookUp()</h2>
+<a id="af5352f55890bd8d8329a4b4599e1c3d5" name="af5352f55890bd8d8329a4b4599e1c3d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5352f55890bd8d8329a4b4599e1c3d5">&#9670;&#160;</a></span>mainLookUp()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int mainLookUp </td>
+          <td class="memname"><a class="el" href="include_2ncurses_2curses_8h.html#a14887a23e4dddb6ee073667457809932">int</a> mainLookUp </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classBookType.html">BookType</a>&#160;</td>
-          <td class="paramname"><em>booklist</em>[20]</td><td>)</td>
+          <td class="paramtype"><a class="el" href="classLinkedListType.html">LinkedListType</a>&lt; <a class="el" href="classBookType.html">BookType</a> * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>booklist</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>mainLookUp manages the process of searching for a book in the database.</p>
+<p>Parameters:</p><ul>
+<li>booklist: An array of <code><a class="el" href="classBookType.html">BookType</a></code> objects representing the book database.</li>
+<li>bookCount: A reference to the integer representing the number of books in the database.</li>
+</ul>
+<p>Returns:</p><ul>
+<li>This function does not return any value. It is used for searching and displaying book details. </li>
+</ul>
 
+<p class="definition">Definition at line <a class="el" href="lookUp_8cpp_source.html#l00043">43</a> of file <a class="el" href="lookUp_8cpp_source.html">lookUp.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>                                                       {</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordtype">string</span> toSearch;</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordtype">char</span> choice;</div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordtype">int</span> bookIndex;</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span><span class="comment">// immediately let user exit if the book count is 0.</span></div>
+<div class="line"><span class="lineno">   50</span><span class="keywordflow">if</span> (<a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>() == 0)</div>
+<div class="line"><span class="lineno">   51</span>    {</div>
+<div class="line"><span class="lineno">   52</span>        system (<span class="stringliteral">&quot;clear&quot;</span>);</div>
+<div class="line"><span class="lineno">   53</span>        cout &lt;&lt; <span class="stringliteral">&quot;╔════════════════════════════════════════════════════════════════════════════════════════════════════╗\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   54</span>        cout &lt;&lt; <span class="stringliteral">&quot;║ &quot;</span> &lt;&lt; setw (98) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;The book list is empty, no books available for search.. &quot;</span> &lt;&lt; <span class="stringliteral">&quot; ║ \n&quot;</span> ;</div>
+<div class="line"><span class="lineno">   55</span>       cout &lt;&lt; <span class="stringliteral">&quot;║ &quot;</span> &lt;&lt; setw (98) &lt;&lt; left &lt;&lt; <span class="stringliteral">&quot;Press any key to continue &quot;</span> &lt;&lt; <span class="stringliteral">&quot; ║ \n&quot;</span> ;</div>
+<div class="line"><span class="lineno">   56</span>       cout &lt;&lt; <span class="stringliteral">&quot;╚════════════════════════════════════════════════════════════════════════════════════════════════════╝\n&quot;</span>; </div>
+<div class="line"><span class="lineno">   57</span>        cin.ignore(numeric_limits&lt;streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);  <span class="comment">// Wait for user input before continuing</span></div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   60</span>    }</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">do</span> {</div>
+<div class="line"><span class="lineno">   64</span>        </div>
+<div class="line"><span class="lineno">   65</span>    <span class="comment">// Prompt user for a search term, ensuring bookCount is valid</span></div>
+<div class="line"><span class="lineno">   66</span>    toSearch = <a class="code hl_function" href="lookUp_8cpp.html#ad03651902aa14f3cd4d15385f2a8a5b6">AskKeyword</a> ( <a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>() );</div>
+<div class="line"><span class="lineno">   67</span>                </div>
+<div class="line"><span class="lineno">   68</span>            <span class="comment">// Search for the book in the list</span></div>
+<div class="line"><span class="lineno">   69</span>                bookIndex = <a class="code hl_function" href="lookUp_8cpp.html#af4f0a0f0a6d95713f01ebbf43c6a01e6">findString</a> (toSearch, booklist, <a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>() );</div>
+<div class="line"><span class="lineno">   70</span>            <span class="keywordflow">if</span> (bookIndex != -1)</div>
+<div class="line"><span class="lineno">   71</span>                    {</div>
+<div class="line"><span class="lineno">   72</span>                        <span class="comment">//show the book details to user</span></div>
+<div class="line"><span class="lineno">   73</span>                    system(<span class="stringliteral">&quot;clear&quot;</span>);</div>
+<div class="line"><span class="lineno">   74</span>                    <span class="comment">// Pass the array to show the bookInfo</span></div>
+<div class="line"><span class="lineno">   75</span>                        <span class="comment">//mainbookInfo ( booklist, bookIndex );       </span></div>
+<div class="line"><span class="lineno">   76</span>                    booklist[bookIndex]-&gt;printBookInfo();</div>
+<div class="line"><span class="lineno">   77</span>                    }</div>
+<div class="line"><span class="lineno">   78</span>                <span class="comment">// Prompt user for another lookup attempt</span></div>
+<div class="line"><span class="lineno">   79</span>                cout &lt;&lt; <span class="stringliteral">&quot;Do you want to proceed another look up(Y/N)?\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   80</span>                cin.get (choice);</div>
+<div class="line"><span class="lineno">   81</span>                cin.ignore (100, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>                <span class="keywordflow">while</span> (toupper(choice) != <span class="charliteral">&#39;N&#39;</span> &amp;&amp; toupper(choice) != <span class="charliteral">&#39;Y&#39;</span> )</div>
+<div class="line"><span class="lineno">   84</span>                    {</div>
+<div class="line"><span class="lineno">   85</span>                        cout &lt;&lt; choice &lt;&lt; <span class="stringliteral">&quot; is invalid choice.. Only enter Y or N.\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   86</span>                        cin.get (choice);</div>
+<div class="line"><span class="lineno">   87</span>                        cin.ignore (100, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">   88</span>                    }       </div>
+<div class="line"><span class="lineno">   89</span>    }</div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">while</span> (toupper(choice) != <span class="charliteral">&#39;N&#39;</span> &amp;&amp; <a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>() != 0);</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>    </div>
+<div class="line"><span class="lineno">   93</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   94</span>}</div>
+<div class="ttc" id="aclassBookType_html_ab3d149c73829ea6b2a676795a485b70c"><div class="ttname"><a href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a></div><div class="ttdeci">static int getBookCount()</div><div class="ttdoc">Gets the count of all book types.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00037">bookType.h:37</a></div></div>
+<div class="ttc" id="alookUp_8cpp_html_ad03651902aa14f3cd4d15385f2a8a5b6"><div class="ttname"><a href="lookUp_8cpp.html#ad03651902aa14f3cd4d15385f2a8a5b6">AskKeyword</a></div><div class="ttdeci">string AskKeyword(const int &amp;bookCount)</div><div class="ttdef"><b>Definition:</b> <a href="lookUp_8cpp_source.html#l00286">lookUp.cpp:286</a></div></div>
+<div class="ttc" id="alookUp_8cpp_html_af4f0a0f0a6d95713f01ebbf43c6a01e6"><div class="ttname"><a href="lookUp_8cpp.html#af4f0a0f0a6d95713f01ebbf43c6a01e6">findString</a></div><div class="ttdeci">int findString(const string toSearch, LinkedListType&lt; BookType * &gt; &amp;array, const int size)</div><div class="ttdef"><b>Definition:</b> <a href="lookUp_8cpp_source.html#l00111">lookUp.cpp:111</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

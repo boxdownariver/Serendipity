@@ -1,0 +1,14 @@
+<map id="NCursesWindow" name="NCursesWindow">
+<area shape="rect" id="node1" title=" " alt="" coords="210,5,358,567"/>
+<area shape="rect" id="node2" href="$classNCursesColorWindow.html" title=" " alt="" coords="5,783,177,896"/>
+<area shape="rect" id="node3" href="$classNCursesPad.html" title=" " alt="" coords="200,615,368,1064"/>
+<area shape="rect" id="node5" href="$classNCursesPanel.html" title=" " alt="" coords="490,647,665,1032"/>
+<area shape="rect" id="node4" href="$classNCursesFramedPad.html" title=" " alt="" coords="151,1280,319,1425"/>
+<area shape="rect" id="node6" href="$classNCursesForm.html" title=" " alt="" coords="344,1120,516,1585"/>
+<area shape="rect" id="node9" href="$classNCursesMenu.html" title=" " alt="" coords="540,1112,714,1593"/>
+<area shape="rect" id="node12" href="$classNCursesUserPanel.html" title=" " alt="" coords="738,1280,903,1425"/>
+<area shape="rect" id="node7" href="$classNCursesUserForm.html" title=" " alt="" coords="200,1673,363,1835"/>
+<area shape="rect" id="node8" href="$classTestForm.html" title=" " alt="" coords="387,1657,491,1851"/>
+<area shape="rect" id="node10" href="$classMyMenu.html" title=" " alt="" coords="532,1641,703,1867"/>
+<area shape="rect" id="node11" href="$classNCursesUserMenu.html" title=" " alt="" coords="728,1673,892,1835"/>
+</map>

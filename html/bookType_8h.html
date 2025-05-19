@@ -16,6 +16,11 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -28,6 +33,18 @@
    <div id="projectname">Group 1 Serendipity Project
    </div>
   </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -39,17 +56,6 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -109,25 +115,29 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="bookType_8h__dep__incl.png" border="0" usemap="#abookType_8hdep" alt=""/></div>
 <map name="abookType_8hdep" id="abookType_8hdep">
-<area shape="rect" title=" " alt="" coords="1003,5,1092,32"/>
-<area shape="rect" href="bookType_8cpp.html" title=" " alt="" coords="664,80,767,107"/>
-<area shape="rect" href="editbook_8hpp.html" title=" " alt="" coords="1174,155,1270,181"/>
-<area shape="rect" href="invmenu_8cpp.html" title=" " alt="" coords="908,304,1003,331"/>
-<area shape="rect" href="invmenu_8h.html" title=" " alt="" coords="791,80,872,107"/>
-<area shape="rect" href="editbook_8cpp.html" title=" " alt="" coords="1174,229,1270,256"/>
-<area shape="rect" href="addbook_8h.html" title=" " alt="" coords="739,155,820,181"/>
-<area shape="rect" href="bookInfo_8h.html" title=" " alt="" coords="294,155,377,181"/>
-<area shape="rect" href="cashier_8cpp.html" title=" " alt="" coords="331,229,420,256"/>
-<area shape="rect" href="deleteBook_8cpp.html" title=" " alt="" coords="132,304,243,331"/>
-<area shape="rect" href="deleteBook_8hpp.html" title=" " alt="" coords="25,229,136,256"/>
-<area shape="rect" href="lookUp_8cpp.html" title=" " alt="" coords="444,229,531,256"/>
-<area shape="rect" href="bookfile_8h.html" title=" " alt="" coords="845,155,922,181"/>
-<area shape="rect" href="cashier_8h.html" title=" " alt="" coords="1009,155,1083,181"/>
-<area shape="rect" href="mainmenu_8cpp.html" title=" " alt="" coords="993,229,1099,256"/>
-<area shape="rect" href="lookUp_8h.html" title=" " alt="" coords="583,155,656,181"/>
-<area shape="rect" href="addbook_8cpp.html" title=" " alt="" coords="657,229,752,256"/>
-<area shape="rect" href="bookInfo_8cpp.html" title=" " alt="" coords="161,229,257,256"/>
-<area shape="rect" href="bookfile_8cpp.html" title=" " alt="" coords="827,229,918,256"/>
+<area shape="rect" title=" " alt="" coords="151,5,239,32"/>
+<area shape="rect" href="bookType_8cpp.html" title=" " alt="" coords="5,80,108,107"/>
+<area shape="rect" href="editbook_8hpp.html" title=" " alt="" coords="62,155,158,181"/>
+<area shape="rect" href="invmenu_8cpp.html" title=" " alt="" coords="249,304,344,331"/>
+<area shape="rect" href="invmenu_8h.html" title=" " alt="" coords="910,80,992,107"/>
+<area shape="rect" href="reports_8cpp.html" title=" " alt="" coords="1432,229,1518,256"/>
+<area shape="rect" href="editbook_8cpp.html" title=" " alt="" coords="62,229,158,256"/>
+<area shape="rect" href="addbook_8h.html" title=" " alt="" coords="341,155,422,181"/>
+<area shape="rect" href="bookInfo_8h.html" title=" " alt="" coords="642,155,724,181"/>
+<area shape="rect" href="cashier_8cpp.html" title=" " alt="" coords="872,229,961,256"/>
+<area shape="rect" href="deleteBook_8cpp.html" title=" " alt="" coords="784,304,895,331"/>
+<area shape="rect" href="deleteBook_8hpp.html" title=" " alt="" coords="625,229,736,256"/>
+<area shape="rect" href="lookUp_8cpp.html" title=" " alt="" coords="761,229,848,256"/>
+<area shape="rect" href="bookfile_8h.html" title=" " alt="" coords="1087,155,1164,181"/>
+<area shape="rect" href="cashier_8h.html" title=" " alt="" coords="1189,155,1263,181"/>
+<area shape="rect" href="mainmenu_8cpp.html" title=" " alt="" coords="1302,229,1408,256"/>
+<area shape="rect" href="repListing_8cpp.html" title=" " alt="" coords="1543,229,1645,256"/>
+<area shape="rect" href="lookUp_8h.html" title=" " alt="" coords="989,155,1062,181"/>
+<area shape="rect" href="repListing_8h.html" title=" " alt="" coords="1484,155,1573,181"/>
+<area shape="rect" href="reports_8h.html" title=" " alt="" coords="1388,155,1461,181"/>
+<area shape="rect" href="addbook_8cpp.html" title=" " alt="" coords="334,229,430,256"/>
+<area shape="rect" href="bookInfo_8cpp.html" title=" " alt="" coords="454,229,550,256"/>
+<area shape="rect" href="bookfile_8cpp.html" title=" " alt="" coords="1187,229,1278,256"/>
 </map>
 </div>
 </div>

@@ -1,0 +1,20 @@
+<map id="NCURSES_PRESCREEN" name="NCURSES_PRESCREEN">
+<area shape="rect" id="node1" title=" " alt="" coords="470,1484,650,1629"/>
+<area shape="rect" id="node2" href="$structscreen.html" title=" " alt="" coords="507,1163,612,1404"/>
+<area shape="rect" id="node3" href="$structterm.html" title=" " alt="" coords="192,921,290,1067"/>
+<area shape="rect" id="node4" href="$structtermtype.html" title=" " alt="" coords="181,536,301,809"/>
+<area shape="rect" id="node5" href="$structTPARM__STATE.html" title=" " alt="" coords="7,576,123,769"/>
+<area shape="rect" id="node6" href="$structSTACK__FRAME.html" title=" " alt="" coords="5,287,125,416"/>
+<area shape="rect" id="node7" href="$struct__win__st.html" title=" " alt="" coords="682,231,787,472"/>
+<area shape="rect" id="node10" href="$struct__SLK.html" title=" " alt="" coords="622,592,697,753"/>
+<area shape="rect" id="node16" href="$structpanel.html" title=" " alt="" coords="469,632,528,713"/>
+<area shape="rect" id="node18" href="$structripoff__t.html" title=" " alt="" coords="862,945,924,1043"/>
+<area shape="rect" id="node8" href="$structldat.html" title=" " alt="" coords="634,21,715,151"/>
+<area shape="rect" id="node9" href="$struct__win__st_1_1pdat.html" title=" " alt="" coords="739,5,847,167"/>
+<area shape="rect" id="node11" href="$structslk__ent.html" title=" " alt="" coords="569,279,657,424"/>
+<area shape="rect" id="node12" href="$unionrgb__bits__t.html" title=" " alt="" coords="314,921,392,1067"/>
+<area shape="rect" id="node13" href="$structcolor__t.html" title=" " alt="" coords="772,905,838,1083"/>
+<area shape="rect" id="node14" href="$structMEVENT.html" title=" " alt="" coords="90,921,168,1067"/>
+<area shape="rect" id="node15" href="$structpanelhook.html" title=" " alt="" coords="532,953,612,1035"/>
+<area shape="rect" id="node17" href="$structHASHMAP.html" title=" " alt="" coords="418,921,507,1067"/>
+</map>

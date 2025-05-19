@@ -16,6 +16,11 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -28,6 +33,18 @@
    <div id="projectname">Group 1 Serendipity Project
    </div>
   </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -39,17 +56,6 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -98,16 +104,27 @@ $(document).ready(function(){initNavTree('cashier_8h_source.html',''); initResiz
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifndef invmenu</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="invmenu_8h.html">invmenu.h</a>&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// make an array of max size for shopping cart, parallel array with BookType class</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keywordtype">int</span> <a class="code hl_function" href="cashier_8h.html#a6b4b7cc79a4e1a3bfc5abedb6e81bafd">mainCashier</a> (<a class="code hl_class" href="classBookType.html">BookType</a> books[]);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="acashier_8h_html_a6b4b7cc79a4e1a3bfc5abedb6e81bafd"><div class="ttname"><a href="cashier_8h.html#a6b4b7cc79a4e1a3bfc5abedb6e81bafd">mainCashier</a></div><div class="ttdeci">int mainCashier(BookType books[])</div><div class="ttdef"><b>Definition:</b> <a href="cashier_8cpp_source.html#l00055">cashier.cpp:55</a></div></div>
-<div class="ttc" id="aclassBookType_html"><div class="ttname"><a href="classBookType.html">BookType</a></div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00014">bookType.h:15</a></div></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="linkedlist_8hpp.html">linkedlist.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// make an array of max size for shopping cart, parallel array with BookType class</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keywordtype">int</span> <a class="code hl_function" href="cashier_8h.html#a145edbc50e25ff1c2dc8bd418a84c691">mainCashier</a> (<a class="code hl_class" href="classLinkedListType.html">LinkedListType&lt;BookType *&gt;</a>&amp; books);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keywordtype">char</span> <a class="code hl_function" href="cashier_8h.html#af1b14de3770860eb929665654061e5da">showCashierMenu</a> (<span class="keywordtype">int</span> cart[]);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keywordtype">void</span> <a class="code hl_function" href="cashier_8h.html#a1fa25fcde00e08232b161bf29aed651b">addBook</a> (<a class="code hl_class" href="classLinkedListType.html">LinkedListType&lt;BookType *&gt;</a>&amp; books, <span class="keywordtype">int</span> index, <span class="keywordtype">int</span> cart[] );</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keywordtype">void</span> <a class="code hl_function" href="cashier_8h.html#ad04d8fcf3a4e9a210081391d0708a6c3">removeBook</a> (<a class="code hl_class" href="classLinkedListType.html">LinkedListType&lt;BookType *&gt;</a>&amp; books, <span class="keywordtype">int</span> index, <span class="keywordtype">int</span> cart[]);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keywordtype">void</span> <a class="code hl_function" href="cashier_8h.html#ad9a8c10b62dcc265275a330f5ab57c18">showCart</a> (<a class="code hl_class" href="classLinkedListType.html">LinkedListType&lt;BookType *&gt;</a>&amp; books, <span class="keywordtype">int</span> cart[]);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keywordtype">void</span> <a class="code hl_function" href="cashier_8h.html#aceeaf2a43b11b596f8bf6a011b2c971e">FormatReport</a> ( <a class="code hl_class" href="classLinkedListType.html">LinkedListType&lt;BookType *&gt;</a>&amp; books, <span class="keywordtype">int</span> cart[], <span class="keywordtype">string</span> date);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="acashier_8h_html_a145edbc50e25ff1c2dc8bd418a84c691"><div class="ttname"><a href="cashier_8h.html#a145edbc50e25ff1c2dc8bd418a84c691">mainCashier</a></div><div class="ttdeci">int mainCashier(LinkedListType&lt; BookType * &gt; &amp;books)</div><div class="ttdef"><b>Definition:</b> <a href="cashier_8cpp_source.html#l00049">cashier.cpp:49</a></div></div>
+<div class="ttc" id="acashier_8h_html_a1fa25fcde00e08232b161bf29aed651b"><div class="ttname"><a href="cashier_8h.html#a1fa25fcde00e08232b161bf29aed651b">addBook</a></div><div class="ttdeci">void addBook(LinkedListType&lt; BookType * &gt; &amp;books, int index, int cart[])</div><div class="ttdef"><b>Definition:</b> <a href="cashier_8cpp_source.html#l00276">cashier.cpp:276</a></div></div>
+<div class="ttc" id="acashier_8h_html_aceeaf2a43b11b596f8bf6a011b2c971e"><div class="ttname"><a href="cashier_8h.html#aceeaf2a43b11b596f8bf6a011b2c971e">FormatReport</a></div><div class="ttdeci">void FormatReport(LinkedListType&lt; BookType * &gt; &amp;books, int cart[], string date)</div><div class="ttdef"><b>Definition:</b> <a href="cashier_8cpp_source.html#l00539">cashier.cpp:539</a></div></div>
+<div class="ttc" id="acashier_8h_html_ad04d8fcf3a4e9a210081391d0708a6c3"><div class="ttname"><a href="cashier_8h.html#ad04d8fcf3a4e9a210081391d0708a6c3">removeBook</a></div><div class="ttdeci">void removeBook(LinkedListType&lt; BookType * &gt; &amp;books, int index, int cart[])</div><div class="ttdef"><b>Definition:</b> <a href="cashier_8cpp_source.html#l00378">cashier.cpp:378</a></div></div>
+<div class="ttc" id="acashier_8h_html_ad9a8c10b62dcc265275a330f5ab57c18"><div class="ttname"><a href="cashier_8h.html#ad9a8c10b62dcc265275a330f5ab57c18">showCart</a></div><div class="ttdeci">void showCart(LinkedListType&lt; BookType * &gt; &amp;books, int cart[])</div><div class="ttdef"><b>Definition:</b> <a href="cashier_8cpp_source.html#l00458">cashier.cpp:458</a></div></div>
+<div class="ttc" id="acashier_8h_html_af1b14de3770860eb929665654061e5da"><div class="ttname"><a href="cashier_8h.html#af1b14de3770860eb929665654061e5da">showCashierMenu</a></div><div class="ttdeci">char showCashierMenu(int cart[])</div><div class="ttdef"><b>Definition:</b> <a href="cashier_8cpp_source.html#l00203">cashier.cpp:203</a></div></div>
+<div class="ttc" id="aclassLinkedListType_html"><div class="ttname"><a href="classLinkedListType.html">LinkedListType</a></div><div class="ttdef"><b>Definition:</b> <a href="linkedlist_8hpp_source.html#l00026">linkedlist.hpp:26</a></div></div>
 <div class="ttc" id="ainvmenu_8h_html"><div class="ttname"><a href="invmenu_8h.html">invmenu.h</a></div></div>
+<div class="ttc" id="alinkedlist_8hpp_html"><div class="ttname"><a href="linkedlist_8hpp.html">linkedlist.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

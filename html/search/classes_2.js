@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['menulines_0',['MenuLines',['../structMenuLines.html',1,'']]]
+  ['binding_5finfo_0',['Binding_Info',['../structBinding__Info.html',1,'']]],
+  ['booktype_1',['BookType',['../classBookType.html',1,'']]]
 ];

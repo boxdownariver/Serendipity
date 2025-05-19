@@ -16,6 +16,11 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -28,6 +33,18 @@
    <div id="projectname">Group 1 Serendipity Project
    </div>
   </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -39,17 +56,6 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -89,13 +95,75 @@ $(document).ready(function(){initNavTree('globals_defs.html',''); initResizable(
 </div>
 
 <div class="contents">
-&#160;<ul>
-<li>ADDBOOK_H&#160;:&#160;<a class="el" href="addbook_8h.html#a2919093cfbc4a7295120bcad5616f5cf">addbook.h</a></li>
-<li>bookInfo&#160;:&#160;<a class="el" href="bookInfo_8h.html#ac065ee917cbbe636bc746dba91e6405a">bookInfo.h</a></li>
-<li>EDITBOOK_HPP&#160;:&#160;<a class="el" href="editbook_8hpp.html#a2d59fa65572f59a66e8e767c84de75a5">editbook.hpp</a></li>
-<li>make_menu&#160;:&#160;<a class="el" href="menuDipity_8h.html#a8f3c00800d4066873617ad0a77d9ae20">menuDipity.h</a></li>
-<li>menu_lines_struct&#160;:&#160;<a class="el" href="menuDipity_8h.html#a184a8f96acbc3e30c01e792dd8b94523">menuDipity.h</a></li>
-<li>menu_utils&#160;:&#160;<a class="el" href="menuDipity_8h.html#a5844bf1e3a872a1d090fe7d7c3f4b6ae">menuDipity.h</a>, <a class="el" href="invmenu_8cpp.html#a5844bf1e3a872a1d090fe7d7c3f4b6ae">invmenu.cpp</a>, <a class="el" href="mainmenu_8cpp.html#a5844bf1e3a872a1d090fe7d7c3f4b6ae">mainmenu.cpp</a>, <a class="el" href="menuDipity_8cpp.html#a5844bf1e3a872a1d090fe7d7c3f4b6ae">menuDipity.cpp</a>, <a class="el" href="reports_8cpp.html#a5844bf1e3a872a1d090fe7d7c3f4b6ae">reports.cpp</a></li>
+&#160;
+
+<h3><a id="index__5F" name="index__5F"></a>- _ -</h3><ul>
+<li>__attribute__&#160;:&#160;<a class="el" href="ncurses_8h.html#af2c1b6d231bd3b425664aa32742c4c22">ncurses.h</a>, <a class="el" href="include_2ncurses_2curses_8h.html#af2c1b6d231bd3b425664aa32742c4c22">include/ncurses/curses.h</a>, <a class="el" href="ncurses_2include_2curses_8h.html#af2c1b6d231bd3b425664aa32742c4c22">ncurses/include/curses.h</a></li>
+<li>__INTERNAL_CAPS_VISIBLE&#160;:&#160;<a class="el" href="lib__termcap_8c.html#af6e0a278d96e679bf0456454f36208fb">lib_termcap.c</a>, <a class="el" href="reset__cmd_8h.html#af6e0a278d96e679bf0456454f36208fb">reset_cmd.h</a>, <a class="el" href="parse__entry_8c.html#af6e0a278d96e679bf0456454f36208fb">parse_entry.c</a>, <a class="el" href="dump__entry_8c.html#af6e0a278d96e679bf0456454f36208fb">dump_entry.c</a></li>
+<li>_CHANGED&#160;:&#160;<a class="el" href="form_8priv_8h.html#ad3cc715bec238d09b72f34a9dd8ef0f9">form.priv.h</a></li>
+<li>_ENDLINE&#160;:&#160;<a class="el" href="include_2ncurses_2curses_8h.html#af7231689b32b442c73545a6007b904a1">include/ncurses/curses.h</a>, <a class="el" href="ncurses_8h.html#af7231689b32b442c73545a6007b904a1">ncurses.h</a>, <a class="el" href="ncurses_2include_2curses_8h.html#af7231689b32b442c73545a6007b904a1">ncurses/include/curses.h</a></li>
+<li>_FCHECK_REQUIRED&#160;:&#160;<a class="el" href="form_8priv_8h.html#a9ddec2f89ac2f09e88d54297f343eb05">form.priv.h</a></li>
+<li>_FULLWIN&#160;:&#160;<a class="el" href="include_2ncurses_2curses_8h.html#a97230c036df975ffff0d20678dc189bd">include/ncurses/curses.h</a>, <a class="el" href="ncurses_8h.html#a97230c036df975ffff0d20678dc189bd">ncurses.h</a>, <a class="el" href="ncurses_2include_2curses_8h.html#a97230c036df975ffff0d20678dc189bd">ncurses/include/curses.h</a></li>
+<li>_GENERIC&#160;:&#160;<a class="el" href="form_8priv_8h.html#a14fbe489b7da40616841d1345d3e6303">form.priv.h</a></li>
+<li>_HAS_ARGS&#160;:&#160;<a class="el" href="form_8priv_8h.html#a77409cb1390d7b38f5d37187860caab0">form.priv.h</a></li>
+<li>_HAS_CHOICE&#160;:&#160;<a class="el" href="form_8priv_8h.html#ad13643a1e4d8e95943ef2c92f0638890">form.priv.h</a></li>
+<li>_HASMOVED&#160;:&#160;<a class="el" href="include_2ncurses_2curses_8h.html#aa121e1aec4adac08ba3780758474dedb">include/ncurses/curses.h</a>, <a class="el" href="ncurses_8h.html#aa121e1aec4adac08ba3780758474dedb">ncurses.h</a>, <a class="el" href="ncurses_2include_2curses_8h.html#aa121e1aec4adac08ba3780758474dedb">ncurses/include/curses.h</a></li>
+<li>_IN_DRIVER&#160;:&#160;<a class="el" href="include_2mf__common_8h.html#a698e6b20ca67879ba3a166c47841eef4">include/mf_common.h</a>, <a class="el" href="menu_2mf__common_8h.html#a698e6b20ca67879ba3a166c47841eef4">menu/mf_common.h</a></li>
+<li>_ISPAD&#160;:&#160;<a class="el" href="include_2ncurses_2curses_8h.html#ae49b4ab8c7f046557cbee37da7ac3f22">include/ncurses/curses.h</a>, <a class="el" href="ncurses_8h.html#ae49b4ab8c7f046557cbee37da7ac3f22">ncurses.h</a>, <a class="el" href="ncurses_2include_2curses_8h.html#ae49b4ab8c7f046557cbee37da7ac3f22">ncurses/include/curses.h</a></li>
+<li>_LINK_NEEDED&#160;:&#160;<a class="el" href="menu_8priv_8h.html#a269a7f16cf238791d394a73252ddff94">menu.priv.h</a></li>
+<li>_LINKED_TYPE&#160;:&#160;<a class="el" href="form_8priv_8h.html#a79c1bd5b913db7db2f0929d572688a75">form.priv.h</a></li>
+<li>_MARK_ALLOCATED&#160;:&#160;<a class="el" href="menu_8priv_8h.html#a5c237627d534ece59f521ae84170983f">menu.priv.h</a></li>
+<li>_MAY_GROW&#160;:&#160;<a class="el" href="form_8priv_8h.html#adcccb5c44904bb744a690919bbfbda6b">form.priv.h</a></li>
+<li>_nc_alloc_screen&#160;:&#160;<a class="el" href="curses_8priv_8h.html#aa7972c548d6f9efd90048d0ed8a98d51">curses.priv.h</a></li>
+<li>_nc_alloc_screen_sp&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a2148cfc5818403f5be3de8d2b639c2bd">curses.priv.h</a></li>
+<li>_nc_bkgd&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a70e2568a6f72dca0f6b260c6144d8386">curses.priv.h</a></li>
+<li>_nc_bottom_panel&#160;:&#160;<a class="el" href="panel_8priv_8h.html#a8108e03faaa39cf8d85facf55b7da393">panel.priv.h</a></li>
+<li>_nc_copy_termtype2&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a02bff9c04965a83fce8670b19755d8b2">curses.priv.h</a></li>
+<li>_nc_export_termtype2&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a62bfab362b49763bdd706c857ac31d69">curses.priv.h</a></li>
+<li>_nc_fallback2&#160;:&#160;<a class="el" href="curses_8priv_8h.html#abf8c65f658a1df694f2ca28fc964c20f">curses.priv.h</a></li>
+<li>_nc_find_prescr&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a1983180ae86f25f4001f5db0ac868d25">curses.priv.h</a></li>
+<li>_nc_forget_prescr&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a1c89e7c88407440068b100e2b47440f4">curses.priv.h</a></li>
+<li>_nc_free_termtype2&#160;:&#160;<a class="el" href="progs_8priv_8h.html#a40cd5db2bdd9c5acf52cf79765adcadf">progs.priv.h</a>, <a class="el" href="curses_8priv_8h.html#a40cd5db2bdd9c5acf52cf79765adcadf">curses.priv.h</a></li>
+<li>_nc_getstr_limit&#160;:&#160;<a class="el" href="curses_8priv_8h.html#acbbd245cd7ab33fa8541ab71ee953401">curses.priv.h</a></li>
+<li>_nc_handle_sigwinch&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a13f82ec40f3ff97ef254e6f9c448f3bd">curses.priv.h</a></li>
+<li>_nc_init_pthreads&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a53c170d3766367dd321c2568de8a3401">curses.priv.h</a></li>
+<li>_nc_lock_global&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a36e804f31fdf3509c59d97b36a8de8aa">curses.priv.h</a></li>
+<li>_nc_mutex_init&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a01fc02c7e097f76e96641800fd5dfa80">curses.priv.h</a></li>
+<li>_nc_nonsp_lock_global&#160;:&#160;<a class="el" href="curses_8priv_8h.html#abc64c61142191b3d2ce42946f4c46df0">curses.priv.h</a></li>
+<li>_nc_nonsp_try_global&#160;:&#160;<a class="el" href="curses_8priv_8h.html#ac3283f8dece81c932701941bad397cc8">curses.priv.h</a></li>
+<li>_nc_nonsp_unlock_global&#160;:&#160;<a class="el" href="curses_8priv_8h.html#ae75115f4a35c76c29856fa766c48ebb6">curses.priv.h</a></li>
+<li>_nc_read_entry2&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a11557a5c84a81df6543fb891cbc81a15">curses.priv.h</a>, <a class="el" href="progs_8priv_8h.html#a089c8dcce0d4255cd25fc377e5633703">progs.priv.h</a></li>
+<li>_nc_resize_margins&#160;:&#160;<a class="el" href="curses_8priv_8h.html#aaa37fb3d3088cd953fa45ffce408158c">curses.priv.h</a></li>
+<li>_nc_set_read_thread&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a91f93f100f961c9537745bc43f75ab91">curses.priv.h</a></li>
+<li>_nc_set_screen&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a46bc7aba09e23043bc0e9a3dee852af1">curses.priv.h</a></li>
+<li>_nc_setmode&#160;:&#160;<a class="el" href="lib__raw_8c.html#a1c390e8d6bec8e9f3e7c08ff524a5173">lib_raw.c</a></li>
+<li>_nc_SLIMIT&#160;:&#160;<a class="el" href="nc__string_8h.html#a092ad33ac518f97727acae824b2647f7">nc_string.h</a>, <a class="el" href="test_8priv_8h.html#a092ad33ac518f97727acae824b2647f7">test.priv.h</a></li>
+<li>_nc_sp_lock_global&#160;:&#160;<a class="el" href="curses_8priv_8h.html#ae2fd8dae811722a16217c58bc1fa105a">curses.priv.h</a></li>
+<li>_nc_sp_try_global&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a4cc96c9bdcdd59471efdf94bdf6f025a">curses.priv.h</a></li>
+<li>_nc_sp_unlock_global&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a3575fe88d04474cb432a0198abd5c1ba">curses.priv.h</a></li>
+<li>_nc_SPRINTF&#160;:&#160;<a class="el" href="nc__string_8h.html#a7223fe9bb65fce8ba94f3eea40a7091b">nc_string.h</a>, <a class="el" href="test_8priv_8h.html#a7223fe9bb65fce8ba94f3eea40a7091b">test.priv.h</a></li>
+<li>_nc_stdscr_pseudo_panel&#160;:&#160;<a class="el" href="panel_8priv_8h.html#acd6b3e5d68d7b0430662d5d4fa1c8de5">panel.priv.h</a></li>
+<li>_nc_STRCAT&#160;:&#160;<a class="el" href="nc__string_8h.html#a01e7269811c00772bb2a16b32d00e484">nc_string.h</a>, <a class="el" href="test_8priv_8h.html#a01e7269811c00772bb2a16b32d00e484">test.priv.h</a></li>
+<li>_nc_STRCPY&#160;:&#160;<a class="el" href="test_8priv_8h.html#a63074ac35e2fab448466df02e5cdbcf0">test.priv.h</a>, <a class="el" href="nc__string_8h.html#a63074ac35e2fab448466df02e5cdbcf0">nc_string.h</a></li>
+<li>_nc_STRNCAT&#160;:&#160;<a class="el" href="nc__string_8h.html#a76eedbbeeb5acff21de5d767bf35294f">nc_string.h</a>, <a class="el" href="test_8priv_8h.html#a76eedbbeeb5acff21de5d767bf35294f">test.priv.h</a></li>
+<li>_nc_STRNCPY&#160;:&#160;<a class="el" href="nc__string_8h.html#a1cd5d0d506b914112f84fb44dc18f823">nc_string.h</a>, <a class="el" href="test_8priv_8h.html#a1cd5d0d506b914112f84fb44dc18f823">test.priv.h</a></li>
+<li>_nc_top_panel&#160;:&#160;<a class="el" href="panel_8priv_8h.html#ab97463e280af40ddd73f86523b0f8ccc">panel.priv.h</a></li>
+<li>_nc_try_global&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a31abc6a38f2a79b9d7c3e159c092ec5e">curses.priv.h</a></li>
+<li>_nc_unlock_global&#160;:&#160;<a class="el" href="curses_8priv_8h.html#a3de4ca46cbd03591a9c8caf2ff529be6">curses.priv.h</a></li>
+<li>_NEWINDEX&#160;:&#160;<a class="el" href="include_2ncurses_2curses_8h.html#a5020cbd81ab815a07541f79e0c47cc66">include/ncurses/curses.h</a>, <a class="el" href="ncurses_8h.html#a5020cbd81ab815a07541f79e0c47cc66">ncurses.h</a>, <a class="el" href="ncurses_2include_2curses_8h.html#a5020cbd81ab815a07541f79e0c47cc66">ncurses/include/curses.h</a></li>
+<li>_NEWPAGE&#160;:&#160;<a class="el" href="form_8priv_8h.html#ac4ba21a999f63468513d8fda4a2cbee8">form.priv.h</a></li>
+<li>_NEWTOP&#160;:&#160;<a class="el" href="form_8priv_8h.html#a97d4b75b18308ad31537d515ba85ec27">form.priv.h</a></li>
+<li>_no_flushok&#160;:&#160;<a class="el" href="cursesw_8h.html#ae9e676c4bbd8d2c9fac9d58bfaf5097e">cursesw.h</a></li>
+<li>_NOCHANGE&#160;:&#160;<a class="el" href="include_2ncurses_2curses_8h.html#a06bacadb76062160e61a3330364b2b55">include/ncurses/curses.h</a>, <a class="el" href="ncurses_8h.html#a06bacadb76062160e61a3330364b2b55">ncurses.h</a>, <a class="el" href="ncurses_2include_2curses_8h.html#a06bacadb76062160e61a3330364b2b55">ncurses/include/curses.h</a></li>
+<li>_OVLMODE&#160;:&#160;<a class="el" href="form_8priv_8h.html#adf37e1c5f72baadd4fe2dd33c4874871">form.priv.h</a></li>
+<li>_POSTED&#160;:&#160;<a class="el" href="include_2mf__common_8h.html#a83477999099bd2bf692fb51fab22f075">include/mf_common.h</a>, <a class="el" href="menu_2mf__common_8h.html#a83477999099bd2bf692fb51fab22f075">menu/mf_common.h</a></li>
+<li>_RESIDENT&#160;:&#160;<a class="el" href="form_8priv_8h.html#a034271f1856b85430b1de95e9e4cd73c">form.priv.h</a></li>
+<li>_SCROLLWIN&#160;:&#160;<a class="el" href="include_2ncurses_2curses_8h.html#a7ab6973a68386619d7c69bc7fbb18708">include/ncurses/curses.h</a>, <a class="el" href="ncurses_8h.html#a7ab6973a68386619d7c69bc7fbb18708">ncurses.h</a>, <a class="el" href="ncurses_2include_2curses_8h.html#a7ab6973a68386619d7c69bc7fbb18708">ncurses/include/curses.h</a></li>
+<li>_SUBWIN&#160;:&#160;<a class="el" href="include_2ncurses_2curses_8h.html#a348de939b149d30c29976e3c442dfb36">include/ncurses/curses.h</a>, <a class="el" href="ncurses_2include_2curses_8h.html#a348de939b149d30c29976e3c442dfb36">ncurses/include/curses.h</a>, <a class="el" href="ncurses_8h.html#a348de939b149d30c29976e3c442dfb36">ncurses.h</a></li>
+<li>_tracech_t&#160;:&#160;<a class="el" href="include_2ncurses_2curses_8h.html#a472cb4203e2f4f835abb975a67ba7013">include/ncurses/curses.h</a>, <a class="el" href="ncurses_8h.html#a472cb4203e2f4f835abb975a67ba7013">ncurses.h</a>, <a class="el" href="ncurses_2include_2curses_8h.html#a472cb4203e2f4f835abb975a67ba7013">ncurses/include/curses.h</a></li>
+<li>_tracech_t2&#160;:&#160;<a class="el" href="include_2ncurses_2curses_8h.html#a8de9e01268281e9055dea506aa5031b1">include/ncurses/curses.h</a>, <a class="el" href="ncurses_8h.html#a8de9e01268281e9055dea506aa5031b1">ncurses.h</a>, <a class="el" href="ncurses_2include_2curses_8h.html#a8de9e01268281e9055dea506aa5031b1">ncurses/include/curses.h</a></li>
+<li>_WINDOW_MODIFIED&#160;:&#160;<a class="el" href="form_8priv_8h.html#a614682569cc12d34cee10bc2a8f46874">form.priv.h</a></li>
+<li>_WRAPPED&#160;:&#160;<a class="el" href="include_2ncurses_2curses_8h.html#ab96a8577721acc52a90d51d45af8fae0">include/ncurses/curses.h</a>, <a class="el" href="ncurses_8h.html#ab96a8577721acc52a90d51d45af8fae0">ncurses.h</a>, <a class="el" href="ncurses_2include_2curses_8h.html#ab96a8577721acc52a90d51d45af8fae0">ncurses/include/curses.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
