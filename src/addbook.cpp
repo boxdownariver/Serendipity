@@ -206,7 +206,7 @@ void addBook(LinkedListType<BookType *>& bookList) {
 			mvwprintw(bookDisplayWindow, 8, 1, "%.2f", bookBuffer.getRetail());
 			wrefresh(bookDisplayWindow);
 			mvwprintw(notification, 2, 1,
-					"%d books used out of 20 available", BookType::getBookCount());
+					"%d books inserted", BookType::getBookCount());
 			set_form_win(userInputForm, notification);
 			set_form_sub(userInputForm,
 					derwin(notification, getmaxy(notification),
@@ -216,7 +216,7 @@ void addBook(LinkedListType<BookType *>& bookList) {
 			stateProvider = 0;
 		}
 
-		mvwprintw(notification, 2, 1, "%d books used out of 20 available",
+		mvwprintw(notification, 2, 1, "%d books inserted",
 				BookType::getBookCount());
 		wrefresh(notification);
 		wclear(bookDisplayWindow);

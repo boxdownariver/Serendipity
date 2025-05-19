@@ -53,9 +53,9 @@ int main_invmenu(LinkedListType<BookType *>& bookList) {
 	keepGoing = 1;
 	do {
 		startNotif = "";
-		if (BookType::getBookCount() >= 20) {
+		/*if (BookType::getBookCount() >= 20) {
 			startNotif = "--NOTICE-- Book list full! Can no longer add book";
-		}
+		}*/
 		system("clear");
 		choice = makeMenu(mainMenuInfo, startNotif);
 		switch (choice) {
