@@ -181,7 +181,7 @@ int mainRepListing (LinkedListType<BookType *>& books)
 		wattroff(repWindow, COLOR_PAIR(5)); // Cyan turned off
 
 		wattron(repWindow, COLOR_PAIR(2)); // Green color
-		mvwprintw(repWindow, 4, 50, "DATABASE SIZE : %d", 20);
+		// mvwprintw(repWindow, 4, 50, "DATABASE SIZE : %d", 20);
 		mvwprintw(repWindow, 4, 85, "CURRENT BOOK COUNT : %d", BookType::getBookCount());
 		wattroff(repWindow, COLOR_PAIR(2)); // Green turned off
 
@@ -384,7 +384,7 @@ int mainCostListing (LinkedListType<BookType *>& books, string header, double to
 		wattroff(repWindow, COLOR_PAIR(5)); // Cyan turned off
 
 		wattron(repWindow, COLOR_PAIR(2)); // Green color
-		mvwprintw(repWindow, 4, 50, "DATABASE SIZE : %d", 20);
+		// mvwprintw(repWindow, 4, 50, "DATABASE SIZE : %d", 20);
 		mvwprintw(repWindow, 4, 85, "CURRENT BOOK COUNT : %d", BookType::getBookCount());
 		wattroff(repWindow, COLOR_PAIR(2)); // Green turned off
 
