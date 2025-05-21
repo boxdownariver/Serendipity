@@ -25,21 +25,34 @@ void readFile(LinkedListType<BookType *>& books) {
 
 	file.open("booklist.dat");
 
-	while (getline(file, bookTitle, ',')) {
-		getline(file, isbn, ',');
-		getline(file, author, ',');
-		getline(file, publisher, ',');
-		getline(file, dateAdded, ',');
-		getline(file, numbers, ',');
+	file.ignore(65536, '\n');
+	while (getline(file, bookTitle)) {
+		file.ignore(65536, '\n');
+		getline(file, isbn);
+		file.ignore(65536, '\n');
+		getline(file, author);
+		file.ignore(65536, '\n');
+		getline(file, publisher);
+		file.ignore(65536, '\n');
+		getline(file, dateAdded);
+		file.ignore(65536, '\n');
+		getline(file, numbers);
+		if (isdigit(numbers[0]))
 		qtyOnHand = stoi(numbers);
-		getline(file, numbers, ',');
+		file.ignore(65536, '\n');
+		getline(file, numbers);
+		if (isdigit(numbers[0]))
 		wholesale = stod(numbers);
-		getline(file, numbers, ',');
+		file.ignore(65536, '\n');
+		getline(file, numbers);
+		if (isdigit(numbers[0]))
 		retail = stod(numbers);
 		bookBuffer = new BookType(bookTitle, isbn, author, publisher,
 				dateAdded, qtyOnHand, wholesale, retail);
 		books.insert_head(bookBuffer);
 		BookType::incBookCount();
+		file.ignore(65536, '\n');
+		file.ignore(65536, '\n');
 	}
 	file.close();
 	return;

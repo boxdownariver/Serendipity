@@ -44,7 +44,7 @@ int main_invmenu(LinkedListType<BookType *>& bookList) {
 	int choice;
 	bool keepGoing;
 
-	readFile(bookList);
+	//readFile(bookList);
 
 	mainMenuInfo.menuName = menuName;
 	mainMenuInfo.menuLines = menuListing;
