@@ -29,6 +29,7 @@ void readFile(LinkedListType<BookType *>& books) {
 	while (getline(file, bookTitle)) {
 		file.ignore(65536, '\n');
 		getline(file, isbn);
+
 		file.ignore(65536, '\n');
 		getline(file, author);
 		file.ignore(65536, '\n');
@@ -47,6 +48,7 @@ void readFile(LinkedListType<BookType *>& books) {
 		getline(file, numbers);
 		if (isdigit(numbers[0]))
 		retail = stod(numbers);
+
 		bookBuffer = new BookType(bookTitle, isbn, author, publisher,
 				dateAdded, qtyOnHand, wholesale, retail);
 		books.insert_head(bookBuffer);
