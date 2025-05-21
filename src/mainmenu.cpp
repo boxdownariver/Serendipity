@@ -49,9 +49,6 @@ int main() { {
         sa.sa_mask = block_mask;
         sigaction(SIGWINCH, &sa, NULL);
 
-	//Write books from file
-	readFile(books);
-
 	mainMenuInfo.menuName = menuName;
 	mainMenuInfo.menuLines = menuListing;
 	mainMenuInfo.longestMenuLength = sizeof("Inventory Database Module")

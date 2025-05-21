@@ -38,26 +38,23 @@
 int main_invmenu(LinkedListType<BookType *>& bookList) {
 	std::string menuName = "Inventory Database";
 	std::vector<std::string> menuListing = { "Look Up a Book", "Add a Book",
-			"Edit a Book's Record", "Delete a Book", "Return to the Main Menu" };
+			"Edit a Book's Record", "Delete a Book", "Enter books from database", "Return to the Main Menu" };
 	MenuLines mainMenuInfo;
 	std::string startNotif;
 	int choice;
 	bool keepGoing;
-
-	//readFile(bookList);
+	static bool alreadyAdded = 0;
 
 	mainMenuInfo.menuName = menuName;
 	mainMenuInfo.menuLines = menuListing;
-	mainMenuInfo.longestMenuLength = sizeof("Return to the Main Menu") / sizeof(char);
+	mainMenuInfo.longestMenuLength = sizeof("Return to the Main Menu  ") / sizeof(char);
 
 	keepGoing = 1;
+	startNotif = "";
 	do {
-		startNotif = "";
-		/*if (BookType::getBookCount() >= 20) {
-			startNotif = "--NOTICE-- Book list full! Can no longer add book";
-		}*/
 		system("clear");
 		choice = makeMenu(mainMenuInfo, startNotif);
+		startNotif = "";
 		switch (choice) {
 		case 0:
 			 mainLookUp(bookList);
@@ -72,6 +69,13 @@ int main_invmenu(LinkedListType<BookType *>& bookList) {
 			mainDelete (bookList);
 			break;
 		case 4:
+			if (!alreadyAdded) {
+				readFile(bookList);
+				startNotif = "--NOTICE-- Books added from database!";
+				alreadyAdded = 1;
+			} else startNotif = "--NOTICE-- Books already added! Will not re-add books.";
+			break;
+		case 5:
 			keepGoing = 0;
 			break;
 		default:
