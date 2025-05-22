@@ -6,6 +6,7 @@ var searchData=
   ['editbook_2ecpp_3',['editbook.cpp',['../editbook_8cpp.html',1,'']]],
   ['editbook_2ehpp_4',['editbook.hpp',['../editbook_8hpp.html',1,'']]],
   ['entries_2ec_5',['entries.c',['../entries_8c.html',1,'']]],
-  ['expanded_2ec_6',['expanded.c',['../expanded_8c.html',1,'']]],
-  ['extended_5fcolor_2ec_7',['extended_color.c',['../extended__color_8c.html',1,'']]]
+  ['etip_2eh_6',['etip.h',['../etip_8h.html',1,'']]],
+  ['expanded_2ec_7',['expanded.c',['../expanded_8c.html',1,'']]],
+  ['extended_5fcolor_2ec_8',['extended_color.c',['../extended__color_8c.html',1,'']]]
 ];

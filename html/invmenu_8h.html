@@ -120,7 +120,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="invmenu_8h__dep__incl.png" border="0" usemap="#ainvmenu_8hdep" alt=""/></div>
 <map name="ainvmenu_8hdep" id="ainvmenu_8hdep">
-<area shape="rect" title=" " alt="" coords="912,5,993,32"/>
+<area shape="rect" title=" " alt="" coords="885,5,967,32"/>
 <area shape="rect" href="addbook_8h.html" title=" " alt="" coords="536,80,617,107"/>
 <area shape="rect" href="invmenu_8cpp.html" title=" " alt="" coords="828,229,923,256"/>
 <area shape="rect" href="bookInfo_8h.html" title=" " alt="" coords="294,80,377,107"/>
@@ -128,18 +128,18 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" href="deleteBook_8cpp.html" title=" " alt="" coords="132,229,243,256"/>
 <area shape="rect" href="deleteBook_8hpp.html" title=" " alt="" coords="25,155,136,181"/>
 <area shape="rect" href="lookUp_8cpp.html" title=" " alt="" coords="332,155,419,181"/>
-<area shape="rect" href="bookfile_8h.html" title=" " alt="" coords="970,80,1047,107"/>
+<area shape="rect" href="bookfile_8h.html" title=" " alt="" coords="1105,80,1182,107"/>
+<area shape="rect" href="mainmenu_8cpp.html" title=" " alt="" coords="998,155,1105,181"/>
 <area shape="rect" href="reports_8cpp.html" title=" " alt="" coords="1294,155,1380,181"/>
-<area shape="rect" href="cashier_8h.html" title=" " alt="" coords="1122,80,1197,107"/>
-<area shape="rect" href="mainmenu_8cpp.html" title=" " alt="" coords="1164,155,1270,181"/>
+<area shape="rect" href="cashier_8h.html" title=" " alt="" coords="1006,80,1081,107"/>
 <area shape="rect" href="repListing_8cpp.html" title=" " alt="" coords="1404,155,1507,181"/>
-<area shape="rect" href="editbook_8hpp.html" title=" " alt="" coords="850,80,946,107"/>
-<area shape="rect" href="lookUp_8h.html" title=" " alt="" coords="753,80,827,107"/>
-<area shape="rect" href="repListing_8h.html" title=" " alt="" coords="1367,80,1456,107"/>
-<area shape="rect" href="reports_8h.html" title=" " alt="" coords="1271,80,1344,107"/>
+<area shape="rect" href="editbook_8hpp.html" title=" " alt="" coords="836,80,931,107"/>
+<area shape="rect" href="lookUp_8h.html" title=" " alt="" coords="739,80,812,107"/>
+<area shape="rect" href="repListing_8h.html" title=" " alt="" coords="1353,80,1441,107"/>
+<area shape="rect" href="reports_8h.html" title=" " alt="" coords="1206,80,1278,107"/>
 <area shape="rect" href="addbook_8cpp.html" title=" " alt="" coords="444,155,539,181"/>
 <area shape="rect" href="bookInfo_8cpp.html" title=" " alt="" coords="161,155,257,181"/>
-<area shape="rect" href="bookfile_8cpp.html" title=" " alt="" coords="998,155,1089,181"/>
+<area shape="rect" href="bookfile_8cpp.html" title=" " alt="" coords="1128,155,1220,181"/>
 <area shape="rect" href="editbook_8cpp.html" title=" " alt="" coords="828,155,923,181"/>
 </map>
 </div>
@@ -173,52 +173,55 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   38</span>                                                       {</div>
 <div class="line"><span class="lineno">   39</span>    std::string menuName = <span class="stringliteral">&quot;Inventory Database&quot;</span>;</div>
 <div class="line"><span class="lineno">   40</span>    std::vector&lt;std::string&gt; menuListing = { <span class="stringliteral">&quot;Look Up a Book&quot;</span>, <span class="stringliteral">&quot;Add a Book&quot;</span>,</div>
-<div class="line"><span class="lineno">   41</span>            <span class="stringliteral">&quot;Edit a Book&#39;s Record&quot;</span>, <span class="stringliteral">&quot;Delete a Book&quot;</span>, <span class="stringliteral">&quot;Return to the Main Menu&quot;</span> };</div>
+<div class="line"><span class="lineno">   41</span>            <span class="stringliteral">&quot;Edit a Book&#39;s Record&quot;</span>, <span class="stringliteral">&quot;Delete a Book&quot;</span>, <span class="stringliteral">&quot;Enter books from database&quot;</span>, <span class="stringliteral">&quot;Return to the Main Menu&quot;</span> };</div>
 <div class="line"><span class="lineno">   42</span>    <a class="code hl_struct" href="structMenuLines.html">MenuLines</a> mainMenuInfo;</div>
 <div class="line"><span class="lineno">   43</span>    std::string startNotif;</div>
 <div class="line"><span class="lineno">   44</span>    <span class="keywordtype">int</span> choice;</div>
 <div class="line"><span class="lineno">   45</span>    <span class="keywordtype">bool</span> keepGoing;</div>
-<div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span>    <a class="code hl_function" href="bookfile_8cpp.html#ab35d74fc2dd5eee71ca212cef6f8146f">readFile</a>(bookList);</div>
-<div class="line"><span class="lineno">   48</span> </div>
-<div class="line"><span class="lineno">   49</span>    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">menuName</a> = menuName;</div>
-<div class="line"><span class="lineno">   50</span>    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a> = menuListing;</div>
-<div class="line"><span class="lineno">   51</span>    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a15b8a52d1b8c366a0af2f56761c411c6">longestMenuLength</a> = <span class="keyword">sizeof</span>(<span class="stringliteral">&quot;Return to the Main Menu&quot;</span>) / <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>);</div>
-<div class="line"><span class="lineno">   52</span> </div>
-<div class="line"><span class="lineno">   53</span>    keepGoing = 1;</div>
+<div class="line"><span class="lineno">   46</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> alreadyAdded = 0;</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a4a30d31a41fa0757a8c1173384e81721">menuName</a> = menuName;</div>
+<div class="line"><span class="lineno">   49</span>    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#acd2f1bc6dacb8c9f4ba60cf0afc459df">menuLines</a> = menuListing;</div>
+<div class="line"><span class="lineno">   50</span>    mainMenuInfo.<a class="code hl_variable" href="structMenuLines.html#a15b8a52d1b8c366a0af2f56761c411c6">longestMenuLength</a> = <span class="keyword">sizeof</span>(<span class="stringliteral">&quot;Return to the Main Menu  &quot;</span>) / <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>);</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>    keepGoing = 1;</div>
+<div class="line"><span class="lineno">   53</span>    startNotif = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><span class="lineno">   54</span>    <span class="keywordflow">do</span> {</div>
-<div class="line"><span class="lineno">   55</span>        startNotif = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a>() &gt;= 20) {</div>
-<div class="line"><span class="lineno">   57</span>            startNotif = <span class="stringliteral">&quot;--NOTICE-- Book list full! Can no longer add book&quot;</span>;</div>
-<div class="line"><span class="lineno">   58</span>        }</div>
-<div class="line"><span class="lineno">   59</span>        system(<span class="stringliteral">&quot;clear&quot;</span>);</div>
-<div class="line"><span class="lineno">   60</span>        choice = <a class="code hl_function" href="menuDipity_8h.html#a03f5a2d5a6ea7f847fc6afb9118eef05">makeMenu</a>(mainMenuInfo, startNotif);</div>
-<div class="line"><span class="lineno">   61</span>        <span class="keywordflow">switch</span> (choice) {</div>
-<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">case</span> 0:</div>
-<div class="line"><span class="lineno">   63</span>             <a class="code hl_function" href="lookUp_8h.html#af5352f55890bd8d8329a4b4599e1c3d5">mainLookUp</a>(bookList);</div>
+<div class="line"><span class="lineno">   55</span>        system(<span class="stringliteral">&quot;clear&quot;</span>);</div>
+<div class="line"><span class="lineno">   56</span>        choice = <a class="code hl_function" href="menuDipity_8h.html#a03f5a2d5a6ea7f847fc6afb9118eef05">makeMenu</a>(mainMenuInfo, startNotif);</div>
+<div class="line"><span class="lineno">   57</span>        startNotif = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">switch</span> (choice) {</div>
+<div class="line"><span class="lineno">   59</span>        <span class="keywordflow">case</span> 0:</div>
+<div class="line"><span class="lineno">   60</span>             <a class="code hl_function" href="lookUp_8h.html#af5352f55890bd8d8329a4b4599e1c3d5">mainLookUp</a>(bookList);</div>
+<div class="line"><span class="lineno">   61</span>             <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">case</span> 1:</div>
+<div class="line"><span class="lineno">   63</span>             <a class="code hl_function" href="addbook_8cpp.html#a1e07f94b15c51101b06bde3785d59cb7">addBook</a>(bookList);</div>
 <div class="line"><span class="lineno">   64</span>             <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">case</span> 1:</div>
-<div class="line"><span class="lineno">   66</span>             <a class="code hl_function" href="addbook_8cpp.html#a1e07f94b15c51101b06bde3785d59cb7">addBook</a>(bookList);</div>
-<div class="line"><span class="lineno">   67</span>             <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">case</span> 2:</div>
-<div class="line"><span class="lineno">   69</span>            <a class="code hl_function" href="editbook_8cpp.html#ab42f90753021388912b2a7640e332d42">mainEditBook</a>(bookList);</div>
+<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">case</span> 2:</div>
+<div class="line"><span class="lineno">   66</span>            <a class="code hl_function" href="editbook_8cpp.html#ab42f90753021388912b2a7640e332d42">mainEditBook</a>(bookList);</div>
+<div class="line"><span class="lineno">   67</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">case</span> 3:</div>
+<div class="line"><span class="lineno">   69</span>            <a class="code hl_function" href="deleteBook_8cpp.html#aa8ce7b389005de28a71bff1e682e7d54">mainDelete</a> (bookList);</div>
 <div class="line"><span class="lineno">   70</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   71</span>        <span class="keywordflow">case</span> 3:</div>
-<div class="line"><span class="lineno">   72</span>            <a class="code hl_function" href="deleteBook_8cpp.html#aa8ce7b389005de28a71bff1e682e7d54">mainDelete</a> (bookList);</div>
-<div class="line"><span class="lineno">   73</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">case</span> 4:</div>
-<div class="line"><span class="lineno">   75</span>            keepGoing = 0;</div>
-<div class="line"><span class="lineno">   76</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">   78</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   79</span>        }</div>
-<div class="line"><span class="lineno">   80</span>    } <span class="keywordflow">while</span> (keepGoing);</div>
-<div class="line"><span class="lineno">   81</span> </div>
-<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   83</span>}</div>
+<div class="line"><span class="lineno">   71</span>        <span class="keywordflow">case</span> 4:</div>
+<div class="line"><span class="lineno">   72</span>            <span class="keywordflow">if</span> (!alreadyAdded) {</div>
+<div class="line"><span class="lineno">   73</span>                <a class="code hl_function" href="bookfile_8cpp.html#ab35d74fc2dd5eee71ca212cef6f8146f">readFile</a>(bookList);</div>
+<div class="line"><span class="lineno">   74</span>                startNotif = <span class="stringliteral">&quot;--NOTICE-- Books added from database!&quot;</span>;</div>
+<div class="line"><span class="lineno">   75</span>                alreadyAdded = 1;</div>
+<div class="line"><span class="lineno">   76</span>            } <span class="keywordflow">else</span> startNotif = <span class="stringliteral">&quot;--NOTICE-- Books already added! Will not re-add books.&quot;</span>;</div>
+<div class="line"><span class="lineno">   77</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   78</span>        <span class="keywordflow">case</span> 5:</div>
+<div class="line"><span class="lineno">   79</span>            keepGoing = 0;</div>
+<div class="line"><span class="lineno">   80</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   81</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">   82</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   83</span>        }</div>
+<div class="line"><span class="lineno">   84</span>    } <span class="keywordflow">while</span> (keepGoing);</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   87</span>}</div>
 <div class="ttc" id="aaddbook_8cpp_html_a1e07f94b15c51101b06bde3785d59cb7"><div class="ttname"><a href="addbook_8cpp.html#a1e07f94b15c51101b06bde3785d59cb7">addBook</a></div><div class="ttdeci">void addBook(LinkedListType&lt; BookType * &gt; &amp;bookList)</div><div class="ttdef"><b>Definition:</b> <a href="addbook_8cpp_source.html#l00086">addbook.cpp:86</a></div></div>
 <div class="ttc" id="abookfile_8cpp_html_ab35d74fc2dd5eee71ca212cef6f8146f"><div class="ttname"><a href="bookfile_8cpp.html#ab35d74fc2dd5eee71ca212cef6f8146f">readFile</a></div><div class="ttdeci">void readFile(LinkedListType&lt; BookType * &gt; &amp;books)</div><div class="ttdoc">readFile(BookType[20], int) -&gt; Stores file entries as members of books.</div><div class="ttdef"><b>Definition:</b> <a href="bookfile_8cpp_source.html#l00018">bookfile.cpp:18</a></div></div>
-<div class="ttc" id="aclassBookType_html_ab3d149c73829ea6b2a676795a485b70c"><div class="ttname"><a href="classBookType.html#ab3d149c73829ea6b2a676795a485b70c">BookType::getBookCount</a></div><div class="ttdeci">static int getBookCount()</div><div class="ttdoc">Gets the count of all book types.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00037">bookType.h:37</a></div></div>
 <div class="ttc" id="adeleteBook_8cpp_html_aa8ce7b389005de28a71bff1e682e7d54"><div class="ttname"><a href="deleteBook_8cpp.html#aa8ce7b389005de28a71bff1e682e7d54">mainDelete</a></div><div class="ttdeci">void mainDelete(LinkedListType&lt; BookType * &gt; &amp;books)</div><div class="ttdef"><b>Definition:</b> <a href="deleteBook_8cpp_source.html#l00054">deleteBook.cpp:54</a></div></div>
 <div class="ttc" id="aeditbook_8cpp_html_ab42f90753021388912b2a7640e332d42"><div class="ttname"><a href="editbook_8cpp.html#ab42f90753021388912b2a7640e332d42">mainEditBook</a></div><div class="ttdeci">void mainEditBook(LinkedListType&lt; BookType * &gt; &amp;bookList)</div><div class="ttdoc">Signal handler for window size change.</div><div class="ttdef"><b>Definition:</b> <a href="editbook_8cpp_source.html#l00060">editbook.cpp:60</a></div></div>
 <div class="ttc" id="alookUp_8h_html_af5352f55890bd8d8329a4b4599e1c3d5"><div class="ttname"><a href="lookUp_8h.html#af5352f55890bd8d8329a4b4599e1c3d5">mainLookUp</a></div><div class="ttdeci">int mainLookUp(LinkedListType&lt; BookType * &gt; &amp;booklist)</div><div class="ttdef"><b>Definition:</b> <a href="lookUp_8cpp_source.html#l00043">lookUp.cpp:43</a></div></div>

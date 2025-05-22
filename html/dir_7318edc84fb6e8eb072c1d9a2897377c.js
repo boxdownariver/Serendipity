@@ -15,5 +15,6 @@ var dir_7318edc84fb6e8eb072c1d9a2897377c =
     [ "cursslk.cc", "cursslk_8cc.html", null ],
     [ "cursslk.h", "cursslk_8h.html", "cursslk_8h" ],
     [ "demo.cc", "demo_8cc.html", "demo_8cc" ],
+    [ "etip.h", "etip_8h.html", "etip_8h" ],
     [ "internal.h", "internal_8h.html", "internal_8h" ]
 ];

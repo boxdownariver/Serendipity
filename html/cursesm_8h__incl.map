@@ -1,9 +1,13 @@
 <map id="cursesm.h" name="cursesm.h">
-<area shape="rect" id="node1" title=" " alt="" coords="138,5,221,32"/>
-<area shape="rect" id="node2" href="$cursesp_8h.html" title=" " alt="" coords="92,80,171,107"/>
-<area shape="rect" id="node7" title=" " alt="" coords="196,80,260,107"/>
-<area shape="rect" id="node3" href="$cursesw_8h.html" title=" " alt="" coords="44,155,124,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="148,155,211,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,229,77,256"/>
-<area shape="rect" id="node5" title=" " alt="" coords="101,229,154,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="182,5,265,32"/>
+<area shape="rect" id="node2" href="$cursesp_8h.html" title=" " alt="" coords="136,80,215,107"/>
+<area shape="rect" id="node11" title=" " alt="" coords="240,80,304,107"/>
+<area shape="rect" id="node3" href="$cursesw_8h.html" title=" " alt="" coords="88,155,168,181"/>
+<area shape="rect" id="node10" title=" " alt="" coords="192,155,255,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,304,77,331"/>
+<area shape="rect" id="node5" href="$etip_8h.html" title=" " alt="" coords="148,229,201,256"/>
+<area shape="rect" id="node6" title=" " alt="" coords="100,304,168,331"/>
+<area shape="rect" id="node7" title=" " alt="" coords="192,304,239,331"/>
+<area shape="rect" id="node8" title=" " alt="" coords="262,304,324,331"/>
+<area shape="rect" id="node9" title=" " alt="" coords="348,304,419,331"/>
 </map>

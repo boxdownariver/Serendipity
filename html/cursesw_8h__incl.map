@@ -1,5 +1,9 @@
 <map id="cursesw.h" name="cursesw.h">
-<area shape="rect" id="node1" title=" " alt="" coords="44,5,124,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,80,77,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="101,80,154,107"/>
+<area shape="rect" id="node1" title=" " alt="" coords="88,5,168,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,155,77,181"/>
+<area shape="rect" id="node3" href="$etip_8h.html" title=" " alt="" coords="148,80,201,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="100,155,168,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="192,155,239,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="262,155,324,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="348,155,419,181"/>
 </map>

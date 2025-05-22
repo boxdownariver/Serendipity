@@ -120,10 +120,11 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="bookfile_8h__dep__incl.png" border="0" usemap="#abookfile_8hdep" alt=""/></div>
 <map name="abookfile_8hdep" id="abookfile_8hdep">
-<area shape="rect" title=" " alt="" coords="130,5,207,32"/>
+<area shape="rect" title=" " alt="" coords="192,5,270,32"/>
 <area shape="rect" href="bookfile_8cpp.html" title=" " alt="" coords="5,80,97,107"/>
 <area shape="rect" href="invmenu_8cpp.html" title=" " alt="" coords="121,80,216,107"/>
-<area shape="rect" href="reports_8cpp.html" title=" " alt="" coords="240,80,326,107"/>
+<area shape="rect" href="mainmenu_8cpp.html" title=" " alt="" coords="240,80,347,107"/>
+<area shape="rect" href="reports_8cpp.html" title=" " alt="" coords="370,80,457,107"/>
 </map>
 </div>
 </div>
@@ -165,25 +166,38 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   25</span> </div>
 <div class="line"><span class="lineno">   26</span>    file.open(<span class="stringliteral">&quot;booklist.dat&quot;</span>);</div>
 <div class="line"><span class="lineno">   27</span> </div>
-<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">while</span> (getline(file, bookTitle, <span class="charliteral">&#39;,&#39;</span>)) {</div>
-<div class="line"><span class="lineno">   29</span>        getline(file, isbn, <span class="charliteral">&#39;,&#39;</span>);</div>
-<div class="line"><span class="lineno">   30</span>        getline(file, author, <span class="charliteral">&#39;,&#39;</span>);</div>
-<div class="line"><span class="lineno">   31</span>        getline(file, publisher, <span class="charliteral">&#39;,&#39;</span>);</div>
-<div class="line"><span class="lineno">   32</span>        getline(file, dateAdded, <span class="charliteral">&#39;,&#39;</span>);</div>
-<div class="line"><span class="lineno">   33</span>        getline(file, numbers, <span class="charliteral">&#39;,&#39;</span>);</div>
-<div class="line"><span class="lineno">   34</span>        qtyOnHand = stoi(numbers);</div>
-<div class="line"><span class="lineno">   35</span>        getline(file, numbers, <span class="charliteral">&#39;,&#39;</span>);</div>
-<div class="line"><span class="lineno">   36</span>        wholesale = stod(numbers);</div>
-<div class="line"><span class="lineno">   37</span>        getline(file, numbers, <span class="charliteral">&#39;,&#39;</span>);</div>
-<div class="line"><span class="lineno">   38</span>        retail = stod(numbers);</div>
-<div class="line"><span class="lineno">   39</span>        bookBuffer = <span class="keyword">new</span> <a class="code hl_class" href="classBookType.html">BookType</a>(bookTitle, isbn, author, publisher,</div>
-<div class="line"><span class="lineno">   40</span>                dateAdded, qtyOnHand, wholesale, retail);</div>
-<div class="line"><span class="lineno">   41</span>        books.<a class="code hl_function" href="classLinkedListType.html#a17017c57931cff584743f972f6d34168">insert_head</a>(bookBuffer);</div>
-<div class="line"><span class="lineno">   42</span>        <a class="code hl_function" href="classBookType.html#ae60f135ad862ad44c3a5a175b6e2e875">BookType::incBookCount</a>();</div>
-<div class="line"><span class="lineno">   43</span>    }</div>
-<div class="line"><span class="lineno">   44</span>    file.close();</div>
-<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   46</span>}</div>
+<div class="line"><span class="lineno">   28</span>    file.ignore(65536, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">while</span> (getline(file, bookTitle)) {</div>
+<div class="line"><span class="lineno">   30</span>        file.ignore(65536, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">   31</span>        getline(file, isbn);</div>
+<div class="line"><span class="lineno">   32</span>        file.ignore(65536, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">   33</span>        getline(file, author);</div>
+<div class="line"><span class="lineno">   34</span>        file.ignore(65536, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">   35</span>        getline(file, publisher);</div>
+<div class="line"><span class="lineno">   36</span>        file.ignore(65536, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">   37</span>        getline(file, dateAdded);</div>
+<div class="line"><span class="lineno">   38</span>        file.ignore(65536, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">   39</span>        getline(file, numbers);</div>
+<div class="line"><span class="lineno">   40</span>        <span class="keywordflow">if</span> (isdigit(numbers[0]))</div>
+<div class="line"><span class="lineno">   41</span>        qtyOnHand = stoi(numbers);</div>
+<div class="line"><span class="lineno">   42</span>        file.ignore(65536, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">   43</span>        getline(file, numbers);</div>
+<div class="line"><span class="lineno">   44</span>        <span class="keywordflow">if</span> (isdigit(numbers[0]))</div>
+<div class="line"><span class="lineno">   45</span>        wholesale = stod(numbers);</div>
+<div class="line"><span class="lineno">   46</span>        file.ignore(65536, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">   47</span>        getline(file, numbers);</div>
+<div class="line"><span class="lineno">   48</span>        <span class="keywordflow">if</span> (isdigit(numbers[0]))</div>
+<div class="line"><span class="lineno">   49</span>        retail = stod(numbers);</div>
+<div class="line"><span class="lineno">   50</span>        bookBuffer = <span class="keyword">new</span> <a class="code hl_class" href="classBookType.html">BookType</a>(bookTitle, isbn, author, publisher,</div>
+<div class="line"><span class="lineno">   51</span>                dateAdded, qtyOnHand, wholesale, retail);</div>
+<div class="line"><span class="lineno">   52</span>        books.<a class="code hl_function" href="classLinkedListType.html#a17017c57931cff584743f972f6d34168">insert_head</a>(bookBuffer);</div>
+<div class="line"><span class="lineno">   53</span>        <a class="code hl_function" href="classBookType.html#ae60f135ad862ad44c3a5a175b6e2e875">BookType::incBookCount</a>();</div>
+<div class="line"><span class="lineno">   54</span>        file.ignore(65536, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">   55</span>        file.ignore(65536, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">   56</span>    }</div>
+<div class="line"><span class="lineno">   57</span>    file.close();</div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   59</span>}</div>
 <div class="ttc" id="aclassBookType_html"><div class="ttname"><a href="classBookType.html">BookType</a></div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00014">bookType.h:15</a></div></div>
 <div class="ttc" id="aclassBookType_html_ae60f135ad862ad44c3a5a175b6e2e875"><div class="ttname"><a href="classBookType.html#ae60f135ad862ad44c3a5a175b6e2e875">BookType::incBookCount</a></div><div class="ttdeci">static void incBookCount()</div><div class="ttdoc">Increments the count of all book types.</div><div class="ttdef"><b>Definition:</b> <a href="bookType_8h_source.html#l00025">bookType.h:25</a></div></div>
 <div class="ttc" id="aclassLinkedListType_html_a17017c57931cff584743f972f6d34168"><div class="ttname"><a href="classLinkedListType.html#a17017c57931cff584743f972f6d34168">LinkedListType::insert_head</a></div><div class="ttdeci">void insert_head(T data)</div><div class="ttdef"><b>Definition:</b> <a href="linkedlist_8hpp_source.html#l00071">linkedlist.hpp:71</a></div></div>

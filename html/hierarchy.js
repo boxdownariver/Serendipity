@@ -45,6 +45,11 @@ var hierarchy =
     [ "NCursesApplication", "classNCursesApplication.html", [
       [ "TestApplication", "classTestApplication.html", null ]
     ] ],
+    [ "NCursesException", "classNCursesException.html", [
+      [ "NCursesFormException", "classNCursesFormException.html", null ],
+      [ "NCursesMenuException", "classNCursesMenuException.html", null ],
+      [ "NCursesPanelException", "classNCursesPanelException.html", null ]
+    ] ],
     [ "NCursesFieldType", "classNCursesFieldType.html", [
       [ "Alpha_Field", "classAlpha__Field.html", null ],
       [ "Alphanumeric_Field", "classAlphanumeric__Field.html", null ],

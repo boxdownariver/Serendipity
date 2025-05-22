@@ -1,6 +1,10 @@
 <map id="cursslk.h" name="cursslk.h">
-<area shape="rect" id="node1" title=" " alt="" coords="46,5,121,32"/>
-<area shape="rect" id="node2" href="$cursesw_8h.html" title=" " alt="" coords="44,80,124,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,155,77,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="101,155,154,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="90,5,165,32"/>
+<area shape="rect" id="node2" href="$cursesw_8h.html" title=" " alt="" coords="88,80,168,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,229,77,256"/>
+<area shape="rect" id="node4" href="$etip_8h.html" title=" " alt="" coords="148,155,201,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="100,229,168,256"/>
+<area shape="rect" id="node6" title=" " alt="" coords="192,229,239,256"/>
+<area shape="rect" id="node7" title=" " alt="" coords="262,229,324,256"/>
+<area shape="rect" id="node8" title=" " alt="" coords="348,229,419,256"/>
 </map>

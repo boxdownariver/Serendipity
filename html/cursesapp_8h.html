@@ -108,11 +108,15 @@ Include dependency graph for cursesapp.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="cursesapp_8h__incl.png" border="0" usemap="#acursesapp_8h" alt=""/></div>
 <map name="acursesapp_8h" id="acursesapp_8h">
-<area shape="rect" title=" " alt="" coords="38,5,130,32"/>
-<area shape="rect" href="cursslk_8h.html" title=" " alt="" coords="46,80,121,107"/>
-<area shape="rect" href="cursesw_8h.html" title=" " alt="" coords="44,155,124,181"/>
-<area shape="rect" title=" " alt="" coords="5,229,77,256"/>
-<area shape="rect" title=" " alt="" coords="101,229,154,256"/>
+<area shape="rect" title=" " alt="" coords="82,5,174,32"/>
+<area shape="rect" href="cursslk_8h.html" title=" " alt="" coords="90,80,165,107"/>
+<area shape="rect" href="cursesw_8h.html" title=" " alt="" coords="88,155,168,181"/>
+<area shape="rect" title=" " alt="" coords="5,304,77,331"/>
+<area shape="rect" href="etip_8h.html" title=" " alt="" coords="148,229,201,256"/>
+<area shape="rect" title=" " alt="" coords="100,304,168,331"/>
+<area shape="rect" title=" " alt="" coords="192,304,239,331"/>
+<area shape="rect" title=" " alt="" coords="262,304,324,331"/>
+<area shape="rect" title=" " alt="" coords="348,304,419,331"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -216,10 +220,10 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   77</span>      res = (*A)();</div>
 <div class="line"><span class="lineno">   78</span>      <a class="code hl_function" href="lib__endwin_8c.html#ac99f9c71095d311dea005450112a90c3">::endwin</a>();</div>
 <div class="line"><span class="lineno">   79</span>    }</div>
-<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">catch</span>(<span class="keyword">const</span> NCursesException &amp;e) {</div>
+<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">catch</span>(<span class="keyword">const</span> <a class="code hl_class" href="classNCursesException.html">NCursesException</a> &amp;e) {</div>
 <div class="line"><span class="lineno">   81</span>      <a class="code hl_function" href="lib__endwin_8c.html#ac99f9c71095d311dea005450112a90c3">::endwin</a>();</div>
-<div class="line"><span class="lineno">   82</span>      std::cerr &lt;&lt; e.message &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   83</span>      res = e.errorno;</div>
+<div class="line"><span class="lineno">   82</span>      std::cerr &lt;&lt; e.<a class="code hl_variable" href="classNCursesException.html#a023bccb5e61407ed451955ea20eed944">message</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   83</span>      res = e.<a class="code hl_variable" href="classNCursesException.html#adc6938686802d5c60f93bc46c843a23d">errorno</a>;</div>
 <div class="line"><span class="lineno">   84</span>    }</div>
 <div class="line"><span class="lineno">   85</span><span class="preprocessor">#else</span></div>
 <div class="line"><span class="lineno">   86</span>    res = (*A)();</div>
@@ -236,6 +240,9 @@ Functions</h2></td></tr>
 <div class="ttc" id="aclassNCursesApplication_html"><div class="ttname"><a href="classNCursesApplication.html">NCursesApplication</a></div><div class="ttdef"><b>Definition:</b> <a href="cursesapp_8h_source.html#l00053">cursesapp.h:53</a></div></div>
 <div class="ttc" id="aclassNCursesApplication_html_a7e658607f16d2e336ded3f521165b9b6"><div class="ttname"><a href="classNCursesApplication.html#a7e658607f16d2e336ded3f521165b9b6">NCursesApplication::getApplication</a></div><div class="ttdeci">static NCursesApplication * getApplication()</div><div class="ttdef"><b>Definition:</b> <a href="cursesapp_8cc_source.html#l00095">cursesapp.cc:95</a></div></div>
 <div class="ttc" id="aclassNCursesApplication_html_a922b5c0200d3ccb9f23275dde554c042"><div class="ttname"><a href="classNCursesApplication.html#a922b5c0200d3ccb9f23275dde554c042">NCursesApplication::handleArgs</a></div><div class="ttdeci">virtual void handleArgs(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="cursesapp_8h_source.html#l00133">cursesapp.h:133</a></div></div>
+<div class="ttc" id="aclassNCursesException_html"><div class="ttname"><a href="classNCursesException.html">NCursesException</a></div><div class="ttdef"><b>Definition:</b> <a href="etip_8h_source.html#l00161">etip.h:162</a></div></div>
+<div class="ttc" id="aclassNCursesException_html_a023bccb5e61407ed451955ea20eed944"><div class="ttname"><a href="classNCursesException.html#a023bccb5e61407ed451955ea20eed944">NCursesException::message</a></div><div class="ttdeci">const char * message</div><div class="ttdef"><b>Definition:</b> <a href="etip_8h_source.html#l00164">etip.h:164</a></div></div>
+<div class="ttc" id="aclassNCursesException_html_adc6938686802d5c60f93bc46c843a23d"><div class="ttname"><a href="classNCursesException.html#adc6938686802d5c60f93bc46c843a23d">NCursesException::errorno</a></div><div class="ttdeci">int errorno</div><div class="ttdef"><b>Definition:</b> <a href="etip_8h_source.html#l00165">etip.h:165</a></div></div>
 <div class="ttc" id="acursesmain_8cc_html_acb5160a57f4ab048c09fdfb532dc9edb"><div class="ttname"><a href="cursesmain_8cc.html#acb5160a57f4ab048c09fdfb532dc9edb">setlocale</a></div><div class="ttdeci">#define setlocale(name, string)</div><div class="ttdef"><b>Definition:</b> <a href="cursesmain_8cc_source.html#l00052">cursesmain.cc:52</a></div></div>
 <div class="ttc" id="alib__endwin_8c_html_ac99f9c71095d311dea005450112a90c3"><div class="ttname"><a href="lib__endwin_8c.html#ac99f9c71095d311dea005450112a90c3">endwin</a></div><div class="ttdeci">NCURSES_SP_NAME() endwin(NCURSES_SP_DCL0)</div><div class="ttdef"><b>Definition:</b> <a href="lib__endwin_8c_source.html#l00049">lib_endwin.c:49</a></div></div>
 <div class="ttc" id="alib__freeall_8c_html_ad26ae03cd92382efd36dd4cd71fbb410"><div class="ttname"><a href="lib__freeall_8c.html#ad26ae03cd92382efd36dd4cd71fbb410">exit_curses</a></div><div class="ttdeci">exit_curses(int code)</div><div class="ttdef"><b>Definition:</b> <a href="lib__freeall_8c_source.html#l00191">lib_freeall.c:191</a></div></div>

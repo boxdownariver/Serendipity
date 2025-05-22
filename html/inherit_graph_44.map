@@ -1,13 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classNCursesFieldType.html" title=" " alt="" coords="5,183,135,209"/>
-<area shape="rect" id="node2" href="$classAlpha__Field.html" title=" " alt="" coords="213,5,302,32"/>
-<area shape="rect" id="node3" href="$classAlphanumeric__Field.html" title=" " alt="" coords="190,56,326,83"/>
-<area shape="rect" id="node4" href="$classEnumeration__Field.html" title=" " alt="" coords="193,107,322,133"/>
-<area shape="rect" id="node5" href="$classIPV4__Address__Field.html" title=" " alt="" coords="188,157,328,184"/>
-<area shape="rect" id="node6" href="$classInteger__Field.html" title=" " alt="" coords="210,208,306,235"/>
-<area shape="rect" id="node7" href="$classNumeric__Field.html" title=" " alt="" coords="205,259,310,285"/>
-<area shape="rect" id="node8" href="$classRegular__Expression__Field.html" title=" " alt="" coords="189,309,327,352"/>
-<area shape="rect" id="node9" href="$classUserDefinedFieldType.html" title=" " alt="" coords="183,376,333,403"/>
-<area shape="rect" id="node10" href="$classMyFieldType.html" title=" " alt="" coords="408,347,504,373"/>
-<area shape="rect" id="node11" href="$classUserDefinedFieldType__With__Choice.html" title=" " alt="" coords="381,397,531,440"/>
+<area shape="rect" id="node1" href="$classNCursesException.html" title=" " alt="" coords="5,56,137,83"/>
+<area shape="rect" id="node2" href="$classNCursesFormException.html" title=" " alt="" coords="186,5,348,32"/>
+<area shape="rect" id="node3" href="$classNCursesMenuException.html" title=" " alt="" coords="185,56,348,83"/>
+<area shape="rect" id="node4" href="$classNCursesPanelException.html" title=" " alt="" coords="185,107,349,133"/>
 </map>

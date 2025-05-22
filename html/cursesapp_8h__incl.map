@@ -1,7 +1,11 @@
 <map id="cursesapp.h" name="cursesapp.h">
-<area shape="rect" id="node1" title=" " alt="" coords="38,5,130,32"/>
-<area shape="rect" id="node2" href="$cursslk_8h.html" title=" " alt="" coords="46,80,121,107"/>
-<area shape="rect" id="node3" href="$cursesw_8h.html" title=" " alt="" coords="44,155,124,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,229,77,256"/>
-<area shape="rect" id="node5" title=" " alt="" coords="101,229,154,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="82,5,174,32"/>
+<area shape="rect" id="node2" href="$cursslk_8h.html" title=" " alt="" coords="90,80,165,107"/>
+<area shape="rect" id="node3" href="$cursesw_8h.html" title=" " alt="" coords="88,155,168,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,304,77,331"/>
+<area shape="rect" id="node5" href="$etip_8h.html" title=" " alt="" coords="148,229,201,256"/>
+<area shape="rect" id="node6" title=" " alt="" coords="100,304,168,331"/>
+<area shape="rect" id="node7" title=" " alt="" coords="192,304,239,331"/>
+<area shape="rect" id="node8" title=" " alt="" coords="262,304,324,331"/>
+<area shape="rect" id="node9" title=" " alt="" coords="348,304,419,331"/>
 </map>
